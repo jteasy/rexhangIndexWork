@@ -1,0 +1,27 @@
+/*install start*/
+$ git config --global user.name "Your Name"
+$ git config --global user.email "email@example.com"
+/*install end*/
+
+/*start*/
+mkdir indexfile
+cd indexfile
+pwd
+git init
+git add xxx.html
+git commit -m "readme"
+
+/*SSH start*/
+$ ssh-keygen -t rsa -C "youremail@example.com"
+/*SSH end*/
+
+git remote add origin git@github.com:rexhang/rexhangIndexfile.git
+git push origin master
+/*end*/
+
+/*tips start*/
+rm test.html
+删除文件
+git checkout -- test.html
+如果手动删除了这样恢复文件
+/*tips end*/
