@@ -27,38 +27,35 @@
 		<!-- 可选default、black、black-translucent -->
 
 		<title>工作了有一段时间，基本上都在搞移动端的前端开发，工作的过程中遇到过很多问题，bug的解决方案，记录下来，以便后用！！！内容并不是很全，以后每遇到一个问题都会总结在这里，分享给大家！</title>
-		
-		<link rel="stylesheet" type="text/css" href=""/>
-		
+
+		<link rel="stylesheet" type="text/css" href="" />
+
 		<style type="text/css">
-			*{
+			* {
 				margin: 0;
 				padding: 0;
 			}
-			
-			.css{
+			.css {
 				/*1、禁止ios和android用户选中文字*/
-				-webkit-user-select:none;
 				
+				-webkit-user-select: none;
 				/*2、禁止ios长按时触发系统的菜单，禁止ios&android长按时下载图片*/
+				
 				-webkit-touch-callout: none;
-				
 				/*3、webkit去除表单元素的默认样式*/
-				-webkit-appearance:none;
 				
+				-webkit-appearance: none;
 				/*4、修改webkit表单输入框placeholder的样式*/
 				/*input::-webkit-input-placeholder{color:#AAAAAA;}
 				input:focus::-webkit-input-placeholder{color:#EEEEEE;}*/
-				
 				/*5、去除android a/button/input标签被点击时产生的边框 & 去除ios a标签被点击时产生的半透明灰色背景*/
-				-webkit-tap-highlight-color:rgba(255,0,0,0);
 				
+				-webkit-tap-highlight-color: rgba(255, 0, 0, 0);
 				/*6、ios使用-webkit-text-size-adjust禁止调整字体大小*/
 				/*body{-webkit-text-size-adjust: 100%!important;}*/
-				
 				/*7、移动端定义字体，移动端没有微软雅黑字体*/
-				font-family:Helvetica;
 				
+				font-family: Helvetica;
 			}
 		</style>
 	</head>
@@ -66,50 +63,53 @@
 	<body>
 		<!--其他技巧-->
 		1、手机拍照和上传图片
+		<br />
 		<!-- 选择照片 -->
-		<b>选择图片</b><input type=file accept="image/*">
+		<b>选择图片</b>
+		<input type=file accept="image/*">
+		<br />
 		<!-- 选择视频 -->
-		<b>选择视频</b><input type=file accept="video/*">
-		
+		<b>选择视频</b>
+		<input type=file accept="video/*">
+
 		<br />
+		<br /> 2、取消input在ios下，输入的时候英文首字母的默认大写
 		<br />
-		
-		2、取消input在ios下，输入的时候英文首字母的默认大写
 		<input autocapitalize="off" autocorrect="off" />
-		
+
 		<br />
+		<br /> 3、打电话和发短信
 		<br />
-		
-		3、打电话和发短信
 		<a href="tel:0755-10086">打电话给:0755-10086</a>
+		<br />
 		<a href="sms:10086">发短信给: 10086</a>
-		
+
 		<br />
 		<br />
-		
+
 		<h2>viewport模板</h2>
-		<textarea name="viewport-model" style="overflow: scroll;width: 100%;height: 320px;">
+		<textarea name="viewport-model" style="overflow: scroll;width: 100%;height: 320px;border: 0;border-bottom: 1px solid #333;border-top: 1px solid #333;">
 			viewport模板:
-			
-			<!DOCTYPE html>
-			<html>
 
-			<head>
-				<meta charset="utf-8">
-				<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
-				<meta content="yes" name="apple-mobile-web-app-capable">
-				<meta content="black" name="apple-mobile-web-app-status-bar-style">
-				<meta content="telephone=no" name="format-detection">
-				<meta content="email=no" name="format-detection">
-				<title>title</title>
-				<link rel="stylesheet" href="index.css">
-			</head>
+		<!DOCTYPE html>
+		<html>
 
-			<body>
-				content...
-			</body>
+		<head>
+			<meta charset="utf-8">
+			<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+			<meta content="yes" name="apple-mobile-web-app-capable">
+			<meta content="black" name="apple-mobile-web-app-status-bar-style">
+			<meta content="telephone=no" name="format-detection">
+			<meta content="email=no" name="format-detection">
+			<title>title</title>
+			<link rel="stylesheet" href="index.css">
+		</head>
 
-			</html>
+		<body>
+			content★★★★★
+		</body>
+
+		</html>
 		</textarea>
 	</body>
 
