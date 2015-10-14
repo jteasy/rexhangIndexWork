@@ -1,0 +1,176 @@
+<!doctype html>
+<html>
+<head>
+	<!--声明当前页面的编码集：charset=GBK,GB2312(中文编),UTF-8(国际编码)-->
+	<meta http-equiv="Content-Type"content="text/heml;charset=UTF-8">
+	<!--当前页面的三要素-->
+	<title>第十一节：css样式(下)
+</title>
+	<meta name="Keywords" content="关键词，关键词">
+	<meta name="description" content="">
+	<!--css.js-->
+	<link rel="stylesheet" href="/css/bg2.css" type="text/css" />
+	<style type="text/css">
+	.copy{text-align:center;color:#666;line-height:40px;width:100%;}
+	*{font-family:"微软雅黑";color:#000;}
+	.title{text-align:center;color:#666;margin-top:20px;}
+	.text{width:870px;;height:125px;position:relative;}
+	.btn{position:absolute;bottom:20px;left:380px;}
+	input{color:#990099}
+	.reset{width:109px;margin:10px auto;}
+	#text_a{position:absolute;left:500px;}
+	textarea{color:#ff6600}
+	h2{color:#90c}
+	h3{color:#f60}
+	p{line-height:2}
+	h4{line-height:25px;color:#f09}
+	.table{border:1px solid #666;text-align:center;border-collapse:collapse;margin:0 auto;}
+	.table tr td,th{width:80px;height:40px;border:1px solid #666;}
+	.table tr td:hover{background:#99f;color:#f93}
+	.table .sec th:hover{}
+	.table tr:hover{background:#66f}
+	/*回到顶部start*/
+			.ico{width:50px;height:40px;
+			position:fixed;
+			right:30px;
+			bottom:100px;
+			display:none;
+			
+			}
+			.ico_top{width:50px;height:40px;
+			background:url("/images/icon_top.png") no-repeat;
+			background-color:#444;
+			background-position:center;
+			cursor:pointer;display:block;
+			border-radius:5px;
+			opacity:0.8;filter:alpha(opacity=80);
+			}
+			/*回到顶部end*/
+	</style>
+	</head>
+<body>
+	<h1 class="title">第十一节：css样式(下)</h1>
+	<h2>CSS文本</h2>
+	<h3>CSS 文本属性定义文本的外观：</h3>
+	<h4>color</h4>
+	<p> &lt;1&gt;文本的颜色（color ，背景<background-color>） ;</p><hr />
+	<h4>letter-spacing</h4>
+	<p> &lt;2&gt;字符间距 （letter-spacing: 20px; letter-spacing: -0.5em;）;</p><hr />
+	<h4>line-height</h4>
+	<p> &lt;3&gt;行间距 （line-height: 30px; line-height: 200%; line-height: 2;）;</p><hr />
+	<h4>text-align</h4>
+	<p> &lt;4&gt;对齐文本 （text-align: center/left/right） ;</p>
+	<p>注：10px=1em, 将原来的px数值除以10，然后换上em作为单位就ok</p><hr />
+
+	<h4>text-decoration</h4>
+	<p>装饰文本</p>
+	<img src="/demo/html+css/eleven/images/1.png" />
+	<p>underline{text-decoration:underline;}<br />
+ .overline{text-decoration:overline;}<br />
+ .line-through{text-decoration:line-through;}<br />
+ .blink{text-decoration:blink;}<br />
+ .inherit{text-decoration:inherit;}</p>
+ <hr />
+	<h4>text-indent</h4>
+	<p>对文本进行缩进（将段落的第一行缩进）</p>
+	<img src="/demo/html+css/eleven/images/2.png" alt="indent" width="351" height="75"/>
+	<p>.text-indent{text-indent:20px;}</p>
+	<hr />
+	<h4>text-transform</h4>
+	<p>控制文本的大小写</p>
+	<img src="/demo/html+css/eleven/images/3.png" alt="transform" width="456" height="120"/>
+	<p>
+		.capitalize{text-transform:capitalize;}<br />
+		.uppercase{text-transform:uppercase;}<br />
+		.lowercase{text-transform:lowercase;}
+	</p>
+	<hr />
+	<h3>字体属性定义文本</h3>
+	<h4>font-size</h4>
+	<p>文本的大小</p>
+	<p>.font-size{font-size:16px;}</p>
+	<hr />
+	<h4>font-family</h4>
+	<p>字体系列</p>
+	<p>.font-family{font-family:"微软雅黑";}</p>
+	<hr />
+	<h4>font-style</h4>
+	<p>字体风格</p>
+	<img src="/demo/html+css/eleven/images/4.png" alt="font-style" width="403" height="99"/>
+	<p>.font-style{font-style:normal / italic / oblique;}</p>
+	<hr />
+	<h4>font-weight</h4>
+	<p>设置文本的粗细</p>
+	<img src="/demo/html+css/eleven/images/5.png" alt="font-style" width="706" height="261"/>
+	<p>	/*默认加粗 bold == 700*/<br />
+		.bold{font-weight:bold;}<br />
+		/*更粗*/<br />
+		.bolder{font-weight:bolder;}<br />
+		/*更细*/<br />
+		.lighter{font-weight:lighter;}<br />
+		/*自定义大小*/<br />
+		.auto{font-weight:900;}
+	</p>
+	<hr />
+	
+	<h3>CSS表格</h3>
+	<h4>CSS 表格样式：</h4>
+	<p>&lt;1&gt; 表格边框（border） ;</p>
+	<p>&lt;2&gt; 折叠边框（border-collapse:collapse;）;</p>
+	<p>&lt;3&gt; 表格宽度和高度 （width ，height）;</p>
+	<p>&lt;4&gt; 表格文本对齐（text-align）;</p>
+	<p>&lt;5&gt; 表格内边距 （padding）;</p>
+	<p>&lt;6&gt; 表格颜色 ;</p><hr />
+
+	<h4>大小写转换练习</h4>
+	<div class="text">
+	<textarea rows="7" cols="50" id="text_A"></textarea>
+	<textarea rows="7" cols="50" id="text_a"></textarea>
+	<div class="btn">
+	<input type="button" value="点我转换成大写" class="capital" /><br />
+	<input type="button" value="清 空 文 本 框" class="reset" /><br />
+	<input type="button" value="点我转换成小写" class="lowercase" /><br />
+	</div>
+	</div><hr />
+	<h4>表格的布局</h4>
+	<table class="table">
+	<tr class="sec"><th colspan="7"></th></tr>
+	<tr><td>周日</td><td>周一</td><td>周二</td><td>周三</td><td>周四</td><td>周五</td><td>周六</td></tr>
+	<tr><td>31</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td></tr>
+	<tr><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td></tr>
+	<tr><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td><td>20</td></tr>
+	<tr><td>21</td><td>22</td><td>23</td><td>24</td><td>25</td><td>26</td><td>27</td></tr>
+	<tr><td>28</td><td>29</td><td>30</td><td>1</td><td>2</td><td>3</td><td>4</td></tr>
+	<tr><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td></tr>
+	</table><hr />
+	<p class="copy">Copyright&copy;201501&nbsp;潭州学院-完美</p>
+	<div class="ico">
+		<span class="ico_top" title="回到顶部"></span>
+	</div>
+<script type="text/javascript" src="/js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="/js/dingbu.js"></script>
+	<script type="text/javascript">
+			$(function(){
+			$(".capital").click(function(){
+				var text=$("#text_A").val();
+			$("#text_a").css("text-transform","uppercase");
+			$("#text_a").val(text);
+			});
+			$(".lowercase").click(function(){
+				var text=$("#text_A").val();
+			$("#text_a").css("text-transform","lowercase");
+			$("#text_a").val(text);
+			});
+			$(".reset").click(function(){
+			$("#text_A").empty();
+			$("#text_A").val("");
+			$("#text_a").empty();
+			$("#text_a").val("");
+			});
+			var d=new Date();
+			$("table tr th").text(d.getFullYear()+'年'+(d.getMonth()+1)+'月'+d.getDate()+'日'+'星期'+'日一二三四五六'.charAt(new Date().getDay()));
+			});
+	</script>
+
+</body>
+</html>

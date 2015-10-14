@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+	<head>
+		<!--声明当前页面的编码集：charset=gbk,gb2312（中文编码），utf-8（国际编码）-->
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<!--当前页面的三要素-->
+		<title>sibling next prev</title>
+		<meta name="Keywords" content="关键词,关键词">
+		<meta name="description" content="">
+		<link rel="shortcut icon" href="" />
+		
+		<!--css,js-->
+		<style type="text/css">
+			*{margin:0;padding:0;}
+	
+		</style>
+
+    </head>
+<body>
+	<ul>
+		<li>1</li>
+		<li>2</li>
+		<li class="sel">3</li>
+		<li>4</li>
+	</ul>
+	<script type="text/javascript" src="js/jQuery.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			// siblings
+			var x = $("ul .sel").siblings().text();
+			
+			// next -----nextAll() ， nextUntil()   
+			var y = $("ul .sel").next().text();
+
+			// prev -----prevAll() ， prevUntil()   
+			var z = $("ul .sel").prev().text();
+			alert(z);
+		});
+	</script>
+</body>
+</html>

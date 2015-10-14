@@ -1,0 +1,272 @@
+<!doctype html>
+<html>
+	<head>
+		<!--声明当前页面的编码集：charset=gbk,gb2312(中文编码)，utf-8国际编码-->
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<!--当前页面的三要素-->
+		<title>第十四节：css高级上 - 块级元素、行内元素、文档流</title>
+		<meta name="Keywords" content="关键词,关键词">
+		<meta name="description" content="">
+		<link rel="stylesheet" href="/css/bg2.css" type="text/css" />
+		<!--css,js-->
+		<style type="text/css">
+			/*版权start*/
+			.copy{font-size:18px;text-align:center;
+			color:#666;line-height:40px;width:100%;}
+			/*版权end*/
+			/*标题start*/
+			.title{text-align:center;color:#666;
+			font-family:"微软雅黑";margin-top:20px;}
+			h2{color:#93c}
+			h3{color:#60f}
+			/*标题end*/
+			/*div盒子start*/
+			.div_one{width:500px;height:100px;background:#690;}
+			/*div盒子end*/
+			/*表格start*/
+			table{border-collapse:collapse;width:500px;}
+			table tr td{border:1px solid #630;height:40px;text-align:center;font-size:14px;}
+			table .title{font-weight:bold;}
+			/*表格end*/
+			/*overflow - start*/
+			.over{width:300px;height:100px;overflow:scroll;border:1px solid red;}
+			/*overflow - end*/
+			/*回到顶部start*/
+			.ico{width:50px;height:40px;
+			position:fixed;
+			right:30px;
+			bottom:100px;
+			display:none;
+			
+			}
+			.ico_top{width:50px;height:40px;
+			background:url("/images/icon_top.png") no-repeat;
+			background-color:#444;
+			background-position:center;
+			cursor:pointer;display:block;
+			border-radius:5px;
+			}
+			/*回到顶部end*/
+		</style>
+
+	</head>
+<body>
+
+	<h1 class="title">第十四节：css高级上 - 块级元素、行内元素、文档流</h1>
+		<!--块级元素start-->
+	<h2>块级元素block element</h2>
+	<pre>
+1.每个块级元素默认占一行高度，一行内添加一个块级元素后无法一般无法添加其他元素（float浮动后除外）;
+
+2.  两个块级元素连续编辑时，会在页面自动换行显示。块级元素一般可嵌套块级元素或行内元素 ;
+
+常见块级元素：
+
+　&lt;1&gt; div - 常用块级容易，也是css layout的主要标签
+　&lt;2&gt; dl - 定义列表   
+　&lt;3&gt; h1 - h6 标题标签  
+　&lt;4&gt; hr - 水平分隔线   
+　&lt;5&gt; menu - 菜单列表   
+　&lt;6&gt; ol - 排序表单   
+　&lt;7&gt; p - 段落   
+　&lt;8&gt; table - 表格   
+　&lt;9&gt; ul - 非排序列表 
+	</pre>
+	<h3>1. div盒子</h3>
+	<div class="div_one"></div>
+
+	<h3>2. 自定义列表 dl dt dd</h3>
+	<dl>
+		<dt>自定义列表项一</dt>
+		<dd>列表项1</dd>
+		<dd>列表项2</dd>
+		<dd>列表项3</dd>
+		<dd>列表项4</dd>
+		<dd>列表项5</dd>
+
+		<dt>自定义列表项二</dt>
+		<dd>列表项1</dd>
+		<dd>列表项2</dd>
+
+	</dl>
+	<h3>3. h标签 （h1 - h6）</h3>
+	<h3>4. hr标签 ： 水平线</h3>
+	<hr></hr>
+	<h3>5. ol有序列表</h3>
+	<ol>
+		<li>有序列表项1</li>
+		<li>有序列表项2</li>
+		<li>有序列表项3</li>
+		<li>有序列表项4</li>
+	</ol>
+	<h3>6. ul无序列表</h3>
+	<ul>
+		<li>无序列表项1</li>
+		<li>无序列表项2</li>
+		<li>无序列表项3</li>
+		<li>无序列表项4</li>
+	</ul>
+	<h3>7. p标签（段落标签）</h3>
+	
+	<p>潭州软件学院创始人 Arry老师 周六补课中 ...</p>
+
+	<h3>8. table表格</h3>
+	
+	<table>
+		<tr class="title">
+			<td>编号</td>
+			<td>姓名</td>
+			<td>年龄</td>
+			<td>性别</td>
+			<td>是否恋爱</td>
+		</tr>
+		<tr>
+			<td>001</td>
+			<td>嘻哈小C</td>
+			<td>18</td>
+			<td>女</td>
+			<td>进行中...</td>
+		</tr>
+		<tr>
+			<td>002</td>
+			<td>MVP</td>
+			<td>38</td>
+			<td>男</td>
+			<td>热恋中</td>
+		</tr>
+		<tr>
+			<td>003</td>
+			<td>黄志林</td>
+			<td>19</td>
+			<td>男</td>
+			<td>失恋中...</td>
+		</tr>
+		<tr>
+			<td>004</td>
+			<td>阿图</td>
+			<td>40</td>
+			<td>男</td>
+			<td>早恋中...</td>
+		</tr>
+	</table>
+	<hr />
+	<!--块级元素end-->
+	<!--行内元素start-->
+	<h2>行内元素 inline element	</h2>
+	
+	<!--
+		也叫内联元素、内嵌元素等；行内元素一般都是基于语义级(semantic)的基本元素，只能容纳文本或其他内联元素，常见内联元素 “a”；
+	-->
+<pre>
+
+常见的行内元素：
+
+　a - 锚点
+　b - 粗体(不推荐)   
+　br - 换行   
+　em - 强调   
+　i - 斜体   
+　img - 图片   
+　input - 输入框   
+　label - 表格标签   
+　select - 项目选择   
+　span - 常用内联容器，定义文本内区块   
+　strong - 粗体强调   
+　sub - 下标   
+　sup - 上标   
+　textarea - 多行文本输入框   
+　u - 下划线 	
+
+</pre>
+
+	<h3>a 标签</h3>
+
+	<a href="http://baidu.com">a 标签</a>
+
+	<h3>b - 粗体</h3>
+
+	<b>我是一个b标签</b>
+
+	<h3>strong 标签</h3>
+
+	<strong>潭州软件学院</strong>
+
+	<h3>br 标签（换行符）</h3>
+
+	<br /><br />
+
+	<h3>em标签</h3>
+	
+	<em>我是一个em标签</em>
+
+	<h3>i标签</h3>
+
+	<i>潭州软件学院 太棒了！</i>
+
+	<h3>img 图片标签</h3>
+	
+	<img src="/demo/html+css/fourteen/images/1.jpg" alt="潭州学院" width="1200" height="300"/>
+
+	<h3>input标签</h3>
+
+	<input type="text" />
+	文本域：<textarea></textarea>
+	select - 项目选择：
+	<select>
+		<option>--请选择--</option>
+		<option>2015</option>
+	</select>
+
+	<h3>label , span 标签</h3>
+	
+	<span>span标签</span>
+	<label>label标签</label>
+
+	<h3>U标签</h3>
+	
+	<u>u标签</u>
+
+	<h3>sup ,sub标签</h3>
+	
+	2<sup>3</sup> + 3<sup>2</sup> = ? <br /><br />
+ 
+	O<sub>2</sub> + C = CO<sub>2</sub><hr />
+	<!--行内元素end-->
+	<!--文档流start-->
+	<h2>文档流</h2>	
+	<p>1.将窗体自上而下分成一行行, 并在每行中按从左至右的顺序排放元素,即为文档流 ;</p>
+	<p>2.CSS的定位机制有3种：普通流、浮动和定位 ;</p>
+	<p>3.文档流：从上到下，从左到右，一个挨一个的简单或者叫正常布局 ;</p>
+	<p>4.定位：（position）</p>
+	<p>Static：保持文档流 ;<br />
+	Relative：相对本身的原始位置发生位移且保持文档流，占空间 ;<br />
+	Absolute：脱离文档流，不占空间且相对于其包含块来定位 ;</p>
+	<p>5.浮动：（flaot）脱离文档流，不占空间 ;</p>
+	<p>6.以前总是觉得position：static这个属性很多余，它的作用就是让元素保持文档流的;</p>
+	<hr />
+	<!--文档流end-->
+	<!--显示：display - start-->
+	<h2>显示：display</h2>
+	<p>1.none - 此元素不会被显示 ;</p>
+	<p>2.block - 显示为块级元素，此元素前后会带有换行符 ;</p>
+	<p>3.inline -  默认 , 此元素会被显示为内联元素，元素前后没有换行符 ;</p>
+	<hr />
+	<!--显示：display - end-->
+	<!--overflow属性start-->
+	<h2>CSS overflow属性</h2>
+	<p>1.overflow 属性规定当内容溢出元素框时发生的事情 ;</p>
+	<p>2.这个属性定义溢出元素内容区的内容会如何处理。如果值为 scroll，不论是否需要用户代理都会提供一种滚动机制 ;</p>
+	<p>3.有可能即使元素框中可以放下所有内容也会出现滚动条 ;</p>
+	<img src="/demo/html+css/fourteen/images/2.png" alt="overflow" width="454" height="128" /><br /><br />
+	<div class="over">潭州教育（tanzhouedu.net）是中国最早的在线教育机构，教学内容涵盖办公软件教学、软件设计，农业养殖，网页设计、平面设计、三维设计、插画、网络营销，影视处理，摄影等行业。经过八年的发展，潭州教育已经发展为中国规模最大的新一代互联网在线教育育人平台。</div><hr />
+	<!--overflow属性start-->
+	<!--版权start-->
+	<p class="copy">Copyright&copy;201501&nbsp;潭州学院-完美</p>
+	<!--版权end-->
+	<div class="ico">
+		<span class="ico_top" title="回到顶部"></span>
+	</div>
+	<script type="text/javascript" src="/js/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="/js/dingbu.js"></script>
+</body>
+</html>

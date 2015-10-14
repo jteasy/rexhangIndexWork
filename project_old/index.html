@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>顾航 - Web前端开发</title>
+    <meta name="description" content="顾航(Rexhang)全身心致力于Web前端编程以及Java编程技术的研究包括Javascript脚本，Jquery，Bootstrap等前端框架的研究，并不断完善自我争取更促进互联网与现实世界的更和谐并到更贴近的交互体验！">
+    <meta name="keywords" content="顾航,网页设计,平面设计,UI界面设计,视觉传达,用户体验,炫酷效果,英语,Rexhang,Web,Javaweb,Java,Javascript,HTML5,CSS3,Jquery,Android,Mysql">
+    <meta name="author" content="顾航" />
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://www.rexhang.com/css/hover-min.css">
+    <link rel="shortcut icon" href="http://www.rexhang.com/images/favicon.ico" />
+    <link rel="bookmark" href="http://www.rexhang.com/images/favicon.ico" />
+    <script type="text/javascript">
+    /*browser judgment*/
+    var browsers = {
+        versionss: function() {
+            var u = navigator.userAgent,
+                app = navigator.appVersion;
+            return {
+                trident: u.indexOf('Trident') > -1,
+                ios: !! u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/),
+                android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1,
+                iPhone: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1,
+                iPad: u.indexOf('iPad') > -1,
+
+            };
+        }(),
+    }
+    if (browsers.versionss.ios || browsers.versionss.android || browsers.versionss.iPhone || browsers.versionss.iPad) {
+        window.location = "http://www.rexhang.com/mobile.html";
+    };
+    </script>
+    <script type="text/javascript" src="http://www.rexhang.com/js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="http://www.rexhang.com/js/jquery.thooClock.js"></script>
+    <script type="text/javascript" src="http://www.rexhang.com/js/jquery.let_it_snow.js"></script>
+    <script type="text/javascript">
+    /*dialog start*/
+    $(function() {
+            //初始化拖拽
+            $.rexDialog({
+            });
+            //设置时钟大小
+            $(".tz_title").thooClock({
+            size:130
+        });
+    });
+    $.rexDialog = function(opts) {
+        //创建模板
+        var $tz_dialog = $("<div class='tz_dialog'>" +
+            "<div class='tz_title'>" +
+            "<h3 class='tz_h3'>" + "</h3>" +
+            "</div>" +
+            "</div>");
+        //向页面写入模板
+        $("body").append($tz_dialog);
+        //方法调用1：动态方法设置元素位置
+        rex_center($tz_dialog);
+        //方法调用2：浏览器窗口改变元素依然定位
+        initEvent($tz_dialog);
+        // 方法1：动态方法设置元素定位
+        function rex_center($tz_dialog) {
+            $tz_dialog.css({
+                "bottom": 10,
+                "right": 10
+            })
+        }
+        // 方法2：浏览器窗口改变元素依然定位
+        function initEvent($tz_dialog) {
+            $(window).resize(function() {
+                rex_center($tz_dialog);
+            });
+        }
+        // 方法使用：拖拽功能
+        $(".tz_title").mousedown(function(ee) {
+            // 获取需要移动的父级元素
+            var divDom = $(this).parents(".tz_dialog");
+            // 鼠标点击的X和Y的坐标
+            var a = ee.clientX;
+            var b = ee.clientY;
+            // 元素距离边角的值
+            var theLeft = divDom.offset().left;
+            var theTop = divDom.offset().top;
+            //设置边界
+            var maxLeft = $(window).width() - divDom.width();
+            var maxTop = $(window).height() - divDom.height();
+            //设置开关
+            var flag = true;
+            // 开始拖拽
+            $(document).mousemove(function(eee) {
+                if (flag) {
+                    var x = eee.clientX;
+                    var y = eee.clientY;
+                    var _left = x - a + theLeft;
+                    var _top = y - b + theTop;
+                    if (_left < 10) {
+                        _left = 10;
+                    }
+                    if (_top < 10) {
+                        _top = 10;
+                    }
+                    if (_left > maxLeft) {
+                        _left = maxLeft - 10 + "px";
+                    }
+                    if (_top > maxTop) {
+                        _top = maxTop - 10 + "px";
+                    }
+                    divDom.css({
+                        "top": _top,
+                        "left": _left
+                    })
+                }
+            }).mouseup(function() {
+                flag = false;
+            });
+        });
+    }
+    </script>
+    <style type="text/css">
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    body {
+        font-size: 12px;
+        color: #666;
+        font-family:'微软雅黑';
+        background: #fff;
+    }
+    /*tz_dialog start*/
+    .tz_dialog {
+        width: 150px;
+        height: 149px;
+        box-shadow: 0 0 10px 1px #000;
+        z-index: 999;
+        position: fixed;
+        border-radius: 50%;
+        background:-webkit-gradient(linear, left top, left bottom, from(#00abeb), to(#fff), color-stop(0.5, #fff), color-stop(0.5, #66cc00));
+        background:-ms-gradient(linear, left top, left bottom, from(#00abeb), to(#fff), color-stop(0.5, #fff), color-stop(0.5, #66cc00));
+
+    }
+    .tz_dialog .tz_title {
+        width: 150px;
+        height: 149px;
+        background: rgba(55, 177, 177, 0.41);
+        padding: 10px 10px;
+        cursor: move;
+        line-height: 137px;
+        text-align: center;
+        border-radius: 35px;
+    }
+    .tz_dialog .tz_title .tz_h3 {
+        float: left;
+    }
+    /*tz_dialog end*/
+    ::-webkit-scrollbar {
+        width: 7px;
+        height: 500px;
+    }
+    ::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+        border-radius: 10px;
+        background: #DBDBD2;
+    }
+    ::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background: #FF3D3D;
+        -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+        height: 185px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+        background: #1DBBC8;
+    }
+    ::-webkit-scrollbar-thumb:window-inactive {
+        background: rgba(255, 0, 0, 0.4);
+    }
+    /*header start*/
+    #header {
+        width: 100%;
+        height: 50px;
+        line-height: 50px;
+        position: fixed;
+        top: 0;
+        left: 80px;
+        border-left: #eee;
+        z-index: 0;
+        padding-left: 15px;
+        border-bottom: 1px solid #42AD8C;
+        border-top: 1px solid #4529C8;
+        overflow: hidden;
+        background-color:#383737;
+    }
+    #header #navs {
+        height: 50px;
+        float: left;
+        margin-left: 100px;
+        position: fixed;
+        left: 270px;
+        top: -1px;
+        overflow: hidden;
+    }
+    #header #navs #headerul {
+        position: relative;
+        display: inline-block;
+    }
+    #header #navs .hoverss{
+        height: 50px;
+        margin-top: -30px;
+    }
+    #header #navs .hoverss .h11{
+        height: 50px;
+        display: block;
+        float: left;
+        position: absolute;
+        z-index: -1;
+        transition: all 0.3s linear;
+    }
+    #header #navs .hoverss .s11{
+        width: 84px;
+        background: #A321CF;
+        left: 0;
+        top: 52px;
+    }
+    #header #navs .hoverss .s22{
+        width: 112px;
+        background: #53BB7C;
+        left: 84px;
+        top: 52px;
+    }
+    #header #navs .hoverss .s33{
+        width: 112px;
+        background: #317DE2;
+        left: 196px;
+        top: 52px;
+    }
+    #header #navs .hoverss .s44{
+        width: 112px;
+        background: #F24465;
+        left: 308px;
+        top: 52px;
+    }
+    #header #navs #headerul li {
+        list-style: none;
+        float: left;
+        height: 50px;
+        line-height: 52px;
+        padding: 0 2em;
+        color: #787d82;
+        font-size: 14px;
+        cursor: pointer;
+        -webkit-transition: 1s;
+        -moz-transition: 1s;
+        -ms-transition: 1s;
+        -o-transition: 1s;
+        transition: 1s;
+    }
+    #header #navs #headerul .opensources {
+        color: #47966F;
+        position: absolute;
+        top: 8px;
+        right: 10px;
+    }
+    #header #navs #headerul li:hover {
+        color: #fff;
+        /*background: #000;*/
+    }
+    #header .webicon {
+        float: left;
+        width: 229px;
+        height: 50px;
+        background: url('webIcon/1.png') no-repeat;
+        cursor: pointer;
+        -webkit-transition: 1s;
+        -moz-transition: 1s;
+        -ms-transition: 1s;
+        -o-transition: 1s;
+        transition: 1s;
+    }
+    #header .webicon:hover {
+        background: url('webIcon/2.png') no-repeat;
+    }
+    #header .login {
+        height: 30px;
+        float: right;
+        margin-right: 150px;
+        line-height: 30px;
+        background: radial-gradient(black 15%, transparent 16%) 0 0, radial-gradient(black 15%, transparent 16%) 8px 8px, radial-gradient(rgba(255, 255, 255, .1) 15%, transparent 20%) 0 1px, radial-gradient(rgba(255, 255, 255, .1) 15%, transparent 20%) 8px 9px;
+        background-color:#30764B;
+        background-size:16px 16px;
+        margin-top: 9px;
+        border-radius: 14px;
+    }
+    #header .login a {
+        text-decoration: none;
+        color: #fff;
+        padding: 0 15px;
+        border-right: 2px solid #383737;
+        display: block;
+        height: 50px;
+        float: left;
+        height: 30px;
+        -webkit-transition: 1s;
+        -moz-transition: 1s;
+        -ms-transition: 1s;
+        -o-transition: 1s;
+        transition: 1s;
+    }
+    #header .login a:hover {
+        color: #82E88B;
+    }
+    /*header end*/
+    /*container start*/
+    #container {
+        width: 100%;
+    }
+    #container #c_left {
+        width: 80px;
+        height: 100%;
+        float: left;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background: #558D9B;
+    }
+    #container #c_left .leftshowss {
+        width: 300px;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 80px;
+        z-index: 99;
+        display: none;
+    }
+    #container #c_left .homes {
+    }
+    #container #c_left .css3s {
+        background: #f00;
+    }
+    #container #c_left .htmls {
+        background: #603E3E;
+    }
+    #container #c_left .jQuerys {
+        background: #296792;
+    }
+    #container #c_left .picss {
+        background: #887B26;
+    }
+    #container #c_left .mys {
+        background: #DC33FA;
+    }
+    #container #c_left .downloads {
+        background: #28BEC9;
+    }
+    #container #c_left #ul_left .onesel {
+        background: #D07239;
+    }
+    #container #c_left #ul_left li {
+        list-style: none;
+        border-top: 1px solid #67C3C0;
+        border-bottom: 1px solid #333B45;
+        cursor: pointer;
+        -webkit-transition: 1s;
+        -moz-transition: 1s;
+        -ms-transition: 1s;
+        -o-transition: 1s;
+        transition: 1s;
+    }
+    #container #c_left #ul_left .noboder {
+        border-top: 0;
+    }
+    #container #c_left #ul_left .bottomline {
+        border-top: 1px solid #67C3C0;
+    }
+    #container #c_left #ul_left li:hover > span {
+        color: #7918C7;
+    }
+    #container #c_left #ul_left li:hover > p {
+        color: #A7BB6B;
+        text-shadow: 1px 1px 1px #222;
+    }
+    #container #c_left #ul_left li span {
+        display: block;
+        text-align: center;
+        font-size: 18px;
+        padding-top: 10px;
+        color: #fff;
+    }
+    #container #c_left #ul_left li p {
+        text-align: center;
+        font-size: 12px;
+        color: #fff;
+        padding-top: 8px;
+        text-shadow: 1px 1px 1px #222;
+    }
+    .leftsels {
+        background: #73B5A1;
+    }
+    #container #c_right {
+        float: left;
+        margin-left: 80px;
+        position: absolute;
+        z-index: -1;
+    }
+    #container #c_right #bannerShow {
+        width: 100%;
+        height: 260px;
+        background-color:black;
+        background-image: radial-gradient(white, rgba(255, 255, 255, .2) 2px, transparent 40px), radial-gradient(white, rgba(255, 255, 255, .15) 1px, transparent 30px), radial-gradient(white, rgba(255, 255, 255, .1) 2px, transparent 40px), radial-gradient(rgba(255, 255, 255, .4), rgba(255, 255, 255, .1) 2px, transparent 30px);
+        background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px;
+        background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
+        position: relative;
+        border-bottom: 2px solid #42AD8C;
+        margin-top: 50px;
+        overflow: hidden;
+        z-index: -1;
+    }
+    #container #c_right #bannerShow .shows {
+        width: 100%;
+        height: 260px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        display: none;
+    }
+    #container #c_right #bannerShow .show1 {
+        display: block;
+    }
+    #container #c_right #bannerShow .show1 {
+        background: url('http://www.rexhang.com/bannerIcon/11.png') no-repeat left;
+        z-index: 8;
+    }
+    #container #c_right #bannerShow .show2 {
+        background: url('http://www.rexhang.com/bannerIcon/22.png') no-repeat center;
+        z-index: 7;
+    }
+    #container #c_right #bannerShow .show3 {
+        background: url('http://www.rexhang.com/bannerIcon/33.png') no-repeat center;
+        z-index: 6;
+    }
+    #container #c_right #bannerShow .show4 {
+        background: url('http://www.rexhang.com/bannerIcon/44.png') no-repeat right;
+        z-index: 5;
+    }
+    #container #c_right #bannerShow #ulist {
+        position: absolute;
+        left: 45%;
+        top: 228px;
+        z-index: 9;
+        background-color: rgba(137, 133, 122, 0.29);
+        border-radius: 14px;
+        padding: 0px 0px 0px 16px;
+    }
+    #container #c_right #bannerShow #ulist li {
+        cursor: pointer;
+        list-style: none;
+        width: 20px;
+        height: 20px;
+        float: left;
+        margin-right: 10px;
+        -webkit-transition: 1s;
+        -moz-transition: 1s;
+        -ms-transition: 1s;
+        -o-transition: 1s;
+        transition: 1s;
+        line-height: 20px;
+    }
+    #container #c_right #bannerShow #ulist .sel01 {
+        color: #F00;
+    }
+    #container #c_right h2 {
+        height: 65px;
+        line-height: 65px;
+        padding-left: 25px;
+        text-shadow: 1px 1px 1px #fff;
+        font-weight: normal;
+        text-shadow: 1px 1px 4px #666;
+        font-size: 20px;
+    }
+    #container #c_right p {
+        border-top: 1px solid #BFD3C3;
+        margin-left: 26px;
+    }
+    #container #c_right #projects {
+        margin: 30px 60px 0 60px;
+        display: inline-block;
+    }
+    #container #c_right #projects .pros {
+        width: 250px;
+        height: 380px;
+        float: left;
+        margin: 0 1.35em 4em 1.5em;
+    }
+    #container #c_right #projects .theends {
+        margin: 0 1.35em 0 1.5em;
+    }
+    /*container end*/
+    /*foots start*/
+    #container #c_right #foots {
+        background: #444547;
+        padding-bottom: 15px;
+    }
+    #container #c_right #foots .foots_all {
+        padding-top: 35px;
+    }
+    #container #c_right #foots p {
+        height: 30px;
+        border: 0;
+        text-align: center;
+        line-height: 30px;
+    }
+    #container #c_right #foots p a {
+        text-decoration: none;
+        color: #999;
+        display: inline-block;
+    }
+    #container #c_right #foots p a:hover {
+        text-decoration: underline;
+        color: #fff;
+    }
+    #container #c_right .bottom_nav {
+        text-align: center;
+    }
+    /*foots end*/
+    /*Response type start*/
+    @media screen and (max-width: 1366px) {
+        #container #c_right #projects .pros {
+            margin: 0 1.35em 4em 1.7em;
+        }
+        #header #navs {
+            margin-left: 6em;
+        }
+        #container #c_right #projects .theends {
+            margin: 0 1.35em 0 1.5em;
+        }
+        #container #c_right #projects .theends2 {
+            margin: 0 1.35em 0 1.5em;
+        }
+    }
+    @media screen and (max-width: 1024px) {
+        #container #c_right #projects .pros {
+            margin: 0 0.5em 3em 7.5em;
+        }
+    }
+    /*Response type end*/
+    </style>
+</head>
+
+<body>
+    <!-- header start -->
+    <div id="header">
+        <div class="webicon btn btn-default" data-toggle="tooltip" data-placement="right" title="欢迎您来到顾航的网站" style="border:0;"></div>
+        <div id="navs">
+            <ul id="headerul">
+                <li class="fenxiang">分享</li>
+                <li class="xuexi">学习计划</li>
+                <li class="tiyan">用户体验</li>
+                <li class="kaiyua">开源社区</li>
+                <span class="glyphicon glyphicon-pushpin opensources" aria-hidden="true"></span>
+            </ul>
+            <div class="hoverss">
+                <span class="h11 s11"></span>
+                <span class="h11 s22"></span>
+                <span class="h11 s33"></span>
+                <span class="h11 s44"></span>
+            </div>
+        </div>
+        <div class="login" id="logins">
+            <a href="javascript:void(0);" class="log">登陆</a>
+            <a href="javascript:void(0);" class="reg">注册</a>
+        </div>
+    </div>
+    <!-- header end -->
+    <!-- container start -->
+    <div id="container">
+        <div id="c_left">
+            <ul id="ul_left">
+                <li class="onesel noboder" onclick="window.location =  'http://www.rexhang.com/'">
+                    <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+                    <p>首页</p>
+                </li>
+                <li>
+                    <span class="glyphicon glyphicon-send" aria-hidden="true"></span>
+                    <p>CSS3</p>
+                </li>
+                <li>
+                    <span class="glyphicon glyphicon-header" aria-hidden="true"></span>
+                    <p>HTML5</p>
+                </li>
+                <li>
+                    <span class="glyphicon glyphicon-fire" aria-hidden="true"></span>
+                    <p>jQuery</p>
+                </li>
+                <li>
+                    <span class="glyphicon glyphicon-picture" aria-hidden="true"></span>
+                    <p>精美图库</p>
+                </li>
+                <li>
+                    <span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span>
+                    <p>我的收藏</p>
+                </li>
+                <li>
+                    <span class="glyphicon glyphicon-circle-arrow-down" aria-hidden="true"></span>
+                    <p>工具下载</p>
+                </li>
+                <p class="bottomline"></p>
+            </ul>
+            <!-- nav start -->
+            <div id="left_listshow" class="leftshowss homes"></div>
+            <div id="left_listshow" class="leftshowss css3s"></div>
+            <div id="left_listshow" class="leftshowss htmls"></div>
+            <div id="left_listshow" class="leftshowss jQuerys"></div>
+            <div id="left_listshow" class="leftshowss picss"></div>
+            <div id="left_listshow" class="leftshowss mys"></div>
+            <div id="left_listshow" class="leftshowss downloads"></div>
+            <!-- nav end -->
+        </div>
+        <div id="c_right">
+            <div id="bannerShow">
+                <canvas class="snow" width="100%" height="100%"></canvas>
+                <div class="show1 shows"></div>
+                <div class="show2 shows"></div>
+                <div class="show3 shows"></div>
+                <div class="show4 shows"></div>
+                <ul id="ulist">
+                    <li class="sel01">
+                        <span class="glyphicon glyphicon-flash" aria-hidden="true"></span>
+                    </li>
+                    <li class="sel02">
+                        <span class="glyphicon glyphicon-flash" aria-hidden="true"></span>
+                    </li>
+                    <li class="sel03">
+                        <span class="glyphicon glyphicon-flash" aria-hidden="true"></span>
+                    </li>
+                    <li class="sel04">
+                        <span class="glyphicon glyphicon-flash" aria-hidden="true"></span>
+                    </li>
+                </ul>
+            </div>
+            <h2>最新案例</h2>
+            <p></p>
+            <div id="projects">
+                <div class="pros hover-shadow">
+                    <img src="http://www.rexhang.com/images/jQueryHome.jpg" alt="picc" width="250" height="380" />
+                </div>
+                <div class="pros hover-shadow">
+                    <img src="http://www.rexhang.com/images/jQueryHome.jpg" alt="picc" width="250" height="380" />
+                </div>
+                <div class="pros hover-shadow">
+                    <img src="http://www.rexhang.com/images/jQueryHome.jpg" alt="picc" width="250" height="380" />
+                </div>
+                <div class="pros hover-shadow">
+                    <img src="http://www.rexhang.com/images/jQueryHome.jpg" alt="picc" width="250" height="380" />
+                </div>
+                <div class="pros hover-shadow">
+                    <img src="http://www.rexhang.com/images/jQueryHome.jpg" alt="picc" width="250" height="380" />
+                </div>
+                <div class="pros hover-shadow">
+                    <img src="http://www.rexhang.com/images/jQueryHome.jpg" alt="picc" width="250" height="380" />
+                </div>
+                <div class="pros hover-shadow">
+                    <img src="http://www.rexhang.com/images/jQueryHome.jpg" alt="picc" width="250" height="380" />
+                </div>
+                <div class="pros hover-shadow">
+                    <img src="http://www.rexhang.com/images/jQueryHome.jpg" alt="picc" width="250" height="380" />
+                </div>
+                <div class="pros hover-shadow">
+                    <img src="http://www.rexhang.com/images/jQueryHome.jpg" alt="picc" width="250" height="380" />
+                </div>
+                <div class="pros hover-shadow">
+                    <img src="http://www.rexhang.com/images/jQueryHome.jpg" alt="picc" width="250" height="380" />
+                </div>
+                <div class="pros hover-shadow">
+                    <img src="http://www.rexhang.com/images/jQueryHome.jpg" alt="picc" width="250" height="380" />
+                </div>
+                <div class="pros hover-shadow">
+                    <img src="http://www.rexhang.com/images/jQueryHome.jpg" alt="picc" width="250" height="380" />
+                </div>
+                <div class="pros hover-shadow">
+                    <img src="http://www.rexhang.com/images/jQueryHome.jpg" alt="picc" width="250" height="380" />
+                </div>
+                <div class="pros hover-shadow">
+                    <img src="http://www.rexhang.com/images/jQueryHome.jpg" alt="picc" width="250" height="380" />
+                </div>
+                <div class="pros hover-shadow">
+                    <img src="http://www.rexhang.com/images/jQueryHome.jpg" alt="picc" width="250" height="380" />
+                </div>
+                <div class="pros hover-shadow">
+                    <img src="http://www.rexhang.com/images/jQueryHome.jpg" alt="picc" width="250" height="380" />
+                </div>
+                <div class="pros hover-shadow theends2">
+                    <img src="http://www.rexhang.com/images/jQueryHome.jpg" alt="picc" width="250" height="380" />
+                </div>
+                <div class="pros hover-shadow theends2">
+                    <img src="http://www.rexhang.com/images/jQueryHome.jpg" alt="picc" width="250" height="380" />
+                </div>
+                <div class="pros hover-shadow theends">
+                    <img src="http://www.rexhang.com/images/jQueryHome.jpg" alt="picc" width="250" height="380" />
+                </div>
+                <div class="pros hover-shadow theends">
+                    <img src="http://www.rexhang.com/images/jQueryHome.jpg" alt="picc" width="250" height="380" />
+                </div>
+            </div>
+            <h2>经典案例</h2>
+            <p></p>
+            <div id="projects">
+                <div class="pros hover-shadow">
+                    <img src="http://www.rexhang.com/images/jQueryHome.jpg" alt="picc" width="250" height="380" />
+                </div>
+                <div class="pros hover-shadow">
+                    <img src="http://www.rexhang.com/images/jQueryHome.jpg" alt="picc" width="250" height="380" />
+                </div>
+                <div class="pros hover-shadow">
+                    <img src="http://www.rexhang.com/images/jQueryHome.jpg" alt="picc" width="250" height="380" />
+                </div>
+                <div class="pros hover-shadow">
+                    <img src="http://www.rexhang.com/images/jQueryHome.jpg" alt="picc" width="250" height="380" />
+                </div>
+                <div class="pros hover-shadow">
+                    <img src="http://www.rexhang.com/images/jQueryHome.jpg" alt="picc" width="250" height="380" />
+                </div>
+                <div class="pros hover-shadow">
+                    <img src="http://www.rexhang.com/images/jQueryHome.jpg" alt="picc" width="250" height="380" />
+                </div>
+                <div class="pros hover-shadow">
+                    <img src="http://www.rexhang.com/images/jQueryHome.jpg" alt="picc" width="250" height="380" />
+                </div>
+                <div class="pros hover-shadow">
+                    <img src="http://www.rexhang.com/images/jQueryHome.jpg" alt="picc" width="250" height="380" />
+                </div>
+                <div class="pros hover-shadow">
+                    <img src="http://www.rexhang.com/images/jQueryHome.jpg" alt="picc" width="250" height="380" />
+                </div>
+                <div class="pros hover-shadow">
+                    <img src="http://www.rexhang.com/images/jQueryHome.jpg" alt="picc" width="250" height="380" />
+                </div>
+                <div class="pros hover-shadow">
+                    <img src="http://www.rexhang.com/images/jQueryHome.jpg" alt="picc" width="250" height="380" />
+                </div>
+                <div class="pros hover-shadow">
+                    <img src="http://www.rexhang.com/images/jQueryHome.jpg" alt="picc" width="250" height="380" />
+                </div>
+                <div class="pros hover-shadow">
+                    <img src="http://www.rexhang.com/images/jQueryHome.jpg" alt="picc" width="250" height="380" />
+                </div>
+                <div class="pros hover-shadow">
+                    <img src="http://www.rexhang.com/images/jQueryHome.jpg" alt="picc" width="250" height="380" />
+                </div>
+                <div class="pros hover-shadow">
+                    <img src="http://www.rexhang.com/images/jQueryHome.jpg" alt="picc" width="250" height="380" />
+                </div>
+                <div class="pros hover-shadow">
+                    <img src="http://www.rexhang.com/images/jQueryHome.jpg" alt="picc" width="250" height="380" />
+                </div>
+                <div class="pros hover-shadow">
+                    <img src="http://www.rexhang.com/images/jQueryHome.jpg" alt="picc" width="250" height="380" />
+                </div>
+                <div class="pros hover-shadow">
+                    <img src="http://www.rexhang.com/images/jQueryHome.jpg" alt="picc" width="250" height="380" />
+                </div>
+                <div class="pros hover-shadow">
+                    <img src="http://www.rexhang.com/images/jQueryHome.jpg" alt="picc" width="250" height="380" />
+                </div>
+            </div>
+            <div class="bottom_nav">
+                <nav>
+                    <ul class="pagination">
+                        <li>
+                            <a href="javascript:void(0);" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                            </a>
+                        </li>
+                        <li class="active"><a href="javascript:void(0);">1</a>
+                        </li>
+                        <li><a href="javascript:void(0);">2</a>
+                        </li>
+                        <li><a href="javascript:void(0);">3</a>
+                        </li>
+                        <li><a href="javascript:void(0);">4</a>
+                        </li>
+                        <li><a href="javascript:void(0);">5</a>
+                        </li>
+                        <li><a href="javascript:void(0);">6</a>
+                        </li>
+                        <li><a href="javascript:void(0);">7</a>
+                        </li>
+                        <li><a href="javascript:void(0);">8</a>
+                        </li>
+                        <li><a href="javascript:void(0);">9</a>
+                        </li>
+                        <li class="disabled"><a href="javascript:void(0);">10</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div id="foots">
+                <div class="foots_all">
+                    <p>
+                        <a href="">关于我们</a>
+                        <span>|</span>
+                        <a href="">联系我们</a>
+                        <span>|</span>
+                        <a href="">免责声明</a>
+                        <span>|</span>
+                        <a href="">意见反馈</a>
+                        <span>|</span>
+                        <a href="">网站地图</a>
+                    </p>
+                    <p>
+                        <a href="">友情链接</a>
+                        <span>|</span>
+                        <a href="">腾讯课堂</a>
+                        <span>|</span>
+                        <a href="">潭州软件学院</a>
+                        <span>|</span>
+                        <a href="">jQuery之家</a>
+                        <span>|</span>
+                        <a href="">Bootstrap中文网</a>
+
+                    </p>
+                    <p style="color:#999;">
+                        www.rexhang.com所展示的jQuery、HTML5、CSS3等前端源码转载请标注原作者
+                    </p>
+                    <p>
+                        <a href="">顾航 - Web前端开发</a>
+                        <span>|</span>
+                        <a href="" style="text-decoration:none;">CopyRight©2014-2015 Inc.All Right Reserved www.rexhang.com 顾航 - Web前端开发  版权所有</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- container end -->
+
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+    $(function() {
+        /*for banner index*/
+        numIndex = "";
+        /*header*/
+        Winresize();
+        $(window).resize(function() {
+            Winresize();
+        });
+        /*header hoverss*/
+        $("#header").find(".fenxiang").mouseover(function(){
+            $(".hoverss").find(".s11").css("top",0);
+        }).mouseleave(function(){
+            $(".hoverss").find(".s11").css("top","50px");
+        });
+        $("#header").find(".xuexi").mouseover(function(){
+            $(".hoverss").find(".s22").css("top",0);          
+        }).mouseleave(function(){
+            $(".hoverss").find(".s22").css("top","50px");      
+        });
+        $("#header").find(".tiyan").mouseover(function(){
+            $(".hoverss").find(".s33").css("top",0);
+        }).mouseleave(function(){
+            $(".hoverss").find(".s33").css("top","50px");
+        });
+        $("#header").find(".kaiyua").mouseover(function(){
+            $(".hoverss").find(".s44").css("top",0);
+        }).mouseleave(function(){
+            $(".hoverss").find(".s44").css("top","50px");
+        });
+        /*hoverss end*/
+        /*hover bgm*/
+        $("#header").find("li").mouseover(function(){
+            $("#rexhangmusic")[0].play();
+        }).mouseleave(function(){
+            $("#rexhangmusic")[0].pause();
+        });
+        $("#logins").find("a").hover(function(){
+            $("#rexhangmusic_login")[0].play();
+        });
+        /*banner*/
+        $("#ulist").find("li").click(function() {
+            $(this).addClass("sel01").siblings().removeClass("sel01");
+            var showIndex = $(this).index();
+            numIndex = showIndex;
+            $(".shows").hide().eq(showIndex).fadeIn("slow");
+        });
+        /*leftsels*/
+        $("#ul_left").find("li").mouseover(function() {
+            $(this).addClass("leftsels").siblings().removeClass("leftsels");
+            var indexs = $(this).index();
+            $(".leftshowss").hide().eq(indexs).fadeIn(260);
+        });
+        $(".leftshowss").mouseleave(function() {
+            $(".leftshowss").hide();
+        });
+        /*tooltip*/
+        $('[data-toggle="tooltip"]').tooltip();
+        /*sonw*/
+        $("canvas.snow").let_it_snow();
+    });
+    /*window resize*/
+
+    function Winresize() {
+        var winWidth = $(window).width();
+        var c_leftWidth = $("#c_left").width();
+        var _c_righttWidth = (winWidth - c_leftWidth);
+        var c_rightDom = document.getElementById("c_right");
+        c_rightDom.style.width = _c_righttWidth + "px";
+    };
+    /*setTime*/
+    setInterval(autoBanner, 2500);
+    /*auto banner*/
+
+    function autoBanner() {
+        numIndex++;
+        var length = $("#ulist").find("li").length;
+        if (numIndex >= length) {
+            numIndex = 0;
+        }
+        $("#ulist").find("li").eq(numIndex).addClass("sel01").siblings().removeClass("sel01");
+        $(".shows").hide().eq(numIndex).fadeIn("slow");
+    }
+    /*hover bgm*/
+    function bgmp3() {
+        var mp3Dom = document.createElement("audio");
+        document.body.appendChild(mp3Dom);
+        mp3Dom.id = "rexhangmusic";
+        mp3Dom.src = "bgMusic/die.ogg";
+    }
+    bgmp3();
+    function bgmp3_login() {
+        var mp3Dom = document.createElement("audio");
+        document.body.appendChild(mp3Dom);
+        mp3Dom.id = "rexhangmusic_login";
+        mp3Dom.src = "bgMusic/opens.ogg";
+    }
+    bgmp3_login();
+    </script>
+</body>
+
+</html>

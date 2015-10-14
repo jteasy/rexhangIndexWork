@@ -1,0 +1,129 @@
+<!doctype html>
+<html>
+<head>
+	<!--声明当前页面的编码集：charset=GBK,GB2312(中文编),UTF-8(国际编码)-->
+	<meta http-equiv="Content-Type"content="text/heml;charset=UTF-8">
+	<!--当前页面的三要素-->
+	<title>照片墙</title>
+	<meta name="Keywords" content="关键词，关键词">
+	<meta name="description" content="">
+	<style type="text/css">
+		*{margin:0;padding:0;}
+
+	body{background:#eee;}
+	.container{
+	width:960px;
+	height:450px;
+	margin:60px auto;
+	position:relative;
+	}
+
+	.container > img{
+	padding:10px 10px 15px;
+	background:#fff;
+	border:1px solid #eee;
+	position:absolute;
+	box-shadow:2px 2px 3px rgba(50, 50, 50, 0.4);
+	-webkit-transition:all 0.5s ease-in;
+	-moz-transition:all 0.5s ease-in;
+	transition:all 0.5s ease-in; 
+	
+	}
+	.container > img:hover{
+	box-shadow:0 0 30px rgba(123,208,137,0.4); 
+	-webkit-transform:rotate(0deg);
+	-moz-transform:rotate(0deg);
+	transform:rotate(0deg);
+	-webkit-transform:scale(1.20);
+	-moz-transform:scale(1.20);
+	transform:scale(1.20);
+	z-index:2;
+	}
+
+	.container > .pic1{
+	top:0;left:400px;
+	-webkit-transform:rotate(-5deg);
+	-moz-transform:rotate(-5deg);
+	transform:rotate(-5deg);
+	}
+
+	.container > .pic2{
+	top:0;left:600px;
+	-webkit-transform:rotate(-20deg);
+	-moz-transform:rotate(-20deg);
+	transform:rotate(-20deg);
+	}
+
+	.container > .pic3{
+	bottom:0;right:50px;
+	-webkit-transform:rotate(5deg);
+	-moz-transform:rotate(5deg);
+	transform:rotate(5deg);
+	}
+
+	.container > .pic4{
+	bottom:0;left:300px;
+	-webkit-transform:rotate(-10deg);
+	-moz-transform:rotate(-10deg);
+	transform:rotate(-10deg);
+	}
+
+	.container > .pic5{
+	bottom:0;left:0;
+	-webkit-transform:rotate(-10deg);
+	-moz-transform:rotate(-10deg);
+	transform:rotate(-10deg);
+	}
+
+	.container > .pic6{
+	top:0;left:0;
+	-webkit-transform:rotate(10deg);
+	-moz-transform:rotate(10deg);
+	transform:rotate(10deg);
+	}
+
+	.container > .pic7{
+	top:0;left:750px;
+	-webkit-transform:rotate(20deg);
+	-moz-transform:rotate(20deg);
+	transform:rotate(20deg);
+	}
+
+	.container > .pic8{
+	bottom:-20px;right:630px; 
+	-webkit-transform:rotate(5deg);
+	-moz-transform:rotate(5deg);
+	transform:rotate(5deg);
+	}
+
+	.container > .pic9{
+	top:180px;left:500px;
+	-webkit-transform:rotate(15deg);
+	-moz-transform:rotate(15deg);
+	transform:rotate(15deg);
+	}
+
+	.container > .pic10{
+	top:20px;left:180px;
+	-webkit-transform:rotate(-10deg);
+	-moz-transform:rotate(-10deg);
+	transform:rotate(-10deg);
+	}
+	</style>
+	</head>
+<body>
+	<div class="container">
+		<img class="pic1" src="/demo/chuncss/zhao/images/mm1.jpg" width="256" height="191" alt="美女" title="美女">
+		<img class="pic2" src="/demo/chuncss/zhao/images/mm2.jpg" width="256" height="171" alt="美女" title="美女">
+		<img class="pic3" src="/demo/chuncss/zhao/images/mm3.jpg" width="195" height="256" alt="美女" title="美女">
+		<img class="pic4" src="/demo/chuncss/zhao/images/mm4.jpg" width="256" height="192" alt="美女" title="美女">
+		<img class="pic5" src="/demo/chuncss/zhao/images/mm5.jpg" width="196" height="256" alt="美女" title="美女">
+		<img class="pic6" src="/demo/chuncss/zhao/images/mm6.jpg" width="256" height="187" alt="美女" title="美女">
+		<img class="pic7" src="/demo/chuncss/zhao/images/mm7.jpg" width="205" height="256" alt="美女" title="美女">
+		<img class="pic8" src="/demo/chuncss/zhao/images/mm8.jpg" width="256" height="171" alt="美女" title="美女">
+		<img class="pic9" src="/demo/chuncss/zhao/images/mm9.jpg" width="171" height="256" alt="美女" title="美女">
+		<img class="pic10" src="/demo/chuncss/zhao/images/mm10.jpg" width="256" height="188" alt="美女" title="美女">
+	</div>
+
+</body>
+</html>

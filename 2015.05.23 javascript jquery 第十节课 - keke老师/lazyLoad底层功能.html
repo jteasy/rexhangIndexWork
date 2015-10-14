@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>lazyLoad底层功能</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+</head>
+<body onload="init()">
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <img lazysrc="images/1.jpg" src="" width="" height="" alt="" id="img" />
+    <script type="text/javascript">
+    	function init(){
+    		setTimeout("checkHeight()",3000);
+    	}
+    	function checkHeight(){
+    		// 获取img对象
+    		var pic = document.getElementById("img");
+    		// 获取滚动条距离顶部的位置
+    		var stop = document.documentElement.scrollTop;
+    		// 获取浏览器的可见高度
+    		var cheight = document.documentElement.clientHeight;
+    		var top = pic.offsetTop;//获取对象距离html页面顶部的距离
+
+    		if(stop + cheight < top){
+    			//如果滚动条还未到可见区域，定时任务继续工作
+    			setTimeout(checkHeight,3000);
+    		}else{
+    			pic.src = pic.getAttribute("lazysrc");
+    		}
+    	}
+    </script>
+</body>
+</html>

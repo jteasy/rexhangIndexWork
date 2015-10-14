@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>javascript常用事件</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+</head>
+<body>
+	<input type="button" onclick="cl()" value="点击事件" />
+	<input type="button" ondblclick="dbcl()" value="双击事件" />
+	<input type="text" onfocus="fo()" value="" onblur="blu()" />
+   <script type="text/javascript">
+   		/*
+			onclick
+			ondblclick
+			onchange
+			onfocus获取焦点
+			onblur失去焦点
+			onmousedown鼠标按下
+			onmouseup鼠标弹起			
+			onmouseover鼠标悬浮
+			onmouseout鼠标离开
+
+			键盘事件
+			onkeydown键盘按下去
+			onkeyup键盘离开
+			onkeypress键盘按下去离开
+   		*/
+   		function cl(){
+   			alert("此乃单击事件");
+   		}   		
+   		function dbcl(){
+   			alert("此乃双击事件");
+   		}
+   		function fo(){
+   			alert("获取焦点触发");
+   		}
+   		function blu(){
+   			alert("离开焦点触发");
+   		}	   				
+   </script> 
+</body>
+</html>

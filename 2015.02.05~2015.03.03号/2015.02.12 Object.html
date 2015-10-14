@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+	<head>
+		<!--声明当前页面的编码集：charset=gbk,gb2312（中文编码），utf-8（国际编码）-->
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<!--当前页面的三要素-->
+		<title>Object_1 -rexhang</title>
+		<meta name="Keywords" content="关键词,关键词">
+		<meta name="description" content="">
+		<link rel="shortcut icon" href="" />
+		
+		<!--css,js-->
+		<style type="text/css">
+			*{margin:0;padding:0;}
+	
+		</style>
+
+    </head>
+<body>
+
+<script type="text/javascript">
+
+	// rexhang(对象) superMan
+	//var superMan.name = "rexhang"; // 姓名
+
+	//var superMan.age = 23; // 年龄
+
+	//var superMan.sex = "男"; // 性别
+
+	//var superMan.isMarry = false;  // 婚否
+
+	// javascript中的对象
+	var userName = "rexhang";
+	
+	var length = userName.length;
+	
+	//alert("用户名的长度：" + length);
+	
+	people = new Object();
+
+	people.name = "rexhang";
+	people.age = 23;
+	people.sex = "男生";
+
+	document.write("大家好！我是：" + people.name +"，我今年：" + people.age +"岁" + "；我是：" + people.sex + "。");
+    
+	// “.”属性；以及“.”方法
+	var desc = "my name is rexhang";
+	var length = desc.length;
+	var tuc = desc.toUpperCase(); // 使用 String 对象的 toUpperCase() 方法来把文本转换为大写
+	document.write("<p>我是一个字符串我的长度是：" + length + "</p>");
+	document.write("<p style='color:green;font-size:20px;'>我变成大写了：" + tuc +"</p>");
+</script>
+</body>
+</html>

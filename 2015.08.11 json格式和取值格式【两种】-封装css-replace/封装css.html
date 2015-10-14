@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>封装css</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+</head>
+<body>
+    <script type="text/javascript">
+    var divDom = document.createElement("div");
+    document.body.appendChild(divDom);
+
+    function rexhangCss(dom,key,value){
+        dom.style[key] = value;
+    };
+    rexhangCss(divDom,"width","100px");
+    rexhangCss(divDom,"height","100px");
+    rexhangCss(divDom,"background","red");
+
+    /*
+        json = {"background":"red","width":"100px"}
+        function rexhangCss2(dom,jsonsObj){
+            for(var key in jsonsObj){
+                dom.style[key] = jsonsObj[key];
+            }
+        }
+        rexhangCss2(divDom,{"background":"red","width":"100px"});
+    */
+    </script>
+</body>
+</html>

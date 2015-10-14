@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>canvas和jquery及CloudCarousel.1.0.5插件制作3D旋转木马图片3D滚动_维度端weiduduan.com</title>
+<link href="css/basic.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/jquery.1.4.2-min.js"></script>
+<script type="text/JavaScript" src="js/CloudCarousel.1.0.5.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){		   
+	// 这初始化容器中指定的元素，在这种情况下，旋转木马.
+	$("#carousel1").CloudCarousel({			
+		xPos:450,
+		yPos:110,
+		buttonLeft: $('#but1'),
+		buttonRight: $('#but2'),
+		altBox: $("#alt-text"),
+		titleBox: $("#title-text"),				
+		FPS:30,
+		reflHeight:86,
+		reflGap:2,
+		yRadius:40,
+		autoRotateDelay: 1200,
+		speed:0.2,
+		mouseWheel:true,
+		bringToFront:true
+	});
+	
+});
+</script>
+</head>
+<body>
+
+<div class="weiduduan clearfix">
+<div id="carousel1">
+  <div id="title-text">&nbsp;</div>
+  <div id="alt-text">&nbsp;</div>
+       <a href="http://www.weiduduan.com/js" target="_blank" title="维度端www.weiduduan.com"><img src="images/9d03c58136f0f413d4f619536213bddb.jpg" title="jquery JScrollPane 插件" alt="jquery JScrollPane 插件设置浏览器默认垂直滚动条和内置滚动条" class="cloudcarousel" /></a> 
+       <a href="http://www.weiduduan.com/web" target="_blank" title="维度端www.weiduduan.com"><img src="images/f2a366c8954d666360c4b214940963cf.jpg" title="jquery 图像预览效果" alt="jquery 图片放大异步加载图片制作一个简单的jquery 图像预览效果" class="cloudcarousel" /></a> 
+       <a href="http://www.weiduduan.com/yunzuo" target="_blank" title="维度端www.weiduduan.com"><img src="images/bb276cedeaeb0438ed3275a9711b1d69.jpg" title="jquery 图片滚动特效" alt="jquery 图片滚动特效制作 slide 图片类似窗帘式滚动" class="cloudcarousel" /></a> 
+       <a href="http://www.weiduduan.com/sucai" target="_blank" title="维度端www.weiduduan.com"><img src="images/aa6d7f26f941d87728eb0716d36d9cbe.jpg" title="jquery 图片展示" alt="jquery 图片展示制作图片类似金字塔式放大缩小展示" class="cloudcarousel" /></a> 
+       
+
+  <div class="carouselLeft" id="but1">&nbsp;</div>
+  <div class="carouselRight" id="but2">&nbsp;</div>
+</div>
+</div>
+
+
+</body>
+</html> 

@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+ </head>
+ <body>
+	<script type="text/javascript">
+		
+		/*
+			string :
+			toLowerCase() 把字符串中的文本变成小写
+			toUpperCase() 把字符串中的文本变成大写
+			split(delimiter)将字符串分配为数组
+			substr(startIndex, length) 从startIndex与,取length个字符
+			substring(startIndex, endIndex) 从startIndex和endIndex之间的字符,没有包含endIndex
+			indexOf(searchString, startIndex) 返回字符串中第一个呈现指定字符串的地位
+			lastlndexOf(searchString, startIndex) 返回字符串中最后一个呈现指定字符串的地位
+			charAt(index) 返回指定索引处的字符
+			replace(regex, newString)将字符串中的某些字符替代成其它字符
+
+			Math
+			PI:3.1415926.....
+			abs(x) 返回数字的相对值
+			ceil(x) 返回 x 四舍五入后的最大整数
+			floor(x) 返回 x 四舍五入后的最小整数
+			max(x,y) 返回 x 和 y 之间较大的数
+			min(x,y) 返回 x 和 y 之间较小的数
+			random() 返回位于 0 到 1 之间的随机函数
+			round(x) 四舍五进后与整
+			pow(x,y) 返回 y^x 的值
+		*/
+
+		var str = "ABCDEFghlm5644";
+		str = str.toLowerCase();
+		//alert("字符串转成小写:"+str);
+		str = str.toUpperCase();
+		//alert("字符串转成大写:"+str);
+
+		var str2 = "1,2,3,4,5,6";
+		var str3 = "单晨#KID#白羊#东东";
+		var arr = str2.split(",");
+		var arr2 = str3.split("#");
+
+
+		var str4 = "sddd1s1dfDDDDD";
+		//alert(str4.indexOf("1"));//如果找到返回当前字符的位置，否则返回-1
+		//alert(str4.indexOf("d"));
+		//alert(str4.lastIndexOf("d"));
+		//alert(str4.charAt(0));//s
+		//alert(str4.charAt(1));//d
+		//for(var i=0;i<str4.length;i++){
+		//	alert(str4.charAt(i));
+		//}
+		//str4 = str4.replace(/d/ig,"c");//replaceAll(i不区分大小写g全局替换)
+		//alert(str4);
+
+		//alert(Math.PI);	
+		////alert(Math.abs(5));
+		//alert(Math.ceil(2.6));//3
+		//alert(Math.floor(9.87));//9
+		//alert(Math.min(9,1,0,123));//0
+		//alert(Math.max(9,800,8888,10));//8888
+		var Ma = Math.random()*10;
+		alert(parseInt(Ma));//随机取整
+
+
+
+	</script>
+ </body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>jquery选择器</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link href="" rel="stylesheet">
+</head>
+
+<body>
+    <div id="one">1</div>
+    <div id="one">2</div>
+    <input type="text" id="username" name="rexhang" value="inPut" />1
+    <input type="text" id="username" name="rexhang" value="xinPut" />2
+    <div class="two">3</div>
+    <div class="two">4</div>
+    <div class="two">5</div>
+    <script type="text/javascript" src="jquery-1.11.1.min.js"></script>
+    <script type="text/javascript">
+    /*
+            	相当于javascript的------>window.onload = function(){}
+        */
+
+    /*
+        等于------>$(document).ready(function(){
+        	alert(2);
+        });
+	*/
+    $(function() {
+        /*jquery本身并不是一门语言，它就是对javascript语言的封装*/
+        /*id是唯一标示符；性能高；能用id定义的不用class*/
+        /*格式：$()=====>jquery格式*/
+        /*id选择器===$("#id");class选择器===$(".className")*/
+        /*
+			document.getElementById("one"); ==> $("#one");
+			document.getElementById("one").innerHTML; ==> $("#one").html();
+			
+			document.getElementById("username").value; ==> var k = $("#username").val();
+        */
+        var $html = $("#one").html();
+        //alert(i);
+
+        var $val = $("#username").val();
+        /*
+        	val();方法针对form元素[text password select radio checkbox textarea]
+        */
+        //alert(k);
+
+        //class选择器
+        var htmls = $(".two").length;
+        //alert(htmls);
+
+        //如下循环获得class的值的方法
+        $(".two").each(function(){
+        	//alert($(this).html());
+        });
+
+        //元素选择器
+        var $div = $("div").length;
+        //alert($div);
+
+        //获取所有的元素【针对页面下所有的元素】
+        var $all = $("*").length;
+        //alert($all);
+        //验证方法
+        var $all = $("*").attr("name","rexhang");
+
+        //获取所有的元素【针对body下所有的元素】
+        var $allBody = $("body").find("*").length;
+        //alert($allBody);
+
+        //快速选择器 如bootstrap DEMO 的 tooltip
+        /*匹配等于*/
+        var $quick = $("input[name='rexhang']").val();
+        //alert($quick);
+
+        /*匹配不等于*/
+        var $quicks = $("input[name!='rexhang']").length;
+        //alert($quicks);
+
+        /*匹配value中带有指定字符的对象元素*/
+        var $quickss = $("input[value^='x']").length;
+        //alert($quickss);
+
+        /*匹配value中带有指定字符为结尾的对象元素*/
+        var $quicksss = $("input[value$='t']").length;
+        //alert($quicksss);        
+        $("input[value$='t']").each(function(){
+        	alert($(this).val());
+        });
+
+        /*模糊匹配见文档*/
+        var $quicksss = $("input[value*='t']").length;
+    });
+
+    </script>
+</body>
+
+</html>

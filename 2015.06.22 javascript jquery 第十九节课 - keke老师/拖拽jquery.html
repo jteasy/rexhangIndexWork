@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>拖拽jquery</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<style type="text/css">
+html {-webkit-text-size-adjust: none; }
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td,span{padding:0;margin:0;}
+body{font:normal 14px/24px "Microsoft Yahei","冬青黑体简体中文 w3","宋体"; overflow:hidden;}
+fieldset,img,html,body,iframe{border:0;}
+table{border-collapse:collapse;border-spacing:0;}
+ol,ul{list-style:none;}
+address,caption,cite,code,dfn,em,strong,th,var{font-weight:normal;font-style:normal;}
+caption,th{text-align:left;}
+em,i,small,caption,th{font-weight:normal;font-style:normal;font-size:100%;}
+h1,h2,h3,h4,h5,h6,em,strong,b{font-weight:bold;font-size:100%;}
+q:before,q:after{content:'';}
+.clearfix{*zoom:1}
+.clearfix:after{content:".";display:block;clear:both;visibility:hidden;line-height:0;height:0;}
+html,body{width:100%;height:100%;}
+a {color: #333;text-decoration: none;}
+a:hover {text-decoration: underline;}
+a img {border: none;}
+a,button{ outline:none; border:0;}
+input,select{border:1px solid #ccc;}
+button::-moz-focus-inner{border:0;padding:0;margin:0;}
+textarea,input,button,select{outline:0;font-size:inherit;line-height:inherit;color:inherit;font-family:inherit;}
+textarea{overflow:auto;resize:none;}
+.tmui-box{border:1px solid #ccc;position:absolute;width:480px;height:240px;background:#e5e5e5;}
+.tmui-box h4{margin:0px;padding:3px;background:#141414;color:#fff;height:32px;line-height:32px;font-size:12px;cursor:move}
+
+</style>
+</head>
+<body>
+    <div id="box" arrow="left" class="tmui-box" style="left:200px;top:100px;width:180px;height:140px;z-index:2">
+            <h4>这是标题1111</h4>
+        </div>
+
+
+    <script type="text/javascript" src="jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="rexhangDrag.js"></script>
+    <script type="text/javascript">
+    $(function(){
+        // 要做什么 div层拖拽
+        // 怎么做  通过鼠标拖拽产生移动
+        // 技术点有哪些   position
+        // 到达的目标是什么
+        // 测试
+        $(".tmui-box").rexhangDrag({
+            heads:"h4",
+        });
+    });
+    </script>
+</body>
+</html>

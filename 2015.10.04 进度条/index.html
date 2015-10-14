@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>正在进入首页……</title>
+    <script type="text/javascript" src="js/newjquery.js"></script>
+    <script type="text/javascript" src="js/jquery.progress.js"></script>
+</head>
+
+<body>
+    <svg id="container"></svg>
+    <script type="text/javascript">
+    var sW = screen.availWidth;
+    var progress = $("#container").Progress({
+        percent: 100,
+        width: sW / 2,
+        height: 50,
+        fontSize: 16,
+        fontStyle: "微软雅黑",
+        increaseSpeed: 5
+    });
+    var w = $("#container").width();
+    var h = $("#container").height();
+    $("#container").css({
+        "position": "absolute",
+        "left": "50%",
+        "margin-left": -(w / 2) + "px",
+        "top": "50%",
+        "margin-top": -(h / 2) + "px"
+    });
+    // var settings = {
+    //     width: 90, // the width of bar
+    //     height: 20, // the height of bar
+    //     percent: 0, // the current percent
+    //     backgroundColor: '#555', // the color of the background
+    //     barColor: '#d9534f', // the color of the bar
+    //     radius: 4, // the radius of the corner
+    //     fontSize: 12, // the font size
+    //     fontColor: '#fff', // the color of the number
+    //     increaseSpeed: 1, // the increase length
+    //     animate: true // whether to use animation
+    // };
+    </script>
+</body>
+
+</html>

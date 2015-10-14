@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>jquery2</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<script type="text/javascript" src="jquery-1.11.1.min.js"></script>
+</head>
+<body>
+    <div>11</div>
+    <p>22</p>
+    <a href="#">33</a>
+    <label>44</label>
+    <select class="rex"></select>
+    <font id="hang"></font>
+    <input type="text" name="username" value="rexhang" />
+    <script type="text/javascript">
+    	$(function(){
+    		var length = $("div,p,a").length;
+    		$("div,p,a").each(function(){
+    			alert($(this).context.tagName+"------"+$(this).html());
+    		});
+
+    		/*混合选择器↓↓↓↓↓*/
+    		$("div,p,a,.rexhang,#hang,input[name='username']")
+    	});
+    </script>
+</body>
+</html>

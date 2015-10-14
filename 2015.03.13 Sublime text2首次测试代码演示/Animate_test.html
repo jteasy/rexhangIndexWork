@@ -1,0 +1,52 @@
+
+<!doctype html>
+<html>
+	<head>
+		<!--声明当前页面的编码集：charset=gbk,gb2312（中文编码），utf-8（国际编码）-->
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<!--当前页面的三要素-->
+		<title>animate</title>
+		<meta name="Keywords" content="关键词,关键词">
+		<meta name="description" content="">
+		<link rel="shortcut icon" href="" />
+		
+		<!--css,js-->
+		<style type="text/css">
+			*{margin:0;padding:0;}
+			body{font-size:12px;font-family:"微软雅黑";color:#666;}
+			#test{
+				width:320px;height:180px;background:#E57A7A;text-align:center;line-height:180px;
+				font-size:24px;font-weight:bold;border-radius:50%;
+				box-shadow:0px 0px 10px 5px rgb(252, 255, 128);opacity:0.5;}
+			#btn{
+				width:80px;height:40px;font-size:20px;border:2px solid #000;background:rgb(219, 153, 111);
+				margin-top:50px;margin-left:120px;}	
+		</style>
+
+    </head>
+<body style="background:rgb(102, 89, 182);">
+	<div id="test">box_div</div>
+	<input type="button" value="Click" id="btn" />
+
+	<script type="text/javascript" src="js/jQuery.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$("#btn").click(function(){
+				// alert(0);
+				var _width = $(window).width() / 2 - 320 + "px";
+				alert("距离浏览器左侧的距离" + ":" + _width);
+				// alert("弹到浏览器居中位置");
+				$("#test").animate({
+					width:"640px",height:"360px",textAlign:"center",
+					lineHeight:"360px",fontSize:"48px",opacity:"1",marginLeft:_width,marginTop:"50px"},2000,function(){
+						$("#test").animate({
+					width:"320px",height:"180px",textAlign:"center",
+					lineHeight:"180px",fontSize:"24px",opacity:"0.5",marginLeft:"0",marginTop:"0"},2000);
+					});
+
+			});			
+		});
+
+	</script>
+</body>
+</html>

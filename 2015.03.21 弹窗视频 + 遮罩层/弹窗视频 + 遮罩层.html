@@ -1,0 +1,70 @@
+
+<!doctype html>
+<html>
+	<head>
+		<!--声明当前页面的编码集：charset=gbk,gb2312（中文编码），utf-8（国际编码）-->
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<!--当前页面的三要素-->
+		<title>弹窗视频 + 遮罩层</title>
+		<meta name="Keywords" content="关键词,关键词">
+		<meta name="description" content="">
+		<link rel="shortcut icon" href="" />
+		
+		<!--css,js-->
+		<style type="text/css">
+			*{margin:0;padding:0;}
+			body{font-size:12px;font-family:"微软雅黑";color:#666;background:url("http://attimg.dospy.com/img/day_110813/20110813_b049a2e3baf056980a32j9Nxu4PW49av.jpg") no-repeat top center;}
+			#btn{width:100px;height:40px;background:black;display:block;margin:150px auto;text-align:center;
+				line-height:40px;text-decoration:none;font-size:14px;color:white;border-radius:5px;box-shadow:0 0 2px 1px cyan;}
+			#btn_2{width:100px;height:40px;background:black;display:block;text-align:center;
+				line-height:40px;text-decoration:none;font-size:14px;color:white;border-radius:5px;box-shadow:0 0 2px 1px cyan;position:absolute;right:150px;top:50%;z-index:3;}
+			#btn_3{width:100px;height:40px;background:black;display:block;text-align:center;
+				line-height:40px;text-decoration:none;font-size:14px;color:white;border-radius:5px;box-shadow:0 0 2px 1px cyan;position:absolute;left:150px;top:50%;z-index:3;}								
+			#btn:hover{background:rgb(187, 7, 7);}
+			#btn_2:hover{background:rgb(187, 7, 7);}
+			#btn_3:hover{background:rgb(187, 7, 7);}
+			#movie{width:750px;height:400px;border-radius:5px;  box-shadow: 0 0 2px 3px rgb(101, 12, 213);border:6px solid rgb(21, 203, 148);z-index:3;position:absolute;display:none;}
+			#bgh{width:100%;height:100%;background:#000;opacity:0.3;position:absolute;left:0;top:0;display:none;}
+
+		</style>
+		<link rel="stylesheet" type="text/css" href="css/animate.css">
+    </head>
+<body>
+	<a id="btn" href="#">点击观看视频</a>
+	<a id="btn_2" href="#">点击开灯</a>	
+	<a id="btn_3" href="#">点击关闭视频</a>		
+	<div id="movie">
+		<embed src="http://player.youku.com/player.php/sid/XOTE1NTAwODg4/v.swf" allowFullScreen="true" quality="high" width="750" height="400" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash">
+		</embed>
+	</div>
+	<div id="bgh"></div>
+
+	<script type="text/javascript" src="js/jQuery.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			// 点击观看视频		
+			$("#btn").click(function(){
+				var _left = ($(window).width()) / 2 -375;
+				var _top = ($(window).height()) / 2 - 200;				
+				$("#bgh").fadeIn(1000);		
+				$("#movie").toggleClass("animated pulse").css({left:_left,top:_top}).show();
+			});
+			// 点击关闭视频
+			$("#btn_3").click(function(){
+				$("#movie").animate({
+					left:-1000
+				},1000);
+				$("#bgh").animate({
+					top:-1000
+				},1000);
+			});
+			// 点击开灯
+			$("#btn_2").click(function(){
+				$("#bgh").animate({
+					top:-1000
+				},1000);
+			});			
+		});
+	</script>
+</body>
+</html>

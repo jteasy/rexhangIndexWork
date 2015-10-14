@@ -1,0 +1,974 @@
+<!doctype html>
+<html>
+	<head>
+		<!--声明当前页面的编码集：charset=gbk,gb2312(中文编码)，utf-8国际编码-->
+		<meta http-equiv="Content-Type" content="text/html; charset=gbk">
+		<!--当前页面的三要素-->
+		<title>潭州学院</title>
+		<meta name="Keywords" content="关键词,关键词">
+		<meta name="description" content="">
+
+		<!--css,js-->
+		<style type="text/css">
+			*{margin:0;padding:0;}
+			body{font-size:12px;font-family:"微软雅黑";color:#666;}
+			img{border:0;}
+			.top{width:100%;height:76px;background:#000;
+				/*固定头部，滑动网页的身体同步移动*/
+				position: fixed;top:0;left:0;z-index:100;
+			}
+			.top .header{width:1198px;height:76px;margin:0 auto;}
+			.top .header .logo{margin-top:14px;float:left;}
+
+			/*nav start*/
+			.top .header .nav{float:left;margin-left:60px;}
+			.top .header .nav ul li{list-style:none;float:left;height:76px;}
+			.top .header .nav ul li a{padding:0 15px;line-height:76px;font-size:14px;color:#fff;text-decoration:none;
+				display:block;}
+			.top .header .nav ul li a:hover{background:#2c2c2c;color:#fff;}
+			.top .header .nav ul li .sel{background:#2c2c2c;}
+			/*end nav*/
+
+			/*nav_select start*/
+			.top .header .nav ul .nav_select{position:relative;}
+			.top .header .nav ul .nav_select .nav_tips{position:absolute;left:24px;top:-21px;z-index:3;}
+			.top .header .nav .nav_bbs{background:#000;position:absolute;top:76px;z-index:2;
+				visibility:hidden;}
+			.top .header .nav .nav_bbs a{width:130px;height:35px;line-height:35px;color:#605f5f;}
+			.top .header .nav .nav_select:hover .nav_bbs{visibility:visible;}
+			/*end nav_select*/
+
+			.top .header .tel{float:right;color:#fff;font-size:22px;font-weight:500;padding: 26px 0 0 20px;}
+
+			/*share start*/
+			.top .header .share a{width:38px;height:38px;display:block;float:right;margin:23px 5px 0 0;overflow:hidden;position:relative;}
+			.top .header .share a span{width:30px;height:80px;display:block;background:url("images/share.png") no-repeat;position:absolute;}
+			.top .header .share .sina{background-position:3px 6px;}
+ 			.top .header .share .tx{background-position:-42px 6px;}
+			.top .header .share .qq{background-position:-82px 6px;}
+			/*end share*/
+			
+			/*banner start*/
+			.banner{width:100%;height:450px;position:relative;}
+			.banner .b_img{width:100%;height:450px;position:absolute;left:0;top:0;}
+			.banner .btn{height:30px;position:absolute;bottom:0;left:47%;z-index:2;}
+			.banner .btn ul{display:inline-block;padding:3px 16px;background: rgba(0,0,0,.5);
+				border-radius:14px;	
+			}
+			.banner .btn ul li{list-style:none;float:left;
+				background:url("images/1.png") no-repeat;width:16px;height:16px;text-align:center;
+				margin-left:5px;
+			}
+			.banner .btn ul .no{background:url("images/2.png") no-repeat;}
+			/*end banner*/
+			
+			/*course start*/
+			.course{width:1198px;height:350px;border:1px solid #CFD6E0;margin:20px auto;background:#FAFAFA;border-radius:6px;box-shadow: 1px 1px 8px #e0e0e0;}
+			.course .c_left{width:910px;height:350px;float:left;}
+			.course .c_left .c_nav{width:910px;height:32px;margin-top:15px;position:relative;}
+			.course .c_left .c_nav .underline{border-bottom:2px solid #616161;width:63px;position:absolute;bottom:-1px;left:17px;}
+			.course .c_left .c_nav ul{border-bottom:1px solid #EBEBEB;display:inline-block;width:885px;margin-left:20px;}
+			.course .c_left .c_nav ul li{float:left;list-style:none;line-height:32px;color:#5c5c5c;font-size:14px;font-weight:bold;cursor:pointer;}
+			.course .c_left .c_nav ul li span{padding:0 15px;}
+			/*end course*/
+
+			/*课程all start*/
+			
+			.course .c_left .c_all{width:897px;margin: 20px 0 10px 16px;}
+			.course .c_left .c_all .c_list dl{width:167px;height:116px;border:1px solid #DBDBEA;border-radius:6px;background:#F9F9F9;float:left;margin:0 10px 10px 0;position:relative;}
+			.course .c_left .c_all .c_list dl a{display:block;width:167px;height:116px;position:absolute;left:0;top:0;}
+			.course .c_left .c_all .c_list dl:hover{background:#f2f2f3;}
+			.course .c_left .c_all .c_list dl dt{height:40px;border-bottom:1px dashed #DBDBEA;line-height:40px;font-size:14px;text-indent:14px;}
+			.course .c_left .c_all .c_list dl dt span{font-size: 12px;color: #ccc;padding-left: 43px;}
+			.course .c_left .c_all .c_list dl dd{padding:10px 0 10px 14px;}
+			.course .c_left .c_all .c_list dl dd p{padding-bottom:11px;text-indent:0;}
+			.course .c_left .c_all .c_list .c_title{color: #646473;font-size:14px;height:8px;overflow:hidden;}
+
+			.course .c_right{width:245px;float:left;margin: 15px 0 0 25px;}
+			.course .c_right .zbgkk{display:block;width:80px;font-size: 16px;border-bottom: 2px solid #616161;padding-bottom:6px;position:relative;}
+			.course .c_right .zbgkk a{width:80px;height:29px;position:absolute;left:0;top:0;}
+			.course .c_right .zb_all .number{width:13px;height:13px;background: #cbcbcb;color:#fff;text-align:center;line-height:13px;border: 1px solid #c7c7c7;float:left;}
+			.course .c_right .zb_all .zb_list{float:left;margin-left:15px;}
+			.course .c_right .zb_all .zb_list .time{font-weight:bold;}
+			.course .c_right .zb_all ul li{list-style:none;border-bottom: 1px solid #E6E6E6;height: 44px;padding: 10px 0 0 5px;color: #ccc;position:relative;}
+			.course .c_right .zb_all ul li a{display:block;width:245px;height:55px;position:absolute;left:0;top:0;}
+			.course .c_right .zb_all ul li:hover{color:#000;background:#F3F3F3;}
+			.course .c_right .zb_all ul li:hover .number{color:#fff;background:#000;}
+			/*课程all end*/
+
+			/*hot start*/
+			.hot{width:1198px;background:#FAFAFA;margin:20px auto;border-radius:6px;border:1px solid #CFD6E0;padding:10px 0 10px 0;box-shadow: 1px 1px 8px #e0e0e0;}
+			.hot ul li{background:#fff;width:270px;height:260px;list-style:none;margin: 15px 0 0 10px;padding: 20px 7px 0 10px;border-radius:6px;position:relative;float:left;}
+			.hot ul li a{display:block;width:270px;height:260px;position:absolute;left:0;top:0;}
+			.hot ul li:hover{background:#e5e5e5;}
+			.hot ul li p .hot_title{font-size:16px;display:block;padding:10px 0 10px 0;}
+			.hot ul li p span{font-size:14px;display:block;text-indent:15px;}		
+			/*hot end*/
+
+			/*other start*/
+			.other{width:1148px;margin:20px auto;background:#f7f6f6;border-radius:6px;padding:25px;}
+			.other .course_img{width:416px;border-right:1px solid #e5e2e2;padding-right: 53px;float:left;}
+			.other .tz_desc{width:597px;height:220px;float:left;margin-left: 65px;}
+			.other .tz_desc p{font-size:14px;margin-top:14px;line-height:20px;}
+			.other .tz_desc h3{font-size:24px;}
+			.other .tz_desc h3 .num{font-size:65px;font-weight: 500;}
+			.other .tz_desc h3 .ct{display:block;font-size:24px;}
+			/*other end*/
+
+			/*homework start*/
+			.homework{width:1200px;background:#FAFAFA;margin:20px auto;border-radius:6px;border:1px solid #CFD6E0;box-shadow: 1px 1px 8px #e0e0e0;}
+			.homework dl{width:200px;color:#a0a0a0;float:left;margin:14px 49px 14px 49px;}
+			.homework dl .ms{width:136px;height:136px;background:url(http://www.mooncollege.cn/images/main/icon1.png) no-repeat;margin:0 auto;}
+			.homework dl dd{font-size:30px;text-align:center;margin-top:15px;color:#666;}
+			.homework dl dd span{font-size: 14px;color: #a0a0a0;display:block;}
+			/*homework end*/
+
+			/*bottom start*/
+			.bottom{width:100%;background: #EFF2F5;margin:0px auto;}
+			.bottom .Inter{margin:0 auto;width: 1198px;border-bottom:1px solid #CFD6E0;}
+			.bottom .Inter h3{font-size:24px;font-weight:500;padding:20px 0;}
+			.bottom .Inter p a{display:block;width:130px;height:60px;float:left;padding:0 15px 15px 0;}
+			.bottom .link{width:1198px;margin:0 auto;}
+			.bottom .link h3{font-size:24px;font-weight:500;padding:20px 0;}
+			.bottom .link p{padding:0 10px;padding-bottom: 20px;}
+			.bottom .link p a{text-decoration:none;color:#666;font-size:14px;padding:0 10px;}
+			/*bottom end*/
+
+			/*fooder start*/
+			.fooder{width:100%;background:#000;padding:20px 0;margin:0 auto;}
+			.fooder .copyRight{width:967px;margin:0 auto;}
+			.fooder .copyRight p{padding-left:65px;}
+			.fooder .copyRight a{color:#666;text-decoration:none;margin: 0 8px;}
+			.fooder .copyRight .Copy{font-size:14px;display:block;margin:11px 0 4px 7px;text-indent:22px;}
+			.fooder .copyRight a span{padding-left:16px;}
+			.fooder .copyRight .fooder_logo{display:block;width:50px;height:50px;margin:0;float:left;}
+			/*fooder end*/
+		</style>
+
+	</head>
+<body>
+	<!--top start-->
+	<div class="top">
+		<div class="header">
+			<div class="logo">
+				<a href="#"><img src="http://www.mooncollege.cn/images/main/logo.png" alt="潭州学院" width="158" height="52"/></a>
+			</div>
+			<!--nav start-->
+			<div class="nav">
+				<ul>
+					<li><a href="#" class="sel">首页</a></li>
+					<li><a href="#">课程</a></li>
+					<li><a href="#">题库</a></li>
+					<li><a href="#">招聘</a></li>
+					<li><a href="#">公开课</a></li>
+					<li><a href="#">活动</a></li>
+					<li class="nav_select">
+						<a href="#">论坛</a>
+						<div class="nav_bbs">
+							<span class="nav_tips">
+								<img src="http://www.mooncollege.cn/images/main/jebhAW6Vx_02.png"/>
+							</span>
+							<a href="#">SEO研究中心</a>
+							<a href="#">网页制作论坛</a>
+							<a href="#">淘宝论坛</a>
+							<a href="#">ps论坛</a>
+							<a href="#">网络营销</a>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<!--end nav-->
+			
+			<div class="tel">400-009-6359</div>
+			
+			<!--share start-->
+			<div class="share">
+				<a href="#"><span class="qq"></span></a>
+				<a href="#"><span class="tx"></span></a>
+				<a href="#"><span class="sina"></span></a>
+			</div>
+			<!--end share-->
+
+		</div>
+	</div>
+	<!--end top-->
+	
+	<!--banner start-->
+	<div class="banner">
+		<div class="b_img" style="background:url(images/1.jpg) no-repeat top center;"></div>
+		<div class="b_img" style="background:url(images/2.jpg) no-repeat top center;"></div>
+		<div class="b_img" style="background:url(images/3.jpg) no-repeat top center;"></div>	
+		<div class="btn">
+			<ul>
+				<li class="no"></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</div>
+	</div>
+	<!--end banner-->
+	
+	<!--course start-->
+	<div class="course">
+		<div class="c_left">
+			<div class="c_nav">
+				<ul>
+					<li>编程开发
+						<span>|</span>
+					</li>
+					<li>网络营销
+						<span>|</span>
+					</li>
+					<li>IT设计
+						<span>|</span>
+					</li>
+					<li>小语种
+						<span>|</span>
+					</li>
+					<li>职业技能</li>					
+				</ul>
+				<p class="underline"></p>
+			</div>
+			<!--课程all start-->
+			<div class="c_all">
+				<div class="c_list">
+				<dl>
+					<dt>15:30-16:30<span>今天</span></dt>
+					<dd>
+						<p>潭州学院公开课</p>
+						<p class="c_title">Java零基础到项目实战特训</p>
+					</dd>
+					<a href="http://www.baidu.com" target="_blank" title="潭州学院课程"></a>
+				</dl>
+
+								<dl>
+					<dt>15:30-16:30<span>今天</span></dt>
+					<dd>
+						<p>潭州学院公开课</p>
+						<p class="c_title">Java零基础到项目实战特训</p>
+					</dd>
+					<a href="http://www.sina.com" target="_blank" title="潭州学院课程"></a>
+				</dl>
+
+								<dl>
+					<dt>15:30-16:30<span>今天</span></dt>
+					<dd>
+						<p>潭州学院公开课</p>
+						<p class="c_title">Java零基础到项目实战特训</p>
+					</dd>
+				</dl>
+
+								<dl>
+					<dt>15:30-16:30<span>今天</span></dt>
+					<dd>
+						<p>潭州学院公开课</p>
+						<p class="c_title">Java零基础到项目实战特训</p>
+					</dd>
+				</dl>
+
+				<dl>
+					<dt>15:30-16:30<span>今天</span></dt>
+					<dd>
+						<p>潭州学院公开课</p>
+						<p class="c_title">Java零基础到项目实战特训</p>
+					</dd>
+				</dl>
+
+				<dl>
+					<dt>15:30-16:30<span>今天</span></dt>
+					<dd>
+						<p>潭州学院公开课</p>
+						<p class="c_title">Java零基础到项目实战特训</p>
+					</dd>
+				</dl>
+
+								<dl>
+					<dt>15:30-16:30<span>今天</span></dt>
+					<dd>
+						<p>潭州学院公开课</p>
+						<p class="c_title">Java零基础到项目实战特训</p>
+					</dd>
+				</dl>
+
+								<dl>
+					<dt>15:30-16:30<span>今天</span></dt>
+					<dd>
+						<p>潭州学院公开课</p>
+						<p class="c_title">Java零基础到项目实战特训</p>
+					</dd>
+				</dl>
+
+								<dl>
+					<dt>15:30-16:30<span>今天</span></dt>
+					<dd>
+						<p>潭州学院公开课</p>
+						<p class="c_title">Java零基础到项目实战特训</p>
+					</dd>
+				</dl>
+
+								<dl>
+					<dt>15:30-16:30<span>今天</span></dt>
+					<dd>
+						<p>潭州学院公开课</p>
+						<p class="c_title">Java零基础到项目实战特训</p>
+					</dd>
+				</dl>
+				</div>
+
+				<div class="c_list" style="display:none">
+				<dl>
+					<dt>15:30-16:30<span>今天</span></dt>
+					<dd>
+						<p>潭州学院公开课</p>
+						<p class="c_title">Java零基础到项目实战特训</p>
+					</dd>
+				</dl>
+
+				<dl>
+					<dt>15:30-16:30<span>今天</span></dt>
+					<dd>
+						<p>潭州学院公开课</p>
+						<p class="c_title">Java零基础到项目实战特训</p>
+					</dd>
+				</dl>
+								<dl>
+					<dt>15:30-16:30<span>今天</span></dt>
+					<dd>
+						<p>潭州学院公开课</p>
+						<p class="c_title">Java零基础到项目实战特训</p>
+					</dd>
+				</dl>
+
+								<dl>
+					<dt>15:30-16:30<span>今天</span></dt>
+					<dd>
+						<p>潭州学院公开课</p>
+						<p class="c_title">Java零基础到项目实战特训</p>
+					</dd>
+				</dl>
+
+				<dl>
+					<dt>15:30-16:30<span>今天</span></dt>
+					<dd>
+						<p>潭州学院公开课</p>
+						<p class="c_title">Java零基础到项目实战特训</p>
+					</dd>
+				</dl>
+
+								<dl>
+					<dt>15:30-16:30<span>今天</span></dt>
+					<dd>
+						<p>潭州学院公开课</p>
+						<p class="c_title">Java零基础到项目实战特训</p>
+					</dd>
+				</dl>
+
+								<dl>
+					<dt>15:30-16:30<span>今天</span></dt>
+					<dd>
+						<p>潭州学院公开课</p>
+						<p class="c_title">Java零基础到项目实战特训</p>
+					</dd>
+				</dl>
+
+								<dl>
+					<dt>15:30-16:30<span>今天</span></dt>
+					<dd>
+						<p>潭州学院公开课</p>
+						<p class="c_title">Java零基础到项目实战特训</p>
+					</dd>
+				</dl>
+
+								<dl>
+					<dt>15:30-16:30<span>今天</span></dt>
+					<dd>
+						<p>潭州学院公开课</p>
+						<p class="c_title">Java零基础到项目实战特训</p>
+					</dd>
+				</dl>
+				</div>
+
+				<div class="c_list" style="display:none">
+								<dl>
+					<dt>15:30-16:30<span>今天</span></dt>
+					<dd>
+						<p>潭州学院公开课</p>
+						<p class="c_title">Java零基础到项目实战特训</p>
+					</dd>
+				</dl>
+
+								<dl>
+					<dt>15:30-16:30<span>今天</span></dt>
+					<dd>
+						<p>潭州学院公开课</p>
+						<p class="c_title">Java零基础到项目实战特训</p>
+					</dd>
+				</dl>
+
+								<dl>
+					<dt>15:30-16:30<span>今天</span></dt>
+					<dd>
+						<p>潭州学院公开课</p>
+						<p class="c_title">Java零基础到项目实战特训</p>
+					</dd>
+				</dl>
+
+				<dl>
+					<dt>15:30-16:30<span>今天</span></dt>
+					<dd>
+						<p>潭州学院公开课</p>
+						<p class="c_title">Java零基础到项目实战特训</p>
+					</dd>
+				</dl>
+
+				<dl>
+					<dt>15:30-16:30<span>今天</span></dt>
+					<dd>
+						<p>潭州学院公开课</p>
+						<p class="c_title">Java零基础到项目实战特训</p>
+					</dd>
+				</dl>
+
+								<dl>
+					<dt>15:30-16:30<span>今天</span></dt>
+					<dd>
+						<p>潭州学院公开课</p>
+						<p class="c_title">Java零基础到项目实战特训</p>
+					</dd>
+				</dl>
+
+								<dl>
+					<dt>15:30-16:30<span>今天</span></dt>
+					<dd>
+						<p>潭州学院公开课</p>
+						<p class="c_title">Java零基础到项目实战特训</p>
+					</dd>
+				</dl>
+
+								<dl>
+					<dt>15:30-16:30<span>今天</span></dt>
+					<dd>
+						<p>潭州学院公开课</p>
+						<p class="c_title">Java零基础到项目实战特训</p>
+					</dd>
+				</dl>
+				</div>
+
+				<div class="c_list" style="display:none">
+								<dl>
+					<dt>15:30-16:30<span>今天</span></dt>
+					<dd>
+						<p>潭州学院公开课</p>
+						<p class="c_title">Java零基础到项目实战特训</p>
+					</dd>
+				</dl>
+
+								<dl>
+					<dt>15:30-16:30<span>今天</span></dt>
+					<dd>
+						<p>潭州学院公开课</p>
+						<p class="c_title">Java零基础到项目实战特训</p>
+					</dd>
+				</dl>
+
+								<dl>
+					<dt>15:30-16:30<span>今天</span></dt>
+					<dd>
+						<p>潭州学院公开课</p>
+						<p class="c_title">Java零基础到项目实战特训</p>
+					</dd>
+				</dl>
+
+				<dl>
+					<dt>15:30-16:30<span>今天</span></dt>
+					<dd>
+						<p>潭州学院公开课</p>
+						<p class="c_title">Java零基础到项目实战特训</p>
+					</dd>
+				</dl>
+
+				<dl>
+					<dt>15:30-16:30<span>今天</span></dt>
+					<dd>
+						<p>潭州学院公开课</p>
+						<p class="c_title">Java零基础到项目实战特训</p>
+					</dd>
+				</dl>
+
+								<dl>
+					<dt>15:30-16:30<span>今天</span></dt>
+					<dd>
+						<p>潭州学院公开课</p>
+						<p class="c_title">Java零基础到项目实战特训</p>
+					</dd>
+				</dl>
+
+								<dl>
+					<dt>15:30-16:30<span>今天</span></dt>
+					<dd>
+						<p>潭州学院公开课</p>
+						<p class="c_title">Java零基础到项目实战特训</p>
+					</dd>
+				</dl>
+				</div>
+
+				<div class="c_list" style="display:none">
+				<dl>
+					<dt>15:30-16:30<span>今天</span></dt>
+					<dd>
+						<p>潭州学院公开课</p>
+						<p class="c_title">Java零基础到项目实战特训</p>
+					</dd>
+				</dl>
+
+								<dl>
+					<dt>15:30-16:30<span>今天</span></dt>
+					<dd>
+						<p>潭州学院公开课</p>
+						<p class="c_title">Java零基础到项目实战特训</p>
+					</dd>
+				</dl>
+
+								<dl>
+					<dt>15:30-16:30<span>今天</span></dt>
+					<dd>
+						<p>潭州学院公开课</p>
+						<p class="c_title">Java零基础到项目实战特训</p>
+					</dd>
+				</dl>
+
+								<dl>
+					<dt>15:30-16:30<span>今天</span></dt>
+					<dd>
+						<p>潭州学院公开课</p>
+						<p class="c_title">Java零基础到项目实战特训</p>
+					</dd>
+				</dl>
+
+				<dl>
+					<dt>15:30-16:30<span>今天</span></dt>
+					<dd>
+						<p>潭州学院公开课</p>
+						<p class="c_title">Java零基础到项目实战特训</p>
+					</dd>
+				</dl>
+
+				<dl>
+					<dt>15:30-16:30<span>今天</span></dt>
+					<dd>
+						<p>潭州学院公开课</p>
+						<p class="c_title">Java零基础到项目实战特训</p>
+					</dd>
+				</dl>
+				</div>
+			<div style="clear:both"></div>
+			</div>
+			
+			<!--课程all end-->
+
+		</div>
+		<div class="c_right">
+			<div class="zb_title">
+				<span class="zbgkk">直播公开课
+				<a href="http://www.taobao.com" target="_blank" title="潭州学员课程"></a>
+				</span>
+			</div>
+			
+			<div class="zb_all">
+				<ul>
+					<li>
+						<div class="number">1</div>
+						<div class="zb_list">
+							<p class="time">20:00 - 21:30</p>
+							<p>Java零基础到项目实战特训</p>
+						</div>
+						<a href="http://www.qq.com" target="_blank" title="潭州学院课程"></a>
+					</li>
+
+					<li>
+						<div class="number">2</div>
+						<div class="zb_list">
+							<p class="time">20:00 - 21:30</p>
+							<p>Java零基础到项目实战特训</p>
+						</div>
+						<a href="http://www.so.com" target="_blank" title="潭州学院课程"></a>
+					</li>
+
+					<li>
+						<div class="number">3</div>
+						<div class="zb_list">
+							<p class="time">20:00 - 21:30</p>
+							<p>Java零基础到项目实战特训</p>
+						</div>
+					</li>
+
+					<li>
+						<div class="number">4</div>
+						<div class="zb_list">
+							<p class="time">20:00 - 21:30</p>
+							<p>Java零基础到项目实战特训</p>
+						</div>
+					</li>
+
+					<li>
+						<div class="number">5</div>
+						<div class="zb_list">
+							<p class="time">20:00 - 21:30</p>
+							<p>Java零基础到项目实战特训</p>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		
+	</div>
+	
+	<!--hot start-->
+	<div class="hot">
+	<ul>
+		<li>
+			<img src="http://www.mooncollege.cn/images/main/java267.png" alt="http://www.mooncollege.cn/images/main/java267.png" width="267" height="151" />
+			<p>
+				<span class="hot_title">课题：Java零基础到项目实战特训</span>
+				<span>讲师：Arry老师-技术总监</span>
+				<span>学生：11746</span>
+			</p>
+			<a href="http://www.baidu.com" target="_blank"></a>
+		</li>
+
+				<li>
+			<img src="http://www.mooncollege.cn/images/main/java267.png" alt="http://www.mooncollege.cn/images/main/java267.png" width="267" height="151" />
+			<p>
+				<span class="hot_title">课题：Java零基础到项目实战特训</span>
+				<span>讲师：Arry老师-技术总监</span>
+				<span>学生：11746</span>
+			</p>
+			<a href="http://www.baidu.com" target="_blank"></a>
+		</li>
+
+				<li>
+			<img src="http://www.mooncollege.cn/images/main/java267.png" alt="http://www.mooncollege.cn/images/main/java267.png" width="267" height="151" />
+			<p>
+				<span class="hot_title">课题：Java零基础到项目实战特训</span>
+				<span>讲师：Arry老师-技术总监</span>
+				<span>学生：11746</span>
+			</p>
+			<a href="http://www.baidu.com" target="_blank"></a>
+		</li>
+
+				<li>
+			<img src="http://www.mooncollege.cn/images/main/java267.png" alt="http://www.mooncollege.cn/images/main/java267.png" width="267" height="151" />
+			<p>
+				<span class="hot_title">课题：Java零基础到项目实战特训</span>
+				<span>讲师：Arry老师-技术总监</span>
+				<span>学生：11746</span>
+			</p>
+			<a href="http://www.baidu.com" target="_blank"></a>
+		</li>
+
+				<li>
+			<img src="http://www.mooncollege.cn/images/main/java267.png" alt="http://www.mooncollege.cn/images/main/java267.png" width="267" height="151" />
+			<p>
+				<span class="hot_title">课题：Java零基础到项目实战特训</span>
+				<span>讲师：Arry老师-技术总监</span>
+				<span>学生：11746</span>
+			</p>
+			<a href="http://www.baidu.com" target="_blank"></a>
+		</li>
+
+				<li>
+			<img src="http://www.mooncollege.cn/images/main/java267.png" alt="http://www.mooncollege.cn/images/main/java267.png" width="267" height="151" />
+			<p>
+				<span class="hot_title">课题：Java零基础到项目实战特训</span>
+				<span>讲师：Arry老师-技术总监</span>
+				<span>学生：11746</span>
+			</p>
+			<a href="http://www.baidu.com" target="_blank"></a>
+		</li>
+
+				<li>
+			<img src="http://www.mooncollege.cn/images/main/java267.png" alt="http://www.mooncollege.cn/images/main/java267.png" width="267" height="151" />
+			<p>
+				<span class="hot_title">课题：Java零基础到项目实战特训</span>
+				<span>讲师：Arry老师-技术总监</span>
+				<span>学生：11746</span>
+			</p>
+			<a href="http://www.baidu.com" target="_blank"></a>
+		</li>
+
+				<li>
+			<img src="http://www.mooncollege.cn/images/main/java267.png" alt="http://www.mooncollege.cn/images/main/java267.png" width="267" height="151" />
+			<p>
+				<span class="hot_title">课题：Java零基础到项目实战特训</span>
+				<span>讲师：Arry老师-技术总监</span>
+				<span>学生：11746</span>
+			</p>
+			<a href="http://www.baidu.com" target="_blank"></a>
+		</li>
+	</ul>
+	<div class="clear" style="clear:both"></div>
+	</div>
+	<!--hot end-->
+
+	<!--other start-->
+	<div class="other">
+		<div class="course_img">
+			<img src="http://www.mooncollege.cn/images/main/s7.png" alt="http://www.mooncollege.cn/images/main/s7.png" width="122" height="109" />
+			<img src="http://www.mooncollege.cn/images/main/s1.png" alt="http://www.mooncollege.cn/images/main/s7.png" width="122" height="109" />
+			<img src="http://www.mooncollege.cn/images/main/s3.png" alt="http://www.mooncollege.cn/images/main/s7.png" width="122" height="109" />
+			<img src="http://www.mooncollege.cn/images/main/s4.png" alt="http://www.mooncollege.cn/images/main/s7.png" width="122" height="109" />
+			<img src="http://www.mooncollege.cn/images/main/s5.png" alt="http://www.mooncollege.cn/images/main/s7.png" width="122" height="109" />
+			<img src="http://www.mooncollege.cn/images/main/s6.png" alt="http://www.mooncollege.cn/images/main/s7.png" width="122" height="109" />
+		</div>
+		<div class="tz_desc">
+			<h3>
+			<span class="num">280+</span>门不同科目
+			<span class="ct">涵盖当前最热门的职业技能</span>
+			</h3>
+			<p>
+				潭州学院（tanzhouedu.com）是互联网最早的在线教育学院，是以培养学员兴趣和从事互联网课堂研究为主的综合性网络学院，成立于2007年。其中网络营销、JAVA、前端等课程是互联网在线课程类第一名。旗下有考试资讯门户考试在线(kaoshi110.net)和中国最大的在线模拟考试系统模考吧(mokaoba.com)
+			</p>
+		</div>
+		<div class="clear" style="clear:both"></div>
+	</div>
+	<!--other end-->
+
+	<!--homework start-->
+	<div class="homework">
+		<dl>
+			<dt class="ms"></dt>
+			<dd>名师亲授</dd>
+			<dd>
+				<span>多年教学经验沉淀</span>
+				<span>精讲考试技巧与策略</span>
+			</dd>
+		</dl>
+
+				<dl>
+			<dt class="ms"></dt>
+			<dd>名师亲授</dd>
+			<dd>
+				<span>多年教学经验沉淀</span>
+				<span>精讲考试技巧与策略</span>
+			</dd>
+		</dl>
+
+				<dl>
+			<dt class="ms"></dt>
+			<dd>名师亲授</dd>
+			<dd>
+				<span>多年教学经验沉淀</span>
+				<span>精讲考试技巧与策略</span>
+			</dd>
+		</dl>
+
+				<dl>
+			<dt class="ms"></dt>
+			<dd>名师亲授</dd>
+			<dd>
+				<span>多年教学经验沉淀</span>
+				<span>精讲考试技巧与策略</span>
+			</dd>
+		</dl>
+		<div class="clear" style="clear:both"></div>
+	</div>
+	<!--homework end-->
+
+	<!--bottom start-->
+	<div class="bottom">
+		<div class="Inter">
+			<h3>旗下网站</h3>
+			<p>
+				<a href="http://www.baidu.com" target="_blank">
+					<img src="http://www.mooncollege.cn/images/main/java.png" alt="http://www.mooncollege.cn/images/main/java.png" width="130" height="60" />				
+				</a>
+				<a href="http://www.baidu.com" target="_blank">
+					<img src="http://www.mooncollege.cn/images/main/java.png" alt="http://www.mooncollege.cn/images/main/java.png" width="130" height="60" />				
+				</a>
+				<a href="http://www.baidu.com" target="_blank">
+					<img src="http://www.mooncollege.cn/images/main/java.png" alt="http://www.mooncollege.cn/images/main/java.png" width="130" height="60" />				
+				</a>
+				<a href="http://www.baidu.com" target="_blank">
+					<img src="http://www.mooncollege.cn/images/main/java.png" alt="http://www.mooncollege.cn/images/main/java.png" width="130" height="60" />				
+				</a>
+				<a href="http://www.baidu.com" target="_blank">
+					<img src="http://www.mooncollege.cn/images/main/java.png" alt="http://www.mooncollege.cn/images/main/java.png" width="130" height="60" />				
+				</a>
+				<a href="http://www.baidu.com" target="_blank">
+					<img src="http://www.mooncollege.cn/images/main/java.png" alt="http://www.mooncollege.cn/images/main/java.png" width="130" height="60" />				
+				</a>
+				<a href="http://www.baidu.com" target="_blank">
+					<img src="http://www.mooncollege.cn/images/main/java.png" alt="http://www.mooncollege.cn/images/main/java.png" width="130" height="60" />				
+				</a>
+				<a href="http://www.baidu.com" target="_blank">
+					<img src="http://www.mooncollege.cn/images/main/java.png" alt="http://www.mooncollege.cn/images/main/java.png" width="130" height="60" />				
+				</a>
+				<a href="http://www.baidu.com" target="_blank">
+					<img src="http://www.mooncollege.cn/images/main/java.png" alt="http://www.mooncollege.cn/images/main/java.png" width="130" height="60" />				
+				</a>
+				<a href="http://www.baidu.com" target="_blank">
+					<img src="http://www.mooncollege.cn/images/main/java.png" alt="http://www.mooncollege.cn/images/main/java.png" width="130" height="60" />				
+				</a>
+				<a href="http://www.baidu.com" target="_blank">
+					<img src="http://www.mooncollege.cn/images/main/java.png" alt="http://www.mooncollege.cn/images/main/java.png" width="130" height="60" />				
+				</a>
+				<a href="http://www.baidu.com" target="_blank">
+					<img src="http://www.mooncollege.cn/images/main/java.png" alt="http://www.mooncollege.cn/images/main/java.png" width="130" height="60" />				
+				</a>
+				<a href="http://www.baidu.com" target="_blank">
+					<img src="http://www.mooncollege.cn/images/main/java.png" alt="http://www.mooncollege.cn/images/main/java.png" width="130" height="60" />				
+				</a>
+				<a href="http://www.baidu.com" target="_blank">
+					<img src="http://www.mooncollege.cn/images/main/java.png" alt="http://www.mooncollege.cn/images/main/java.png" width="130" height="60" />				
+				</a>
+				<a href="http://www.baidu.com" target="_blank">
+					<img src="http://www.mooncollege.cn/images/main/java.png" alt="http://www.mooncollege.cn/images/main/java.png" width="130" height="60" />				
+				</a>
+				<a href="http://www.baidu.com" target="_blank">
+					<img src="http://www.mooncollege.cn/images/main/java.png" alt="http://www.mooncollege.cn/images/main/java.png" width="130" height="60" />				
+				</a>
+			</p>
+			<div class="clear" style="clear:both"></div>
+		</div>
+		<div class="link">
+			<h3>友情链接</h3>
+			<p>
+				<a href="http://www.yy.com">友情链接</a><span>|</span>
+				<a href="http://www.yy.com">友情链接</a><span>|</span>
+				<a href="http://www.yy.com">友情链接</a><span>|</span>
+				<a href="http://www.yy.com">友情链接</a><span>|</span>
+				<a href="http://www.yy.com">友情链接</a><span>|</span>
+				<a href="http://www.yy.com">友情链接</a><span>|</span>				
+				<a href="http://www.yy.com">友情链接</a><span>|</span>
+				<a href="http://www.yy.com">友情链接</a><span>|</span>
+				<a href="http://www.yy.com">友情链接</a><span>|</span>
+				<a href="http://www.yy.com">友情链接</a><span>|</span>
+				<a href="http://www.yy.com">友情链接</a><span>|</span>
+				<a href="http://www.yy.com">友情链接</a><span>|</span>
+				<a href="http://www.yy.com">友情链接</a><span>|</span>
+				<a href="http://www.yy.com">友情链接</a><span>|</span>
+				<a href="http://www.yy.com">友情链接</a><span>|</span>				
+				<a href="http://www.yy.com">友情链接</a><span>|</span>
+				<a href="http://www.yy.com">友情链接</a><span>|</span>
+				<a href="http://www.yy.com">友情链接</a><span>|</span>
+				<a href="http://www.yy.com">友情链接</a><span>|</span>
+				<a href="http://www.yy.com">友情链接</a><span>|</span>
+				<a href="http://www.yy.com">友情链接</a><span>|</span>
+				<a href="http://www.yy.com">友情链接</a><span>|</span>
+				<a href="http://www.yy.com">友情链接</a><span>|</span>
+				<a href="http://www.yy.com">友情链接</a><span>|</span>				
+				<a href="http://www.yy.com">友情链接</a><span>|</span>
+				<a href="http://www.yy.com">友情链接</a><span>|</span>
+				<a href="http://www.yy.com">友情链接</a><span>|</span>
+				<a href="http://www.yy.com">友情链接</a><span>|</span>
+				<a href="http://www.yy.com">友情链接</a><span>|</span>
+				<a href="http://www.yy.com">友情链接</a><span>|</span>
+				<a href="http://www.yy.com">友情链接</a><span>|</span>
+				<a href="http://www.yy.com">友情链接</a><span>|</span>
+				<a href="http://www.yy.com">友情链接</a><span>|</span>				
+				<a href="http://www.yy.com">友情链接</a><span>|</span>
+				<a href="http://www.yy.com">友情链接</a><span>|</span>
+				<a href="http://www.yy.com">友情链接</a><span>|</span>
+				<a href="http://www.yy.com">友情链接</a><span>|</span>
+				<a href="http://www.yy.com">友情链接</a><span>|</span>
+				<a href="http://www.yy.com">友情链接</a><span>|</span>
+				<a href="http://www.yy.com">友情链接</a><span>|</span>
+				<a href="http://www.yy.com">友情链接</a><span>|</span>
+				<a href="http://www.yy.com">友情链接</a><span>|</span>				
+				<a href="http://www.yy.com">友情链接</a><span>|</span>
+				<a href="http://www.yy.com">友情链接</a><span>|</span>
+				<a href="http://www.yy.com">友情链接</a><span>|</span>
+			</p>
+		</div>
+	</div>
+	<!--bottom start-->
+
+	<!--footer start-->
+	<div class="fooder">
+		<div class="copyRight">
+			
+			<a href="http://www.baidu.com" target="_blank" class="fooder_logo"><img src="http://www.mooncollege.cn/images/main/foot-logo.png" alt="http://www.mooncollege.cn/images/main/foot-logo.png" width="50" height="50" /></a>
+			<p>
+			<a href="#">关于我们<span>|</span></a>
+			<a href="#">加入我们<span>|</span></a>
+			<a href="#">联系我们</a>
+			</p>
+			<span class="Copy">Copyright&copy;2013-2014 www.mooncollege.cn All Rights Reserved版权所有：湖南潭州教育咨询有限公司 备案号：备13016338号</span>
+		</div>
+		<div class="clear" style="clear:both"></div>
+	<!--footer end-->
+	</div>
+<!--引入jQuery的官方类库-->
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript">
+	// nav share
+	$(".share a").each(function(index){
+		$(this).hover(function(){
+			if(index == 0){
+				$(this).css({"background-color":"#666"});
+			}else if(index == 1){
+				$(this).css({"background-color":"#0e71b7"});
+			}else if(index == 2){
+				$(this).css({"background-color":"#f75454"});
+			}
+			$(this).css({"border-radius":4}); // 变成圆角显示
+			$(this).find("span").stop(); // 在每次创建动画之前先停止下来
+			$(this).find("span").animate({"top":-49},"normal"); // 创建动画函数
+		},function(){ // 还原到初始值
+			var _this = $(this); // 需要取到a标签的this
+			$(this).find("span").animate({"top":0},"normal",function(){
+				_this.css({"background":"none"}); // 回调函数
+			});
+		});
+	});
+
+	// banner
+	var play_count = 1;
+	var play_setInterval = null;
+	$(function(){
+		$(".b_img").eq(0).css({"z-index":1,"opacity":1});
+		// 当鼠标画上去的时候
+		$(".btn").find("li").mouseover(function(){
+			$(this).addClass("no").siblings().removeClass("no");
+			$(".b_img").css({"z-index":0,"opacity":0});
+			$(".b_img").eq($(this).index()).css({"z-index":1}).fadeTo(800,1);
+			play_count = $(this).index()+1;
+			// 鼠标画上去的时候 clearInterval 即停止自定播放
+			clearInterval(play_setInterval);
+		}).mouseout(function(){
+			auto_banner();
+		});
+		auto_banner();
+	});
+	
+	// 自动切换
+	function auto_banner(){
+		//alert("我是自动播放的，第一次执行的函数，嘿嘿 ！");
+		play_setInterval = setInterval(function(){
+			if(play_count > 2){
+				play_count = 2; // 索引的下标最大值
+			}
+			$(".b_img").css({"z-index":0,"opacity":0});
+			$(".b_img").eq(play_count).css({"z-index":1}).fadeTo(800,1);
+			$(".btn").find("li").removeClass("no");
+			$(".btn").find("li").eq(play_count).addClass("no");
+			if(play_count == 2){
+				play_count = 0;
+			} else{
+				play_count ++; // play_count = play_count + 1;
+			}
+		},3000);
+	}
+	
+	// course nav
+	$(".course .c_nav").find("li").hover(function(){
+		var _width = ($(window).width()-1198) / 2
+		var _left = $(this).offset().left - _width - 5;
+		$(".course").find(".underline").stop();
+		$(".course").find(".underline").animate({left:_left - 4},100);
+		var _index = $(this).index()
+		$(".c_list").eq(_index).show().siblings().hide();
+	});
+</script>
+</body>
+</html>

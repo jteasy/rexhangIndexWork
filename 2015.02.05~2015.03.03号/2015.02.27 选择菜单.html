@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+	<head>
+		<!--声明当前页面的编码集：charset=gbk,gb2312（中文编码），utf-8（国际编码）-->
+		<meta http-equiv="Content-Type" content="text/html; charset=gbk">
+		<!--当前页面的三要素-->
+		<title>标题写在这里！</title>
+		<meta name="Keywords" content="关键词,关键词">
+		<meta name="description" content="">
+		<link rel="shortcut icon" href="" />
+		
+		<!--css,js-->
+		<style type="text/css">
+			*{margin:0;padding:0;}
+		</style>
+
+    </head>
+<body>
+	<select onchange="change();">
+		<option>--请选择--</option>
+		<option  value="1994">--1994--</option>
+		<option  value="1993">--1993--</option>
+		<option  value="1992">--1992--</option>
+		<option  value="1991">--1991--</option>
+		<option  value="1990">--1990--</option>
+	</select>
+
+	<script type="text/javascript">
+		function change(){
+			var i = 1;
+			for(; i < 6; i++){
+				alert(i);
+			}
+		}
+		// onchange 事件常结合对输入字段的验证来使用。当用户改变输入字段的内容时，会调用函数
+
+	</script>
+</body>
+</html>

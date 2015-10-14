@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>javascript创建select option</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+</head>
+<body>
+    <select id="test0"></select>
+	<br />
+	<br />
+	<br />
+	<input type="button" onclick="tm_btn()" value="点我创建option对象" />
+    <script type="text/javascript">
+		var optDom = document.getElementById("test0");
+		var creOptdom = document.createElement("option");
+    	creOptdom.innerText = "";		
+    	function tm_btn(){
+    		optDom.appendChild(creOptdom);
+    		creOptdom.text = "顾航";
+    		creOptdom.value = "GH";
+    	}
+
+    </script>
+</body>
+</html>

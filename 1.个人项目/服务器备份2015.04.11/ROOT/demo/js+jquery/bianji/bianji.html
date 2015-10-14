@@ -1,0 +1,98 @@
+<!doctype html>
+<html>
+<head>
+	<!--声明当前页面的编码集：charset=GBK,GB2312(中文编),UTF-8(国际编码)-->
+	<meta http-equiv="Content-Type"content="text/heml;charset=UTF-8">
+	<!--当前页面的三要素-->
+	<title>标题</title>
+	<meta name="Keywords" content="关键词，关键词">
+	<meta name="description" content="">
+	<!--css.js-->
+	<link rel="stylesheet" href="/css/bg2.css" type="text/css" />
+	<style type="text/css">
+	*{margin:0;padding:0;text-shadow:none;color:#fff;}
+	#box{padding:20px 0 0 20px;width:400px;height:400px;border:1px solid #000;margin:0 auto;}
+	input{width:200px;height:30px;border:1px solid green;color:#000;}
+	.save,.cancle{display:none;}
+	#box .item{margin-bottom:50px;}
+	</style>
+
+	</head>
+<body>
+
+	<div id="box">
+		<div class="item">
+			<div class="name" title="内容111">内容111</div>
+			<a href="javascript:;" class="edit">编辑</a>
+			<a href="javascript:;" class="save btns">保存</a>
+			<a href="javascript:;" class="cancle btns">取消</a>
+		</div>
+		<div class="item">
+			<div class="name" title="内容222">内容222</div>
+			<a href="javascript:;" class="edit">编辑</a>
+			<a href="javascript:;" class="save btns">保存</a>
+			<a href="javascript:;" class="cancle btns">取消</a>
+		</div>
+		<div class="item">
+			<div class="name" title="内容333">内容333</div>
+			<a href="javascript:;" class="edit">编辑</a>
+			<a href="javascript:;" class="save btns">保存</a>
+			<a href="javascript:;" class="cancle btns">取消</a>
+		</div>
+	</div>
+<script type="text/javascript" src="/js/jquery-1.11.1.min.js"></script>
+<script>
+	$(function(){
+		//编辑事件
+		$("#box .edit").click(function(){
+			var $name = $(this).parent().find(".name");
+			var stext = $name.text();
+			$(this).hide();
+			//显示保存和修改按钮
+			$(this).parent().find(".btns").show();
+			$name.html("<input type='text' value='"+stext+"' class='itemValue' />");
+			$(".itemValue").select();
+		});
+		//保存事件
+		$("#box .save").click(function(){
+			var $name = $(this).parent().find(".name");
+			var $input = $(this).parent().find(".itemValue");
+			var newValue = $input.val();
+			var title = $name.attr("title");
+			//如果输入的文件名不为空则修改
+			if(newValue!=""){
+			$name.attr("title",newValue).html(newValue);
+			//显示编辑按钮
+			$(this).parent().find(".edit").show();
+			//隐藏保存和取消按钮
+			$(this).parent().find(".btns").hide();
+			}else{
+			alert("请输入文件名称！！！");
+			$input.focus();
+			}
+			//如果输入的文件名为空触发取消事件
+			if(newValue!="" && newValue!=title){
+			$("#box").find(".cancle").trigger("click");
+			return;
+			}
+		});
+
+		//取消事件
+		$("#box .cancle").click(function(){
+			//获取name的对象
+			var $name = $(this).parent().find(".name");
+			//获取文本框的内容
+			var $input = $(this).parent().find(".itemValue");
+			//title和文本都修改
+			$name.html($name.attr("title"));
+			//显示编辑按钮
+			$(this).parent().find(".edit").show();
+			//隐藏保存和取消按钮
+			$(this).parent().find(".btns").hide();
+		});
+
+	});
+
+</script>
+</body>
+</html>

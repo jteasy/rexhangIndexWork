@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+ </head>
+ <body>
+  
+  <div id="textbox"></div>
+  <script type="text/javascript">
+		/*
+			潭州学院首席架构师keke老师编写
+			时间：2015-05-01
+			知识点：利用javascript中的设计模式module设计模式开发
+			使用方法:
+			$.tzConsole.console(目标层ID,时间(秒),数据数组);
+			如:
+			var arr = new Array(
+			"我爱你们，你们爱我吗",
+			"报道称，该队由9名希腊人以及9名印度人组成，他们到达尼泊尔首都加德满都后发现.",
+			"夏尔巴族向导已卷走队员先前给他管理的所有财物。该队一名登山员称，“我们随即决定在周五返回希腊.",
+			"我们是幸运的，因为我们在地震前夕就离开了尼泊尔”。据报道，他们全部安全逃过了此次灾难.",
+			"据法新社最新消息，此次尼泊尔大地震造成的死亡人数已攀升至3218人，多国已加入对尼泊尔的灾后救援中.");
+			$.tzConsole.console("textbox",17,arr);
+		*/
+		var $ = {};
+		$.tzConsole = (function(){
+			//私有变量
+			var arr =[];
+			var speed = 50;
+			var wordbox = null;
+			//c拼接，index数组的开始位置 pos当前已经读取到的位置
+			var c = "",index = 0,pos = 0;
+			var strLen = 0,tlen =0;//文本长度
+			var row = 0;//记录函数
+			//私有方法
+			function setData(targetId,sp,data){
+				arr = data;//赋值
+				speed = sp||50;
+				wordbox = document.getElementById(targetId);//目标对象初始化
+				strLen = arr[0].length;//获取数组的第一个字符串
+				tlen = arr.length; //数组的数组长度
+				start();//开始执行
+			}
+				
+			function start(){
+				c='';
+				row = Math.max(0,index-tlen);
+				while(row < index){//每次往最后追加
+					c += arr[row++] + '\r\n';
+				}
+				wordbox.innerText = c+arr[index].slice(0,pos)+"_"; //拼接slice方法就是相当于subString一样的概念
+				wordbox.scrollTop=wordbox.scrollHeight;//如果有滚动条就一直滚动条置底
+				if(pos==strLen){//开始位置如果到底部了就读取下一个
+					pos = 0;
+					c = arr[index]+"\r\n";
+					index ++;			
+					if(index < tlen){
+						strLen = arr[index].length;
+						setTimeout(start,300);
+					}else{
+						wordbox.innerText = wordbox.innerText.replace("_","");
+					}
+				}else{
+					//第一次执行的位置
+					pos++;
+					setTimeout(start,speed);
+				}
+			}
+			
+			//暴露私有方法称为公有方法，让外部调用.
+			return {
+				console:setData	
+			};
+		})();
+			
+		//调用
+		var arr = new Array(
+		"大家好！我叫顾航，rexhang是我的网名也是英文名",
+		"报道称，该队由9名希腊人以及9名印度人组成，他们到达尼泊尔首都加德满都后发现.",
+		"夏尔巴族向导已卷走队员先前给他管理的所有财物。该队一名登山员称，“我们随即决定在周五返回希腊.",
+		"我们是幸运的，因为我们在地震前夕就离开了尼泊尔”。据报道，他们全部安全逃过了此次灾难.",
+		"据法新社最新消息，此次尼泊尔大地震造成的死亡人数已攀升至3218人，多国已加入对尼泊尔的灾后救援中.");
+		$.tzConsole.console("textbox",90,arr);
+  </script>
+ </body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>replaceAll</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+</head>
+<body>
+    <script type="text/javascript">
+    /*javascript中没有replaceAll方法*/
+    String.prototype.replaceAll = function(source,target){
+    	return this.replace(new RegExp(source,'ig'),target);
+    	this.replace(/''/ig,target);
+    }
+    /*↑替换全部工具类*/
+    /*实现效果*/
+    var value = "AAA".replaceAll("A","B");
+    //alert(value);
+
+    /*大小写工具类*/
+    String.prototype.contains = function(target){
+    	return this.indexOf(target)!= -1 ? true:false;
+    };
+
+    String.prototype.upperHeader = function(target){
+    	var str = this.substring(0,1);
+    	var str2 = this.substring(1);
+    	return str.toUpperCase()+str2;
+    };
+    var value2 = "AAA".toLowerCase();//转小写
+    //alert(value2); 
+    var value3 = "aaa".toUpperCase();//转大写
+    //alert(value3);
+    var value4 = "aaa".upperHeader();//转首字母大写
+    alert(value4);
+            
+    </script>
+</body>
+</html>

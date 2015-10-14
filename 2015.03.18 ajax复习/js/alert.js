@@ -1,0 +1,1 @@
+alert("rexhang_ajax");

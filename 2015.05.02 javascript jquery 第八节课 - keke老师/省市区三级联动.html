@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>省市区三级联动</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+</head>
+<body>
+	<select id="province" onchange="changeEmpty(this)"></select>
+	<select id="city"></select>
+	<select id="linkage"></select>
+
+	<script type="text/javascript">
+		/*	方法一：
+			var optionDom = document.getElementById("province");
+			var arr = ["江苏省","陕西省","云南省","甘肃省"];
+			var html = "<option>--请选择--</option>";
+			for(var i = 0;i < arr.length;i++){
+				html  = html + "<option>" + arr[i] + "</option>";
+				optionDom.innerHTML = html;
+			}
+
+		*/
+
+
+		/*	方法二：
+			var optionDom = document.getElementById("province");
+			var arr = ["江苏省","陕西省","云南省","甘肃省"];
+			var defaults = document.createElement("option");
+			defaults.innerText = "--请选择--";
+			optionDom.appendChild(defaults);		
+			for(var i = 0;i < arr.length;i++){
+				var creOptdom = document.createElement("option");
+				creOptdom.innerText = arr[i];
+				optionDom.appendChild(creOptdom);			
+			}
+		*/
+		
+		/*采用方法二做*/
+		tm_do();
+		function tm_do(){
+			var optionDom = document.getElementById("province");
+			var arr = [{"code":"js","name":"江苏省"},{"code":"zj","name":"浙江省"},{"code":"sx","name":"陕西省"}]; /*json数组*/
+
+			var defaults = document.createElement("option");
+			defaults.innerText = "--请选择--";
+			optionDom.appendChild(defaults);		
+			for(var i = 0;i < arr.length;i++){
+				var creOptdom = document.createElement("option");
+				creOptdom.text = arr[i].name;
+				creOptdom.value= arr[i].code;
+				optionDom.appendChild(creOptdom);			
+			}			
+		}
+
+		var datas = {
+			"js":"南京,扬州,无锡",
+			"zj":"杭州,金华,宁波",			
+			"sx":"西安,咸阳,榆林"	
+		};
+		function changeEmpty(obj){
+			var _value = obj.value;
+			var citys = datas[_value].split(",");
+			var cityDom = document.getElementById("city");
+			cityDom.innerHTML = "";
+			for (var i = 0;i < citys.length;i++) {
+				var creOptdom = document.createElement("option");
+				creOptdom.text = citys[i];
+				creOptdom.value = i;
+				cityDom.appendChild(creOptdom);
+			}
+		}
+
+		/* TIP -------Knowledge Supplement-------*/
+		var arrss = {
+			"a":"顾航a0$顾航a1$顾航a2",
+			"b":"顾航b0$顾航b1$顾航b2",
+			"c":"顾航c0$顾航c1$顾航c2"
+		}
+
+		var arr_i = arrss["c"].split("$");
+
+		document.write("<br /><br />" + arr_i[2]);
+
+
+
+	</script>
+</body>
+</html>

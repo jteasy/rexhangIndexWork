@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+	<head>
+		<!--声明当前页面的编码集：charset=gbk,gb2312（中文编码），utf-8（国际编码）-->
+		<meta http-equiv="Content-Type" content="text/html; charset=gbk">
+		<!--当前页面的三要素-->
+		<title>游戏网站导航动态跟随导航</title>
+		<meta name="Keywords" content="关键词,关键词">
+		<meta name="description" content="">
+		<link rel="shortcut icon" href="images/logo.jpg" />
+		
+		<!--css,js-->
+		<style type="text/css">
+			*{margin:0;padding:0;}
+			body{font-size:12px;font-family:"微软雅黑";}
+			.nav{border-bottom:3px solid #E6E6E6;width:1000px;height:36px;margin:150px auto;position:relative;background:#00CCFF;border-radius:5px;}			
+			.nav ul li{list-style:none;float:left;width:100px;text-align:center;line-height:36px;}
+			.nav ul li a{text-decoration:none;color:#000;font-size:16px;font-weight:bold;cursor:url("images/shubiao.ani"),default;}
+
+			.nav .cursor{width:100px;border-bottom:3px solid #FF6633;border-top:3px solid #FF6633;position:absolute;left:0;bottom:-3px;background:rgba(149, 49, 242, 0.55);height:36px;border-radius:5px;color:#fff;text-align:center;cursor:url("images/shubiao.ani"),default;}
+		</style>
+
+    </head>
+<body>
+	<div class="nav">
+		<ul>
+			<li><a href="#">首页</a></li>
+			<li><a href="#">金币购买</a></li>
+			<li><a href="#">金币回收</a></li>
+			<li><a href="#">帐号交易</a></li>
+			<li><a href="#">点卡充值</a></li>
+			<li><a href="#">手游充值</a></li>
+			<li><a href="#">代练交易</a></li>
+			<li><a href="#">工作室找项目</a></li>
+		</ul>
+		<p class="cursor">R</p>
+	</div>
+
+<!--引入jQuery的管方类库-->
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript">
+	$(function(){
+		/*从.nav找到li，当悬停在上面的时候出发函数：*/
+		$(".nav").find("li").hover(function(){
+			/*赋值一个变量：叫做“auto_left” 等于 当前窗口的宽度 减去.nav的宽度（1000）除以2得到.nav距离窗口最左端的距离*/
+			var auto_left = ($(window).width() - 1000) / 2;
+			/*赋值一个变量：叫做“_left” 等于 获取匹配元素在 当前 视口的相对 左边 偏移*/
+			var _left = $(this).offset().left - auto_left;
+			$(".nav").find(".cursor").stop();
+			$(".nav").find(".cursor").animate({left:_left},100); 
+		});
+	});	
+
+</script>
+
+</body>
+</html>

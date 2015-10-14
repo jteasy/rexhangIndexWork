@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+<head>
+	<!--声明当前页面的编码集：charset=GBK,GB2312(中文编),UTF-8(国际编码)-->
+	<meta http-equiv="Content-Type"content="text/heml;charset=UTF-8">
+	<!--当前页面的三要素-->
+	<title>标题</title>
+	<meta name="Keywords" content="关键词，关键词">
+	<meta name="description" content="">
+	<!--css.js-->
+	<link rel="stylesheet" href="/css/bg2.css" type="text/css" />
+	<style type="text/css">
+	*{margin:0;padding:0;}
+	body{font-size:12px;font-family:"微软雅黑";}
+	.box{
+	width:500px;
+	height:300px;
+	background:#f60;
+	margin:100px auto;
+	}
+
+	.box .title{
+	width:500px;
+	height:100px;
+	line-height:100px;
+	text-align:center;
+	font-size:30px;
+	background:#96f;
+	}
+
+	.box .chou{
+	color:red;
+	width:300px;
+	height:50px;
+	margin:20px auto;
+	text-align:center;
+	display:block;
+	font-size:25px;
+	font-family:"微软雅黑";
+	}
+
+	.box .ok,.cancle{
+	width:100px;height:30px;
+	color:#000;
+	}
+
+	.box .ok{
+	margin:0 30px 0 130px;
+	}
+	</style>
+	</head>
+<body>
+	<div class="box">
+		<div class="title" id="jian">幸运抽奖乐</div>
+		<input id="zhi" class="chou" type="text" />
+		<input  onclick="myStart()" class="ok" type="button" value="开始抽奖" />
+		<input onclick="myStop()" class="cancle" type="button" value="停止" />
+	</div>
+	<script type="text/javascript">
+	 var data = "赵鑫焱,mini,Arry,keke,jame,jack,Colin";
+	 var arr = data.split(",");
+	 var timer = null;
+		function myStart(){
+			document.getElementById("zhi").value=null;
+		 if(!timer){
+		 timer=setInterval(function change(){
+	 var rand = Math.random();
+	 var max = arr.length;
+	 var randIndex = parseInt(rand * max);
+	 
+	 document.getElementById("jian").innerHTML=arr[randIndex];
+	 },100);
+		 };
+		};
+
+		function myStop(){
+			clearInterval(timer);
+			timer = null;
+			var mytext = document.getElementById("jian").innerHTML;
+			document.getElementById("zhi").value=mytext;
+		}
+	</script>
+</body>
+</html>

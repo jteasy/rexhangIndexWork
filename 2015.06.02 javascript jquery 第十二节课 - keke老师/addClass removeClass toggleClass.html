@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>addClass removeClass toggleClass</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<style type="text/css">
+	*{margin: 0;padding: 0}
+	#box{border: 1px solid red;width: 100px;height: 100px;transition: 3s;}
+	.sex{background: #000;}
+</style>
+</head>
+<body>
+	<div id="box"></div>
+	<input type="button" value="Addclass">
+	<input type="button" value="Removeclass">
+	<input type="button" value="Toggleclass">
+    <script type="text/javascript" src="jquery-1.11.1.min.js"></script>
+    <script type="text/javascript">
+    $(function(){
+    	$("input[value='Addclass']").click(function(){
+    		$("#box").addClass("sex");    		
+    	});
+
+    	$("input[value='Removeclass']").click(function(){
+    		$("#box").removeClass("sex");    		
+    	});
+
+    	$("input[value='Toggleclass']").click(function(){
+    		$("#box").toggleClass("sex");    		
+    	});      	    	
+    });
+    </script>
+</body>
+</html>

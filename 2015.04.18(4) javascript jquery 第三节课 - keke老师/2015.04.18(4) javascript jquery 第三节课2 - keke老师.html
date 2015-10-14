@@ -1,0 +1,99 @@
+
+<!doctype html>
+<html>
+	<head>
+		<!--声明当前页面的编码集：charset=gbk,gb2312（中文编码），utf-8（国际编码）-->
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<!--当前页面的三要素-->
+		<title>2015.04.18(4) javascript jquery 第三节课2 - keke老师</title>
+		<meta name="Keywords" content="关键词,关键词">
+		<meta name="description" content="">
+		<link rel="shortcut icon" href="../1.images/rexhang.ico" />
+		
+		<!--css,js-->
+		<style type="text/css">
+			*{margin:0;padding:0;}
+	
+		</style>
+
+    </head>
+<body>
+	<script type="text/javascript">
+	/*
+		上节提要
+		var obj ={"name":"rex"};
+		obj.name;// 1.获取值方法一
+		obj[name];	obj["name"];// 2.获取值方法二
+	*/
+
+	/*
+		正式开始本节课
+	*/
+
+	/*jQuery没有提供对Date的处理*/
+
+	/*
+		Date篇：
+		获取当前日期 new Date();
+
+		一周的第一天是：星期日；一周的最后一天是：星期六
+
+		备注：
+				获取月份的时候一定要 + 1；如果格式化日期就用下面这个方式
+				var date       = new Date();
+				var dateString = date.format("yyyy-MM-dd HH:mm:ss");//24小时制 
+				var dateString = date.format("yyyy-MM-dd HH:mm:ss");//12小时制
+	*/
+
+		var date = new Date();
+
+		/*alert("Date()的数据类型是：" + typeof Date());*/
+
+		// java里面的方法：Date date = new Date();
+
+		for (var i = 0; i >= 0; i++) {
+			if(i == 1){
+				break;
+			}
+			document.write("<p style='background:black;color:white;'>" + date + "</p>");			
+		};
+		// Sat  Apr 18 2015 15:01:51 GMT+0800 (中国标准时间) ----> 格林威治标准时间 1970年01月01日开始
+		// 星期 月  日 年   时间     时区
+
+		var year      =    date.getYear();/*缩略版的年份*/
+		var fullYear  =    date.getFullYear();/*完整版的年份*/
+		var month     =    date.getMonth() + 1;/*获取月份*/
+		var ri        =    date.getDate();/*获取日期*/
+		var day       =    date.getDay();/*获取周*/
+		var hour      =    date.getHours();/*获取小时*/
+		var min       =    date.getMinutes();/*获取分*/
+		var sec       =    date.getSeconds();/*获取秒*/
+
+		if(month < 10){month = "0" + month};// 补0
+		if(ri < 10){ri = "0" + day};// 补0
+
+		var timer     =    date.getTime();/*1970年01月01日到现在的毫秒数*/
+
+		var _timer    =    timer - 24 * 60 * 60 *1000;// 减去一天
+
+		var timers    =    new Date(_timer);
+
+		/*alert("自1970年01月01日到现在的毫秒数★减去★一天的时间是：" + timers);*/
+
+		document.write("当前的时间是：" + fullYear + "年-" + month + "月-" + ri + "日-" + "星期" + day + "-" +  hour + "点" + min +"分" + sec + "秒");
+	/*
+		日期赋值
+		var datez = new Date("2015/04/18 16:19:05");
+		var dayz  = datez.getDay();
+		alert("2015-04-18 12:00:00是周：" + dayz);		
+	*/
+
+	/*
+		★★☆☆☆获取某日期的几小时前★★☆☆☆
+		alert(getTimeFormat(date));
+	*/
+	/*var datem = new Date("2015/04/18 16:19:05")
+	alert(getTimeFormat(date));*/
+	</script>
+</body>
+</html>

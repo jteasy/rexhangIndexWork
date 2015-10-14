@@ -1,0 +1,496 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>顾航_百科</title>
+    <meta name="description" content="顾航">
+    <meta name="keywords" content="顾航">
+    <link href="" rel="stylesheet">
+    <style type="text/css">
+    html,
+    body {
+        margin: 0;
+        padding: 0;
+    }
+    
+    .top {
+        width: 100%;
+        height: 102px;
+    }
+    
+    .top_1 {
+        width: 1200px;
+        margin: 0 auto;
+        padding-top: 20px;
+    }
+    
+    .top_1 .baidu_logo {
+        float: left;
+        margin-right: 15px;
+        margin-top: 12px;
+    }
+    
+    .top_1 .baidu_info {
+        width: 659px;
+        height: 95px;
+        float: left;
+    }
+    
+    .top_1 .baidu_info .baidu_search a {
+        text-decoration: none;
+        font-family: "微软雅黑";
+        font-size: 14px;
+        color: #555;
+        margin-right: 5px;
+    }
+    
+    .top_1 .baidu_info .baidu_search .baike {
+        color: #333;
+        font-weight: bold;
+    }
+    
+    .top_1 .baidu_info .baidu_form {
+        width: 659px;
+        height: 35px;
+        float: left;
+    }
+    
+    .top_1 .baidu_info .baidu_form .searchfor {
+        margin-top: 5px;
+        border-color: #b8b8b8 #ccc #ccc #b8b8b8;
+        width: 420px;
+        height: 35px;
+        float: left;
+        border-width: 1px;
+        border-style: solid;
+    }
+    
+    .top_1 .baidu_info .baidu_form .searchfor:hover {
+        border-color: #ababab;
+    }
+    
+    .top_1 .baidu_info .baidu_form .searchfor .searchforguhang {
+        width: 410px;
+        height: 30px;
+        line-height: 23px;
+        padding-left: 5px;
+        font-size: 16px;
+        font-family: "微软雅黑";
+        outline: 0;
+        border: 0;
+    }
+    
+    .btn_citiao {
+        margin: 5px 5px 0 -1px;
+        border: 1px solid #ccc;
+        width: 100px;
+        height: 37px;
+        line-height: 32px;
+        font-size: 16px;
+        color: #333;
+        outline: 0;
+        cursor: pointer;
+        background: #ccc;
+        background: -webkit-linear-gradient(top, #fcfcfc, #f1f1f1);
+    }
+    
+    #search {
+        border-color: #ababab;
+        background-color: #ababab;
+    }
+    
+    .btn_citiao:hover {
+        border-color: #ababab;
+        background: #f8f8f8;
+        background: -webkit-linear-gradient(top, #f8f8f8, #e9e9e9);
+        background: -moz-linear-gradient(top, #f8f8f8, #e9e9e9);
+        background: -ms-linear-gradient(top, #f8f8f8, #e9e9e9);
+    }
+    
+    #searchLemma {
+        margin-left: -8px;
+    }
+    
+    .content {
+        width: 100%;
+        border-top: 1px solid #5895d5;
+        border-bottom: 1px solid #1d5997;
+        background: #59a1e9;
+        background: -webkit-linear-gradient(top, #64a6ea, #4b98e3);
+    }
+    
+    .content .nav {
+        width: 1200px;
+        height: 43px;
+        margin: 0 auto;
+    }
+    
+    .content .nav ul {
+        padding-right: 10px;
+        display: inline-block;
+        height: 43px;
+        margin-top: -11px;
+        cursor: pointer;
+    }
+    
+    .content .nav ul li {
+        list-style: none;
+        float: left;
+        padding-right: 72px;
+        font-size: 16px;
+        font-family: "微软雅黑";
+        color: #fff;
+        line-height: 43px;
+        height: 43px;
+    }
+    
+    .content .nav .nav_2 {
+        border-left: 1px solid #73b0ec;
+        width: 140px;
+        height: 24px;
+        float: right;
+        margin-right: 10px;
+        margin-top: -1px;
+    }
+    
+    .content .nav .nav_2 a {
+        text-decoration: none;
+        font-family: "微软雅黑";
+        font-size: 16px;
+        color: #fff;
+        display: block;
+        height: 24px;
+        text-align: center;
+        border-left: 1px solid #3982c8;
+    }
+    
+    .infobox {
+        width: 100%;
+        background: #f5f5f5;
+        padding-top: 20px;
+    }
+    
+    .infobox .box {
+        width: 1140px;
+        height: 500px;
+        border: 1px solid #e5e5e5;
+        margin: 0 auto;
+        background: #fff;
+    }
+    
+    .infobox .box .text_guhang {
+        width: 1140px;
+    }
+    
+    .infobox .box .text_guhang span {
+        font-weight: 200;
+        font-family: Microsoft YaHei, SimHei, Verdana;
+        font-size: 34px;
+        font-weight: 500;
+        color: #000;
+        display: block;
+        margin: 58px 0 0 30px;
+        width: 80px;
+        float: left;
+    }
+    
+    .infobox .box .text_guhang .suo {
+        display: block;
+        width: 65px;
+        height: 25px;
+        background: transparent url("http://baike.bdimg.com/static/lemma/view3/img/icon-view_5015d4f8.png") -76px -71px no-repeat;
+        float: left;
+        margin-top: 74px;
+        margin-left: 0px;
+    }
+    
+    .infobox .box .text_guhang .suo:hover {
+        background: blue;
+    }
+    
+    .infobox .box .text_guhang a {
+        text-decoration: none;
+        font-size: 12px;
+        color: #a0a0a0;
+        display: block;
+        width: 24px;
+        height: 16px;
+        float: left;
+        margin-top: 79px;
+        margin-left: -36px;
+    }
+    
+    .infobox .box .text_guhang .ceo {
+        display: inline-block;
+        height: 24px;
+        background: #eef7fd;
+        margin-top: 105px;
+        margin-left: -144px;
+        border-left: solid 3px #52a3f5;
+        padding-left: 10px;
+    }
+    
+    .infobox .box .text_guhang .ceo li {
+        list-style: none;
+        float: left;
+        text-align: left;
+        font-size: 14px;
+        font-family: "微软雅黑";
+        line-height: 24px;
+        padding-right: 8px;
+    }
+    
+    .infobox .box .text_guhang .ceo .ce {
+        border-left: solid 1px #d1dfe8;
+        padding: 0 8px;
+    }
+    
+    .infobox .box .text_guhang font {
+        display: block;
+        font-size: 14px;
+        font-family: "微软雅黑";
+        color: #333;
+        text-indent: 30px;
+        width: 790px;
+        margin-left: 30px;
+        line-height: 24px;
+    }
+    
+    .infobox .box .text_guhang .pic {
+        border: solid 1px #e5e5e5;
+        float: right;
+        margin-top: 68px;
+        width: 268px;
+        height: 387px;
+        margin-right: 15px;
+    }
+    
+    .infobox .jiben {
+        width: 1140px;
+        border: 1px solid #e5e5e5;
+        height: 430px;
+        margin: 0 auto;
+        background: #fff;
+        margin-top: 20px;
+    }
+    
+    .infobox .jiben .left {
+        width: 12px;
+        height: 20px;
+        background: #4f9cee;
+        margin-top: 16px;
+        float: left;
+    }
+    
+    .infobox .jiben .jibenxinxi {
+        display: block;
+        float: left;
+        margin-top: 16px;
+        color: #1382ed;
+        font-family: "Microsoft Yahei";
+        font-size: 22px;
+        padding-left: 18px;
+        line-height: 18px;
+    }
+    
+    .infobox .jiben .xian {
+        border: 1px solid #eee;
+        width: 696px;
+        float: left;
+        margin: 24px 0 0 6px;
+    }
+    
+    .infobox .jiben .xixin {
+        float: left;
+        width: 1000px;
+        margin-top: 24px;
+        margin-left: -120px;
+    }
+    
+    .infobox .jiben .xixin .ul_1 li {
+        list-style: none;
+        float: left;
+    }
+    
+    .infobox .jiben .xixin .ul_1 {
+        display: inline-block;
+    }
+    
+    .infobox .jiben .xixin .ul_1 .zw {
+        font-weight: bold;
+        color: #999;
+        width: 88px;
+        font-size: 12px;
+    }
+    
+    .infobox .jiben .xixin .ul_1 .xm {
+        color: #333;
+        width: 300px;
+        font-size: 12px;
+    }
+    
+    .infobox .jiben .xixin .ul_1 .yx {
+        font-weight: bold;
+        color: #999;
+        width: 88px;
+        font-size: 12px;
+    }
+    
+    .infobox .jiben .xixin .ul_1 .qh {
+        color: #333;
+        width: 300px;
+        font-size: 12px;
+    }
+    
+    .infobox .jiben .xuxian {
+        border: 1px dashed #eee;
+        width: 788px;
+        float: left;
+        margin: -15px 0 0 35px;
+    }
+    
+    .banquan a {
+        display: block;
+        width: 300px;
+        height: 22px;
+        font-family: "arial";
+        font-size: 12px;
+        color: #666;
+        text-align: center;
+        margin: 0 auto;
+        line-height: 22px;
+        text-decoration: none;
+    }
+    
+    .banquan a:hover {
+        text-decoration: underline;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="top">
+        <div class="top_1">
+            <div class="baidu_logo">
+                <a class="baidu" href="http://www.baidu.com/" target="_blank"><img width="132" height="44" src="http://img.baidu.com/img/baike/logo-baike.png"></a>
+            </div>
+            <div class="baidu_info">
+                <div class="baidu_search">
+                    <a href="http://news.baidu.com/" data-href="http://news.baidu.com/ns?tn=news&amp;cl=2&amp;rn=20&amp;ct=1&amp;fr=bks0000&amp;ie=utf-8&amp;word=">新闻</a>
+                    <a href="http://www.baidu.com/" data-href="http://www.baidu.com/s?ie=utf-8&amp;fr=bks0000&amp;wd=">网页</a>
+                    <a href="http://tieba.baidu.com/" data-href="http://tieba.baidu.com/f?ie=utf-8&amp;fr=bks0000&amp;kw=">贴吧</a>
+                    <a href="http://zhidao.baidu.com/" data-href="http://zhidao.baidu.com/search?pn=0&amp;&amp;rn=10&amp;lm=0&amp;fr=bks0000&amp;word=">知道</a>
+                    <a href="http://music.baidu.com/" data-href="http://music.baidu.com/search?f=ms&amp;ct=134217728&amp;ie=utf-8&amp;rn=&amp;lm=-1&amp;pn=30fr=bks0000&amp;key=">音乐</a>
+                    <a href="http://image.baidu.com/" data-href="http://image.baidu.com/i?tn=baiduimage&amp;ct=201326592&amp;lm=-1&amp;cl=2&amp;nc=1&amp;ie=utf-8&amp;word=">图片</a>
+                    <a href="http://v.baidu.com/" data-href="http://v.baidu.com/v?ct=301989888&amp;rn=20&amp;pn=0&amp;db=0&amp;s=22&amp;ie=utf-8&amp;fr=bks0000&amp;word=">视频</a>
+                    <a href="http://map.baidu.com/" data-href="http://map.baidu.com/m?ie=utf-8&amp;fr=bks0000&amp;word=">地图</a>
+                    <a class="baike">百科</a>
+                    <a href="http://wenku.baidu.com/" data-href="http://wenku.baidu.com/search?lm=0&amp;od=0&amp;ie=utf-8&amp;fr=bks0000&amp;word=">文库</a>
+                </div>
+                <div class="baidu_form">
+                    <div class="searchfor">
+                        <input type="text" value="顾航" class="searchforguhang" />
+                    </div>
+                    <button id="search" type="button" class="btn_citiao">进入词条</button>
+                    <button id="searchLemma" type="button" class="btn_citiao">搜索词条</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <div class="nav">
+            <ul class="nav_1">
+                <li>首页</li>
+                <li>分类</li>
+                <li>特色百科</li>
+                <li>用户</li>
+                <li>权威合作</li>
+                <li>手机百科</li>
+            </ul>
+            <div class="nav_2">
+                <a href="http://www.baidu.com/" target="_blank">个人中心</a>
+            </div>
+        </div>
+    </div>
+    <div class="infobox">
+        <div class="box">
+            <div class="text_guhang">
+                <span>顾航</span>
+                <a href="#" class="suo"></a>
+                <a href="#">锁定</a>
+                <ul class="ceo">
+                    <li>rexhang</li>
+                    <li class="ce">创始人、董事长兼执行官</li>
+                </ul>
+                <div class="pic">
+                    <img src="images/picc.png" width="268" height="387">
+                </div>
+                <font>顾航，rexhang网络有限公司创始人、董事长兼首席执行官，全面负责rexhang公司的战略规划和运营管理。
+                </font>
+                <font>2015年1月，顾航毕业于清华信息管理专业，随后前往美国布法罗纽约州立大学完成计算机科学硕士学位，先后担任道·罗斯公司高级顾问、《计算机设计》网络版实时金融信息系统设计者，以及国际知名互联网企业——Infosseek公司资深工程师。顾航所持有的“超需求分析”技术专利，是奠定整个现代互联网交互趋势和方向的基础发明之一。
+                </font>
+                <font>2015年2月，顾航创建了rexhang。经过1年多的发展，rexhang已经发展成为全球第三大独立需求分析公司。rexhang的成功，也使中国成为美国、俄罗斯和韩国之外，全球仅有的4个拥有造福人民核心技术的国家之一。2015年5月17日，rexhang在美国纳斯达克成功上市，并成为首家进入纳斯达克成分股的中国公司。rexhang已经成为中国最具价值的品牌之一。
+                </font>
+                <font>2015年3月，当选第十五届全国政协委员，兼任第十六届中华全国工商业联合会副主席、第十二届北京市科协副主席等职务，并获聘“国家特聘专家”。 </font>
+                <font>2015年5月两会，顾航公布了自己的两会提案：一、建议设立“国家设计核心”计划，推动人工智能跨越发展，抢占新一轮科技革命制高点；二是建议全面开放“计算实时操控人类大脑计划”。
+                </font>
+            </div>
+        </div>
+        <div class="jiben">
+            <div class="left"></div>
+            <span class="jibenxinxi">基本信息</span>
+            <p class="xian"></p>
+            <div class="xixin">
+                <ul class="ul_1">
+                    <li class="zw">中文名</li>
+                    <li class="xm">顾 航</li>
+                    <li class="yx">毕业院校</li>
+                    <li class="qh">清华大学</li>
+                </ul>
+                <p class="xuxian"></p>
+                <ul class="ul_1">
+                    <li class="zw">外文名</li>
+                    <li class="xm">rexhang</li>
+                    <li class="yx">主要成就</li>
+                    <li class="qh">成立“rexhang”网络有限公司</li>
+                </ul>
+                <p class="xuxian"></p>
+                <ul class="ul_1">
+                    <li class="zw">民 族</li>
+                    <li class="xm">汉</li>
+                    <li class="yx">&nbsp;&nbsp;&nbsp;&nbsp;</li>
+                    <li class="qh">2015贫苦山区造福奖</li>
+                </ul>
+                <p class="xuxian"></p>
+                <ul class="ul_1">
+                    <li class="zw">国 籍</li>
+                    <li class="xm">中国</li>
+                    <li class="yx">&nbsp;&nbsp;&nbsp;&nbsp;</li>
+                    <li class="qh">CCTV2015中国最感恩年度人物</li>
+                </ul>
+                <p class="xuxian"></p>
+                <ul class="ul_1">
+                    <li class="zw">出生地</li>
+                    <li class="xm">江苏省扬州市</li>
+                    <li class="yx">&nbsp;&nbsp;&nbsp;&nbsp;</li>
+                    <li class="qh">2015年关注民生奖</li>
+                </ul>
+                <p class="xuxian"></p>
+                <ul class="ul_1">
+                    <li class="zw">职 业</li>
+                    <li class="xm">rexhang公司董事长兼首席执行官</li>
+                    <li class="yx">资 产</li>
+                    <li class="qh">约1200亿人民币</li>
+                </ul>
+                <p class="xuxian"></p>
+            </div>
+        </div>
+    </div>
+    <div class="banquan">
+        <a href="jvascript:void(0)">以上信息纯属虚构，如有雷同，不胜荣幸</a>
+    </div>
+</body>
+
+</html>

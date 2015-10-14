@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+	<head>
+		<!--声明当前页面的编码集：charset=gbk,gb2312(中文编码)，utf-8国际编码-->
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<!--当前页面的三要素-->
+		<title>好帅的李伟</title>
+		<meta name="Keywords" content="关键词,关键词">
+		<meta name="description" content="">
+		<!--css,js-->
+		<style type="text/css">
+		*{margin:0px;padding:0px;}
+		body{height:100%;background:url("/demo/js+jquery/shuai/imgs/bg.jpg") no-repeat;background-position:center center;}
+		.tub{width:1000px;height:400px;margin:50px auto;}
+		.tub ul{width:800px;height:320px;margin:0px auto;border:10px double #333;}
+		.tub ul li{width:240px;height:320px;list-style:none;float:left;margin-left:25px;background:#fff;}
+		.tub ul li:hover img{opacity:0.8;filter:alpha(opacity=80);}
+		h2{color:#33cc00;margin-bottom:20px;text-align:center;font-size:50px;}
+		.video .vid{width: 1038px;height: 35px;border: 10px solid #000;background: #000;}
+		</style>
+
+	</head>
+	<body bgcolor="#60F">
+	 <div class="tub">
+	 <h2>好帅的李伟</h2>
+	 <div class="video">
+		<audio controls="controls" class="vid" autoplay="false"  loop=true autoplay>
+			<source src="/demo/js+jquery/shuai/res/慢摇 - 开场.mp3" type="audio/mp3" />
+		</audio>
+	</div>
+	 <ul>
+		<li><img src="/demo/js+jquery/shuai/imgs/9.jpg" width="240" height="320" alt="李伟" title="李伟"/></li>
+		<li><img src="/demo/js+jquery/shuai/imgs/10.jpg" width="240" height="320" alt="李伟" title="李伟"/></li>
+		<li><img src="/demo/js+jquery/shuai/imgs/13.jpg" width="240" height="320" alt="苏利文" title="苏利文"/></li>
+		<li><img src="/demo/js+jquery/shuai/imgs/14.jpg" width="240" height="320" alt="鱼线" title="鱼线"/></li>
+		<li><img src="/demo/js+jquery/shuai/imgs/15.jpg" width="240" height="320" alt="李伟" title="李伟"/></li>
+		<li><img src="/demo/js+jquery/shuai/imgs/17.jpg" width="240" height="320" alt="薛丁川" title="薛丁川"/></li>
+	</ul>
+	 </div>
+	 <script type="text/javascript" src="/js/jquery-1.11.1.min.js"></script>
+	<script src="/demo/js+jquery/shuai/res/jquery.SuperSlide.2.1.1.js"></script>
+	 <script type="text/javascript">
+		$(".tub").slide({
+		mainCell:"ul",
+		autoPlay:true,
+		mouseOverStop:true,
+		opp:true,
+		effect:"leftMarquee",
+		vis:4,
+		interTime:10});
+	 </script>
+	</body>
+
+	</html>

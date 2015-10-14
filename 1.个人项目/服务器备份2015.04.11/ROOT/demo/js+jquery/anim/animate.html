@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+<head>
+	<!--声明当前页面的编码集：charset=GBK,GB2312(中文编),UTF-8(国际编码)-->
+	<meta http-equiv="Content-Type"content="text/heml;charset=UTF-8">
+	<!--当前页面的三要素-->
+	<title>jquery动画</title>
+	<meta name="Keywords" content="关键词，关键词">
+	<meta name="description" content="">
+	<!--css.js-->
+	<link rel="stylesheet" href="/css/bg2.css" type="text/css" />
+	<style type="text/css">
+	*{margin:0;padding:0;}
+	div{text-align:center;position:absolute;}
+	.an{width:300px;height:100px;background:#6c6;left:20px;top:40px;line-height:100px;}
+	.fade{width:300px;height:200px;text-align:center;line-height:200px;background:#690;left:20px;top:220px;}
+	.toggle{width:300px;height:60px;background:#c03;left:20px;top:150px;line-height:60px;}
+	.slide{width:300px;height:60px;background:#c03;left:400px;top:150px;line-height:60px;}
+	input{color:#000;}
+	</style>
+	</head>
+<body>
+	<input value="点击我往右移" id="btn" type="button" />
+	<input value="点击我往左移" id="btnn" type="button" />
+	<input value="淡入淡出" id="fade" type="button" />
+	<input value="隐藏显示" id="toggle" type="button" />
+	<input value="状态变化" id="slide" type="button" />
+
+	<div class="an">左右移动</div>
+	
+	<div class="fade">淡入淡出</div>
+
+	<div class="toggle">隐藏显示</div>
+
+	<div class="slide">状态变化</div>
+
+
+		
+
+<script type="text/javascript" src="/js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+	$("#btn").click(function(){
+	$(".an").animate({left:500},500);
+	});
+
+	$("#btnn").click(function(){
+	$(".an").animate({left:20},500);
+	});
+
+	$("#fade").click(function(){
+	$(".fade").fadeToggle(1000);
+	});
+
+	$("#toggle").click(function(){
+	$(".toggle").toggle(3000);
+	});
+
+	$("#slide").click(function(){
+	$(".slide").slideToggle(1000);
+	});
+</script>
+</script>
+</body>
+</html>

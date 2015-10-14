@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
+<title>潭州学院的老师</title>
+<link rel="stylesheet" href="/css/bg2.css" type="text/css" />
+<style>
+*{font-size: 24px; padding:0; margin:0;}
+#container {
+position: relative;
+height: 325px;
+width: 310px;
+-webkit-perspective: 500;
+margin-top: 50px;
+margin-right: auto;
+margin-left: auto;
+}
+img{border:1px solid #2cb7fe;box-shadow:0 0 10px #bb90fc;}
+#zxy {
+position: relative;
+background:url("/images/keke.jpg") no-repeat top center;
+background-size:325px 310px;
+width: 325px;
+height: 310px;
+background-color:#fff;
+-webkit-transform-style: preserve-3d;
+transform-style: preserve-3d;
+-webkit-animation:spin 15s infinite linear;
+-ms-animation:spin 15s infinite linear;
+}
+#zxy:hover{animation-play-state:paused;
+-webkit-animation-play-state:paused;
+-ms-animation-play-state:paused;
+}
+#zxy > div {
+position: absolute;
+top: 40px;
+left: 40px;
+width: 325px;
+height: 310px;
+-webkit-box-sizing: border-box;
+-ms-box-sizing: border-box;
+opacity:0.9;
+}
+#zxy > :first-child {
+background:url("/images/jame.jpg") no-repeat top center;
+background-size:325px 310px;
+-webkit-transform: translateZ(-105px) rotateY(200deg);
+-ms-transform: translateZ(-105px) rotateY(200deg);
+}
+#zxy > :last-child {
+background:url("/images/Arry.jpg") no-repeat top center;
+background-size:325px 310px;
+-webkit-transform: translateZ(115px) rotateX(10deg) rotateY(32deg);
+transform: translateZ(115px) rotateX(10deg) rotateY(32deg);
+-webkit-transform-origin: 50% top;
+-ms-transform-origin: 50% top;
+}
+h5{text-align:center;position:absolute;bottom:10px;width:325px;color:#0f0;z-index:2;}
+/*执行Y轴旋转325度动画*/
+@-webkit-keyframes spin {
+from{-webkit-transform: rotateY(0);}
+to{-webkit-transform: rotateY(360deg);}
+}
+@-ms-keyframes spin {
+from{-ms-transform: rotateY(0);}
+to{-ms-transform: rotateY(360deg);}
+}
+h2{color:#ccc;text-align:center;}
+</style>
+</head>
+<body>
+<h2>注：IE浏览器暂不支持该主页特效，请在支持CSS3的浏览器上面查看该首页</h2>
+<div id="container">
+<div id="zxy">
+<div>
+<h5>jame老师</h5>
+</div>
+<h5>keke老师</h5>
+<div>
+<h5>院长 - Arry老师</h5>
+</div>
+</div>
+</div>
+</body>
+</html>

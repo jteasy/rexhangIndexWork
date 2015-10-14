@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <script type="text/javascript" src="jquery-1.11.1.min.js"></script>
+  <script type="text/javascript" src="tmui_loading.js"></script>
+  <style>
+	*{margin:0px;padding:0px;border:0px;}
+	body {font: normal 13px/24px "Microsoft Yahei","冬青黑体简体中文 w3","宋体";}
+	.tmui-loading{padding:16px;color:#fff;z-index:1000;border:2px solid #999;line-height:16px;position:fixed;background:#141414;font-size:12px;box-shadow:0px 0px 3em #333;-webkit-box-shadow:0px 0px 3em #333;-moz-box-shadow:0px 0px 3em #333;border-radius:5px;}
+	.tmui-loading #tm-loading-content{padding:5px 10px 10px 22px;background:url('http://www.tanzhouedu.net/images/loading.gif') no-repeat;}
+  </style>
+ </head>
+ <body>
+
+  <div class="tmui-loading" title="click close me!"><span id="tm-loading-content">sddddddddddddddd</span></div>
+  <script type="text/javascript">
+	$(function(){
+		$(".loading").tmLoading({width:400,height:400,content:"我是自己内容哦！我会覆盖你默认的内容...."});
+	});
+  </script>
+ </body>
+</html>

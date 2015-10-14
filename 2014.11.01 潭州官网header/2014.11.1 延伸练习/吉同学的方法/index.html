@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+	<head>
+		<!--声明当前页面的编码集：charset=gbk,gb2312（中文编码），utf-8（国际编码）-->
+		<meta http-equiv="Content-Type" content="text/html; charset=gbk">
+		<!--当前页面的三要素-->
+		<title>2014.11.1 延伸练习</title>
+		<meta name="Keywords" content="关键词,关键词">
+		<meta name="description" content="">
+		<link rel="shortcut icon" href="" />
+		
+		<!--css,js-->
+		<style type="text/css">
+			*{margin:0;padding:0;}
+			body{font-size:12px;color:#666;font-family:"微软雅黑";}
+			img{border:0;}
+			.header{background:#000;width:800px;height:80px;margin:200px auto;}
+			.header ul li{list-style:none;float:left;height:80px;width:398px;line-height:80px;text-align:center;}
+			.header ul li a{text-decoration:none;color:#fff;font-size:20px;font-weight:bold;display:block;}
+			.header ul li a:hover{background:#FF9900;}
+			/*li_pos start*/
+			.header ul .li_pos{width:402px;height:80px;position:relative;display:block;}
+			/*首先让”小箭头“图标隐藏用display:none*/
+			.header ul .li_pos img{width:8px;height:4px;display:none;position:absolute;bottom:10px;left:203px;}
+			/*鼠标移上去以后小箭头显示出来display:block*/
+			.header ul .li_pos:hover img{display:block;}
+			/*end li_pos*/
+			/*li_ag start*/
+			/*鼠标移上去以后，整个div_ag可见*/
+			.header ul .li_ag:hover .div_ag{visibility:visible;}
+			.header ul .li_ag .div_ag{background:#666;visibility:hidden;}
+			/*new图片相对于“地下城勇士”绝对定位*/
+			.header ul .li_ag .div_ag a{color:#000;line-height:35px;width:402px;position:relative;}
+			.header ul .li_ag .div_ag img{width:28px;height:11px;position:absolute;bottom:18px;left:271px;}
+			/*end li_ag*/
+
+
+		</style>
+
+    </head>
+<body>
+	 <div class="header">
+		<ul>
+			<li><a href="#">首页</a></li>
+`			<!--li_ag start-->
+			<li class="li_ag">
+				<!--li_pos start-->
+				<div class="li_pos">
+					<a href="#">腾讯旗下游戏</a>
+					<!--给图片的宽度和高度-->
+					<img src="images/1.png" alt="" width="8" height="4" />
+				<div>
+				<!--end li_pos-->
+				<!--div_ag start-->
+				<div class="div_ag">
+					<a href="#">武魂</a>
+					<a href="#">诛仙</a>
+					<a href="#">天下3</a>
+					<a href="#">剑灵</a>				
+					<a href="#">穿越火线</a>
+					<a href="#">英雄联盟</a>
+					<a href="#">英雄三国</a>
+					<a href="#">梦幻西游</a>
+					<a href="#">神魔大陆</a>
+					<a href="#">天龙八部</a>
+					<a href="#">剑网情缘</a>				
+					<a href="#">魔兽世界</a>
+					<a href="#">倩女幽魂</a>
+					<a href="#">跑跑卡丁车</a>
+					<!--要把new图片放到a标签里面，这样才能相对“地下城勇士盒子”绝对定位-->
+					<a href="#">
+						地下城与勇士
+						<!--给图片的宽度和高度-->
+						<img src="images/new.gif" alt="" width="28" height="11" />
+					</a>	
+				</div>
+				<!--end div_ag-->
+			</li>
+			<!--end li_ag-->
+		</ul>
+	 </div>
+</body>
+</html>

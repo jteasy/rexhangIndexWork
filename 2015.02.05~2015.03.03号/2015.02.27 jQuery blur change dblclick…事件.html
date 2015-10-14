@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+	<head>
+		<!--声明当前页面的编码集：charset=gbk,gb2312（中文编码），utf-8（国际编码）-->
+		<meta http-equiv="Content-Type" content="text/html; charset=gbk">
+		<!--当前页面的三要素-->
+		<title>标题写在这里！</title>
+		<meta name="Keywords" content="关键词,关键词">
+		<meta name="description" content="">
+		<link rel="shortcut icon" href="" />
+		
+		<!--css,js-->
+		<style type="text/css">
+			*{margin:0;padding:0;}
+			div.rex_2{background:red;}
+			/*指定p标签的id="rex_3";p也可以不写，但是网上经常有要看得懂*/
+			p#rex_3{background:#000;color:#fff;}
+		</style>
+
+    </head>
+<body>
+	
+	<p id="rex">
+		我是潭州精英学院院长 rexhang
+	</p>
+	
+	<input type="text" id="rex_2" />
+	
+	<select id="sel">
+		<option value="">1993</option>
+		<option value="">1992</option>
+		<option value="">1991</option>
+		<option value="">1990</option>
+	</select>
+	<input type="button" id="dbl" value="请双击我" />
+	<script type="text/javascript" src="jquery-1.11.2.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			// 焦点事件使用blur，事件绑定作，用于文本框；p标签没有焦点。
+			$("#rex_2").blur(function(){
+				// alert("现已失去焦点");
+			});
+			$("input[type='text']").change( function() {
+			  alert("输入的密码不正确");
+			});
+			// jQuery change方法 在js中需要传到input框中 onchange="change();"
+			$("#sel").change(function(){
+				alert("改变了");
+			});
+
+			$("#dbl").dblclick(function(){
+				alert("你双击了我，嘿嘿");
+				$("#sel").hide();
+			});
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE HTML>
+<html>
+ <head>
+  <title> 幸运大转盘 </title>
+  <meta name="Generator" content="EditPlus">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <script type="text/javascript" src="jquery-1.7.2.min.js"></script>
+  <script type="text/javascript" src="jQueryRotate.2.2.js"></script>
+  <style>
+	.bgDiv{
+	  position:absolute;
+	  width:509px;
+	  height:509px;
+	  top:50px;
+	  left:50px;
+	  background:url(bg.png);
+	}
+	.pointDiv{
+	  position:absolute;
+	  top:200px;
+	  left:200px;
+	}
+  </style>
+  <script type="text/javascript">
+	$(document).ready(function(){
+		//$("#pointBtn").rotate({animateTo:170+(360*3),duration:3000});
+		$("#pointBtn").rotate({
+		bind:{click:function(){
+			var data = [0];
+			var result = Math.floor(Math.random()*data.length);
+			result = data[result];
+			switch(result){
+				case 1:
+					rotateDo(160,'恭喜您抽的一等奖！美女一枚')
+				break;
+				case 2:
+					rotateDo(250,'恭喜您抽的二等奖！豪车')
+				break;
+				case 3:
+					rotateDo(35,'恭喜您抽的三等奖！豪宅')
+				break;
+				default:
+					rotateDo(200,'很遗憾您没有中奖！')
+				break;
+			}
+		}}
+		});
+	});
+	var rotateDo=function(angel,text){
+		$("#pointBtn").stopRotate();
+		$("#pointBtn").rotate(0);
+		$("#pointBtn").rotate({
+			angel:0,
+			animateTo:angel+(360*4),
+			duration:5000,callback:function(){alert(text);}
+		});
+	}
+  </script>
+ </head>
+
+ <body>
+	<div class="bgDiv"><!--背景图片-->
+	</div>
+	<div class="pointDiv"><!--指针 -->
+	 <img src="point.png" id="pointBtn"/>
+	</div>
+ </body>
+</html>

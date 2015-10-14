@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+<head>
+	<!--声明当前页面的编码集：charset=GBK,GB2312(中文编),UTF-8(国际编码)-->
+	<meta http-equiv="Content-Type"content="text/heml;charset=UTF-8">
+	<!--当前页面的三要素-->
+	<title>第三节 : HTML的标签</title>
+	<meta name="Keywords" content="关键词，关键词">
+	<meta name="description" content="">
+	<!--css.js-->
+	<link rel="stylesheet" href="/css/bg2.css" type="text/css" />
+	<style type="text/css">
+	*{margin:0;padding:0;font-family:"微软雅黑";line-height:25px;color:#000;}
+	.title{text-align:center;color:#666;;margin-top:20px;}
+	.font{color:#f03;font-size:18px;}
+	.p{border:1px solid red;}
+	h2{color:#90c}
+	.span{color:#f09}
+	.mar{width:200px;height:100px;border:1px solid red;}
+	.tab{text-align:left;width:400px;}
+	.copy{text-align:center;color:#666;line-height:40px;width:100%;}
+	/*回到顶部start*/
+			.ico{width:50px;height:40px;
+			position:fixed;
+			right:30px;
+			bottom:100px;
+			display:none;
+			
+			}
+			.ico_top{width:50px;height:40px;
+			background:url("/images/icon_top.png") no-repeat;
+			background-color:#444;
+			background-position:center;
+			cursor:pointer;display:block;
+			border-radius:5px;
+			}
+			/*回到顶部end*/
+	</style>
+	</head>
+<body>
+	<h1  class="title">第三节 : HTML的标签</h1><br />
+	<a name="special"></a>
+	<h2>HTML标签 - 特殊符号</h2><br />
+	
+	<!--xmp就是不转义html标签，将标签内的代码完完本本的显示出来-->
+	<table class="tab">
+	<tr><td>空格:&nbsp;</td><td><xmp>语法:&nbsp;</xmp></td></tr>
+	<tr><td>元&yen;:</td><td><xmp>语法:&yen;</xmp></td></tr>
+	<tr><td>大于号:&gt;</td><td><xmp>语法:&gt;</xmp></td></tr>
+	<tr><td>小于号:&lt;</td><td><xmp>语法:&lt;</xmp></td></tr>
+	<tr><td>双引号:&quot;&quot;</td><td><xmp>语法:&quot;</xmp></td></tr>
+	<tr><td>版权号:&copy;</td><td><xmp>语法:&copy;</xmp></td></tr>
+	</table><br /><hr />
+	<h2>HTML标签 - 字体效果（font标签）</h2><br />
+	<font>font标签：</font><font class="font">潭州软件学院创始人 Arry老师</font><br />
+	<xmp><font size="字体大小"  color="字体颜色"  face="字体类型">要设置的文字</font></xmp>
+	<br />
+	<h2>HTML标签 - p标签</h2><br />
+	<p>p标签定义段落:</p>
+	<p class="p">p 元素会自动在其前后创建一些空白。浏览器会自动添加这些空间，您也可以在样式表中规定</p>
+	<h2>HTML标签 - span标签</h2><br />
+	<p>span标签被用来组合文档中的行内元素。<span class="span"> 注：span 没有固定的格式表现。当对它应用样式时，它才会产生视觉上的变化</span></p><hr />
+	<h2>HTML标签 - strong/b 标签</h2><br />
+	<strong>dtrong标签用于强调文本。</strong>但是他强调的更重要一些，表示重要文本。利于SEO优化。<b>b标签呈现粗体文本效果。</b><hr />
+	<h2>HTML标签 - 超链接（a标签）</h2><br />
+	<p>1. 页面链接语法：链接到其他页面 a标签的 target属性规定在何处打开链接文档，target=_blank 浏览器总在一个新打开、未命名的窗口中载入目标文档</p>
+	<a href="http://t.ke.qq.com/">潭州学院</a></br></br>
+	<a href="http://tanzhouedu.com/" target="blank">潭州平台</a><br /><br />
+	<h3>链接到本页面</h3><br />
+	<a href="#special" >我是一个回到html特殊符号的锚记点</a>
+	<pre>&lt;a name=&quot;锚记点名称&quot; &gt;&lt;/a&gt;</pre>
+	<pre>&lt;a href=&quot;#锚记点名称&quot; &gt;&lt;/a&gt;</pre>
+	<p class="bz">备注：同一个页面锚记点名称唯一，不要重复。</p>
+	<p>1. 首先创建一个锚链接的锚记点：href=“#锚记点名称” 主题名称 </p>
+	<p>2. 然后在具体要链接到的地方设置  name:name=“锚记点名称”（锚记点前面要加上#号）</p><br />
+	<a href="mailto:12345@qq.com" >12345的QQ邮箱链接</a>
+				<pre>&lt;a href=&quot;mailto:12345@qq.com&quot; &gt;&lt;/a&gt;</pre>
+				<p class="bz">备注：mailto是通过outlook邮件系统访问指定的邮箱。</p>
+	<br /><hr />
+	<h2>HTML标签 - marquee滚动标签</h2><br />
+	<marquee  scrolldelay="10" direction="down" onmouseover="this.stop();" onmouseout="this.start()" class="mar">Arry老师太帅了！</marquee><br />
+	<marquee scrolldelay="10" direction="left" onmouseover="this.stop();" onmouseout="this.start()" class="mar">Arry老师太帅了！</marquee><hr />
+	<p class="copy">Copyright&copy;201501&nbsp;潭州学院-完美</p>
+	<div class="ico">
+		<span class="ico_top" title="回到顶部"></span>
+	</div>
+	<script type="text/javascript" src="/js/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="/js/dingbu.js"></script>
+	
+</body>
+</html>

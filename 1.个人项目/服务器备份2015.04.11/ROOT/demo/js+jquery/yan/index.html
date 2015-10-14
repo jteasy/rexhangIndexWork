@@ -1,0 +1,540 @@
+<!doctype html>
+<html>
+<head>
+	<!--声明当前页面的编码集：charset=GBK,GB2312(中文编),UTF-8(国际编码)-->
+	<meta http-equiv="Content-Type"content="text/heml;charset=UTF-8">
+	<!--当前页面的三要素-->
+	<title>图片延时加载技术</title>
+	<meta name="Keywords" content="关键词，关键词">
+	<meta name="description" content="">
+	<!--css.js-->
+	<link rel="stylesheet" href="/css/bg2.css" type="text/css" />
+	<style type="text/css">
+	*{margin:0;padding:0;}
+	body{font-size:12px;color:#666;font-family:"微软雅黑";text-shadow:none;}
+	.top{
+	width:1008px;height:66px;margin:0 auto;
+	}
+
+	.t-logo{float:left;margin-left: 45px;}
+
+	.t-qq{
+	float:right;
+	line-height:66px;
+	font-size:26px;
+	font-weight:bold;
+	}
+
+	.pic{
+	width:900px;
+	height:3000px;
+	margin:20px auto;
+	}
+
+	.pic ul li{
+	list-style:none;float:left;
+	margin:5px 5px;
+	overflow:hidden;
+	border-radius:3px;
+	}
+
+	.pic ul li:hover img{
+	transform:scale(1.2);
+	 -ms-transform:scale(1.2);
+	 -webkit-transform:scale(1.2);
+	 -o-transform:scale(1.2);
+	 background:#f9f9f9;
+	}
+
+	.pic ul li a img{width:288px;height:180px;
+	-webkit-transition:all .2s linear;
+	-o-transition:all .2s linear;
+	-moz-transition:all .2s linear;
+	-ms-transition:all .2s linear;
+	transition:all .2s linear;
+	}
+
+	.pic ul li p{
+	height:30px;
+	line-height:30px;
+	text-align:center;
+	font-size:14px;
+	background:#f9f9f9;
+	color:#000;
+	}
+	</style>
+
+	<script type="text/javascript" src="/js/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="/demo/js+jquery/yan/js/lazyload.js"></script>
+	<script type="text/javascript">
+	var Img = "/demo/js+jquery/yan/images/lazyload.gif";
+		jQuery.noConflict()(function(){
+			jQuery.noConflict()("img").lazyload({placeholder:Img,effect:"fadeIn"});
+		});
+	</script>
+	</head>
+<body>
+	<div class="top">
+		<div class="t-logo">
+			<a href="javascript:;"><img src="/demo/js+jquery/yan/images/logo.png" /></a>
+		</div>
+		<div class="t-qq">报名VIP咨询QQ:<span>635900005</span></div>
+	</div>
+
+	<div class="pic">
+		<ul>
+			<li>
+			<a href="javascript:;">
+			<img src="/demo/js+jquery/yan/images/1.jpg" width="288" height="180" alt="绿叶" title="绿叶"/>
+			</a>
+			<p>绿丛小花精美摄影</p>
+			</li>
+			<li>
+			<a href="javascript:;">
+			<img src="/demo/js+jquery/yan/images/2.jpg" width="288" height="180" alt="绿叶" title="绿叶"/>
+			</a>
+			<p>绿丛小花精美摄影</p>
+			</li>
+			<li>
+			<a href="javascript:;">
+			<img src="/demo/js+jquery/yan/images/1.jpg" width="288" height="180" alt="绿叶" title="绿叶"/>
+			</a>
+			<p>绿丛小花精美摄影</p>
+			</li>
+			<li>
+			<a href="javascript:;">
+			<img src="/demo/js+jquery/yan/images/2.jpg" width="288" height="180" alt="绿叶" title="绿叶"/>
+			</a>
+			<p>绿丛小花精美摄影</p>
+			</li>
+			<li>
+			<a href="javascript:;">
+			<img src="/demo/js+jquery/yan/images/1.jpg" width="288" height="180" alt="绿叶" title="绿叶"/>
+			</a>
+			<p>绿丛小花精美摄影</p>
+			</li>
+			<li>
+			<a href="javascript:;">
+			<img src="/demo/js+jquery/yan/images/2.jpg" width="288" height="180" alt="绿叶" title="绿叶"/>
+			</a>
+			<p>绿丛小花精美摄影</p>
+			</li>
+			<li>
+			<a href="javascript:;">
+			<img src="/demo/js+jquery/yan/images/1.jpg" width="288" height="180" alt="绿叶" title="绿叶"/>
+			</a>
+			<p>绿丛小花精美摄影</p>
+			</li>
+			<li>
+			<a href="javascript:;">
+			<img src="/demo/js+jquery/yan/images/2.jpg" width="288" height="180" alt="绿叶" title="绿叶"/>
+			</a>
+			<p>绿丛小花精美摄影</p>
+			</li>
+			<li>
+			<a href="javascript:;">
+			<img src="/demo/js+jquery/yan/images/1.jpg" width="288" height="180" alt="绿叶" title="绿叶"/>
+			</a>
+			<p>绿丛小花精美摄影</p>
+			</li>
+			<li>
+			<a href="javascript:;">
+			<img src="/demo/js+jquery/yan/images/2.jpg" width="288" height="180" alt="绿叶" title="绿叶"/>
+			</a>
+			<p>绿丛小花精美摄影</p>
+			</li>
+			<li>
+			<a href="javascript:;">
+			<img src="/demo/js+jquery/yan/images/1.jpg" width="288" height="180" alt="绿叶" title="绿叶"/>
+			</a>
+			<p>绿丛小花精美摄影</p>
+			</li>
+			<li>
+			<a href="javascript:;">
+			<img src="/demo/js+jquery/yan/images/1.jpg" width="288" height="180" alt="绿叶" title="绿叶"/>
+			</a>
+			<p>绿丛小花精美摄影</p>
+			</li>
+			<li>
+			<a href="javascript:;">
+			<img src="/demo/js+jquery/yan/images/2.jpg" width="288" height="180" alt="绿叶" title="绿叶"/>
+			</a>
+			<p>绿丛小花精美摄影</p>
+			</li>
+			<li>
+			<a href="javascript:;">
+			<img src="/demo/js+jquery/yan/images/1.jpg" width="288" height="180" alt="绿叶" title="绿叶"/>
+			</a>
+			<p>绿丛小花精美摄影</p>
+			</li>
+			<li>
+			<a href="javascript:;">
+			<img src="/demo/js+jquery/yan/images/1.jpg" width="288" height="180" alt="绿叶" title="绿叶"/>
+			</a>
+			<p>绿丛小花精美摄影</p>
+			</li>
+			<li>
+			<a href="javascript:;">
+			<img src="/demo/js+jquery/yan/images/2.jpg" width="288" height="180" alt="绿叶" title="绿叶"/>
+			</a>
+			<p>绿丛小花精美摄影</p>
+			</li>
+			<li>
+			<a href="javascript:;">
+			<img src="/demo/js+jquery/yan/images/1.jpg" width="288" height="180" alt="绿叶" title="绿叶"/>
+			</a>
+			<p>绿丛小花精美摄影</p>
+			</li>
+			<li>
+			<a href="javascript:;">
+			<img src="/demo/js+jquery/yan/images/1.jpg" width="288" height="180" alt="绿叶" title="绿叶"/>
+			</a>
+			<p>绿丛小花精美摄影</p>
+			</li>
+			<li>
+			<a href="javascript:;">
+			<img src="/demo/js+jquery/yan/images/2.jpg" width="288" height="180" alt="绿叶" title="绿叶"/>
+			</a>
+			<p>绿丛小花精美摄影</p>
+			</li>
+			<li>
+			<a href="javascript:;">
+			<img src="/demo/js+jquery/yan/images/1.jpg" width="288" height="180" alt="绿叶" title="绿叶"/>
+			</a>
+			<p>绿丛小花精美摄影</p>
+			</li>
+			<li>
+			<a href="javascript:;">
+			<img src="/demo/js+jquery/yan/images/1.jpg" width="288" height="180" alt="绿叶" title="绿叶"/>
+			</a>
+			<p>绿丛小花精美摄影</p>
+			</li>
+			<li>
+			<a href="javascript:;">
+			<img src="/demo/js+jquery/yan/images/2.jpg" width="288" height="180" alt="绿叶" title="绿叶"/>
+			</a>
+			<p>绿丛小花精美摄影</p>
+			</li>
+			<li>
+			<a href="javascript:;">
+			<img src="/demo/js+jquery/yan/images/1.jpg" width="288" height="180" alt="绿叶" title="绿叶"/>
+			</a>
+			<p>绿丛小花精美摄影</p>
+			</li>
+			<li>
+			<a href="javascript:;">
+			<img src="/demo/js+jquery/yan/images/1.jpg" width="288" height="180" alt="绿叶" title="绿叶"/>
+			</a>
+			<p>绿丛小花精美摄影</p>
+			</li>
+			<li>
+			<a href="javascript:;">
+			<img src="/demo/js+jquery/yan/images/2.jpg" width="288" height="180" alt="绿叶" title="绿叶"/>
+			</a>
+			<p>绿丛小花精美摄影</p>
+			</li>
+			<li>
+			<a href="javascript:;">
+			<img src="/demo/js+jquery/yan/images/1.jpg" width="288" height="180" alt="绿叶" title="绿叶"/>
+			</a>
+			<p>绿丛小花精美摄影</p>
+			</li>
+			<li>
+			<a href="javascript:;">
+			<img src="/demo/js+jquery/yan/images/1.jpg" width="288" height="180" alt="绿叶" title="绿叶"/>
+			</a>
+			<p>绿丛小花精美摄影</p>
+			</li>
+			<li>
+			<a href="javascript:;">
+			<img src="/demo/js+jquery/yan/images/2.jpg" width="288" height="180" alt="绿叶" title="绿叶"/>
+			</a>
+			<p>绿丛小花精美摄影</p>
+			</li>
+			<li>
+			<a href="javascript:;">
+			<img src="/demo/js+jquery/yan/images/1.jpg" width="288" height="180" alt="绿叶" title="绿叶"/>
+			</a>
+			<p>绿丛小花精美摄影</p>
+			</li>
+			<li>
+			<a href="javascript:;">
+			<img src="/demo/js+jquery/yan/images/1.jpg" width="288" height="180" alt="绿叶" title="绿叶"/>
+			</a>
+			<p>绿丛小花精美摄影</p>
+			</li>
+			<li>
+			<a href="javascript:;">
+			<img src="/demo/js+jquery/yan/images/2.jpg" width="288" height="180" alt="绿叶" title="绿叶"/>
+			</a>
+			<p>绿丛小花精美摄影</p>
+			</li>
+			<li>
+			<a href="javascript:;">
+			<img src="/demo/js+jquery/yan/images/1.jpg" width="288" height="180" alt="绿叶" title="绿叶"/>
+			</a>
+			<p>绿丛小花精美摄影</p>
+			</li>
+			<li>
+			<a href="javascript:;">
+			<img src="/demo/js+jquery/yan/images/1.jpg" width="288" height="180" alt="绿叶" title="绿叶"/>
+			</a>
+			<p>绿丛小花精美摄影</p>
+			</li>
+			<li>
+			<a href="javascript:;">
+			<img src="/demo/js+jquery/yan/images/2.jpg" width="288" height="180" alt="绿叶" title="绿叶"/>
+			</a>
+			<p>绿丛小花精美摄影</p>
+			</li>
+			<li>
+			<a href="javascript:;">
+			<img src="/demo/js+jquery/yan/images/1.jpg" width="288" height="180" alt="绿叶" title="绿叶"/>
+			</a>
+			<p>绿丛小花精美摄影</p>
+			</li>
+			<li>
+			<a href="javascript:;">
+			<img src="/demo/js+jquery/yan/images/1.jpg" width="288" height="180" alt="绿叶" title="绿叶"/>
+			</a>
+			<p>绿丛小花精美摄影</p>
+			</li>
+			<li>
+			<a href="javascript:;">
+			<img src="/demo/js+jquery/yan/images/2.jpg" width="288" height="180" alt="绿叶" title="绿叶"/>
+			</a>
+			<p>绿丛小花精美摄影</p>
+			</li>
+			<li>
+			<a href="javascript:;">
+			<img src="/demo/js+jquery/yan/images/1.jpg" width="288" height="180" alt="绿叶" title="绿叶"/>
+			</a>
+			<p>绿丛小花精美摄影</p>
+			</li>
+			<li>
+			<a href="javascript:;">
+			<img src="/demo/js+jquery/yan/images/1.jpg" width="288" height="180" alt="绿叶" title="绿叶"/>
+			</a>
+			<p>绿丛小花精美摄影</p>
+			</li>
+			<li>
+			<a href="javascript:;">
+			<img src="/demo/js+jquery/yan/images/2.jpg" width="288" height="180" alt="绿叶" title="绿叶"/>
+			</a>
+			<p>绿丛小花精美摄影</p>
+			</li>
+			<li>
+			<a href="javascript:;">
+			<img src="/demo/js+jquery/yan/images/1.jpg" width="288" height="180" alt="绿叶" title="绿叶"/>
+			</a>
+			<p>绿丛小花精美摄影</p>
+			</li>
+			<li>
+			<a href="javascript:;">
+			<img src="/demo/js+jquery/yan/images/1.jpg" width="288" height="180" alt="绿叶" title="绿叶"/>
+			</a>
+			<p>绿丛小花精美摄影</p>
+			</li>
+			<li>
+			<a href="javascript:;">
+			<img src="/demo/js+jquery/yan/images/2.jpg" width="288" height="180" alt="绿叶" title="绿叶"/>
+			</a>
+			<p>绿丛小花精美摄影</p>
+			</li>
+			<li>
+			<a href="javascript:;">
+			<img src="/demo/js+jquery/yan/images/1.jpg" width="288" height="180" alt="绿叶" title="绿叶"/>
+			</a>
+			<p>绿丛小花精美摄影</p>
+			</li>
+			<li>
+			<a href="javascript:;">
+			<img src="/demo/js+jquery/yan/images/1.jpg" width="288" height="180" alt="绿叶" title="绿叶"/>
+			</a>
+			<p>绿丛小花精美摄影</p>
+			</li>
+			<li>
+			<a href="javascript:;">
+			<img src="/demo/js+jquery/yan/images/2.jpg" width="288" height="180" alt="绿叶" title="绿叶"/>
+			</a>
+			<p>绿丛小花精美摄影</p>
+			</li>
+			<li>
+			<a href="javascript:;">
+			<img src="/demo/js+jquery/yan/images/1.jpg" width="288" height="180" alt="绿叶" title="绿叶"/>
+			</a>
+			<p>绿丛小花精美摄影</p>
+			</li>
+			<li>
+			<a href="javascript:;">
+			<img src="/demo/js+jquery/yan/images/1.jpg" width="288" height="180" alt="绿叶" title="绿叶"/>
+			</a>
+			<p>绿丛小花精美摄影</p>
+			</li>
+			<li>
+			<a href="javascript:;">
+			<img src="/demo/js+jquery/yan/images/2.jpg" width="288" height="180" alt="绿叶" title="绿叶"/>
+			</a>
+			<p>绿丛小花精美摄影</p>
+			</li>
+			<li>
+			<a href="javascript:;">
+			<img src="/demo/js+jquery/yan/images/1.jpg" width="288" height="180" alt="绿叶" title="绿叶"/>
+			</a>
+			<p>绿丛小花精美摄影</p>
+			</li>
+			<li>
+			<a href="javascript:;">
+			<img src="/demo/js+jquery/yan/images/1.jpg" width="288" height="180" alt="绿叶" title="绿叶"/>
+			</a>
+			<p>绿丛小花精美摄影</p>
+			</li>
+			<li>
+			<a href="javascript:;">
+			<img src="/demo/js+jquery/yan/images/2.jpg" width="288" height="180" alt="绿叶" title="绿叶"/>
+			</a>
+			<p>绿丛小花精美摄影</p>
+			</li>
+			<li>
+			<a href="javascript:;">
+			<img src="/demo/js+jquery/yan/images/1.jpg" width="288" height="180" alt="绿叶" title="绿叶"/>
+			</a>
+			<p>绿丛小花精美摄影</p>
+			</li>
+			<li>
+			<a href="javascript:;">
+			<img src="/demo/js+jquery/yan/images/1.jpg" width="288" height="180" alt="绿叶" title="绿叶"/>
+			</a>
+			<p>绿丛小花精美摄影</p>
+			</li>
+			<li>
+			<a href="javascript:;">
+			<img src="/demo/js+jquery/yan/images/2.jpg" width="288" height="180" alt="绿叶" title="绿叶"/>
+			</a>
+			<p>绿丛小花精美摄影</p>
+			</li>
+			<li>
+			<a href="javascript:;">
+			<img src="/demo/js+jquery/yan/images/1.jpg" width="288" height="180" alt="绿叶" title="绿叶"/>
+			</a>
+			<p>绿丛小花精美摄影</p>
+			</li>
+			<li>
+			<a href="javascript:;">
+			<img src="/demo/js+jquery/yan/images/1.jpg" width="288" height="180" alt="绿叶" title="绿叶"/>
+			</a>
+			<p>绿丛小花精美摄影</p>
+			</li>
+			<li>
+			<a href="javascript:;">
+			<img src="/demo/js+jquery/yan/images/2.jpg" width="288" height="180" alt="绿叶" title="绿叶"/>
+			</a>
+			<p>绿丛小花精美摄影</p>
+			</li>
+			<li>
+			<a href="javascript:;">
+			<img src="/demo/js+jquery/yan/images/1.jpg" width="288" height="180" alt="绿叶" title="绿叶"/>
+			</a>
+			<p>绿丛小花精美摄影</p>
+			</li>
+			<li>
+			<a href="javascript:;">
+			<img src="/demo/js+jquery/yan/images/1.jpg" width="288" height="180" alt="绿叶" title="绿叶"/>
+			</a>
+			<p>绿丛小花精美摄影</p>
+			</li>
+			<li>
+			<a href="javascript:;">
+			<img src="/demo/js+jquery/yan/images/2.jpg" width="288" height="180" alt="绿叶" title="绿叶"/>
+			</a>
+			<p>绿丛小花精美摄影</p>
+			</li>
+			<li>
+			<a href="javascript:;">
+			<img src="/demo/js+jquery/yan/images/1.jpg" width="288" height="180" alt="绿叶" title="绿叶"/>
+			</a>
+			<p>绿丛小花精美摄影</p>
+			</li>
+			<li>
+			<a href="javascript:;">
+			<img src="/demo/js+jquery/yan/images/1.jpg" width="288" height="180" alt="绿叶" title="绿叶"/>
+			</a>
+			<p>绿丛小花精美摄影</p>
+			</li>
+			<li>
+			<a href="javascript:;">
+			<img src="/demo/js+jquery/yan/images/2.jpg" width="288" height="180" alt="绿叶" title="绿叶"/>
+			</a>
+			<p>绿丛小花精美摄影</p>
+			</li>
+			<li>
+			<a href="javascript:;">
+			<img src="/demo/js+jquery/yan/images/1.jpg" width="288" height="180" alt="绿叶" title="绿叶"/>
+			</a>
+			<p>绿丛小花精美摄影</p>
+			</li>
+			<li>
+			<a href="javascript:;">
+			<img src="/demo/js+jquery/yan/images/1.jpg" width="288" height="180" alt="绿叶" title="绿叶"/>
+			</a>
+			<p>绿丛小花精美摄影</p>
+			</li>
+			<li>
+			<a href="javascript:;">
+			<img src="/demo/js+jquery/yan/images/2.jpg" width="288" height="180" alt="绿叶" title="绿叶"/>
+			</a>
+			<p>绿丛小花精美摄影</p>
+			</li>
+			<li>
+			<a href="javascript:;">
+			<img src="/demo/js+jquery/yan/images/1.jpg" width="288" height="180" alt="绿叶" title="绿叶"/>
+			</a>
+			<p>绿丛小花精美摄影</p>
+			</li>
+			<li>
+			<a href="javascript:;">
+			<img src="/demo/js+jquery/yan/images/1.jpg" width="288" height="180" alt="绿叶" title="绿叶"/>
+			</a>
+			<p>绿丛小花精美摄影</p>
+			</li>
+			<li>
+			<a href="javascript:;">
+			<img src="/demo/js+jquery/yan/images/2.jpg" width="288" height="180" alt="绿叶" title="绿叶"/>
+			</a>
+			<p>绿丛小花精美摄影</p>
+			</li>
+			<li>
+			<a href="javascript:;">
+			<img src="/demo/js+jquery/yan/images/1.jpg" width="288" height="180" alt="绿叶" title="绿叶"/>
+			</a>
+			<p>绿丛小花精美摄影</p>
+			</li>
+			<li>
+			<a href="javascript:;">
+			<img src="/demo/js+jquery/yan/images/1.jpg" width="288" height="180" alt="绿叶" title="绿叶"/>
+			</a>
+			<p>绿丛小花精美摄影</p>
+			</li>
+			<li>
+			<a href="javascript:;">
+			<img src="/demo/js+jquery/yan/images/2.jpg" width="288" height="180" alt="绿叶" title="绿叶"/>
+			</a>
+			<p>绿丛小花精美摄影</p>
+			</li>
+			<li>
+			<a href="javascript:;">
+			<img src="/demo/js+jquery/yan/images/1.jpg" width="288" height="180" alt="绿叶" title="绿叶"/>
+			</a>
+			<p>绿丛小花精美摄影</p>
+			</li>
+			<li>
+			<a href="javascript:;">
+			<img src="/demo/js+jquery/yan/images/1.jpg" width="288" height="180" alt="绿叶" title="绿叶"/>
+			</a>
+			<p>绿丛小花精美摄影</p>
+			</li>
+			
+		</ul>
+	</div>
+</body>
+</html>

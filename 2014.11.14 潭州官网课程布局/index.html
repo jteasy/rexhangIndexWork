@@ -1,0 +1,546 @@
+<!doctype html>
+<html>
+	<head>
+		<!--声明当前页面的编码集：charset=gbk,gb2312(中文编码)，utf-8国际编码-->
+		<meta http-equiv="Content-Type" content="text/html; charset=gbk">
+		<!--当前页面的三要素-->
+		<title>潭州学院</title>
+		<meta name="Keywords" content="关键词,关键词">
+		<meta name="description" content="">
+
+		<!--css,js-->
+		<style type="text/css">
+			*{margin:0;padding:0;}
+			body{font-size:12px;font-family:"微软雅黑";color:#666;}
+			img{border:0;}
+			.top{width:100%;height:76px;background:#000;
+				/*固定头部，滑动网页的身体同步移动*/
+				position: fixed;top:0;left:0;z-index:100;
+			}
+			.top .header{width:1198px;height:76px;margin:0 auto;}
+			.top .header .logo{margin-top:14px;float:left;}
+
+			/*nav start*/
+			.top .header .nav{float:left;margin-left:60px;}
+			.top .header .nav ul li{list-style:none;float:left;height:76px;}
+			.top .header .nav ul li a{padding:0 15px;line-height:76px;font-size:14px;color:#fff;text-decoration:none;
+				display:block;}
+			.top .header .nav ul li a:hover{background:#2c2c2c;color:#fff;}
+			.top .header .nav ul li .sel{background:#2c2c2c;}
+			/*end nav*/
+
+			/*nav_select start*/
+			.top .header .nav ul .nav_select{position:relative;}
+			.top .header .nav ul .nav_select .nav_tips{position:absolute;left:24px;top:-21px;z-index:3;}
+			.top .header .nav .nav_bbs{background:#000;position:absolute;top:76px;z-index:2;
+				visibility:hidden;}
+			.top .header .nav .nav_bbs a{width:130px;height:35px;line-height:35px;color:#605f5f;}
+			.top .header .nav .nav_select:hover .nav_bbs{visibility:visible;}
+			/*end nav_select*/
+
+			.top .header .tel{float:right;color:#fff;font-size:22px;font-weight:500;padding: 26px 0 0 20px;}
+
+			/*share start*/
+			.top .header .share a{width:38px;height:38px;display:block;float:right;margin:23px 5px 0 0;overflow:hidden;position:relative;}
+			.top .header .share a span{width:30px;height:80px;display:block;background:url("images/share.png") no-repeat;position:absolute;}
+			.top .header .share .sina{background-position:3px 6px;}
+ 			.top .header .share .tx{background-position:-42px 6px;}
+			.top .header .share .qq{background-position:-82px 6px;}
+			/*end share*/
+			
+			
+			/*course_list start*/
+			.course_list{width:100%;margin:0 auto;}
+			.course_list .c_all{width:1198px;margin:100px auto;border-right: 1px solid #e8e8e8;}
+			.course_list .c_all .show{width:953;background:#FAFAFA;padding:0 31px;height:895px;background:#fff;display:none}
+			.course_list .c_all .show ul li{background:#fff;list-style:none;width:270px;height:260px;float:left;margin: 15px 0 0 10px; padding: 20px 7px 0 10px;position:relative;}
+			.course_list .c_all .show ul li:hover{background:#e5e5e5;border-right:none;}
+			.course_list .c_all .show ul li a{width:270px;height:260px;display:block;position:absolute;left:0;top:0;}
+			.course_list .c_all .show ul li p span{display:block;font-size:14px;margin-left:10px;}
+			.course_list .c_all .show ul li p .hot_title{padding:10px 0 10px 0;font-size:16px;}
+			
+			.course_list .c_all .c_menu{width:241px;height: 895px;background:#f6f6f6;float:left;border: 1px solid #e8e8e8;}
+			.course_list .c_all .c_menu .sel{background:#fff;color:#000;border-left:3px solid #000;}
+			.course_list .c_all .c_menu ul li{list-style:none;font-size:14px;font-weight:bold;height:55px;line-height:55px;border-bottom:1px solid #fff;padding-left:31px;width:241px;}
+			.course_list .c_all .c_menu ul li:hover{background:#fff;color:#000;border-left:3px solid #000;}
+			.course_list .c_all .c_content{width:953px;float:left;border-bottom:1px solid #e8e8e8;border-top:1px solid #e8e8e8;}
+			/*end course_list*/
+
+
+
+
+			/*footer start*/
+			.footer{width:100%;background:#000;padding: 20px 0;}
+			.footer .copyRight{width:967px;margin:0 auto;height:50px;}
+			.footer .copyRight .logo{width:50px;height:50px;display:block;background:url(http://www.mooncollege.cn/images/main/foot-logo.png) no-repeat;float:left;}
+			.footer .copyRight .logo:hover{ background:url(http://www.mooncollege.cn/images/main/foot-logo-hover.png) no-repeat;}
+			.footer .copyRight p{float:left;margin-left:20px;line-height:25px;}
+			.footer .copyRight p a{text-decoration:none;margin:0 8px;color:#666;}
+			.footer .copyRight p span{display:block;}
+			/*end footer*/
+
+		</style>
+
+	</head>
+<body>
+
+	<!--top start-->
+	<div class="top">
+		<div class="header">
+			<div class="logo">
+				<a href="#"><img src="http://www.mooncollege.cn/images/main/logo.png" alt="潭州学院" width="158" height="52"/></a>
+			</div>
+			<!--nav start-->
+			<div class="nav">
+				<ul>
+					<li><a href="#" class="sel">首页</a></li>
+					<li><a href="#">课程</a></li>
+					<li><a href="#">题库</a></li>
+					<li><a href="#">招聘</a></li>
+					<li><a href="#">公开课</a></li>
+					<li><a href="#">活动</a></li>
+					<li class="nav_select">
+						<a href="#">论坛</a>
+						<div class="nav_bbs">
+							<span class="nav_tips">
+								<img src="http://www.mooncollege.cn/images/main/jebhAW6Vx_02.png"/>
+							</span>
+							<a href="#">SEO研究中心</a>
+							<a href="#">网页制作论坛</a>
+							<a href="#">淘宝论坛</a>
+							<a href="#">ps论坛</a>
+							<a href="#">网络营销</a>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<!--end nav-->
+			
+			<div class="tel">400-009-6359</div>
+			
+			<!--share start-->
+			<div class="share">
+				<a href="#"><span class="qq"></span></a>
+				<a href="#"><span class="tx"></span></a>
+				<a href="#"><span class="sina"></span></a>
+			</div>
+			<!--end share-->
+
+		</div>
+	</div>
+	<!--end top-->
+	<!--course_list start-->
+	<div class="course_list">
+		<div class="c_all">
+			<div class="c_menu">
+				<ul>
+					<li class="sel">编程开发</li>
+					<li>网络营销</li>
+					<li>IT设计</li>
+					<li>小语种</li>
+					<li>职业技能</li>
+				</ul>
+			</div>
+			<div class="c_content">
+			<div class="show _one" style="display:block">	
+				<ul>
+					<li>
+						<img src="http://www.mooncollege.cn/images/main/java267.png" alt="java精品课程" width="267" height="151"/>
+						<p>
+							<span class="hot_title">课题：Java零基础到项目实战特训</span>
+							<span>讲师：Arry老师-技术总监</span>
+							<span>学生：11746</span>
+						</p>
+						<a href="http://ke.qq.com/cgi-bin/courseDetail?course_id=5141" target="_blank"></a>
+					</li>
+					<li>
+						<img src="http://www.mooncollege.cn/images/main/java267.png" alt="java精品课程" width="267" height="151"/>
+						<p>
+							<span class="hot_title">课题：Java零基础到项目实战特训</span>
+							<span>讲师：Arry老师-技术总监</span>
+							<span>学生：11746</span>
+						</p>
+						<a href="http://ke.qq.com/cgi-bin/courseDetail?course_id=5141" target="_blank"></a>
+					</li>
+					<li>
+						<img src="http://www.mooncollege.cn/images/main/java267.png" alt="java精品课程" width="267" height="151"/>
+						<p>
+							<span class="hot_title">课题：Java零基础到项目实战特训</span>
+							<span>讲师：Arry老师-技术总监</span>
+							<span>学生：11746</span>
+						</p>
+						<a href="http://ke.qq.com/cgi-bin/courseDetail?course_id=5141" target="_blank"></a>
+					</li>
+					<li>
+						<img src="http://www.mooncollege.cn/images/main/java267.png" alt="java精品课程" width="267" height="151"/>
+						<p>
+							<span class="hot_title">课题：Java零基础到项目实战特训</span>
+							<span>讲师：Arry老师-技术总监</span>
+							<span>学生：11746</span>
+						</p>
+						<a href="http://ke.qq.com/cgi-bin/courseDetail?course_id=5141" target="_blank"></a>
+					</li>
+					<li>
+						<img src="http://www.mooncollege.cn/images/main/java267.png" alt="java精品课程" width="267" height="151"/>
+						<p>
+							<span class="hot_title">课题：Java零基础到项目实战特训</span>
+							<span>讲师：Arry老师-技术总监</span>
+							<span>学生：11746</span>
+						</p>
+						<a href="http://ke.qq.com/cgi-bin/courseDetail?course_id=5141" target="_blank"></a>
+					</li>
+					<li>
+						<img src="http://www.mooncollege.cn/images/main/java267.png" alt="java精品课程" width="267" height="151"/>
+						<p>
+							<span class="hot_title">课题：Java零基础到项目实战特训</span>
+							<span>讲师：Arry老师-技术总监</span>
+							<span>学生：11746</span>
+						</p>
+						<a href="http://ke.qq.com/cgi-bin/courseDetail?course_id=5141" target="_blank"></a>
+					</li>
+					<li>
+						<img src="http://www.mooncollege.cn/images/main/java267.png" alt="java精品课程" width="267" height="151"/>
+						<p>
+							<span class="hot_title">课题：Java零基础到项目实战特训</span>
+							<span>讲师：Arry老师-技术总监</span>
+							<span>学生：11746</span>
+						</p>
+						<a href="http://ke.qq.com/cgi-bin/courseDetail?course_id=5141" target="_blank"></a>
+					</li>
+					<li>
+						<img src="http://www.mooncollege.cn/images/main/java267.png" alt="java精品课程" width="267" height="151"/>
+						<p>
+							<span class="hot_title">课题：Java零基础到项目实战特训</span>
+							<span>讲师：Arry老师-技术总监</span>
+							<span>学生：11746</span>
+						</p>
+						<a href="http://ke.qq.com/cgi-bin/courseDetail?course_id=5141" target="_blank"></a>
+					</li>
+				</ul>			
+			</div>
+			<div class="show _two">	
+				<ul>
+					<li>
+						<img src="http://www.mooncollege.cn/images/main/java267.png" alt="java精品课程" width="267" height="151"/>
+						<p>
+							<span class="hot_title">课题：Java零基础到项目实战特训</span>
+							<span>讲师：Arry老师-技术总监</span>
+							<span>学生：11746</span>
+						</p>
+						<a href="http://ke.qq.com/cgi-bin/courseDetail?course_id=5141" target="_blank"></a>
+					</li>
+					<li>
+						<img src="http://www.mooncollege.cn/images/main/java267.png" alt="java精品课程" width="267" height="151"/>
+						<p>
+							<span class="hot_title">课题：Java零基础到项目实战特训</span>
+							<span>讲师：Arry老师-技术总监</span>
+							<span>学生：11746</span>
+						</p>
+						<a href="http://ke.qq.com/cgi-bin/courseDetail?course_id=5141" target="_blank"></a>
+					</li>
+					<li>
+						<img src="http://www.mooncollege.cn/images/main/java267.png" alt="java精品课程" width="267" height="151"/>
+						<p>
+							<span class="hot_title">课题：Java零基础到项目实战特训</span>
+							<span>讲师：Arry老师-技术总监</span>
+							<span>学生：11746</span>
+						</p>
+						<a href="http://ke.qq.com/cgi-bin/courseDetail?course_id=5141" target="_blank"></a>
+					</li>
+					<li>
+						<img src="http://www.mooncollege.cn/images/main/java267.png" alt="java精品课程" width="267" height="151"/>
+						<p>
+							<span class="hot_title">课题：Java零基础到项目实战特训</span>
+							<span>讲师：Arry老师-技术总监</span>
+							<span>学生：11746</span>
+						</p>
+						<a href="http://ke.qq.com/cgi-bin/courseDetail?course_id=5141" target="_blank"></a>
+					</li>
+					<li>
+						<img src="http://www.mooncollege.cn/images/main/java267.png" alt="java精品课程" width="267" height="151"/>
+						<p>
+							<span class="hot_title">课题：Java零基础到项目实战特训</span>
+							<span>讲师：Arry老师-技术总监</span>
+							<span>学生：11746</span>
+						</p>
+						<a href="http://ke.qq.com/cgi-bin/courseDetail?course_id=5141" target="_blank"></a>
+					</li>
+					<li>
+						<img src="http://www.mooncollege.cn/images/main/java267.png" alt="java精品课程" width="267" height="151"/>
+						<p>
+							<span class="hot_title">课题：Java零基础到项目实战特训</span>
+							<span>讲师：Arry老师-技术总监</span>
+							<span>学生：11746</span>
+						</p>
+						<a href="http://ke.qq.com/cgi-bin/courseDetail?course_id=5141" target="_blank"></a>
+					</li>
+					<li>
+						<img src="http://www.mooncollege.cn/images/main/java267.png" alt="java精品课程" width="267" height="151"/>
+						<p>
+							<span class="hot_title">课题：Java零基础到项目实战特训</span>
+							<span>讲师：Arry老师-技术总监</span>
+							<span>学生：11746</span>
+						</p>
+						<a href="http://ke.qq.com/cgi-bin/courseDetail?course_id=5141" target="_blank"></a>
+					</li>
+				</ul>			
+			</div>
+			<div class="show _three">	
+				<ul>					
+					<li>
+						<img src="http://www.mooncollege.cn/images/main/java267.png" alt="java精品课程" width="267" height="151"/>
+						<p>
+							<span class="hot_title">课题：Java零基础到项目实战特训</span>
+							<span>讲师：Arry老师-技术总监</span>
+							<span>学生：11746</span>
+						</p>
+						<a href="http://ke.qq.com/cgi-bin/courseDetail?course_id=5141" target="_blank"></a>
+					</li>
+					<li>
+						<img src="http://www.mooncollege.cn/images/main/java267.png" alt="java精品课程" width="267" height="151"/>
+						<p>
+							<span class="hot_title">课题：Java零基础到项目实战特训</span>
+							<span>讲师：Arry老师-技术总监</span>
+							<span>学生：11746</span>
+						</p>
+						<a href="http://ke.qq.com/cgi-bin/courseDetail?course_id=5141" target="_blank"></a>
+					</li>
+					<li>
+						<img src="http://www.mooncollege.cn/images/main/java267.png" alt="java精品课程" width="267" height="151"/>
+						<p>
+							<span class="hot_title">课题：Java零基础到项目实战特训</span>
+							<span>讲师：Arry老师-技术总监</span>
+							<span>学生：11746</span>
+						</p>
+						<a href="http://ke.qq.com/cgi-bin/courseDetail?course_id=5141" target="_blank"></a>
+					</li>
+					<li>
+						<img src="http://www.mooncollege.cn/images/main/java267.png" alt="java精品课程" width="267" height="151"/>
+						<p>
+							<span class="hot_title">课题：Java零基础到项目实战特训</span>
+							<span>讲师：Arry老师-技术总监</span>
+							<span>学生：11746</span>
+						</p>
+						<a href="http://ke.qq.com/cgi-bin/courseDetail?course_id=5141" target="_blank"></a>
+					</li>
+					<li>
+						<img src="http://www.mooncollege.cn/images/main/java267.png" alt="java精品课程" width="267" height="151"/>
+						<p>
+							<span class="hot_title">课题：Java零基础到项目实战特训</span>
+							<span>讲师：Arry老师-技术总监</span>
+							<span>学生：11746</span>
+						</p>
+						<a href="http://ke.qq.com/cgi-bin/courseDetail?course_id=5141" target="_blank"></a>
+					</li>
+					<li>
+						<img src="http://www.mooncollege.cn/images/main/java267.png" alt="java精品课程" width="267" height="151"/>
+						<p>
+							<span class="hot_title">课题：Java零基础到项目实战特训</span>
+							<span>讲师：Arry老师-技术总监</span>
+							<span>学生：11746</span>
+						</p>
+						<a href="http://ke.qq.com/cgi-bin/courseDetail?course_id=5141" target="_blank"></a>
+					</li>
+				</ul>			
+			</div>
+			<div class="show _four">	
+				<ul>
+					
+					<li>
+						<img src="http://www.mooncollege.cn/images/main/java267.png" alt="java精品课程" width="267" height="151"/>
+						<p>
+							<span class="hot_title">课题：Java零基础到项目实战特训</span>
+							<span>讲师：Arry老师-技术总监</span>
+							<span>学生：11746</span>
+						</p>
+						<a href="http://ke.qq.com/cgi-bin/courseDetail?course_id=5141" target="_blank"></a>
+					</li>
+					<li>
+						<img src="http://www.mooncollege.cn/images/main/java267.png" alt="java精品课程" width="267" height="151"/>
+						<p>
+							<span class="hot_title">课题：Java零基础到项目实战特训</span>
+							<span>讲师：Arry老师-技术总监</span>
+							<span>学生：11746</span>
+						</p>
+						<a href="http://ke.qq.com/cgi-bin/courseDetail?course_id=5141" target="_blank"></a>
+					</li>
+					<li>
+						<img src="http://www.mooncollege.cn/images/main/java267.png" alt="java精品课程" width="267" height="151"/>
+						<p>
+							<span class="hot_title">课题：Java零基础到项目实战特训</span>
+							<span>讲师：Arry老师-技术总监</span>
+							<span>学生：11746</span>
+						</p>
+						<a href="http://ke.qq.com/cgi-bin/courseDetail?course_id=5141" target="_blank"></a>
+					</li>
+					<li>
+						<img src="http://www.mooncollege.cn/images/main/java267.png" alt="java精品课程" width="267" height="151"/>
+						<p>
+							<span class="hot_title">课题：Java零基础到项目实战特训</span>
+							<span>讲师：Arry老师-技术总监</span>
+							<span>学生：11746</span>
+						</p>
+						<a href="http://ke.qq.com/cgi-bin/courseDetail?course_id=5141" target="_blank"></a>
+					</li>
+					<li>
+						<img src="http://www.mooncollege.cn/images/main/java267.png" alt="java精品课程" width="267" height="151"/>
+						<p>
+							<span class="hot_title">课题：Java零基础到项目实战特训</span>
+							<span>讲师：Arry老师-技术总监</span>
+							<span>学生：11746</span>
+						</p>
+						<a href="http://ke.qq.com/cgi-bin/courseDetail?course_id=5141" target="_blank"></a>
+					</li>
+				</ul>			
+			</div>
+			<div class="show _five">	
+				<ul>
+					
+					<li>
+						<img src="http://www.mooncollege.cn/images/main/java267.png" alt="java精品课程" width="267" height="151"/>
+						<p>
+							<span class="hot_title">课题：Java零基础到项目实战特训</span>
+							<span>讲师：Arry老师-技术总监</span>
+							<span>学生：11746</span>
+						</p>
+						<a href="http://ke.qq.com/cgi-bin/courseDetail?course_id=5141" target="_blank"></a>
+					</li>
+					<li>
+						<img src="http://www.mooncollege.cn/images/main/java267.png" alt="java精品课程" width="267" height="151"/>
+						<p>
+							<span class="hot_title">课题：Java零基础到项目实战特训</span>
+							<span>讲师：Arry老师-技术总监</span>
+							<span>学生：11746</span>
+						</p>
+						<a href="http://ke.qq.com/cgi-bin/courseDetail?course_id=5141" target="_blank"></a>
+					</li>
+					<li>
+						<img src="http://www.mooncollege.cn/images/main/java267.png" alt="java精品课程" width="267" height="151"/>
+						<p>
+							<span class="hot_title">课题：Java零基础到项目实战特训</span>
+							<span>讲师：Arry老师-技术总监</span>
+							<span>学生：11746</span>
+						</p>
+						<a href="http://ke.qq.com/cgi-bin/courseDetail?course_id=5141" target="_blank"></a>
+					</li>
+					<li>
+						<img src="http://www.mooncollege.cn/images/main/java267.png" alt="java精品课程" width="267" height="151"/>
+						<p>
+							<span class="hot_title">课题：Java零基础到项目实战特训</span>
+							<span>讲师：Arry老师-技术总监</span>
+							<span>学生：11746</span>
+						</p>
+						<a href="http://ke.qq.com/cgi-bin/courseDetail?course_id=5141" target="_blank"></a>
+					</li>
+				</ul>			
+			</div>
+			</div>
+			<div class="clear" style="clear:both"></div>
+		</div>
+		
+	</div>
+	<!--end course_list-->
+	
+	<!--footer start-->
+	<div class="footer">
+		<div class="copyRight">
+			<a href="#" class="logo"></a>
+			<p>
+				<a href="about.html">关于我们</a>|<a href="join.html">加入我们</a>|<a href="contact.html">联系我们</a>
+				<span>Copyright &copy; 2013-2014 www.mooncollege.cn All Rights Reserved版权所有：湖南潭州教育咨询有限公司 备案号：备13016338号</span>
+			</p>
+			<div class="clear"></div>
+		</div>
+	</div>
+	<!--end footer-->
+
+<!--引入jQuery的官方类库-->
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript">
+	// nav share
+	$(".share a").each(function(index){
+		$(this).hover(function(){
+			if(index == 0){
+				$(this).css({"background-color":"#666"});
+			}else if(index == 1){
+				$(this).css({"background-color":"#0e71b7"});
+			}else if(index == 2){
+				$(this).css({"background-color":"#f75454"});
+			}
+			$(this).css({"border-radius":4}); // 变成圆角显示
+			$(this).find("span").stop(); // 在每次创建动画之前先停止下来
+			$(this).find("span").animate({"top":-49},"normal"); // 创建动画函数
+		},function(){ // 还原到初始值
+			var _this = $(this); // 需要取到a标签的this
+			$(this).find("span").animate({"top":0},"normal",function(){
+				_this.css({"background":"none"}); // 回调函数
+			});
+		});
+	});
+
+	// banner
+	var play_count = 1;
+	var play_setInterval = null;
+	$(function(){
+		$(".b_img").eq(0).css({"z-index":1,"opacity":1});
+		// 当鼠标画上去的时候
+		$(".btn").find("li").mouseover(function(){
+			$(this).addClass("no").siblings().removeClass("no");
+			$(".b_img").css({"z-index":0,"opacity":0});
+			$(".b_img").eq($(this).index()).css({"z-index":1}).fadeTo(800,1);
+			play_count = $(this).index()+1;
+			// 鼠标画上去的时候 clearInterval 即停止自定播放
+			clearInterval(play_setInterval);
+		}).mouseout(function(){
+			auto_banner();
+		});
+		auto_banner();
+	});
+	
+	// 自动切换
+	function auto_banner(){
+		//alert("我是自动播放的，第一次执行的函数，嘿嘿 ！");
+		play_setInterval = setInterval(function(){
+			if(play_count > 2){
+				play_count = 2; // 索引的下标最大值
+			}
+			$(".b_img").css({"z-index":0,"opacity":0});
+			$(".b_img").eq(play_count).css({"z-index":1}).fadeTo(800,1);
+			$(".btn").find("li").removeClass("no");
+			$(".btn").find("li").eq(play_count).addClass("no");
+			if(play_count == 2){
+				play_count = 0;
+			} else{
+				play_count ++; // play_count = play_count + 1;
+			}
+		},3000);
+	}
+	
+	// course nav
+	$(function(){
+		$(".course .c_nav").find("li").hover(function(){
+			var auto_left = ($(window).width() - 1198) / 2;
+			var _left = $(this).offset().left - auto_left - 5;
+			//alert(_left);
+			$(".course").find(".underline").stop();
+			$(".course").find(".underline").animate({left:_left},100);
+
+			// 和下边的联动
+			var _index = $(this).index();
+			$(".c_list").eq(_index).show().siblings().hide();
+
+		});
+	});
+
+	//course_list
+	$(function(){
+		$(".c_menu").find("li").hover(function(){
+		
+		$(this).addClass("sel").siblings().removeClass("sel");
+
+		$(".show").eq($(this).index()).show().siblings().hide();
+		});
+	});
+</script>
+</body>
+</html>

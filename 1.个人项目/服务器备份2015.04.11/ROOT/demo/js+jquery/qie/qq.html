@@ -1,0 +1,101 @@
+<!doctype html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>360切换皮肤</title>
+		<meta name="Keywords" content="关键词,关键词">
+		<meta name="description" content="">
+
+		<style type="text/css">
+			*{margin:0;padding:0;}
+			body{background:url("/demo/js+jquery/qie/images/3.jpg") no-repeat top center;}
+			img{border:0;}
+
+			/*header start*/
+			.header{width:100%;height:130px;position:relative;display:none;}
+			.header .h_box{width:900px;height:75px;margin:0 auto;padding-top:30px;}
+			.header .h_box ul li{float:left;margin:0 5px;list-style:none;}
+			.header .h_box ul li a:hover img{border:1px solid #fff;}
+			.header .h_yy{width:100%;height:130px;background:#000;position:absolute;top:0;left:0;z-index:-1;opacity:0.5;filter:alpha(opacity=50);}
+			/*end header*/
+
+			/*btn start*/
+			.btn{width:50px;height:50px;position:absolute;top:0;right:0;}
+			.btn a{width:50px;height:50px;display:block;background:url("/demo/js+jquery/qie/images/upseek.png") no-repeat;}
+			.btn a:hover{background-position:0 -64px;}
+			/*end btn*/
+
+		</style>
+
+	</head>
+<body>
+
+	<!--header start-->
+	<div class="header">
+		<div class="h_box">
+			<ul id="h_ul">
+				<li>
+					<a href="#">
+						<img src="/demo/js+jquery/qie/images/1-1.jpg" alt="船儿" width="138" height="75" />
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img src="/demo/js+jquery/qie/images/2-2.jpg" alt="船儿" width="138" height="75" />
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img src="/demo/js+jquery/qie/images/3-3.jpg" alt="船儿" width="138" height="75" />
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img src="/demo/js+jquery/qie/images/4-4.jpg" alt="船儿" width="138" height="75" />
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img src="/demo/js+jquery/qie/images/5-5.jpg" alt="船儿" width="138" height="75" />
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img src="/demo/js+jquery/qie/images/6-6.jpg" alt="船儿" width="138" height="75" />
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="h_yy"></div>
+	</div>
+	<!--end header-->
+	
+	<!--btn start-->
+	<div class="btn">
+		<a href="#" id="b_bg"></a>
+	</div>
+	<!--end btn-->
+
+<script type="text/javascript" src="/js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$("#b_bg").click(function(){
+			$(".header").slideToggle(600);
+		});
+	
+		$("#h_ul").find("a").click(function(){
+			var src = $(this).find("img").attr("src").replace(/-\d*/ig,'');
+			$("body").css("background","url("+src+")");
+			sessionStorage.setItem("src",src);
+		});
+
+		var sessionSrc = sessionStorage.getItem("src");
+		if(sessionSrc){
+			$("body").css("background","url("+sessionSrc+")");
+		}
+	});
+
+</script>
+
+</body>
+</html>

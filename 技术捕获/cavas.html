@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>canvas</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<style type="text/css" media="screen">
+    *{
+        padding: 0;
+        margin: 0;
+    }
+    body{
+        background: #333;
+    }
+</style>
+</head>
+<body>
+    <div id="target" style="margin:50px auto;width:300px;">
+        <canvas id="canvas" width="300" height="300" style="background: #fff;">
+            11111111111111111
+        </canvas>
+    </div>
+
+    <script type="text/javascript">
+        window.onload = function(){
+            // 获取画布对象
+            var canvas = document.getElementById("canvas");
+            // 画布的上下文
+            var context = canvas.getContext("2d");
+            // 定义宽高
+            var w = canvas.width;
+            var h = canvas.height;
+            // 绘画
+            function draw(){
+                // 画圆
+                // arc(x,y,radius,start,end,true);
+                //清除画布
+                context.clearRect(0,0,w,h);
+                //开始绘画
+                context.beginPath();
+                //设置圆的边框 lineWidth,默认是1
+                context.lineWidth = 30;
+                //绘画边框的颜色
+                context.strokeStyle = "red";
+                //绘制圆
+                context.arc(w/2,h/2,150-15,0,2*Math.PI,false);
+                //绘制到画布中
+                context.stroke();
+
+                // /*第二个圆*/ π = 180° == Math.PI
+                //                             30° = 30*Math.PI / PI
+
+                //开始绘画
+                context.beginPath();
+                //设置圆的边框 lineWidth,默认是1
+                context.lineWidth = 20;
+                //绘画边框的颜色
+                context.strokeStyle = "green";
+                //绘制圆
+                context.arc(w/2,h/2,150-10,0,3/18*Math.PI,false);
+                //绘制到画布中
+                context.stroke();
+
+                // 文字
+                // context.beginPath();
+                // //设置文字颜色
+                // context.fillStyle = "red";
+                // // //fillText(str,x,y);绘制文字
+                // context.font = "18px 微软雅黑";
+                // // // 文字宽度
+                // // var textWidth = context.measureText(text).width;
+                // context.fillText = ("text",50,50);
+                // context.font = "18px 微软雅黑";
+                // context.fillStyle = "#000";
+                // context.fillText("sdadsadsa",50,50);
+
+                var ctn = canvas.getContext("2d");
+                ctn.font = "20px 微软雅黑";
+                ctn.fillStyle = "#3BA88A";
+                var txt = "50%";
+                var textWidth = ctn.measureText(txt).width;
+                // context.textAlign='center' 文字水平居中
+                ctn.textBaseline = "middle"; //文字垂直居中
+                // fillText填充文字 strokeText有边框
+                ctn.fillText(txt,150-textWidth/2,150);
+               
+
+            }
+            draw();
+        }
+    </script>
+</body>
+</html>

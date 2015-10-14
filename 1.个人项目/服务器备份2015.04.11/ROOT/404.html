@@ -1,0 +1,64 @@
+﻿
+<!doctype html>
+<html>
+	<head>
+		<!--声明当前页面的编码集：charset=gbk,gb2312（中文编码），utf-8（国际编码）-->
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<!--当前页面的三要素-->
+		<title>Page_404</title>
+		<meta name="Keywords" content="关键词,关键词">
+		<meta name="description" content="">
+		<link rel="shortcut icon" href="" />
+		
+		<!--css,js-->
+		<style type="text/css">
+			*{margin:0;padding:0;}
+			body{font-size: 12px;font-family: "微软雅黑";color:#666;}
+			.Page_404{width: 805px;height: 240px;margin:10% auto;background: url("/images/404_bg.png") no-repeat;position: relative;}
+			.Page_404 .div_bg{width: 345px;height: 90px;position: absolute;right:1px;top:48px;padding: 1px 5px 0 22px;}
+			.Page_404 .div_bg h2{font-size: 20px;}
+			.Page_404 .div_bg p{font-size: 14px;margin-top: 10px;}
+			.Page_404 .div_bg p a{text-decoration: none;color:red;}
+			.Page_404 .div_bg p a:hover{text-decoration:underline;}
+		</style>
+
+    </head>
+<body>
+	<div class="Page_404">
+		<div class="div_bg">
+			<h2>抱歉，404请求您的网站页面打不开！</h2>
+			<p>您可以：稍后再试或 联系我的QQ：<a href="javascript:void(0);">1134916452</a></p>
+			<p>将在 <span id="rex">5</span> 秒后自动转入<a href="http://www.rexhang.com/">网站首页</a>，请稍候...</p>
+
+		</div>
+	</div>
+	<script type="text/javascript">
+		// 定义主页地址
+		var index_Url = "http://www.rexhang.com/";
+
+		// 更新页面秒
+		function setTime(num){
+			document.getElementById("rex").innerHTML = num;
+			if(num == 0){
+				window.location = index_Url;
+			}
+		}		
+
+		// 定时加载方法
+		function Load(url){
+			URL = url;
+			for (var i = 5; i >= 0; i--) {
+			    // setTimeout(函数,时间); 意思是多久时间执行它(函数)一次
+			    // 1.将内容值设置为 5 , 0秒后执行;
+			    // 2.将内容值设置为 4 , 1秒后执行;
+			    // 3.将内容值设置为 3 , 2秒后执行;
+			    // 4.将内容值设置为 2 , 3秒后执行;
+			    // 5.将内容值设置为 1 , 4秒后执行;
+				setTimeout('setTime('+i+')',(5-i) * 1000);			
+			} 
+		}
+
+		// 调用方法
+		Load();
+	</script>
+</html>

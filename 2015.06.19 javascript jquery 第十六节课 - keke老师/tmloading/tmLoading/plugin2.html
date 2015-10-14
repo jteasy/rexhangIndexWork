@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="Generator" content="EditPlus®">
+    <meta name="Author" content="">
+    <meta name="Keywords" content="">
+    <meta name="Description" content="">
+    <script type="text/javascript" src="jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="tmLoading-1.0.js"></script>
+    <style>
+    * {
+        margin:0px;
+        padding:0px;
+        border:0px;
+    }
+    body {
+        font: normal 13px/24px"Microsoft Yahei", "冬青黑体简体中文 w3", "宋体";
+        background-color: #f0f0f0;
+    }
+    #tm_loading {
+        border:1px solid #999;
+        background:#141414;
+        border-radius:4px;
+        box-shadow:10px 10px 10px #999;
+        color:#fff;
+        padding:16px;
+        position:fixed
+    }
+    #tm_loading_content {
+        padding:5px 10px 10px 22px;
+        background:url('http://www.tanzhouedu.net/images/loading.gif') no-repeat
+    }
+    </style>
+</head>
+
+<body>
+
+    <a href="javascript:void(0);" tip="数据加载中..." mark="1" class="tmui-link">删除</a>
+    <a href="javascript:void(0);" tip="图片加载中..." mark="2" class="tmui-link">新增</a>
+    <a href="javascript:void(0);" tip="我是一个乖乖的娃..." mark="3" class="tmui-link">保存</a>
+
+
+    <a href="javascript:void(0);" id="tmuiLoading">删除</a>
+
+    <script type="text/javascript">
+    $(function() {
+        $(".tmui-link").tmLoading({
+            animate: "fade",
+            content: "亲！玩命了吧!",
+            callback: function($this, $divBox) {
+                var mark = $this.attr("mark");
+                if (mark == 1) {
+                    //删除方法
+                    $divBox.remove();
+                } else if (mark == 2) {
+                    //更新方法
+                } else if (mark == 3) {
+                    //保存方法
+                }
+            }
+        });
+
+        $("#tmuiLoading").tmLoading({
+            closeFlag: true,
+            animate: "slide",
+            content: "我是你们的老师吗?"
+        });
+    });
+
+
+    /*其实就是动态的创建一个元素然后给这个元素添加样式，事件，方法，参数.然后就附加到body中.*/
+    </script>
+</body>
+
+</html>

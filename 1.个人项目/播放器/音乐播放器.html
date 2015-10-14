@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+	<head>
+		<!--声明当前页面的编码集：charset=gbk,gb2312（中文编码），utf-8（国际编码）-->
+		<meta http-equiv="Content-Type" content="text/html; charset=gbk">
+		<!--当前页面的三要素-->
+		<title>音乐播放器</title>
+		<meta name="Keywords" content="关键词,关键词">
+		<meta name="description" content="">
+		<link rel="shortcut icon" href="zy.ico" />
+		<!--css,js-->
+		<style type="text/css">
+			*{margin:0;padding:0;}
+			p{color:black;font-weight:bold;font-family="微软雅黑";}
+			.gundong{border:2px solid #CC33FF;width:896px;height:auto;color:#3333FF;font-weight:bold;font-family="微软雅黑";}
+			.body{background:url(images/music.gif);}
+		</style>
+
+    </head>
+<body>
+
+<embed src="music/Ailee - Rainy Day.mp3"  width=900 height=100 type=audio/mpeg loop="false" autostart="false" /><a href="images/singer.jpg" target="blank"><img src="images/singer.jpg" alt="歌手图片_RexHang" title="歌手图片_RexHang" width="100" height="100" /></a>
+ <br />
+
+<marquee direction="right" behavior="alternate" scrollamount="1" bgcolor="#FF9900" class="gundong">Ailee - Rainy Day</marquee>
+<br />
+
+<a href="images/music.gif" target="blank"><img src="images/music.gif" alt="music_RexHang" title="musci_RexHang" width="900" height="300" /></a>
+<br /><br /><br />
+	
+<h1>案例说明</h1>
+	
+<pre style="font-weight:bold;">
+&lt;marquee direction=up behavior=scroll loop=3 scrollamount=1 scrolldelay=10 align=top bgcolor=#ffffff height=300 width=30% hspace=20 vspace=10 onmouseover=this.stop() onmouseout=this.start()&gt;此处输入滚动内容 &lt;/marquee&gt;
+&nbsp;&nbsp;&nbsp;现在让我们来具体分析一下
+◎ direction表示滚动的方向，值可以是left，right，up，down，默认为left 
+◎ behavior表示滚动的方式，值可以是scroll（连续滚动）slide（滑动一次）alternate（往返滚动）
+◎ loop表示循环的次数，值是正整数，默认为无限循环 
+◎ scrollamount表示运动速度，值是正整数，默认为6 
+◎ scrolldelay表示停顿时间，值是正整数，默认为0，单位似乎是毫秒 
+◎ align表示元素的垂直对齐方式，值可以是top，middle，bottom，默认为middle 
+◎ bgcolor表示运动区域的背景色，值是16进制的RGB颜色，默认为白色 
+◎ height、width表示运动区域的高度和宽度，值是正整数（单位是像素）或百分数，默认width=100% height为标签内元素的高度 
+◎ hspace、vspace表示元素到区域边界的水平距离和垂直距离，值是正整数，单位是像素。
+◎ onmouseover=this.stop() onmouseout=this.start()表示当鼠标以上区域的时候滚动停止，当鼠标移开的时候又继续滚动。
+</pre>
+<br />
+
+<p>★autostart=“true”时为自动播放</p>
+<br />
+
+<p>★autostart=“false”时为不自动播放</p>
+<br />
+
+<p>★loop=“true”为连续循环播放</p>
+<br />
+
+<p>★loop=“false”为不循环播放</p>
+
+</body>
+</html>

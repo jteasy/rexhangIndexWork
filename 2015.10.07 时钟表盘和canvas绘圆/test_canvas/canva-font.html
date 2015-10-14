@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div class="container" style="width: 400px;height: 400px;margin: 100px auto;">
+			<canvas id="canvas" width="400" height="400" style="border: 1px solid red;"></canvas>
+		</div>
+		<script type="text/javascript">
+			var canvas = document.getElementById("canvas");
+			var context = canvas.getContext("2d");
+			context.beginPath();
+			var w = canvas.width;
+			var h = canvas.height;
+			context.font = '18px 微软雅黑';
+			context.fillStyle = "royalblue";
+			var text = "顾航Style";
+			context.fillText(text,w/2,h/2);
+		</script>
+	</body>
+</html>

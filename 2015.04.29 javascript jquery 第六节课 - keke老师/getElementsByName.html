@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>document.getElementsByName document.createElement documen.body.appendChild</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+</head>
+<body>
+    <input type="checkbox" name="texts" id="hang" value="爬山" />爬山
+    <input type="checkbox" name="texts" id="hang" value="游泳" />游泳
+    <input type="checkbox" name="texts" id="hang" value="读书" />读书
+    <input type="checkbox" name="texts" id="hang" value="旅游" />旅游
+
+
+    <script type="text/javascript">
+    	var i = document.getElementsByName("texts");//数组
+    	//alert(i[2].value);//数组
+    	i[2].value = "读书变玩耍";//改变value值
+    	//alert("这次就是新的value值-" + i[2].value);
+
+    	/*
+			document.getElementById("id");
+			document.getElementsByName("name");
+			document.getElementsByTagName("tagName");
+    	*/
+
+    	/*
+	    	dom.getAttribute();//获取标签元素属性对应的属性值
+			如果元素自身有的标签可以直接dom.属性
+			例如：document.getElementById("id").src;
+			例如：document.getElementById("id").name;
+			例如：document.getElementById("id").type;
+
+	    	dom.setAttribute();//设置------------------------
+
+
+	    	document.createElement();//创建一个html元素
+	    	document.body.appendChild();//添加到页面上去
+    	*/
+
+    	/*用javascript动态创建标签*/
+    	var l = document.createElement("div");
+
+    	/*用javascript动态添加到页面上去*/
+    	document.body.appendChild(l);
+
+    	/*用javascript动态添加css样式*/    	
+    	l.innerHTML = "动态创建的页面标签div";
+    	l.style.background = "#000";
+    	l.style.border = "1px solid red";
+    	l.style.width = "500px";    	
+    	l.style.color = "#fff";
+    	/*有“ - ” 的css样式用驼峰命名法*/    	
+    	l.style.marginTop = "100px";
+
+    	/*获取来访页面*/
+    	/*
+    		document.referrer
+    	*/
+    </script>
+</body>
+</html>

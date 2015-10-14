@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>jquery3</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<script type="text/javascript" src="jquery-1.11.1.min.js"></script>
+</head>
+<body>
+	<ul>
+		<li>11</li>
+		<li>22</li>
+		<li>33</li>
+	</ul>
+    <script type="text/javascript">
+    $(function(){
+    	// > 和 空格一样作用
+    	$("ul > li").each(function(){
+    		//alert($(this).html());
+    	});
+    	//:first方法 :last方法 [只有第一个和最后一个方法其余的靠索引eq();]
+		var $first = $("ul > li:first").html();
+		//alert($first);
+		var $last = $("ul > li:last").html();
+		//alert($last);
+
+		//eq();方法
+		var $eq = $("ul > li").eq(1).html();
+		alert($eq);
+    });
+    </script>
+</body>
+</html>

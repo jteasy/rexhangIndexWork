@@ -1,0 +1,345 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>在线音乐播放器</title>
+    <meta name="description" content="在线音乐播放器">
+    <meta name="keywords" content="在线音乐播放器">
+    <link rel="shortcut icon" href="http://www.rexhang.com/images/favicon.ico" />
+    <link rel="bookmark" href="http://www.rexhang.com/images/favicon.ico" />
+    <link href="" rel="stylesheet">
+    <style type="text/css">
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    body {
+        background-color: #1D4F7F;
+        background-image:
+        radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 40px),
+        radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 30px),
+        radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 40px),
+        radial-gradient(rgba(255,255,255,.4), rgba(255,255,255,.1) 2px, transparent 30px);
+        background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px; 
+        background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
+        font-family:'微软雅黑';
+        font-size: 12px;
+        color: #666;
+    }
+    img {
+        border: none;
+    }
+    .music {
+        width: 960px;
+        height: 250px;
+        margin: 50px auto;
+        background: url('http://www.rexhang.com//musicImages/banner_bg.jpg') no-repeat;
+        position: relative;
+        box-shadow: 0px 0px 20px 2px #000;
+    }
+    .music ul li {
+        list-style: none;
+        position: absolute;
+    }
+    .music ul li a img {
+        border-radius: 50%;
+    }
+    .musicanimates {
+        -webkit-animation:rextransformZ 2s infinite linear;
+        -ms-animation:rextransformZ 2s infinite linear;
+        -moz-animation:rextransformZ 2s infinite linear;
+        -o-animation:rextransformZ 2s infinite linear;
+    }
+    .music ul li a img:hover {
+        -webkit-animation:rextransformZ 2s infinite linear;
+        -ms-animation:rextransformZ 2s infinite linear;
+        -moz-animation:rextransformZ 2s infinite linear;
+        -o-animation:rextransformZ 2s infinite linear;
+    }
+    @-webkit-keyframes rextransformZ {
+        100% {
+            -webkit-transform:rotateZ(360deg);
+            -ms-transform:rotateZ(360deg);
+            -moz-transform:rotateZ(360deg);
+            -o-transform:rotateZ(360deg);
+        }
+    }
+    @-ms-keyframes rextransformZ {
+        100% {
+            -webkit-transform:rotateZ(360deg);
+            -ms-transform:rotateZ(360deg);
+            -moz-transform:rotateZ(360deg);
+            -o-transform:rotateZ(360deg);
+        }
+    }
+    @-moz-keyframes rextransformZ {
+        100% {
+            -webkit-transform:rotateZ(360deg);
+            -ms-transform:rotateZ(360deg);
+            -moz-transform:rotateZ(360deg);
+            -o-transform:rotateZ(360deg);
+        }
+    }
+    @-o-keyframes rextransformZ {
+        100% {
+            -webkit-transform:rotateZ(360deg);
+            -ms-transform:rotateZ(360deg);
+            -moz-transform:rotateZ(360deg);
+            -o-transform:rotateZ(360deg);
+        }
+    }
+    .music ul .m_1 {
+        top: 30px;
+        left: 6px;
+    }
+    .music ul .m_2 {
+        top: 105px;
+        left: 60px;
+    }
+    .music ul .m_3 a {
+        width: 60px;
+        height: 60px;
+        display: block;
+        background: #1D8D96;
+        position: absolute;
+        top: 15px;
+        left: 188px;
+        border-radius: 50%;
+    }
+    .music ul .m_4 {
+        top: 82px;
+        left: 324px;
+    }
+    .music ul .m_5 {
+        top: 120px;
+        right: 316px;
+    }
+    .music ul .m_6 {
+        bottom: 46px;
+        right: 475px;
+    }
+    .music ul .m_7 {
+        top: 50px;
+        left: 500px;
+    }
+    .music ul .m_8 {
+        top: 24px;
+        right: 120px;
+    }
+    .music ul .m_8 span {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 100px;
+        color: #fff;
+        font-size: 16px;
+    }
+    .player {
+        width: 541px;
+        height: 115px;
+        background: #000;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        border-radius: 0 4px 4px 0;
+    }
+    .player .p_pic img {
+        margin: 13px 0 10px 10px;
+        float: left;
+    }
+    .player .p_pic p {
+        float: left;
+        line-height: 115px;
+        font-size: 16px;
+        color: #fff;
+        width: 180px;
+        padding-left: 10px;
+    }
+    .player .p_btn {
+        width: 180px;
+        height: 52px;
+        float: left;
+        margin: 32px 0;
+    }
+    .player .p_btn a {
+        float: left;
+        margin: 5px 10px;
+    }
+    .player .p_btn .b_prev {
+        width: 36px;
+        height: 28px;
+        display: block;
+        background: url('http://www.rexhang.com//musicImages/player_bg.png') no-repeat -69px 0;
+        margin-top: 12px;
+    }
+    .player .p_btn .b_prev:hover {
+        background-position: -69px -32px;
+    }
+    .player .p_btn .b_play {
+        width: 42px;
+        height: 42px;
+        display: block;
+        background: url('http://www.rexhang.com//musicImages/player_bg.png') no-repeat -105px 0;
+    }
+    .player .p_btn .b_play:hover {
+        background-position: -105px -42px;
+    }
+    .player .p_btn .b_next {
+        width: 36px;
+        height: 28px;
+        display: block;
+        background: url('http://www.rexhang.com//musicImages/player_bg.png') no-repeat -147px 0px;
+        margin-top: 12px;
+    }
+    .player .p_btn .b_next:hover {
+        background-position: -147px -32px;
+    }
+    .player .p_packup {
+        width: 22px;
+        height: 115px;
+        background: url('http://www.rexhang.com//musicImages/player_bg.png') no-repeat;
+        float: right;
+        cursor: pointer;
+    }
+    </style>
+</head>
+
+<body>
+    <!-- music start -->
+    <div class="music">
+        <ul>
+            <li class="m_1">
+                <a href="javascript:void(0);">
+                    <img src="http://www.rexhang.com//musicImages/1.jpg" alt="明星1" width="60" height="60" />
+                </a>
+            </li>
+            <li class="m_2">
+                <a href="javascript:void(0);">
+                    <img src="http://www.rexhang.com//musicImages/2.jpg" alt="明星2" width="90" height="90" />
+                </a>
+            </li>
+            <li class="m_3">
+                <a href="javascript:void(0);"></a>
+            </li>
+            <li class="m_4">
+                <a href="javascript:void(0);">
+                    <img src="http://www.rexhang.com//musicImages/3.jpg" alt="明星3" width="90" height="90" />
+                </a>
+            </li>
+            <li class="m_5">
+                <a href="javascript:void(0);">
+                    <img src="http://www.rexhang.com//musicImages/6.jpg" alt="明星6" width="60" height="60" />
+                </a>
+            </li>
+            <li class="m_6">
+                <a href="javascript:void(0);">
+                    <img src="http://www.rexhang.com//musicImages/5.jpg" alt="明星5" width="60" height="60" />
+                </a>
+            </li>
+            <li class="m_7">
+                <a href="javascript:void(0);">
+                    <img src="http://www.rexhang.com//musicImages/4.jpg" alt="明星4" width="60" height="60" />
+                </a>
+            </li>
+            <li class="m_8">
+                <a href="javascript:void(0);">
+                    <img src="http://www.rexhang.com//musicImages/mylogo.png" alt="明星4" width="88" height="88" />
+                </a>
+                <span>rexhang</span>
+            </li>
+        </ul>
+    </div>
+    <!-- music end -->
+    <!-- player start -->
+    <div class="player">
+        <div class="p_pic">
+            <img src="http://www.rexhang.com//musicImages/pinguan.jpg" alt="我" width="90" height="90" />
+            <p>我以为 - 品冠 </p>
+        </div>
+        <div class="p_btn">
+            <a href="javascript:void(0);" class="b_prev"></a>
+            <a href="javascript:void(0);" class="b_play"></a>
+            <a href="javascript:void(0);" class="b_next"></a>
+        </div>
+        <div class="p_packup"></div>
+    </div>
+    <!-- palyer end -->
+    <script src="http://www.rexhang.com/js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript">
+    $(function() {
+        $(".p_packup").on("click", function() {
+            var _width = $(".player").width();
+            var _left = $(".player").offset().left;
+            if (_left < 0) {
+                $(".player").animate({
+                    left: 0
+                }, 500, function() {
+                    $(".p_packup").css("background", "url('http://www.rexhang.com//musicImages/player_bg.png') no-repeat");
+                });
+            } else {
+                $(".player").animate({
+                    left: -_width + 22
+                }, 500, function() {
+                    $(this).find(".p_packup").css("background", "url('http://www.rexhang.com//musicImages/player_bg.png') no-repeat -46px 0px");
+                });
+            }
+        });
+        // $(".b_play").click(function(){
+        //            myMp3()
+        // },function(){
+        //     $(".b_play").css("background","url('http://www.rexhang.com//musicImages/player_bg.png') no-repeat -291px -88px");
+        // });
+
+    });
+
+    function myMp3() {
+        var mp3Dom = document.createElement("audio");
+        document.body.appendChild(mp3Dom);
+        mp3Dom.id = "rexMusic";
+        mp3Dom.src = "http://www.rexhang.com/bgMusic/iThink.mp3";
+        mp3Dom.setAttribute("loop","loop");
+    }
+    flag = true;
+    ii = 0;
+    $(".b_play").on("click", function() {
+        // 友情提示
+        for (; ii >= 0; ii--) {
+            alert("缓冲中……请稍候。");
+            alert("即将播放《我以为》 - 品冠");
+        };
+        if (flag) {
+            myMp3();
+            $("#rexMusic")[0].play();
+            $(".b_play").css("background", "url('http://www.rexhang.com//musicImages/player_bg.png') no-repeat -291px -88px");
+            $(".m_4").find("img").addClass("musicanimates");
+            $("#rexMusic").next().remove();
+            flag = false;
+        } else {
+            $("#rexMusic")[0].pause();
+            $(".b_play").css("background", "url('http://www.rexhang.com//musicImages/player_bg.png') no-repeat -105px 0px");
+            $(".m_4").find("img").removeClass("musicanimates");
+            flag = true;
+        }
+    });
+    // 下一首
+    $(".b_next").on("click", function() {
+        alert("即将播放《咱们结婚吧》 - 齐晨");
+        $("#rexMusic").attr("src","http://www.rexhang.com/bgMusic/marry.mp3");
+        $("#rexMusic")[0].play();
+        $(".p_pic").find("p").text("咱们结婚吧 - 齐晨");
+        $(".p_pic").find("img").attr("src","http://www.rexhang.com//musicImages/qichen.jpg");
+    });
+    // 上一首
+    $(".b_prev").on("click", function() {
+        alert("即将播放《会痛的石头》 - 萧敬腾");
+        $("#rexMusic").attr("src","http://www.rexhang.com/bgMusic/stone.mp3");
+        $("#rexMusic")[0].play();
+        $(".p_pic").find("p").text("会痛的石头 - 萧敬腾");
+        $(".p_pic").find("img").attr("src","http://www.rexhang.com//musicImages/xiaojingteng.jpg");
+    });
+    </script>
+</body>
+
+</html>

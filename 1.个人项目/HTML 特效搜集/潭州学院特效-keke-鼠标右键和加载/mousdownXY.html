@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <script type="text/javascript" src="jquery-1.11.1.min.js"></script> 
+ </head>
+ <body>
+
+	鼠标当前的X坐标:<input type="text" id="X">
+	鼠标当前的Y坐标:<input type="text" id="Y">
+	<script type="text/javascript">
+		/*document.onmousedown = function(e){
+			var x = e.clientX;
+			var y = e.clientY;
+			document.getElementById("X").value = x;
+			document.getElementById("Y").value = y;
+		}*/
+
+
+		document.onmousemove = function(e){
+			var x = e.clientX;
+			var y = e.clientY;
+			document.getElementById("X").value = x;
+			document.getElementById("Y").value = y;
+		}
+	</script>
+ </body>
+</html>

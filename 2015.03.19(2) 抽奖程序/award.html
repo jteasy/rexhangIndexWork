@@ -1,0 +1,88 @@
+
+<!doctype html>
+<html>
+	<head>
+		<!--声明当前页面的编码集：charset=gbk,gb2312（中文编码），utf-8（国际编码）-->
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<!--当前页面的三要素-->
+		<title>抽奖程序</title>
+		<meta name="Keywords" content="关键词,关键词">
+		<meta name="description" content="">
+		<link rel="shortcut icon" href="" />
+		
+		<!--css,js-->
+		<style type="text/css">
+			*{margin:0;padding:0;}
+			body{font-size: 12px;font-family: "微软雅黑";color: #666;}
+			#out_box{width: 700px;height:400px;border: 1px solid #000;margin:150px auto;}
+			#out_box .head_box{width: 700px;height: 100px;background:black;color:#F6C;line-height: 100px;font-size: 36px;text-align: center;}
+			#out_box .body_box{height:300px;position: relative;background:rgb(242, 145, 132);}
+			#out_box .body_box .btn_txt{width:300px;height:50px;margin-left:50%;position: absolute;left:-150px;top:40px;line-height: 50px;color:red;font-family: "微软雅黑";font-size: 20px;outline-color:#000;font-weight: bold;}
+			#out_box .body_box .btn_div{position:absolute;top:120px;left:-150px;margin-left:50%;}
+			#out_box .body_box .btn_div .btn_bu{background:#000;color:#fff;border:0;width: 90px;height:40px;margin-right: 120px;font-weight: bold;}
+			#out_box .body_box .btn_div .btn_bu:hover{font-weight: bold;background:rgb(255, 36, 95);color:#000;}
+		</style>
+
+    </head>
+<body>
+	<div id="out_box">
+		<div class="head_box" id="Mytext">javaWeb开发抽奖程序</div>
+		<div class="body_box">
+			<input class="btn_txt" type="text" value="" id="newO"placeholder="此处显示中奖名单" /><br />
+			<div class="btn_div">
+				<input class="btn_bu" type="button" value="START" onclick="myStart()" />
+				<input class="btn_bu" type="button" value="END" onclick="stop()" />
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		// 抽奖数据
+		var data = "A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z";
+
+		// split() 方法用于把一个字符串分割成字符串数组。
+		var att = data.split(",");
+
+		// 定义定时器变量为空
+		var timer = null;
+
+		// 开始按钮
+		function myStart(){
+			// 点击之前清空text文本框的内容value值
+			document.getElementById("newO").value = ""
+			
+			// 如果timer不为真,执行定时器
+			if(!timer){
+				timer = setInterval(
+					function change(){
+						var max = att.length - 1; // 获取最大的索引值
+						var rand = Math.random(); // 创建一个随机数<0~1>
+						var randIndex = parseInt(rand * max); // 得到整数数据
+						var text_val = document.getElementById("Mytext");
+						text_val.innerHTML = att[randIndex]; // 给ID为"Mytext"的DIV变化HTML内容
+					},5);
+			}
+		}
+
+	
+		// 停止按钮
+		function stop(){
+			// 清除定时器		
+			clearInterval(timer);
+
+			// 定时器的变量清空
+			timer = null;
+			
+			// 获取变化区域的值
+			var myText = document.getElementById("Mytext").innerHTML;
+
+			// 获取到文本框里边的值
+			var myRandom = document.getElementById("newO");
+
+			// 给文本框赋值最新的值
+			myRandom.value = myText;
+		}
+
+	</script>
+</body>
+</html>

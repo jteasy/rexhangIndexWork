@@ -1,0 +1,473 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>响应式布局后台系统 - rexhang</title>
+<link href="/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="/js/jquery.min.js"></script>
+<!-- Custom Theme files -->
+<!--theme-style-->
+<link href="/css/style.css" rel="stylesheet" type="text/css" media="all" />	
+<!--//theme-style-->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="rexhang,响应式布局后台系统" />
+<meta name="description" content="rexhang,响应式布局后台系统" />
+<link rel="shortcut icon" href="/images/rexhang.ico" />
+<link rel="stylesheet" type="text/css" href="/css/animate_tz.css">
+<link rel="stylesheet" type="text/css" href="/css/rexhang_textarea.css">
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!--fonts-->
+<link href='http://fonts.useso.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+<link href='http://fonts.useso.com/css?family=Lobster' rel='stylesheet' type='text/css'><!--//fonts-->
+<script type="text/javascript" src="/js/move-top.js"></script>
+<script type="text/javascript" src="/js/easing.js"></script>
+	<style type="text/css">
+		.container #banner_h2{font-family: "微软雅黑";}
+		.houtai_content{width: 100%;}
+		/*left start*/
+		.houtai_content .hou_left{width:200px;height: 800px;background: #282828;position: fixed;}
+		.houtai_content .hou_left .left_logo{width: 100%;height: 108px;background: url("/images/logo_left.png") no-repeat center;border-bottom: 1px solid #000000;border-right: 1px solid #000;}
+		.houtai_content .hou_left .nav_left{width: 100%;border-bottom: 1px solid #414141;}
+		.houtai_content .hou_left .nav_left ul li{line-height: 52px;list-style: none;border-bottom: 1px solid #000000;border-top: 1px solid #414141;}
+		.houtai_content .hou_left .nav_left ul li a{color: #fff;text-decoration: none;font-size: 14px;font-family: "微软雅黑";display: block;padding-left: 32px;}
+		.houtai_content .hou_left .nav_left ul li a:hover{background: #28b779;}
+		.houtai_content .hou_left .nav_left ul li a .icon_1{display: block;width: 16px;height: 16px;background:url("/images/ht_icon.png") no-repeat -233px -52px;float: left;margin-top: 20px;margin-right: 10px;}
+		.houtai_content .hou_left .nav_left ul li a .icon_2{display: block;width: 16px;height: 16px;background:url("/images/ht_icon.png") no-repeat -254px -52px;float: left;margin-top: 20px;margin-right: 10px;}
+		.houtai_content .hou_left .nav_left ul li a .icon_3{display: block;width: 16px;height: 16px;background:url("/images/ht_icon.png") no-repeat -211px -52px;float: left;margin-top: 20px;margin-right: 10px;}
+		.houtai_content .hou_left .nav_left ul li a .icon_4{display: block;width: 16px;height: 16px;background:url("/images/ht_icon.png") no-repeat -274px -52px;float: left;margin-top: 20px;margin-right: 10px;}
+		.houtai_content .hou_left .nav_left ul li a .icon_5{display: block;width: 16px;height: 16px;background:url("/images/ht_icon.png") no-repeat -295px -52px;float: left;margin-top: 20px;margin-right: 10px;}
+		.houtai_content .hou_left .nav_left ul li a .icon_6{display: block;width: 19px;height: 6px;background:url("/images/ht_icon.png") no-repeat -315px -52px;float: left;margin-top: 24px;margin-right: 7px;}
+		/*end left*/
+
+		/*header start*/
+			/*center_nav start*/	
+		.houtai_content	.header_nav{height: 52px;width: 100%;background: #282828;}
+		.houtai_content	.header_nav .center_nav{margin-left: 200px;height: 52px;border-right: 1px solid #414141;float: left;}
+		.houtai_content	.header_nav .center_nav ul li{border-right: 1px solid #000;border-left: 1px solid #414141;height: 52px;list-style: none;float: left;}
+		.houtai_content	.header_nav .center_nav ul li a{text-decoration: none;display: block;color: #838383;padding: 0 22px;height: 52px;font-size: 12px;font-family: "微软雅黑";}
+		.houtai_content	.header_nav .center_nav ul li a:hover{color: #fff;}
+		.houtai_content	.header_nav .center_nav ul li a .sy_type{color: #fff;}
+		.houtai_content	.header_nav .center_nav ul li a .nav_01{display: block;width: 18px;height: 17px;background: url("/images/ht_icon.png") no-repeat 0 -25px;margin: 6px auto;}
+		.houtai_content	.header_nav .center_nav ul li a .nav_02{display: block;width: 18px;height: 17px;background: url("/images/ht_icon.png") no-repeat -24px 0;margin: 6px auto;}
+		.houtai_content	.header_nav .center_nav ul li a:hover .nav_02{background-position:-24px -25px;}
+		.houtai_content	.header_nav .center_nav ul li a .nav_03{display: block;width: 18px;height: 17px;background: url("/images/ht_icon.png") no-repeat -48px 0;margin: 6px auto;}
+		.houtai_content	.header_nav .center_nav ul li a:hover .nav_03{background-position:-48px -25px;}						
+		.houtai_content	.header_nav .center_nav ul li a .nav_04{display: block;width: 18px;height: 17px;background: url("/images/ht_icon.png") no-repeat -68px 0;margin: 6px auto;}
+		.houtai_content	.header_nav .center_nav ul li a:hover .nav_04{background-position:-68px -25px;}			
+		.houtai_content	.header_nav .center_nav ul li a .nav_05{display: block;width: 18px;height: 17px;background: url("/images/ht_icon.png") no-repeat -91px 0;margin: 6px auto;}
+		.houtai_content	.header_nav .center_nav ul li a:hover .nav_05{background-position:-91px -25px;}			
+		.houtai_content	.header_nav .center_nav ul li a .nav_06{display: block;width: 18px;height: 17px;background: url("/images/ht_icon.png") no-repeat -113px 0;margin: 6px auto;}
+		.houtai_content	.header_nav .center_nav ul li a:hover .nav_06{background-position:-113px -25px;}			
+		.houtai_content	.header_nav .center_nav ul li a .nav_07{display: block;width: 18px;height: 17px;background: url("/images/ht_icon.png") no-repeat -133px 0;margin: 6px auto;}
+		.houtai_content	.header_nav .center_nav ul li a:hover .nav_07{background-position:-133px -25px;}		
+		.houtai_content	.header_nav .center_nav ul li a .nav_08{display: block;width: 18px;height: 17px;background: url("/images/ht_icon.png") no-repeat -152px 0;margin: 6px auto;}	
+		.houtai_content	.header_nav .center_nav ul li a:hover .nav_08{background-position:-152px -25px;}
+			/*end center_nav*/
+
+			/*user_info start*/
+			.houtai_content	.header_nav .user_info_all{height: 52px;margin-right: 0;float: right;}
+			.houtai_content	.header_nav .user_info_all .user_info_center{margin-right: 5px;float: left;height: 52px;color: #fff;font-size: 12px;font-family: "微软雅黑";text-align: center;line-height: 52px;}
+			.houtai_content	.header_nav .user_info_all .user_back{height: 52px;float: left;background: rgb(124, 5, 5);line-height: 52px;padding: 0 10px;}
+			.houtai_content	.header_nav .user_info_all .user_back a{display: block;margin: 0 auto;text-decoration: none;color: #fff;font-size: 12px;font-family: "微软雅黑";}
+			.houtai_content	.header_nav .user_info_all .user_back:hover{background: red;}
+			/*end user_info*/									
+
+		/*end header*/
+
+		/*content start*/
+		.houtai_content .hou_content{background: #eee;height: 1080px;text-align: center;line-height: 1080px;color: #484848;font-size: 50px;font-family: "微软雅黑";}		
+		/*end content*/
+	</style>
+</head>
+<body>
+<!--header-->
+	
+	<div class="header">
+		<div class="header-top">
+			<div class="container">
+				<div class="top-nav">
+					<span class="menu"> </span>
+					<ul>
+						<li  ><a href="index.html" data-hover="主页"> 主页 </a> </li>
+						<li><a href="about.html" data-hover="关于" > 关于 </a></li>
+						<li><a href="404.html" data-hover="档案室"> 档案室 </a></li>
+						<li class="active"><a href="blog.html" > 博客 </a></li>
+						<li><a href="contact.html" data-hover="联系我"> 联系我 </a></li>						
+					</ul>
+					<!--script-->
+				<script>
+					$("span.menu").click(function(){
+						$(".top-nav ul").slideToggle(500, function(){
+						});
+					});
+			</script>
+				</div>
+			
+		
+			<div class="header-top-on">
+				<ul class="social-in">
+					<li><a href="#"><i> </i></a></li>						
+					<li><a href="#"><i class="tin"> </i></a></li>
+					<li><a href="#"><i class="gmail"> </i></a></li>
+					<li><a href="#"><i class="dribble"> </i></a></li>
+					<li><a href="#"><i class="browser"> </i></a></li>
+				</ul>
+			</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+			<!---->
+		<div class="container">
+			<div class="header-bottom">
+				<div class="logo">
+				<a href="index.html"><img src="/images/logo.png" alt="" ></a>
+			</div>
+					<div class="search">
+						<form>
+							<input type="text" value="Search the site..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}" >
+							<input type="submit" value="">
+						</form>
+					</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+</div>
+<!---->
+	
+	<!--content-->
+<div class="content">
+	<div class="container">
+		<!-- 模板从此处开始-->
+		<h2 id="banner_h2" style="text-align: center;font-weight: bold;text-shadow: 2px 2px 2px #666;margin-bottom: 15px;">响应式布局后台系统 - rexhang</h2>
+		<div class="houtai_content">
+			<!--left start-->
+			<div class="hou_left">
+				<div class="left_logo"></div>
+				<div class="nav_left">
+					<ul>
+						<li>
+							<a href="#">
+								<em class="icon_1"></em>
+								<span>所有元素</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<em class="icon_2"></em>
+								<span>表格表单类</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<em class="icon_3"></em>
+								<span>标签按钮类</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<em class="icon_4"></em>
+								<span>日历类</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<em class="icon_5"></em>
+								<span>TAB轮换</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<em class="icon_6"></em>
+								<span>其他元素</span>
+							</a>
+						</li>																														
+					</ul>
+				</div>
+			</div>
+			<!--end left-->
+
+			<!--header start-->
+			<div class="header_nav">
+				<!--center_nav start-->
+				<div class="center_nav">
+					<ul>
+						<li>
+							<a href="#">
+								<em class="nav_01"></em>
+								<span class="sy_type">首页</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<em class="nav_02"></em>
+								<span>界面管理</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<em class="nav_03"></em>
+								<span>栏目管理</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<em class="nav_04"></em>
+								<span>内容管理</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<em class="nav_05"></em>
+								<span>用户管理</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<em class="nav_06"></em>
+								<span>论坛中心</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<em class="nav_07"></em>
+								<span>应用中心</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<em class="nav_08"></em>
+								<span>工具</span>
+							</a>
+						</li>																																										
+					</ul>
+				</div>
+				<!--end center_nav-->
+
+				<!--user_info start-->
+				<div class="user_info_all">
+					<div class="user_info_center">当前用户：顾航 , 身份：CEO</div>
+					<div class="user_back"><a href="#">退出系统</a></div>
+				</div>
+				<!--end user_info-->
+			</div>
+			<!--end heard-->
+
+			<!--content start-->
+			<div class="hou_content">内容区域</div>
+			<!--end content-->
+		</div>
+		<div class="codeshow">
+			<span>HTML部分</span>
+			<textarea class="text01">		<h2 id="banner_h2" style="text-align: center;font-weight: bold;text-shadow: 2px 2px 2px #666;margin-bottom: 15px;">响应式布局后台系统 - rexhang</h2>
+
+		<div class="houtai_content">
+			<!--left start-->
+			<div class="hou_left">
+				<div class="left_logo"></div>
+				<div class="nav_left">
+					<ul>
+						<li>
+							<a href="#">
+								<em class="icon_1"></em>
+								<span>所有元素</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<em class="icon_2"></em>
+								<span>表格表单类</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<em class="icon_3"></em>
+								<span>标签按钮类</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<em class="icon_4"></em>
+								<span>日历类</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<em class="icon_5"></em>
+								<span>TAB轮换</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<em class="icon_6"></em>
+								<span>其他元素</span>
+							</a>
+						</li>																														
+					</ul>
+				</div>
+			</div>
+			<!--end left-->
+
+			<!--header start-->
+			<div class="header_nav">
+				<!--center_nav start-->
+				<div class="center_nav">
+					<ul>
+						<li>
+							<a href="#">
+								<em class="nav_01"></em>
+								<span class="sy_type">首页</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<em class="nav_02"></em>
+								<span>界面管理</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<em class="nav_03"></em>
+								<span>栏目管理</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<em class="nav_04"></em>
+								<span>内容管理</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<em class="nav_05"></em>
+								<span>用户管理</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<em class="nav_06"></em>
+								<span>论坛中心</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<em class="nav_07"></em>
+								<span>应用中心</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<em class="nav_08"></em>
+								<span>工具</span>
+							</a>
+						</li>																																										
+					</ul>
+				</div>
+				<!--end center_nav-->
+
+				<!--user_info start-->
+				<div class="user_info_all">
+					<div class="user_info_center">当前用户：顾航 , 身份：CEO</div>
+					<div class="user_back"><a href="#">退出系统</a></div>
+				</div>
+				<!--end user_info-->
+			</div>
+			<!--end heard-->
+
+			<!--content start-->
+			<div class="hou_content">内容区域</div>
+			<!--end content-->
+		</div>
+</textarea>
+			<span>CSS部分</span>
+			<textarea class="text02">		.container #banner_h2{font-family: "微软雅黑";}
+		.houtai_content{width: 100%;}
+		/*left start*/
+		.houtai_content .hou_left{width:200px;height: 800px;background: #282828;position: fixed;}
+		.houtai_content .hou_left .left_logo{width: 100%;height: 108px;background: url("/images/logo_left.png") no-repeat center;border-bottom: 1px solid #000000;border-right: 1px solid #000;}
+		.houtai_content .hou_left .nav_left{width: 100%;border-bottom: 1px solid #414141;}
+		.houtai_content .hou_left .nav_left ul li{line-height: 52px;list-style: none;border-bottom: 1px solid #000000;border-top: 1px solid #414141;}
+		.houtai_content .hou_left .nav_left ul li a{color: #fff;text-decoration: none;font-size: 14px;font-family: "微软雅黑";display: block;padding-left: 32px;}
+		.houtai_content .hou_left .nav_left ul li a:hover{background: #28b779;}
+		.houtai_content .hou_left .nav_left ul li a .icon_1{display: block;width: 16px;height: 16px;background:url("/images/ht_icon.png") no-repeat -233px -52px;float: left;margin-top: 20px;margin-right: 10px;}
+		.houtai_content .hou_left .nav_left ul li a .icon_2{display: block;width: 16px;height: 16px;background:url("/images/ht_icon.png") no-repeat -254px -52px;float: left;margin-top: 20px;margin-right: 10px;}
+		.houtai_content .hou_left .nav_left ul li a .icon_3{display: block;width: 16px;height: 16px;background:url("/images/ht_icon.png") no-repeat -211px -52px;float: left;margin-top: 20px;margin-right: 10px;}
+		.houtai_content .hou_left .nav_left ul li a .icon_4{display: block;width: 16px;height: 16px;background:url("/images/ht_icon.png") no-repeat -274px -52px;float: left;margin-top: 20px;margin-right: 10px;}
+		.houtai_content .hou_left .nav_left ul li a .icon_5{display: block;width: 16px;height: 16px;background:url("/images/ht_icon.png") no-repeat -295px -52px;float: left;margin-top: 20px;margin-right: 10px;}
+		.houtai_content .hou_left .nav_left ul li a .icon_6{display: block;width: 19px;height: 6px;background:url("/images/ht_icon.png") no-repeat -315px -52px;float: left;margin-top: 24px;margin-right: 7px;}
+		/*end left*/
+
+		/*header start*/
+			/*center_nav start*/	
+		.houtai_content	.header_nav{height: 52px;width: 100%;background: #282828;}
+		.houtai_content	.header_nav .center_nav{margin-left: 200px;height: 52px;border-right: 1px solid #414141;float: left;}
+		.houtai_content	.header_nav .center_nav ul li{border-right: 1px solid #000;border-left: 1px solid #414141;height: 52px;list-style: none;float: left;}
+		.houtai_content	.header_nav .center_nav ul li a{text-decoration: none;display: block;color: #838383;padding: 0 22px;height: 52px;font-size: 12px;font-family: "微软雅黑";}
+		.houtai_content	.header_nav .center_nav ul li a:hover{color: #fff;}
+		.houtai_content	.header_nav .center_nav ul li a .sy_type{color: #fff;}
+		.houtai_content	.header_nav .center_nav ul li a .nav_01{display: block;width: 18px;height: 17px;background: url("/images/ht_icon.png") no-repeat 0 -25px;margin: 6px auto;}
+		.houtai_content	.header_nav .center_nav ul li a .nav_02{display: block;width: 18px;height: 17px;background: url("/images/ht_icon.png") no-repeat -24px 0;margin: 6px auto;}
+		.houtai_content	.header_nav .center_nav ul li a:hover .nav_02{background-position:-24px -25px;}
+		.houtai_content	.header_nav .center_nav ul li a .nav_03{display: block;width: 18px;height: 17px;background: url("/images/ht_icon.png") no-repeat -48px 0;margin: 6px auto;}
+		.houtai_content	.header_nav .center_nav ul li a:hover .nav_03{background-position:-48px -25px;}						
+		.houtai_content	.header_nav .center_nav ul li a .nav_04{display: block;width: 18px;height: 17px;background: url("/images/ht_icon.png") no-repeat -68px 0;margin: 6px auto;}
+		.houtai_content	.header_nav .center_nav ul li a:hover .nav_04{background-position:-68px -25px;}			
+		.houtai_content	.header_nav .center_nav ul li a .nav_05{display: block;width: 18px;height: 17px;background: url("/images/ht_icon.png") no-repeat -91px 0;margin: 6px auto;}
+		.houtai_content	.header_nav .center_nav ul li a:hover .nav_05{background-position:-91px -25px;}			
+		.houtai_content	.header_nav .center_nav ul li a .nav_06{display: block;width: 18px;height: 17px;background: url("/images/ht_icon.png") no-repeat -113px 0;margin: 6px auto;}
+		.houtai_content	.header_nav .center_nav ul li a:hover .nav_06{background-position:-113px -25px;}			
+		.houtai_content	.header_nav .center_nav ul li a .nav_07{display: block;width: 18px;height: 17px;background: url("/images/ht_icon.png") no-repeat -133px 0;margin: 6px auto;}
+		.houtai_content	.header_nav .center_nav ul li a:hover .nav_07{background-position:-133px -25px;}		
+		.houtai_content	.header_nav .center_nav ul li a .nav_08{display: block;width: 18px;height: 17px;background: url("/images/ht_icon.png") no-repeat -152px 0;margin: 6px auto;}	
+		.houtai_content	.header_nav .center_nav ul li a:hover .nav_08{background-position:-152px -25px;}
+			/*end center_nav*/
+
+			/*user_info start*/
+			.houtai_content	.header_nav .user_info_all{height: 52px;margin-right: 0;float: right;}
+			.houtai_content	.header_nav .user_info_all .user_info_center{margin-right: 5px;float: left;height: 52px;color: #fff;font-size: 12px;font-family: "微软雅黑";text-align: center;line-height: 52px;}
+			.houtai_content	.header_nav .user_info_all .user_back{height: 52px;float: left;background: rgb(124, 5, 5);line-height: 52px;padding: 0 10px;}
+			.houtai_content	.header_nav .user_info_all .user_back a{display: block;margin: 0 auto;text-decoration: none;color: #fff;font-size: 12px;font-family: "微软雅黑";}
+			.houtai_content	.header_nav .user_info_all .user_back:hover{background: red;}
+			/*end user_info*/									
+
+		/*end header*/
+
+		/*content start*/
+		.houtai_content .hou_content{background: #eee;height: 1080px;text-align: center;line-height: 1080px;color: #484848;font-size: 50px;font-family: "微软雅黑";}		
+		/*end content*/
+</textarea>
+			<span>jQuery部分</span>
+			<textarea class="text03">$("#banner_h2").addClass("animated flip");
+</textarea>
+		</div>
+	</div>
+</div>
+		<!---->
+		<div class="footer">
+			<div class="container">
+			<p class="footer-class">Copyright &copy; 2015.Company name All rights reserved.<a target="_blank" href="http://sc.chinaz.com/moban/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a></p>
+			</div>
+			 <script type="text/javascript">
+						$(document).ready(function() {
+							/*
+							var defaults = {
+					  			containerID: 'toTop', // fading element id
+								containerHoverID: 'toTopHover', // fading element hover id
+								scrollSpeed: 1200,
+								easingType: 'linear' 
+					 		};
+							*/
+							
+							$().UItoTop({ easingType: 'easeOutQuart' });
+							
+						});
+					</script>
+				<a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+
+		</div>
+	<script type="text/javascript" src="/js/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript">
+				$("#banner_h2").addClass("animated flip");
+	</script>
+</body>
+</html>

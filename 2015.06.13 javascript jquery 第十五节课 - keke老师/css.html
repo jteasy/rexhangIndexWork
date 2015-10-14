@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>css offset width height  innerWidth innerHeight outerWidth outerHeight scrollTop scrollHeight</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+</head>
+<body>
+    <div id="box"></div>
+
+    <script type="text/javascript" src="jquery-1.11.1.min.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            // javascript
+           /* var boxDom = document.getElementById("box");
+            boxDom.style.border = "1px solid red";
+            boxDom.style.width = "200px";
+            boxDom.style.height = "200px";*/
+
+            // jquery
+            var $divBox = $("#box");
+            /*1.连写*/
+            $divBox.css("background","#000").css("height",500);
+
+            /*2.对象*/
+            // var Obj = {}; javascript对象形式
+            $divBox.css({
+                "background":"#000",
+                "height":500
+            });
+
+            /*3.定义对象*/
+            var pargames = {
+                "background":"#000",
+                "height":500
+            }
+            $divBox.css(pargames);
+
+            /*tips 同理attr也可以这样写多个*/
+            // boj.attr({
+            //     "username":"rexhang",
+            //     "password":123456
+            // });        
+        });
+    </script>
+</body>
+</html>

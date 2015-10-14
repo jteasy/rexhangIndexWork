@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>timeline</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link href="" rel="stylesheet">
+    <link rel="stylesheet" href="css/animate_tz.css">
+    <style type="text/css">
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    body {
+        font-size:12px;
+        font-family:"微软雅黑";
+        color: #666;
+        background: #444;
+    }
+    .timeline {
+        width: 1100px;
+        height: 300px;
+        margin: 0 auto;
+        position: relative;
+    }
+    .timeline .t_line {
+        width: 5px;
+        height: 1500px;
+        background: #ccc;
+        position: absolute;
+        top: 66px;
+        left: 200px;
+    }
+    .timeline .t_send {
+        width: 700px;
+        height: 200px;
+        margin: 67px 0 0 168px;
+    }
+    .timeline .t_header {
+        float: left;
+    }
+    .timeline .t_header .l_personallogo {
+        border-radius: 33px;
+    }
+    .timeline .t_send .t_icon {
+        width: 13px;
+        height: 16px;
+        /*background: url("images/icon.png") no-repeat;*/
+        float: left;
+    }
+    .timeline .t_send .t_box {
+        width: 600px;
+        height: 165px;
+        background: #fff;
+        float: left;
+        border-radius: 3px;
+        position: relative;
+    }
+    .timeline .t_send .t_box .t_title {
+        padding: 10px 0 15px 15px;
+        font-size: 14px;
+    }
+    .timeline .t_send .t_box .t_msg {
+        width: 540px;
+        height: 50px;
+        border: 1px solid #ccc;
+        margin: 0 auto;
+        padding: 10px;
+        outline: none;
+        overflow: auto;
+    }
+    .timeline .t_send .t_box .t_face .t_face_btn {
+        float: left;
+        margin: 15px 0 0 16px;
+    }
+    .timeline .t_send .t_box .t_face .t_send_btn {
+        float: right;
+        width: 80px;
+        height: 32px;
+        background: #f60;
+        text-align: center;
+        line-height: 32px;
+        text-decoration: none;
+        font-size: 14px;
+        color: #fff;
+        margin: 8px 20px 0 0;
+        border-radius: 3px;
+    }
+    .timeline .t_send .t_box .t_face .t_send_btn:hover {
+        background: #F00;
+    }
+    .timeline .t_send .t_box .t_face_con {
+        width: 365px;
+        height: 180px;
+        border: 1px solid #ccc;
+        background: #fff;
+        box-shadow: 1px 2px 5px 0 #000;
+        position: absolute;
+        top: 158px;
+        left: 22px;
+        padding: 5px;
+        display: none;
+        z-index: 1;
+    }
+    .timeline .t_send .t_box .t_face_con ul li {
+        list-style: none;
+        float: left;
+        margin: 2px;
+        cursor: pointer;
+    }
+    .timeline .t_all {
+        width: 1100px;
+        padding-left: 168px;
+        position: relative;
+    }
+    .timeline .t_all .l_header {
+        float: left;
+    }
+    .timeline .t_all .l_header img {
+        border-radius: 33px;
+    }
+    .timeline .t_all .t_list .l_icon {
+        width: 13px;
+        height: 16px;
+        /*background: url("images/icon.png") no-repeat;*/
+        float: left;
+    }
+    .timeline .t_all .t_list .l_msg {
+        width: 500px;
+        height: 100px;
+        background: #fff;
+        float: left;
+        padding-left: 20px;
+        overflow: auto;
+        font-size: 16px;
+        border-radius: 3px;
+    }
+    .timeline .t_all .t_list .l_msg div {
+        margin-top: 40px;
+    }
+    #cle {
+        display: block;
+        text-decoration: none;
+        text-align: center;
+        line-height: 35px;
+        position: absolute;
+        left: 900px;
+        bottom: 500px;
+        width: 200px;
+        height: 35px;
+        border: 0;
+        color: #444;
+        text-shadow:1px 1px 1px #fff;
+        background: -webkit-linear-gradient(90deg, #855555 0%, #2BD2AF 50%, #DBBE32 100%);
+        background: -moz-linear-gradient(90deg, #855555 0%, #2BD2AF 50%, #DBBE32 100%);
+        background: -ms-linear-gradient(90deg, #855555 0%, #2BD2AF 50%, #DBBE32 100%);
+        background: -o-linear-gradient(90deg, #855555 0%, #2BD2AF 50%, #DBBE32 100%);
+        background: linear-gradient(90deg, #855555 0%, #2BD2AF 50%, #DBBE32 100%);
+    }
+    #cle:hover {
+        background: -webkit-linear-gradient(90deg, #DBBE32 0%, #855555 50%, #2BD2AF 100%);
+        background: -moz-linear-gradient(90deg, #DBBE32 0%, #855555 50%, #2BD2AF 100%);
+        background: -ms-linear-gradient(90deg, #DBBE32 0%, #855555 50%, #2BD2AF 100%);
+        background: -o-linear-gradient(90deg, #DBBE32 0%, #855555 50%, #2BD2AF 100%);
+        background: linear-gradient(90deg, #DBBE32 0%, #855555 50%, #2BD2AF 100%);
+        color: #fff;
+        text-shadow:1px 1px 1px #000;
+    }
+    </style>
+</head>
+
+<body>
+    <a href="javascript:void(0);" id="cle" onclick="clears();">点击清除浏览器缓存</a>
+    <div class="timeline">
+        <div class="t_line"></div>
+        <div class="t_send">
+            <div class="t_header">
+                <img src="images/logo.png" alt="logo" width="66" height="66" class="l_personallogo">
+            </div>
+            <div class="t_icon"></div>
+            <div class="t_box">
+                <p class="t_title">有什么新鲜事想告诉大家？</p>
+                <!-- 变为可编辑的div盒子 -->
+                <div class="t_msg" contenteditable="true"></div>
+                <p class="t_face">
+                    <a href="javascript:void(0);" class="t_face_btn">
+                        <img src="images/face1.gif" alt="face1" width="22" height="22">
+                    </a>
+                    <a href="javascript:void(0);" class="t_send_btn">发 布</a>
+                </p>
+                <div class="t_face_con">
+                    <ul id="t_ul">
+                        <li>
+                            <img src="images/face2.gif" alt="face2" width="22" height="22">
+                        </li>
+                        <li>
+                            <img src="images/face3.gif" alt="face3" width="22" height="22">
+                        </li>
+                        <li>
+                            <img src="images/face2.gif" alt="face2" width="22" height="22">
+                        </li>
+                        <li>
+                            <img src="images/face3.gif" alt="face3" width="22" height="22">
+                        </li>
+                        <li>
+                            <img src="images/face2.gif" alt="face2" width="22" height="22">
+                        </li>
+                        <li>
+                            <img src="images/face3.gif" alt="face3" width="22" height="22">
+                        </li>
+                        <li>
+                            <img src="images/face2.gif" alt="face2" width="22" height="22">
+                        </li>
+                        <li>
+                            <img src="images/face3.gif" alt="face3" width="22" height="22">
+                        </li>
+                        <li>
+                            <img src="images/face2.gif" alt="face2" width="22" height="22">
+                        </li>
+                        <li>
+                            <img src="images/face3.gif" alt="face3" width="22" height="22">
+                        </li>
+                        <li>
+                            <img src="images/face2.gif" alt="face2" width="22" height="22">
+                        </li>
+                        <li>
+                            <img src="images/face3.gif" alt="face3" width="22" height="22">
+                        </li>
+                        <li>
+                            <img src="images/face2.gif" alt="face2" width="22" height="22">
+                        </li>
+                        <li>
+                            <img src="images/face3.gif" alt="face3" width="22" height="22">
+                        </li>
+                        <li>
+                            <img src="images/face2.gif" alt="face2" width="22" height="22">
+                        </li>
+                        <li>
+                            <img src="images/face3.gif" alt="face3" width="22" height="22">
+                        </li>
+                        <li>
+                            <img src="images/face2.gif" alt="face2" width="22" height="22">
+                        </li>
+                        <li>
+                            <img src="images/face3.gif" alt="face3" width="22" height="22">
+                        </li>
+                        <li>
+                            <img src="images/face2.gif" alt="face2" width="22" height="22">
+                        </li>
+                        <li>
+                            <img src="images/face3.gif" alt="face3" width="22" height="22">
+                        </li>
+                        <li>
+                            <img src="images/face2.gif" alt="face2" width="22" height="22">
+                        </li>
+                        <li>
+                            <img src="images/face3.gif" alt="face3" width="22" height="22">
+                        </li>
+                        <li>
+                            <img src="images/face2.gif" alt="face2" width="22" height="22">
+                        </li>
+                        <li>
+                            <img src="images/face3.gif" alt="face3" width="22" height="22">
+                        </li>
+                        <li>
+                            <img src="images/face2.gif" alt="face2" width="22" height="22">
+                        </li>
+                        <li>
+                            <img src="images/face3.gif" alt="face3" width="22" height="22">
+                        </li>
+                        <li>
+                            <img src="images/face2.gif" alt="face2" width="22" height="22">
+                        </li>
+                        <li>
+                            <img src="images/face3.gif" alt="face3" width="22" height="22">
+                        </li>
+                        <li>
+                            <img src="images/face2.gif" alt="face2" width="22" height="22">
+                        </li>
+                        <li>
+                            <img src="images/face3.gif" alt="face3" width="22" height="22">
+                        </li>
+                        <li>
+                            <img src="images/face2.gif" alt="face2" width="22" height="22">
+                        </li>
+                        <li>
+                            <img src="images/face3.gif" alt="face3" width="22" height="22">
+                        </li>
+                        <li>
+                            <img src="images/face2.gif" alt="face2" width="22" height="22">
+                        </li>
+                        <li>
+                            <img src="images/face3.gif" alt="face3" width="22" height="22">
+                        </li>
+                        <li>
+                            <img src="images/face2.gif" alt="face2" width="22" height="22">
+                        </li>
+                        <li>
+                            <img src="images/face3.gif" alt="face3" width="22" height="22">
+                        </li>
+                        <li>
+                            <img src="images/face2.gif" alt="face2" width="22" height="22">
+                        </li>
+                        <li>
+                            <img src="images/face3.gif" alt="face3" width="22" height="22">
+                        </li>
+                        <li>
+                            <img src="images/face2.gif" alt="face2" width="22" height="22">
+                        </li>
+                        <li>
+                            <img src="images/face3.gif" alt="face3" width="22" height="22">
+                        </li>
+                        <li>
+                            <img src="images/face2.gif" alt="face2" width="22" height="22">
+                        </li>
+                        <li>
+                            <img src="images/face3.gif" alt="face3" width="22" height="22">
+                        </li>
+                        <li>
+                            <img src="images/face2.gif" alt="face2" width="22" height="22">
+                        </li>
+                        <li>
+                            <img src="images/face3.gif" alt="face3" width="22" height="22">
+                        </li>
+                        <li>
+                            <img src="images/face2.gif" alt="face2" width="22" height="22">
+                        </li>
+                        <li>
+                            <img src="images/face3.gif" alt="face3" width="22" height="22">
+                        </li>
+                        <li>
+                            <img src="images/face2.gif" alt="face2" width="22" height="22">
+                        </li>
+                        <li>
+                            <img src="images/face3.gif" alt="face3" width="22" height="22">
+                        </li>
+                        <li>
+                            <img src="images/face2.gif" alt="face2" width="22" height="22">
+                        </li>
+                        <li>
+                            <img src="images/face3.gif" alt="face3" width="22" height="22">
+                        </li>
+                        <li>
+                            <img src="images/face2.gif" alt="face2" width="22" height="22">
+                        </li>
+                        <li>
+                            <img src="images/face3.gif" alt="face3" width="22" height="22">
+                        </li>
+                        <li>
+                            <img src="images/face2.gif" alt="face2" width="22" height="22">
+                        </li>
+                        <li>
+                            <img src="images/face3.gif" alt="face3" width="22" height="22">
+                        </li>
+                        <li>
+                            <img src="images/face2.gif" alt="face2" width="22" height="22">
+                        </li>
+                        <li>
+                            <img src="images/face3.gif" alt="face3" width="22" height="22">
+                        </li>
+                        <li>
+                            <img src="images/face2.gif" alt="face2" width="22" height="22">
+                        </li>
+                        <li>
+                            <img src="images/face3.gif" alt="face3" width="22" height="22">
+                        </li>
+                        <li>
+                            <img src="images/face2.gif" alt="face2" width="22" height="22">
+                        </li>
+                        <li>
+                            <img src="images/face3.gif" alt="face3" width="22" height="22">
+                        </li>
+                        <li>
+                            <img src="images/face2.gif" alt="face2" width="22" height="22">
+                        </li>
+                        <li>
+                            <img src="images/face3.gif" alt="face3" width="22" height="22">
+                        </li>
+                        <li>
+                            <img src="images/face2.gif" alt="face2" width="22" height="22">
+                        </li>
+                        <li>
+                            <img src="images/face3.gif" alt="face3" width="22" height="22">
+                        </li>
+                        <li>
+                            <img src="images/face2.gif" alt="face2" width="22" height="22">
+                        </li>
+                        <li>
+                            <img src="images/face3.gif" alt="face3" width="22" height="22">
+                        </li>
+                        <li>
+                            <img src="images/face2.gif" alt="face2" width="22" height="22">
+                        </li>
+                        <li>
+                            <img src="images/face3.gif" alt="face3" width="22" height="22">
+                        </li>
+                        <li>
+                            <img src="images/face2.gif" alt="face2" width="22" height="22">
+                        </li>
+                        <li>
+                            <img src="images/face3.gif" alt="face3" width="22" height="22">
+                        </li>
+                        <li>
+                            <img src="images/face2.gif" alt="face2" width="22" height="22">
+                        </li>
+                        <li>
+                            <img src="images/face3.gif" alt="face3" width="22" height="22">
+                        </li>
+                        <li>
+                            <img src="images/face2.gif" alt="face2" width="22" height="22">
+                        </li>
+                        <li>
+                            <img src="images/face3.gif" alt="face3" width="22" height="22">
+                        </li>
+                        <li>
+                            <img src="images/face2.gif" alt="face2" width="22" height="22">
+                        </li>
+                        <li>
+                            <img src="images/face3.gif" alt="face3" width="22" height="22">
+                        </li>
+                        <li>
+                            <img src="images/face2.gif" alt="face2" width="22" height="22">
+                        </li>
+                        <li>
+                            <img src="images/face3.gif" alt="face3" width="22" height="22">
+                        </li>
+                        <li>
+                            <img src="images/face2.gif" alt="face2" width="22" height="22">
+                        </li>
+                        <li>
+                            <img src="images/face3.gif" alt="face3" width="22" height="22">
+                        </li>
+                        <li>
+                            <img src="images/face2.gif" alt="face2" width="22" height="22">
+                        </li>
+                        <li>
+                            <img src="images/face3.gif" alt="face3" width="22" height="22">
+                        </li>
+                        <li>
+                            <img src="images/face2.gif" alt="face2" width="22" height="22">
+                        </li>
+                        <li>
+                            <img src="images/face3.gif" alt="face3" width="22" height="22">
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="t_all">
+            <div class="t_list">
+                <div class="l_header">
+                    <img src="images/logo.png" alt="logo" width="66" height="66">
+                </div>
+                <div class="l_icon"></div>
+                <div class="l_msg">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript">
+    $(function() {
+        $(".t_face_btn").click(function() {
+            $(".t_face_con").toggle(500);
+        });
+        $("#t_ul").find("li").click(function() {
+            $(this).parents(".t_face_con").hide(500);
+        });
+        $("#t_ul").find("li").click(function() {
+            var img = $(this).find("img").clone();
+            $(".t_msg").append(img);
+        });
+        $(".t_send_btn").click(function() {
+            var content = $(".t_msg").html();
+            if (content == "") {
+                $(".t_msg").focus();
+                alert("请先输入内容!");
+                return;
+            }
+            $(".l_msg").append("<div>" + content + "</div>");
+            $(".t_msg").html("");
+            $(".l_msg div").addClass("animated fadeIn");
+            // 存储到浏览器session中，浏览器关闭，即消失
+            // sessionStorage.setItem("message",$(".t_all").html());                
+            // 本地存储，浏览器关闭仍然存在
+            localStorage.setItem("message", $(".l_msg").html());
+
+        });
+        var msg = localStorage.getItem("message");
+        if (msg) {
+            $(".l_msg").html(msg);
+        }
+
+    });
+
+    function clears() {
+        localStorage.removeItem("message");
+        alert("本页缓存已经清除完毕！");
+        window.location.reload();
+    }
+    </script>
+</body>
+
+</html>

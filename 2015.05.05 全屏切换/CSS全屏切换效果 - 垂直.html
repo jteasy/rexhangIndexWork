@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+	<style type="text/css">
+		h1,body,html{
+			padding: 0;
+			margin: 0;
+		}
+		body{
+			font-family: Arial,"Microsoft YaHei","Hiragino Sans GB",sans-serif;
+		}
+		html,body{
+			height: 100%;
+			overflow: hidden;
+		}
+
+		#container,.section{
+			height: 100%;
+			position: relative;
+		}
+		#section0,
+		#section1,
+		#section2,
+		#section3,
+		#section4,
+		#section5,
+		#section6,
+		#section7,
+		#section8{
+			background-color: #000;
+			background-size: cover;
+			background-position: 50% 50%;
+		}
+		#section0{
+			background-image: url(images/1.jpg);
+		}
+		#section1{
+			background-image: url(images/2.jpg);
+		}
+		#section2{
+			background-image: url(images/3.jpg);
+		}
+		#section3{
+			background-image: url(images/4.jpg);
+		}
+		#section4{
+			background-image: url(images/5.jpg);
+		}
+		#section5{
+			background-image: url(images/6.jpg);
+		}
+		#section6{
+			background-image: url(images/7.jpg);
+		}
+		#section7{
+			background-image: url(images/8.jpg);
+		}
+		#section8{
+			background-image: url(images/9.jpg);
+		}				
+		.left{
+		
+		}
+	</style>
+</head>
+<body>
+    <div id="container" class="left">
+    	<div class="section left" id="section0"></div>
+    	<div class="section left" id="section1"></div>
+    	<div class="section left" id="section2"></div>
+    	<div class="section left" id="section3"></div>
+    	<div class="section left" id="section4"></div>
+    	<div class="section left" id="section5"></div>
+    	<div class="section left" id="section6"></div>
+    	<div class="section left" id="section7"></div>    	
+    	<div class="section left" id="section8"></div>    	
+    </div>
+
+	<script type="text/javascript" src="jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="pageswitch.js"></script>
+    <script type="text/javascript">
+    $(function(){
+    	$("#container").switchPage({
+    		'loop':true,
+    		'keyboard':true,
+    		'duration':1000,
+    		'direction':'vertical',
+    	});
+    })	
+    </script>
+</body>
+</html>

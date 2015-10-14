@@ -1,0 +1,330 @@
+<!doctype html>
+<html>
+<head>
+	<!--声明当前页面的编码集：charset=GBK,GB2312(中文编),UTF-8(国际编码)-->
+	<meta http-equiv="Content-Type" content="text/heml;charset=UTF-8">
+	<!--当前页面的三要素-->
+	<title>标题</title>
+	<meta name="Keywords" content="关键词，关键词">
+	<meta name="description" content="">
+	<!--css.js-->
+	<style type="text/css">
+
+body {
+    background-color: #0b0b0b;
+    color: rgba(208, 208, 208, 0.8);
+    text-align: center;
+    padding-top: 2em;
+    overflow: hidden;
+}
+h1 {
+    font: normal 5vmax/1.2 'Sigmar One', cursive;
+}
+h2 {
+    font: normal 3.5vmax/1.2 'Sigmar One', cursive;
+}
+.wrapper {
+    display: inline-block;
+    padding: 11vmax;
+    border-radius: 50%;
+    -webkit-animation: hoverspin 18s linear infinite paused;
+    animation: hoverspin 18s linear infinite paused;
+}
+.wrapper:hover {
+    -webkit-animation-play-state: running;
+    animation-play-state: running;
+}
+.wrapper:hover .square div:before {
+    border-radius: 5%;
+}
+.wrapper .square {
+    position: relative;
+    display: inline-block;
+    text-align: left;
+    width: 1vmax;
+    height: 1vmax;
+    margin: 1vmax;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+.wrapper .square div {
+    position: absolute;
+    display: none;
+    top: 50%;
+    left: 50%;
+}
+.wrapper .square div:before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    box-shadow: 0 0 0.5vmax rgba(0, 0, 0, 0.5);
+    -webkit-transition: all 1s ease;
+    transition: all 1s ease;
+}
+.wrapper .square div {
+    display: block;
+    z-index: -1;
+    width: 1.22474vmax;
+    height: 1.22474vmax;
+    -webkit-transform: translate(-50%, -50%) rotate(15deg);
+    -ms-transform: translate(-50%, -50%) rotate(15deg);
+    transform: translate(-50%, -50%) rotate(15deg);
+}
+.wrapper .square div:before {
+    background: rgba(255, 0, 0, 0.1);
+    border: 1px solid rgba(255, 0, 0, 0.1);
+}
+.wrapper .square div div {
+    display: block;
+    z-index: -2;
+    width: 1.5vmax;
+    height: 1.5vmax;
+    -webkit-transform: translate(-50%, -50%) rotate(15deg);
+    -ms-transform: translate(-50%, -50%) rotate(15deg);
+    transform: translate(-50%, -50%) rotate(15deg);
+}
+.wrapper .square div div:before {
+    background: rgba(0, 255, 255, 0.1);
+    border: 1px solid rgba(0, 255, 255, 0.1);
+}
+.wrapper .square div div div {
+    display: block;
+    z-index: -3;
+    width: 1.83712vmax;
+    height: 1.83712vmax;
+    -webkit-transform: translate(-50%, -50%) rotate(15deg);
+    -ms-transform: translate(-50%, -50%) rotate(15deg);
+    transform: translate(-50%, -50%) rotate(15deg);
+}
+.wrapper .square div div div:before {
+    background: rgba(0, 255, 0, 0.1);
+    border: 1px solid rgba(0, 255, 0, 0.1);
+}
+.wrapper .square div div div div {
+    display: block;
+    z-index: -4;
+    width: 2.25vmax;
+    height: 2.25vmax;
+    -webkit-transform: translate(-50%, -50%) rotate(15deg);
+    -ms-transform: translate(-50%, -50%) rotate(15deg);
+    transform: translate(-50%, -50%) rotate(15deg);
+}
+.wrapper .square div div div div:before {
+    background: rgba(128, 255, 0, 0.1);
+    border: 1px solid rgba(128, 255, 0, 0.1);
+}
+.wrapper .square div div div div div {
+    display: block;
+    z-index: -5;
+    width: 2.75568vmax;
+    height: 2.75568vmax;
+    -webkit-transform: translate(-50%, -50%) rotate(15deg);
+    -ms-transform: translate(-50%, -50%) rotate(15deg);
+    transform: translate(-50%, -50%) rotate(15deg);
+}
+.wrapper .square div div div div div:before {
+    background: rgba(204, 255, 0, 0.1);
+    border: 1px solid rgba(204, 255, 0, 0.1);
+}
+.wrapper .square div div div div div div {
+    display: block;
+    z-index: -6;
+    width: 3.375vmax;
+    height: 3.375vmax;
+    -webkit-transform: translate(-50%, -50%) rotate(15deg);
+    -ms-transform: translate(-50%, -50%) rotate(15deg);
+    transform: translate(-50%, -50%) rotate(15deg);
+}
+.wrapper .square div div div div div div:before {
+    background: rgba(255, 255, 0, 0.1);
+    border: 1px solid rgba(255, 255, 0, 0.1);
+}
+.wrapper .square div div div div div div div {
+    display: block;
+    z-index: -7;
+    width: 4.13351vmax;
+    height: 4.13351vmax;
+    -webkit-transform: translate(-50%, -50%) rotate(15deg);
+    -ms-transform: translate(-50%, -50%) rotate(15deg);
+    transform: translate(-50%, -50%) rotate(15deg);
+}
+.wrapper .square div div div div div div div:before {
+    background: rgba(255, 219, 0, 0.1);
+    border: 1px solid rgba(255, 219, 0, 0.1);
+}
+.wrapper .square div div div div div div div div {
+    display: block;
+    z-index: -8;
+    width: 5.0625vmax;
+    height: 5.0625vmax;
+    -webkit-transform: translate(-50%, -50%) rotate(15deg);
+    -ms-transform: translate(-50%, -50%) rotate(15deg);
+    transform: translate(-50%, -50%) rotate(15deg);
+}
+.wrapper .square div div div div div div div div:before {
+    background: rgba(255, 191, 0, 0.1);
+    border: 1px solid rgba(255, 191, 0, 0.1);
+}
+.wrapper .square div div div div div div div div div {
+    display: block;
+    z-index: -9;
+    width: 6.20027vmax;
+    height: 6.20027vmax;
+    -webkit-transform: translate(-50%, -50%) rotate(15deg);
+    -ms-transform: translate(-50%, -50%) rotate(15deg);
+    transform: translate(-50%, -50%) rotate(15deg);
+}
+.wrapper .square div div div div div div div div div:before {
+    background: rgba(255, 170, 0, 0.1);
+    border: 1px solid rgba(255, 170, 0, 0.1);
+}
+.wrapper .square div div div div div div div div div div {
+    display: block;
+    z-index: -10;
+    width: 7.59375vmax;
+    height: 7.59375vmax;
+    -webkit-transform: translate(-50%, -50%) rotate(15deg);
+    -ms-transform: translate(-50%, -50%) rotate(15deg);
+    transform: translate(-50%, -50%) rotate(15deg);
+}
+.wrapper .square div div div div div div div div div div:before {
+    background: rgba(255, 153, 0, 0.1);
+    border: 1px solid rgba(255, 153, 0, 0.1);
+}
+.wrapper .square div div div div div div div div div div div {
+    display: block;
+    z-index: -11;
+    width: 9.30041vmax;
+    height: 9.30041vmax;
+    -webkit-transform: translate(-50%, -50%) rotate(15deg);
+    -ms-transform: translate(-50%, -50%) rotate(15deg);
+    transform: translate(-50%, -50%) rotate(15deg);
+}
+.wrapper .square div div div div div div div div div div div:before {
+    background: rgba(255, 139, 0, 0.1);
+    border: 1px solid rgba(255, 139, 0, 0.1);
+}
+.wrapper .square div div div div div div div div div div div div {
+    display: block;
+    z-index: -12;
+    width: 11.39062vmax;
+    height: 11.39062vmax;
+    -webkit-transform: translate(-50%, -50%) rotate(15deg);
+    -ms-transform: translate(-50%, -50%) rotate(15deg);
+    transform: translate(-50%, -50%) rotate(15deg);
+}
+.wrapper .square div div div div div div div div div div div div:before {
+    background: rgba(255, 128, 0, 0.1);
+    border: 1px solid rgba(255, 128, 0, 0.1);
+}
+.wrapper .square div div div div div div div div div div div div div {
+    display: block;
+    z-index: -13;
+    width: 13.95061vmax;
+    height: 13.95061vmax;
+    -webkit-transform: translate(-50%, -50%) rotate(15deg);
+    -ms-transform: translate(-50%, -50%) rotate(15deg);
+    transform: translate(-50%, -50%) rotate(15deg);
+}
+.wrapper .square div div div div div div div div div div div div div:before {
+    background: rgba(255, 118, 0, 0.1);
+    border: 1px solid rgba(255, 118, 0, 0.1);
+}
+.wrapper .square div div div div div div div div div div div div div div {
+    display: block;
+    z-index: -14;
+    width: 17.08594vmax;
+    height: 17.08594vmax;
+    -webkit-transform: translate(-50%, -50%) rotate(15deg);
+    -ms-transform: translate(-50%, -50%) rotate(15deg);
+    transform: translate(-50%, -50%) rotate(15deg);
+}
+.wrapper .square div div div div div div div div div div div div div div:before {
+    background: rgba(255, 109, 0, 0.1);
+    border: 1px solid rgba(255, 109, 0, 0.1);
+}
+.wrapper .square div div div div div div div div div div div div div div div {
+    display: block;
+    z-index: -15;
+    width: 20.92591vmax;
+    height: 20.92591vmax;
+    -webkit-transform: translate(-50%, -50%) rotate(15deg);
+    -ms-transform: translate(-50%, -50%) rotate(15deg);
+    transform: translate(-50%, -50%) rotate(15deg);
+}
+.wrapper .square div div div div div div div div div div div div div div div:before {
+    background: rgba(255, 102, 0, 0.1);
+    border: 1px solid rgba(255, 102, 0, 0.1);
+}
+.wrapper .square div div div div div div div div div div div div div div div div {
+    display: block;
+    z-index: -16;
+    width: 25.62891vmax;
+    height: 25.62891vmax;
+    -webkit-transform: translate(-50%, -50%) rotate(15deg);
+    -ms-transform: translate(-50%, -50%) rotate(15deg);
+    transform: translate(-50%, -50%) rotate(15deg);
+}
+.wrapper .square div div div div div div div div div div div div div div div div:before {
+    background: rgba(255, 96, 0, 0.1);
+    border: 1px solid rgba(255, 96, 0, 0.1);
+}
+@-webkit-keyframes hoverspin {
+    100% {
+        -webkit-transform: rotate(1turn);
+        transform: rotate(1turn);
+    }
+}
+@keyframes hoverspin {
+    100% {
+        -webkit-transform: rotate(1turn);
+        transform: rotate(1turn);
+    }
+}
+	</style>
+		
+	</head>
+<body>
+<h1>Perfect Circle?</h1>
+<div class="wrapper">
+    <div class="square">
+        <div>
+            <div>
+                <div>
+                    <div>
+                        <div>
+                            <div>
+                                <div>
+                                    <div>
+                                        <div>
+                                            <div>
+                                                <div>
+                                                    <div>
+                                                        <div>
+                                                            <div>
+                                                                <div>
+                                                                    <div></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<h2>Hover over circle</h2>
+</body>
+</html>

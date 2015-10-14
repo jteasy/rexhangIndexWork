@@ -1,0 +1,24 @@
+audio标签的方法
+
+html5中的媒体标签所提供的方法很简单，如下。
+
+ 
+p.load();
+p.play();
+p.pause();
+p.stop();
+
+
+这里用js原生的document.getElementById()方法获取的元素上执行。如果要用jquery，必须这么写$('')[0].xxx();
+
+ 
+
+audio标签有如下几个属性
+
+属性	描述
+src	音频文件的url地址
+preload	是否自动预加载，在设置了autoplay属性时此属性无效。
+autoplay	自动开始播放
+loop	循环播放
+controls	显示浏览器默认播放控制器
+ 

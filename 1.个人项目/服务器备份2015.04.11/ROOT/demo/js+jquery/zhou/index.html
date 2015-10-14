@@ -1,0 +1,229 @@
+<!doctype html>
+<html>
+<head>
+	<!--声明当前页面的编码集：charset=GBK,GB2312(中文编),UTF-8(国际编码)-->
+	<meta http-equiv="Content-Type" content="text/heml;charset=UTF-8">
+	<!--当前页面的三要素-->
+	<title>标题</title>
+	<meta name="Keywords" content="关键词，关键词">
+	<meta name="description" content="">
+	<!--css.js-->
+	<link rel="stylesheet" href="/css/bg2.css" type="text/css" />
+	<style type="text/css">
+		:root{
+		
+		background-size:cover;
+		background-attachment:fixed;
+		font-size:12px;
+		font-family:"微软雅黑";
+		}
+		.text{text-align:center;}
+		.timeline{
+		width:1100px;
+		}
+
+		.line{
+		height:1000px;
+		width:3px;
+		background:#000;
+		box-shadow:0 0 5px 5px #ccc;
+		position:absolute;
+		top:80px;
+		left:200px;
+		z-index:-1;
+		}
+
+		.t-list{
+		width:800px;
+		height:100px;
+		margin: 80px 0 0 160px;
+		position:relative;
+		-webkit-transition:all 1s ease;
+		-moz-transition:all 1s ease;
+		-ms-transition:all 1s ease;
+		transition:all 1s ease;
+		-webkit-animation:rotateIn 1s ease;
+		-moz-animation:rotateIn 1s linear;
+		-ms-animation:rotateIn 1s linear;
+		animation:rotateIn 1s linear;
+		}
+
+		.t-all{
+		width:110px;
+		}
+
+		.ico{
+		width:0;height:0;
+		border:10px solid transparent;
+		border-right:20px solid #000;
+		margin-top: 25px;
+		opacity: 0.7;
+		filter:alpha(opacity=70);
+		}
+
+		.d-radius{
+		border-radius:33px;
+		-webkit-transition:all 1s ease;
+		-moz-transition:all 1s ease;
+		-ms-transition:all 1s ease;
+		transition:all 1s ease;
+		}
+
+		.d-radius:hover{
+		-webkit-transform:scale(1.5);
+		-moz-transform:scale(1.5);
+		-ms-transform:scale(1.5);
+		transform:scale(1.5);
+		
+		}
+		.content1{
+		width:450px;
+		padding: 10px;
+		background: #000;
+		border-radius: 3px;
+		font-size: 14px;
+		opacity: 0.7;
+		filter:alpha(opacity=70);
+		
+		}
+		.t-left{
+		float:left;
+		}
+		
+		@-webkit-keyframes rotateIn {
+	0% {
+		-webkit-transform-origin: center center;
+		-webkit-transform: rotate(-200deg);
+		opacity: 0;
+	}
+
+	100% {
+		-webkit-transform-origin: center center;
+		-webkit-transform: rotate(0);
+		opacity: 1;
+	}
+}
+@-moz-keyframes rotateIn {
+	0% {
+		-moz-transform-origin: center center;
+		-moz-transform: rotate(-200deg);
+		opacity: 0;
+	}
+
+	100% {
+		-moz-transform-origin: center center;
+		-moz-transform: rotate(0);
+		opacity: 1;
+	}
+}
+@-ms-keyframes rotateIn {
+	0% {
+		-ms-transform-origin: center center;
+		-ms-transform: rotate(-200deg);
+		opacity: 0;
+	}
+
+	100% {
+		-ms-transform-origin: center center;
+		-ms-transform: rotate(0);
+		opacity: 1;
+	}
+}
+@-o-keyframes rotateIn {
+	0% {
+		-o-transform-origin: center center;
+		-o-transform: rotate(-200deg);
+		opacity: 0;
+	}
+
+	100% {
+		-o-transform-origin: center center;
+		-o-transform: rotate(0);
+		opacity: 1;
+	}
+}
+@keyframes rotateIn {
+	0% {
+		transform-origin: center center;
+		transform: rotate(-200deg);
+		opacity: 0;
+	}
+
+	100% {
+		transform-origin: center center;
+		transform: rotate(0);
+		opacity: 1;
+	}
+}
+		
+	</style>
+	</head>
+<body>
+<h1 class="text">QQ空间时光轴</h1>
+	<div class="timeline">
+		<div class="line"></div>
+		<div class="t-all">
+			<div class="t-list">
+				<img class="d-radius t-left" width="66" height="66" src="/demo/js+jquery/zhou/images/arry.jpg" alt="Arry" title="Arry"/>
+				<div class="ico t-left"></div>
+					<div class="content1 t-left">
+					【90后的春天已经来临】 在互联网和移动互联网时代大佬们为什么极度看好和投资90后创业者，90后作为与生俱来的互联网新一代人又饱受争议，命运都掌握在我们自己手中，怎么走，怎么度过你的青春，你决定 ！ 但是互联网大佬们都看好新一代人，你敢做 我就敢投 要的就是这种 敢拼，敢干，敢闯 不怕死的魄力，太需要了 有多少人没有 ！！！ 值得我们每一位年轻人思考，我们是不是该做点什么 ？
+					</div>
+			</div>
+			<div class="t-list animated">
+				<img class="d-radius t-left" width="66" height="66" src="/demo/js+jquery/zhou/images/arry.jpg" alt="Arry" title="Arry"/>
+				<div class="ico t-left"></div>
+					<div class="content1 t-left">
+					【90后的春天已经来临】 在互联网和移动互联网时代大佬们为什么极度看好和投资90后创业者，90后作为与生俱来的互联网新一代人又饱受争议，命运都掌握在我们自己手中，怎么走，怎么度过你的青春，你决定 ！ 但是互联网大佬们都看好新一代人，你敢做 我就敢投 要的就是这种 敢拼，敢干，敢闯 不怕死的魄力，太需要了 有多少人没有 ！！！ 值得我们每一位年轻人思考，我们是不是该做点什么 ？
+					</div>
+			</div>
+			<div class="t-list">
+				<img class="d-radius t-left" width="66" height="66" src="/demo/js+jquery/zhou/images/arry.jpg" alt="Arry" title="Arry"/>
+				<div class="ico t-left"></div>
+					<div class="content1 t-left">
+					【90后的春天已经来临】 在互联网和移动互联网时代大佬们为什么极度看好和投资90后创业者，90后作为与生俱来的互联网新一代人又饱受争议，命运都掌握在我们自己手中，怎么走，怎么度过你的青春，你决定 ！ 但是互联网大佬们都看好新一代人，你敢做 我就敢投 要的就是这种 敢拼，敢干，敢闯 不怕死的魄力，太需要了 有多少人没有 ！！！ 值得我们每一位年轻人思考，我们是不是该做点什么 ？
+					</div>
+			</div>
+			<div class="t-list">
+				<img class="d-radius t-left" width="66" height="66" src="/demo/js+jquery/zhou/images/arry.jpg" alt="Arry" title="Arry"/>
+				<div class="ico t-left"></div>
+					<div class="content1 t-left">
+					【90后的春天已经来临】 在互联网和移动互联网时代大佬们为什么极度看好和投资90后创业者，90后作为与生俱来的互联网新一代人又饱受争议，命运都掌握在我们自己手中，怎么走，怎么度过你的青春，你决定 ！ 但是互联网大佬们都看好新一代人，你敢做 我就敢投 要的就是这种 敢拼，敢干，敢闯 不怕死的魄力，太需要了 有多少人没有 ！！！ 值得我们每一位年轻人思考，我们是不是该做点什么 ？
+					</div>
+			</div>
+			<div class="t-list">
+				<img class="d-radius t-left" width="66" height="66" src="/demo/js+jquery/zhou/images/arry.jpg" alt="Arry" title="Arry"/>
+				<div class="ico t-left"></div>
+					<div class="content1 t-left">
+					【90后的春天已经来临】 在互联网和移动互联网时代大佬们为什么极度看好和投资90后创业者，90后作为与生俱来的互联网新一代人又饱受争议，命运都掌握在我们自己手中，怎么走，怎么度过你的青春，你决定 ！ 但是互联网大佬们都看好新一代人，你敢做 我就敢投 要的就是这种 敢拼，敢干，敢闯 不怕死的魄力，太需要了 有多少人没有 ！！！ 值得我们每一位年轻人思考，我们是不是该做点什么 ？
+					</div>
+			</div>
+			<div class="t-list">
+				<img class="d-radius t-left" width="66" height="66" src="/demo/js+jquery/zhou/images/arry.jpg" alt="Arry" title="Arry"/>
+				<div class="ico t-left"></div>
+					<div class="content1 t-left">
+					【90后的春天已经来临】 在互联网和移动互联网时代大佬们为什么极度看好和投资90后创业者，90后作为与生俱来的互联网新一代人又饱受争议，命运都掌握在我们自己手中，怎么走，怎么度过你的青春，你决定 ！ 但是互联网大佬们都看好新一代人，你敢做 我就敢投 要的就是这种 敢拼，敢干，敢闯 不怕死的魄力，太需要了 有多少人没有 ！！！ 值得我们每一位年轻人思考，我们是不是该做点什么 ？
+					</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="/js/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript">
+	var scrollHeight = 0,// 浏览器滚动条的高度
+	scrollTop = 0, // 浏览器的距离顶部的高度
+	html = "";	//动态添加的内容
+		$(function(){
+		var height = $(window).height();// 获取浏览器窗口的高度
+		$(window).scroll(function(){
+		scrollHeight = document.body.scrollHeight;// 获取浏览器滚动条的高度
+		scrollTop = document.body.scrollTop;// 获取浏览器的距离顶部的高度
+		if(scrollTop + height >= scrollHeight){
+		html = $(".t-all").html();
+		$(".t-all").append(html);
+		$(".line").height(document.body.scrollHeight);
+		};
+		});
+		});
+</script>
+</body>
+</html>

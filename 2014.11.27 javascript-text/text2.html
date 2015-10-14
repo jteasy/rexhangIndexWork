@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+	<head>
+		<!--声明当前页面的编码集：charset=gbk,gb2312（中文编码），utf-8（国际编码）-->
+		<meta http-equiv="Content-Type" content="text/html; charset=gbk">
+		<!--当前页面的三要素-->
+		<title>标题写在这里！</title>
+		<meta name="Keywords" content="关键词,关键词">
+		<meta name="description" content="">
+		<link rel="shortcut icon" href="" />
+		
+		<!--css,js-->
+		<style type="text/css">
+			*{margin:0;padding:0;}
+			.all{display:block;width:48px;height:18px;background:#33CC99;float:left;font-size:14px;text-align:center;line-height:18px;color:yellow;text-decoration:none;}
+			.prev{margin: -290px 900px;}
+			.next{margin: -290px 952px;}
+		</style>
+		<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+    </head>
+<body>
+	<div id="control" style="width:100px;height:100px;background:red;margin: 293px 900px;text-align:center;line-height:100px;font-size:50px;font-family:'微软雅黑';">0</div>	
+	<a href="javascript:void(0);" class="all prev">上一页</a>
+	<a href="javascript:void(0);" class="all next">下一页</a>
+	<script type="text/javascript">
+		$(function(){
+			var index = 0;
+			$(".next").click(function(){
+			index++;
+			if(index > 5){index = 0};
+			$("#control").text(index);
+			});
+			$(".prev").click(function(){
+			index--;
+			if(index < 0){index = 5};
+			$("#control").text(index);
+			});
+		});
+	</script>
+</body>
+</html>

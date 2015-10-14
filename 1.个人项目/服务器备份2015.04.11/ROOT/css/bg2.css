@@ -1,0 +1,29 @@
+body{background:url("/images/bg.jpg") no-repeat;
+	background-attachment:fixed;
+	background-position:-140px -85px;
+-webkit-animation:html_page 600ms ease-in-out;
+animation:html_page 600ms ease-in-out;
+
+}
+@-webkit-keyframes html_page{
+	0% {-webkit-transform-origin: 50% 50%;-webkit-transform: rotate3d(0, 1, 0, 720deg) rotateZ(45deg) scale(0);
+		transform-origin: 50% 50%;transform: rotate3d(0, 1, 0, 720deg) rotateZ(45deg) scale(0);
+}
+	100% {-webkit-transform: rotate3d(0, 1, 0, 0) rotateZ(0) scale(1);
+	transform: rotate3d(0, 1, 0, 0) rotateZ(0) scale(1);}
+}
+h1{color:#000;}
+*{color:#fff;text-shadow: 0 0 10px #BB90FC;font-family:'Times New Roman', Times, serif;}
+.copy{font-size:18px;text-align:center;
+color:#666;line-height:40px;width:100%;text-shadow:none;}
+/* Mozilla based browsers */
+::-moz-selection {
+background-color:rgba(48, 144, 26, 1);
+color: #dadada;
+}
+
+/* Works in Safari */
+::selection {
+background-color:rgba(48, 144, 26, 1);
+color: #dadada;
+}

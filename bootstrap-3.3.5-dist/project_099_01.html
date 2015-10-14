@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <style>
+    body {
+        font-family:'微软雅黑';
+    }
+    .nav1 {
+        margin-bottom: 0;
+    }
+    .carousel {
+        background-color: #000;
+    }
+    .carousel .item {
+        height: 32%;
+    }
+    .carousel .item img {
+        width: 100%;
+    }
+    .m_top {
+        margin-top: 50px;
+    }
+    .col-md-4 {
+        text-align: center;
+    }
+    .col-md-4 p {
+        margin-top: 15px;
+    }
+    .col-md-4 button {
+        margin-bottom: 15px;
+    }
+    .col-md-3 {
+        text-align: center;
+    }
+    .col-md-3:hover{
+        box-shadow: 0px 0px 1px 1px #eee;
+    }
+    .col-md-4:hover{
+        box-shadow: 0px 0px 1px 1px #eee;
+    }
+    .col-md-3 p {
+        margin-top: 15px;
+    }
+    .col-md-3 button {
+        margin-bottom: 15px;
+    }
+    #hrsel {
+        margin: 50px 0;
+        border-color: #eee;
+    }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse .navbar-fixed-top nav1">
+        <div class="container">
+            <div class="container-fluid c_cen">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">学习导航</a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li><a href="#">语文</a>
+                        </li>
+                        <li><a href="#">数学</a>
+                        </li>
+                        <li><a href="#">英语</a>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">更多学科 <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">历史</a>
+                                </li>
+                                <li><a href="#">化学</a>
+                                </li>
+                                <li><a href="#">生物</a>
+                                </li>
+                                <li><a href="#">政治</a>
+                                </li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="#">……</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><a href="#" data-toggle="modal" data-target="#myModal">关于本站</a>
+                        </li>
+                    </ul>
+                    <form class="navbar-form navbar-right" role="search">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="搜索更多内容……">
+                        </div>
+                        <button type="submit" class="btn btn-default">搜索</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- 巨幕banner -->
+    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="4"></li>
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+            <div class="item active">
+                <img src="images/tt.gif" alt="图1">
+                <div class="carousel-caption">
+                    <h3>ECJIA智能后台</h3>
+                    <p>全面兼容Iphone + Ipad + Android</p>
+                </div>
+            </div>
+            <div class="item">
+                <img src="images/ww.png" alt="图2">
+                <div class="carousel-caption">
+                    <h3>就是简单</h3>
+                    <p>革命性企业级多用户平台</p>
+                </div>
+            </div>
+            <div class="item">
+                <img src="images/ee.jpg" alt="图3">
+                <div class="carousel-caption">
+                    <h3>ECJIA多用户版</h3>
+                    <p>全新加盟连锁版APP</p>
+                </div>
+            </div>
+            <div class="item">
+                <img src="images/rr.png" alt="图4">
+                <div class="carousel-caption">
+                    <h3>大京东</h3>
+                    <p>无限接近京东商城的模板</p>
+                </div>
+            </div>
+            <div class="item">
+                <img src="images/qq.jpg" alt="图5">
+                <div class="carousel-caption">
+                    <h3>ECJIA Touch</h3>
+                    <p>全新视觉 拓展性更强</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Controls -->
+        <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">上一页</span>
+        </a>
+        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">下一页</span>
+        </a>
+    </div>
+    <!-- 栅格系统 -->
+    <div class="container">
+        <div class="row m_top">
+            <div class="col-md-4">
+                <a href="#">
+                    <img src="http://10.url.cn/qqcourse_logo_rn/ajNVdqHZLLBuGfMTyibYSw0FuRgLR2YHup34ibxolTMO5c9kSS6PV9RR0Bu1OBGfxibqVYtDicibOvtQ/220" alt="">
+                </a>
+                <p>搞怪实用篇 实用英语口语 上午专场【蓝先生教育】</p>
+                <button type="button" class="btn btn-info">点我了解</button>
+            </div>
+            <div class="col-md-4">
+                <a href="#">
+                    <img src="http://10.url.cn/qqcourse_logo_rn/ajNVdqHZLLBsJ6jroLiaRM1NKe0W4HlKZbx6OgicGwYliat6qh9LWQMic7QEJQDAVjg0pJRswUotkhI/220" alt="">
+                </a>
+                <p>《大圣归来》-海报作者：张浩（namo） - 大圣归来</p>
+                <button type="button" class="btn btn-info">点我了解</button>
+            </div>
+
+            <div class="col-md-4">
+                <a href="#">
+                    <img src="http://10.url.cn/qqcourse_logo_rn/ajNVdqHZLLC3RibSeaIg4OHnRBdv7GBWMlFficudRw38ib7m9AcTe2yCjGvMANkxfxbfQUR9De0GVY/220?tp=webp" alt="">
+                </a>
+                <p>.NET、C#零基础快速学好编程【喜科堂学苑】</p>
+                <button type="button" class="btn btn-info">点我了解</button>
+            </div>
+        </div>
+        <div class="row m_top">
+            <div class="col-md-4">
+                <a href="#">
+                    <img src="http://10.url.cn/qqcourse_logo_rn/ajNVdqHZLLDolge6rww9kOGwy9eIaK81KM7v2wvSFsdwcpGXicNia5glh5gkqRkrYMXrx5cngKk6o/220" alt="">
+                </a>
+                <p>雅思分手大师第三期(每周开班)</p>
+                <button type="button" class="btn btn-info">点我了解</button>
+            </div>
+            <div class="col-md-4">
+                <a href="#">
+                    <img src="http://10.url.cn/qqcourse_logo_rn/ajNVdqHZLLD0jMgQx0IUdHbVMT8f5RD5XX26RUt4VpI62xhJRO6ibyNBazJiaiaD1cQtDzZDN21XibI/220" alt="">
+                </a>
+                <p>2017，和考研说分手</p>
+                <button type="button" class="btn btn-info">点我了解</button>
+            </div>
+
+            <div class="col-md-4">
+                <a href="#">
+                    <img src="http://10.url.cn/qqcourse_logo_rn/ajNVdqHZLLCWWfTJQhIWyq7T3sVJbJrkW4IWrffUuz9Ne4WZ3QcLQOMD7sqHoYvM1EwIodkNJp4/220?tp=webp" alt="">
+                </a>
+                <p>屠鸭联盟 黄瀚生Frank 7.19雅思口语结构班</p>
+                <button type="button" class="btn btn-info">点我了解</button>
+            </div>
+        </div>
+        <div class="row m_top">
+            <div class="col-md-3">
+                <a href="#">
+                    <img src="http://10.url.cn/qqcourse_logo_rn/ajNVdqHZLLBrVd8Js6dFUbI7Dg18F581mHYp5LpibqKYibYJoxL3VxBaic9APRvN644GlibJ4C2LfAE/220?tp=webp" alt="">
+                </a>
+                <p>循序渐进学Excel 2010【ExcelHome】</p>
+                <button type="button" class="btn btn-info">点我了解</button>
+            </div>
+            <div class="col-md-3">
+                <a href="#">
+                    <img src="http://10.url.cn/qqcourse_logo_rn/ajNVdqHZLLBwbPGn2tDLXsicDliblgtfQiaIZmRo92A1rNEko7yZiaKKujdI8H0ZoJuge1ZWoCib36UU/220?tp=webp" alt="">
+                </a>
+                <p>会计从业资格--你不得不知的会计法则</p>
+                <button type="button" class="btn btn-info">点我了解</button>
+            </div>
+            <div class="col-md-3">
+                <a href="#">
+                    <img src="http://10.url.cn/qqcourse_logo_rn/ajNVdqHZLLAiaNrQoDGsn0DTYccyrVG6UNiaVcuuB2RzC6ylcICz26lSNAaiaSucsP1VAoYQkWX1fw/220?tp=webp" alt="">
+                </a>
+                <p>股市赢家-实战教学</p>
+                <button type="button" class="btn btn-info">点我了解</button>
+            </div>
+
+            <div class="col-md-3">
+                <a href="#">
+                    <img src="http://10.url.cn/qqcourse_logo_rn/ajNVdqHZLLDQhrQGV1jia9bHkNKADXMeoN6bQ6aZPIhwAAJrHcymNT2SDLdBET2NCwTcYX0cp2fw/220?tp=webp" alt="">
+                </a>
+                <p>董进宇博士现场讲解家长教育孩子的误区</p>
+                <button type="button" class="btn btn-info">点我了解</button>
+            </div>
+        </div>
+        <hr id="hrsel">
+        <div style="border-bottom:1px solid #eee;">
+
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist" id="myTabs">
+                <li role="presentation" class="active"><a href="#tab-yuwen" aria-controls="tab-yuwen" role="tab" data-toggle="tab">语文</a>
+                </li>
+                <li role="presentation"><a href="#tab-shuxue" aria-controls="tab-shuxue" role="tab" data-toggle="tab">数学</a>
+                </li>
+                <li role="presentation"><a href="#tab-yingyu" aria-controls="tab-yingyu" role="tab" data-toggle="tab">英语</a>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">更多学科<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li role="presentation"><a href="#tab-lishi" aria-controls="tab-lishi" role="tab" data-toggle="tab">历史</a>
+                        </li>
+                        <li role="presentation"><a href="#tab-huaxue" aria-controls="tab-huaxue" role="tab" data-toggle="tab">化学</a>
+                        </li>
+                        <li role="presentation"><a href="#tab-shengwu" aria-controls="tab-shengwu" role="tab" data-toggle="tab">生物</a>
+                        </li>
+                        <li role="presentation"><a href="#tab-zhengzhi" aria-controls="tab-zhengzhi" role="tab" data-toggle="tab">政治</a>
+                        </li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">……</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane fade in active" id="tab-yuwen">
+                    <p>什么是语文什么是语文什么是语文什么是语文什么是语文什么是语文</p>
+                </div>
+                <div role="tabpanel" class="tab-pane fade" id="tab-shuxue">
+                    <p>什么是数学什么是数学什么是数学什么是数学什么是数学什么是数学</p>
+                </div>
+                <div role="tabpanel" class="tab-pane fade" id="tab-yingyu">
+                    <p>什么是英语什么是英语什么是英语什么是英语什么是英语什么是英语</p>
+                </div>
+                <div role="tabpanel" class="tab-pane fade" id="tab-lishi">
+                    <p>什么是历史什么是历史什么是历史什么是历史什么是历史什么是历史</p>
+                    <p>什么是历史什么是历史什么是历史什么是历史什么是历史什么是历史</p>
+                </div>
+                <div role="tabpanel" class="tab-pane fade" id="tab-huaxue">
+                    <p>什么是化学什么是化学什么是化学什么是化学什么是化学什么是化学</p>
+                    <p>什么是化学什么是化学什么是化学什么是化学什么是化学什么是化学</p>
+                    <p>什么是化学什么是化学什么是化学什么是化学什么是化学什么是化学</p>
+                </div>
+                <div role="tabpanel" class="tab-pane fade" id="tab-shengwu">
+                    <p>什么是生物什么是生物什么是生物什么是生物什么是生物什么是生物</p>
+                    <p>什么是生物什么是生物什么是生物什么是生物什么是生物什么是生物</p>
+                    <p>什么是生物什么是生物什么是生物什么是生物什么是生物什么是生物</p>
+                    <p>什么是生物什么是生物什么是生物什么是生物什么是生物什么是生物</p>
+                </div>
+                <div role="tabpanel" class="tab-pane fade" id="tab-zhengzhi">
+                    <p>什么是政治什么是政治什么是政治什么是政治什么是政治什么是政治</p>
+                    <p>什么是政治什么是政治什么是政治什么是政治什么是政治什么是政治</p>
+                    <p>什么是政治什么是政治什么是政治什么是政治什么是政治什么是政治</p>
+                    <p>什么是政治什么是政治什么是政治什么是政治什么是政治什么是政治</p>
+                    <p>什么是政治什么是政治什么是政治什么是政治什么是政治什么是政治</p>
+                </div>
+                <div role="tabpanel" class="tab-pane fade" id="tab-more">.........</div>
+            </div>
+        </div>
+        <hr id="hrsel">
+        <footer class="fots">
+            <p class="pull-right"><a href="#top">回到顶部</a>
+            </p>
+            <p>© 2015 顾航</p>
+        </footer>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">www.rexhang.com</h4>
+                </div>
+                <div class="modal-body">
+                    <p>采用bootstrap开发的模态框</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">我知道了</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+    $(function() {
+        $('.carousel').carousel({
+            interval: 3000
+        })
+        $("#myTabs  a").click(function(e) {
+            e.preventDefault()
+            $(this).tab('hide');
+        });
+    });
+    </script>
+</body>
+
+</html>

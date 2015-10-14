@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>HTML place</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+</head>
+<body onload="init('1px solid #000')">
+    <form>
+    	<input type="text">
+    	<input type="password">
+    	<select></select>
+    	<textarea></textarea>
+    </form>
+
+    <script type="text/javascript">
+    	function init(color){
+    		var form = document.forms[0];
+    		var elements = form.elements;// 获取所有表单元素
+    		for(var i = 0;i < elements.length;i++){
+    			var e = elements[i];
+    			e.onfocus = function(){
+    				this.style.border = color;
+    			}
+    			e.blur = function(){
+    				this.style.border = "";
+    			}
+    		}
+    	}
+    </script>
+</body>
+</html>

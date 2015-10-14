@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>动态导航 - rexhang</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<style type="text/css">
+	*{margin: 0;padding: 0;}
+	body{font-size: 12px;font-family: "微软雅黑";color: #666;background: url("images/bg.jpg");}
+	.all{width: 100%;}
+	/*nav样式 开始*/
+	.all .a_ul{display: inline-block;height: 53px;position: relative;}
+	.all .a_ul li{float: left;list-style: none;padding: 20px 120px;background: #74C0B7;margin-right: 5px;cursor: pointer;}
+	.all .a_ul .sel{background: #000;color: #fff;}
+	/*nav样式 结束*/
+
+	/*div1样式 开始*/
+	.all .b1{background: #66C;width: 100%;height: 400px;position: absolute;left: 0;z-index: 1;}
+	.all .b1 .b1_1{background: #E8AB3D;width: 200px;height: 100px;float: left;position: absolute;top: 5%;}
+	.all .b1 .b1_2{background: #E07C8F;width: 200px;height: 100px;float: left;position: absolute;top: 5%;left: 210px;}
+	/*div1样式 结束*/
+
+	/*div2样式 开始*/	
+	.all .b2{background: #28674D;width: 100%;height: 400px;position: absolute;left: 0;}
+	.all .b2 .b2_1{background: #E8AB3D;width: 200px;height: 100px;float: left;position: absolute;top: 5%;opacity: 0;}
+	.all .b2 .b2_2{background: #E07C8F;width: 200px;height: 100px;float: left;position: absolute;top: 5%;left: 210px;opacity: 0;}	
+	/*div2样式 结束*/
+
+	/*div3样式 开始*/	
+	.all .b3{background: #672847;width: 100%;height: 400px;position: absolute;left: 0;}
+	.all .b3 .b3_1{background: #E8AB3D;width: 200px;height: 100px;float: left;position: absolute;top: 10%;left: 210px;opacity: 0;}
+	.all .b3 .b3_2{background: #E07C8F;width: 200px;height: 100px;float: left;position: absolute;top: 10%;left: 420px;opacity: 0;}
+	/*di31样式 结束*/		
+	
+</style>
+<link rel="stylesheet" type="text/css" href="css/animate_tz.css">
+</head>
+<body>
+   <div class="all">
+   		<ul class="a_ul">
+   			<li class="sel">切换栏目一</li>
+   			<li class="sel2" onclick="nav2(this);">切换栏目二</li>
+   			<li class="sel3" onclick="nav3(this);">切换栏目三</li>
+   		</ul>
+
+		<!--背景层div1-->
+   		<div class="bg b1">
+   			<div class="b1_1"></div>
+    		<div class="b1_2"></div>			
+   		</div>
+
+		<!--背景层div2-->		
+   		<div class="bg b2">
+   			<div class="b2_1"></div>
+    		<div class="b2_2"></div>			
+   		</div>
+
+		<!--背景层div3-->
+   		<div class="bg b3">
+   			<div class="b3_1"></div>
+    		<div class="b3_2"></div>			
+   		</div>
+   </div>
+
+   <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script> 
+   <script type="text/javascript">
+   		$(function(){
+   			$(".a_ul").find("li").click(function(){
+   				/*addClass添加焦点处背景色*/
+   				$(this).addClass("sel").siblings().removeClass("sel");
+
+   				/*获取此时index*/
+   				var _index = $(this).index();
+
+   				/*透明度opacity 0~1 的取值范围0代表不透明度0%，1代表不透明度100%*/
+   				/*给通用的bg添加层级先为0*/
+   				$(".bg").css({"z-index":0,"opacity":0});
+   				/*给焦点的bg添加层级先为1，显示并且透明度在800毫秒内变为1*/   				
+   				$(".bg").eq(_index).css({"z-index":1}).fadeTo(800,1);   				
+   			});
+
+
+
+
+  			
+   		});
+   			/*当点击切换栏二的动画*/   		
+   			function nav2(){
+   			   	$(".b2_1").animate({"top":"42%","left":"5%","opacity":1},800).addClass("animated flip");
+   				$(".b2_2").animate({"top":"15%","left":"5%","opacity":1},800).addClass("animated tada");  				
+   			}
+
+   			/*当点击切换栏三的动画*/   			
+   			function nav3(){
+   			   	$(".b3_2").animate({"top":"5%","left":"22%","opacity":1},800).addClass("animated shake");
+   				$(".b3_1").animate({"top":"32%","left":"33%","opacity":1},800).addClass("animated flip");  				
+   			}    			   			
+   </script>
+</body>
+</html>

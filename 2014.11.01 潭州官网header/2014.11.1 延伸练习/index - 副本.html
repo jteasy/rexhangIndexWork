@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+	<head>
+		<!--声明当前页面的编码集：charset=gbk,gb2312（中文编码），utf-8（国际编码）-->
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<!--当前页面的三要素-->
+		<title>2015.03.20 下拉菜单jQuery</title>
+		<meta name="Keywords" content="关键词,关键词">
+		<meta name="description" content="">
+		<link rel="shortcut icon" href="" />
+		
+		<!--css,js-->
+		<style type="text/css">
+			*{margin:0;padding:0;}
+			img{border:0;}
+			body{font-size:12px;color:#666;font-family:"微软雅黑";}
+			.header{background:#000;width:800px;height:80px;margin:200px auto;}
+			.header ul li{list-style:none;float:left;line-height:80px;width:400px;text-align:center;}
+			.header ul li a{text-decoration:none;color:#fff;font-size:20px;font-weight:bold;display:block;}
+			.header ul li a:hover{background:#FF9900;}
+			.header ul .li_allgames{position:relative;}
+			.header ul .li_allgames:hover .div_allgames{}
+			.header ul .li_allgames .span_tips{position:absolute;top:30px;left:200px;}
+			.header ul .li_allgames .div_allgames{background:#666;display:none;}
+			.header ul .li_allgames .div_allgames a{color:#000;line-height:35px;width:400px;}
+			.header ul .li_allgames .div_allgames .span_new{position:absolute:right:20px;bottom:20px;}
+			.header ul .li_allgames .div_allgames .a_dnf{position:relative;}
+			.header ul .li_allgames .div_allgames .span_new{position:absolute;right:108px;bottom:-14px;}
+			
+
+
+
+		</style>
+
+    </head>
+<body>
+	 <div class="header">
+		<ul>
+			<li><a href="#">首页</a></li>
+
+			<li class="li_allgames">
+			<a href="#">腾讯旗下游戏</a>
+			<div class="div_allgames">
+				<span class="span_tips"><img src="images/1.png" alt="" width="" height=""/></span>
+				<a href="#">武魂</a>
+				<a href="#">诛仙</a>
+				<a href="#">天下3</a>
+				<a href="#">剑灵</a>				
+				<a href="#">穿越火线</a>
+				<a href="#">英雄联盟</a>
+				<a href="#">英雄三国</a>
+				<a href="#">梦幻西游</a>
+				<a href="#">神魔大陆</a>
+				<a href="#">天龙八部</a>
+				<a href="#">剑网情缘</a>				
+				<a href="#">魔兽世界</a>
+				<a href="#">倩女幽魂</a>
+				<a href="#">跑跑卡丁车</a>
+				<a href="#" class="a_dnf">地下城与勇士</a>
+				<span class="span_new"><img src="images/new.gif" alt="" width="" height="" /></span>
+			</div>
+			</li>
+
+		</ul>
+	 </div>
+	 <script type="text/javascript" src="js/jQuery.js"></script>
+	 <script type="text/javascript">
+	 	$(function(){
+	 		$(".li_allgames").mouseenter(function(){
+	 			$(".div_allgames").fadeIn("slow");
+	 		});
+	 		$(".li_allgames").mouseleave(function(){
+	 			$(".div_allgames").fadeOut("slow");
+	 		});	 		
+	 	});
+	 </script>
+</body>
+</html>

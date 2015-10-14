@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+<head>
+	<!--声明当前页面的编码集：charset=GBK,GB2312(中文编),UTF-8(国际编码)-->
+	<meta http-equiv="Content-Type"content="text/heml;charset=UTF-8">
+	<!--当前页面的三要素-->
+	<title>课程列表</title>
+	<meta name="Keywords" content="关键词，关键词">
+	<meta name="description" content="">
+	<!--css.js-->
+	<style type="text/css">
+	*{margin:0;padding:0;}
+	/*课程列表的宽和高*/
+	body{background:url("/images/bg.jpg");background-position:-1px -1005px;
+	background-attachment:fixed;font-family:"微软雅黑";}
+	ul{/*background:url("images/rightMene_t.png") no-repeat;
+	background-position:1px 1*/
+	width:128px;
+	}
+	ul li{text-align:center;height:30px;width:126px;line-height:30px;
+	margin:5px 0 5px 0;
+	}
+	.asd{display:none;}
+	a{text-decoration:none;color:#666;width:126px;height:30px;
+	display:block;
+	border-radius:4px;line-height:30px;}
+	a:hover{color:#fff;font-weight:5px;box-shadow:0px 0px 30px #9edeff;}
+	h3{text-align:center;width:126px;height:30px;cursor:pointer;
+	margin:5px 0 5px 0;
+	background:url("/images/slideBg.png") no-repeat;
+	background-size:130px 30px;
+	color:#fff;
+	}
+	</style>
+	</head>
+	<body style="scrollbar-base-color:#7ED9DE">
+	<h3 class="btn_html">HTML+CSS</h3>
+	<ul class="content_html"><li><a href="/demo/html+css/one/one.html" target="show">第一节</a></li>
+	<li><a href="/demo/html+css/two/two.html" target="show">第二节</a></li>
+	<li><a href="/demo/html+css/three/three.html" target="show">第三节</a></li>
+	<li><a href="/demo/html+css/four/four.html" target="show">第四节</a></li>
+	<li><a href="/demo/html+css/five/five.html" target="show">第五节</a></li>
+	<li><a href="/demo/html+css/six/six.html" target="show">第六节</a></li>
+	<li><a href="/demo/html+css/seven/seven.html" target="show">第七节</a></li>
+	<li><a href="/demo/html+css/engit/engit.html" target="show">第八节</a></li>
+	<li><a href="/demo/html+css/nine/nine.html" target="show">第九节</a></li>
+	<li><a href="/demo/html+css/ten/ten.html" target="show">第十节</a></li>
+	<li><a href="/demo/html+css/eleven/eleven.html" target="show">第十一节</a></li>
+	<li><a href="/demo/html+css/twelve/twelve.html" target="show">第十二节</a></li>
+	<li><a href="/demo/html+css/thirteen/thirteen.html" target="show">第十三节</a></li>
+	<li><a href="/demo/html+css/fourteen/fourteen.html" target="show">第十四节</a></li>
+	<li><a href="/demo/html+css/fifteen/fifteen.html" target="show">第十五节</a></li>
+	<li><a href="/demo/html+css/sixteen/sixteen.html" target="show">第十六节</a></li>
+	<li><a href="/demo/html+css/seventeen/seventeen.html" target="show">第十七节</a></li>
+	<li><a href="/demo/html+css/guanfang/projects/index.html" target="show">潭州官方平台</a></li>
+	<li><a href="/demo/html+css/houtai/index.html" target="show">潭州官方后台</a></li></ul>
+
+
+	<h3 class="btn_js">JS+jquery</h3>
+	<ul class="content_js"><li><a href="/demo/js+jquery/desk/desk.html" target="show">便签</a></li>
+	<li><a href="/demo/js+jquery/tuo/tuo.html" target="show">拖拽</a></li>
+	<li><a href="/demo/js+jquery/tan/index.html" target="show">弹窗</a></li>
+	<li><a href="/demo/js+jquery/zhou/index.html" target="show">时光轴</a></li>
+	<li><a href="/demo/js+jquery/qie/qq.html" target="show">皮肤切换</a></li>
+	<li><a href="/demo/js+jquery/bian/bian.html" target="show">角度变换</a></li>
+	<li><a href="/demo/js+jquery/she/Snake.html" target="show">贪吃蛇</a></li>
+	<li><a href="/demo/js+jquery/anim/animate.html" target="show">jquery动画</a></li>
+	<li><a href="/demo/js+jquery/set/demo.html" target="show">jquery-内容属性</a></li>
+	<li><a href="/demo/js+jquery/chou/chou.html" target="show">抽奖</a></li>
+	<li><a href="/demo/js+jquery/page/page.html" target="show">404页面</a></li>
+	<li><a href="/demo/js+jquery/kuang/index.html" target="show">jquery的弹出框</a></li>
+	<li><a href="/demo/js+jquery/yan/index.html" target="show">图片延时加载</a></li>
+	<li><a href="/demo/js+jquery/bianji/bianji.html" target="show">编辑框</a></li>
+	</ul>
+	<h3 class="btn_css">纯CSS</h3>
+	<ul class="content_css">
+		<li><a href="/demo/chuncss/you/index.html" target="show">幽灵效果</a></li>
+		<li><a href="/demo/chuncss/3d/index.html" target="show">3D立方体</a></li>
+		<li><a href="/demo/chuncss/zhao/index.html" target="show">照片墙</a></li>
+	</ul>
+	<script src="/js/jquery-1.11.1.min.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		$("ul").addClass("asd");
+		$(".btn_html").click(function(){$(".content_html").toggle("1000");})
+		$(".btn_js").click(function(){$(".content_js").toggle("1000");})
+		$(".btn_css").click(function(){$(".content_css").toggle("1000");})
+	
+	</script>
+</body>
+</html>

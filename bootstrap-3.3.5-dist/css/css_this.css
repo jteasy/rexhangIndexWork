@@ -1,0 +1,92 @@
+@
+charset "UTF-8";
+/**
+ *
+ * @authors MaiCong (sb@yxx.me)
+ * @date    2015-07-21 14:51:07
+ * @version $Id$
+ */
+body {
+    font - size: 12px;
+    font - family: '微软雅黑';
+    padding - top: 70px;
+}
+    .navcolor {
+        border: 0;
+        background - color: #fff;
+}
+    .left_float {
+        display: inline - block;
+        padding - left: 0;
+}
+    .left_float li {
+        list - style: none;
+        float: left;
+        border: 1px solid# eee;
+        height: 44px;
+        line - height: 44px;
+        padding: 0 10px;
+}
+    .left_float li a {
+        display: inline - block;
+        height: 50px;
+        padding: 0 12px;
+}
+    .left_float.weibo {
+        background: url('http://www.rexhang.com/project_099/images/1.png') no - repeat 4px 11px;
+}
+    .left_float.qq {
+        background: url('http://www.rexhang.com/project_099/images/1.png') no - repeat - 44px 11px;
+}
+    .left_float.weixin {
+        background: url('http://www.rexhang.com/project_099/images/1.png') no - repeat - 91px 11px;
+}
+    .left_float.sousuo {
+        background: url('http://www.rexhang.com/project_099/images/2.png') no - repeat 2px 11px;
+}
+    .logos {
+        height: 75px;
+        width: 220px;
+        background: url('http://www.rexhang.com/project_099/images/3.png') no - repeat 0 8px;
+        display: inline - block;
+}
+    .fos {
+        color: #000;
+ }
+ .needright {
+     margin-right: 46px;
+ }
+ .needright p {
+     color: # fff;
+        margin - top: 30px;
+        font - size: 14px;
+        margin - bottom: 6em;
+}
+    .rex {
+        width: 176px;
+        height: 75px;
+        background - color: #e84c3d;
+        text - indent: 18px;
+        color: #fff;
+        padding - top: 18px;
+        font - size: 16px;
+        transition: all 1s linear;
+}
+    .inss {
+        margin - left: 51px;
+        font - size: 12px;
+}
+    .hos {
+        transition: all 1s linear;
+}
+    .navlss.a11 {
+        padding - bottom: 0;
+        padding - top: 0;
+        color: #000;
+ }
+ .navlss .a-01 {
+     border: 2px solid # e84c3d;
+}
+footer a {
+    color: #fff;
+}

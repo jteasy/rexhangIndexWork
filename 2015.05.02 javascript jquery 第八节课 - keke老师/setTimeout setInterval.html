@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>setTimeout setInterval isNaN</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+</head>
+<body>
+	<p id="fons"></p>
+	<input type="button" value="STOP" onclick="stop();" />
+    <script type="text/javascript">
+    /*
+		setInterval(fn,params,timer)----clearTimeout清除定时器
+		setTimeout(fn,params,timer)----clearInterval清除定时器
+    */
+	var i = 1;
+
+    function test1(){
+    	i++;
+    	document.getElementById("fons").innerHTML = i;
+    }
+    //setTimeout(test1,1000);//方法1
+    //setTimeout("test1();",2000);//方法2
+
+    var timer = setInterval(test1,1000);
+
+    function stop(){
+    	clearInterval(timer);
+    }
+
+    /*isNaN----判断是否数字，是数字返回false*/
+    alert(isNaN(15));//false
+    alert(isNaN("15"));//false
+    alert(isNaN("guhang"));//true
+    alert(isNaN("guhang15"));//true
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+	<head>
+		<!--声明当前页面的编码集：charset=gbk,gb2312（中文编码），utf-8（国际编码）-->
+		<meta http-equiv="Content-Type" content="text/html; charset=gbk">
+		<!--当前页面的三要素-->
+		<title>z-index</title>
+		<meta name="Keywords" content="关键词,关键词">
+		<meta name="description" content="">
+		
+		<!--css,js-->
+		<style type="text/css">
+			*{margin:0;padding:0;}
+			.z-index{width:670px;height:240px;border:3px solid red;overflow:hidden;position:relative;}
+			.two{position:absolute;right:10px;bottom:10px;z-index:2;}
+			.three{position:absolute;right:15px;bottom:15px;}
+		</style>
+
+    </head>
+<body>
+  
+	<div class="z-index">
+		<p>
+			<img src="http://img10.360buyimg.com/da/jfs/t631/362/36520153/54062/d1211b88/5448c82aN0b654825.jpg" alt="1" width="670" height="240" />
+		</p>
+
+		<p class="two">
+			<img src="http://img13.360buyimg.com/da/jfs/t541/67/41780759/21845/b2179a4e/5449b3d1Na050c5e4.jpg" alt="2" width="60" height="20" />
+		</p>
+
+		<p class="three">
+			<img src="http://img11.360buyimg.com/da/jfs/t691/27/50178447/29767/6b1b6987/5449fe7dN78fa4e5e.jpg" alt="3" width="70" height="30" />
+		</p>
+
+	</div>
+
+
+</body>
+</html>

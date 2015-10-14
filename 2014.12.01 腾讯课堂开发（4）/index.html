@@ -1,0 +1,597 @@
+<!doctype html>
+<html>
+	<head>
+		<!--声明当前页面的编码集：charset=gbk,gb2312（中文编码），utf-8（国际编码）-->
+		<meta http-equiv="Content-Type" content="text/html; charset=gbk">
+		<!--当前页面的三要素-->
+		<title>腾讯课堂-专业的在线教育平台</title>
+		<meta name="Keywords" content="关键词,关键词">
+		<meta name="description" content="">
+		<link rel="shortcut icon" href="http://9.url.cn/edu/img/favicon.ico" />	
+		<!--css,js-->
+		<style type="text/css">
+			*{margin:0;padding:0;}
+			body{font-size:12px;font-family:"微软雅黑";color:#666;}
+			img{border:0;}
+			/*header start*/
+			.header{width:1200px;height:85px;margin:0 auto;padding-top:15px;}
+			.header ._logo{display:block;width:288px;height:81px;background:url("images/logo.png") no-repeat;float:left;}
+			.header .search{margin-left:220px;float:left;}
+			.header .search .s_search{width:450px;height:36px;border:2px solid #188eee;padding-left:10px;position:relative;}
+			.header .search .s_search .search_box{height:32px;width:370px;line-height:34px;font-size:12px;border:0;font-family:"微软雅黑";color:#000;outline: medium;}
+			.header .search .s_search a{background:#188eee;display:block;width:58px;height:36px;position:absolute;right:0;top:0;}
+			.header .search .s_search a .search_ico{background:url("images/icon-search-white.png") no-repeat;display:inline-block;width:20px;height:20px;margin:9px 20px;}
+			.header ._login{float:right;color:#DAD3D7;}
+			.header ._login a{text-decoration:none;color:#000;font-family:"微软雅黑";padding: 0 3px;line-height:40px;}
+			/*header end*/			
+			/*banner start*/
+			.banner .b_adv{width:1200px;height:50px;margin:0 auto;position:relative;}
+			.banner .b_adv a{position:absolute;left:218px;top:0;}
+			.banner .b_bg{width:100%;height:300px;background:#4e4d9b;}
+			.banner .b_bg .b_content{width:1200px;height:300px;margin:0 auto;position:relative;}
+			.banner .b_bg .b_content .menu{width:220px;height:476px;background:#188eee;float:left;position:absolute;left:0;top:-50px;z-index:4;}	
+			.banner .b_bg .b_content .menu ul li{height:70px;list-style:none;border-bottom: 1px solid #1681c4;position:relative;}
+			.banner .b_bg .b_content .menu ul li:hover{background:#09699c;}			
+			.banner .b_bg .b_content .menu ul li .show_menu{width:438px;height:278px;border:1px solid yellow;position:absolute;top:0;left:220px;display:none;}
+			.banner .b_bg .b_content .menu ul li .office{display:block;}
+			.banner .b_bg .b_content .menu ul li h2 a{text-decoration:none;font-size:16px;color:#fff;padding:10px 0 6px 15px;display:block;font-weight: 500;line-height:16px;}
+			.banner .b_bg .b_content .menu ul li h2 a:hover{text-decoration:underline;}
+			.banner .b_bg .b_content .menu ul li h3{padding-left:15px;font-weight: 500;}
+			.banner .b_bg .b_content .menu ul li h3 a{text-decoration:none;font-size:14px;color:#FFBAF6;line-height:24px;}
+			.banner .b_bg .b_content .menu ul li h3 a:hover{text-decoration:underline;}			
+			.banner .b_bg .b_content .menu ul .menu_all{height:50px;background:#9933FF;}
+			.banner .b_bg .b_content .menu ul .menu_all a{text-decoration:none;color:#FFF;font-size:16px;display:block;line-height:50px;}
+			.banner .b_bg .b_content .menu ul .menu_all a:hover{text-decoration:underline;}
+			.banner .b_bg .b_content .menu ul .menu_all a i{display:block;background:url("images/icon-hamburg.png") no-repeat center;height:50px;width:30px;float:left;}
+			.banner .b_bg .b_content .focus{width:760px;height:300px;position:absolute;left:220px;top:0;z-index:3;overflow:hidden;}
+			.banner .b_bg .b_content .focus .f_img li{list-style:none;}
+			.banner .b_bg .b_content .focus .f_img{position:relative;}
+			.banner .b_bg .b_content .focus .f_img li{display:none;}
+			.banner .b_bg .b_content .focus .f_btn{position:absolute;bottom:5px;left:330px;}
+			.banner .b_bg .b_content .focus .f_btn ul{display:inline-block;padding:7px 15px;background:rgba(0, 0, 0, 0.27);border-radius:15px;}
+			.banner .b_bg .b_content .focus .f_btn ul li{list-style:none;height:8px;width:8px;border:1px solid #fff;float:left;margin:0 5px;border-radius:8px;}
+			.banner .b_bg .b_content .focus .f_btn ul .f_sel{background:#fff;}
+			.banner .b_bg .b_content .focus .anniu{position:absolute;background:url("images/icon.png");width:46px;height:70px;}
+			.banner .b_bg .b_content .focus .f_left{left:10px;top:110px;background-position: -74px 0;}
+			.banner .b_bg .b_content .focus .f_right{right:10px;top:110px;background-position: -123px 0;}
+			/*banner end*/
+			/*tools start*/
+			.banner .b_bg .b_content .tools{width:220px;height:260px;background:rgba(45, 39, 39, 0.37);filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#66000000,endColorstr=#66000000);position:absolute;left:980px;top:0;z-index:1;margin-top:20px;}
+			.banner .b_bg .b_content .tools .info ul{padding-left:15px;margin-left:20px;height:147px;padding: 13px 10px 0 0;color:#fff;font-size:16px;padding: 3px 0 0 25px;}
+			.banner .b_bg .b_content .tools .info ul li a{color:#fff;text-decoration:none;font-size:14px;}
+			.banner .b_bg .b_content .tools .info ul li a:hover{text-decoration:underline;color:#fff;}
+			.banner .b_bg .b_content .tools .info ul li{list-style:square;padding: 13px 10px 0 0;}
+			.banner .b_bg .b_content .tools .down{width:220px;height:110px;background: rgba(0,0,0,0.4);position:relative;}
+			.banner .b_bg .b_content .tools .down .d_left{display:block;width:110px;height:110px;text-align:center;text-decoration:none;float:left;}
+			.banner .b_bg .b_content .tools .down .d_left .span_all{font-size:12px;color:#fff;position:absolute;top:60px;left:34px;line-height:18px;}
+			.banner .b_bg .b_content .tools .down .d_left .download{font-size:16px;line-height:24px;}
+			.banner .b_bg .b_content .tools .down .d_left i{width:44px;height:44px;display:block;background:url("images/icon.png") no-repeat -123px -73px;position:absolute;top:10px;left:32px;}
+			.banner .b_bg .b_content .tools .down .d_right{display:block;width:110px;height:110px;text-align:center;position:absolute;bottom:0;left:110px;float:left;}
+			.banner .b_bg .b_content .tools .down .d_right i{width:44px;height:44px;display:block;background:url("images/icon.png") no-repeat -172px -73px;position:absolute;top:10px;left:32px;}
+			.banner .b_bg .b_content .tools .down .d_right .span_all{font-size:12px;color:#fff;position:absolute;top:60px;left:29px;line-height:18px;}
+			.banner .b_bg .b_content .tools .down .d_right .code{width:126px;height:126px;position:absolute;left:-113px;bottom:-4px;display:none;}
+			.banner .b_bg .b_content .tools .down .d_right .code:hover{display:block;}
+			.banner .b_bg .b_content .tools .down .d_right .download{font-size:16px;line-height:24px;}
+			/*tools end*/
+			/*activities start*/
+			.activities{width:980px;height:125px;border-right: 1px solid #eaeaea;border-bottom: 1px solid #eaeaea;margin:0 auto;padding-left:220px;}
+			.activities a{float:left;}
+			/*activities end*/
+			/*hot_course start*/
+			.hot_course{width:1202px;margin:0 auto;padding-top:40px;}
+			.hot_course .hot_box .h_nav{height:40px;border-bottom: 1px solid #eaeaea;}
+			.hot_course .hot_box .h_nav a{width:220px;height:40px;display:block;float:left;font-size:22px;color: #202020;text-decoration:none;}
+			.hot_course .hot_box .h_nav ul li{list-style:none;float:left;width:90px;font-size:14px;text-align:center;line-height:40px;}
+			.hot_course .hot_box .h_nav ul .h_sel{border-bottom:2px solid #188eee;color:#188eee;}
+			.hot_course .hot_box .h_all{height:180px;padding-top:30px;}
+			.hot_course .hot_box .h_all .together li{list-style:none;float:left;}
+			.hot_course .hot_box .h_all .together li:hover{border:1px solid #dddddd;box-shadow:#ececec 0 1px 1px;}
+			.hot_course .hot_box .h_all .together li .list_div{width:230px;padding: 10px 1px 22px 9px;height:154px;}
+			.hot_course .hot_box .h_all .together li .list_div .list_img{display:block;width:220px;height:124px;}
+			.hot_course .hot_box .h_all .together li .list_div .list_desc{line-height:24px;text-decoration:none;color: #333;font-size:14px;}
+			.hot_course .hot_box .h_all .together li .list_div .list_p{font-size:14px;}
+			.hot_course .hot_box .h_all .together li .list_div .list_p span{color:#5FB41B;display:block;float:left;}
+			.hot_course .hot_box .h_all .together li .list_div .list_p i{background:url("images/icon-sep.png") no-repeat;display:block;float:left;height:14px;width:2px;margin:3px 7px;}
+			.hot_course .hot_box .h_all .together li .list_div .list_p a{text-decoration:none;color:#999;display:block;float:left;}
+			.hot_course .hot_box .h_all .list-video{display:none;}
+			/*hot_course end*/
+		</style>
+    </head>
+<body>
+	<!--body_header 开始！-->
+	<div class="header">
+		<!--左上角LOGO部分 开始！-->
+		<h1>
+			<a href="#" class="_logo"></a>
+		</h1>
+		<!--左上角LOGO部分 结束！-->
+		
+		<!--搜索框综合 开始！-->
+		<div class="search">
+			<div class="s_search">
+				<form>
+					<input type="text" placeholder="搜索课程" class="search_box" />
+				</form>
+				<a href="#"><i class="search_ico"></i></a>
+			</div>		
+		</div>
+		<!--搜索框综合 结束！-->		
+		<!--header 右边登录部分 开始！-->
+		<div class="_login">
+			<a href="#">登录</a>
+			|
+			<a href="#">帮助</a>
+		</div>
+		<!--header 右边登录部分 结束！-->		
+	</div>		
+	<!--body_header 结束！-->
+	<!--body_banner 开始！-->
+	<div class="banner">
+		<!--广告banner 开始！-->
+		<div class="b_adv">
+			<a href="#">
+				<img src="images/banner-top.jpg" alt="广告位" width="765" height="50" />
+			</a>
+		</div>
+		<!--广告banner 结束！-->		
+		<!--背景banner 开始！-->
+		<div class="b_bg">
+			<!--banner内容区域 开始！-->
+			<div class="b_content">
+				<!--左侧导航菜单 开始！-->
+				<div class="menu">
+					<ul>
+						<li class="menu_all">
+							<a href="#">
+								<i></i>
+								全部课程
+							</a>
+						</li>
+							
+						<li>
+							<h2>
+								<a href="#">
+								职业技能
+								</a>
+							</h2>
+							<h3>
+								<a href="#">
+								职场技能
+								</a>
+								<a href="#">
+								SSN营销
+								</a>
+								<a href="#">
+								公务员
+								</a>								
+							</h3>
+							<div class="show_menu"><img src="images/menu-pic.jpg" width="438" height="278" alt="information" /></div>
+						</li>
+						<li>
+							<h2>
+								<a href="#">
+								职业技能
+								</a>
+							</h2>
+							<h3>
+								<a href="#">
+								职场技能
+								</a>
+								<a href="#">
+								SSN营销
+								</a>
+								<a href="#">
+								公务员
+								</a>								
+							</h3>
+							<div class="show_menu"><img src="images/menu-pic.jpg" width="438" height="278" alt="information" /></div>
+
+							</li>
+							<li>
+							<h2>
+								<a href="#">
+								职业技能
+								</a>
+							</h2>
+							<h3>
+								<a href="#">
+								职场技能
+								</a>
+								<a href="#">
+								SSN营销
+								</a>
+								<a href="#">
+								公务员
+								</a>								
+							</h3>
+							<div class="show_menu"><img src="images/menu-pic.jpg" width="438" height="278" alt="information" /></div>
+
+						</li>
+						<li>
+							<h2>
+								<a href="#">
+								职业技能
+								</a>
+							</h2>
+							<h3>
+								<a href="#">
+								职场技能
+								</a>
+								<a href="#">
+								SSN营销
+								</a>
+								<a href="#">
+								公务员
+								</a>								
+							</h3>
+							<div class="show_menu"><img src="images/menu-pic.jpg" width="438" height="278" alt="information" /></div>
+						</li>
+						<li>
+							<h2>
+								<a href="#">
+								职业技能
+								</a>
+							</h2>
+							<h3>
+								<a href="#">
+								职场技能
+								</a>
+								<a href="#">
+								SSN营销
+								</a>
+								<a href="#">
+								公务员
+								</a>								
+							</h3>
+							<div class="show_menu"><img src="images/menu-pic.jpg" width="438" height="278" alt="information" /></div>
+						</li>
+						<li>
+							<h2>
+								<a href="#">
+								职业技能
+								</a>
+							</h2>
+							<h3>
+								<a href="#">
+								职场技能
+								</a>
+								<a href="#">
+								SSN营销
+								</a>
+								<a href="#">
+								公务员
+								</a>								
+							</h3>
+							<div class="show_menu"><img src="images/menu-pic.jpg" width="438" height="278" alt="information" /></div>
+						</li>
+					</ul>
+				</div>
+				<!--左侧导航菜单 结束！-->				
+				<!--中间内容区域 开始！-->
+				<div class="focus">
+					<ul class="f_img">
+						<li style="display:block">
+							<a href="#">
+								<img src="images/banner-3.jpg" width="760" height="300" alt="潭州学院" />						
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<img src="images/banner-1.jpg" width="760" height="300" alt="潭州学院" />						
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<img src="images/banner-2.jpg" width="760" height="300" alt="潭州学院" />						
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<img src="images/banner-4.jpg" width="760" height="300" alt="潭州学院" />						
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<img src="images/banner-5.jpg" width="760" height="300" alt="潭州学院" />						
+							</a>
+						</li>
+					</ul>
+					<div class="f_btn">
+						<ul>
+							<li class="f_sel"data-color="#4a4d9c"></li>
+							<li data-color="#a534d6"></li>
+							<li data-color="#6365ce"></li>
+							<li data-color="#523484"></li>
+							<li data-color="#009ee7"></li>
+						</ul>
+					</div>
+					<a href="#" class="anniu f_left"></a>
+					<a href="#" class="anniu f_right"></a>
+				</div>
+				<!--中间内容区域 结束！-->				
+				<!--右侧工具部分 开始-->
+				<div class="tools">
+					<!--工具上侧信息栏 开始！-->
+					<div class="info">
+						<ul>
+							<li><a href="#">初级会计师零门槛培训</a></li>
+							<li><a href="#">四六级，冲啊！</a></li>
+							<li><a href="#">顶尖专家传授材质设计</a></li>
+							<li><a href="#">考研政治冲刺班</a></li>
+						</ul>
+					</div>
+					<!--工具下侧信息栏 开始！-->
+					<div class="down">
+						<a href="javascript:void(0);" class="d_left">
+							<i></i>
+							<span class="span_all">
+								<span class="download">
+									下载
+								</span>
+								<br />
+								专用QQ
+							</span>
+						</a>
+						<div class="d_right">
+							<i class="rigu"></i>
+							<span class="span_all">
+								<span class="download">
+									扫一扫
+								</span>
+								<br />
+								QQ公众号
+							</span>
+							<div class="code"><img src="images/bg-board-qr.png" width="126" height="126" alt="code"></div>
+						</div>
+					</div>
+					<!--工具下侧信息栏 结束！-->
+					<!--工具上侧信息栏 结束！-->
+				</div>
+				<!--右侧工具部分 结束-->
+			</div>
+			<!--banner内容区域 结束！-->
+		</div>
+		<!--背景banner 结束！-->
+	</div>	
+	<!--body_banner 结束！-->
+	<!--body_广告 开始！-->
+	<div class="activities">
+		<a href="javascript:void(0);"><img src="images/a-1.jpg" width="326" height="125" alt="activities_1"></a>
+		<a href="javascript:void(0);"><img src="images/a-2.jpg" width="326" height="125" alt="activities_2"></a>
+		<a href="javascript:void(0);"><img src="images/a-3.jpg" width="326" height="125" alt="activities_3"></a>
+	</div>
+	<!--body_广告 结束！-->
+	<!--Hot_course 开始！-->
+	<div class="hot_course">
+		<div class="hot_box">
+			<div class="h_nav">
+				<a href="#">热门课程</a>
+				<ul>
+					<li class="h_live h_sel">直播课</li>
+					<li>录播课</li>
+				</ul>
+			</div>
+			<div class="h_all">
+				<ul class="list-live together">
+					<li>
+						<div class="list_div">
+							<a href="#" class="list_img">
+								<img src="images/B.png" width="220" height="124" alt="course" />
+							</a>
+							<a href="#" class="list_desc">英福伦斯Live Show</a>
+							<p class="list_p">
+								<span>免费</span>
+								<i></i>
+								<a href="#">腾讯课堂【官方】</a>
+							</p>
+						</div>
+					</li>
+					<li>
+						<div class="list_div">
+							<a href="#" class="list_img">
+								<img src="images/B (1).jpg" width="220" height="124" alt="course" />
+							</a>
+							<a href="#" class="list_desc">英福伦斯Live Show</a>
+							<p class="list_p">
+								<span>免费</span>
+								<i></i>
+								<a href="#">腾讯课堂【官方】</a>
+							</p>
+						</div>
+					</li>
+					<li>
+						<div class="list_div">
+							<a href="#" class="list_img">
+								<img src="images/B (2).jpg" width="220" height="124" alt="course" />
+							</a>
+							<a href="#" class="list_desc">英福伦斯Live Show</a>
+							<p class="list_p">
+								<span>免费</span>
+								<i></i>
+								<a href="#">腾讯课堂【官方】</a>
+							</p>
+						</div>
+					</li>
+					<li>
+						<div class="list_div">
+							<a href="#" class="list_img">
+								<img src="images/B (3).jpg" width="220" height="124" alt="course" />
+							</a>
+							<a href="#" class="list_desc">英福伦斯Live Show</a>
+							<p class="list_p">
+								<span>免费</span>
+								<i></i>
+								<a href="#">腾讯课堂【官方】</a>
+							</p>
+						</div>
+					</li>
+					<li>
+						<div class="list_div">
+							<a href="#" class="list_img">
+								<img src="images/B (4).jpg" width="220" height="124" alt="course" />
+							</a>
+							<a href="#" class="list_desc">英福伦斯Live Show</a>
+							<p class="list_p">
+								<span>免费</span>
+								<i></i>
+								<a href="#">腾讯课堂【官方】</a>
+							</p>
+						</div>
+					</li>
+				</ul>
+				<ul class="list-video together">
+					<li>
+						<div class="list_div">
+							<a href="#" class="list_img">
+								<img src="images/B.png" width="220" height="124" alt="course" />
+							</a>
+							<a href="#" class="list_desc">英福伦斯Live Show</a>
+							<p class="list_p">
+								<span>免费</span>
+								<i></i>
+								<a href="#">腾讯课堂【官方】</a>
+							</p>
+						</div>
+					</li>
+					<li>
+						<div class="list_div">
+							<a href="#" class="list_img">
+								<img src="images/B (1).jpg" width="220" height="124" alt="course" />
+							</a>
+							<a href="#" class="list_desc">英福伦斯Live Show</a>
+							<p class="list_p">
+								<span>免费</span>
+								<i></i>
+								<a href="#">腾讯课堂【官方】</a>
+							</p>
+						</div>
+					</li>
+					<li>
+						<div class="list_div">
+							<a href="#" class="list_img">
+								<img src="images/B (2).jpg" width="220" height="124" alt="course" />
+							</a>
+							<a href="#" class="list_desc">英福伦斯Live Show</a>
+							<p class="list_p">
+								<span>免费</span>
+								<i></i>
+								<a href="#">腾讯课堂【官方】</a>
+							</p>
+						</div>
+					</li>
+					<li>
+						<div class="list_div">
+							<a href="#" class="list_img">
+								<img src="images/B (3).jpg" width="220" height="124" alt="course" />
+							</a>
+							<a href="#" class="list_desc">英福伦斯Live Show</a>
+							<p class="list_p">
+								<span>免费</span>
+								<i></i>
+								<a href="#">腾讯课堂【官方】</a>
+							</p>
+						</div>
+					</li>
+					<li>
+						<div class="list_div">
+							<a href="#" class="list_img">
+								<img src="images/B (4).jpg" width="220" height="124" alt="course" />
+							</a>
+							<a href="#" class="list_desc">英福伦斯Live Show</a>
+							<p class="list_p">
+								<span>免费</span>
+								<i></i>
+								<a href="#">腾讯课堂【官方】</a>
+							</p>
+						</div>
+					</li>					
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!--Hot_course 结束！-->
+<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+	var timer = null;
+	var time = 2500;
+	$(function(){
+		// 左侧菜单栏切换
+		$(".menu").find("li").mouseover(function(){
+			$(this).find(".show_menu").addClass("show");
+		}).mouseout(function(){
+			$(this).find(".show_menu").removeClass("show");
+		});
+		
+		var index = 0;
+		// 轮展图切换
+		$(".f_btn").find("li").mouseover(function(){
+			// 控制小按钮
+			$(this).addClass("f_sel").siblings().removeClass("f_sel");
+			var _index = $(this).index(); // 获取当前选中的索引
+			index = _index; // 重新赋值
+			$(".f_img").find("li").eq(_index).fadeTo(3000,1).siblings().hide(); // 联动切换
+			// 切换背景颜色
+			var background = $(this).data("color");
+			$(this).parents(".b_bg").css("background",background);
+			if(timer)clearInterval(timer);
+		}).mouseout(function(){
+			tm_auto_playbanner();
+		});
+		$(".f_right").hover(function(){
+		if(timer)clearInterval(timer);
+		});
+		$(".f_right").click(function(){
+			index++;
+			var length = $(".f_img").find("li").length;
+			if(index >= length){
+				index = 0;
+			}
+			// 切换背景颜色
+			var background = $(".f_btn").find("li").eq(index).data("color");
+			$(this).parents(".b_bg").css("background",background);
+			// 联动小按钮
+			$(".f_btn").find("li").eq(index).addClass("f_sel").siblings().removeClass("f_sel");
+			$(".f_img").find("li").eq(index).fadeTo(3000,1).siblings().hide(); // 联动切换
+		}).mouseout(function(){
+			tm_auto_playbanner();
+		});
+
+		$(".f_left").hover(function(){
+		if(timer)clearInterval(timer);
+		});
+		$(".f_left").click(function(){
+			index--;
+
+			var length = $(".f_img").find("li").length;
+			if(index < 0){
+				index = length - 1;
+			}
+			// 切换背景颜色
+			var background = $(".f_btn").find("li").eq(index).data("color");
+			$(this).parents(".b_bg").css("background",background);
+			// 联动小按钮
+			$(".f_btn").find("li").eq(index).addClass("f_sel").siblings().removeClass("f_sel");
+			$(".f_img").find("li").eq(index).fadeTo(3000,1).siblings().hide(); // 联动切换
+		}).mouseout(function(){
+			tm_auto_playbanner();
+		});
+
+		tm_auto_playbanner();
+
+		//直播课 切换
+		$(".h_nav").find("li").hover(function(){
+			$(this).addClass("h_sel").siblings().removeClass("h_sel");
+			var _index = $(this).index();
+			$(".together").hide().eq(_index).fadeTo(300,1);
+		});
+	});
+	
+	function tm_auto_playbanner(){
+		timer = setInterval(function(){
+			$(".f_right").trigger("click");
+		},time);
+	}
+	
+</script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>box</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<style type="text/css" media="screen">
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	#wrap{
+		width: 40%;
+		height: 50px;
+		background: #5C5959;
+		margin: 0 auto;
+		display: -webkit-box;
+		-webkit-box-orient: horizontal;
+	}
+	#wrap .sel{
+		-webkit-box-flex: 1;
+		text-align: center;
+		line-height: 50px;
+		border-right: 1px solid #ccc;
+	}
+	#wrap .sel1{
+		background-color: #388358;
+		/*用白色占据它50%的位置*/
+		background-image: linear-gradient(90deg,rgba(255, 255, 255, .2) 50%,transparent 50%);
+	}
+	#wrap .sel2{
+		background-color: #D66C17;
+		background-image: linear-gradient(90deg,#A25528 0%,transparent 0%,#A25528 25%,transparent 25%,#A25528 50%,transparent 50%,#A25528 75%,transparent 75%,#A25528 100%,transparent 100%);
+
+	}
+</style>
+</head>
+<body>
+    <div id="wrap">
+    	<div class="sel sel1"></div>
+    	<div class="sel sel2"></div>
+    	<div class="sel sel3"></div>
+    </div>
+</body>
+</html>

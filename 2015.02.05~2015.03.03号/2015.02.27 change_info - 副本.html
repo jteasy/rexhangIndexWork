@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+	<head>
+		<!--声明当前页面的编码集：charset=gbk,gb2312（中文编码），utf-8（国际编码）-->
+		<meta http-equiv="Content-Type" content="text/html; charset=gbk">
+		<!--当前页面的三要素-->
+		<title>标题写在这里！</title>
+		<meta name="Keywords" content="关键词,关键词">
+		<meta name="description" content="">
+		<link rel="shortcut icon" href="" />
+		
+		<!--css,js-->
+		<style type="text/css">
+			*{margin:0;padding:0;}
+		</style>
+
+    </head>
+<body>
+	<img id="rexhang" src="images2015.02.27/samoye.gif" width="420" height="500" alt="萨摩耶" />
+	<input type="button"value="点我改变宽" onclick="change();"/>
+	<input type="button"value="点我变回去" onclick="return_1();"/>
+
+	<script type="text/javascript">
+			function change(){
+
+			document.getElementById("rexhang").width = "900";			
+			
+			}
+			function return_1(){
+
+			document.getElementById("rexhang").width = ("420");			
+			
+			}
+
+	</script>
+</body>
+</html>

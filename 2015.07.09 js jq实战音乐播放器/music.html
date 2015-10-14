@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Examples</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link href="" rel="stylesheet">
+    <style type="text/css">
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    body {
+        background: url('musicImages/bg.jpg') no-repeat top center;
+        font-family:'微软雅黑';
+        font-size: 12px;
+        color: #666;
+    }
+    img {
+        border: none;
+    }
+    .music {
+        width: 960px;
+        height: 250px;
+        margin: 50px auto;
+        background: url('musicImages/banner_bg.jpg') no-repeat;
+        position: relative;
+    }
+    .music ul li {
+        list-style: none;
+        position: absolute;
+    }
+    .music ul li a img {
+        border-radius: 50%;
+    }
+    .music ul li a img:hover {
+        -webkit-animation:rextransformZ 2s infinite linear;
+        -ms-animation:rextransformZ 2s infinite linear;
+        -moz-animation:rextransformZ 2s infinite linear;
+        -o-animation:rextransformZ 2s infinite linear;
+    }
+    @-webkit-keyframes rextransformZ {
+        100% {
+            -webkit-transform:rotateZ(360deg);
+            -ms-transform:rotateZ(360deg);
+            -moz-transform:rotateZ(360deg);
+            -o-transform:rotateZ(360deg);
+        }
+    }
+    @-ms-keyframes rextransformZ {
+        100% {
+            -webkit-transform:rotateZ(360deg);
+            -ms-transform:rotateZ(360deg);
+            -moz-transform:rotateZ(360deg);
+            -o-transform:rotateZ(360deg);
+        }
+    }
+    @-moz-keyframes rextransformZ {
+        100% {
+            -webkit-transform:rotateZ(360deg);
+            -ms-transform:rotateZ(360deg);
+            -moz-transform:rotateZ(360deg);
+            -o-transform:rotateZ(360deg);
+        }
+    }
+    @-o-keyframes rextransformZ {
+        100% {
+            -webkit-transform:rotateZ(360deg);
+            -ms-transform:rotateZ(360deg);
+            -moz-transform:rotateZ(360deg);
+            -o-transform:rotateZ(360deg);
+        }
+    }
+    .music ul .m_1 {
+        top: 30px;
+        left: 6px;
+    }
+    .music ul .m_2 {
+        top: 105px;
+        left: 60px;
+    }
+    .music ul .m_3 a {
+        width: 60px;
+        height: 60px;
+        display: block;
+        background: #1D8D96;
+        position: absolute;
+        top: 15px;
+        left: 188px;
+        border-radius: 50%;
+    }
+    .music ul .m_4 {
+        top: 82px;
+        left: 324px;
+    }
+    .music ul .m_5 {
+        top: 120px;
+        right: 316px;
+    }
+    .music ul .m_6 {
+        bottom: 46px;
+        right: 475px;
+    }
+    .music ul .m_7 {
+        top: 50px;
+        left: 500px;
+    }
+    .music ul .m_8 {
+        top: 24px;
+        right: 120px;
+    }
+    .music ul .m_8 span {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 100px;
+        color: #fff;
+        font-size: 16px;
+    }
+    .player {
+        width: 541px;
+        height: 115px;
+        background: #000;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        border-radius: 0 4px 4px 0;
+    }
+    .player .p_pic img {
+        margin: 13px 0 10px 10px;
+        float: left;
+    }
+    .player .p_pic p {
+        float: left;
+        line-height: 115px;
+        font-size: 16px;
+        color: #fff;
+        width: 180px;
+        padding-left: 10px;
+    }
+    .player .p_btn {
+        width: 180px;
+        height: 52px;
+        float: left;
+        margin: 32px 0;
+    }
+    .player .p_btn a {
+        float: left;
+        margin: 5px 10px;
+    }
+    .player .p_btn .b_prev {
+        width: 36px;
+        height: 28px;
+        display: block;
+        background: url('musicImages/player_bg.png') no-repeat -69px 0;
+        margin-top: 12px;
+    }
+    .player .p_btn .b_prev:hover {
+        background-position: -69px -32px;
+    }
+    .player .p_btn .b_play {
+        width: 42px;
+        height: 42px;
+        display: block;
+        background: url('musicImages/player_bg.png') no-repeat -105px 0;
+    }
+    .player .p_btn .b_play:hover {
+        background-position: -105px -42px;
+    }
+    .player .p_btn .b_next {
+        width: 36px;
+        height: 28px;
+        display: block;
+        background: url('musicImages/player_bg.png') no-repeat -147px 0px;
+        margin-top: 12px;
+    }
+    .player .p_btn .b_next:hover {
+        background-position: -147px -32px;
+    }
+    .player .p_packup {
+        width: 22px;
+        height: 115px;
+        background: url('musicImages/player_bg.png') no-repeat;
+        float: right;
+        cursor: pointer;
+    }
+    </style>
+</head>
+
+<body>
+    <!-- music start -->
+    <div class="music">
+        <ul>
+            <li class="m_1">
+                <a href="javascript:void(0);">
+                    <img src="musicImages/1.jpg" alt="明星1" width="60" height="60" />
+                </a>
+            </li>
+            <li class="m_2">
+                <a href="javascript:void(0);">
+                    <img src="musicImages/2.jpg" alt="明星2" width="90" height="90" />
+                </a>
+            </li>
+            <li class="m_3">
+                <a href="javascript:void(0);"></a>
+            </li>
+            <li class="m_4">
+                <a href="javascript:void(0);">
+                    <img src="musicImages/3.jpg" alt="明星3" width="90" height="90" />
+                </a>
+            </li>
+            <li class="m_5">
+                <a href="javascript:void(0);">
+                    <img src="musicImages/6.jpg" alt="明星6" width="60" height="60" />
+                </a>
+            </li>
+            <li class="m_6">
+                <a href="javascript:void(0);">
+                    <img src="musicImages/5.jpg" alt="明星5" width="60" height="60" />
+                </a>
+            </li>
+            <li class="m_7">
+                <a href="javascript:void(0);">
+                    <img src="musicImages/4.jpg" alt="明星4" width="60" height="60" />
+                </a>
+            </li>
+            <li class="m_8">
+                <a href="javascript:void(0);">
+                    <img src="musicImages/mylogo.png" alt="明星4" width="88" height="88" />
+                </a>
+                <span>rexhang</span>
+            </li>
+        </ul>
+    </div>
+    <!-- music end -->
+    <!-- player start -->
+    <div class="player">
+        <div class="p_pic">
+            <img src="musicImages/pinguan.jpg" alt="我" width="90" height="90" />
+            <p>品冠-相信自己</p>
+        </div>
+        <div class="p_btn">
+            <a href="javascript:void(0);" class="b_prev"></a>
+            <a href="javascript:void(0);" class="b_play"></a>
+            <a href="javascript:void(0);" class="b_next"></a>
+        </div>
+        <div class="p_packup"></div>
+    </div>
+    <!-- palyer end -->
+    <script src="http://www.rexhang.com/js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript">
+    $(function() {
+        $(".p_packup").on("click", function() {
+            var _width = $(".player").width();
+            var _left = $(".player").offset().left;
+            if (_left < 0) {
+                $(".player").animate({
+                    left: 0
+                }, 1000, function() {
+                    $(".p_packup").css("background", "url('musicImages/player_bg.png') no-repeat");
+                });
+            } else {
+                $(".player").animate({
+                    left: -_width + 22
+                }, 1000, function() {
+                    $(this).find(".p_packup").css("background", "url('musicImages/player_bg.png') no-repeat -46px 0px");
+                });
+            }
+        });
+        // $(".b_play").click(function(){
+        //            myMp3()
+        // },function(){
+        //     $(".b_play").css("background","url('musicImages/player_bg.png') no-repeat -291px -88px");
+        // });
+
+    });
+
+    function myMp3() {
+        var mp3Dom = document.createElement("audio");
+        document.body.appendChild(mp3Dom);
+        mp3Dom.id = "rexMusic";
+        mp3Dom.src = "http://www.rexhang.com/bgMusic/iThink.mp3";
+    }
+    flag = true;
+    $(".b_play").on("click", function() {
+        if (flag) {
+            myMp3();
+            $("#rexMusic")[0].play();
+            $(".b_play").css("background", "url('musicImages/player_bg.png') no-repeat -291px -88px");
+            flag = false;
+        } else {
+            $("#rexMusic")[0].pause();
+            $(".b_play").css("background", "url('musicImages/player_bg.png') no-repeat -105px 0px");
+            flag = true;
+        }
+    });
+    </script>
+</body>
+
+</html>

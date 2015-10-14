@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>val</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link href="" rel="stylesheet">
+</head>
+
+<body>
+    <input type="text" id="username" value="小A">
+    <br>
+    <br>
+    <input type="password" id="password" value="小B">
+    <br>
+    <br>
+    <label>
+        <input type="radio" id="sex" value="nan" name="sex">男</label>
+    <label>
+        <input type="radio" id="sex" value="nv" name="sex" checked="checked">女</label>
+    <br>
+    <br>
+    <label>
+        <input type="checkbox" id="like" value="小D">篮球</label>
+    <label>
+        <input type="checkbox" id="like" value="小D">足球</label>
+    <br>
+    <br>
+    <select id="selects">
+        <option value="a">A</option>
+        <option value="b" selected="selected">B</option>
+        <option value="c">C</option>
+    </select>
+    <br>
+    <br>
+    <textarea style="overflow: hidden;resize: none;" id="tex">textarea</textarea>
+    <script type="text/javascript" src="jquery-1.11.1.min.js"></script>
+    <script type="text/javascript">
+    $(function() {
+        //val
+        var $username = $("#username").val();
+        alert($username);
+
+        var $porsche = $("input[type='radio'][name='sex']:checked")/*.val()*/;
+        /*alert($porsche);*/
+        /*radio是个数组要循环读取先定义数组接受*/
+        var arr = [];
+        $porsche.each(function(){
+            arr.push($(this).val());
+        });
+        alert(arr);
+
+        /*select javascript版本*/
+        var index = document.getElementById("selects").selectedIndex;
+        var value = document.getElementById("selects").options[index].value;
+        var text = document.getElementById("selects").options[index].innerText;
+        alert("javascript版本是value:"+value+"text是："+text);
+
+        /*select jquery版本*/
+        var $value = $("#selects").val();
+        //alert($value);
+        var $text = $("#selects option:selected").text(); 
+        //alert($text);
+
+        var $tex = $("#tex").val();
+        //var $tex = $("#tex").text();
+        //var $tex = $("#tex").html();
+        alert($tex);
+    });
+    </script>
+</body>
+
+</html>

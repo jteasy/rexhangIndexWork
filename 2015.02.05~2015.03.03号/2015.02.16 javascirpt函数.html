@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+	<head>
+		<!--声明当前页面的编码集：charset=gbk,gb2312（中文编码），utf-8（国际编码）-->
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<!--当前页面的三要素-->
+		<title>javascirpt 函数 -rexhang</title>
+		<meta name="Keywords" content="关键词,关键词">
+		<meta name="description" content="">
+		<link rel="shortcut icon" href="" />
+		
+		<!--css,js-->
+		<style type="text/css">
+			*{margin:0;padding:0;}
+	
+		</style>
+
+    </head>
+<body>
+	<p id="one">will change to "rexhang"</p>
+	<input type="button" value="click me" onclick="testOne();" />
+	<input type="button" value="调用带参数的函数" onclick="Args('rexhang','rexhang_02');" />
+<script type="text/javascript">
+	// 定义一个函数函数 （"变量"） {"方法、方法体"}
+	function testOne(){
+		document.getElementById("one").innerHTML = ("rexhang");
+	}
+	
+	// 调用带参数的函数
+	function Args(var01,var02){
+		alert("var01:" + var01 + "，var02:" + var02);
+	}
+</script>
+</body>
+</html>

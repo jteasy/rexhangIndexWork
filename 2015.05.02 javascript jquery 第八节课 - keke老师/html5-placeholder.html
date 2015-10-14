@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>html5-placeholder onfocus onblur</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+</head>
+<body>
+    <input type="text" placeholder="请输入密码" />
+
+    <input type="text" value="请输入用户名" onfocus="place(this);" onblur="place2(this);" />
+
+    <script type="text/javascript">
+		/*
+			onfocus 焦点
+			onblur	离开焦点
+		*/
+		function place(obj){
+			var k = "请输入用户名"
+			var i = obj.value;    			
+			if(i == k){
+				obj.value = "";
+			}
+		}
+		function place2(obj){
+			var k = ""
+			var i = obj.value;    			
+			if(i == k){
+				obj.value = "请输入用户名";
+			}
+		}
+
+    </script>
+</body>
+</html>

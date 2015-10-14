@@ -1,0 +1,162 @@
+<!doctype html>
+<html>
+	<head>
+		<!--声明当前页面的编码集：charset=gbk,gb2312（中文编码），utf-8（国际编码）-->
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<!--当前页面的三要素-->
+		<title>回到顶部</title>
+		<meta name="Keywords" content="关键词,关键词">
+		<meta name="description" content="">
+		<link rel="shortcut icon" href="" />
+		
+		<!--css,js-->
+		<style type="text/css">
+			*{margin:0;padding:0;}
+			.huidao{width:50px;height:50px;background:rgba(23, 21, 21, 0.63);position:fixed;right:50px;bottom:80px;display:none;border-radius:50%;cursor:pointer;box-shadow:2px 2px 2px rgba(10, 1, 1, 0.2);}
+			.huidao .h_top{background:url("images/top.png") no-repeat center;display:block;height:50px;width:50px;}
+		</style>
+	<link href="css/animate.css" rel="stylesheet" type="text/css" />
+    </head>
+<body>
+  <div>顾航</div>
+  <div>顾航</div>
+  <div>顾航</div>
+    <div>顾航</div>
+  <div>顾航</div>
+  <div>顾航</div>
+  <div>顾航</div>
+  <div>顾航</div>
+  <div>顾航</div>
+    <div>顾航</div>
+  <div>顾航</div>
+  <div>顾航</div>
+  <div>顾航</div>
+  <div>顾航</div>
+  <div>顾航</div>
+    <div>顾航</div>
+  <div>顾航</div>
+  <div>顾航</div>
+  <div>顾航</div>
+  <div>顾航</div>
+  <div>顾航</div>
+    <div>顾航</div>
+  <div>顾航</div>
+  <div>顾航</div>
+  <div>顾航</div>
+  <div>顾航</div>
+  <div>顾航</div>
+    <div>顾航</div>
+  <div>顾航</div>
+  <div>顾航</div>
+  <div>顾航</div>
+  <div>顾航</div>
+  <div>顾航</div>
+    <div>顾航</div>
+  <div>顾航</div>
+  <div>顾航</div>
+  <div>顾航</div>
+  <div>顾航</div>
+  <div>顾航</div>
+    <div>顾航</div>
+  <div>顾航</div>
+  <div>顾航</div>
+  <div>顾航</div>
+  <div>顾航</div>
+  <div>顾航</div>
+    <div>顾航</div>
+  <div>顾航</div>
+  <div>顾航</div>
+  <div>顾航</div>
+  <div>顾航</div>
+  <div>顾航</div>
+    <div>顾航</div>
+  <div>顾航</div>
+  <div>顾航</div>
+  <div>顾航</div>
+  <div>顾航</div>
+  <div>顾航</div>
+    <div>顾航</div>
+  <div>顾航</div>
+  <div>顾航</div>
+  <div>顾航</div>
+  <div>顾航</div>
+  <div>顾航</div>
+    <div>顾航</div>
+  <div>顾航</div>
+  <div>顾航</div>
+  <div>顾航</div>
+  <div>顾航</div>
+  <div>顾航</div>
+    <div>顾航</div>
+  <div>顾航</div>
+  <div>顾航</div>
+  <div>顾航</div>
+  <div>顾航</div>
+  <div>顾航</div>
+    <div>顾航</div>
+  <div>顾航</div>
+  <div>顾航</div>
+  <div>顾航</div>
+  <div>顾航</div>
+  <div>顾航</div>
+    <div>顾航</div>
+  <div>顾航</div>
+  <div>顾航</div>
+  <div>顾航</div>
+  <div>顾航</div>
+  <div>顾航</div>
+    <div>顾航</div>
+  <div>顾航</div>
+  <div>顾航</div>
+  <div>顾航</div>
+  <div>顾航</div>
+  <div>顾航</div>
+    <div>顾航</div>
+  <div>顾航</div>
+  <div>顾航</div>
+  <div>顾航</div>
+  <div>顾航</div>
+  <div>顾航</div>
+    <div>顾航</div>
+  <div>顾航</div>
+  <div>顾航</div>
+  <div>顾航</div>
+  <div>顾航</div>
+  <div>顾航</div>
+    <div>顾航</div>
+  <div>顾航</div>
+  <div>顾航</div>
+  <div>顾航</div>
+  <div>顾航</div>
+  <div>顾航</div>
+    <div>顾航</div>
+  <div>顾航</div>
+  <div>顾航</div>
+
+<div class="huidao">
+	<span class="h_top"></span>
+</div>
+
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$(window).scroll(function(){
+
+			// if () {} else {} fadeIn<<淡入淡出方式显示>>
+			if($(window).scrollTop() >= 500){$(".huidao").fadeIn(300);
+			// .stop(true,true) 当滑到上方其实还在 不如我们把它（作用在它上面的动画）停止掉（隐藏掉），fadeOut<<淡入淡出方式隐藏>>
+			} else{$(".huidao").stop(true,true).fadeOut(300);			
+			}		
+		});
+		$(".huidao").click(function(){
+			$("html,body").animate({
+				scrollTop:0
+			},600);
+		});
+		$(".huidao").mouseover(function(){
+			$(".huidao").addClass("flip");
+		});
+	});
+</script>
+</body>
+</html>

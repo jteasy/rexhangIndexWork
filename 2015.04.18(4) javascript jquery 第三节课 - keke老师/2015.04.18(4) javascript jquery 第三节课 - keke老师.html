@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+	<head>
+		<!--声明当前页面的编码集：charset=gbk,gb2312（中文编码），utf-8（国际编码）-->
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<!--当前页面的三要素-->
+		<title>2015.04.18(4) javascript jquery 第三节课 - keke老师 - javascript对象</title>
+		<meta name="Keywords" content="关键词,关键词">
+		<meta name="description" content="">
+		<link rel="shortcut icon" href="../1.images/rexhang.ico" />
+		
+		<!--css,js-->
+		<style type="text/css">
+			*{margin:0;padding:0;}
+	
+		</style>
+
+    </head>
+<body>
+	<input type="button" value="clickMe" name="button" age="23" onclick="test(this);" />
+	<script type="text/javascript">
+	/*
+		1.注释使用“/*”样式
+		2.script脚本不要定义子啊head中，定义在body结束之前或者使用脚本引用的方式
+		3.代码一定要对齐和缩进
+		4.一定要在方法前面写明方法的作用是用于上面的逻辑
+		5.去掉空白行，方法之间的空白行只要一行即可
+		6.代码缩进的问题步骤，使用“table”键
+		7.一定要加分好作为结尾  
+	*/
+	/*
+		if(){
+
+		}else{
+
+		}
+	*/
+		function test(obj){
+			alert("类型是:"+obj.type);
+			alert("名字是:"+obj.name);
+			alert("value值是:"+obj.value);
+			alert("自定义的age属性值是:"+obj.getAttribute("age"));
+			/*javascript中获取自定义标签值的方法getAttribute*/
+		}
+	/*
+		javascript对象有哪一些呢？
+		1：对象 object
+		2：日期 Date	
+		3：数组 Array
+		4：函数 function
+		5：正则表达式Regex Regex
+	*/
+	/*
+		对象的定义：
+		如：var book = {}; // 定一个空对象
+		var book2 = {key:value};// HashMap
+		var book3 = {"name":"javascript进阶","price":10,"date":"2015-04-18"};
+	*/
+		var people = {"name":"顾航","age":"22周岁","sex":"男","job":"腾讯公司CEO","num":9,test:function(){
+			alert("弹出：对象里面定义的方法");
+		}};
+		/*1.对象的检索方式 2 种*/
+		alert("姓名是："+people.name);alert("性别是："+people.sex);/*第一种*/
+		alert("年龄是："+people["age"]);alert("职位是："+people["job"])/*第二种*/
+
+		/*2.对象的更新*/
+		people.name = "rexhang";
+		alert("更新后的姓名是:"+ people.name);
+
+		/*3.对象的反射 typeof 就是判断属性对应的数据类型*/
+		alert("people对象类型是：" + typeof people);// object
+		alert("num类型是：" + typeof people["num"]);// number
+
+	/*
+		var ages = 20;
+		var sage = "20岁";
+		var ssage = "20";
+		alert(ages == ssage);		
+		alert(ages === ssage);
+	*/
+		/*4.对象里面方法的调用 此时上面的第二种方法不起作用*/
+		people.test();
+		people["test();"];/*上面说的方法不起作用*/
+
+		/*5.对象的创建*/
+		var rex = {};// 定义一个空对象
+		rex.name = "顾航";// 给对象内赋值
+		alert(rex.name);
+
+		/*6.对象的删除*/
+		var boosk = {"name":"rexhang"};
+		alert("删除之前："+boosk.name);// 打印rexhang
+		delete boosk.name;
+		alert("删除之后："+boosk.name);// 打印undefined	
+		boosk.name = "顾航";
+		alert("恢复之后："+boosk.name);
+		/*一个对象里面的属性一但被删除了，只不过是值被赋予了undefined。没有真正的把属性给删除！*/
+
+		/*对象的属性与值的获取方式*/
+		var classroom = {"room":"教室一","number":48,"code":"S1001"};
+		for(var keyword in classroom){
+			alert("classroom对象内属性为（" + keyword + "）的对应值是：" + classroom[keyword]);
+		}
+	</script>
+</body>
+</html>

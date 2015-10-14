@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>rotate</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+</head>
+<body>
+    <img src="images/3.ico" id="rexhang" width="150" height="150" alt="test" />
+    <input type="button" onclick="test(1)" value="顺时针旋转" />
+    <input type="button" onclick="test(2)" value="逆时针旋转" />
+
+    <script type="text/javascript">
+    	var deg = 0;
+    	var timer = null;
+    	function test(flag){
+    		clearInterval(timer);
+    		var imDom = document.getElementById("rexhang");
+    		timer = setInterval(init,1);
+    		function init(){
+    			if(flag==1/*判断正反转*/){
+    				deg++;
+    			}else{
+    				deg--;
+    			}
+    			imDom.style.transform = "rotate("+deg+"deg)";
+    		}
+    	}
+    </script>
+</body>
+</html>

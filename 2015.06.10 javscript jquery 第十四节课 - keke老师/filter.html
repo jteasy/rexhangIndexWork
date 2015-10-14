@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>hasClass is filter contents</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link href="" rel="stylesheet">
+</head>
+
+<body>
+    <div class="nav re1">1</div>
+    <div class="nav re2">2</div>
+    <div class="nav"></div>
+    <input type="radio" checked="checked" value="1" name="sex">男
+    <input type="radio" checked="" value="2" name="sex">女
+    <input type="text">
+    <ul>
+        <li>
+            <strong>list</strong>item 1 - one strong tag</li>
+        <li>
+            <strong>list</strong>item
+            <strong>2</strong>- two
+            <span>strong tags</span>
+        </li>
+        <li>list item 3</li>
+    </ul>
+    <p>1<p>2<p class="sel">3</p></p></p>
+    <span id="rex">恭喜调用成功!!!</span>
+    <iframe src="test.html" frameborder="0" scrolling="auto" width="600" height="100" style="border:2px solid red;" id="iframe1"></iframe>
+    <input type="button" onclick="re_click();" value="调用iframe里面的事件">
+
+    <script type="text/javascript" src="jquery-1.11.1.min.js"></script>
+    <script type="text/javascript">
+        // next     nextAll     perv    pervAll     parent parents  closest first eq last
+        //!!!closest("obj");
+        $(function(){
+            //hasClass()    is()    filter()    contents()  not()
+            // $(".nav").each(function(){
+            //     // if($(this).hasClass("re2")){
+            //     //     $(this).css("background","red");
+            //     // }else{
+            //     //     $(this).css("font-size","50px");
+            //     // }
+            //     $("input[name='sex'][type='radio']").each(function(){
+            //         if($(this).is(":checked")){
+            //             alert("checked");
+            //         } 
+            //     });
+            // });
+            // $("input").each(function(){
+            //     if($(this).is(":text")){
+            //         $(this).val("12111");
+            //     }
+            // });
+            //is();+++++++++++++
+            $("li").click(function() {
+                var $trues = $(this).is(function(){
+                    return $(this).index()==1;
+                });
+                if($trues){
+                    $(this).css("background","yellow");
+                }else{
+                    $(this).css("background","green");
+                }
+            });
+            //filter();++++++++++++++++
+           // var $fil = $("p").filter(".sel").html();
+           // alert($fil);
+           //contents();+++++++++++++++
+
+
+        });
+            /*★★★★★重点★★★★★*/
+           function re_click(){
+            /*iframe调用test.html中的方法*/
+           /* var $iframeDom = document.getElementById("iframe1").contentWindow;
+            $iframeDom.re_init();*/
+            /*jquery获取test.html中的元素*/
+            var $iframe = $("#iframe1").contents();
+            $iframe.find(".dis").text("顾航!!!!!!!!!!!!!!!!!!!");
+           }
+           /*★★★★★重点★★★★★*/
+
+            //jquery方法
+           // function re_click(){
+           //  var $con = $("#iframe1").contents();
+           //  var i = $con.find(".dis").html();
+           //  alert(i);
+           // }
+
+
+
+           // javascript方法!!!!!!!!!!++++++++++
+           // function re_click(){
+           //  var iframeDom = document.getElementById("iframe1").contentWindow;
+           //  iframeDom.re_init();
+           // }
+           // function fuqin(){
+           //  alert("父亲窗体的方法!!!");
+           // }
+    </script>
+</body>
+
+</html>

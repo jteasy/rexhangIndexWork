@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>计时器</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+</head>
+<body>
+	<div id="divv"></div>
+    <p id="ext"></p>
+
+    <script type="text/javascript">
+    	var i = 0;
+    	var xing = "";
+    	var zhuang = "|";
+    	init();
+
+    	function init(){
+    		i++;
+    		xing += zhuang;
+    		if(i < 100){
+    			setTimeout(init,100)
+    		document.getElementById("ext").innerText = i;
+    		document.getElementById("divv").innerText = xing;    		    			
+    		} else{
+    			function timer(){
+    				window.location =  "http://www.rexhang.com/";
+    			}
+    			timer();
+    		}
+    	}
+    </script>
+</body>
+</html>

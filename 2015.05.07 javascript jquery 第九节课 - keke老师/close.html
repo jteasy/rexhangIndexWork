@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>closeWindow</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+</head>
+<body>
+    <input type="button" value="关闭浏览器" onclick="closeWindow()" />
+
+    <script type="text/javascript">
+
+    	function closeWindow(){
+
+    		if(confirm("确认关闭浏览器")){
+    		window.close();
+    		}else{
+    			alert("取消关闭");
+    		}
+    	}
+    </script>
+</body>
+</html>

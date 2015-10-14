@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+	<head>
+		<!--声明当前页面的编码集：charset=gbk,gb2312（中文编码），utf-8（国际编码）-->
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<!--当前页面的三要素-->
+		<title>ajax-script</title>
+		<meta name="Keywords" content="关键词,关键词">
+		<meta name="description" content="">
+		<link rel="shortcut icon" href="" />
+		
+		<!--css,js-->
+		<style type="text/css">
+			*{margin:0;padding:0;}
+	
+		</style>
+
+    </head>
+<body>
+	<div class="rex"></div>
+	<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+	<script type="text/javascript">
+
+	 /*
+		 AJAX 是与服务器交换数据的艺术，它在不重载全部页面的情况下，实现了对部分网页的更新
+		 什么是 AJAX？
+		 AJAX = 异步 JavaScript 和 XML（Asynchronous JavaScript and XML）。   
+		 简短地说，在不重载整个网页的情况下，AJAX 通过后台加载数据，并在网页上进行显示
+		 关于 jQuery 与 AJAX   
+		 jQuery 提供多个与 AJAX 有关的方法。
+		 通过 jQuery AJAX 方法，您能够使用 HTTP Get 和 HTTP Post 从远程服务器上请求文本、HTML
+		 XML 或    JSON - 同时您能够把这些外部数据直接载入网页的被选元素
+	 */
+
+		
+			// $.ajax({
+			// 	type:"get",
+			// 	url:"js/ajax.js",
+			// 	dataType:"script"
+			// });
+		
+
+		/*
+			$.ajax({
+				type:"post",
+				url:"data.html",
+				success:function(rex){
+					alert(rex);
+				}
+			});
+		*/
+
+		/*
+			$.ajax({
+				type:"post",
+				url:"data2.php",
+				success:function(data){
+					// eval 把字符串转换成数组
+					var arr = eval(data); 
+					// alert(arr);
+					for(i = 0;i < arr.length;i++){
+						$(".rex").append("<p>" + arr[i] + "</p>");
+					}
+				}
+			});
+		*/
+		
+		$.post("data2.php",function(re){
+			var arr = eval(re);
+			for(i = 0;i < arr.length;i++){
+				$(".rex").append("<p>"+ arr[i] +"<p>");
+				alert(arr.length);
+			}
+		});
+
+	
+	</script>
+</body>
+</html>

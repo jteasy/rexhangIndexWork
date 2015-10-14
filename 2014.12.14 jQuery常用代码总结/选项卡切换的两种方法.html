@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+	<head>
+		<!--声明当前页面的编码集：charset=gbk,gb2312（中文编码），utf-8（国际编码）-->
+		<meta http-equiv="Content-Type" content="text/html; charset=gbk">
+		<!--当前页面的三要素-->
+		<title>选项卡切换</title>
+		<meta name="Keywords" content="关键词,关键词">
+		<meta name="description" content="">
+		<link rel="shortcut icon" href="" />
+		 <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+		<!--css,js-->
+		<style type="text/css">
+			*{margin:0;padding:0;}
+			body{font-size:12px;font-family:"微软雅黑";}
+			.box{width:600px;border:1px solid #66CCFF;margin:200px auto;}
+			.box .header{float:left;width:100%;height:35px;border-bottom:1px solid #eee;line-height:35px;border-bottom:2px solid #66CCFF;}
+			.box .header ul li{list-style:none;float:left;width:199px;height:36px;background:#eee;text-align:center;cursor:pointer;border-right:1px solid #66CCFF;}
+			.box .header ul .sel3{border-right:0;}
+			.box .header ul .sel1{background:#fff;color:red;height:37px;width:200px;}
+			.box .cc{height:55px;display:none;}
+			.box .c_1{display:block;}
+			.box .cc span{display:block;line-height:55px;}
+			.box .c_1 span{margin-left:50%;}
+			.box .c_2 span{margin-left:49.5%;}
+			.box .c_3 span{margin-left:49%;}
+			.box .c_3{border:0;}
+			.clear{clear:both;}
+		</style>
+
+    </head>
+<body>
+	<div class="box">
+		<div class="header">
+			<ul>
+				<li class="sel1" rexhang="#rex1">★</li>
+				<li					rexhang="#rex2">★★</li>
+				<li class="sel3" rexhang="#rex3">★★★</li>
+			</ul>
+		</div>
+		<div class="clear"></div>
+		<div class="cc c_1" id="rex1"><span>☆</span></div>
+		<div class="cc c_2" id="rex2"><span>☆☆</span></div>
+		<div class="cc c_3" id="rex3"><span>☆☆☆</span></div>
+	</div>
+	<script type="text/javascript">
+		$(function(){
+			$(".box").find(".header").find("li").click(function(){
+			$(this).addClass("sel1").siblings().removeClass("sel1");
+			var _index = $(this).index();	//——>方法①
+			$(".cc").hide().eq(_index).toggle(500);
+			//var it = $(this).attr("rexhang");	//——方法②	因为兄弟元素包括了header，所以未实现。
+			//$(it).show().siblings().hide();
+			});
+		});
+	</script>
+</body>
+</html>

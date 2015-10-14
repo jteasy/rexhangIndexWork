@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Ajax</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link href="" rel="stylesheet">
+</head>
+
+<body>
+    <input type="button" value="点我加载数据" id="rex" />
+    <script type="text/javascript" src="jquery-1.11.1.min.js"></script>
+    <script type="text/javascript">
+    $.ajax({
+        type: "post",
+        url: "/ajax/ajax2.html",
+        dataType: "html",
+        success: function(datas) {
+            alert("弹出的是请求的HTML页面内容" + datas);
+        }
+    });
+    $("#rex").click(function() {
+        var _url = "/ajax/ajax.js";
+        $.ajax({
+            type: "get",
+            url: _url,
+            dataType: "script",
+            beforeSend: function() {
+                $("body").html("<p>数据正在加载中，请稍候……</p><img src='loding.gif' width='' height='' alt='loding' />");
+                $("body").css({
+                    "color": "red",
+                    "background": "#333333",
+                    "font-size": "50px",
+                    "text-align": "center"
+                });
+            },
+            success: function(rex) {
+                alert("数据加载成功！！！！")
+                //alert(rex);
+                $("body").html("<div>数据加载成功！！！！</div>");
+                $("body").css({
+                    "color": "#000",
+                    "background": "#fff",
+                    "font-size": "12px",
+                    "text-align": "left"
+                });
+            },
+            error: function() {
+                alert("加载出错！");
+            },
+        });
+    });
+    </script>
+</body>
+
+</html>

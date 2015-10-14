@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+	<head>
+		<!--声明当前页面的编码集：charset=gbk,gb2312（中文编码），utf-8（国际编码）-->
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<!--当前页面的三要素-->
+		<title>ajax小项目</title>
+		<meta name="Keywords" content="关键词,关键词">
+		<meta name="description" content="">
+		<link rel="shortcut icon" href="" />
+		
+		<!--css,js-->
+		<style type="text/css">
+			*{margin:0;padding:0;}
+			body{font-size: 12px;font-family: "微软雅黑";color: #666;background:rgba(0,0,0,0.6);}
+			.div_box{width:900px;height:500px;margin:0 auto;overflow:hidden;}
+			.div_box .div_ul{width:900px;height:40px;}
+			#ul_li{list-style:none;font-size: 16px;font-weight: bold;color:red;cursor: pointer;}
+			#ul_li .sel{background:rgb(94, 234, 106);color:#000;} 
+			#ul_li li{float:left;line-height: 40px;padding: 0 134px;border-radius:10px 10px 0 0;box-shadow: 1px 1px 1px 1px #000;
+				background: #08FFC7;}
+			.div_box .all{width:900px;height:460px;}
+			.div_box .one{background:#F76;}
+			.div_box .two{background:#F6C;}
+			.div_box .three{background:#FC6;}	
+		</style>
+
+    </head>
+<body>
+	<div class="div_box">
+		<div class="div_ul">
+			<ul id="ul_li">
+				<li class="sel">顾航</li>
+				<li>顾林</li>
+				<li rexhang="true" url="js/jQuery.js">顾鹏</li>
+                                                
+			</ul>
+		</div>
+		<div class="all one"></div>
+		<div class="all two"></div>
+		<div class="all three"></div>
+	</div>
+
+	<script type="text/javascript" src="js/jQuery.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$("#ul_li").find("li").click(function(){
+				$(this).addClass("sel").siblings().removeClass("sel");
+				var _index = $(this).index();
+				$(".all").hide().eq(_index).fadeIn(1000);
+
+				var _rexhang = $(this).attr("rexhang");
+				var _url = $(this).attr("url");
+				var _all = $(".all").eq(_index);
+				if(_rexhang){
+					$.ajax({
+						type:"post",
+						url:_url,
+						beforeSend:function(){
+							_all.html("<img src='images/watting3.gif' alt='为您加载中' />");
+
+						},
+						success:function(att){
+                                                                                    
+							_all.html(att);
+						}
+					});
+				}
+			});
+		});
+	</script>
+</body>
+</html>

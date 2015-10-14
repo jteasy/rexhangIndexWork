@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>关于表格</title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			::selection{
+				background:#000;
+				color: #fff;
+			}
+			table{
+				width: 100%;
+				border-collapse: collapse;
+				/*取消表格边框*/
+				border: 1px solid red;
+			}
+			table tr td:hover{
+				background: #000;
+				color: #ccc;
+				-webkit-transition: all linear 0.3s; 
+			}
+			table .one{
+				border: 2px solid royalblue;
+			}
+			table .one th{
+				border-right: 1px solid royalblue;
+			}
+			table td{
+				padding: 10px;
+				border-right: 1px solid red;
+				border-bottom: 1px solid red;
+			}
+			table tr:nth-child(1){
+				background: orangered;
+			}
+			tfoot tr{
+				width: 100%;
+				border: 1px solid green;
+			}
+		</style>
+	</head>
+	<body>
+		<!--****-->
+		<table>
+			<thead>
+				<tr class="one">
+					<th>姓名</th>
+					<th>年龄</th>
+					<th>性别</th>
+					<th>婚否</th>
+					<th>操作</th>
+				</tr>
+			</thead>
+			<tbody id="tbody">
+				<tr>
+					<td>顾航</td>
+					<td>22</td>
+					<td>男</td>
+					<td>否</td>
+					<td><a href="javascript:void(0);" onclick="del01(this);">删除</a></td>
+				</tr>
+				<tr>
+					<td>顾林</td>
+					<td>22</td>
+					<td>男</td>
+					<td>否</td>
+					<td><a href="javascript:void(0);" onclick="del01(this);">删除</a></td>
+				</tr>
+				<tr>
+					<td>顾鹏</td>
+					<td>22</td>
+					<td>男</td>
+					<td>否</td>
+					<td><a href="javascript:void(0);" onclick="del01(this);">删除</a></td>
+				</tr>
+			</tbody>
+			<tfoot>
+				<tr>
+					<td>总计1</td>
+					<td>总计2</td>
+					<td>总计3</td>
+					<td>总计4</td>
+					<td><a href="javascript:void(0);" onclick="del01(this);">删除</a></td>
+				</tr>
+			</tfoot>
+		</table>
+		<a href="javascript:void(0);" onclick="add();">添加一行</a>
+		<a href="javascript:void(0);" onclick="rload();">刷新</a>
+		<!--****-->
+		<script type="text/javascript">
+//			表格：table -- 伸缩性，响应式
+//			table一般用于数据管理，网站后台
+//			css3 javascript
+			function add(){
+				var tb = document.getElementById("tbody");
+				var html = "<tr>"+
+                                                                "<td>顾鹏</td>"+
+                                                                "<td>22</td>"+
+                                                                "<td>男</td>"+
+                                                                "<td>否</td>"+
+                                                                "<td><a href='javascript:void(0);'' onclick='del01(this);''>删除</a></td>"+
+                                                                "</tr>"
+				tb.innerHTML += html;
+			}
+			function rload(){
+				location.reload();
+			}
+			function del01(obj){
+				obj.parentElement.parentElement.remove();
+			}
+		</script>
+	</body>
+</html>

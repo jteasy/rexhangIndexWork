@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>表盘</title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			.box {
+				width: 200px;
+				height: 200px;
+				margin: 0 auto;
+				border-radius: 50%;
+				background: #eee;
+				position: relative;
+				border: 1px solid orangered;
+			}
+			.icon {
+				width: 16px;
+				height: 16px;
+				background: #111;
+				position: absolute;
+				top: 92px;
+				left: 92px;
+				border-radius: 50%;
+			}
+			#hour {
+				width: 8px;
+				height: 45px;
+				background: #111;
+				position: absolute;
+				left: 96px;
+				top: 55px;
+				-webkit-transform-origin: bottom;
+			}
+			#min {
+				width: 4px;
+				height: 65px;
+				background: green;
+				position: absolute;
+				left: 98px;
+				top: 35px;
+				-webkit-transform-origin: bottom;
+			}
+			#sec {
+				width: 2px;
+				height: 75px;
+				background: red;
+				position: absolute;
+				left: 99px;
+				top: 25px;
+				-webkit-transform-origin: bottom;
+			}
+			#kedu li {
+				list-style: none;
+				width: 2px;
+				height: 5px;
+				background: #111;
+				position: absolute;
+				left: 99px;
+				top: 0;
+				-webkit-transform-origin: center 100px;
+				/*旋转中心位置，不写默认是围绕自己在转*/
+			}
+			#kedu li:nth-child(5n+1) {
+				height: 15px;
+			}
+			/*逢五进一*/
+		</style>
+	</head>
+
+	<body style="background: #ccc;">
+		<div class="box">
+			<ul id="kedu">
+			</ul>
+			<div id="hour"></div>
+			<div id="min"></div>
+			<div id="sec"></div>
+			<div class="icon"></div>
+		</div>
+		<script type="text/javascript">
+			 /*指针*/
+			var keduDom = document.getElementById("kedu");
+			for (var i = 0; i < 60; i++) {
+				var htmls = "";
+				htmls += "<li style='-webkit-transform:rotate(" + (i * 6) + "deg)'></li>";
+				console.log(i);
+				keduDom.innerHTML += htmls;
+			};
+			/*sec min hour*/
+			var secDom = document.getElementById("sec");
+			var minDom = document.getElementById("min");
+			var hourDom = document.getElementById("hour");
+			/*animate*/
+			function drawTime() {
+				var date = new Date();
+				var sec = date.getSeconds();
+				var min = date.getMinutes()
+				var hour = date.getHours();
+				secDom.style.WebkitTransform = "rotate(" + (sec * 6) + "deg)";
+				minDom.style.WebkitTransform = "rotate(" + (min * 6) + "deg)";
+				hourDom.style.WebkitTransform = "rotate(" + (hour * 30) + "deg)";
+			}
+			drawTime();
+			setInterval(drawTime, 1000);
+		</script>
+	</body>
+
+</html>

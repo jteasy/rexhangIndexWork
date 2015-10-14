@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+</head>
+<body>
+    <div id="rex" style="width:600px;height:420px;background:#592424;">what's meaning ?</div>
+    <div class="hang" style="width:700px;height:520px;background:#333;position:absolute;left:500px;bottom:10px;opacity:0;"></div>
+    <script type="text/javascript" src="jquery-1.11.1.min.js"></script>
+    <script type="text/javascript">
+        //resize事件
+        $(window).resize(function(){
+            //alert("窗体大小改变了！");
+        });
+        function init(){
+            alert("close?are you sure?")
+        }       
+        document.body.onkeyup = init;
+        /*延迟2000毫秒fadeIn*/
+        $("#rex").slideUp("slow").delay(2000).fadeIn("slow");
+
+        $(".hang").animate({"left":"200px","opacity":1,"width":"350px"},2000);
+        alert(Math.random(1));
+    </script>
+</body>
+</html>

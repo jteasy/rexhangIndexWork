@@ -1,0 +1,13 @@
+ #pic{
+    height:234px;
+    width:587px;
+    margin:0 auto;
+    background-color: #ccc;
+    overflow: hidden;
+  }
+  #pic img{   
+    -webkit-transform: scale(1);
+    -webkit-transition: 1s;}
+  #pic img:hover{
+    -webkit-transform: scale(1.05);
+  }

@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+	<head>
+		<!--声明当前页面的编码集：charset=gbk,gb2312（中文编码），utf-8（国际编码）-->
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<!--当前页面的三要素-->
+		<title>360换肤功能</title>
+		<meta name="Keywords" content="关键词,关键词">
+		<meta name="description" content="">
+		<link rel="shortcut icon" href="" />
+		
+		<!--css,js-->
+		<style type="text/css">
+			*{margin:0;padding:0;}
+			img{border:0;}
+			body{background:url("images/1.jpg") repeat-x top center;overflow:hidden;}
+			.out_div{width:100%;height:130px;background:rgba(0, 0, 0, 0.50);display:none;}			
+			.out_div .header_div{width:1000px;height:75px;margin:0 auto;padding:27px 0;}
+			.out_div .header_div ul li{list-style:none;float:left;margin:0 14px;}
+			.out_div .header_div ul li a{display:block;width:138px;height:75px;}
+			.out_div .header_div ul li a:hover{border:1px solid #fff;}
+
+			._btn{width:50px;height:50px;display:block;position:fixed;top:0;right:0;}
+			._btn a{display:block;width:50px;height:50px;background:url("images/upseek.png") no-repeat top center;}
+			._btn a:hover{background-position:0 -64px;}
+			
+		</style>
+		<link rel="stylesheet" type="text/css" href="css/animate.css">
+    </head>
+<body>
+	<div class="out_div">	
+		<div class="header_div">
+			<ul class="_ul">
+				<li>
+					<a href="javascript:void(0)"><img src="images/1-1.jpg" width="138" height="75" alt="pic" /></a>
+				</li>
+				<li>
+					<a href="javascript:void(0)"><img src="images/2-2.jpg" width="138" height="75" alt="pic" /></a>
+				</li>
+				<li>
+					<a href="javascript:void(0)"><img src="images/3-3.jpg" width="138" height="75" alt="pic" /></a>
+				</li>
+				<li>
+					<a href="javascript:void(0)"><img src="images/4-4.jpg" width="138" height="75" alt="pic" /></a>
+				</li>
+				<li>
+					<a href="javascript:void(0)"><img src="images/5-5.jpg" width="138" height="75" alt="pic" /></a>
+				</li>
+				<li>
+					<a href="javascript:void(0)"><img src="images/6-6.jpg" width="138" height="75" alt="pic" /></a>
+				</li>												
+			</ul>	
+		</div>
+	</div>
+	<div class="_btn">
+		<a href="javascript:void(0)"></a>
+	</div>	
+	<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			// 切换图例
+			$("._btn").find("a").click(function(){
+				$(".out_div").toggleClass("animated rollIn").slideToggle(500);
+			});
+
+			// 给背景填色
+			$("._ul li").find("img").click(function(){
+				var bg_src = $(this).attr("src").replace(/-\d*/ig,''); 
+				// images/2-2.jpg →replace→ images/2.jpg ---正则表达式---
+				$("body").css({"background":"url"+"("+bg_src+")"+"repeat-x"+" "+"top"+" "+"center"}); // background:url(bg_src) top center
+				// 加入缓存
+				sessionStorage.setItem("src",bg_src);
+			
+			});
+				// 加入缓存
+				var sessionSrc = sessionStorage.getItem("src");
+				if(sessionSrc){
+					$("body").css({"background":"url"+"("+sessionSrc+")"+"repeat-x"+" "+"top"+" "+"center"});
+				}			
+
+		});
+	</script>
+</body>
+</html>

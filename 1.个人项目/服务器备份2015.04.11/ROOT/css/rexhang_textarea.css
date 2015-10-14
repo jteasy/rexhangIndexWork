@@ -1,0 +1,8 @@
+.codeshow{width:100%;}
+.codeshow span{font-size:24px;font-family:"微软雅黑";color:#000;font-weight:bold;display:block;width:100%;text-align:center;}
+.codeshow .text01{width:100%;height:366px;}
+.codeshow .text02{width:100%;height:306px;}
+.codeshow .text03{width:100%;height:266px;}
+.codeshow .text01:focus{outline-color:red;text-shadow: 0px 0px 0px #012; font-family: 微软雅黑; font-weight: 600;color: black;  box-shadow: 1px 1px 1px rgb(31, 24, 24);}
+.codeshow .text02:focus{outline-color:black;text-shadow: 0px 0px 0px #012; font-family: 微软雅黑; font-weight: 600;color: rgb(179, 29, 29);box-shadow: 1px 1px 1px rgb(31, 24, 24);}
+.codeshow .text03:focus{outline-color:rgb(22, 80, 229);text-shadow: 0px 0px 0px #012; font-family: 微软雅黑; font-weight: 600;color: rgb(109, 83, 187);box-shadow: 1px 1px 1px rgb(31, 24, 24);}

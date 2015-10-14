@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+<head>
+	<!--声明当前页面的编码集：charset=GBK,GB2312(中文编),UTF-8(国际编码)-->
+	<meta http-equiv="Content-Type" content="text/heml;charset=UTF-8">
+	<!--当前页面的三要素-->
+	<title>标题</title>
+	<meta name="Keywords" content="关键词，关键词">
+	<meta name="description" content="">
+	<!--css.js-->
+	<style type="text/css">
+	* {
+    box-sizing: border-box;
+}
+body {
+    background-color: #37545a;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+.button:first-child {
+    margin-top: 20%;
+}
+.button {
+    width: 50%;
+    height: 50px;
+    margin: 20px auto;
+    background-color: #f28544;
+    text-align: center;
+    font-size: 2em;
+    line-height: 48px;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+}
+.link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    transition: color 0.3s ease-out 0.1s;
+    border: 1px solid #f28544;
+    /*NICE TRICK FOR A FULL RESPONSIVE; ABSOLUTE POSITIONED CIRCLE*/
+    
+    color: #f28544;
+}
+.circle-bg {
+    position: absolute;
+    border-radius: 50%;
+    width: 120%;
+    padding-bottom: 120%;
+    /*EASY WAY FOR CENTERING WITHOUT NEGAITIVE MARGINS
+    Works without fixed size */
+    
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.circle-bg:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #37545a;
+    border-radius: 50%;
+    transition: transform 0.5s ease-out;
+}
+.wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.button:hover .circle-bg:after {
+    transform: scale(0);
+}
+.button:hover .link {
+    color: #fff;
+}
+	</style>
+		
+	</head>
+<body>
+<div class="button">
+    <div class="circle-bg">
+        <div class="wrapper"></div>
+    </div>
+    <div class="link">Button</div>
+</div>
+<div class="button">
+    <div class="circle-bg">
+        <div class="wrapper"></div>
+    </div>
+    <div class="link">Button</div>
+</div>
+<div class="button">
+    <div class="circle-bg">
+        <div class="wrapper"></div>
+    </div>
+    <div class="link">Button</div>
+</div>
+</body>
+</html>

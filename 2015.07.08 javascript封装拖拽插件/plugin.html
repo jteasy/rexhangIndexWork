@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>拖拽plugin</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link href="" rel="stylesheet">
+    <link rel="stylesheet" href="http://www.rexhang.com/css/animate_tz.css">
+    <style type="text/css">
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    body {
+        font-size: 12px;
+        font-family:'微软雅黑';
+        color: #666;
+    }
+    /*tz_dialog start*/
+    .tz_dialog {
+        width: 272px;
+        height: 166px;
+        box-shadow: 0 0 5px 0 #000;
+        z-index: 999;
+        position: fixed;
+    }
+    .tz_dialog .tz_title {
+        width: 253px;
+        height: 20px;
+        background: #4F4747;
+        padding: 10px 10px;
+        cursor: move;
+    }
+    .tz_dialog .tz_title .tz_h3 {
+        font-size: 14px;
+        color: #fff;
+        font-weight: bold;
+        float: left;
+    }
+    .tz_dialog .tz_title .tz_close {
+        float: right;
+        text-decoration: none;
+        color: #fff;
+    }
+    .tz_dialog .tz_content {
+        width: 272px;
+        height: 125px;
+        background: #eee;
+    }
+    .tz_dialog .tz_content .tz_message {
+        padding: 20px 36px;
+    }
+    .tz_dialog .tz_content .tz_message .tz_icon {
+        width: 32px;
+        height: 32px;
+        display: block;
+        background: url('http://www.rexhang.com/images/dialog.png') no-repeat;
+        float: left;
+    }
+    .tz_dialog .tz_content .tz_message .tz_con {
+        float: left;
+        margin-left: 35px;
+        margin-top: 10px;
+    }
+    .tz_dialog .tz_content .tz_btn {
+        padding-top: 40px;
+        text-align: center;
+    }
+    .tz_dialog .tz_content .tz_btn input {
+        border: 0;
+        background: #E08C1B;
+        color: #fff;
+        border: 1px solid #eee;
+        width: 100px;
+        height: 34px;
+        font-size: 12px;
+        font-family:'微软雅黑';
+        outline: none;
+    }
+    .tz_dialog .tz_content .tz_btn input:hover {
+        background: #674E2C;
+        border: 1px solid #000;
+    }
+    /*tz_dialog end*/
+    /*遮罩层 start*/
+    .tz_bg {
+        background: #000;
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        opacity: 0.5;
+        filter:alpha(opacity=50);
+    }
+    /*遮罩层 end*/
+    ._click{
+        width: 200px;
+        height: 35px;
+        outline: none;
+        background: #5EE09B;
+        border-radius: 2px;
+        border: 0;
+        box-shadow: 0px 0px 31px 4px #000;
+        position: absolute;
+        top: 10%;
+        left: 44.5%;
+        color: #555;
+        font-family: '微软雅黑';
+        font-weight: bold;
+    }
+    ._click:hover{
+        background: #000;
+        color: #fff;
+    }
+    </style>
+</head>
+
+<body>
+    <input type="button" class="_click" value="点我加载插件" />
+    <script type="text/javascript" src="http://www.rexhang.com/js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript">
+    /*
+        自定义插件的步骤：
+        1.布局静态页面；
+        2.动态化（怎么通过jQuery动态的方式放到页面）；
+        3.定义插件的三要素：定位、top、left；
+        4.封装（可以供第三方使用）。
+    */
+    $(function() {
+        $("._click").click(function() {
+            $.rexDialog({
+                titles: "此处可动态改变",
+                contents: "此处也可动态改变"
+            });
+        });
+    });
+    /*
+            插件格式：
+            (function(){})(jQuery);
+            三要素：定位，left，top
+            定义一个插件名：$.rexDialog
+        */
+    $.rexDialog = function(opts) {
+        //创建一个插件模板
+        var $tz_dialog = $("<div class='tz_dialog' style='transition:0s;'>" +
+            "<div class='tz_title'>" +
+            "<h3 class='tz_h3'>" + opts.titles + "</h3>" +
+            "<a href='javascript:void(0);' class='tz_close'>ｘ</a>" +
+            "</div>" +
+            "<div class='tz_content'>" +
+            "<div class='tz_message'>" +
+            "<span class='tz_icon'></span>" +
+            "<span class='tz_con'>" + opts.contents + "</span>" +
+            "</div>" +
+            "<div class='tz_btn'>" +
+            "<input type='button' value='我确认' class='isSure' />" +
+            "<input type='button' value='取消吧' class='isCancel' />" +
+            "</div>" +
+            "</div>" +
+            "</div>");
+        //向页面写入模板
+        $("body").append($tz_dialog);
+        //方法调用1：动态方法设置元素居中定位
+        rex_center($tz_dialog);
+        //向页面写入遮罩层
+        $("body").append("<div class='tz_bg'>" +
+            "</div>");
+        //特效animated
+        $(".tz_dialog").addClass("bounceIn animated");
+        //方法调用2：浏览器窗口改变居中定位
+        initEvent($tz_dialog);
+        // 方法1：动态方法设置元素居中定位
+
+        function rex_center($tz_dialog) {
+            var rex_width = $(window).width();
+            var rex_height = $(window).height();
+            var dom_width = $tz_dialog.width();
+            var dom_height = $tz_dialog.height();
+            var rex_left = (rex_width - dom_width) / 2;
+            var rex_top = (rex_height - dom_height) / 2;
+            $tz_dialog.css({
+                "top": rex_top,
+                "left": rex_left
+            })
+        }
+        // 方法2：浏览器窗口改变居中定位
+
+        function initEvent($tz_dialog) {
+            $(window).resize(function() {
+                rex_center($tz_dialog);
+            });
+        }
+        // 方法使用：拖拽功能
+        $(".tz_title").mousedown(function(ee) {
+            // 获取需要移动的父级元素
+            var divDom = $(this).parents(".tz_dialog");
+            // 鼠标点击的X和Y的坐标
+            var a = ee.clientX;
+            var b = ee.clientY;
+            // 元素距离边角的值
+            var theLeft = divDom.offset().left;
+            var theTop = divDom.offset().top;
+            //设置边界
+            var maxLeft = $(window).width() - divDom.width();
+            var maxTop = $(window).height() - divDom.height();
+            //设置开关
+            var flag = true;
+            // 开始拖拽
+            $(document).mousemove(function(eee) {
+                if (flag) {
+                    var x = eee.clientX;
+                    var y = eee.clientY;
+                    var _left = x - a + theLeft;
+                    var _top = y - b + theTop;
+                    if (_left < 10) {
+                        _left = 10;
+                    }
+                    if (_top < 10) {
+                        _top = 10;
+                    }
+                    if (_left > maxLeft) {
+                        _left = maxLeft - 10 + "px";
+                    }
+                    if (_top > maxTop) {
+                        _top = maxTop - 10 + "px";
+                    }
+                    divDom.css({
+                        "top": _top,
+                        "left": _left
+                    })
+                }
+            }).mouseup(function() {
+                flag = false;
+            });
+        });
+        $(".tz_close, .isCancel, .isSure").click(function() {
+            $(".tz_dialog").addClass("bounceOut animated");
+            $(".tz_bg").addClass("flipOutX animated");
+            setTimeout(hides, 1000);
+        });
+        //延时删除方法
+
+        function hides() {
+            $(".tz_dialog").remove();
+            $(".tz_bg").remove();
+        }
+
+    }
+    </script>
+</body>
+
+</html>

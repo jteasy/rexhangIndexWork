@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>prop</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+</head>
+<body>
+	
+	<label><input type="checkbox" value="1" name="man" class="san">男</label>
+	<label><input type="checkbox" value="1" name="man" class="san">男</label>
+	<label><input type="checkbox" value="1" name="man" class="san">男</label>
+	<label><input type="radio" value="2" name="men">女</label>
+	<input type="button" value="allchose" class="cl">
+	<input type="button" value="allunchose" class="ch">
+	<label><input type="checkbox" value="全选" class="ac"><span class="xx">全选</span></label>
+
+    <script type="text/javascript" src="jquery-1.11.1.min.js"></script>
+    <script type="text/javascript">
+    	$(function(){
+    		/*prop 判断input是否选中*/
+    		/*var box = $("input[checked='checked'][name='man']").prop("checked");*/
+    		//alert(box);返回true
+    		/*$("input[checked='checked'][name='man']").removeAttr("checked");*/
+    		/*$("input[checked='checked'][name='man']").removeProp("checked");*/
+
+    		$(".cl").click(function(){
+    			$(".san").attr("checked","checked");
+    		});
+
+    		/*$(".ch").click(function(){
+    			$(".san").prop("checked",false);
+    		});*/
+
+    		$(".ch").click(function(){
+    			$(".san").removeProp("checked");
+    		});
+
+    		/*全选联动*/
+    		$(".ac").click(function(){
+	    		if($(".ac").prop("checked")){	    			
+	    			$(".san").prop("checked","checked");
+	    			$(".xx").text("反选");
+	    		} else{
+	    			$(".san").prop("checked",false);
+	    			$(".xx").text("全选");
+	    		}
+    		});
+    		/*真反选是循环(each)所有checkbox，然后找到checked 进行函数*/
+
+
+    	});
+    </script>
+</body>
+</html>

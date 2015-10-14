@@ -1,0 +1,34 @@
+<html>
+<head>
+
+<style type="text/css">
+
+body {
+background:#ddd;
+}
+.keleyi {
+width: 220px;
+height: 220px;
+margin: 0 auto;
+background: no-repeat url("http://keleyi.com/image/a/q5l1xnmf.jpg") left top;
+-webkit-background-size: 220px 220px;
+-moz-background-size: 220px 220px;
+background-size: 220px 220px;
+-webkit-border-radius: 110px;
+border-radius: 110px;
+/*盒子属性 开始*/
+-webkit-animation:transformZ 2s infinite linear;-ms-animation:transformZ 2s infinite linear;
+/*盒子属性 结束*/
+}
+/*全局属性 开始*/
+@-webkit-keyframes transformZ{
+	100%{-webkit-transform:rotateZ(360deg);}
+}
+/*全局属性 结束*/
+</style>
+</head>
+<body>
+<div class="keleyi"></div>
+
+</body>
+</html>

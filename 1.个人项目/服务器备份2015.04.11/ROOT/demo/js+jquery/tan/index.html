@@ -1,0 +1,96 @@
+<!doctype html>
+<html>
+<head>
+	<!--声明当前页面的编码集：charset=GBK,GB2312(中文编),UTF-8(国际编码)-->
+	<meta http-equiv="Content-Type" content="text/heml;charset=UTF-8">
+	<!--当前页面的三要素-->
+	<title>弹窗</title>
+	<meta name="Keywords" content="关键词，关键词">
+	<meta name="description" content="">
+	<!--css.js-->
+	<link rel="stylesheet" href="/css/bg2.css" type="text/css" />
+	<link type="text/css" rel="stylesheet" href="/css/animate.css"></link>
+	<style type="text/css">
+	/*按钮  start*/
+	.btn{
+	width:150px;
+	height:40px;
+	line-height:40px;
+	border-radius:25px;
+	border:1px solid #90c;
+	text-align:center;
+	cursor:pointer;
+	margin:0 auto;
+	color:#cf3;
+	}
+	
+	.btn:hover{
+	background:#39B2E2;
+	color:#fff;
+	}
+	/*按钮  end*/
+	/*视频弹窗  start*/
+	.show{
+	width:700px;
+	height:350px;
+	background:#69F;
+	border:12px solid #000;
+	border-radius:5px;
+	box-shadow:0 0 20px 0 #fff;
+	display:none;
+	position:absolute;
+	z-index:3;
+	}
+	/*视频弹窗  end*/
+	/*遮罩层  start*/
+	.yy{
+	top:0;left:0;
+	width:100%;
+	height:100%;
+	display:none;
+	background:#000;
+	position:absolute;
+	z-index:2;
+	opacity:0.5;filter:alpha(opacity=50);
+	}
+	/*遮罩层  end*/
+	</style>
+
+	</head>
+<body>
+		<!--按钮 start-->
+		<div class="btn">弹出视频</div>
+		<!--按钮 end-->
+		<!--视频弹窗 start-->
+		<div class="show">
+			<embed id="pin" src="http://player.yinyuetai.com/playlist/player/2875025/a_31260529.swf" allowFullScreen="true" quality="high" width="700" height="350" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash" paused="false"></embed>
+		</div>
+		<!--视频弹窗 end-->
+		<!--遮罩层 start-->
+		<div class="yy"></div>
+		<!--遮罩层 end-->
+		<script type="text/javascript" src="/js/jquery-1.11.1.min.js"></script>
+		<script type="text/javascript">
+				$(function(){
+					$(".btn").click(function(){
+						var $left = ($(window).width()-700)/2;
+						var $top = ($(window).height()-350)/2;
+						$(".show").removeClass("animated bounceOutUp").addClass("animated bounceIn").show().css({left:$left,top:$top});
+						$(".yy").show();
+						
+					});
+					
+					$(".yy").click(function(){
+						/*var myVid = document.getElementById("pin");
+						alert(myVid.volume);
+						myVid.paused=true;
+						myVid.volume=0.0;*/
+						$(this).hide();
+						$(".show").removeClass("animated bounceIn").addClass("animated bounceOutUp");
+						
+					});
+				});
+		
+		</script>
+</body>
+</html>

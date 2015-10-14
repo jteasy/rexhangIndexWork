@@ -1,0 +1,115 @@
+<!doctype html>
+<html>
+	<head>
+		<!--声明当前页面的编码集：charset=gbk,gb2312（中文编码），utf-8（国际编码）-->
+		<meta http-equiv="Content-Type" content="text/html; charset=gbk">
+		<!--当前页面的三要素-->
+		<title>筛选列表</title>
+		<meta name="Keywords" content="关键词,关键词">
+		<meta name="description" content="">
+		<link rel="shortcut icon" href="" />
+		
+		<!--css,js-->
+		<style type="text/css">
+			*{margin:0;padding:0;}
+			body{background:#6600CC;font-family:"微软雅黑";color:#666;font-size:12px;}
+
+			.click{width:75px;height:35px;background:#FF6600;border:1px solid #000;border-radius:5px;font-size:14px;font-family:"微软雅黑";color:#03F;font-weight:bold;}			
+			.click:hover{background:red;}
+			
+			.choose{width:576px;height:600px;border:1px solid #fff;margin:100px auto;border-radius:0px;background:#eee;display:none;}			
+			.choose .c_title{width:576px;height:30px;background:#333;border-radius:0px;}
+			.choose .c_title h3{font-size:14px;color:#fff;/*border:1px solid red;*/line-height:30px;padding-left:14px;float:left;}
+			.choose .c_title .close{float:right;color:#fff;display:block;width:60px;height:25px;/*border:1px solid red;*/text-align:center;line-height:24px;text-decoration:none;background:rgb(92, 63, 10);border-radius:0px;}
+			.choose .c_title .close:hover{background:red;}
+
+			.choose #content{padding:20px;}
+			.choose #content .c_list{float:left;height:427px;width:212px;/*border:1px solid red;*/}
+			.choose #content .c_list h4{font-size:14px;font-weight:500;padding-left:15px;}
+			.choose #content .c_list ul{width:210px;border:1px solid #BCD0C1;margin-top:10px;background:#F9F2E6;height:398px;}
+			.choose #content .c_list ul li{list-style:none;font-size:14px;/*border:1px solid red;*/line-height:36px;padding-left:14px;}
+			.choose #content .c_list ul li:hover{cursor:pointer;}
+			.choose #content .c_list ul .sel{background:#039ae3;color:#fff;}
+			.choose #content .c_middle{width:100px;height:360px;/*border:1px solid red;*/float:left;}
+			.choose #content .c_middle #add{display:block;width:78px;height:34px;border:1px solid red;text-decoration:none;color:#000;text-align:center;line-height:34px;margin:132px auto;border:1px solid #BCD0C1;}
+			.choose #content .c_middle #add:hover{background:rgb(118, 173, 156);color:#fff;}
+			.choose #content .c_middle #del{display:block;width:78px;height:34px;border:1px solid red;text-decoration:none;color:#000;text-align:center;line-height:34px;margin:-114px auto;border:1px solid #BCD0C1;}
+			.choose #content .c_middle #del:hover{background:rgb(118, 173, 156);color:#fff;}
+			.choose #content .c_middle span{display:block;width:78px;height:34px;font-size:14px;margin:140px auto;}
+
+			.choose .yes{float:right;display:block;/*border:1px solid red;*/width:100px;height:40px;background:#333;border-radius:3px;text-decoration:none;color:#fff;text-align:center;line-height:40px;font-size:14px;margin:30px 32px;}
+			.choose .yes:hover{background:rgb(153, 32, 32);}
+		</style>
+	<link href="css/animate.css" rel="stylesheet" type="text/css" />
+    </head>
+<body>
+	<input type="button" value="点击" class="click a_btn" />
+	<div class="choose">
+		<div class="c_title">
+			<h3>选择QQ</h3>
+			<a href="javascript:void(0);" class="close a_btn">x</a>
+		</div>
+		<div id="content">
+			<div class="c_list">
+				<h4>选择QQ：</h4>
+				<ul class="teacher">
+					<li class="">rexhangQQ：1134916452</li>
+					<li>rexhangQQ：1134916452</li>
+					<li>rexhangQQ：1134916452</li>
+					<li>rexhangQQ：1134916452</li>
+					<li>rexhangQQ：1134916452</li>
+					<li>rexhangQQ：1134916452</li>
+					<li>rexhangQQ：1134916452</li>
+					<li>rexhangQQ：1134916452</li>
+					<li>rexhangQQ：1134916452</li>
+					<li>rexhangQQ：1134916452</li>
+					<li>rexhangQQ：1134916452</li>
+				</ul>
+			</div>
+			<div class="c_middle">
+				<a href="javascript:void(0);" id="add">添加</a>
+				<a href="javascript:void(0);" id="del">删除</a>
+				<span>支持选择5个QQ</span>
+			</div>
+			<div class="c_list">
+				<h4>选择QQ：</h4>
+				<ul class="teacher2">
+				</ul>
+			</div>
+		</div>
+		<div class="sub">
+			<a href="javascript:void(0);" class="yes a_btn">确认</a>
+		</div>
+	</div>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript">
+	$(function(){
+		// 收缩功能
+		$(".a_btn").click(function(){
+			$(".choose").toggle(400);
+		});
+		// 点击选择
+		$("#content .c_list").find("li").click(function(){
+		$(this).toggleClass("sel");
+		});
+		// 添加元素
+		$("#add").click(function(){
+			var selVal = $(".teacher").find(".sel");
+			$(".teacher2").append(selVal.removeClass("sel").hide().fadeIn("slow"));
+		});
+		// 删除元素
+		$("#del").click(function(){
+			var selVal = $(".teacher2").find(".sel");
+			$(".teacher").append(selVal.removeClass("sel").hide().fadeIn("slow"));
+		});
+		// click样式
+		$(".teacher li").addClass("animated pulse");
+		$(".teacher li").hover(function(){
+		$(this).toggleClass("pulse").addClass("flash");
+		},function(){
+			$(this).toggleClass("flash").addClass("pulse");
+		});	
+	});
+</script>
+</body>
+</html>

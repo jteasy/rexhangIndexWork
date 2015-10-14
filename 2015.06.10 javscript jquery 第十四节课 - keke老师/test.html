@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>test</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+</head>
+<body>
+    <p><b>i'm rexhangi'm rexhangi'm rexhangi'm rexhangi'm rexhangi'm rexhangi'm rexhangi'm rexhangi'm rexhangi'm rexhangi'm rexhangi'm rexhangi'm rexhangi'm rexhangi'm rexhangi'm rexhangi'm rexhangi'm rexhangi'm rexhangi'm rexhangi'm rexhangi'm rexhangi'm rexhangi'm rexhangi'm rexhangi'm rexhangi'm rexhangi'm rexhangi'm rexhangi'm rexhangi'm rexhangi'm rexhangi'm rexhangi'm rexhangi'm rexhangi'm rexhangi'm rexhangi'm rexhangi'm rexhangi'm rexhangi'm rexhangi'm rexhangi'm rexhangi'm rexhangi'm rexhangi'm rexhangi'm rexhangi'm rexhangi'm rexhangi'm rexhangi'm rexhangi'm rexhangi'm rexhangi'm rexhangi'm rexhangi'm rexhangi'm rexhangi'm rexhangi'm rexhangi'm rexhangi'm rexhangi'm rexhangi'm rexhangi'm rexhangi'm rexhangi'm rexhangi'm rexhangi'm rexhangi'm rexhangi'm rexhangi'm rexhang</b></p>
+    <input type="button" onclick="re_init2();" value="调用父亲窗体方法">
+    <input type="button" onclick="re_init3();" value="调用父亲窗体元素方法">
+    <span class="dis">111</span>
+    <script type="text/javascript">
+        //定义iframe内的方法
+        function re_init(){
+            alert("我是iframe里面的方法!!!");
+        }
+        //调用父窗体方法
+        function re_init2(){
+            parent.fuqin();
+        }
+        //调用父窗体的内容
+        function  re_init3(){
+            var $pElements = parent.document.getElementById("rex").innerText;
+            alert($pElements);
+        }
+    </script>
+</body>
+</html>

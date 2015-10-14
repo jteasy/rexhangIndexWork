@@ -1,0 +1,41 @@
+<html> 
+<head> 
+<title>正在载入...</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+<style>
+	*{margin:0px padding:0px}
+	body{font-family:微软雅黑;font-size:14px;}
+	input{font-family:Arial; font-weight:bolder;
+		color:gray; background-color:white; padding:0px; border-style:none;width:360px}
+	#loading{position:fixed;left:43%;top:40%}
+</style>
+</head> 
+<body> 
+<div id="loading"> 
+<p><font>正在进入……www.rexhang.com</font></p> 
+<p><input type=text name="chart" id="chart" ></p>
+<p><input type=text name="percent" id="percent" ></p>
+</div> 
+<script>
+var bar = 0 
+var line = "||" 
+var amount ="||" 
+count(); 
+function count(){
+	LinkUrl = "http://www.rexhang.com/";
+	bar= bar+5; 
+	amount += line ;
+	document.getElementById("chart").value=amount; 
+	document.getElementById("percent").value=bar+"%" 
+	if (bar<99){
+		setTimeout("count();",500);
+	}
+	else {
+		window.location = LinkUrl;
+	} 
+} 
+</script> 
+</body> 
+</html> 
+
+

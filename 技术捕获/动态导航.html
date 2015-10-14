@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>弹性导航</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<style type="text/css">
+    *{margin: 0; padding: 0;}
+    ul{list-style: none;}
+
+	 .b_nav{margin-top:10px;position:relative;margin: 100px auto;width: 410px;}
+	 .b_nav ul{border-bottom:1px solid #EBEBEB;display: inline-block;width: 410px;}
+	 .b_nav ul li{float:left;font-size:14px;color:#5c5c5c;line-height:32px;font-weight: bold;cursor:pointer;}
+	 .b_nav ul li span{padding: 0 15px}
+	 .b_nav #underline{border-bottom:2px solid #616161;width:63px;position:absolute;bottom:2px;left:0px;height:6px;}
+</style>
+</head>
+<body>
+	<div class="b_nav">
+			<p id="underline"></p>
+			<ul>
+				<li>编程开发<span>|</span></li>
+				<li>网络营销<span>|</span></li>
+				<li>IT设计<span>|</span></li>
+				<li>小语种<span>|</span></li>
+				<li>职业技能</li>
+			</ul>
+	</div>
+    <script type="text/javascript">
+    	window.onload = function(){
+    		var underline = document.getElementById('underline'),
+    			nav = document.getElementsByTagName('li'),
+    			timer= null,speed = 0;
+    		for (var i = 0; i < nav.length; i++) {
+    			nav[i].onmouseover = function(){
+    				elastic(this.offsetLeft);
+    			};
+    			nav[i].onmouseout = function(){
+    				elastic(0);
+    			};
+    		};
+    		function elastic(target) {
+    			clearInterval(timer);
+    			timer = setInterval(function(){
+    				speed += (target - underline['offsetLeft'])/7;
+    				speed *= 0.75;
+    				if(Math.abs(speed) <=1 && Math.abs(target - underline['offsetLeft'])<=1){
+    					clearInterval(timer);
+    					underline['style']['left'] = target+"px";
+    					speed= 0;
+    				}else{
+    					underline['style']['left'] = underline['offsetLeft'] + speed +"px";
+    				}
+    			},30);
+    		}
+    	};
+    </script>
+</body>
+</html>

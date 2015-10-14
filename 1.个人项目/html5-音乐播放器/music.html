@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>顾航_music - Dear Friends</title>
+    <link rel="stylesheet" href="css/haizeistyle.css" media="screen" type="text/css" />
+    <link rel="shortcut icon" href="images/rexhang.ico" />
+</head>
+<body style="background: url('images/haizeibg.jpg') no-repeat top center">
+<div style="text-align:center;clear:both">
+</div>
+	<div class="download">
+		<a href="music/海贼王 - Dear friends.rar">点击下载</a>
+	</div>
+  <div id="container">
+	<label class="to-back-label" for="to-back"><i class="fa fa-bars fa-lg"></i></label>
+	<input type="checkbox" id="to-back">
+	<canvas id="progress" width="320" height="320"></canvas>
+	<div id="player">
+		<audio id="audio" controls>
+			<source src="music/海贼王 - Dear friends.mp3" type="audio/mpeg" codecs="mp3"></source>		
+		</audio>
+		<img src="images/haizeiwang.jpg">
+		<label class="to-lyrics-label" for="to-lyrics"><i class="fa fa-caret-down fa-lg"></i></label>
+		<input type="checkbox" id="to-lyrics">
+		<div class="cover">
+			<div class="controls">
+				<button id="backward" title="Backward"><i class="fa fa-retweet fa-lg"></i></button>
+				<button id="backward" title="Backward"><i class="fa fa-backward fa-2x"></i></button>
+				<button id="play-pause" title="Play" onclick="togglePlayPause()"><i class="fa fa-play fa-3x" id="rex"></i></button>
+				<button id="forward" title="Forward"><i class="fa fa-forward fa-2x"></i></button>
+				<button id="backward" title="Backward"><i class="fa fa-random fa-lg"></i></button>
+				<input id="volume" name="volume" min="0" max="1" step="0.1" type="range" onchange="setVolume()" />
+			</div>
+			<div class="info">
+				<p class="song"><a href="#" target="_blank">Dear friends</a></p>
+			</div>
+			<div class="lyrics">
+				<p>歌词未加载......</p>
+				<p>歌词未加载......</p>
+				<p>歌词未加载......</p>
+				<p>歌词未加载......</p>
+				<p>歌词未加载......</p>
+				<p>歌词未加载......</p>	
+			</div>
+			<p class="scroll">scroll down</p>
+		</div>
+	</div>
+	<div id="flip-back">
+		<ul class="playlist">
+			<h3>歌曲清单</h3>
+			<li><a href="#">1. 海贼王 - X</a></li>
+			<li><a href="#">2. 海贼王 - XX</a></li>
+			<li><a href="#" style="color:#26C5CB;"><i class="fa fa-play" style="margin-right:4px;"></i> 3. 海贼王 - XXXX</a></li>
+			<li><a href="#">4. 海贼王 - XXXXX</a></li>
+			<li><a href="#">5. 海贼王 - XXXXXX</a></li>
+		</ul>
+	</div>
+</div>
+  <script src="js/index.js"></script>
+  <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+  <script type="text/javascript">
+  	// 自动播放
+  	function myClick(){
+  		document.getElementById("rex").click();
+  	}
+  	myClick();
+  	// 旋转
+  	function rexHang(){  		
+  			$("#player").css({
+  			"-webkit-transform":"rotateZ(3600deg)",
+  			"-moz-transform:":"rotateZ(36000deg)",
+  			"-o-transform":"rotateZ(36000deg)",
+  			"-ms-transform":"rotateZ(36000deg)",
+  						});
+  		
+  	}
+  		$("#player").addClass("animated360");	
+  </script>
+</body>
+</html>

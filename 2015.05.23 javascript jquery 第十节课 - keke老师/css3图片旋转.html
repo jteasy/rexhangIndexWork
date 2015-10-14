@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>css3图片旋转</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+</head>
+<body>
+    <img src="images/2.jpg" id="img" width="150" height="150" />
+    <input type="button" value="顺时针旋转" onclick="goRate(1)" />
+    <input type="button" value="逆时针旋转" onclick="goRate(2)" />
+    <input type="button" value="暂停" onclick="goRate2()" id="stopp" />
+    <script type="text/javascript">
+    	var deg = 0;
+    	var timer = null;
+    	function goRate(flag){
+    		clearInterval(timer);
+    		var imgDom = document.getElementById("img");
+    		imgDom.style.borderRadius = "50%";
+    		imgDom.style.border = "1px solid blue";
+    		timer = setInterval(init,1);
+    		function init(){
+    			if(flag==1){
+    				deg++;
+    			}else{
+    				deg--;
+    			}
+    			imgDom.style.transform = "rotate("+deg+"deg)";
+    		}
+    	}
+    	function goRate2(){
+    		clearInterval(timer);
+    		var stoDom = document.getElementById("stopp");
+    		var i = stoDom.value;
+    		if(i=="暂停"){
+    			stoDom.value = "继续旋转";
+    		}else{
+    			stoDom.value = "暂停";
+
+    		}    		
+    	}
+
+    </script>
+</body>
+</html>

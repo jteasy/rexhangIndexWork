@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+</head>
+<body>
+    <script type="text/javascript" src="jquery-1.11.1.min.js"></script>
+    <script type="text/javascript">
+    $(function(){
+        /*
+            一、ajax的一般格式
+            $.ajax({
+                type:'post',
+                url:_url,
+                data:_data,
+                success:_success,
+                dataType:_dataType
+            });
+        */
+
+        /*
+            二、$.ajax的参数描述
+            参数 描述
+            url                                                   必需。规定把请求发送到哪个 URL。
+            data                                                可选。映射或字符串值。规定连同请求发送到服务器的数据。
+            success(data, textStatus, jqXHR)       可选。请求成功时执行的回调函数。
+            dataType    
+                                                                    可选。规定预期的服务器响应的数据类型。
+                                                                    默认执行智能判断（xml、json、script 或 html）。
+        */
+
+        /*
+            三、$.ajax需要注意的一些地方：
+              1.data主要方式有三种，html拼接的，json数组，form表单经serialize()序列化的；通过dataType指定，不指定智能判断。
+              2.$.ajax只提交form以文本方式，如果异步提交包含<file>上传是传过不过去,需要使用jquery.form.js的$.ajaxSubmit
+        */
+    });
+    </script>
+</body>
+</html>

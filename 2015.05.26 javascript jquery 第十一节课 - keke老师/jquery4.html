@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>jquery4</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<script type="text/javascript" src="jquery-1.11.1.min.js"></script>
+<style type="text/css">
+	.rex_div{width: 100px;height: 30px;border: 1px solid #000;}
+</style>
+</head>
+<body>
+    <select>
+    	<option>11</option>
+    	<option selected="selected">22</option>
+    </select>
+    <input type="radio" checked="checked" name="rex" value="1">man
+    <input type="radio"  value="2">men
+    <input type="checkbox">
+    <input type="text" />
+    <textarea></textarea>
+    <div class="rex_div"></div>
+    <div class="rex_div"></div>
+    <div class="rex_div"></div>
+    <div class="rex_div"></div>
+    <script type="text/javascript">
+    	$(function(){
+    		//:checked :selected :input :text :even :odd :radio :checkbox
+    		//selected在option下使用如上↑↑↑↑↑
+
+    		//:checked 匹配所有checked=checked的
+    		var radioChecked = $("input[type='radio'][name='rex']:checked").val();
+    		//alert(radioChecked);
+
+    		//:input 匹配所有可输入框
+    		var input = $(":input").length;
+    		//alert(input);
+
+    		//:text;
+    		var text = $(":text").length;
+    		//alert(text);
+
+    		//:odd(偶数) :even(奇数)
+    		$(".rex_div:odd").css({
+    			"background":"#F50"
+    		});
+    		$(".rex_div:even").css({
+    			"background":"#000"
+    		});
+    	});
+    </script>
+</body>
+</html>

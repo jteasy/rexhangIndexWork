@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+	<head>
+		<!--声明当前页面的编码集：charset=gbk,gb2312（中文编码），utf-8（国际编码）-->
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<!--当前页面的三要素-->
+		<title>2015.04.18 javascript jquery 第二节课 - keke老师</title>
+		<meta name="Keywords" content="关键词,关键词">
+		<meta name="description" content="">
+		<link rel="shortcut icon" href="../1.images/rexhang.ico" />
+		
+		<!--css,js-->
+		<style type="text/css">
+			*{margin:0;padding:0;}
+	
+		</style>
+
+    </head>
+<body>
+	<a href="#">测试1</a>
+	
+	<!--this代表当前元素本身-->
+	<a href="javascript:void(0);" onclick="test(this);">测试二</a><!--推荐方法-->
+
+	<a href="javascript:;" onclick="test(this);">测试三</a>
+
+	<a href="javascript:test(this);">测试四</a><!--致命的缺陷，不要使用！-->
+
+		<a href="javascript:void(0);" onclick="test();">测试二</a><!--推荐方法-->
+
+		<a href="javascript:;" onclick="test();">测试三</a>
+
+		<a href="javascript:test();">测试四</a><!--致命的缺陷，不要使用！-->	
+	
+	<script type="text/javascript">
+		// java 基础数据类型 8种
+		// byte1 char2 short2 int4 long8 float4 double8 boolean1
+		// short char byte 不能参与算数运算 
+		// byte c = 1;
+		// int m = c+1; 这样就可以!
+		// javascript 基础数据类型 1种
+		// var 弱语言类型
+		// javascript 里面的变量名和java一样，是以字母、下划线、美元符号开头
+		var str = "我爱中国人民共和国";
+		var mumber = 12;
+		var money = 12.34;
+		var flag = true;
+		/*
+			javascript定义方法 function 它是一个对象
+			Arguments:动态
+			格式是：function 方法名(Arguments){						
+			}
+		*/
+		/*
+			在方法内的变量也是全局变量!
+		*/
+		var str = 1;
+		function test(){
+			// 生命周期和方法共存
+			strs = 2;/*全局变量*/
+			var strss = 3; /*局部变量*/			
+			alert(strss);
+			alert(obj.innerText);
+		}
+		/*	
+			1.javascript只有一种var弱语言类型
+			1.所有的javascript注释都用“/*”形式，谨防压缩代码产生问题！
+			2.变量的定义：使用var，和java一样，是以字母、下划线、美元符号开头
+		*/
+		document.write("<p style='color:#fff;background:#000;'>"+str+"</p>");
+		/*
+			javascript ---封装---> jQuery
+		*/
+	</script>
+
+	<script type="text/javascript"> /*ECMA*/
+		/*所有的javascript必须有一个叫script标签包裹的脚本才能生效*/
+		/*必须写在script标签内*/
+		/*脚本运行的是块运行*/
+	</script>
+	<script type="text/javascript">
+		alert(this==window);
+		alert(typeof this);
+	</script>
+</body>
+</html>

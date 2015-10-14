@@ -1,0 +1,73 @@
+
+<!doctype html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>jQuery - Ajax - Arry老师</title>
+		<meta name="Keywords" content="关键词,关键词">
+		<meta name="description" content="">
+
+		<style type="text/css">
+			*{margin:0;padding:0;}
+			body{font-size:12px;font-family:"微软雅黑";color:#666;}
+			/*show start*/
+			.show{width:900px;margin:100px auto;}
+			.show .s_menu{width:900px;height:38px;border-bottom:2px solid #F1F1F1;}
+			.show .s_menu ul li{float:left;line-height:38px;padding:0px 20px;list-style:none;background:#F1F1F1;margin-right:5px;border-radius: 4px 4px 0 0;font-size:14px;cursor: pointer;}
+			.show .s_menu ul .sel{background:#E53526;color:#fff;}
+			.show .con{width:900px;height:200px;display:none;color:#fff;}
+			.show .one{background:#F60;display:block;}
+			.show .two{background:#690;}
+			.show .three{background:#930;}		
+			/*end show*/
+		</style>
+
+	</head>
+<body>
+
+	<!--show start-->
+	<div class="show">
+		<div class="s_menu">
+			<ul id="s_ul">
+				<li class="sel">新品上市</li>
+				<li>精品热卖</li>
+				<li ajax="true" url="data.html">特价优惠</li>
+			</ul>
+		</div>
+		<div class="con one">我是第一个</div>
+		<div class="con two">二</div>
+		<div class="con three">三个</div>		
+	</div>
+	<!--end show-->
+
+<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$("#s_ul").find("li").hover(function(){
+			$(this).addClass("sel").siblings().removeClass("sel");
+			var _index = $(this).index();
+			$(".con").hide().eq(_index).show();
+
+			var ajax = $(this).attr("ajax");
+			var url = $(this).attr("url");
+			
+			var con = $(".con").eq(_index);
+
+			if(ajax){
+				$.ajax({
+					type:"post",
+					url:url,
+					beforeSend:function(){
+						con.html("<img src='images/loading.gif'/>");
+					},
+					success:function(data){
+						con.html(data);
+					}
+				});
+			}
+		});
+	});
+</script>
+
+</body>
+</html>

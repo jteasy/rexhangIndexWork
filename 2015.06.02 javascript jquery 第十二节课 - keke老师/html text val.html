@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>html text val</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link href="" rel="stylesheet">
+</head>
+
+<body>
+    <div id="box" class="re-box"><span>child</span></div>
+    <script type="text/javascript" src="jquery-1.11.1.min.js"></script>
+    <script type="text/javascript">
+    $(function() {
+        //html text val
+        //javascript == innerHTML innerText outerHTML outerText
+        var innerHTML = document.getElementById("box").innerHTML;
+        var innerText = document.getElementById("box").innerText;
+        var outerHTML = document.getElementById("box").outerHTML;
+        var outerText = document.getElementById("box").outerText;
+        alert(innerHTML + "→→→" + innerText + "→→→" + outerHTML + "→→→" + outerText);
+
+        var $html = $("#box").html();
+        var $text = $("#box").text();
+        alert("jqHtml" + $html);
+        alert("jqText" + $text);
+
+        /*	
+        	把整个对象移动到xxx对象内
+			例如DIV【覆盖】
+        */
+        xxx.html($("#id"));
+        /*
+			追加-后面
+        */
+        xxx.append($("#id"));
+        /*
+			追加-前面
+        */
+        xxx.prepend($("#id"));
+
+    });
+    </script>
+</body>
+
+</html>

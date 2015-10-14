@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+</head>
+<body>
+    <div contenteditable="true" id="rex" style="width:500px;height:300px;border:1px solid #ccc;outline:none;"></div>
+    <input type="button" onclick="setAttr(this);" value="点击使DIV变为不可编辑" />
+    <script type="text/javascript">
+        var i = document.getElementById("rex");
+        function setAttr(obj){
+            if(obj.value=="点击使DIV变为不可编辑"){
+                alert("现在DIV内不可编辑文字了！");
+                i.setAttribute("contenteditable","false");
+                obj.value = "点击使DIV变为可编辑";
+            }else if(obj.value=="点击使DIV变为可编辑"){
+                alert("现在DIV内可编辑文字了！");
+                i.setAttribute("contenteditable","true");
+                obj.value = "点击使DIV变为不可编辑";
+            }
+        }
+        
+    </script>
+</body>
+</html>

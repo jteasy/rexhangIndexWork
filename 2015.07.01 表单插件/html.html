@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Examples</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link href="" rel="stylesheet">
+</head>
+
+<body>
+    <form id="fom" action="进度条.html">
+        <!-- trequired：必填项 自己命名的 -->
+        *账号：<input type="text" id="reg" trequired="true" name="ts" ><span></span>
+        <br>
+        <br>
+        *密码：<input type="password" trequired="true" id="password" name="ts" >
+        <br>
+        <br>
+        提交：<input type="button" value="提 交" class="tmui_submit" > 
+    </form>
+
+    <script type="text/javascript" src="jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="1.js"></script>
+    <script type="text/javascript">
+    $(function() {
+        $("#fom").chajianName();
+    });
+    </script>
+</body>
+
+</html>

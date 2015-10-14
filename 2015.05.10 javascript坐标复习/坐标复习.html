@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>document</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+</head>
+<body>
+	<p id="creat" style="width: 300px;border:1px solid red;background: #000;color: #fff;">这里即将显示坐标</p>
+    <script type="text/javascript">
+    function $(id){
+    	return document.getElementById(id);
+    }//封装对象
+    	window.onmousemove = init;
+    	function init(){
+    		var E = event || window.event;
+    		var X = E.pageX;
+    		var Y = E.pageY;
+    		$("creat").innerText = "当前鼠标的X轴坐标为："+X+"；Y轴的坐标为"+Y;		
+    	}
+
+    </script>
+</body>
+</html>

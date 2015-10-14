@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Document</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+</head>
+<body>
+	<input type="text" value="123" id="username" />
+	<input type="text" value="456" id="username" />	
+	<div id="rex" >1111111</div>
+	<div id="divText"><p>rexhang</p></div>
+	<div>888</div>
+	<div>999</div>
+	<!--ECMASCRIPT version:4.0x have not class-->
+    <script type="text/javascript">
+    	//操作网页上的标签元素就使用document
+
+    	//什么是document 文档对象模型（Document Object Model）----DOM
+    	//写方法和定义的时候严格区分大小写
+    	//id选择器：唯一标识符,效率高
+    	//方法：document.getElementById(元素的id)根据id获取对象,相同id没意义
+    	//.value只有form元素才有意义
+    	var _value = document.getElementById("username").value;
+    	document.write(_value);
+
+    	var divHTML = document.getElementById("divText").innerHTML;
+    	var divText = document.getElementById("divText").innerText;
+    	//alert(divHTML);//获取带标签的
+    	//alert(divText);//过滤标签
+    	var divHTML = document.getElementById("divText").outerHTML;
+    	var divText = document.getElementById("divText").outerText;
+    	//alert(divHTML);//和innerHTML区别，带自身
+    	//alert(divText);
+
+    	// getAttribute + setAttribute
+    	var th = document.getElementById("username").setAttribute("value","guhang");	
+    	//var _th = document.getElementById("username").getAttribute("value");
+    	var _th = document.getElementById("username").value;
+    	//alert(_th);
+
+    	var al = document.getElementsByTagName("div");
+    	//alert(al.length);
+    	document.write("<br />" + al[0].innerHTML);
+    	document.write("<br />" + al[1].innerHTML);
+    	//document.getElementsByName();
+
+    	/*
+	    	var hs = [1,2,3,4,5,6,7,8,9];
+	    	hs.push("100");
+	    	alert(hs.toString());
+	    	前面只是点提要push();为数组新增数;
+    	*/
+    </script>
+</body>
+</html>

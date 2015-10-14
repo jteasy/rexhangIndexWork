@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+	<head>
+		<!--声明当前页面的编码集：charset=gbk,gb2312（中文编码），utf-8（国际编码）-->
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<!--当前页面的三要素-->
+		<title>javascript数组</title>
+		<meta name="Keywords" content="关键词,关键词">
+		<meta name="description" content="">
+		<link rel="shortcut icon" href="../1.images/rexhang.ico" />
+		
+		<!--css,js-->
+		<style type="text/css">
+			*{margin:0;padding:0;}
+	
+		</style>
+
+    </head>
+<body>
+	<script type="text/javascript">
+	/*
+		1:定义数组
+		var arr = []; //定义了一个长度为0的数组
+		var arr = new Array();
+		2:数组的初始化
+		a:定义就初始化和赋值
+		var arr = ["1","2"];
+		b:先定义后赋值
+		var arr = [];
+		arr[0] = "名字1";
+		arr[1] = "名字2";
+		c:数组小标是从0开始，也就是第一个元素就是：arr[0]最后一个元素就是arr[arr.length-1]
+		d:长度是数组.length;java中的数组的长度是length,而字符串的String的长度是length();
+		e:push()方法可向数组的末尾添加一个或多个元素，并返回新的长度
+		f:toString()可将数组转换成字符串
+		g:concat()数组的合并
+		h:join()可将数组之间的连接符号更换
+		i:pop()数组删除最后一个元素并返回
+		j:shift()数组删除第一个元素并返回
+		k:splice(index,count,"")追加元素
+		l:slice(index,endIndex);数组的截取(需要重新赋值var new = new.slice(););从index截取到endIndex-1
+		m:sort();默认升序
+		n:split(",");将以“ , ”相连的字符串转成数组
+	*/
+		var arr = ["鼓励","加油","奋斗"]
+		//alert("arr数组的长度是：" + arr.length);
+		//alert("最后一个数是：" + arr[arr.length-1]);
+		arr.push("发愤");
+		//alert("push后新增的数是：" + arr[3]);
+		//alert(typeof arr); //object类型
+		//alert(typeof arr.toString()); //String类型
+		var arr1 = ["顾航","顾林"];
+		var add = arr1.concat(arr);
+		//alert("concat合并之后的数组：" + add);
+		//alert("在没有使用join之前链接符号为逗号：" + add.toString()); 
+		var add2 = add.join("$");
+		//alert("在没有使用join之后链接符号为$：" + add2.toString());
+		//alert("在没有使用join之后链接符号为$：" + add2);
+		var arr7 = ["rexhang1","rexhang2","rexhang3"];
+		var al1 = arr7.pop();
+		//alert(al1);
+		//alert(arr7); 		 
+		var al2 = arr7.shift();
+		//alert(al2);
+		//alert(arr7);
+		var arr8 = [1,2,3,4,5,6,7,8];
+		//arr8.splice(2,0,"rexhang");//splice(index,0,"")，count = 0的时候，下标元素之前追加
+		//arr8.splice(3,2,"顾航");//找到下标3的往后1个（包含本身）删除替换为“顾航”
+		/*arr8.splice(-100,-100,"顾航"); = arr8.splice(0,0,"顾航");*/
+		//document.write("<p>"+arr8+"</p>"); 
+		var arr9 = [1,2,3,4,5,6,7,8,9];
+		arr9 = arr9.slice(0,3);
+		//document.write(arr9);//1,2,3
+		//arr9 = arr9.slice(3);
+		//document.write(arr9);//4,5,6,7,8,9		
+		//arr9 = arr9.slice(6,9);
+		//document.write(arr9);//7,8		
+		//arr9 = arr9.slice(2,100);
+		//document.write(arr9);//3,4,5,6,7,8,9
+		var arr10 = [9,8,7,6,5,4,3,2,1];
+		document.write("arr默认数组为：" + arr10 + "<br />");
+		arr10.sort();
+		document.write("arr升序之后数组为：" + arr10 + "<br />");
+		arr10.sort(function(a,b){
+			return b - a;//升序 a-b
+		})
+		document.write("arr降序之后数组为：" + arr10);
+	</script>
+</body>
+</html>

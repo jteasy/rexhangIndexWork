@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>data</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+</head>
+<body>
+    <div id="ref" data-name="rexhang"></div>
+    <input type="button" value="load data" onclick="init(this);">
+    <script type="text/javascript" src="jquery-1.11.1.min.js"></script>
+    <script type="text/javascript">
+    $(function(){
+        // data ≈ attr
+       //$("body").data("id",123);
+    });
+
+    //可以直接获取到data-属性 = 属性值的方法[直接输入data("属性") -------属性必须全部小写!!!]
+    //但是！！！ attr 不区分大小写！！！！！！！！
+    function init(){
+        var ids = $("#ref").data("name");
+        alert(ids);
+    }
+    </script>
+</body>
+</html>

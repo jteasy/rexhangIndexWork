@@ -1,0 +1,173 @@
+﻿<!doctype html>
+<html>
+<head>
+	<!--声明当前页面的编码集：charset=GBK,GB2312(中文编),UTF-8(国际编码)-->
+	<meta http-equiv="Content-Type"content="text/heml;charset=UTF-8">
+	<!--当前页面的三要素-->
+	<title>第十七节：弹幕技术</title>
+	<meta name="Keywords" content="关键词，关键词">
+	<meta name="description" content="">
+	<!--css.js-->
+	<style type="text/css">
+	.text{text-shadow: 0 0 10px #BB90FC;}
+	body{width:1350px;position:relative;}
+	*{margin:0;padding:0;font-size:12px;color:#666;font-family:"微软雅黑";}
+	/*背景图片start*/
+	.back{margin:0 auto;display:block;z-index:0;}
+	/*end背景图片*/
+	/*标题start*/
+	.title{text-align:center;color:#666;font-family:"微软雅黑";margin-top:20px;}
+	/*end标题*/
+	/*版权start*/
+	.copy{text-align:center;color:#666;line-height:40px;position:absolute;bottom:10px;width:100%;}
+	/*end版权*/
+	/*弹幕start*/
+	.btn{position:absolute;top:328px;right:350px;
+	background:url("/demo/html+css/seventeen/images/btn.png") no-repeat;
+	background-position:0px -10px;
+	padding-left:16px;}
+	.btn:hover{background-position:0px -41px;color:#61C531;cursor:pointer;}
+	.dm{width:100%;height:100%;position:absolute;top:0;left:0;display:none;}
+	.dm .screen,.dm .screen .mask{width:100%;height:100%;
+	position:fixed;top:0;left:0;}
+	.dm .screen .mask{opacity:0.8;filter:alpha(opacity=80);
+	z-index:1;background:#000;position:absolute;}
+	.dm .screen .s_close{background:url("/demo/html+css/seventeen/images/close.png") no-repeat;
+	position:absolute;top:20px;right:20px;z-index:2;width:38px;height:38px;
+	display:none;border-radius:20px;}
+	.dm .screen .s_close:hover{background-position:0 -41px;}
+	.dm .send{width:100%;height:76;position:fixed;bottom:0;left:0;}
+	.dm .send .s_fiter{width:100%;height:76px;background:#000;
+	position:absolute;bottom:0;left:0;z-index:2;
+	opacity:0.8;filter:alpha(opacity=80);}
+	.dm .send .s_con{width:100%;height:76px;background:#000;
+	position:absolute;bottom:0;left:0;z-index:2;padding:auto;
+	text-align:center;line-height:76px;
+	}
+	.dm .send .s_con .s_txt{
+	width:45%;height:38px;border:0;
+	border-radius:3px 0 0 3px;
+	font-size:16px;
+	color:#666;line-height:36px;}
+	.dm .send .s_con .s_sub{width:10%;height:38px;
+	background:#65c33d;border:1px solid #65c33d;font-size:16px;
+	color:#fff;border-radius:0 3px 3px 0;cursor:pointer;margin:-4px;}
+	.dm .send .s_con .s_sub:hover{background:#3eaf0e;border:1px solid #65c33d;}
+	.dm .screen .s_show{position:relative;z-index:4;}
+	.dm .screen .s_show div{position:absolute;top:76;left:0;
+	line-height:36px;font-size:22px;font-weight:500;z-index:999;}
+	/*end弹幕*/
+	/*回到顶部start*/
+			.ico{width:50px;height:40px;
+			position:fixed;
+			right:30px;
+			bottom:100px;
+			display:none;
+			
+			}
+			.ico_top{width:50px;height:40px;
+			background:url("/icon_top.png") no-repeat;
+			background-color:#444;
+			background-position:center;
+			cursor:pointer;display:block;
+			border-radius:5px;
+			opacity:0.8;filter:alpha(opacity=80);
+			}
+			/*回到顶部end*/
+	</style>
+	<!--引入潭州官方css动画类库-->
+	<link type="text/css" rel="stylesheet" href="/demo/html+css/seventeen/css/tz.css"></link>
+	</head>
+<body>
+	<!--背景图片start-->
+	<img class="back" src="/demo/html+css/seventeen/images/360.png" width="1146" height="1836" />
+	<!--end背景图片-->
+	<!--弹幕start-->
+	<div class="btn">弹幕</div>
+	<div class="dm">
+	<div class="screen">
+			<a href="javascript:void(0)" class="s_close"></a>
+			<div class="mask"></div>
+			<div class="s_show">
+			
+			</div>
+	</div>
+	<div class="send">
+		<div class="s_fiter"></div>
+		<div class="s_con">
+			<input type="text" class="s_txt" />
+			<input type="button" class="s_sub" value="发表评论" id="send_sub" />
+		</div>
+	</div>
+	</div>
+	<!--end弹幕-->
+	<div class="ico">
+		<span class="ico_top" title="回到顶部"></span>
+	</div>
+	
+	<script type="text/javascript" src="/js/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="/js/dingbu.js"></script>
+	<script type="text/javascript">
+		$(function(){
+		//调用初始化弹幕函数
+		init_screen();
+		// 点击展开和关闭
+		$(".btn,.s_close").click(function(){
+			$(".dm,.s_close").toggle("slow");
+		});
+		//发送信息start  随机数Math.floor(Math.random()*n+1)n代表0-n
+		var a = new Array('twisterInUp','openDownRight','openUpLeft','openUpRight',
+		'openUpRight','openDownLeftRetourn','openDownRightRetourn',
+		'openUpLeftRetourn','openUpRightRetourn','perspectiveDownRetourn',
+		'perspectiveLeftRetourn','perspectiveRightRetourn','perspectiveRightRetourn'
+		,'perspectiveUpRetourn','puffIn','slideDown','slideLeft','slideRight',
+		'slideUp','swap','twisterInDown','swashIn','foolishIn','boingInUp'
+		);
+		$("#send_sub").click(function(){
+			var _rand = parseInt(Math.random() *23+ 1);
+			var text = $(".s_txt").val();
+			var _label = $("<div class='text magictime "+a[_rand]+"'>"+text+"</div>");
+			$(".s_show").append(_label);
+			init_screen();
+		});
+		//end发送信息
+		// 初始化弹幕
+		function init_screen(){
+			var _top = 0;
+			$(".s_show").find("div").show().each(function(){
+				var _left = $(window).width() - $(this).width(); // 浏览器的最大宽度，div的left值
+				var _height = $(window).height(); // 浏览器的最大高度
+				
+				_top = _top + 76;
+				if(_top >= _height - 100){
+					_top = 0;
+				}
+				
+				// 设定文字的初始化位置
+				$(this).css({left:_left,top:_top,color:getRandomColor()});
+				
+				// 根据取余 设定不一样的时间
+				var time = 10000;
+				if($(this).index() % 2 == 0){
+					time = 20000;
+				}
+				// 动起来
+				$(this).animate({left:"-"+_left+"px"},time,function(){
+					$(this).remove();
+				});
+
+			});
+		}
+		
+		});
+		//随机获取颜色值start
+		function getRandomColor(){
+		return '#' + (function(h) {
+			return new Array(7 - h.length).join("0") + h
+		})((Math.random() * 0x1000000 << 0).toString(16))	
+		}//end随机获取颜色值
+
+
+	</script>
+</body>
+</html>

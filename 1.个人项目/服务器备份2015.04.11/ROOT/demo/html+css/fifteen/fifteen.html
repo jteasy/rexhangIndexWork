@@ -1,0 +1,192 @@
+<!doctype html>
+<html>
+<head>
+	<!--声明当前页面的编码集：charset=GBK,GB2312(中文编),UTF-8(国际编码)-->
+	<meta http-equiv="Content-Type"content="text/heml;charset=UTF-8">
+	<!--当前页面的三要素-->
+	<title>第十五节：css高级 - 下 - 两列布局、三列布局、定位布局 、透明技术</title>
+	<meta name="Keywords" content="关键词，关键词">
+	<meta name="description" content="">
+	<!--css.js-->
+	<link rel="stylesheet" href="/css/bg2.css" type="text/css" />
+	<style type="text/css">
+			/*版权start*/
+			.copy{font-size:18px;text-align:center;
+			color:#666;line-height:40px;width:100%;}
+			/*版权end*/
+			/*标题start*/
+			.title{text-align:center;color:#666;
+			font-family:"微软雅黑";margin-top:20px;}
+			h2{color:#93c}
+			h3{color:#60f}
+			h4{color:#f30}
+			/*标题end*/
+			/*两列布局start*/
+			.div_two{width:1000px;height:100px;
+			border:1px solid red;margin:0 auto;}
+			.div_two .div_left{width:50%;height:100px;background:#f60;float:left;}
+			.div_two .div_right{width:50%;height:100px;background:#33cc00;float:left;}
+			/*
+				自适应宽度
+				1. width:auto;
+				2. 不写
+			*/
+			.left{height:100px;background:#690;}
+			.right{height:100px;background:#F90;}
+			.content{width:1000px;height:100px;
+			border:1px solid red;margin:0 auto;}
+			.content .c_left{width:300px;height:100px;
+			background:#6C0;float:left;}
+			.content .c_right{width:700px;height:100px;
+			background:#F93;float:left}
+			/*两列布局end*/
+			/*三列布局start*/
+			.contents{width:1000px;height:100px;
+			border:1px solid red;margin:0 auto;}
+			.contents .cs_left{width:200px;height:100px;
+			background:#690;float:left;}
+			.contents .cs_center{width:500px;height:100px;
+			background:#69F;float:left;}
+			.contents .cs_right{width:300px;height:100px;
+			background:#F93;float:left;}
+			/*三列布局end*/
+			/*定位布局start*/
+			.position{margin:0 auto;display:block;}
+			/*header start*/
+			.header{width:1000px;height:150px;background:#6C6;margin:0 auto;}
+			/*end header*/	
+			/*content start*/
+			.contentt{width:1000px;background:#F96;margin:0 auto;}
+			.contentt .ct_nav{width:1000px;height:400px;}
+			.contentt .ct_nav .ct_left{width:200px;height:400px;background:#963;float:left;}
+			.contentt .ct_nav .ct_center{width:600px;height:400px;background:#66F;float:left;}
+			.contentt .ct_nav .ct_right{width:200px;height:400px;background:#963;float:left;}
+			.contentt .c_list{width:1000px;height:200px;border:1px solid #000;}
+			/*end content*/
+			/*footer start*/
+			.footer{width:1000px;height:100px;background:#000;margin:0 auto;}
+			/*end footer*/
+			/*定位布局end*/
+			/*透明技术start*/
+			.opacity{background:#fff;}
+			.opacity .it a img{border:0;}
+			.opacity .it{float:left;margin:5px;position:relative;}
+			.opacity{width:1160px;height:535px;margin:0 auto;}
+			.opacity .p_7{margin-top:10px;margin-left:10px;}
+			.opacity .p_1,.opacity .p_2{margin-top:10px;}
+			.opacity .it .text{color:#fff;
+			text-align:center;
+			padding:5px 10px 5px 10px;background:#000;
+			border-radius:100px;
+			opacity:0.7;filter:alpha(opacity=70);
+			position:absolute;
+			bottom:10px;right:10px;}
+			.opacity .it a:hover{opacity:0.7;filter:alpha(opacity=70);}
+			/*透明技术end*/
+			/*回到顶部start*/
+			.ico{width:50px;height:40px;
+			position:fixed;
+			right:30px;
+			bottom:100px;
+			display:none;
+			
+			}
+			.ico_top{width:50px;height:40px;
+			background:url("/images/icon_top.png") no-repeat;
+			background-color:#444;
+			background-position:center;
+			cursor:pointer;display:block;
+			border-radius:5px;
+			}
+			/*回到顶部end*/
+	</style>
+	</head>
+<body>
+	<h1 class="title">第十五节：css高级 - 下 - 两列布局、三列布局、定位布局 、透明技术</h1>
+	<!--两列布局start-->
+	<h2>两列布局</h2>
+	<h3>两列自适应宽度</h3>
+	<h4>代码实例：</h4>
+	<div class="div_two">
+		<div class="div_left"></div>
+		<div class="div_right"></div>
+	</div><br />
+	<div class="left"></div>
+	<div class="right"></div><br />
+	<h3>两列固定宽度</h3>
+	<h4>代码实例：</h4>
+	<div class="content">
+		<div class="c_left"></div>
+		<div class="c_right"></div>
+	</div><br ><hr />
+	<!--两列布局end-->
+	<!--三列布局start-->
+	<h2>三列布局</h2>
+	<div class="contents">
+		<div class="cs_left"></div>
+		<div class="cs_center"></div>
+		<div class="cs_right"></div>
+	</div><br /><hr />
+	<!--三列布局end-->
+	<!--定位布局start-->
+	<h2>定位布局</h2>
+	<!--header start-->
+	<img src="/demo/html+css/fifteen/images/1.png" class="position" width="389" height="273" alt="定位布局" title="定位布局">
+	<div class="header">header 头部</div>
+	<!--end header-->
+
+	<!--content start-->
+	<div class="contentt">
+		<div class="ct_nav">
+			<div class="ct_left"></div>
+			<div class="ct_center"></div>
+			<div class="ct_right"></div>
+		</div>
+		<div class="c_list"></div>
+		<div class="c_list"></div>
+		<div class="c_list"></div>
+	</div>
+	<!--end content-->
+	<!--footer start-->
+	<div class="footer">bottom 底部</div><br /><hr />
+	<!--end footer-->
+	<!--定位布局end-->
+	<!--透明技术start-->
+	<h2>透明技术:opacity</h2>
+	<p>1.opacity:0.9;filter:alpha(opacity=90) ;</p>
+	<p>2.filter: progid:DXImageTransform.Microsoft.gradient(enabled='true', startColorstr='#BFFFFFFF', endColorstr='#BFFFFFFF');</p>
+	<p>background: rgba(255,255,255,.75);</p>
+	<h4>代码实例:</h4>
+	<div class="opacity">
+		<div class="p_7 it">
+			<a href="javascript:void(0)"><img src="/demo/html+css/fifteen/images/7.jpg" height="515" width="320" alt="车" title="车">
+			<span class="text">炫酷跑车</span></a>
+		</div>
+		<div class="p_1 it">
+			<a href="javascript:void(0)"><img src="/demo/html+css/fifteen/images/1.jpg" height="250" width="400" alt="兰博基尼" title="兰博基尼">
+			<span class="text">兰博基尼</span></a>
+		</div>
+		<div class="p_2 it">
+			<a href="javascript:void(0)"><img src="/demo/html+css/fifteen/images/2.jpg" height="250" width="400" alt="跑车" title="跑车">
+			<span class="text">跑车</span></a>
+		</div>
+		<div class="p_3 it">
+			<a href="javascript:void(0)"><img src="/demo/html+css/fifteen/images/3.jpg" height="250" width="400" alt="桌面车" title="车">
+			<span class="text">桌面车</span></a>
+		</div>
+		<div class="p_4 it">
+			<a href="javascript:void(0)"><img src="/demo/html+css/fifteen/images/4.jpg" height="250" width="400" alt="概念车" title="概念车">
+			<span class="text">概念车</span></a>
+		</div>
+	</div><br /><hr />
+	<!--透明技术end-->
+	<div class="ico">
+		<span class="ico_top" title="回到顶部"></span>
+	</div>
+	<!--版权start-->
+	<p class="copy">Copyright&copy;201501&nbsp;潭州学院-完美</p>
+	<!--版权end-->
+	<script type="text/javascript" src="/js/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="/js/dingbu.js"></script>
+</body>
+</html>

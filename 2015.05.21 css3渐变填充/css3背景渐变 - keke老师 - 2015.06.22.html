@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>css3背景渐变</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link href="" rel="stylesheet">
+    <style type="text/css">
+    #sd {
+        height:600px;
+        width:800px;
+        margin: 0 auto;
+        border: 1px solid red;
+        box-shadow: inset 0px 0px 20px #ff0, inset 0px 0px 30px #000;
+        /*inset 内部阴影*/
+        border-radius: 4px 8px 16px 32px;
+        background: -webkit-linear-gradient(90deg,#fff 0%,red 50%,blue 100%);
+        background: -moz-linear-gradient(90deg,#fff 0%,red 50%,blue 100%);
+        background: -ms-linear-gradient(90deg,#fff 0%,red 50%,blue 100%);
+        background: -o-linear-gradient(90deg,#fff 0%,red 50%,blue 100%);       
+        background: linear-gradient(90deg,#fff 0%,red 50%,blue 100%);
+        /*90deg意思是渐变方向，默认垂直方向*/
+    }
+    #ds {
+        height:600px;
+        width:800px;
+        margin: 0 auto;
+        border: 1px solid red;
+        box-shadow: inset 0px 0px 20px #ff0, inset 0px 0px 30px #000;
+        /*inset 内部阴影*/
+        border-radius: 4px 8px 16px 32px;
+        background: -webkit-radial-gradient(center,circle cover,#fff 1%,#527862 50%,#000 100%);       
+        background: -moz-radial-gradient(center,circle cover,#fff 1%,#527862 50%,#000 100%);       
+        background: -ms-radial-gradient(center,circle cover,#fff 1%,#527862 50%,#000 100%);       
+        background: -o-radial-gradient(center,circle cover,#fff 1%,#527862 50%,#000 100%);       
+        background: radial-gradient(center,circle cover,#fff 1%,#527862 50%,#000 100%);
+        /*90deg意思是渐变方向，默认垂直方向*/
+    }
+    #dss {
+        height:600px;
+        width:800px;
+        margin: 0 auto;
+        /*inset 内部阴影*/
+        border-radius: 4px 8px 16px 32px;
+        background: -webkit-linear-gradient(180deg,#111,#666);       
+        background: -moz-linear-gradient(180deg,#111,#666);    
+        background: -ms-linear-gradient(180deg,#111,#666);     
+        background: -o-linear-gradient(180deg,#111,#666); 
+        background: linear-gradient(180deg,#111,#666); 
+        /*90deg意思是渐变方向，默认垂直方向*/
+    }
+    #dsss {
+        height:400px;
+        width:800px;
+        margin: 0 auto;
+        border-radius:4px;
+        border: 1px solid red;
+
+        background-color: #fff; 
+        background-image: 
+        linear-gradient(90deg, transparent 79px, #abced4 79px, #abced4 81px, transparent 81px),
+        linear-gradient(#eee .1em, transparent .1em);
+        background-size: 100% 1.2em;
+    }
+    </style>
+</head>
+
+<body>
+    <div id="sd"></div>
+    <div id="ds"></div>
+    <div id="dss"></div>
+    <div id="dsss"></div>
+    <script type="text/javascript" src="jquery-1.11.1.min.js"></script>
+    <script type="text/javascript">
+    //文字阴影
+    //盒子阴影
+    //圆角
+    //线性背景
+    //多重背景
+    </script>
+</body>
+
+</html>

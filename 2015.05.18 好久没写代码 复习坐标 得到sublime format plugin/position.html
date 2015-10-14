@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>client</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link href="" rel="stylesheet">
+</head>
+
+<body>
+    <p id="position"></p>
+    <script type="text/javascript">
+    window.onmousemove = init;
+
+    function $(id) {
+        return document.getElementById(id);
+    }
+
+    function init() {
+        var E = event || window.event;
+        var X = E.clientX;
+        var Y = E.clientY;
+        $("position").innerHTML = "当前鼠标所处位置的X轴为：" + X + "px&nbsp;当前鼠标所处位置的Y轴为：" + Y + "px";
+    }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>顾航_Web前端设计制作分享平台</title>
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="js/jquery.min.js"></script>
+<!-- Custom Theme files -->
+<!--theme-style-->
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+<link rel="stylesheet" type="text/css" href="css/animate_tz.css">	
+<!--//theme-style-->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="rexhang,雷克斯航,顾航的个人博客网站,用户体验设计,视觉设计,交互设计,前端开发,用户研究,设计平台,Java,UED,HTML5,CSS3,APP,UI,移动前端,网页设计,设计欣赏,制作教程" />
+<meta name="description" content="顾航(rexhang)的个人博客网站，推崇以用户为中心的设计理念，致力于为设计爱好者提供一个良好的学习交流平台。拥有国内外最新的设计潮流趋势、注重用户体验、新颖而前卫思维意识、极致酷炫的人机交互体验，更有严谨而通俗的技术教程，为用户打造一个良好的学习交流平台。" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!--fonts-->
+<link href='http://fonts.useso.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+<link href='http://fonts.useso.com/css?family=Lobster' rel='stylesheet' type='text/css'><!--//fonts-->
+<script type="text/javascript" src="js/move-top.js"></script>
+<script type="text/javascript" src="js/easing.js"></script>
+<!-- slide -->
+<script src="js/responsiveslides.min.js"></script>
+  <script>
+    // You can also use "$(window).load(function() {"
+    $(function () {
+      // Slideshow 1
+      $("#slider1").responsiveSlides({
+         auto: true,
+		 nav: true,
+		 speed: 500,
+		 namespace: "callbacks",
+		 pager: true,
+      });
+      // 个人logo添加加载css样式
+      // $(".men img").addClass("animated rotateIn");
+      // hover样式
+	$(".men img").mouseenter(function(){			
+		$(this).toggleClass("animated rotateIn").addClass("animated flip");
+	});
+	$(".men img").mouseleave(function(){
+		$(this).toggleClass("animated flip").addClass("animated rotateIn");
+	});
+	// toppic
+	$(".toppic_top img").addClass("animated pulse");
+    });
+  </script>
+
+</head>
+<body>
+<!--header-->
+	
+	<div class="header">
+		<div class="header-top">
+			<div class="container">
+				<div class="top-nav">
+					<span class="menu"> </span>
+					<ul>
+						<li class="active" ><a href="index.html" > 主页 </a> </li>
+						<li><a href="about.html" data-hover=" 关于 " > 关于 </a></li>
+						<li><a href="404.html" data-hover=" 档案室 ">  档案室  </a></li>
+						<li><a href="blog.html" data-hover=" 博客 "> 博客 </a></li>
+						<li><a href="contact.html" data-hover=" 联系我 "> 联系我 </a></li>
+						
+					</ul>
+					<!--script-->
+				<script>
+					$("span.menu").click(function(){
+						$(".top-nav ul").slideToggle(500, function(){
+						});
+					});
+			</script>
+				</div>
+			
+		
+			<div class="header-top-on">
+				<ul class="social-in">
+					<li><a href="#"><i> </i></a></li>						
+					<li><a href="#"><i class="tin"> </i></a></li>
+					<li><a href="#"><i class="gmail"> </i></a></li>
+					<li><a href="#"><i class="dribble"> </i></a></li>
+					<li><a href="#"><i class="browser"> </i></a></li>
+				</ul>
+			</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+		<div class="linetop_top"></div>
+		<div class="toppic_top">
+			<img src="images/toppic_top.jpg" width="1920" height="372" alt="rexhangbg" />
+		</div>
+			<!---->
+		<div class="container">
+			<div class="header-bottom">
+				<div class="logo">
+				<a href="index.html"><img src="images/logo.png" alt="" ></a>
+			</div>
+					<div class="search">
+						<form>
+							<input type="text" value="搜索网页内容..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}" >
+							<input type="submit" value="">
+						</form>
+					</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+</div>
+<!---->
+	<div class="container">
+	<div class="banner-top">
+		<div class="slider">
+			<ul class="rslides" id="slider1">
+			  <li><img src="images/ban.jpg" alt="">
+			  </li>
+			  <li><img src="images/ban1.jpg" alt="">
+			  </li>
+			  <li><img src="images/ban2.jpg" alt="">
+			  </li>
+			  <li><img src="images/ban3.jpg" alt="">
+			  </li>
+			</ul>
+		</div>
+	</div>
+	</div>
+	<!--content-->
+<div class="content">
+	<div class="container">
+	<div class="port">
+	<h2>“ 欢迎来到我的网站 <span> 项目演示 </span> 区域 ”</h2>
+	<ul id="filters">
+						<li><span class="filter " data-filter="app card icon set see is web">项目类型A</span><label class="arrow"> </label></li>
+						<li><span class="filter" data-filter="app">项目类型B</span><label class="arrow arrow1"> </label></li>
+						<li><span class="filter" data-filter="card">项目类型C</span><label class="arrow arrow2 "> </label></li>
+						<li><span class="filter" data-filter="icon">项目类型D</span><label class="arrow arrow3"> </label></li>
+						<li><span class="filter" data-filter="set">项目类型E</span><label class="arrow arrow4"> </label></li>
+						<li><span class="filter" data-filter="see">项目类型F</span><label class="arrow arrow5"> </label></li>
+						<li><span class="filter" data-filter="is">项目类型G</span><label class="arrow arrow6"> </label></li>
+						<div class="clearfix"> </div>
+					</ul>
+					
+				</div>
+					<div id="portfoliolist">
+					<div class="portfolio app mix_all" data-cat="app" style="display: inline-block; opacity: 1;">
+						<div class="portfolio-wrapper ">		
+							<a href="single.html">
+						    <img class="img-responsive" src="images/pi.png" alt=""  /> 
+									
+						</a>
+						<div class="gir">						
+							<h5>项目一</h5>
+							<p>项目介绍 projectinfoprojectinfoprojectinfo rexhanginfo</p>													
+						</div>
+						</div>
+					</div>				
+					<div class="portfolio icon mix_all" data-cat="icon" style="display: inline-block; opacity: 1;">
+						<div class="portfolio-wrapper">		
+						<a href="single.html">						    
+						<img class="img-responsive" src="images/pi1.png" alt=""  />					   	
+						</a>	
+							<div class="gir">						
+							<h5>项目二</h5>
+							<p>项目介绍 projectinfoprojectinfoprojectinfo rexhanginfo</p>													
+						</div>
+		                </div>
+					</div>		
+					<div class="portfolio card mix_all" data-cat="card" style="display: inline-block; opacity: 1;">
+						<div class="portfolio-wrapper">		
+							<a href="single.html">
+						     <img class="img-responsive" src="images/pi2.png"  alt="" />
+						     		
+						</a>	
+						<div class="gir">						
+							<h5>项目三</h5>
+							<p>项目介绍 projectinfoprojectinfoprojectinfo rexhanginfo</p>													
+						</div>
+		                </div>
+					</div>				
+					<div class="portfolio set mix_all" data-cat="set" style="display: inline-block; opacity: 1;">
+						<div class="portfolio-wrapper ">		
+							<a href="single.html">
+						     <img class="img-responsive" src="images/pi3.png" alt=""  />
+						     		
+						</a>	
+							<div class="gir">						
+							<h5>项目四</h5>
+							<p>项目介绍 projectinfoprojectinfoprojectinfo rexhanginfo</p>													
+						</div>	
+		                </div>
+					</div>	
+					<div class="portfolio card mix_all" data-cat="card" style="display: inline-block; opacity: 1;">
+						<div class="portfolio-wrapper ">		
+							<a href="single.html">
+						     <img class="img-responsive" src="images/pi4.png" alt=""  />
+						    	
+						</a>	
+							<div class="gir">						
+							<h5>项目五</h5>
+							<p>项目介绍 projectinfoprojectinfoprojectinfo rexhanginfo</p>													
+						</div>	
+		                </div>
+					</div>			
+					<div class="portfolio is mix_all" data-cat="is" style="display: inline-block; opacity: 1;">
+						<div class="portfolio-wrapper">		
+							<a href="single.html">
+						     <img class="img-responsive" src="images/pi5.png" alt=""  />
+						     
+						 		
+						</a>	
+						<div class="gir">						
+							<h5>项目六</h5>
+							<p>项目介绍 projectinfoprojectinfoprojectinfo rexhanginfo</p>													
+						</div>
+		                </div>
+					</div>
+					<div class="portfolio see mix_all" data-cat="see" style="display: inline-block; opacity: 1;">
+						<div class="portfolio-wrapper">		
+							<a href="single.html">
+						     <img class="img-responsive" src="images/pi6.png" alt=""  />
+						     		
+						</a>	
+						<div class="gir">						
+							<h5>项目七</h5>
+							<p>项目介绍 projectinfoprojectinfoprojectinfo rexhanginfo</p>													
+						</div>
+		                </div>
+					</div>
+					<div class="portfolio icon mix_all" data-cat="icon" style="display: inline-block; opacity: 1;">
+						<div class="portfolio-wrapper">		
+							<a href="single.html">
+						     <img class="img-responsive" src="images/pi7.png" alt=""  />
+						     		
+						</a>	
+							<div class="gir">						
+							<h5>项目八</h5>
+							<p>项目介绍 projectinfoprojectinfoprojectinfo rexhanginfo</p>													
+						</div>
+		                </div>
+					</div>
+					<div class="clearfix"> </div>
+					</div>	
+			<!-- Script for gallery Here -->
+				<script type="text/javascript" src="js/jquery.mixitup.min.js"></script>
+					<script type="text/javascript">
+					$(function () {
+						
+						var filterList = {
+						
+							init: function () {
+							
+								// MixItUp plugin
+								// http://mixitup.io
+								$('#portfoliolist').mixitup({
+									targetSelector: '.portfolio',
+									filterSelector: '.filter',
+									effects: ['fade'],
+									easing: 'snap',
+									// call the hover effect
+									onMixEnd: filterList.hoverEffect()
+								});				
+							
+							},
+							
+							hoverEffect: function () {
+							
+								// Simple parallax effect
+								$('#portfoliolist .portfolio').hover(
+									function () {
+										$(this).find('.label').stop().animate({bottom: 0}, 200, 'easeOutQuad');
+										$(this).find('img').stop().animate({top: -30}, 500, 'easeOutQuad');				
+									},
+									function () {
+										$(this).find('.label').stop().animate({bottom: -40}, 200, 'easeInQuad');
+										$(this).find('img').stop().animate({top: 0}, 300, 'easeOutQuad');								
+									}		
+								);				
+							
+							}
+				
+						};
+						
+						// Run the show!
+						filterList.init();
+					});	
+					</script>
+			<!-- Gallery Script Ends -->
+			<div class="about">
+				<h3>关于 作者</h3>
+				<div class="col-md-8 dem">
+				<h4>My name is REX HANG</h4>
+				<p>潭州学院（tanzhouedu.com）是互联网在线教育学院，是以培养学员兴趣和从事互联网课堂研究为主的综合性网络学院，成立于2007年。旗下有考试资讯门户考试在线(kaoshi110.net)和在线模拟考试系统模考吧(mokaoba.com)。
+
+SEO研究中心（MoonSeo）成立于2007年11月07日，创建人Moon，现有一支专业SEO技术研究团队。SEO研究中心是由一群热爱互联网事业，热爱SEO技术的专职SEOer组成，并且取名为MoonSeo，MoonSeo的含义非常简单，就是指由Moon老师带领的专业SEO研究团队，2009年1月17日正式开通技术交流论坛)。
+
+我们从2007年11月份开始对外开设免费的SEO公开课，一直到现在已经成立6年。我们长期专注于搜索引擎算法的正确应用，以及为网站提供全面的SEO技术解决方案。多年来，一直孜孜不倦地追求技术创新、不断的完善技术流程，来研发出更加完善的课程体系。</p>
+				<div class="call">
+					<ul class=" call-in">
+						<li><i> </i></li>
+						<li><span> 18966562548 </span></li>						
+						<li><a href="#"><i class="facebook"> </i></a></li>						
+						<li><a href="#"><i class="tin"> </i></a></li>
+						<li><a href="#"><i class="gmail"> </i></a></li>
+						<li><a href="#"><i class="dribble"> </i></a></li>
+						<li><a href="#"><i class="browser"> </i></a></li>
+					</ul>
+				</div>
+				<div class="clearfix"> </div>
+				</div>
+				<div class="col-md-4 men">
+				<img class="img-responsive" src="images/ab.jpg" alt=""  />
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+			</div>
+		</div>
+		<!---->
+		<div class="footer">
+			<div class="container">
+			<p class="footer-class">Copyright &copy; 2015.Rexhang Personal All Rights Reserved.</p>
+			</div>
+		 <script type="text/javascript">
+						$(document).ready(function() {
+							/*
+							var defaults = {
+					  			containerID: 'toTop', // fading element id
+								containerHoverID: 'toTopHover', // fading element hover id
+								scrollSpeed: 1200,
+								easingType: 'linear' 
+					 		};
+							*/
+							
+							$().UItoTop({ easingType: 'easeOutQuart' });
+							
+						});
+					</script>
+				<a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+
+		</div>
+
+</body>
+</html>

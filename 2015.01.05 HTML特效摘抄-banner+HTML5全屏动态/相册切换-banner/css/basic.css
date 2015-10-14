@@ -1,0 +1,48 @@
+@charset "utf-8";
+/*
+*
+* webname:维度端前端网
+* website:http://www.weiduduan.com/
+* author:vdu
+* qq:2210682628
+*
+*/
+
+/* reset */
+body{font:12px/18px arial,sans-serif;color:#585858;}
+
+body,div,p,span,form,iframe,table,td,th,input,textarea,button,label,ul,ol,li,dl,dt,dd,h1,h2,h3,h4,h5,h6{margin:0;padding:0;}
+h1,h2,h3,h4,h5,h6{font-size:100%; }
+ul,ol,li,dl{list-style-type:none;}
+em,i,dfn,cite,strong,small{font-style:normal;} 
+img{border:0;}
+fieldset,button,input,select,option{vertical-align:middle;font:12px/18px arial,sans-serif;}
+table{border-collapse:collapse;border-spacing:0}
+textarea{resize:none}
+
+/* color */
+a:link,a:visited{color:#575757;text-decoration:none;}
+a:hover{color:#ef4165;text-decoration:none;}
+a:active{color:#1d7400;}
+
+/* clearfix */
+.clearfix{ *zoom:1;}
+.clearfix:after{display:table; line-height:0; content:""; clear:both;}
+
+/* public.omission */
+.fl{ float:left;}            .fr{ float:right;}            .tc{ text-align:center;}      .tr{ text-align:right;} 
+.fb{ font-weight:bold;}      .f12{ font-size:12px;}        h3{ font-weight:normal;}      .listop{ padding-top:15px;}
+.mr10{ margin-right:10px;}   .mr15{ margin-right:15px;}    .mL10{ margin-left:10px;}     .mL15{ margin-left:15px;}
+.mt10{ margin-top:10px;}     .mt15{ margin-top:15px;}      .mb10{ margin-bottom:10px;}   .mb15{ margin-bottom:15px;}
+
+/* weiduduan */
+.weiduduan{ width:900px; height:480px; margin:15px auto 0 auto;}
+#carousel1{width:900px;height:480px;overflow:hidden;position:relative;border-bottom:solid 1px #d8d9da;margin:0 auto;}
+#carousel1 img{border:none;width:350px;height:214px;border:solid 1px #000;}
+#carousel1 #title-text {font-size:22px;margin:10px 20px 0 0;padding:0;text-align:right;}
+#carousel1 #alt-text{font-size:14px;margin:5px 20px 0 0;padding:0;text-align:right;}
+#carousel1 #user-c{padding:0;position:absolute;right:15px;bottom:10px;}
+#carousel1 .carouselLeft,#carousel1 .carouselRight{position:absolute;bottom:20px;width:29px;height:25px;overflow:hidden;cursor:pointer;}
+#carousel1 .carouselLeft{right:20px;background:url(../images/button-right.png) no-repeat;}
+#carousel1 .carouselRight{right:48px;background:url(../images/button-left.png) no-repeat;}
+/* 维度端前端网整理 http://www.weiduduan.com */

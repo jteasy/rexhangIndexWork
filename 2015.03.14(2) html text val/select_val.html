@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+	<head>
+		<!--声明当前页面的编码集：charset=gbk,gb2312（中文编码），utf-8（国际编码）-->
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<!--当前页面的三要素-->
+		<title>标题写在这里！</title>
+		<meta name="Keywords" content="关键词,关键词">
+		<meta name="description" content="">
+		<link rel="shortcut icon" href="" />
+		
+		<!--css,js-->
+		<style type="text/css">
+			*{margin:0;padding:0;}
+	
+		</style>
+
+    </head>
+<body>
+
+	<select id="age">
+		<option>--请选择--</option>
+		<option>90</option>
+		<option>91</option>
+		<option>92</option>
+		<option>93</option>
+	</select>
+
+	<!--multiple 属性 可以让值可以多选-->
+	<select id="multiple" multiple="multiple">
+		<option selected="selected">11</option>
+		<option>22</option>
+		<option selected="selected">33</option>
+	</select>
+
+	<!--单选按钮（radio），多选按钮（checkbox）-->
+	<input type="checkbox" value="check1" /> check1
+	<input type="checkbox" value="check2" /> check2
+	<input type="radio" value="radio1" /> radio1
+	<input type="radio" value="radio2" /> radio2
+
+	<script type="text/javascript" src="js/jQuery.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			// select
+			$("#age").val("92");
+
+			// 让2和3选中
+			$("#multiple").val(["22","33"]);
+			
+			// 让第二个和第三个选中
+			$("input").val(["check2","radio1"]);
+		});
+	</script>
+</body>
+</html> 

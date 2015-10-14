@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>图篇隐藏显示</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<style type="text/css">
+</style>
+</head>
+<body>
+	<div id="opendiv"></div>
+    <input type="button" name="guhang" value="点击隐藏" onclick="tm_hide(this);" id="gu" />
+	<!-- display 和 visibility (占位)-->
+    <script type="text/javascript">
+    	var odiv = document.getElementById("opendiv");
+    	odiv.style.width = "100px";
+    	odiv.style.height = "100px";
+    	odiv.style.border = "1px solid red";
+    	function tm_hide(obj){
+    		var odiv = document.getElementById("opendiv");
+    		var ob_v = obj.value;
+    		if(ob_v == "点击隐藏"){
+    			obj.value = "点击显示";
+    			odiv.style.visibility = "hidden";
+    		}else{
+    			obj.value = "点击隐藏";
+    			odiv.style.visibility = "visible";
+    		}
+    	}
+
+    	/*  复习之前的javascript键盘监听事件  	
+	    	function rexhang(){
+	    		var key = window.event.keyCode;
+	    		if(key==40)alert("↓");
+	    	}
+
+	    	document.body.onkeyup = rexhang;
+    	*/
+    </script>
+</body>
+</html>

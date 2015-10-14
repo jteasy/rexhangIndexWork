@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <script type="text/javascript" src="jquery-1.11.1.min.js"></script> 
+  <style>
+	*{padding:0px;margin:0px}
+	li{list-style:none}
+	#menu{position:absolute;border:1px solid #eee;box-shadow:0 1px 3px #ccc;width:180px;height:256px;display:none;}
+	#menu li{height:30px;border-bottom:1px solid #e5e5e5;padding-left:20px;font-size:12px;padding:6px;line-height:30px}
+	#menu li:hover{background:#f9f8f8}
+  </style>
+ </head>
+ <body>
+	<div id="menu">
+		<ul>
+			<li  onclick="tm_events(this,1,event)">保存</li>
+			<li  onclick="tm_events(this,2,event)">删除</li>
+			<li  onclick="tm_events(this,3,event)">修改</li>
+			<li  onclick="tm_events(this,4,event)">审核</li>
+			<li  onclick="tm_events(this,5,event)">回退</li>
+			<li  onclick="tm_events(this,6,event)">刷新</li>
+		</ul>
+		
+	</div>
+	<script type="text/javascript">
+		$(function(){
+			//禁止浏览器的右键
+			document.oncontextmenu = function(){return false;};
+			
+			
+			/*document.onmousedown = function(e){
+				var evt = e || event;
+				//evt.which ie78不支持
+				//evt.button:ie78支持
+				var key = evt.which || evt.button ;//判别你点击的鼠标是什么
+				if(key==3 || key==2){//代表你点击的鼠标的右键
+					document.getElementById("menu").style.display = "block";
+					//要改变div的坐标，改变他的left和top
+					var x = e.clientX;//获取鼠标当前的x坐标
+					var y = e.clientY;//获取鼠标当前的y坐标
+					document.getElementById("menu").style.left = x+"px";
+					document.getElementById("menu").style.top = y+"px";
+				}else{
+					document.getElementById("menu").style.display = "none";
+				}
+			};*/
+
+
+			$(document).on("mousedown",function(evt){
+				var key = evt.which || evt.button ;//获取鼠标点击的状态码
+				if(key==3 || key==2){//控制鼠标点击的是右键
+					$("#menu").css({left:e.clientX,top:e.clientY}).show();
+				};
+				e.stopPropagation();//阻止事件冒泡到父辈或者同步元素上面
+			});
+
+			$(document).click(function(e){
+				$("#menu").hide();
+				e.stopPropagation();//阻止事件冒泡到父辈或者同步元素上面
+			});
+
+
+		});
+
+		function tm_events(obj,flag,e){
+			if(flag==1){
+				alert("//保存");
+			}else if(flag==2){
+				alert("//删除业务");
+				tm_delete();
+			}else if(flag==3){
+				alert("//编辑业务");
+			}else if(flag==4){
+				alert("//审核业务");
+			}else if(flag==5){
+				alert("//回退业务");
+			}else if(flag==6){
+				alert("//刷新业务");
+			}
+			$("#menu").hide();
+		}
+	</script>
+ </body>
+</html>

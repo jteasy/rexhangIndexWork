@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>banner</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<style type="text/css">
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    body{
+        font-size: 12px;
+        color: #666;
+        font-family: '微软雅黑';
+        background: #000;
+    }
+    #container{
+        width: 1200px;
+        height: 600px;
+        margin: 20px auto;
+    }
+    #container #header{
+        width: 1200px;
+        height: 100px;
+    }
+    #container #header #ul_list .sel_03{
+        border-right: 0;
+    }
+    #container #header #ul_list li{
+        list-style: none;
+        float: left;
+        width: 399px;
+        height: 100px;
+        text-align: center;
+        line-height: 100px;
+        color: #fff;
+        font-size: 24px;
+        cursor: pointer;
+        border-right: 1px solid #fff;
+        background: -webkit-linear-gradient(90deg,red,blue);
+        -ms-linear-gradient(90deg,red,blue);
+        -moz-linear-gradient(90deg,red,blue);
+        -o-linear-gradient(90deg,red,blue);
+        linear-gradient(90deg,red,blue);
+    }
+    #container #header #ul_list .sel_01{
+        background: -webkit-linear-gradient(90deg,#444,#eee);
+        -ms-linear-gradient(90deg,#444,#eee);
+        -moz-linear-gradient(90deg,#444,#eee);
+        -o-linear-gradient(90deg,#444,#eee);
+        linear-gradient(90deg,#444,#eee);
+        color: #000;
+    }
+    #container #banner_show{
+        width: 1199px;
+        height: 500px;
+        background: #fff;
+        position: relative;
+        overflow: hidden;
+    }
+    #container #banner_show .show{
+        width: 1200px;
+        height: 500px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        text-align: center;
+        font-size: 50px;
+        color: #fff;
+    }
+    #container #banner_show #banner_01{
+        background: #16A8A9;
+        z-index: 999;
+    }
+    #container #banner_show #banner_02{
+        background: #761BC8;
+    }
+    #container #banner_show #banner_03{
+        background: #D81890;
+    }
+</style>
+</head>
+<body>
+    <div id="container">
+        <div id="header">
+            <ul id="ul_list">
+                <li class="sel_01">腾讯T</li>
+                <li class="sel_02">阿里巴巴A</li>
+                <li class="sel_03">百度B</li>
+            </ul>
+        </div>
+        <div id="banner_show">
+            <div id="banner_01" class="show">腾讯</div>
+            <div id="banner_02" class="show">阿里巴巴</div>
+            <div id="banner_03" class="show">百度</div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="jquery-1.11.1.min.js"></script>
+    <script type="text/javascript">
+    $(function(){
+        $("#ul_list").find("li").click(function(){
+            $(this).addClass("sel_01").siblings().removeClass("sel_01");
+            var _index = $(this).index();
+            $(".show").hide().eq(_index).fadeIn("slow");
+        });
+    });
+    </script>
+</body>
+</html>

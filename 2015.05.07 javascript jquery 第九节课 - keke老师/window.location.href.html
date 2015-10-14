@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>window.location.href</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+</head>
+<body>
+
+	<input type="button" onclick="hreff();" value="点击跳转" />
+	<input type="button" onclick="tm_open();" value="点击跳转open" />	
+    <script type="text/javascript">
+
+    	function hreff(){
+	    	//window.history.back();//读历史记录
+	    	window.location.href = "back.html"; //本页面跳转和target= "_blank" 不同
+    	}
+
+    	function tm_open(){
+    		window.open("back.html");//新页面打开
+    	}
+    </script>
+</body>
+</html>

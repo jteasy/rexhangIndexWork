@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>background-clip</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link href="" rel="stylesheet">
+    <style type="text/css">
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    #one {
+        width: 500px;
+        height: 220px;
+        border: 5px solid green;
+        padding: 50px;
+        color: #f00;
+        background: url("前端工程师.jpg") no-repeat;
+        background-origin:border-box;
+        /*
+        padding-box 背景图像相对于内边距框来定位。
+        border-box  背景图像相对于边框盒来定位。
+        content-box 背景图像相对于内容框来定位。
+        */
+    }
+    </style>
+</head>
+
+<body>
+    <div id="one">
+        ==================================================================================================
+    </div>
+    <p>让背景图片相对于哪个地方定位</p>
+</body>
+
+</html>

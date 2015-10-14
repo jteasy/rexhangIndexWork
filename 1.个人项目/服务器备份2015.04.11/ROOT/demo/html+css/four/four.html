@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+<head>
+	<!--声明当前页面的编码集：charset=GBK,GB2312(中文编),UTF-8(国际编码)-->
+	<meta http-equiv="Content-Type"content="text/heml;charset=UTF-8">
+	<!--当前页面的三要素-->
+	<title>第四节:图片标签</title>
+	<meta name="Keywords" content="关键词，关键词">
+	<meta name="description" content="">
+	<!--css.js-->
+	<link rel="stylesheet" href="/css/bg2.css" type="text/css" />
+	<style type="text/css">
+	*{color:#000;font-family:"微软雅黑";line-height:25px;}
+	.title{text-align:center;color:#666;margin-top:20px;}
+	.copy{text-align:center;color:#666;line-height:40px;width:100%;}
+	h2{color:#93c}
+	.bor{border:0;}
+	/*回到顶部start*/
+			.ico{width:50px;height:40px;
+			position:fixed;
+			right:30px;
+			bottom:100px;
+			display:none;
+			
+			}
+			.ico_top{width:50px;height:40px;
+			background:url("/images/icon_top.png") no-repeat;
+			background-color:#444;
+			background-position:center;
+			cursor:pointer;display:block;
+			border-radius:5px;
+			opacity:0.8;filter:alpha(opacity=80);
+			}
+			/*回到顶部end*/
+	</style>
+	</head>
+<body>
+	<h1 class="title">第四节:图片标签</h1>
+	img标签（img 元素向网页中嵌入一幅图像）：<br />
+	＜１＞　并不会在网页中插入图像，而是从网页上链接图像。<br />	  
+	＜２＞　标签创建的是被引用图像的占位空间。<br />
+	图片的四要素：
+	src　,　alt　,　width　,　height<br />
+	属性：id, class, title, style<br />
+	<xmp><img  src="图片地址" width="图片宽度" height="图片高度"  alt="图片的提示文字"  
+align="top/bottom/middle/left/right"  border="图片的边框宽度"></xmp>
+	<h2>一. 插入不同格式的图片</h2>
+	1. jpg 格式:<br />
+	<img src="/demo/html+css/four/images/chapter3-1.jpg" width="78" height="79" alt="伤心" title="伤心" /><br />
+	2. gif 格式：(Graphics Interchange Format)的原义是“图像互换格式”<br />
+	特点一：支持无损耗压缩和透明度；<br />
+	特点二：在一个GIF文件中可以存多幅彩色图像，如果把存于一个文件中的多幅图像数据逐幅读出并显示到屏幕上，就可构成一种最简单的动画，易于使用许多 GIF 动画程序创建。
+	缺点：详细的图片和写实摄影图像会丢失颜色信息
+<br />
+	<img src="/demo/html+css/four/images/chapter3-2.gif" width="179" height="100" alt="社会" title="社会" /><br />
+	<img src="/demo/html+css/four/images/chapter3-3.gif" width="122" height="114" alt="热身" title="热身" /><br />
+	<img src="/demo/html+css/four/images/chapter3-4.gif" width="120" height="130" alt="佛山无影脚" title="佛山无影脚" /><br />
+	3. png 格式：优点：PNG 支持高级别无损耗压缩（支持透明度，）；<br />
+	缺点：ＩＥ６不支持透明<br />
+<br /><br />
+	<img src="http://misc.360buyimg.com/product/skin/2013/i/virtuals-20140606.png" alt="透明图片" title="透明图片" width="231" height="85"/><hr />
+	<h2>二. 从不同的位置插入图片</h2>
+	HTML相对路径(Relative Path)<br />
+	同一个目录的文件引用：<br />
+	如果源文件和引用文件在同一个目录里，直接写引用文件名即可，
+	这时引用文件的方式就是使用相对路径。
+	<img src="/demo/html+css/four/images/psb[5].gif" width="900" height="200" alt="哥就是你们的模仿对象" title="哥就是你们的模仿对象"/><br />
+	HTML绝对路径(Absolute Path)<br />
+	完整的描述文件位置的路径就 是绝对路径
+	不需要知道其他任何信息就可以根据绝对路径判断出文件的位置；
+	<img src="/demo/html+css/four/images/psb[5].gif" width="900" height="200" alt="哥就是你们的模仿对象" title="哥就是你们的模仿对象"/>
+	<img src="/demo/html+css/four/images/psbQBV5UHIQ.gif"  width="900" height="200" alt="引领时尚，打造非凡" title="引领时尚，打造非凡" />
+	<h2>排列图片（align="bottom默认值 / middle上下居中 / top顶部"）</h2>
+	<p>
+	<img src="/demo/html+css/four/images/alignmiddle.gif" align="middle" />
+	梳个头发去YY6359听课去。梳个头发去YY6359听课去。梳个头发去YY6359听课去。梳个头发去YY6359听课去。梳个头发去YY6359听课去。梳个头发去YY6359听课去。梳个头发去YY6359听课去。梳个头发去YY6359听课去。梳个头发去YY6359听课去。梳个头发去YY6359听课去。梳个头发去YY6359听课去。梳个头发去YY6359听课去。梳个头发去YY6359听课去。梳个头发去YY6359听课去。
+	</p>
+	align="middle"
+	<h2>图片标签添加连接</h2>
+	<a class="bor" href="http://tanzhouedu.com/" target="blank">
+	<img src="/demo/html+css/four/images/chapter3-1.jpg" width="78" height="79" alt="伤心" title="伤心" /><br />
+	</a><hr />
+	<p class="copy">Copyright&copy;201501&nbsp;潭州学院-完美</p>
+	<div class="ico">
+		<span class="ico_top" title="回到顶部"></span>
+	</div>
+	<script type="text/javascript" src="/js/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="/js/dingbu.js"></script>
+</body>
+</html>

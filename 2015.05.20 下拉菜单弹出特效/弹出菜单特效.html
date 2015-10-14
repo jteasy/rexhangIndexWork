@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>下拉菜单</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<style type="text/css">
+	body{font-family: "Microsoft Yahei";font-size: 12px;color: #555;}
+	*{margin:0;padding:0;}
+	.header{width: 1200px;height: 45px;margin: 10px auto;}
+	.header ul li{list-style: none;width: 299px;height: 45px;background: #D0962C;line-height: 45px;font-size: 16px;text-align: center;float: left;border-right: 1px solid #610909;cursor: pointer;-webkit-transition:background 2s ease;}
+	/*
+		#div1 {transition-timing-function: linear;}
+		#div2 {transition-timing-function: ease;}
+		#div3 {transition-timing-function: ease-in;}
+		#div4 {transition-timing-function: ease-out;}
+		#div5 {transition-timing-function: ease-in-out;}
+		 Firefox 4: 
+		#div1 {-moz-transition-timing-function: linear;}
+		#div2 {-moz-transition-timing-function: ease;}
+		#div3 {-moz-transition-timing-function: ease-in;}
+		#div4 {-moz-transition-timing-function: ease-out;}
+		#div5 {-moz-transition-timing-function: ease-in-out;}
+		 Safari and Chrome: 
+		#div1 {-webkit-transition-timing-function: linear;}
+		#div2 {-webkit-transition-timing-function: ease;}
+		#div3 {-webkit-transition-timing-function: ease-in;}
+		#div4 {-webkit-transition-timing-function: ease-out;}
+		#div5 {-webkit-transition-timing-function: ease-in-out;}
+		 Opera: 
+		#div1 {-o-transition-timing-function: linear;}
+		#div2 {-o-transition-timing-function: ease;}
+		#div3 {-o-transition-timing-function: ease-in;}
+		#div4 {-o-transition-timing-function: ease-out;}
+		#div5 {-o-transition-timing-function: ease-in-out;}
+	*/
+	.header ul li:hover{background: #000;color: #fff;}
+	.header ul .theEndli{border: 0;}
+	.header ul li .hideContent{width: 299px;background: #8B1515;display: none;position: absolute;}
+	.header ul li .hideContent a{text-decoration: none;display: block;color: #15DAC0;font-size: 16px;-webkit-transition:background 1s ease;}
+	.header ul li .hideContent a:hover{background: #555;color: #D0962C;}
+</style>
+</head>
+<body>
+	<div class="header">
+	    <ul>
+	    	<li class="li2012">
+	    		2012年时间★特效喔！！↖(^ω^)↗
+	    		<div class="hideContent click2012">
+	    			<a href="javascript:void(0)">2012事件一</a>
+	    			<a href="javascript:void(0)">2012事件二</a>
+	    			<a href="javascript:void(0)">2012事件三</a>
+	    			<a href="javascript:void(0)">2012事件四</a>
+	    			<a href="javascript:void(0)">2012事件五</a>
+	    			<a href="javascript:void(0)">2012事件六</a>
+	    		</div>
+	    	</li>
+	    	<li class="li2013"> 
+	    		2013年时间
+	    		<div class="hideContent click2013">
+	    			<a href="javascript:void(0)">2013事件一</a>
+	    			<a href="javascript:void(0)">2013事件二</a>
+	    			<a href="javascript:void(0)">2013事件三</a>
+	    			<a href="javascript:void(0)">2013事件四</a>
+	    			<a href="javascript:void(0)">2013事件五</a>
+	    			<a href="javascript:void(0)">2013事件六</a>
+	    			<a href="javascript:void(0)">2013事件七</a>
+	    		</div>
+	    	</li>
+	    	<li class="li2014">
+	    		2014年时间
+	    		<div class="hideContent click2014">
+	    			<a href="javascript:void(0)">2014事件一</a>
+	    			<a href="javascript:void(0)">2014事件二</a>
+	    			<a href="javascript:void(0)">2014事件三</a>
+	    			<a href="javascript:void(0)">2014事件四</a>
+	    			<a href="javascript:void(0)">2014事件五</a>
+	    			<a href="javascript:void(0)">2014事件六</a>
+	    			<a href="javascript:void(0)">2014事件七</a>
+	    			<a href="javascript:void(0)">2014事件八</a>
+	    		</div>
+	    	</li>
+	    	<li class="li2015">
+	    		2015年时间
+	    		<div class="hideContent click2015">
+	    			<a href="javascript:void(0)">2015事件一</a>
+	    			<a href="javascript:void(0)">2015事件二</a>
+	    			<a href="javascript:void(0)">2015事件三</a>
+	    			<a href="javascript:void(0)">2015事件四</a>
+	    			<a href="javascript:void(0)">2015事件五</a>
+	    			<a href="javascript:void(0)">2015事件六</a>
+	    			<a href="javascript:void(0)">2015事件七</a>
+	    			<a href="javascript:void(0)">2015事件八</a>
+	    			<a href="javascript:void(0)">2015事件九</a>	    			
+	    		</div>
+	    	</li>
+	    </ul>
+    </div>
+    <script type="text/javascript" src="jQuery.js"></script>
+    <script type="text/javascript">
+    $(function(){
+    	$(".header").find(".li2012").hover(function(){
+    		$(".click2012").slideToggle("normal");
+    	},function(){
+    		$(".click2012").animate({
+    			"left":"800px",
+    			"top":"500px"
+    		},2000,function(){
+    			$(".click2012").animate({
+    			"left":"-300px"
+
+    		},3000,function(){
+    			$(".click2012").animate({
+    			"left":"800px",
+    			"top":"200px"
+
+    		},3000);    			
+    		});
+    		});
+    	});
+    	$(".header").find(".li2013").hover(function(){
+    		$(".click2013").slideToggle("normal");
+    	});
+    	$(".header").find(".li2014").hover(function(){
+    		$(".click2014").slideToggle("normal");
+    	});
+    	$(".header").find(".li2015").hover(function(){
+    		$(".click2015").slideToggle("normal");
+    	});    	    	    	
+    })
+
+    </script>
+</body>
+</html>

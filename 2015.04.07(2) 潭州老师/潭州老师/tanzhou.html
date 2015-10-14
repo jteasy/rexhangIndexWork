@@ -1,0 +1,125 @@
+<!doctype html>
+<html>
+<head>
+	<!--声明当前页面的编码集：charset=GBK,GB2312(中文编),UTF-8(国际编码)-->
+	<meta http-equiv="Content-Type" content="text/heml;charset=UTF-8">
+	<!--当前页面的三要素-->
+	<title>潭州学院老师信息</title>
+	<meta name="Keywords" content="关键词，关键词">
+	<meta name="description" content="">
+	<!--css.js-->
+	<style type="text/css">
+		*{margin:0;padding:0;}
+		:root{font-family:"微软雅黑";}
+		.tz{width:1101px;height:700px;margin:0 auto;}
+		.box,.b-box{
+		width:325px;
+		height:310px;
+		}
+		.box{
+		border:1px solid #fff;
+		box-shadow:0 0 20px 1px #000;
+		position:relative;
+		float:left;
+		margin:20px 20px;
+		overflow:hidden;
+		}
+
+		.b-box{
+		background:#000;
+		color:#fff;
+		opacity:0.8;
+		filter:alpha(opacity=80);
+		position:absolute;
+		top:-310px;
+		left:-325px;
+		}
+
+		.name,.zhi,.content{
+		padding:10px 15px;
+		line-height:22px;
+		}
+	</style>
+		
+	</head>
+<body>
+<div class="tz">
+	<div class="box">
+		<img src="images/Arry.jpg" width="325" height="310"/>
+		<div class="b-box">
+			<h3 class="name">Arry老师</h3>
+			<h4 class="zhi">潭州软件学院院长</h4>
+			<p class="content">8年从业经验，2006年从事JavaWeb开发，2009年担任腾讯旅游酒店预定系统（E-booking、酒店预定主站）研发工程师、Team Leader，2011年加入上海丁丁网，2012年任丁丁网主站、丁丁优惠SEO优化总监以及频道产品经理，现任潭州软件学院院长。</p>
+		</div>
+	</div>
+
+	<div class="box">
+		<img src="images/jack.jpg" width="325" height="310"/>
+		<div class="b-box">
+			<h3 class="name">Jack老师</h3>
+			<h4 class="zhi">潭州软件学院教学总监</h4>
+			<p class="content">擅长JAVAEE、C/C++、android/ios体系开发，8年项目研发经验，是最早的一批软件工程师之一。5年线下IT教学经验，曾担任讲师、教学主管、教学总监及校长等职务，具有丰富的教学及项目管理经验。曾在多所高校进行过技术讲座，培养IT人才3000余名。人才培养理念：代码点燃梦想，只要你愿意学，只要你愿意跟我学，就一定没有学不会的。</p>
+		</div>
+	</div>
+
+	<div class="box">
+		<img src="images/keke.jpg" width="325" height="310"/>
+		<div class="b-box">
+			<h3 class="name">KeKe老师</h3>
+			<h4 class="zhi">潭州学院首席架构师 | 潭州软件学院副院长</h4>
+			<p class="content">10年Java从业经验，积累多年中大型项目开发的经验，2008年创办亿美软件有限公司，主要从事CMS产品的研发，2010年担任上海巨象网络公司的技术总监职务。主要负责项目框架，前端搜索引擎等技术，2011年担任上海智慧树在线教育平台首席架构师。现任潭州学院首席架构师兼软件学院副院长兼首席架构师。</p>
+		</div>
+	</div>
+
+	<div class="box">
+		<img src="images/Amy.jpg" width="325" height="310"/>
+		<div class="b-box">
+			<h3 class="name">Amy老师</h3>
+			<h4 class="zhi">潭州学院JAVA高级讲师</h4>
+			<p class="content">毕业于哈尔滨工业大学计算机科学与技术专业，精通多门开发语言、各类操作软件，从事软件开发5年，曾在公安、政府部门用大型企业级框架架构。</p>
+		</div>
+	</div>
+
+	<div class="box">
+		<img src="images/jame.jpg" width="325" height="310"/>
+		<div class="b-box">
+			<h3 class="name">Jame老师</h3>
+			<h4 class="zhi">潭州软件学院研发总监</h4>
+			<p class="content">从事软件行业8年，2011年在拓维集团担任开发部经理职位，监管和开发过政府机关办公系统，公安情报系统到联通、移动，央企的企业经营分析系统等大型项目，积累了丰富的项目经验和管理经验！目前担任潭州软件学院研发总监！</p>
+		</div>
+	</div>
+
+	<div class="box">
+		<img src="images/jason.jpg" width="325" height="310"/>
+		<div class="b-box">
+			<h3 class="name">jason老师</h3>
+			<h4 class="zhi">潭州软件学院移动事业部总监</h4>
+			<p class="content">从事IT行业5年，专注移动互联网领域3年，曾就职于上海微玺投资有限公司任职，先后任高级项目经理和iOS主管。精通C、OC、C++等语言。对iOS有全方位的了解，对跨平台开发也颇有研究。同时，对学习方法、学习效率、学员心理辅导也有一定研究。</p>
+		</div>
+	</div>
+</div>
+<script src="js/jquery-1.11.1.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+		$(function(){
+			$(".box").on("mouseenter mouseleave",function(e){
+				var w = $(this).width();
+				var h = $(this).height();
+				//alert(this.offsetLeft+"=============="+this.offsetTop);
+				var x = (e.pageX-this.offsetLeft-(w/2))*(w>h?(h/w):1);
+				var y = (e.pageY-this.offsetTop-(h/2))*(h>w?(w/h):1);
+				//alert(x+"============"+y);
+				//求弧度
+				var direction = Math.round((((Math.atan2(y,x)*(180/Math.PI))+180)/90)+3)%4;
+				//direction:0,1,2,3 ---> top  right bottom  left  
+				var aPos=[{left:0,top:-200},{left:200,top:0},{left:0,top:200},{left:-200,top:0}];  
+				var mobile = [{left:0,top:-310},{left:325,top:0},{left:0,top:310},{left:-325,top:0}];
+				if(e.type == "mouseenter"){
+					$(this).find(".b-box").css(mobile[direction]).stop(true,true).animate({left:0,top:0},200);
+				}else{
+					$(this).find(".b-box").stop(true,true).animate(mobile[direction],200);
+				}
+			});
+		});
+</script>
+</body>
+</html>

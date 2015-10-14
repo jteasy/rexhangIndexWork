@@ -1,0 +1,38 @@
+
+<!doctype html>
+<html>
+	<head>
+		<!--声明当前页面的编码集：charset=gbk,gb2312（中文编码），utf-8（国际编码）-->
+		<meta http-equiv="Content-Type" content="text/html; charset=gbk">
+		<!--当前页面的三要素-->
+		<title>animate</title>
+		<meta name="Keywords" content="关键词,关键词">
+		<meta name="description" content="">
+		<link rel="shortcut icon" href="" />
+		
+		<!--css,js-->
+		<style type="text/css">
+			*{margin:0;padding:0;}
+			/*box-shadow:1px 1px 1px 1px red;值分别表示：右、下、灰度、范围、颜色*/
+			.rex{width:300px;height:200px;background:#63F;opacity:0.5;position:absolute;top:50px;left:0;border-radius:100px;box-shadow:10px 10px 20px 2px black;}
+		</style>
+
+    </head>
+<body>
+	<div class="rex"></div>
+	<br />
+	<input type="button" value="click me" id="myClick" />
+
+	<script type="text/javascript" src="js/jQuery.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$("#myClick").click(function(){
+				$(".rex").animate({width:"700px",height:"450px",opacity:"1",left:"500px"},1500,function(){
+					$(".rex").animate({width:"300px",height:"200px",opacity:"0.5",left:"0"},3500);
+				});
+			});
+
+		});
+	</script>
+</body>
+</html>

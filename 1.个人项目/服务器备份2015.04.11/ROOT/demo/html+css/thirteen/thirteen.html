@@ -1,0 +1,204 @@
+<!doctype html>
+<html>
+<head>
+	<!--声明当前页面的编码集：charset=GBK,GB2312(中文编),UTF-8(国际编码)-->
+	<meta http-equiv="Content-Type"content="text/heml;charset=UTF-8">
+	<!--当前页面的三要素-->
+	<title>第十三节：定位</title>
+	<meta name="Keywords" content="关键词，关键词">
+	<meta name="description" content="">
+	<!--css.js-->
+	<link rel="stylesheet" href="/css/bg2.css" type="text/css" />
+	<style type="text/css">
+	*{padding:0;color:#000;}
+	/*标题start*/
+	.title{text-align:center;color:#666;
+	font-family:"微软雅黑";margin-top:20px;}
+	/*标题end*/
+	/*版权start*/
+	.copy{font-size:18px;text-align:center;
+	color:#666;line-height:40px;width:100%;}
+	/*版权end*/
+	/*文本内容start*/
+	h2{color:#93c}
+	h3{color:#60f}
+	pre{font-size:18px;line-height:25px}
+	/*文本内容end*/
+	/*CSS浮动start*/
+	.box{width:600px;border:1px solid red;}
+	.box .b_left{width:300px;height:100px;background:#6f0;float:left;}
+	.box .b_right{width:300px;height:100px;background:#90c;float:left;}
+	.box .b_clear{clear:both;}
+	/*CSS浮动end*/
+	/*一切皆为框start*/
+	.kuai{width:600px;height:100px;border:1px solid red;}
+	.arry{border:1px solid #600;width:300px;height:100px;}
+	.tz{border:1px solid #639;width:400px;height:50px;}
+	/*一切皆为框end*/
+	/*行内元素start*/
+	.arrys{width:500px;height:100px;border:1px solid green;display:block;}
+	.mini{
+	width:600px;
+	height:40px;
+	display:block;
+	background:#690;
+	margin:20px auto;
+	text-align:center;
+	line-height:40px;
+	text-decoration:none;color:#fff;
+	font-size:14px;
+	/* css3 圆角*/
+	border-radius:20px}
+	.mini:hover{background:#F90;}
+	/* 没有框 */
+	strong{display:none;}
+	/*行内元素end*/
+	/*banner图练习start*/
+	img{border:0;}
+	.banner{width:670px;height:240px;margin:0px auto;}
+	.banner .b_img{overflow:hidden;
+	width:670px;height:240px;
+	position:relative;}
+	.banner .b_img .b_number{
+	position:absolute;
+	right:5px;
+	bottom:5px;}
+	.banner .b_img .b_number li{list-style:none;float:left;
+	width:22px;height:22px;
+	text-align:center;
+	line-height:22px;
+	color:#fff;
+	margin-right:5px;
+	background:#999;
+	border-radius:11px;}
+	.banner .b_img p{padding:0px;margin:0px;}
+	.banner .b_img .b_number .b_sel{background:#E4393C;}
+	/*banner图练习end*/
+	/*回到顶部start*/
+			.ico{width:50px;height:40px;
+			position:fixed;
+			right:30px;
+			bottom:100px;
+			display:none;
+			
+			}
+			.ico_top{width:50px;height:40px;
+			background:url("/images/icon_top.png") no-repeat;
+			background-color:#444;
+			background-position:center;
+			cursor:pointer;display:block;
+			border-radius:5px;
+			opacity:0.8;filter:alpha(opacity=80);
+			}
+			/*回到顶部end*/
+	</style>
+	</head>
+<body>
+	<h1 class="title">第十三节：定位</h1>
+	<!--定位start-->
+	<h2>定位的基本思想</h2>
+			<p>CSS(Cascading Style Sheets) 定位 (Positioning) 属性允许你对元素进行定位</p>
+			<p>它允许你定义元素框相对于其正常位置应该出现的位置，或者相对于父元素、另一个元素甚至浏览器窗口本身的位置。</p>
+			<p>1. 块级元素: div、h1或p元素 即：显示为一块内容称之为 “块框“ ;</p>
+			<p>2. 行内元素: span,strong,a等元素 即：内容显示在行中称 "行内框";</p>
+			<p>3. 使用display属性改变成框的类型 </p>
+			<p>即：display:block; 让行内元素设置为块级元素，display:none; 没有框</p>
+	<hr />
+	<!--定位end-->
+	<!--相对定位start-->
+		<h2>相对定位</h2>
+			<p>如果对一个元素进行相对定位，它将出现在它所在的位置上。</p>
+			<p>通过设置垂直或水平位置，让这个元素“相对于”它的起点进行移动</p>
+			<pre>
+.adv_relative {
+  position: relative;
+  left: 30px;
+  top: 20px;
+}			</pre>
+		<hr />
+		<!--相对定位end-->
+		<!--绝对定位start-->
+		<h2>绝对定位</h2>
+		<p>元素的位置相对于最近的已定位祖先元素，如果元素没有已定位的祖先元素，它的位置相对于最初的包含块。
+		</p>
+		<pre>
+.adv_absolute {
+  position: absolute;
+  left: 30px;
+  top: 20px;
+}		</pre>
+	<hr />
+	<!--绝对定位end-->
+	<!--CSS 浮动start-->
+		<h2>CSS 浮动</h2>
+		<p>float 属性定义元素在哪个方向浮动，在 CSS 中，任何元素都可以浮动；</p>
+		<img src="/demo/html+css/thirteen/images/float.png" alt="float" width="442" height="98">
+		<h3>代码如下:</h3>
+		<pre>&lt;div style="clear: both;"&gt;&lt;/div&gt;</pre>
+		<div class="box">
+		<div class="b_left"></div>
+		<div class="b_right"></div>
+		<div class="b_clear"></div>
+		</div>
+		<hr />
+	<!--CSS 浮动end-->
+	<!--块级元素start-->
+	<h2>一切皆为框 - 块级元素</h2>
+	<h1 class="kuai">块级元素: div、h1或p元素 即：显示为一块内容称之为 “块框“  </h1>
+
+	
+	<div class="arry">潭州软件学院 创始人 Arry老师</div>
+
+	
+	<p class="tz">潭州学院 全球最大的在线教育学院</p>
+	<hr />
+	<!--块级元素end-->
+	<!--行内元素start-->
+	<h2>块级元素</h2>
+	<h1>行内元素: span,strong,a等元素 即：内容显示在行中称 "行内框";</h1>
+
+	<span class="arrys">我发现，Arry老师最近又帅了！</span>
+	
+	<strong>我也发现，keke老师最近爱上唱歌了！</strong>
+	<pre>
+	行内元素：
+			1. 默认不换行；		
+			2. 设置高度，宽度 不起作用；		
+		但是，我们可以把 行内元素 升级 为块级元素；
+		使用： display: block;
+	</pre>
+	<a class="mini" href="javascript:void(0)">我还发现，mini姐姐最近时不时忍不住，也来凑个热闹！</a>
+	<hr />
+	<!--行内元素end-->
+	<!--练习banner图start-->
+	<h2>练习banner图定位</h2>
+	<div class="banner">
+		<div class="b_img">
+			<p>
+				<a href="javascript:void(0)"><img src="/demo/html+css/thirteen/images/2.jpg" width="670" height="240" alt="京东" title="京东" /></a>
+			</p>
+			<p>
+				<a href="javascript:void(0)"><img src="/demo/html+css/thirteen/images/1.jpg" width="670" height="240" alt="京东" title="京东" /></a>
+			</p>
+			<p>
+				<a href="javascript:void(0)"><img src="/demo/html+css/thirteen/images/3.jpg" width="670" height="240" alt="京东" title="京东" /></a>
+			</p>
+			<ul class="b_number">
+				<li class="b_sel">1</li>
+				<li>2</li>
+				<li>3</li>
+			</ul>
+		</div>
+	</div><hr />
+	<!--练习banner图end-->
+	<!--版权start-->
+	<p class="copy">Copyright&copy;201501&nbsp;潭州学院-完美</p>
+	<div class="ico">
+		<span class="ico_top" title="回到顶部"></span>
+	</div>
+	<script type="text/javascript" src="/js/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="/js/dingbu.js"></script>
+	
+	<!--版权end-->
+</body>
+</html>

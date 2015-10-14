@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+	<head>
+		<!--声明当前页面的编码集：charset=gbk,gb2312（中文编码），utf-8（国际编码）-->
+		<meta http-equiv="Content-Type" content="text/html; charset=gbk">
+		<!--当前页面的三要素-->
+		<title>hide();show()</title>
+		<meta name="Keywords" content="关键词,关键词">
+		<meta name="description" content="">
+		<link rel="shortcut icon" href="" />
+		
+		<!--css,js-->
+		<style type="text/css">
+			*{margin:0;padding:0;}
+	
+		</style>
+
+    </head>
+<body>
+	<p class="font_p">我是一段文字</p> <br />
+
+	<input type="button" value="隐藏文字" id="myHide" />
+
+	<input type="button" value="显示文字" id="myShow" />
+
+	<input type="button" value="toggle" id="myToggle" />
+
+	<script type="text/javascript" src="js/jQuery.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			// 点击隐藏
+			$("#myHide").click(function(){
+				$(".font_p").hide();
+			});
+			// 点击显示
+			$("#myShow").dblclick(function(){
+				$(".font_p").show();
+			});
+			// toggle
+			$("#myToggle").click(function(){
+				$(".font_p").toggle(1000,function(){
+					alert(777);
+				});
+			});		
+		});
+	</script>
+</body>
+</html>

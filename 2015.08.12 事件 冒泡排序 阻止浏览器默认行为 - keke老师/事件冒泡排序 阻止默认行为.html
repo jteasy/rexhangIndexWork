@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>冒泡排序 阻止默认行为</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+</head>
+<body>
+    <div onclick="test()">22222</div>
+    <script type="text/javascript">
+        /*
+            一个元素绑定事件分为两种 - 一种属性事件和动态绑定事件addEventListener
+
+            就是可以互相兼容，同一种事件类型是进行覆盖
+        */
+        /*
+            ★ addEventListener(事件类型,.回调函数,cp)
+            true：事件捕捉  外向里
+            false：事件冒泡 里向外
+            默认false
+            阻止冒泡：event.stopPropagation();
+            阻止默认行为：event.preventDefault();
+        */
+        function test(){
+            console.log("1");
+        }
+        document.querySelector("div").onclick = function(){
+            console.log("2");
+        }
+        /*动态绑定事件*/
+        document.querySelector("div").addEventListener("click",function(){
+            console.log("3");
+        },false)
+
+        window.addEventListener("click",function(e){
+            console.log("window");
+            e.stopPropagation();
+        },false);
+        document.addEventListener("click",function(e){
+            console.log("document");
+            e.stopPropagation();
+        },false);
+        document.body.addEventListener("click",function(e){
+            console.log("body");
+            e.stopPropagation();
+        },false);
+        document.querySelector("div").addEventListener("click",function(e){
+            console.log("div");
+            e.stopPropagation();
+        },false);
+
+        /*
+            封装阻止冒泡
+            function stopBubble(e){
+                    //是否支持
+                if(e && e.stopPropagation){
+                    e.stopPropagation();
+                } else{
+                    // ie
+                    window.event.cancelBubble = true;
+                }
+            };
+        */
+        /*
+            获取触发事件的当前对象 和 目标对象
+            event.currentTarget --- 当前对象.tagName标签名称
+            event.target || event.srcElement
+        */
+    </script>
+</body>
+</html>

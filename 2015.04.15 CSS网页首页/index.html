@@ -1,0 +1,63 @@
+<!doctype html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="Keywords" content="http://www.rexhang.com/">
+<meta name="Description" content="http://www.rexhang.com/">
+<meta name="Author" content="顾航,rexhang">
+<title>http://www.rexhang.com/</title>
+<link href="css/examples.css" rel="stylesheet" type="text/css"  />
+<link href="css/jquery.pagepiling.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="js/jquery.pagepiling.min.js"></script> 
+</head>
+<script type="text/javascript">
+	var deleteLog = false;
+
+	$(document).ready(function() {
+		$('#pagepiling').pagepiling({
+			menu: '#menu',
+			anchors: ['page1', 'page2', 'page3', 'page4', 'page5', 'page6'],
+			sectionsColor: ['#4abaec', '#508ce4', '#51be74', '#18c8f7', '#ed6374', '#2C3E50'],
+			loopTop: true,
+			loopBottom: true
+		});
+	});
+</script> 
+<body>
+	<ul id="menu">
+		<li data-menuanchor="page1" class="active"><a href="#page1">现在开始</a></li>
+		<li data-menuanchor="page2"><a href="#page2">可爱</a></li>
+		<li data-menuanchor="page3"><a href="#page3">御姐</a></li>
+        <li data-menuanchor="page4"><a href="#page4">性感</a></li>
+        <li data-menuanchor="page5"><a href="#page5">霸气</a></li>
+        <li data-menuanchor="page6"><a href="#page6">逗比</a></li>
+	</ul>
+	<div id="pagepiling">
+	    <div class="section" id="section1">
+			<p class="zong"><a href="http://www.rexhang.com/home/" target="_blank" class="jion">戳这里进入我的网站</a></p>
+			<a href="#page2" style="position:fixed;top:90%;left:50%;margin-left:-22px;display:block;width:45px;height:45px;background:url('images/godown.png');"></a>
+      </div>
+	    <div class="section" id="section2">
+			<img src="images/sitebg2.jpg" width="100%" height="100%" alt="bg2" />
+			<a href="#page3" style="position:fixed;top:90%;left:50%;margin-left:-22px;display:block;width:45px;height:45px;background:url('images/godown.png');"></a>
+	    </div>
+	    <div class="section" id="section3">
+			<img src="images/sitebg3.jpg" width="100%" height="100%" alt="bg3" />
+			<a href="#page4" style="position:fixed;top:90%;left:50%;margin-left:-22px;display:block;width:45px;height:45px;background:url('images/godown.png');"></a>
+	    </div>
+         <div class="section" id="section4">
+			<img src="images/sitebg4.jpg" width="100%" height="100%" alt="bg4" />
+			<a href="#page5" style="position:fixed;top:90%;left:50%;margin-left:-22px;display:block;width:45px;height:45px;background:url('images/godown.png');"></a>
+	    </div>
+        <div class="section" id="section5">
+			<img src="images/sitebg5.jpg" width="100%" height="100%" alt="bg5" />
+			<a href="#page6" style="position:fixed;top:90%;left:50%;margin-left:-22px;display:block;width:45px;height:45px;background:url('images/godown.png');"></a>
+	    </div>
+        <div class="section" id="section6">
+			<img src="images/sitebg6.jpg" width="100%" height="100%" alt="bg6" />
+			<a href="#page1" style="position:fixed;top:90%;left:50%;margin-left:-22px;display:block;width:45px;height:45px;background:url('images/gotop.png');"></a>
+	    </div>
+	</div>
+</body>
+</html>

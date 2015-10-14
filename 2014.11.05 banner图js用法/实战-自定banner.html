@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+	<head>
+		<!--声明当前页面的编码集：charset=gbk,gb2312（中文编码），utf-8（国际编码）-->
+		<meta http-equiv="Content-Type" content="text/html; charset=gbk">
+		<!--当前页面的三要素-->
+		<title>实战-自定banner</title>
+		<meta name="Keywords" content="关键词,关键词">
+		<meta name="description" content="">
+		<link rel="shortcut icon" href="" />
+		
+		<!--css,js-->
+		<style type="text/css">
+			*{margin:0;padding:0;}
+			body{font-size:12px;font-family:"微软雅黑";}
+			.banner{width:100%;height:750px;position:relative;}
+			.banner .b_img{width:100%;height:750px;position:absolute;left:0;top:0;}
+			.banner .btn{height:30px;position:absolute;bottom:0;left:47%;z-index:2;}
+			.banner .btn ul{border-radius:13px;padding:3px 16px;display:inline-block;background:rgba(0,0,0,.5);}
+			.banner .btn ul li{list-style:none;float:left;background:url(images/1.png) no-repeat;width:16px;height:16px;text-align:center;margin-left:5px;}
+			.banner .btn ul .no{background:url(images/2.png) no-repeat;width:16px;height:16px;}
+			.banner .btn ul li:hover{background:url(images/2.png) no-repeat;width:16px;height:16px;}
+		</style>
+
+    </head>
+<body>
+ <div class="banner">
+	<div class="b_img" style="background:url(images/a.jpg) no-repeat top center"></div>
+	<div class="b_img" style="background:url(images/b.jpg) no-repeat top center"></div>
+	<div class="b_img" style="background:url(images/c.jpg) no-repeat top center"></div>
+	<div class="btn">
+		<ul>
+			<li class="no"></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</div>
+ </div> 
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$(".btn").find("li").mouseover(function(){
+			$(this).addClass("no").siblings().removeClass("no");
+			var _this = $(this).index();
+			$(".b_img").css({"z-index":0,"opacity":0});
+			$(".b_img").eq(_this).css({"z-index":1}).fadeTo(800,1);
+
+		});
+	});
+</script>
+</body>
+</html>

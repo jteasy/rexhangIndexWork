@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>parent parents closest</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+</head>
+<body>
+	<div class="yeye">
+		<div class="fuqin">
+			<p class="erzi">111</p>
+			<p class="erzi2">222</p>
+			<sapn class="erzi3">333</span>			
+		</div>
+	</div>
+    <script type="text/javascript" src="jquery-1.11.1.min.js"></script>
+    <script type="text/javascript">
+    $(function(){
+    	//parent() children()
+
+    	/*
+	    	var i = $(".erzi").parent().attr("class");
+	    	alert(i);
+			$(".fuqin").children().css("font-size","50px");
+
+			$(".fuqin").children().each(function(){
+			alert($(this).context.tagName);
+			});
+		*/
+
+		//parents() closest()
+		//注意parents要指明 .class 否则它就等同于parent
+		//var lass = $(".erzi3").parents(".yeye").attr("class");
+		//alert(lass);
+		//closest()必须要传递对象 不然就回返回undefined
+		var $i = $(".erzi3").closest(".yeye").attr("class");
+		alert($i);
+		
+    });
+    </script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+	<head>
+		<!--声明当前页面的编码集：charset=gbk,gb2312（中文编码），utf-8（国际编码）-->
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<!--当前页面的三要素-->
+		<title>first last eq + filter</title>
+		<meta name="Keywords" content="关键词,关键词">
+		<meta name="description" content="">
+		<link rel="shortcut icon" href="" />
+		
+		<!--css,js-->
+		<style type="text/css">
+			*{margin:0;padding:0;}
+	
+		</style>
+
+    </head>
+<body>
+	<ul>
+		<li>1</li>
+		<li>2</li>
+		<li class="sel">3</li>
+		<li>4</li>
+	</ul>
+
+	<p>Hello</p>
+	<p>Hello Again</p>
+	<p class="selected">And Again</p>
+
+	<p>Hello</p>
+	<p id="selected">Hello Again</p>
+
+	<script type="text/javascript" src="js/jQuery.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			// first
+			var o = $("ul li").first().text();
+			$("ul li").first().css({"color":"red"})
+
+			// last
+			var q = $("ul li").last().text();
+			$("ul li").last().css({"color":"red"})
+			//alert(q);
+	
+			// eq() 方法返回被选元素中带有指定索引号的元素			
+			var sd = $("ul li").eq(2).text();
+			//alert(sd);
+
+			// filter() 方法允许您规定一个标准。不匹配这个标准的元素会被从集合中删除，匹配的元素会被返回
+			var ds = $("p").filter(".selected").text();
+			//alert(ds);
+
+
+			
+		});
+	</script>
+</body>
+</html>

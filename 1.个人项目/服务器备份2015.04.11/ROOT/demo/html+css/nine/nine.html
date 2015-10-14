@@ -1,0 +1,136 @@
+<!doctype html>
+<html>
+<head>
+	<!--声明当前页面的编码集：charset=GBK,GB2312(中文编),UTF-8(国际编码)-->
+	<meta http-equiv="Content-Type"content="text/heml;charset=UTF-8">
+	<!--当前页面的三要素-->
+	<title>第九节 ： css基础语法讲解</title>
+	<meta name="Keywords" content="关键词，关键词">
+	<meta name="description" content="">
+	<!--css.js-->
+	<link rel="stylesheet" href="/css/bg2.css" type="text/css" />
+	<style type="text/css">
+	*{color:#000;font-family:"微软雅黑";}
+	.title{text-align:center;color:#666;margin-top:20px;}
+	.copy{text-align:center;color:#666;width:100%;}
+	h4,h2,h3,p,pre{line-height:40px;}
+	pre{font-size:18px;}
+	.red{color:#f00}
+	h2{color:#93c}
+	h3{color:#60f}
+	h4{color:#f30}
+	/*回到顶部start*/
+			.ico{width:50px;height:40px;
+			position:fixed;
+			right:30px;
+			bottom:100px;
+			display:none;
+			
+			}
+			.ico_top{width:50px;height:40px;
+			background:url("/images/icon_top.png") no-repeat;
+			background-color:#444;
+			background-position:center;
+			cursor:pointer;display:block;
+			border-radius:5px;
+			opacity:0.8;filter:alpha(opacity=80);
+			}
+			/*回到顶部end*/
+	</style>
+	</head>
+<body>
+	<h1 class="title">第九节 ： css基础语法讲解</h1>
+	<h2>&lt;1&gt; css语法；</h2>
+	<h3>CSS 层叠样式表 (Cascading Style Sheets)</h3>
+	<p>CSS 规则由两个主要的部分构成：选择器，以及一条或多条声明</p>
+	<h4>选择器：</h4>
+	<p>通常是您需要改变样式的HTML元素</p>
+	<p>h1{width:300px;height:100px;color:red; font-size:14px;}</p>
+	<img src="/demo/html+css/nine//demo/html+css/nine/images/1.png" /><br /><br /><hr />
+
+	<h2>&lt;2&gt; css 值的不同写法和单位；</h2>
+	<h3>十六进制颜色值：</h3>
+	<p>p { color: #ff0000; }</p>
+	<h3>为了节约字节，我们可以使用 CSS 的缩写形式</h3>
+	<p>p { color: #f00; }</p>
+	<p class="red">六位颜色值，双数合并，即每两位合并</p>
+	<p>英文单词</p>
+	<p>p{color:red;}</p><hr />
+
+	<h2>&lt;3&gt; 空格和大小写;</h2>
+	<pre>
+	body {
+	  color:  #000;
+	  background: #fff;
+	  margin: 0;
+	  padding: 0;
+	  font-family: 微软雅黑, Palatino, serif;
+	}
+	</pre>
+	<p>属性和值中间可以用空格分开，但属性和值内部不可以用空格分开</p>
+	<p>css样式内部不区分大小写，可以随意使用，建议使用统一风格</p><hr />
+
+	<h2>&lt;4&gt; 选择器的分组;</h2>
+	<pre>h1,h2,h3,h4,h5,h6{color : green}</pre>
+	<p>对选择器进行分组，用逗号将需要分组的选择器分开</p>
+	<p>同一类样式的不同标签元素可以使用分组，节省代码量</p><hr />
+
+	<h2>&lt;5&gt; CSS注释语法；</h2>
+	<pre>CSS注释的开始使用/*,结束使用*/</pre>
+	<p>/* 注释内容 */</p>
+	<p>/* 文章标题注释 */</p>
+	<p>h1{color:red;font-size:12px;} </p><hr />
+
+	<h2>&lt;6&gt; CSS 类选择器</h2>
+	</p>在 CSS 中，类选择器以一个点号显示</p>
+	<p>.center {text-align: center}</p>
+	<p>.str{color:red;font-size:12px;}</p>
+	<h4>具体事例：</h4>
+	<p>h1 和 p 元素都有 center 类。这意味着两者都将遵守 ".center" 选择器中的规则</p>
+	<pre>&lt;h1 class="center"&gt;文章的标题&lt;/h1&gt;
+	&lt;p class="center"&gt;这是段落的标签&lt;/p&gt;</pre><hr />
+
+	<h2>&lt;7&gt; id 选择器</h2>
+	<p>id 选择器可以为标有特定 id 的 HTML 元素指定特定的样式</p>
+	<p>id 选择器以 "#" 来定义</p>
+	<h4>具体事例：</h4>
+	<p>两个 id 选择器</p>
+	<pre>&lt;p id="red"&gt;这个段落是红色。&lt;/p&gt;
+	&lt;p id="green"&gt;这个段落是绿色。&lt;/p&gt;</pre>
+	<p class="red">注意： id 属性只能在每个 HTML 文档中出现一次。<p>
+	<h3>id 选择器和派生选择器</h3>
+	<p>在现代布局中，id 选择器常常用于建立派生选择器<p>
+	<h4>具体事例：</h4>
+	<p>h2 strong {
+    color: blue;}<p>
+	<p>只有在h2标签元素内部的strong标签才会改变颜色样式</p><hr />
+
+	<h2>&lt;8&gt;内嵌样式</h2>
+	<pre>&lt;!--内嵌样式--&gt;
+&lt;style type="text/css"&gt;
+	.top{width:985px;height:260px;background:#FFCC66;}
+	.center{width:985px;height:1000px;background:#CCCC33;}
+	.center_lianxi{width:985px;height:50px;background:#FF6666;}
+	.center_left{width:700px;height:950px;background:green;float:left;}
+	.center_right{width:280px;height:950px;background:#CC99FF;}
+	.bottom{width:985px;height:100px;background:red;}
+&lt;/style&gt;</pre><hr />
+
+	<h2>&lt;9&gt;外部引入到样式</h2>
+	<p>从外部引入到样式分为两种:（注意写在head标签里面）</p>
+	<pre>Link样式表式：  &lt;link rel=”stylesheet” type=”text/css” href=”my.css”(href表示路径)&gt;   
+Html式：  &lt;style type="text/css"&gt;@import url("css.css");&gt;&lt;/style&gt;  </pre>
+	<hr />
+
+	<h2>&lt;10&gt; 行内样式</h2>
+	<pre>&lt;!--以style="css样式"--&gt;
+&lt;div style="color:red;font-size:12px;"&gt;&lt;/div&gt;
+&lt;div style="color:red;font-size:12px;"&gt;&lt;/div&gt;</pre><hr />
+<p class="copy">Copyright&copy;201501&nbsp;潭州学院-完美</p>
+<div class="ico">
+		<span class="ico_top" title="回到顶部"></span>
+	</div>
+	<script type="text/javascript" src="/js/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="/js/dingbu.js"></script>
+</body>
+</html>

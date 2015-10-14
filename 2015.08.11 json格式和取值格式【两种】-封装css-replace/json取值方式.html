@@ -1,0 +1,28 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>json取值方式</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+</head>
+<body>
+    <script type="text/javascript">
+    /*①*/
+    var jsons = {"name":"顾航","age":22,"job":"java"}
+    // alert(jsons.name + ">>>" + jsons.job);
+    // alert(jsons['name']+ ">>>" + jsons['job']);
+
+    /*②*/
+    var jsons2 = {"user.name":"顾航","user.age":22,"user.job":"java"}
+    alert(jsons2["user.name"] + ">>>" + jsons2["user.job"]);
+
+    for(var key in jsons2){
+        alert(key + "____" + jsons2[key]);
+    }
+    </script>
+</body>
+</html>

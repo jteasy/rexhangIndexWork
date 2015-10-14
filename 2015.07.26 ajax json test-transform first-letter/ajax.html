@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>ajax-script</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+</head>
+<body>
+    <input type="button" id="trx" value="getAjax" onclick="doGet()" />
+    <script type="text/javascript" src="jquery-1.11.1.min.js"></script>
+    <script type="text/javascript">
+        function doGet(){
+               $.ajax({  
+                  type: "post",//请求方式  
+                  url: "json.json",//地址，就是action请求路径  
+                  data: "json",//数据类型text xml json  script  jsonp  
+                  success: function(msg){//返回的参数就是 action里面所有的有get和set方法的参数  
+                    var dataObj=eval("("+msg+")");//让json数组变成一个对象    
+                     alert(dataObj.date.length);  
+                    document.write("json里面的data属性值为：" + dataObj.author);  
+                  }  
+               });  
+        }
+    </script>
+</body>
+</html>

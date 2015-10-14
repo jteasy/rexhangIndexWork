@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>ajax-json</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+</head>
+<body>
+    <button onclick='init();'>Ajax模式</button>
+    <script type="text/javascript" src="jquery-1.11.1.min.js"></script>
+    <script>
+    function init(){
+        $.ajax({
+            type:"post",
+            data:"json",
+            url:"jsons.json",
+            beforeSend:function(){
+                document.body.style.backgroundColor = "red";
+            },
+            success:function(dataContent){
+                setTimeout(timesa,1500);
+                function timesa(){
+                    document.body.style.backgroundColor = "#000";   
+                }
+                var dataObj = eval("(" + dataContent + ")");
+                alert("姓名：" + dataObj.name + "，年龄：" + dataObj.age + "，职业：" + dataObj.job + "，性别：" + dataObj.sex + "。" );
+                var divDom = document.createElement("div");
+                divDom.setAttribute("class","rexhang");
+                document.body.appendChild(divDom);
+                $(".rexhang").css("color","red").css({
+                        
+                        "padding":"20px 80px"
+                    });
+                $(".rexhang").html(dataContent);
+                function aisl(){
+                    var divDom = document.createElement("div");
+                    divDom.setAttribute("class","rexhang");
+                    document.body.appendChild(divDom);
+                    $(".rexhang").css("color","red").css({
+                        
+                        "padding":"20px 80px"
+                    });
+                    $(".rexhang").html(dataContent);
+                }
+                setInterval(aisl,800);
+            },
+            error:function(){
+                alert("加载出错！");
+            }
+        });
+    }
+    </script>
+</body>
+</html>

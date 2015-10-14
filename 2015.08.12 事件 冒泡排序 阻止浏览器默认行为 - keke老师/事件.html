@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>javascript事件</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+</head>
+<body>
+    <img src="" alt="aa" onload="load()" onerror="error()">
+    <script type="text/javascript">
+        function load(){
+            //alert("成功加载");
+        }
+        function error(){
+            //alert("失败加载");
+        }
+        window.onresize = function(){
+            //alert("改变了吧");
+            //console.log("改变了吧");
+        }
+        /*
+            禁用右键菜单
+        */
+        document.oncontextmenu = function(){
+            return false;
+        }
+        /*
+            addEventListener 进行监听
+            事件类型：
+                界面事件《on-》
+                    load：描述文档，图片，css已经frame，object加载完毕时候出发 window.onload
+                    unload：移除加载事件
+                    window.onload = function(){   
+                    }
+                    abort：XMLHttpRequest
+                    error：文档加载失败
+                    resize：一般用于窗口，body，frameset改变窗口大小的时执行事件
+                    scroll：
+                    contextmenu：
+                聚焦事件
+                    onblur：
+                    onfocus：
+                    onfocusin：
+                    onfocusout：
+                表单事件
+                    onchange：
+                    onreset
+                鼠标事件
+                滚轮事件
+                    wheel
+                键盘事件
+                    keydown：
+                    keyup：
+                    keypress：
+                触屏事件
+                    touchstart：
+                    touchend：
+                    touchmove：
+                    touchenter：
+                    touchleave：
+                    touchcancle：
+                window,body中的潜嵌套事件
+                    onafterprint：文档打印时候立刻会执行的方法
+                    onbeforeprint：打印之前执行的事件
+                    onbeforeunload：文档卸载之前触发的事件
+                    onpagehide：当浏览器即将离开的事件
+                    onpageshow：当浏览器即将离开的事件
+                 拖拽事件
+                    drag
+                 文档事件
+                    readystatechange:XMLHttprequest   
+        */
+        window.onbeforeunload = function(event) {                        
+                        return confirm("确定要离开次页面么?");
+                    }
+    </script>
+</body>
+</html>
