@@ -17,7 +17,7 @@ window.onload = function (){
 	stage.addEventListener("stagemousemove",moveCanvas);
 	
 	var data ={
-		images:["img/2.png"],
+		images:["img/3.png"],
 		frames:{width:50,height:50,regX:10,regY:10}
 	}
 	
