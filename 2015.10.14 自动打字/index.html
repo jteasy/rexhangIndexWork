@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>2015.10.13 自动打字</title>
+	</head>
+	<body>
+		<p class="fonts" id="fon"></p>
+		
+		
+		<script type="text/javascript">
+			var i = 0;
+			function setFonts(){
+				var fonts = "Hellow！大家好，我的名字叫rexhang。";
+				var pDom = document.getElementById("fon");
+				pDom.innerHTML += fonts.charAt(i);
+				i++;
+				if(i > fonts.length){
+					clearInterval(timer);
+				}
+			};
+			var timer = setInterval(setFonts,100);
+
+		</script>
+	</body>
+</html>
