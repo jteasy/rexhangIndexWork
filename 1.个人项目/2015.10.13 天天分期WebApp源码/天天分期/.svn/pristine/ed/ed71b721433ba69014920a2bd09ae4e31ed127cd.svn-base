@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>意见反馈</title>
+    <link rel="stylesheet" type="text/css" href="../../css/api.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/common.css" />
+<style type="text/css" media="screen">
+	*{
+		margin:0;
+		padding:0;
+	}
+	html{
+		width:100%;
+		height:100%;
+		overflow-x: hidden;
+		-webkit-text-size-adjust:none;  
+	}
+	body{
+		width:100%;
+		height:100%;
+		background:#EFEFF2;
+		overflow-x: hidden;
+	}
+	body::-webkit-scrollbar{
+	    display: none;
+	}
+	body,button, input, select, textarea {
+	    font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+	}
+	.suggestion {
+	  width: 100%;
+	  background: #FFF;
+	  margin: 1.2rem auto 2rem;
+	  padding: 1.6rem 0;
+	}
+	textarea {
+	  resize: none;
+	  width: 80%;
+	  margin: 0 auto;
+	  display: block;
+	  font-size:1.4rem;
+	  padding-left: 1rem;
+	}
+	.submit{
+		width:88%;
+		height:4rem;
+		line-height:4rem;
+		margin:0 auto;
+		text-align:center;
+		background:#0DA4FF;
+		color:#FFF;
+		font-size:1.6rem;
+		border-radius:3px;
+	}
+</style>
+<body>
+   <div class="suggestion">
+	    <textarea rows="6" cols="20">您遇到的问题与意见我们会及时改进</textarea>
+	</div>
+	    <div class="submit" style="background:#C9C9C9;">提交</div>
+   </body>
+<script type="text/javascript" src="../../script/api.js"></script>
+<script type="text/javascript">
+	var callTo=function(){
+		api.call({
+		    number:'4000293995'
+	    });
+	}
+</script>
+</html>

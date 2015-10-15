@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <title>淘宝</title>
+    <link rel="stylesheet" type="text/css" href="../../css/api.css"/>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+    	body{
+    		background: #F2F2F2;
+            padding-top: 10px;
+            position: absolute;
+            left:0;
+            top:0;
+            right:0;
+            bottom:0;
+    	}
+        .appheader{
+            width: 100%;
+            height: 210px;
+            background: #fff;
+            padding-top: 16px;
+        }
+        .appheader .a_all{
+            margin: 0 20px;
+            background: #F2F2F2;
+            border: 1px solid #C9C9C9;
+            height: 100px;
+            border-radius: 6px;
+        }
+        .appheader .a_all .user{
+            height: 50px;
+            margin-left: 14px;
+            margin-right: 14px;
+            border-bottom: 1px solid #C9C9C9;
+        }
+        input[name='user_i']{
+            height: 49px;
+            border: none;
+            outline: none;
+            padding-left: 12px;
+            background: #F2F2F2;
+            font-family: '微软雅黑'; 
+        }
+        .appheader .a_all .password{
+            height: 50px;
+            margin-left: 14px;
+            margin-right: 14px;
+        }
+        input[name='user_p']{
+            height: 49px;
+            border: none;
+            outline: none;
+            padding-left: 12px;
+            background: #F2F2F2;
+            font-family: '微软雅黑'; 
+        }
+        .yzma{
+            margin: 10px 20px;
+            height: 50px;
+        }
+        .yzma .shuru{
+            float: left;
+            border: 1px solid #C9C9C9;
+            border-radius: 6px;
+            width: 138px;
+        }
+        input[name='sru']{
+            height: 49px;
+            border: none;
+            outline: none;
+            padding-left: 12px;
+            background: #F2F2F2;
+            border-radius: 6px;
+            font-family: '微软雅黑'; 
+            width: 126px;
+        }
+        .yzm_pic{
+            height: 50px;
+            background: #f2f2f2;
+            background: url('../image/isyzm.png') no-repeat;
+            background-position: 50% 50%;
+            background-size: 88%;
+            width: 126px;
+            float: right;
+            background-color: #f2f2f2;
+            border-radius: 6px;
+
+        }
+        #btns{
+            width: 100%;
+            height: 50px;
+        }
+        #btns .btn{
+            margin: 20px 30px;
+            background: #0DA4FF;
+            color: #fff;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            font-family: '微软雅黑';
+            border-radius: 6px;
+        }
+    </style>
+</head>
+<body>
+	<div class="appheader">
+        <div class="a_all">
+            <div class="user">
+                <input type="text" placeholder="淘宝帐号(邮箱/手机号/账号)" name="user_i" id="account" />
+            </div>
+            <div class="password">
+                <input type="password" placeholder="淘宝密码" name="user_p" id="pw" />
+            </div>
+        </div>
+        <div class="yzma">
+            <div class="shuru">
+                <input type="tel" placeholder="输入图片验证码" name="sru" id="code" />
+            </div>
+            <div class="yzm_pic" id="yzm">
+                <img src="" width="126" height="50" tapmode="" onclick="changeCode(this)" /> 
+            </div>
+        </div>
+        <!-- 验证码 -->
+        <label style="margin: 10px 20px;">
+            <input type="checkbox" name="agr" style="vertical-align:middle;width:14px;height:14px;" id="taobaoauth" />
+            <span class="igr" style="font-size:12px;color:#0DA4FF;font-family:'微软雅黑';">&nbsp;我同意《淘宝授权协议》</span>
+        </label>
+    </div>
+    <div id="btns" tapmode="" onclick="submit()">
+        <div class="btn">确认提交</div>
+    </div>
+</body>
+<script type="text/javascript" src="../../script/api.js"></script>
+<script type="text/javascript">
+    apiready = function(){
+        $api.attr($api.dom('#yzm img'),'src',$api.getStorage('request_url')+'index.php/vip/getverifycode/');
+    }
+    var changeCode=function(obj){
+        $api.attr(obj,'src',$api.getStorage('request_url')+'index.php/vip/getverifycode/random/'+Math.ceil(Math.random()*10));
+    }   
+    var submit=function(){
+        var account=$api.val($api.byId('account'));
+        var pw=$api.val($api.byId('pw'));
+        var taobaoauth=$api.dom('#taobaoauth').checked;
+        var code=$api.val($api.byId('code'));
+        if(taobaoauth==false){
+            api.toast({
+                msg: '请勾选淘宝授权协议',
+                duration: 2000,
+                location: 'middle'
+            });
+        }else if (account==''){
+            api.toast({
+                msg: '请输入淘宝账号',
+                duration: 2000,
+                location: 'middle'
+            });
+        }else if (pw==''){
+            api.toast({
+                msg: '请输入淘宝密码',
+                duration: 2000,
+                location: 'middle'
+            });
+        }else if (code==''){
+            api.toast({
+                msg: '验证码不能空哦！',
+                duration: 2000,
+                location: 'middle'
+            });
+        }else{
+            api.getPrefs({
+                key: 'userid'
+            }, function(ret, err){
+                if(ret && ret.value!=''){
+                        api.showProgress({
+                            style: 'default',
+                            animationType: 'fade',
+                            modal: false
+                        });
+                        
+                        api.ajax({
+                            url: $api.getStorage('request_url')+'index.php/credit/taobaoauth',
+                            method: 'post',
+                            timeout: 30,
+                            dataType: 'json',
+                            returnAll:false,
+                            data:{
+                                values: {
+                                    vipid:ret.value,
+                                    system:api.systemType,
+                                    type:'taobao',
+                                    account:account,
+                                    pw:pw,
+                                    code:code
+                                }
+                            }
+                        },function(ret,err){
+                            api.hideProgress();
+                            if (ret) {
+                                if(ret.code===200 || ret.code===100){
+                                    api.toast({
+                                        msg: '您已完成淘宝授权，我们将在两个工作内重新评估您的信用额度！',
+                                        duration: 2000,
+                                        location: 'middle'
+                                    });
+                                    setTimeout(function(){
+                                        api.closeWin({
+                                            name: 'taobao',
+                                            animation: {
+                                                duration: 300
+                                            }
+                                        });
+                                    },2000)
+                                }else if(ret.code==='-100'){
+                                    api.toast({
+                                        msg: '验证码错误',
+                                        duration: 1000,
+                                        location: 'middle'
+                                    });
+                                }
+                            }else if(err){
+                                api.toast({
+                                    msg: '网络信息错误，请重试',
+                                    duration: 1000,
+                                    location: 'middle'
+                                });
+                            }
+                        });
+                        //ajax finish
+                }else{
+                    api.openWin({
+                        name: 'login',
+                        url: '../login.html',
+                        bounces: false,
+                        pageParam: {from :'taobao'},
+                        animation:{
+                            type:'none',
+                            duration:0
+                        }
+                    });
+                }
+            });
+            
+        }
+    }
+</script>
+</html>

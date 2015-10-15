@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>修改支付密码</title>
+    <link rel="stylesheet" type="text/css" href="../../css/api.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/common.css" />
+     <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        body{
+            font-size: 12px;
+            font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+            background: #EFEFF2;
+        }
+
+        html{
+          -webkit-tap-highlight-color: rgba(0,0,0,0);
+        }
+        .top1{
+            height: 50px;
+            margin-left: 20px;
+            margin-right: 20px;
+            line-height: 50px;
+            position: relative;
+            border-radius:5px;
+            border: 1px solid #D8D8D8;
+        }
+        input[name='top1']{
+            height: 50px;
+            border: 0;
+            outline: 0;
+            text-indent: 14px;
+            font-size: 14px;
+            width: 100%;
+        }
+        /*button CSS start*/
+         .row {
+            position: absolute;
+            right: 14px;
+            top: 10px;
+        }
+         input[type="checkbox"] {
+            display: none;
+        }
+        /*check后面的第一个label元素*/
+         input[type="checkbox"] + label {
+            position: relative;
+            display: inline-block;
+            background: #ccc;/*label的背景颜色*/
+            width: 60px;
+            height: 30px;
+            border-radius: 100px;
+            cursor: pointer;
+            -webkit-transition: 0.2s all linear;
+            transition: 0.2s all linear;
+        }
+         input[type="checkbox"] + label:after {
+            content: '';
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            display: block;
+            height: 26px;
+            width: 26px;
+            background: white;
+            border-radius: 50%;
+            box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+            -webkit-transition: 0.2s all ease-in-out;
+        }
+         input[type="checkbox"]:checked + label {
+            background: #0DA4FF;
+        }
+         input[type="checkbox"]:checked + label:after {
+            left: calc(100% - 28px);
+        }
+        /*2*/
+         .row2 {
+            width: 60px;
+            height: 30px;
+            position: absolute;
+            right: 14px;
+            top: 10px;
+        }
+        /*button CSS end*/
+        /*btn sure*/
+        #btns{
+             width: 100%;
+             margin-top: 20px;
+        }
+        #btns .btn{
+             height: 50px;
+             margin: 0 20px;
+             text-align: center;
+             font-size: 18px;
+             border-radius: 4px;
+             background: #0DA4FF;
+             color: #fff;
+             line-height: 50px;
+        }
+        #btns .btn:active{
+        	background:#3FB7FF;
+        }
+        .yanse{
+        	background:#ccc;
+        }
+        .brown-bar{
+        	height:10px;
+        	width:100%;
+        	background:#efeff2;
+        }
+        .contain{
+        	background:#fff;
+        	height:126px;
+        	padding-top:10px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="brown-bar"></div>
+    <div class="contain">
+        <div class="top1">
+            <input type="tel" placeholder="输入6位支付密码" name="top1" maxlength='6' id="code1" />
+             
+        </div>
+        <div class="top1" style="margin-bottom: 14px;margin-top:10px;">
+            <input type="tel" placeholder="再次输入6位支付密码" name="top1" maxlength='6' id="code2" />
+        </div>
+    </div>
+    <!-- btn -->
+    <div id="btns" tapmode="">
+      <div class="btn" tapmode="">确定</div>
+    </div>
+</body>
+<script type="text/javascript" src="../../script/api.js"></script>
+<script type="text/javascript">
+    $api.addEvt($api.byId('btns'),'click',function(){
+        var code1=$api.val($api.byId('code1'));
+        var code2=$api.val($api.byId('code2'));
+        if($api.trimAll(code1)=='' || $api.trimAll(code1).length!=6 || isNaN(code1)){
+            api.toast({
+                msg: '密码必须为六位数字',
+                duration: 1000,
+                location: 'middle'
+            });
+        }else if($api.trimAll(code2)=='' || $api.trimAll(code2).length!=6 || isNaN(code2) || code2!==code1){
+            api.toast({
+                msg: '两次密码不一致',
+                duration: 1000,
+                location: 'middle'
+            });
+        }else{
+            //提交六位数字支付密码到服务器
+            var request_url = $api.getStorage('request_url');
+            var baseinfo = $api.getStorage('baseinfo');
+            api.ajax({
+	            url:request_url+'/index.php/vip/updatepaypw',
+	            method:'post',
+	            dataType:'json',
+	            returnAll:false,
+	            data:{
+	            	values:{
+	            		vipid:baseinfo.vipid,
+	            		system:api.systemType,
+	            		paypw:code1
+	            	}
+	            }
+            },function(ret,err){
+            	if(ret && ret.result==true){
+            		api.toast({
+	                    msg:'支付密码设置成功！',
+	                    location:'middle'
+                    });
+                    api.execScript({
+	                    name:'root',
+	                    frameName:'account',
+	                    script: 'reload();'
+                    });
+                    setTimeout(function(){
+                    	if(api.pageParam.fromWin!='' || api.pageParam.fromWin!=null){
+                    		//如果传入页面不为空。那么就刷新这个页面
+                    		api.openWin({
+	                            name: api.pageParam.fromWin,
+	                            reload:true
+                            });
+                            api.closeWin({
+                            	name:'changepaypw'
+                            });
+                    	}
+                    },1000);
+            	}else{
+            		api.toast({
+	                    msg:'支付密码设置失败，请重新设置！',
+	                    location:'middle'
+                    });
+                    setTimeout(function(){
+                    	api.openWin({
+	                        name: 'changepaypw',
+	                        reload:true
+                        });
+                    },1000);
+            	}
+            });
+        }
+
+    });
+	var openWin=function($url){
+		api.openWin({
+	        name:$url,
+	        url: $url+'_header.html',
+	        bgcolor:"#ffffff",
+	        scrollToTop:true,
+	        animation:{
+	        	type:'movein',
+	        	subType:'from_right'
+	        }
+        });
+	}
+</script>
+</html>

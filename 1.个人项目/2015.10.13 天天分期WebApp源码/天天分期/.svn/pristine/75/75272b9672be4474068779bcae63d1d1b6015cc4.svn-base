@@ -1,0 +1,347 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>忘记密码body</title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css" />
+    <link rel="stylesheet" type="text/css" href="../css/common.css" />
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+            background: #EFEFF2;
+        }
+        .container{
+            width: 100%;
+            height: 150px;
+            background: #fff;
+        }
+        .container input{
+        	height:100%;
+        	width:70%;
+        	text-indent:58px;
+        }
+        .container .top_1{
+            
+          	height:50px;
+          	position: relative;
+        }
+        .container .top_1 .icons_1{
+            width: 24px;
+            height: 24px;
+            display: block;
+            border-radius: 50%;
+            position: absolute;
+            top:13px;
+            left:25px;
+            background: url('../image/bigpic.png') no-repeat;
+            background-position: -47px -78px;
+            background-size: 729px;
+        }
+        .container .top_1 .icons_2_2{
+            background-position: -47px -113px;
+            background-size: 729px;
+        }
+        .container .top_1 .icons_3_3{
+            background-position: -47px -149px;
+            background-size: 729px;
+        }
+
+        .container .top_1 .icons_2{
+            color: #999;
+            font-size: 12px;
+            height: 100%;
+            display: block;
+            outline: none;
+            width: 100%;
+            text-indent: 58px;
+            background: #ffffff;
+        }
+        .container .top_1 .hqyzm{
+            background: #0DA4FF;
+            width: 105px;
+            height: 40px;
+            color: #fff;
+            outline: none;
+            text-align: center;
+            line-height: 40px;
+            border-radius: 6px;
+            position: absolute;
+            top:5px;
+            right: 13px;
+            text-indent: 0;
+            border:none;
+        }
+        .container .top_1 .eyes{
+            width: 25px;
+            height: 14px;
+            background: url('../image/eyes.png') no-repeat;
+            background-size:cover;
+            position: absolute;
+            top:18px;
+            right: 23px; 
+        }
+        .liner{
+            border-top:1px solid #dad7d7;
+            margin-left: 17px;
+            margin-right: 17px;
+        }
+        #bbtn{
+            width: 100%;
+            height: 50px;
+            margin-top: 74px;
+        }
+        #btns{
+            background: #0DA4FF;
+            color: #fff;
+            border-radius: 6px;
+            font-size: 18px;
+            line-height: 50px;
+            text-align: center;
+            margin-left: 12px;
+            margin-right: 12px;
+        }
+    </style>
+    </style>
+</head>
+<body>
+	<p style="height:24px;width:100%;"></p>
+    <div class="container">
+       <div class="top_1">
+            <span class="icons_1"></span>
+            <input type="tel" class="icons_2" placeholder="手机号码" id="phone" maxlength="11" /> 
+       </div> 
+       <div class="liner"></div> 
+       <!-- 2 -->
+       <div class="top_1">
+            <span class="icons_1" style="background-position: -47px -113px;"></span>
+            <input type="tel" class="icons_2" placeholder="验证码" id="verifycode" maxlength="6"/>
+            <div class="icons_2 hqyzm" onclick="getMessage()">获取验证码</div>
+       </div>
+       <div class="liner"></div> 
+       <!-- 3 -->
+       <div class="top_1">
+            <span class="icons_1" style="background-position: -47px -149px;"></span>
+            <input type="password" class="icons_2" placeholder="设置6-20位新登录密码" id="password" />
+            <div class="eyes" onclick="toSee(true)"></div> 
+       </div>
+    </div>
+    <div id="bbtn" style="background:#EFEFF2;">
+        <div id="btns" onclick="submit()">确认修改</div>            
+    </div>
+</body>
+<script type="text/javascript" src="../script/api.js"></script>
+<script type="text/javascript" src="../script/jquery1.11.1.js"></script>
+<script type="text/javascript">
+	/**
+	 *密码可见 
+	 */
+	function toSee($type){
+		var $pw=$api.byId('password');
+			if($pw.type=='text'){
+				$pw.type='password';
+				$pw.focus();
+			}else{
+				$pw.type='text';
+				$pw.focus();
+			}
+	}
+	/**
+	 *提交 
+	 */
+	function submit(){
+		var phone=$api.val($api.byId('phone'));
+		var verify=$api.val($api.byId('verifycode'));
+		var pw=$api.val($api.byId('password'));
+        var time_between = $api.getStorage('msg_code_time') - new Date().getTime(); //时间差
+		if($api.trimAll(phone)=='' || phone.length!=11 || isNaN(phone)){
+			api.toast({
+	            msg:'请输入一个完整的手机号码!',
+	            location:'middle'
+            });
+            return false;
+		}else if($api.trimAll(verify)=='' || verify.length!=6 || isNaN(verify)){
+			api.toast({
+	            msg:'请输入六位数字验证码!',
+	            location:'middle'
+            });
+            return false;
+		}else if($api.trimAll(pw)=='' || pw.lenth<6 || pw.length>20){
+			api.toast({
+				msg:'请输入6-20位密码',
+				location:'middle'
+			})
+			return false;
+		}else if(verify!=$api.getStorage('msg_code')){
+			api.toast({
+	            msg:'验证码错误，请重试',
+	            location:'middle'
+            });
+            return false;
+		}else if(time_between/1000>60){
+			api.toast({
+	            msg:'验证码超时,点击重新获取',
+	            location:'middle'
+            });
+            $api.val($api.byId('verifycode'),'');
+            return false;
+		}
+		else{
+			api.ajax({
+                url: $api.getStorage('request_url')+'/login/forget',
+                method: 'post',
+                timeout: 30,
+                dataType: 'json',
+                returnAll:false,
+                data:{
+                    values: {
+                        phone:phone,
+                        pw:pw
+                    }
+                }
+            },function(ret,err){
+                alert(JSON.stringify(ret));
+                if (ret.result) {
+                    api.toast({
+                        msg: '密码修改成功！',
+                        duration: 1000,
+                        location: 'middle'
+                    });
+                    setTimeout(function(){
+                        api.openWin({
+                            name: 'login',
+                            url: 'login.html',
+                            bounces: false,
+                            animation:{
+                                type:'movein',
+                                subType:'from_right',
+                                duration:300
+                            }
+                        });
+                        api.closeWin({
+                            name: 'forget',
+                            animation: {
+                                duration: 0
+                            }
+                        });
+                    },1000);
+                }else {
+                   api.toast({
+                       msg: '密码修改不成功！请重试',
+                       duration: 2000,
+                       location: 'middle'
+                   });
+                };
+            });
+		}
+	}
+	/**
+	 *获取验证码
+	 * 下面5个是全局变量； 
+	 */
+	var interValObj;   //变量timer
+	var count=60;//间隔时间60秒
+	var curCount;//剩余秒数
+	var $hqyzm=$api.dom('.hqyzm');
+	function getMessage(){
+		var phone=$api.val($api.byId('phone'));
+		if(isNaN(phone) || $api.trimAll(phone).length!=11){
+			$api.byId('phone').focus();
+			api.toast({msg:'手机号码不正确',location:'middle'});	
+		}else{
+			//获取验证码
+			//获取验证码
+			var msg_code = Math.ceil(Math.random()*1000000);
+			var request_url = $api.getStorage('request_url');
+			var content = '您的注册验证码为：'+msg_code+',请及时使用，60秒后将失效！';
+			api.ajax({
+	            url:request_url+'/register/getsms',
+	            method:'post',
+	            dataType:'json',
+	            returnAll:false,
+	            data:{values:{
+	            	content:content,
+	            	phone:phone
+	            }}
+            },function(ret,err){
+                alert(JSON.stringify(ret));
+                if(ret){
+                	if(ret.result){
+                		api.toast({
+    	                    msg:'短信已发送成功，请注意查看！',
+    	                    location:'middle'
+                        });
+                	}else{
+                		api.toast({
+    	                    msg:'短信发送失败！',
+    	                    location:'middle'
+                        });
+                	}
+                }else{
+                    api.toast({
+                            msg:'请求超时',
+                            location:'middle'
+                        });
+                }
+            });
+			$api.setStorage('msg_code',msg_code);
+			$api.setStorage('msg_code_time',new Date().getTime());
+			//同时发送数据到服务器，来获取已经发送的短信次数和第一次发送的时间，来进行处理，防止用户多次恶意点击
+			var $hqyzm=$api.dom('.hqyzm');
+			$api.attr($hqyzm,'disabled','disabled');
+			$api.attr($hqyzm,'onclick','javascript:void(0)');
+			$api.css($hqyzm,'background:#657b83');
+			
+			curCount=count;
+		    $api.text($hqyzm, curCount+'秒后再获取');
+		    interValObj=window.setInterval(timeCount,1000);
+		}
+	}
+	//倒计时
+	function timeCount(){
+		if (curCount == 0) {                
+                window.clearInterval(interValObj);//停止计时器
+                $api.removeAttr($hqyzm,'disabled');
+                $api.attr($hqyzm,'onclick','getMessage()');
+                $api.text($hqyzm, '获取验证码');
+                $api.css($hqyzm,'background:#0da4ff');
+            }
+            else {
+                curCount--;
+                $api.attr($hqyzm,'disabled','disabled');
+                $api.attr($hqyzm,'onclick','javascript:void(0)');
+                $api.text($hqyzm, curCount+'秒后再获取');
+        }
+	}
+</script>
+<script type="text/javascript" src="../script/zepto.min.js"></script>
+<script type="text/javascript">
+    $(function(){
+        $("#phone").focus(function(){
+            $(this).css("border-bottom","1px solid #B7ADAD");
+        });
+        $("#phone").blur(function(){
+            $(this).css("border-bottom","0");
+        });
+
+        $("#verifycode").focus(function(){
+            $(this).css("border-bottom","1px solid #B7ADAD");
+        });
+        $("#verifycode").blur(function(){
+            $(this).css("border-bottom","0");
+        });
+
+        $("#password").focus(function(){
+            $(this).css("border-bottom","1px solid #B7ADAD");
+        });
+        $("#password").blur(function(){
+            $(this).css("border-bottom","0");
+        });
+    });
+</script>
+</html>

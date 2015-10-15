@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>我的伙伴</title>
+    <link rel="stylesheet" type="text/css" href="../../css/api.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/common.css" />
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            font-size: 12px;
+            font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+        }
+        .titles{
+            width: 100%;
+            color: #999;
+            background: #D8D8D8;
+            height: 24px;
+            line-height: 24px;
+            text-align: center;
+        }
+        .container{
+            width: 100%;
+        }
+        .container .content{
+            margin: 10px 16px 0 16px;
+        }
+        .container .content .btn1{
+            height: 45px;
+            background: #0DA4FF;
+            font-size: 16px;
+            text-align: center;
+            line-height: 45px;
+            color: #fff;
+            border-radius: 4px; 
+        }
+        .mag{
+            margin-top: 14px;
+        }
+        #btns{
+            margin: 10px 16px 0 16px;
+        }
+        #btns .btn_sure{
+            height: 50px;
+            background: #C9C9C9;
+            font-size: 18px;
+            text-align: center;
+            line-height: 50px;
+            color: #fff;
+            border-radius: 4px;
+            margin-top: 54px;
+        }
+        #btns .btn_bg{
+            background: #0DA4FF;
+        }
+                .detail_infos{
+            width: 100%;
+            height: 80px;
+            background: #fff;
+            padding-top: 8px;
+        }
+        .bacs{
+            background: #000;
+            color: #fff;
+        }
+        .detail_infos .conts{
+            margin: 5px 12px 0 12px;
+            height: 72px;
+            position: relative;
+        }
+        .detail_infos .conts .user_logo{
+            height: 36px;
+            width: 36px;
+            border-radius: 4px;
+            background: #F2F2F2;
+            display: block;
+            float: left;
+            color: #999;
+            text-align: center;
+            line-height: 36px;
+        }
+        .name{
+            width: 60px;
+            height: 36px;
+            display: block;
+            float: left;
+            font-size: 14px;
+            margin-left: 12px;
+            color: #333;
+        }
+        .phone{
+            height: 36px;
+            display: block;
+            float: left;
+            font-size: 14px;
+            margin-left: 20px;
+            color: #333;
+            width: 50%;
+        }
+        .fonts1{
+            width: 50%;
+            height: 12px;
+            float: left;
+            line-height: 12px;
+            margin-left: 48px;
+            margin-top: -8px;
+            font-size: 12px;
+            color: #999;
+        }
+        .fonts2{
+            width: 80%;
+            font-size: 12px;
+            height: 12px;
+            float: left;
+            line-height: 12px;
+            margin-left: 48px;
+            margin-top: 8px;
+            color: #999;
+        }
+        .icons{
+            width: 12px;
+            height: 20px;
+            float: right;
+            margin-top: -16px;
+            text-align: center;
+            line-height: 21px;
+            background: url('../../image/icons_right.png') no-repeat;
+        }
+        /*name*/
+        .nameall{
+            width: 100%;
+            background: #fff;
+        }
+        .nameall .list{
+            margin: 12px 12px 12px 12px;
+        }
+        .nameall .list .bgcol{
+            background: #000;
+            color: #fff;
+        }
+        .aiyue{
+            height: 50px;
+        }
+        .friend_logo{
+            height: 36px;
+            width: 36px;
+            border-radius: 4px;
+            background: #F2F2F2;
+            display: block;
+            float: left;
+            color: #999;
+            text-align: center;
+            line-height: 36px;
+            margin-top: 7px;
+        }
+        .name_aiyue{
+            width: 36px;
+            height: 36px;
+            display: block;
+            float: left;
+            font-size: 14px;
+            margin-left: 12px;
+            color: #333;
+            line-height: 36px;
+            margin-top: 7px;
+        }
+        .phone_2{
+            height: 36px;
+            display: block;
+            float: left;
+            font-size: 14px;
+            margin-left: 20px;
+            color: #333;
+            width: 50%;
+            margin-top: 7px;
+            line-height: 36px;
+        }
+        .icons2{
+            width: 12px;
+            height: 20px;
+            float: right;
+            text-align: center;
+            line-height: 21px;
+            background: url('../../image/icons_right.png') no-repeat;
+            margin-top: 16px;
+        }
+        .brown-light{
+        	height:10px;
+        	background:rgb(239,239,242);
+        }
+    </style>
+</head>
+<body>
+    <div class="titles">需要您添加四位联系人，且其中第一位为直系亲属</div>
+    <div class="container">
+	   	<!--在此处添加用户提交后的信息-->
+
+	    <!--添加用户提交后的信息结束-->
+	     
+		<div id="temp">
+            <div class="content">
+                <div class="btn1" id="contact_one" tapmode="" onclick="openWin('contact1')">添加联系人 1</div>         
+                <div class="btn1 mag" id="contact_two" tapmode="" onclick="openWin('contact2')">添加联系人 2</div>
+                <div class="btn1 mag" id="contact_three" tapmode="" onclick="openWin('contact3')">添加联系人 3</div>
+                <div class="btn1 mag" id="contact_four" tapmode="" onclick="openWin('contact4')">添加联系人 4</div>
+            </div>
+            <input type="hidden" id="btn-flag" value="0"/>
+            <div id="btns">
+                <div class="btn_sure" tapmode="btn_bg" onclick="submit()">确认</div>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="../../script/api.js"></script>
+<script type="text/javascript">
+	//提交表单
+	var submit=function(){
+		var flag=$api.val($api.byId("btn-flag"));
+		if (flag==0){
+			return false;
+		}else{
+            $api.setStorage('contact_status',true);
+			api.execScript({
+	            name:'information',
+	            frameName:'information_body',
+	            script: 'reload();'
+            });
+			api.closeWin({
+				name:'friend'
+            });
+		}
+	}
+	var openWin=function($url){
+		api.openWin({
+	        name:$url,
+	        url: $url+'_header.html',
+	        bgcolor:"#ffffff",
+	        scrollToTop:true,
+	        animation:{
+	        	type:'movein',
+	        	subType:'from_right'
+	        }
+        });
+	}
+	//被远程执行，重新刷新当前页面的方法：
+	var reload=function(){
+		getFriendInfo();
+	}
+	apiready=function(){
+		getFriendInfo();
+	}
+	//获取用户已填写的信息：
+	var getFriendInfo=function(){
+            var temp=$api.html($api.byId('temp'));
+                temp='<div id="temp">'+temp+'</div>';
+            $api.html($api.dom('.container'),temp);
+		//优先获取本地存储的数据，如果本地存储的数据不存在，那么再去获取网络数据
+	           	var baseinfo=$api.getStorage('baseinfo');
+                    if(baseinfo.contact!=null && baseinfo.contact.four_status==true && baseinfo.contact.three_status==true && baseinfo.contact.two_status==true && baseinfo.contact.one_status==true){
+                            //控制按钮颜色
+                            $api.attr($api.dom('.btn_sure'),'style','background:#0da4ff');
+                            $api.val($api.byId('btn-flag'),1);    
+	        		}else{
+                        var four_status=(baseinfo.contact.four_status==true || ($api.getStorage('contact4')!='' && $api.getStorage('contact4')!=null));
+                        var three_status=(baseinfo.contact.three_status==true || ($api.getStorage('contact3')!='' && $api.getStorage('contact3')!=null));
+                        var two_status=(baseinfo.contact.two_status==true || ($api.getStorage('contact2')!='' && $api.getStorage('contact2')!=null));
+                        var one_status=(baseinfo.contact.one_status==true || ($api.getStorage('contact1')!='' && $api.getStorage('contact1')!=null));
+                        if(four_status && three_status && two_status && one_status){
+                            $api.attr($api.dom('.btn_sure'),'style','background:#0da4ff');
+                             $api.val($api.byId('btn-flag'),1);    
+                        }else{
+                             $api.attr($api.dom('.btn_sure'),'style','background:#c9c9c9');
+                                $api.val($api.byId('btn-flag'),0);
+                        }
+                    }
+                        if($api.getStorage('contact4')!='' && $api.getStorage('contact4')!=null){
+                            var contact4 = $api.getStorage('contact4');
+                              var appendstr="";
+                                    appendstr+='<div class="nameall" tapmode="bacs" onclick="openWin('+"'contact4'"+')">';
+                                    appendstr+='<div class="list">';
+                                    appendstr+=' <div class="aiyue">';
+                                    appendstr+=' <span class="friend_logo">'+contact4.four_relation+'</span>';
+                                    appendstr+=' <span class="name_aiyue">'+contact4.four_name+'</span>';
+                                    appendstr+=' <span class="phone_2">'+contact4.four_phone+'</span>';
+                                    appendstr+=' <div class="icons2"></div>';
+                                    appendstr+=' </div><p style="height:10px;background:rgb(239,239,242);margin-left:-12px;margin-right:-12px;"></p></div></div>';
+                                    $api.attr($api.byId('contact_four'),'style','display:none');
+                                    $api.prepend($api.dom('.container'),appendstr);
+                        }else{
+                            var baseinfo=$api.getStorage('baseinfo');
+                             if(baseinfo.contact!=null && baseinfo.contact.four_status==true){
+                                var appendstr="";
+                                        appendstr+='<div class="nameall" tapmode="bacs" onclick="openWin('+"'contact4'"+')">';
+                                        appendstr+='<div class="list">';
+                                        appendstr+=' <div class="aiyue">';
+                                        appendstr+=' <span class="friend_logo">'+baseinfo.contact.four_relation+'</span>';
+                                        appendstr+=' <span class="name_aiyue">'+baseinfo.contact.four_name+'</span>';
+                                        appendstr+=' <span class="phone_2">'+baseinfo.contact.four_phone+'</span>';
+                                        appendstr+=' <div class="icons2"></div>';
+                                        appendstr+=' </div><p style="height:10px;background:rgb(239,239,242);margin-left:-12px;margin-right:-12px;"></p></div></div>';
+                                        $api.attr($api.byId('contact_four'),'style','display:none');
+                                        $api.prepend($api.dom('.container'),appendstr);
+                             }
+                        };
+                        if($api.getStorage('contact3')!='' && $api.getStorage('contact3')!=null){
+                            var contact3 = $api.getStorage('contact3');
+                              var appendstr="";
+                                appendstr+='<div class="nameall" tapmode="bacs" onclick="openWin('+"'contact3'"+')">';
+                                appendstr+='<div class="list">';
+                                appendstr+=' <div class="aiyue">';
+                                appendstr+=' <span class="friend_logo">'+contact3.three_relation+'</span>';
+                                appendstr+=' <span class="name_aiyue">'+contact3.three_name+'</span>';
+                                appendstr+=' <span class="phone_2">'+contact3.three_phone+'</span>';
+                                appendstr+=' <div class="icons2"></div>';
+                                appendstr+=' </div><p style="height:10px;background:rgb(239,239,242);margin-left:-12px;margin-right:-12px;"></p></div></div>';
+                                $api.attr($api.byId('contact_three'),'style','display:none');
+                                $api.prepend($api.dom('.container'),appendstr);
+                        }else{
+                            var baseinfo=$api.getStorage('baseinfo');
+                            if(baseinfo.contact!=null && baseinfo.contact.three_status==true){
+                             var appendstr="";
+                                        appendstr+='<div class="nameall" tapmode="bacs" onclick="openWin('+"'contact3'"+')">';
+                                        appendstr+='<div class="list">';
+                                        appendstr+=' <div class="aiyue">';
+                                        appendstr+=' <span class="friend_logo">'+baseinfo.contact.three_relation+'</span>';
+                                        appendstr+=' <span class="name_aiyue">'+baseinfo.contact.three_name+'</span>';
+                                        appendstr+=' <span class="phone_2">'+baseinfo.contact.three_phone+'</span>';
+                                        appendstr+=' <div class="icons2"></div>';
+                                        appendstr+=' </div><p style="height:10px;background:rgb(239,239,242);margin-left:-12px;margin-right:-12px;"></p></div></div>';
+                                        $api.attr($api.byId('contact_three'),'style','display:none');
+                                        $api.prepend($api.dom('.container'),appendstr);
+                            }
+                        };
+                        if($api.getStorage('contact2')!='' && $api.getStorage('contact2')!=null){
+                            var contact2 = $api.getStorage('contact2');
+                              var appendstr="";
+                                    appendstr+='<div class="nameall" tapmode="bacs" onclick="openWin('+"'contact2'"+')">';
+                                    appendstr+='<div class="list">';
+                                    appendstr+=' <div class="aiyue">';
+                                    appendstr+=' <span class="friend_logo">'+contact2.two_relation+'</span>';
+                                    appendstr+=' <span class="name_aiyue">'+contact2.two_name+'</span>';
+                                    appendstr+=' <span class="phone_2">'+contact2.two_phone+'</span>';
+                                    appendstr+=' <div class="icons2"></div>';
+                                    appendstr+=' </div><p style="height:10px;background:rgb(239,239,242);margin-left:-12px;margin-right:-12px;"></p></div></div>';
+                                    $api.attr($api.byId('contact_two'),'style','display:none');
+                                    $api.prepend($api.dom('.container'),appendstr);
+                        }else{
+                             var baseinfo=$api.getStorage('baseinfo');
+                             if(baseinfo.contact!=null && baseinfo.contact.two_status==true){
+                                    var appendstr="";
+                                        appendstr+='<div class="nameall" tapmode="bacs" onclick="openWin('+"'contact2'"+')">';
+                                        appendstr+='<div class="list">';
+                                        appendstr+=' <div class="aiyue">';
+                                        appendstr+=' <span class="friend_logo">'+baseinfo.contact.two_relation+'</span>';
+                                        appendstr+=' <span class="name_aiyue">'+baseinfo.contact.two_name+'</span>';
+                                        appendstr+=' <span class="phone_2">'+baseinfo.contact.two_phone+'</span>';
+                                        appendstr+=' <div class="icons2"></div>';
+                                        appendstr+=' </div><p style="height:10px;background:rgb(239,239,242);margin-left:-12px;margin-right:-12px;"></p></div></div>';
+                                        $api.attr($api.byId('contact_two'),'style','display:none');
+                                        $api.prepend($api.dom('.container'),appendstr);
+                            }
+                        };
+                        if($api.getStorage('contact1')!='' && $api.getStorage('contact1')!=null){
+                              var contact1 = $api.getStorage('contact1');
+                              var appendstr="";
+                                    appendstr+='<div class="detail_infos" tapmode="bacs" tapmode="" onclick="openWin('+"'contact1'"+')">';
+                                    appendstr+='<div class="conts">';
+                                    appendstr+=' <span class="user_logo">'+contact1.one_relation+'</span>';
+                                    appendstr+=' <span class="name">'+contact1.one_name+'</span>';
+                                    appendstr+=' <span class="phone">'+contact1.one_phone+'</span>';
+                                    appendstr+=' <p class="fonts1">'+contact1.one_company+'</p>';
+                                    appendstr+=' <p class="fonts2">'+contact1.one_address+'</p>';
+                                    appendstr+=' <div class="icons"></div></div>';
+                                    appendstr+=' <div class="brown-light"></div></div>';
+                                    $api.attr($api.byId('contact_one'),'style','display:none');
+                                    $api.prepend($api.dom('.container'),appendstr);
+                        }else{
+                             var baseinfo=$api.getStorage('baseinfo');
+                             if(baseinfo.contact!=null && baseinfo.contact.one_status==true){
+                                    var appendstr="";
+                                        appendstr+='<div class="detail_infos" tapmode="bacs" tapmode="" onclick="openWin('+"'contact1'"+')">';
+                                        appendstr+='<div class="conts">';
+                                        appendstr+=' <span class="user_logo">'+baseinfo.contact.one_relation+'</span>';
+                                        appendstr+=' <span class="name">'+baseinfo.contact.one_name+'</span>';
+                                        appendstr+=' <span class="phone">'+baseinfo.contact.one_phone+'</span>';
+                                        appendstr+=' <p class="fonts1">'+baseinfo.contact.one_company+'</p>';
+                                        appendstr+=' <p class="fonts2">'+baseinfo.contact.one_address+'</p>';
+                                        appendstr+=' <div class="icons"></div></div>';
+                                        appendstr+=' <div class="brown-light"></div></div>';
+                                        $api.attr($api.byId('contact_one'),'style','display:none');
+                                        $api.prepend($api.dom('.container'),appendstr);
+                            }
+                        };
+	        	
+		}
+</script>
+</html>

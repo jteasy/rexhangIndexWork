@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <title>title</title>
+    
+    <style>
+        body{
+                margin: 0;
+                padding: 0;
+                background: #000;
+                overflow: hidden;
+                width: 100%;
+                height: 100%;
+                background: url('../image/guide3.png') no-repeat;
+                background-size: 100% 100%;
+                overflow: hidden;
+        }
+        img{
+            border: 0;
+        }
+        .ims{
+            width: 60px;
+            height: 10px;
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            margin-left: -30px;
+            display: -webkit-box;
+            -webkit-box-orient: horizontal;
+            
+        }
+        .lists{
+            -webkit-box-flex: 1;
+            height: 10px;
+            border: 1px solid #fff;
+            border-radius: 50%;
+            margin-left: 12px;
+        }
+        .comein{
+            width: 120px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            color: #fff;
+            font-family: '微软雅黑';
+            position: absolute;
+            bottom: 10%;
+            left: 50%;
+            height: 50px;
+            margin-left: -60px;
+            text-align: center;
+            line-height: 50px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="ims">
+        <div class="lists" style="margin-left:0;"></div>
+        <div class="lists"></div>
+        <div class="lists" style="background:#fff;"></div>
+    </div>
+
+    <div class="comein">进入天天分期</div>
+</body>
+<script type="text/javascript" src="../script/api.js"></script>
+<script>
+    // var w = window.screen.width;
+    var h = document.body.scrollHeight;
+    var w = document.body.scrollWidth;
+    // document.body.style.width = w + "px";
+    document.body.style.height = h + "px";
+    document.body.style.width = w + "px";
+
+    
+</script>
+<script type="text/javascript">
+    $api.addEvt($api.dom('.comein'),'click',function(){
+        $api.setStorage('guide_status',1);   //储存引导页状态
+        api.openWin({
+            name: 'root',
+            reload:true,
+            animation: {
+                duration:300
+            }
+        });
+    });
+    apiready = function(){
+        
+    };
+</script>
+</html>

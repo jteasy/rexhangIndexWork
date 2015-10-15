@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>意见反馈</title>
+    <link rel="stylesheet" type="text/css" href="../../css/api.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/common.css" />
+<style type="text/css" media="screen">
+	*{
+		margin:0;
+		padding:0;
+	}
+	html{
+		width:100%;
+		height:100%;
+		overflow-x: hidden;
+		-webkit-text-size-adjust:none;  
+	}
+	body{
+		width:100%;
+		height:100%;
+		background:#EFEFF2;
+		overflow-x: hidden;
+	}
+	body::-webkit-scrollbar{
+	    display: none;
+	}
+	body,button, input, select, textarea {
+	    font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+	}
+	.brown-bar{
+		height:10px;
+		width: 100%;
+		background: #EFEFF2;
+	}
+	.suggestion {
+	  width: 100%;
+	  background: #FFF;
+	  height: 195px;
+	}
+	textarea {
+	  height: 100%;
+	  resize: none;
+	  width: 100%;
+	  margin-top:10px;
+	  color: #ccc;
+	  font-size:16px;
+	  border: 1px solid #D8D8D8;
+	}
+	.submit{
+		height:50px;
+		line-height:50px;
+		margin:0 auto;
+		margin-left: 15px;
+		margin-right:15px;
+		text-align:center;
+		background:#0DA4FF;
+		color:#FFF;
+		font-size:18px;
+		border-radius:3px;
+	}
+	.content{
+		margin:10px 15px 10px 15px;
+		height:90%;
+	}
+</style>
+ <body>
+ 	<div class="brown-bar"></div>
+   <div class="suggestion">
+   	  <div class="content">
+	    <textarea rows="6" cols="20" tapmode="#" onfocus="fcus(this);" onblur="blurs(this);" id="textarea">您遇到的问题与意见我们会及时改进</textarea>
+	  </div>
+	</div>
+	<div class="brown-bar"></div>
+	    <div class="submit" style="background:#C9C9C9;">提交</div>
+   </body>
+<script type="text/javascript" src="../../script/api.js"></script>
+<script type="text/javascript">
+    function fcus(obj){
+      obj.value = "";
+      obj.style.color = "#333";
+    };
+    function blurs(obj){
+      if(obj.value == ""){
+        obj.value = "您遇到的问题与意见我们会及时改进";
+      };
+    }
+    apiready = function(){
+        $api.addEvt($api.dom('body'),'input',function(){
+        	var suggestion = $api.val($api.byId('textarea'));
+        	if($api.trimAll(suggestion)!=''){
+        		$api.attr($api.dom('.submit'),'style','background:#0DA4FF');
+        		$api.attr($api.dom('.submit'),'onclick','submit();');
+        	}else{
+        		$api.attr($api.dom('.submit'),'style','background:#c9c9c9');
+        		$api.attr($api.dom('.submit'),'onclick','');
+        	}
+        });
+    }
+    var submit = function(){
+    	var request_url = $api.getStorage('request_url');
+    	var account = $api.getStorage('vip_account');
+    	var suggestion = $api.val($api.byId('textarea'));
+    	api.showProgress({
+    	    style: 'default',
+    	    animationType: 'fade',
+    	    modal: true
+    	});
+    	
+    	api.ajax({
+    	    url: request_url+'/index.php/suggestion/create',
+    	    method: 'post',
+    	    timeout: 30,
+    	    dataType: 'json',
+    	    returnAll:false,
+    	    data:{
+    	        values: {
+    	        	vipid:account.data.vipid,
+    	        	suggestion:suggestion
+    	        }
+    	    }
+    	},function(ret,err){
+    		api.hideProgress();
+    	    if (ret) {
+    	    	 if(ret.code!='-300'){
+	    	        api.toast({
+	    	            msg: '您的建议已成功提交！感谢您的支持',
+	    	            duration: 2000,
+	    	            location: 'middle'
+	    	        });
+	    	        setTimeout(function(){
+	    	        	api.closeToWin({
+	    	        	    name: 'root',
+	    	        	    animation: {
+	    	        	        duration: 0
+	    	        	    }
+	    	        	});
+	    	        },2000)
+	    	    }else{
+		    	    	 api.toast({
+		    	            msg: '您提交的次数过多，暂时不能提交了',
+		    	            duration: 2000,
+		    	            location: 'middle'
+		    	        });
+		    	    	  setTimeout(function(){
+		    	        	api.openWin({
+		    	        	    name: 'feedback',
+		    	        	    reload:true,
+		    	        	    animation: {
+		    	        	        duration: 0
+		    	        	    }
+		    	        	});
+		    	        },2000)
+	    	    }
+    	    }else {
+    	        api.toast({
+    	            msg: '网络错误，请重试！',
+    	            duration: 1000,
+    	            location: 'middle'
+    	        });
+    	    };
+    	});
+    }   
+</script>
+</html>

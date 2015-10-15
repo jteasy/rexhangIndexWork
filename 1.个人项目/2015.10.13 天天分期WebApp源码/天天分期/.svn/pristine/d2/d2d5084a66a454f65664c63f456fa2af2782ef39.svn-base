@@ -1,0 +1,177 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>Hello APP</title>
+    <link rel="stylesheet" type="text/css" href="./css/api.css" />
+    <link rel="stylesheet" type="text/css" href="./css/common.css" />
+</head>
+<style type="text/css" media="screen">
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    body{
+        font-size: 12px;
+        font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+        background: #EAEAEC;
+        width:100%;
+        bottom: 0;
+    }
+    .kefu{
+        margin: 10px 14px;
+        border: 1px solid #0DA4FF;
+        height: 40px;
+        font-size: 16px;
+        line-height: 40px;
+        text-align: center;
+        color: #0DA4FF;
+        border-radius: 4px;
+    }
+    #xyall{
+        width: 100%;
+        background: #fff;
+    }
+    .xy_1{
+        height: 50px;
+        margin: 0 14px;
+        font-size: 16px;
+        text-align: left;
+        line-height: 50px;
+        color: #999;
+    }
+    .xy_list{
+        height: 40px;
+        margin: 0 14px;
+        border-top: 1px solid #D8D8D8;
+        font-size: 14px;
+        text-align: left;
+        line-height: 40px;
+        color: #333;
+    }
+    .lists{
+        margin: 1px 14px;
+        padding-bottom: 4px;
+        padding-top: 4px;
+        color: #666;
+        line-height: 20px;
+        background: rgb(242,242,242);
+    }
+    #xyall .disp{
+        display: block;
+    }
+    #tsed{
+        width: 100%;
+        background: #fff;
+    }
+    .ts1{
+        height: 50px;
+        margin: 0 14px;
+        border-bottom: 1px solid #D8D8D8;
+        font-size: 16px;
+        text-align: left;
+        line-height: 50px;
+        color: #999;
+    }
+    .ts_list{
+        height: 40px;
+        margin: 0 14px;
+        border-bottom: 1px solid #D8D8D8;
+        font-size: 14px;
+        text-align: left;
+        line-height: 40px;
+        color: #333;
+    }
+    #tx{
+        width: 100%;
+        background: #fff;
+    }
+    .tx1{
+        height: 50px;
+        margin: 0 14px;
+        border-bottom: 1px solid #D8D8D8;
+        font-size: 16px;
+        text-align: left;
+        line-height: 50px;
+        color: #999;
+    }
+    .tx_list{
+        height: 40px;
+        margin: 0 14px;
+        border-bottom: 1px solid #D8D8D8;
+        font-size: 14px;
+        text-align: left;
+        line-height: 40px;
+        color: #333;
+    }
+    #tsed .disp2{
+        display: block;
+    }
+    #tx .disp{
+        display: block;
+    }
+    .lists {
+        display: none;
+    }
+</style>
+<body>
+    <!-- keFu -->
+    <div class="kefu" onclick="api.call({number: '4000293995'});">
+        客服电话：400-029-3995
+    </div>
+    <!-- xinYong -->
+    
+
+</body>
+<script type="text/javascript" src="../../script/api.js"></script>
+<script type="text/javascript">
+    function list(obj){
+        var dom =$api.dom('.'+obj);
+        if($api.hasCls(dom, 'disp')){
+            $api.removeCls(dom, 'disp');
+        } else{
+            $api.addCls(dom, 'disp');
+        }
+    }
+    apiready = function(){
+        var request_url =  $api.getStorage('request_url');
+
+        api.ajax({
+            url: request_url+'/question/getquestion',
+            method: 'post',
+            timeout: 30,
+            dataType: 'json',
+            returnAll:false,
+            data:{
+            }
+        },function(ret,err){
+            if (ret) {
+                var classify_id = ret.classify_id;
+                var detail = ret.detail;
+                for(x in classify_id){
+                    var temp_str = '<div id="tx"><div class="xy_1">'+classify_id[x].classify+'</div></div>';
+                    $api.after($api.dom('.kefu'),temp_str);
+                    for(y in detail){
+                        if(detail[y].classify_id==classify_id[x].classify_id){
+                            var inner_str = ''
+                                inner_str+= '<div class="xy_list" tapmode="#" onclick="list('+"'list"+detail[y].id+"'"+');">'+detail[y].question+'</div>';
+                                inner_str+='<div class="lists list'+detail[y].id+'">'+detail[y].answer+'</div>';
+                            $api.append($api.byId('tx'),inner_str);
+                        }
+                    }
+
+                }
+            }else {
+               api.toast({
+                   msg: '网络连接错误',
+                   duration: 2000,
+                   location: 'middle'
+               });
+            };
+        });
+    }
+        
+</script>
+</html>

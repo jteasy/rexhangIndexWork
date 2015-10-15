@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>我的借款</title>
+    <link rel="stylesheet" type="text/css" href="../../css/api.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/common.css" />
+<style type="text/css" media="screen">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            font-size: 12px;
+            font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+            background: #D8D8D8;
+        }
+        .container{
+            width: 100%;
+            background: #fff;
+            height: 53px;
+        }
+        .jiekuanDiv{
+            width: 50%;
+            height: 50px;
+            float: left;
+            color: #0DA4FF;
+            border-bottom: 3px solid #0DA4FF;
+        }
+        .jiekuanDiv2{
+            width: 50%;
+            height: 50px;
+            float: left;
+        }
+        .dqjk{
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            border-right: 1px solid #D8D8D8;
+            margin-top: 10px;
+            font-size: 18px;
+        }
+        .lsjk{
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            border-left: 1px solid #D8D8D8;
+            margin-top: 10px;
+            font-size: 18px;
+        }
+        .contents{
+            width: 100%;
+            background: #fff;
+            margin-top: 14px;
+        }
+        .tits{
+            font-size: 18px;
+            color: #333;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            border-bottom: 1px solid #D8D8D8;
+        }
+        .ic1{
+            width: 100%;
+            height: 16px;
+            position: relative;
+        }
+        .ic_num{
+            position: absolute;
+            right: 50%;
+            margin-right: 22px;
+            color: #666;
+            height: 16px;
+            line-height: 16px;
+            font-size: 12px;
+        }
+        .ic_num2{
+            position: absolute;
+            left: 50%;
+            margin-left: 22px;
+            color: #666;
+            height: 16px;
+            line-height: 16px;
+            font-size: 12px;
+        }
+        .ic1 .ic_1{
+            width: 16px;
+            height: 16px;
+            background: #E4E4E4;
+            border-radius: 50%;
+            display: block;
+            float: left;
+            line-height: 16px;
+            position: absolute;
+            left: 50%;
+            top: 0;
+            z-index:1500;
+            margin-left: -8px;
+        }
+        .ic_1_{
+            margin-top: 24px;
+        }
+        .ic_1_1{
+            margin-top: 90px;
+        }
+        .ic1 .ic_info{
+            font-size: 16px;
+            color: #ccc;
+            display: block;
+            height: 16px;
+            line-height: 16px;
+            float: left;
+            position: absolute;
+            left: 50%;
+            top: 0;
+            margin-left: 22px;
+        }
+        .ic1 .ic_info2{
+            font-size: 16px;
+            color: #666;
+            display: block;
+            height: 16px;
+            line-height: 16px;
+            position: absolute;
+            right: 50%;
+            margin-right: 22px;
+        }
+        #qianyueinfo{
+            position: absolute;
+            left: 50%;
+            top: 22px;
+            margin-left: 22px;
+            width: 120px;
+            border-radius: 3px;
+            background: #F2F2F2;
+            padding: 6px 6px 6px 6px;
+            color: #666;
+            font-size: 12px;
+        }
+        #shenheinfo{
+            font-size: 12px;
+            color: #666;
+            width: 120px;
+            position: absolute;
+            right: 50%;
+            top: 22px;
+            margin-right: 22px;
+            background: #F2F2F2;
+            border-radius: 3px;
+            padding: 6px 6px 6px 6px;
+        }
+        #line1{
+            height: 308px;
+            width: 4px;
+            background: #e4e4e4;
+            position: absolute;
+            left: 50%;
+            top: 157px;
+            margin-left: -2px;
+            z-index: 999;
+        }
+        #line2{
+            height: 308px;
+            width: 4px;
+            background: #7ADB91;
+            position: absolute;
+            left: 50%;
+            top: 159px;
+            margin-left: -2px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="jiekuanDiv" id="current" tapmode="" onclick="changeBar(this,'history')">
+            <div class="dqjk">当前借款</div>
+        </div>
+        <div class="jiekuanDiv2" id="history" tapmode="" onclick="changeBar(this,'current')">
+            <div class="lsjk">历史借款</div>
+        </div>
+    </div>
+    <!-- content area -->
+    <div class="contents" id="current-content">
+        <div class="tits">借款BT-<font id="borrow-id"></font></div>
+        <!-- jindu start -->
+        <div class="ic1 ic_1_">
+        	<span class="ic_num" id="sign-time"></span>
+            <span class="ic_1" id="hk-circle"></span>
+            <span class="ic_info" id="status">还款中</span>
+        </div>
+
+        <div class="ic1 ic_1_1">
+            <span class="ic_num" id="timenow"></span>
+            <span class="ic_1" style="background:#e4e4e4;" id="sign-circle"></span>
+            <span class="ic_info" style="color: #FF3333;" id="sign-status"></span>
+            <!-- 定位块 -->
+            <div id="qianyueinfo" style="display:none;"></div>
+        </div>      
+        
+
+        <div class="ic1 ic_1_1">
+            <span class="ic_1" style="background:#e4e4e4;" id="sh-circle"></span>
+            <span class="ic_info2" style="color:#666;display:none" id="sh-result">审核通过</span>
+            <!-- 定位块2 -->
+            <div id="shenheinfo" id="sh-content" style="display:none">经过后台审核，您的申请已经通过</div>
+            <span class="ic_num2" id="sh-time" style="display:none">2015/04/16  10:25</span>
+        </div>  
+
+        <div class="ic1 ic_1_1" style="padding-bottom: 50px;">
+            <span class="ic_num" id="apply-time"></span>
+            <span class="ic_1" style="background:#7adb91;"></span>
+            <span class="ic_info" style="color:#666;">申请</span>
+        </div>    
+        <!-- jindu end -->
+        <!-- navline -->
+        <div id="line1"></div>
+        <div id="line2"></div>
+    </div>
+    <!--历史借款-->
+    <div class="contents" id="history-content" style="display:none;">
+        <div class="tits">借款BT-1256</div>
+        <!-- jindu start -->
+        <div class="ic1 ic_1_">
+            <span class="ic_1"></span>
+            <span class="ic_info">还款中</span>
+        </div>
+
+        <div class="ic1 ic_1_1">
+            <span class="ic_num">2015/04/16  10:25</span>
+            <span class="ic_1" style="background:#7ADB91;"></span>
+            <span class="ic_info" style="color: #FF3333;">签约中</span>
+            <!-- 定位块 -->
+            <div id="qianyueinfo">请您于2015/04/20日前签约完毕</div>
+        </div>      
+        
+
+        <div class="ic1 ic_1_1">
+            <span class="ic_1" style="background:#7ADB91;"></span>
+            <span class="ic_info2" style="color:#666;">审核通过</span>
+            <!-- 定位块2 -->
+            <div id="shenheinfo">经过后台审核，您的申请已经通过</div>
+            <span class="ic_num2">2015/04/16  10:25</span>
+        </div>  
+
+        <div class="ic1 ic_1_1" style="padding-bottom: 50px;">
+            <span class="ic_num">2015/04/15  10:25</span>
+            <span class="ic_1" style="background:#7ADB91;"></span>
+            <span class="ic_info" style="color:#666;">申请</span>
+        </div>    
+        <!-- jindu end -->
+        <!-- navline -->
+        <div id="line1"></div>
+        <div id="line2"></div>
+    </div>
+</body>
+<script type="text/javascript" src="../../script/api.js"></script>
+<script type="text/javascript">
+	var changeBar=function(obj,other){
+			$api.attr(obj,'style','border-bottom:3px solid #0DA4FF;color:#0da4ff');
+			$api.attr($api.byId(other),'style','border:none;color:#666');
+			if(other=='current'){
+				api.toast({
+	                msg:'您目前还没有历史借款哦！',
+	                location:'middle'
+                });
+				$api.attr($api.byId('current-content'),'style','display:none;');
+				//$api.attr($api.byId('history-content'),'style','display:block;');
+			}else{
+				$api.attr($api.byId('current-content'),'style','display:block;');
+				$api.attr($api.byId('history-content'),'style','display:none;');
+			}
+	}
+	var openWin=function($url){
+		api.openWin({
+	        name:$url,
+	        url: $url+'.html',
+	        bgcolor:"#ffffff",
+	        scrollToTop:true,
+	        animation:{
+	        	type:'movein',
+	        	subType:'from_right'
+	        }
+        });
+	}
+	apiready=function(){
+		/*
+		 *获取借款进度数据
+		 */
+		if(api.connectionType=='none'){
+			api.toast({msg:'无网络连接！',location:'middle'});
+		}else{
+			api.showProgress({
+				style: 'default',
+			    animationType: 'fade',
+			    modal: false
+	        });
+	        api.getPrefs({
+	            key:'userid'
+            },function(ret,err){
+            	if(ret && ret.value!=''){
+            		api.ajax({
+				        url:$api.getStorage('request_url')+'/borrow/getborrowinfo',
+				        method:'post',
+				        dataType:'json',
+				        data:{values:{
+				        	vipid:ret.value,
+				        	system:api.systemType
+				        }}
+			        },function(ret,err){
+			        	if(ret){
+			        		if(ret.vipid=='' || ret.vipid==null){
+			        			api.alert({
+                                	msg:'您当前并未申请过任何订单！'
+                                },function(ret,err){
+                                	if(ret.buttonIndex==1){
+                                		api.closeWin({
+                                        	name:'myborrow',
+                                        	animation:{
+                                        		duration:0
+                                        	}
+                                        });
+                                	}
+                                });
+			        		}
+			        		api.hideProgress();
+			        		if(ret.result==true && ret.vipid!='' && ret.vipid!=null){
+			        			var apply_time=ret.apply_time;
+			        			// alert(JSON.stringify(ret));
+			        			 var borrow_id=ret.id;
+			        			 for(var i=borrow_id.length;i<3;i++){
+			        			 	borrow_id='0'+borrow_id;
+			        			 }
+			        			 borrow_id=new Date().getFullYear()+borrow_id;
+			        			 borrow_id=borrow_id.substr(2);
+			        			 $api.text($api.byId('borrow-id'),borrow_id);
+			        			 $api.text($api.byId('apply-time'),ret.apply_time); //申请时间
+			        			 if(ret.status=='Y' || ret.status=='YY' || ret.status=='NN'){
+			        			 	 $api.text($api.byId('sh-result'),'审核通过');
+			        			 	 $api.text($api.byId('sh-time'),ret.shtime);
+			        			 	 $api.text($api.byId('sh-content'),'经过后台审核，您的申请已经通过');
+			        			 	 $api.attr($api.byId('sh-result'),'style','display:block');
+			        			 	 $api.attr($api.byId('sh-time'),'style','display:block');
+			        			 	 $api.attr($api.byId('sh-content'),'style','display:block;');
+			        			 	 $api.css($api.byId('line1'),'height:200px;');
+			        			 	 $api.attr($api.byId('sh-circle'),'style','background:#7adb91');
+			        			 	 
+			        			 	 $api.text($api.byId('sign-status'),'签约中');
+			        			 	 $api.text($api.byId('qianyueinfo'),'请您于'+ret.timeplus7+'日前签约完毕');
+			        			 	 $api.attr($api.byId('qianyueinfo'),'style','display:block');
+			        			 	 $api.text($api.byId('timenow'),ret.timenow);
+			        			 	 $api.css($api.byId('line1'),'height:96px;');
+			        			 	 $api.attr($api.byId('sign-circle'),'style','background:#7adb91');
+			        			 	 
+			        			 	 if(ret.status=='YY'){
+				        			 	 $api.text($api.byId('status'),'还款中');
+				        			 	 $api.attr($api.byId('status'),'style','color:#7adb91');
+				        			 	 $api.css($api.byId('line1'),'height:0px;');
+				        			 	 $api.attr($api.byId('hk-circle'),'style','background:#7adb91');
+				        			 	 $api.text($api.byId('sign-time'),ret.sign_time);
+				        			 }else if(ret.status=='NN'){
+				        			 	 $api.text($api.byId('status'),'签约失败');
+				        			 	 $api.attr($api.byId('status'),'style','color:#FF3333');
+				        			 	 $api.css($api.byId('line1'),'height:0px;');
+				        			 	 $api.attr($api.byId('hk-circle'),'style','background:#7adb91');
+				        			 	 $api.text($api.byId('sign-time'),ret.sign_time);
+				        			 }
+			        			 }else if(ret.status=='N'){
+			        			 	 $api.text($api.byId('sh-result'),'审核失败');
+			        			 	 $api.text($api.byId('sh-content'),ret.fail_reason);
+			        			 	 $api.text($api.byId('sh-time'),ret.shtime);
+			        			 	 $api.attr($api.byId('sh-result'),'style','display:block,color:#ff3333');
+			        			 	 $api.attr($api.byId('sh-time'),'style','display:block');
+			        			 	 $api.attr($api.byId('sh-content'),'style','display:block');
+			        			 	 $api.attr($api.byId('sh-circle'),'style','background:#7adb91');
+			        			 }
+			        		}
+			        	}
+			        });
+            	}
+            });
+	        
+	   }
+	}
+</script>
+</html>

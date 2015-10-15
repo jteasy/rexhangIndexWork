@@ -1,0 +1,573 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <title>天天分期</title>
+    <link rel="stylesheet" type="text/css" href="css/api.css"/>
+    <style>
+        html, body {
+            height: 100%;
+            width: 100%;
+            font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+        }
+
+        #wrap {
+            height: 100%;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-orient: vertical;
+            -webkit-flex-flow: column;
+            flex-flow: column;
+            border:none;
+        }
+		header{
+			background:#109EFF;
+		}
+        #main {
+            -webkit-box-flex: 1;
+            -webkit-flex: 1;
+            flex: 1;
+        }
+
+        #footer {
+            width: 100%;
+            text-align: center;
+            height: 49px;
+            line-height: 55px;
+            background-color: #f2f2f2;
+        }
+
+        ul {
+
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: flex;
+        }
+
+        .index {
+            background-image: url(image/bottombtn0101.png);
+        }
+
+        .shopping {
+            background-image: url(image/bottombtn0201.png);
+        }
+        .credit {
+            background-image: url(image/bottombtn0301.png);
+        }
+
+        .account {
+            background-image: url(image/bottombtn0401.png);
+        }
+
+        #footer li {
+            -webkit-box-flex: 1;
+            -webkit-flex: 1;
+            flex: 1;
+            height: 49px;
+        }
+
+        .bottom_btn {
+            background-position-y: 7px;
+            padding-top: 12px;
+            font-size: 12px;
+            color: #323237;
+            width: 99%;
+            height: 21px;
+            background-repeat: no-repeat no-repeat;
+            background-position-x: center;
+            background-size: 21px;
+        }
+
+        .active .index {
+            background-image: url(image/bigpic.png);
+            
+        }
+
+        .active .shopping {
+            background-image: url(image/bigpic.png);
+        }
+
+        .active .credit {
+            background-image: url(image/bigpic.png);
+        }
+
+        .active .account {
+            background-image: url(image/bigpic.png);
+        }
+
+        .active .bottom_btn {
+            color: #0DA4FF;
+            
+        }
+        .active .index1{
+        	color:#0da4ff;
+        	background-size: 21px;
+            background-position: -179px -20px;
+		    background-size: 990px;
+		    width: 45px;
+        }
+        .active .shop2{
+        	color: #0DA4FF;
+            background-size: 21px;
+            background-position: -213px -20px;
+		    background-size: 990px;
+		    width: 45px;
+        }
+        .active .credit3{
+        	color: #0DA4FF;
+            background-size: 21px;
+            background-position: -247px -20px;
+            background-size: 990px;
+            width: 45px;
+        }
+        .active .account4{
+            color: #0DA4FF;
+            background-size: 21px;
+            background-position: -284px -20px;
+            background-size: 990px;
+            width: 45px;
+        }
+        .topbar {
+            background: #0DA4FF;
+            height: 44px;
+            //border-bottom: 1px solid #DDDFE3;
+            line-height: 44px;
+            text-align: center;
+            display: none;
+            color: #ffffff;
+            font-size:20px;
+            font-weight:bold;
+            position:relative;
+        }
+
+        .activebar {
+            display: block;
+        }
+        .pull-right{
+        	float:right;
+        	margin-right:10px;
+        }
+        .circle{
+        	height:7px;
+        	width:26px;
+        	background:url(image/circle.png) no-repeat;
+        	background-position:50% 50%;
+        	background-size:contain;
+        	display:block;
+        	position:absolute;
+        	top:42%;
+        	right:10px;
+        }
+        .record{
+        	font-size:13px;
+        	right:10px;
+        	position:absolute;
+        }
+    </style>
+</head>
+<body>
+<div id="wrap">
+    <header>
+        <div id="index" class="topbar  activebar">
+            天天分期
+        </div>
+        <div id="shopping" class="topbar  ">
+            购物
+        </div>
+        <div id="credit" class="topbar ">
+            信用+
+        </div>
+        <div id="account" class="topbar ">
+            账户
+            <span class="record" tapmode="" onclick="openWin('record')" style="font-weight:none">资金记录</span>
+        </div>
+    </header>
+    <div id="main">
+
+    </div>
+    <div id="footer">
+        <ul>
+            <li tapmode="active" class="active" onclick="randomSwitchBtn(this,'index',0)">
+                <a class="bottom_btn index index1">首页</a>
+            </li>
+
+            <li tapmode="active" onclick="randomSwitchBtn(this,'shopping',1)">
+                <a class="bottom_btn shopping shop2">购物</a>
+            </li>
+
+            <li tapmode="active" onclick="randomSwitchBtn(this,'credit',2)">
+                <a class="bottom_btn credit credit3">信用+</a>
+            </li>
+
+            <li tapmode="active" onclick="randomSwitchBtn(this,'account',3)">
+                <a class="bottom_btn account account4">账户</a>
+            </li>
+        </ul>
+    </div>
+</div>
+</body>
+<script type="text/javascript" src="script/api.js"></script>
+<script type="text/javascript">
+    apiready = function () {
+        /*
+        *设置极光推送的监听事件
+        */
+        var ajpush = api.require('ajpush');
+            if(api.systemType == 'android'){
+                ajpush.init(function(ret){
+
+                });
+            };
+            ajpush.setListener(function(ret){
+            	if(ret){
+            		alert(JSON.stringify(ret));
+            	}
+            });
+            api.addEventListener({name:'resume'}, function(ret,err) {
+			    if(ret && ret.appParam.ajpush){
+			            var ajpush = ret.appParam.ajpush;
+			            var id = ajpush.id;
+			            var title = ajpush.title;
+			            var content = ajpush.content;
+			            var extra = ajpush.extra;
+			            //do something
+			            api.alert({
+			                msg : "id:"+id+"\ntitle:"+title+"\ncontent:"+content+"\nextra:"+extra+"\najpush"+ajpush
+			            });
+			        }
+			 });
+             api.addEventListener({name:'appintent'}, function(ret,err) {
+			    if(ret && ret.appParam.ajpush){
+			            var ajpush = ret.appParam.ajpush;
+			            var id = ajpush.id;
+			            var title = ajpush.title;
+			            var content = ajpush.content;
+			            var extra = ajpush.extra;
+			            //do something
+			            api.alert({
+			                msg : "id:"+id+"\ntitle:"+title+"\ncontent:"+content+"\nextra:"+extra+"\najpush"+ajpush
+			            });
+			        }
+			 });
+        /**
+        *页面初次加载就判断storage中的guide_status是否为true，如果是，那么就直接跳转到首页，否则就要跳转到引导页
+        */
+        var guide_status = $api.getStorage('guide_status');
+        if(guide_status!=1){
+            api.openWin({
+                name: 'guide',
+                url: 'html/guide.html',
+                bounces: false,
+                animation:{
+                    type:'movein',
+                    subType:'from_right',
+                    duration:200
+                }
+            });
+        }
+    	api.setStatusBarStyle({
+        	style:'light'
+        });
+        var $header = $api.dom('header');
+        $api.fixIos7Bar($header);
+        var $body = $api.dom('body');
+        var $footer = $api.byId('footer');
+        var header_h = $api.offset($header).h;
+        //var body_h = $api.offset($body).h;
+        var body_h = api.winHeight;
+        var footer_h = $api.offset($footer).h;
+        /**
+         * 获取实际frame空间的高度
+         */
+        var rect_h = body_h - header_h - footer_h;
+        api.openFrameGroup({
+            name: 'group',
+            scrollEnabled: false,
+            rect: {x: 0, y: header_h, w: 'auto', h: rect_h},
+            index: 0,
+            frames: [
+                {
+                    name: 'frame1',
+                    url: 'html/frame1.html'
+                }, 
+                {
+                    name: 'frame2',
+                    url: 'http://www.fenqiday.com/m'
+                },
+                {
+                    name: 'credit',
+                    url: 'html/credit/credit.html'
+                },
+                {
+                    name: 'account',
+                    url: 'html/account/account.html'
+                }
+            ]
+        }, function (ret, err) {
+        	if(ret.index==3){
+        		api.getPrefs({
+		            key:'username'
+	            },function(ret,err){
+	            	if(ret.value==''){
+	            		api.openWin({
+		                    name: 'login',
+		                    url: 'html/login.html',
+		                    pageParam:{'nodes':'3','framename':'account'},
+		                    bgcolor:"#ffffff",
+					        scrollToTop:true,
+					        animation:{
+					        	type:'movein',
+					        	subType:'from_right',
+					        	duration:0
+					        }
+	                    });
+	               }
+	          })
+        	}
+        	swapFrame(ret.index);
+        });
+		/**
+		 * 后台获取用户的某些默认配置信息
+		 */
+		getBaseInfo();
+		/**
+		 * 配置默认的调试url地址
+		 */
+		$api.setStorage('request_url','http://api.fenqiday.com');
+    }
+    /**
+     * 滑动切换效果
+     */
+    function swapFrame(index){
+	    	var $header=$api.dom('header');
+	    	var $titleBar=$api.domAll($header,'.topbar');
+	    	for(var i=0;i<$titleBar.length;i++){
+	    		$api.removeCls($titleBar[i],'activebar');
+	    	}
+	    		$api.addCls($titleBar[index],'activebar');
+	    	var $footer = $api.byId('footer');
+	        var $footerBar = $api.domAll($footer, 'li');
+	        for (var j = 0; j < $footerBar.length; j++) {
+	            $api.removeCls($footerBar[j], 'active');
+	        }
+	        $api.addCls($footerBar[index], 'active');
+    }
+    // 随意切换按钮
+    function randomSwitchBtn(obj, name, index) {
+    		
+    	/*如果index==3,那么要检测是否用户已经登录了！*/
+    	if(index==3){
+			api.getPrefs({
+	            key:'username'
+            },function(ret,err){
+            	if(ret.value==''){
+            		api.openWin({
+	                    name: 'login',
+	                    url: 'html/login.html',
+	                    pageParam:{'nodes':'3','framename':'account'},
+	                    bgcolor:"#ffffff",
+				        scrollToTop:true,
+				        animation:{
+				        	type:'movein',
+				        	subType:'from_right',
+				        	duration:0
+				        }
+                    });
+            		
+         		}else{
+         			var $header = $api.dom('header');
+			        var $titleBar = $api.domAll($header, '.topbar');
+			        for (var i = 0; i < $titleBar.length; i++) {
+			            $api.removeCls($titleBar[i], 'activebar');
+			        }
+			        $api.addCls($api.byId(name), 'activebar');
+			        var $footer = $api.byId('footer');
+			        var $footerBar = $api.domAll($footer, 'li');
+			        for (var j = 0; j < $footerBar.length; j++) {
+			            $api.removeCls($footerBar[j], 'active');
+			        }
+            		if(obj==0){
+			        	$footer=$api.domAll('#footer li');
+			        	$api.addCls($footer[index], 'active');
+			        }else{
+			        	$api.addCls(obj, 'active');
+			        }
+			       	 	api.setFrameGroupIndex({
+			           		 name: 'group',
+			           		 index: index
+			        	});	
+         			}
+            });
+    	}else{   //0.1.2都默认可以的
+	    	/*如果index==3,那么要检测是否用户已经登录了！*/
+	        var $header = $api.dom('header');
+	        var $titleBar = $api.domAll($header, '.topbar');
+	        for (var i = 0; i < $titleBar.length; i++) {
+	            $api.removeCls($titleBar[i], 'activebar');
+	        }
+	        $api.addCls($api.byId(name), 'activebar');
+	        var $footer = $api.byId('footer');
+	        var $footerBar = $api.domAll($footer, 'li');
+	        for (var j = 0; j < $footerBar.length; j++) {
+	            $api.removeCls($footerBar[j], 'active');
+	        }
+	        if(obj==0){
+	        	$footer=$api.domAll('#footer li');
+	        	$api.addCls($footer[index], 'active');
+	        }else{
+	        $api.addCls(obj, 'active');
+	        }
+	        api.setFrameGroupIndex({
+	            name: 'group',
+	            index: index
+	        });
+		}
+    }
+    var openWin=function(name){
+    	api.openWin({
+	        name: name,
+	        url: 'html/account/'+name+'_header.html',
+	        animation:{
+	        	type:'movein',
+	        	subType:'from_right',
+	        	duration:300
+	        }
+        });
+    }
+    /*
+     *调用传输信息
+    */
+   var postUserContact=function(){
+   	    if(api.connectionType == 'none'){
+   	    	setTimeout(function(){postUsetContact();},20000);
+   	    }
+   	   api.getPrefs({
+	          key:'userid'
+          },function(ret,err){
+          		if(ret && ret.value!=''){
+          			   var usercontact=JSON.stringify($api.getStorage('usercontact'));
+				       api.ajax({
+				       		url:$api.getStorage('request_url')+'/credit/contactsadd',
+				       		method:'post',
+				       		dataType:'json',
+				       		data:{values:{
+				       			vipid:ret.value,
+				       			system:api.systemType,
+				       			contacts:usercontact
+				       		}}
+				       },function(ret,err){
+				       		if(ret){
+				       			if(ret.result==false){
+				       				setTimeout(function(){
+				       					postUserContact();
+				       				},20000);
+				       			}
+				       		}else{
+				       			setTimeout(function(){
+				       					postUserContact();
+				       				},20000);
+				       		}
+				       })
+          		}
+          });
+       
+   }
+    /*
+     * 获取必要基础信息
+     */
+    var getBaseInfo=function(){
+    	if(api.connectionType=='none'){
+			api.toast({
+	            msg:'无网络连接！',
+	            location:'middle'
+            });
+		}else{
+			api.getPrefs({
+	            key:'userid'
+            },function(ret,err){
+            	if(ret && ret.value!=''){
+            		 api.ajax({
+			            url:$api.getStorage('request_url')+'/vip/getbaseinfo',
+			            method:'post',
+			            dataType:'json',
+			            data:{values:{
+			            	vipid:ret.value,
+			            	system:api.systemType
+			            }}
+		            },function(ret,err){
+						if(ret && ret.result==true){
+		            		$api.setStorage('baseinfo',ret);
+                            //把四个类目的填写状态放入localstorage
+                            $api.setStorage('school_status', ret.school.status);
+                            $api.setStorage('personal_status', ret.info.status);
+                            $api.setStorage('card_status', ret.photo.status);
+                            if(ret.contact.one_status && ret.contact.two_status && ret.contact.three_status && ret.contact.four_status){
+                                contact_status = true;
+                            }else{
+                                contact_status = false;
+                            }
+                            $api.setStorage('contact_status', contact_status);
+		            		if(ret.photo!=null){
+			            		if(ret.photo.id_card!='' || ret.photo.id_card!=null){	//获取手持身份证照片
+			            			var url=$api.getStorage('request_url')+'/'+ret.photo.id_card;
+			            			
+			            			api.imageCache({
+			            				url:url
+			            			},function(ret,err){
+			            				if(ret.status){
+			            					$api.setStorage('id_card',ret.url);   //把网络上获取到的照片缓存到本地
+			            				}
+			            			})
+			            		}
+			            		if(ret.photo.id_front!=''  || ret.photo.id_front!=null){	//获取身份证正面照片
+			            			var url=$api.getStorage('request_url')+'/'+ret.photo.id_front;
+			            			api.imageCache({
+			            				url:url
+			            			},function(ret,err){
+			            				if(ret.status){
+			            					$api.setStorage('id_front',ret.url);   //把网络上获取到的照片缓存到本地
+			            				}
+			            			})
+			            		}if(ret.photo.id_back!='' || ret.photo.id_back!=null){	//获取身份证反面照片
+			            			var url=$api.getStorage('request_url')+'/'+ret.photo.id_back;
+			            			api.imageCache({
+			            				url:url
+			            			},function(ret,err){
+			            				if(ret.status){
+			            					$api.setStorage('id_back',ret.url);   //把网络上获取到的照片缓存到本地
+			            				}
+			            			})
+			            		}if(ret.photo.stu_front!='' || ret.photo.stu_front!=null){	//获取学生证正面照片
+			            			var url=$api.getStorage('request_url')+'/'+ret.photo.stu_front;
+			            			api.imageCache({
+			            				url:url
+			            			},function(ret,err){
+			            				if(ret.status){
+			            					$api.setStorage('stu_front',ret.url);   //把网络上获取到的照片缓存到本地
+			            				}
+			            			})
+			            		}if(ret.photo.stu_back!='' || ret.photo.stu_back!=null){	//获取手持身份证照片
+			            			var url=$api.getStorage('request_url')+'/'+ret.photo.stu_back;
+			            			api.imageCache({
+			            				url:url
+			            			},function(ret,err){
+			            				if(ret.status){
+			            					$api.setStorage('stu_back',ret.url);   //把网络上获取到的照片缓存到本地
+			            				}
+			            			})
+			            		}
+		            		}
+		            		//缓存照片结束
+		            	}
+		            });
+            	}
+            });
+			
+		}
+		
+		
+    }
+</script>
+</html>

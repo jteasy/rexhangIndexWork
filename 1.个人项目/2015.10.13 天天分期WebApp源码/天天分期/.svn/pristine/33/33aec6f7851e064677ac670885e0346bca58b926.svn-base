@@ -1,0 +1,436 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>学校信息</title>
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="stylesheet" type="text/css" href="../../css/api.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/common.css" />
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+            font-size: 16px;
+            position: absolute;
+            bottom: 0;
+        }
+        /*header*/
+        #headers{
+            width: 100%;
+            margin-top: 24px;
+        }
+        #headers .info_list{
+            margin-left: 12px;
+            margin-right: 12px;
+        }
+        #headers .info_list .list_1{
+            height: 54px;
+            border-bottom: 1px solid #D7D7D7;
+        }
+        #headers .info_list .list_1 .icon_1{
+            width: 30px;
+            height: 30px;
+            /*border: 1px solid #D7D7D7;*/
+            border-radius: 50%;
+            margin-top: 12px;
+            display: block;
+            float: left;
+            background: url('../../image/bigpic.png') no-repeat;
+            background-position: 0 0;
+            background-size: 900px;
+        }
+        .names{
+            height: 54px;
+            outline: none;
+            float: left;
+            font-size: 14px;
+            text-indent: 14px;
+            width: 80%;
+            color: #333;
+            font-family: '微软雅黑';
+        }
+        #btns{
+            height: 50px;
+            background: #c9c9c9;
+            margin-left: 12px;
+            margin-right: 12px;
+            display: block;
+            color: #fff;
+            font-size: 16px;
+            text-align: center;
+            line-height: 50px;
+            margin-top: 44px;
+            border-radius: 6px;
+        }
+        .list_1 .tmt{
+            position: absolute;
+            left: 58px;
+            color: #999;
+        }
+        .sels1{
+            height: 16px;
+            width: 16px;
+            border: 1px solid red;
+            float: right;
+            margin-top: 19px;
+            line-height: 16px;
+            text-align: center;
+        }
+        .dialog{
+        	height: 316px;
+		    margin-top:-2px;
+		    position: absolute;
+		    /* left: 12px; */
+		   	font-size:14px;
+		    right: 0px;
+		    width: 100%;
+		    opacity: 1;
+		    z-index: 111;
+		    background-color: #ffffff;
+        }
+        .dialog-body{
+        	height: 100%;
+        	margin:0 12px 0 12px;
+        	border: 1px solid #0da4ff;
+			overflow: auto;
+        }
+        .dialog ul{
+        	list-style: none;
+		    line-height: 37px;
+		    text-indent:17px;
+       }
+	    .dialog ul li{
+	    	border-bottom: 1px solid #DDDDE0;
+	    }
+	    .show{
+	    	display:block;
+	    }
+	    .hide{
+	    	display:none;
+	    }
+        .active{
+            background: #28aeff;
+        }
+    </style>
+</head>
+<body>
+    <div id="headers">
+        <div class="info_list">
+            <div class="list_1">
+                <span class="icon_1" style="background-position: -167px -83px;"></span>
+                <input type="text" placeholder="学校名称" class="names" tapmode='' id="school_name"/>
+            </div>
+            <!--点击学校弹出-->
+            <div class="dialog hide">
+            	<div class="dialog-body">
+	            	<ul>
+	            		
+	            	</ul>
+            	</div>
+            </div>
+            <!-- list2 -->
+            <div class="list_1"  id="inner_frame_pos">
+                <span class="icon_1" style="background-position: -167px -134px;"></span>
+                <input type="text" placeholder="入学时间" class="names" tapmode="" id="entrance_time" onclick="dropDown('entrance_time')" readonly="readonly"/>
+            </div>
+            <!-- list3 -->
+            <div class="list_1">
+                <span class="icon_1" style="background-position: -167px -190px;"></span>
+                <input type="text" placeholder="学制" class="names" tapmode="" id="schooling" onclick="dropDown('schooling')" readonly="readonly"/>
+            </div>
+            <!-- list4 -->
+            <div class="list_1">
+                <span class="icon_1" style="background-position: -167px -238px;"></span>
+                <input type="text" placeholder="学历" class="names"  tapmode="" id="education" onclick="dropDown('education')" readonly="readonly"/>
+            </div>
+            <!-- list5 -->
+            <div class="list_1">
+                <span class="icon_1" style="background-position: -209px -189px;"></span>
+                <input type="text" placeholder="学校地址" class="names"  tapmode="" readonly="readonly" id="school_address" value="" onclick="dropDown('school_address')" />
+            </div>
+            <!-- list6 -->
+            <div class="list_1">
+                <span class="icon_1" style="background-position: -167px -289px;"></span>
+                <input type="text" placeholder="详细地址" class="names"  tapmode="" id="detail_address"/>
+            </div>
+        </div>
+        <a href="javascript:void(0);" id="btns" tapmode="active">确定</a>
+    </div>
+</body>
+<script type="text/javascript" src="../../script/api.js"></script>
+<script type="text/javascript">
+    //默认函数来判断按键颜色
+    var checkBtnColor=function(){
+        var school_name=$api.val($api.byId("school_name"));
+        var entrance_time=$api.val($api.byId("entrance_time"));
+        var schooling=$api.val($api.byId("schooling"));
+        var education=$api.val($api.byId("education"));
+        var school_address=$api.val($api.byId("school_address"));
+        var detail_address=$api.val($api.byId("detail_address"));
+        if($api.trimAll(school_name)!='' && $api.trimAll(entrance_time)!='' && $api.trimAll(schooling)!='' && $api.trimAll(education)!='' && $api.trimAll(school_address)!='' && $api.trimAll(detail_address)!=''){
+            $api.attr($api.byId('btns'),'style','background:#0da4ff');
+        }else{
+            $api.attr($api.byId('btns'),'style','background:#0da4ff');
+        }
+    }
+	//全局监听input事件，控制btn变色
+    $api.addEvt($api.dom('body'),'input',function(){
+        checkBtnColor();
+    });
+	$api.addEvt($api.byId("btns"),'click',function(){
+		var school_name=$api.val($api.byId("school_name"));
+		var entrance_time=$api.val($api.byId("entrance_time"));
+		var schooling=$api.val($api.byId("schooling"));
+		var education=$api.val($api.byId("education"));
+		var school_address=$api.val($api.byId("school_address"));
+		var detail_address=$api.val($api.byId("detail_address"));
+        if ($api.trimAll(school_name)==''){
+            api.toast({msg:'学校名称还没填哦！'});
+            return false;
+        }else if ($api.trimAll(entrance_time)==''){
+            api.toast({msg:'入学时间还没填哦！'});
+            return false;
+        }else if ($api.trimAll(schooling)==''){
+            api.toast({msg:'学制是还没填哦！'});
+            return false;
+        }else if ($api.trimAll(education)==''){
+            api.toast({msg:'学历还没填哦！'});
+            return false;
+        }else if ($api.trimAll(school_address)==''){
+            api.toast({msg:'学校地址还没填哦！'});
+            return false;
+        }else if ($api.trimAll(detail_address)==''){
+            api.toast({msg:'具体地址还没填哦！'});
+            return false;
+        }else{
+        	api.setPrefs({key:'school_name',value:school_name});
+        	api.setPrefs({key:'entrance_time',value:entrance_time});
+        	api.setPrefs({key:'schooling',value:schooling});
+        	api.setPrefs({key:'education',value:education});
+        	api.setPrefs({key:'school_address',value:school_address});
+        	api.setPrefs({key:'detail_address',value:detail_address});
+
+        	api.getPrefs({
+	            key:'userid'
+            },function(ret,err){
+            	if(ret){
+            		var vipid=ret.value;
+            				api.ajax({
+				               url:$api.getStorage('request_url')+'/borrow/addschool',
+				               method:'post',
+				               dataType:'json',
+				               data:{values:{
+				               		vipid:vipid,
+				               		school:school_name,
+				               		entrance_time:entrance_time,
+				               		schooling:schooling,
+				               		education:education,
+				               		school_address:school_address,
+				               		detail_address:detail_address,
+				               		status:1
+				               }}
+			               },function(ret,err){
+			               		if(ret){
+			               			$api.setStorage('school_status',true);
+			               			if(ret.result==true){
+			               				api.toast({
+	                                           msg:'信息添加成功！'
+                                           });
+                                         setTimeout(function(){
+                                         	api.execScript({
+	                                             name:'information',
+	                                             frameName:'information_body',
+	                                             script: 'reload();'
+                                             });
+                                         	api.closeWin({
+                                             	name:'school'
+                                             });
+                                         },1000);
+			               			}else{
+			               				api.toast({
+	                                           msg:'信息添加失败'
+                                           });
+                                        setTimeout(function(){
+                                        	location.reload();
+                                        },1000);
+			               			}
+			               		}
+			               });
+            	}
+            });
+           
+        }
+	});
+	//选择学校
+	var chooseSchool=function(obj){
+		$api.val($api.byId('school_name'), $api.text(obj));
+		$api.removeCls($api.dom(".dialog"), "show");
+		$api.addCls($api.dom(".dialog"), "hide");
+	}
+	//学校input自动搜索数据库并返回结果
+	$api.addEvt($api.byId("school_name"),"input",function(){
+		var  $value=$api.val($api.byId("school_name"));
+		var db=api.require('db');
+		db.openDatabase({
+	        name:'schoollist',
+	        path:'widget://res/schoollist.db'
+        },function(ret,err){
+        	if(ret.status){
+        		 /*查询结果放入ul*/
+			       db.selectSql({
+				        name:'schoollist',
+				        sql:'select school from school where school like "%'+$value+'%"'
+			        },function(ret,err){
+			        	if(ret.status){
+			        		var school='';
+			        		for(x in ret.data){
+			        			school+='<li onclick="chooseSchool(this)">'+ret.data[x].school+'</li>';	
+			        		}
+			        		$api.html($api.dom(".dialog-body ul"), school);
+			        	}else{
+			        		alert(JSON.stringify(err.msg));
+			        	}
+			        });
+        	}
+        });
+	});
+	//点击input的下拉事件函数：
+	var dropDown=function(obj){
+		rect_y=$api.offset($api.dom('body')).h;
+		api.openFrame({
+	        name: obj,
+	        bounces:false,
+	        url: obj+'.html',
+	        rect: {
+		        x:0,
+		        y:0,
+		        w:'auto',
+		        h:'auto'
+	        }
+        });
+	}
+	
+	//被远程执行的获取入学时间方法：
+	var getExeVal=function(obj,value){
+		$api.val($api.byId(obj),value);
+	}
+	apiready=function(){
+        //判断按键颜色
+        checkBtnColor();
+        //本地数据库来选择学校信息；
+		var db=api.require('db');
+		db.openDatabase({
+	        name:'schoollist',
+	        path:'widget://res/schoollist.db'
+        },function(ret,err){
+        	if(ret.status){
+        		 /*查询结果放入ul*/
+			       db.selectSql({
+				        name:'schoollist',
+				        sql:'select school from school'
+			        },function(ret,err){
+			        	if(ret.status){
+			        		var school='';
+			        		for(x in ret.data){
+			        			school+='<li onclick="chooseSchool(this)">'+ret.data[x].school+'</li>';	
+			        		}
+			        		$api.html($api.dom(".dialog-body ul"), school);
+			        	}else{
+			        		alert(JSON.stringify(err.msg));
+			        	}
+			        });
+        	}
+        });
+       	/**
+       	 *把prefs的学校相关的值放在对应的位置； 
+       	 */
+       	var baseinfo = $api.getStorage('baseinfo');
+       	 api.getPrefs({
+       	 	key:'school_name'
+       	 },function(ret,err){
+       	 	if(ret && ret.value!=''){
+       	 		$api.val($api.byId("school_name"),ret.value)
+       	 	}else{
+       	 		if(baseinfo.school!='' && baseinfo.school!=null){
+       	 			$api.val($api.byId("school_name"),baseinfo.school.school);
+       	 		}
+       	 	}
+       	 });
+       	 
+		api.getPrefs({
+			key:'entrance_time'
+		},function(ret,err){
+			if(ret && ret.value!=''){
+				$api.val($api.byId("entrance_time"),ret.value)
+			}else{
+       	 		if(baseinfo.school!='' && baseinfo.school!=null){
+       	 			$api.val($api.byId("entrance_time"),baseinfo.school.entrance_time);
+       	 		}
+       	 	}
+		});
+		api.getPrefs({
+			key:'schooling'
+		},function(ret,err){
+			if(ret && ret.value!=''){
+				$api.val($api.byId("schooling"),ret.value)
+			}else{
+       	 		if(baseinfo.school!='' && baseinfo.school!=null){
+       	 			$api.val($api.byId("schooling"),baseinfo.school.schooling);
+       	 		}
+       	 	}
+		});
+		
+		api.getPrefs({
+			key:'education'
+		},function(ret,err){
+			if(ret && ret.value!=''){
+				$api.val($api.byId("education"),ret.value)
+			}else{
+       	 		if(baseinfo.school!='' && baseinfo.school!=null){
+       	 			$api.val($api.byId("education"),baseinfo.school.education);
+       	 		}
+       	 	}
+		});
+		
+		api.getPrefs({
+			key:'school_address'
+		},function(ret,err){
+			if(ret && ret.value!=''){
+				$api.val($api.byId("school_address"),ret.value)
+			}else{
+       	 		if(baseinfo.school!='' && baseinfo.school!=null){
+       	 			$api.val($api.byId("school_address"),baseinfo.school.school_address);
+       	 		}
+       	 	}
+		});
+		
+		api.getPrefs({
+			key:'detail_address'
+		},function(ret,err){
+			if(ret && ret.value!=''){
+				$api.val($api.byId("detail_address"),ret.value)
+			}else{
+       	 		if(baseinfo.school!='' && baseinfo.school!=null){
+       	 			$api.val($api.byId("detail_address"),baseinfo.school.detail_address);
+       	 		}
+       	 	}
+		});
+	}
+	/**
+	 *展示学校信息 
+	 */
+	var $header=$api.dom("#headers");
+	var header_h=$api.offset($header).h;
+	var header_w=$api.offset($header).w;
+	//学校input focus绑定事件
+	$api.addEvt($api.dom('#school_name'),'focus',function(){
+		$api.removeCls($api.dom(".dialog"), "hide");
+		$api.addCls($api.dom(".dialog"), "show");
+	});
+</script>
+</html>

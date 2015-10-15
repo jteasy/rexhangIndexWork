@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>常见问题</title>
+    <link rel="stylesheet" type="text/css" href="../../css/api.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/common.css" />
+<style type="text/css" media="screen">
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    body{
+        font-size: 12px;
+        font-family: '微软雅黑';
+        background: #EAEAEC;
+        position: absolute;
+        bottom: 0;
+    }
+    .kefu{
+        margin: 10px 14px;
+        border: 1px solid #0DA4FF;
+        height: 40px;
+        font-size: 16px;
+        line-height: 40px;
+        text-align: center;
+        color: #0DA4FF;
+        border-radius: 4px;
+    }
+    #xyall{
+        width: 100%;
+        background: #fff;
+    }
+    .xy_1{
+        height: 50px;
+        margin: 0 14px;
+        border-bottom: 1px solid #D8D8D8;
+        font-size: 16px;
+        text-align: left;
+        line-height: 50px;
+        color: #999;
+    }
+    .xy_list{
+        height: 40px;
+        margin: 0 14px;
+        border-bottom: 1px solid #D8D8D8;
+        font-size: 14px;
+        text-align: left;
+        line-height: 40px;
+        color: #333;
+    }
+    #tsed{
+        width: 100%;
+        background: #fff;
+    }
+    .ts1{
+        height: 50px;
+        margin: 0 14px;
+        border-bottom: 1px solid #D8D8D8;
+        font-size: 16px;
+        text-align: left;
+        line-height: 50px;
+        color: #999;
+    }
+    .ts_list{
+        height: 40px;
+        margin: 0 14px;
+        border-bottom: 1px solid #D8D8D8;
+        font-size: 14px;
+        text-align: left;
+        line-height: 40px;
+        color: #333;
+    }
+    #tx{
+        width: 100%;
+        background: #fff;
+        padding-bottom: 14px;
+    }
+    .tx1{
+        height: 50px;
+        margin: 0 14px;
+        border-bottom: 1px solid #D8D8D8;
+        font-size: 16px;
+        text-align: left;
+        line-height: 50px;
+        color: #999;
+    }
+    .tx_list{
+        height: 40px;
+        margin: 0 14px;
+        border-bottom: 1px solid #D8D8D8;
+        font-size: 14px;
+        text-align: left;
+        line-height: 40px;
+        color: #333;
+    }
+</style>
+<body>
+    <!-- keFu -->
+    <div class="kefu" tapmode="" onclick="callTo()">
+        客服电话：400-029-3995
+    </div>
+    <!-- xinYong -->
+    <div id="xyall">
+        <div class="xy_1">信用评估</div>
+        <div class="xy_list">信用评估是什么？</div>
+        <div class="xy_list">信用评估需要多长的时间？</div>
+        <div class="xy_list">信用评估是如何进行审核的？</div>
+        <div class="xy_list">信用评估需要哪些资料？</div>
+    </div>
+    <!-- eDu -->
+    <div id="tsed">
+        <div class="ts1">提升额度</div>
+        <div class="ts_list">如何申请提升额度</div>
+        <div class="ts_list">如何获得更高的额度？</div>
+        <div class="ts_list">信用额度为什么为0？</div>
+    </div>
+    <!-- tixian -->
+    <div id="tx">
+        <div class="tx1">提现</div>
+        <div class="tx_list">如何获得更高的额度？</div>
+    </div>  
+
+</body>
+<script type="text/javascript" src="../../script/api.js"></script>
+<script type="text/javascript">
+	var callTo=function(){
+		api.call({
+		    number:'4000293995'
+	    });
+	}
+</script>
+</html>

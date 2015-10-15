@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>修改登录密码</title>
+    <link rel="stylesheet" type="text/css" href="../../css/api.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/common.css" />
+     <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        body{
+            font-size: 12px;
+            font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+            background: #EFEFF2;
+        }
+
+        html{
+          -webkit-tap-highlight-color: rgba(0,0,0,0);
+        }
+        .top1{
+            height: 50px;
+            margin-left: 20px;
+            margin-right: 20px;
+            line-height: 50px;
+            position: relative;
+            border-radius:5px;
+            border: 1px solid #D8D8D8;
+        }
+        input[name='top1']{
+            height: 50px;
+            border: 0;
+            outline: 0;
+            text-indent: 14px;
+            font-size: 14px;
+            width: 100%;
+        }
+        /*button CSS start*/
+         .row {
+            position: absolute;
+            right: 14px;
+            top: 10px;
+        }
+         input[type="checkbox"] {
+            display: none;
+        }
+        /*check后面的第一个label元素*/
+         input[type="checkbox"] + label {
+            position: relative;
+            display: inline-block;
+            background: #ccc;/*label的背景颜色*/
+            width: 60px;
+            height: 30px;
+            border-radius: 100px;
+            cursor: pointer;
+            -webkit-transition: 0.2s all linear;
+            transition: 0.2s all linear;
+        }
+         input[type="checkbox"] + label:after {
+            content: '';
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            display: block;
+            height: 26px;
+            width: 26px;
+            background: white;
+            border-radius: 50%;
+            box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+            -webkit-transition: 0.2s all ease-in-out;
+        }
+         input[type="checkbox"]:checked + label {
+            background: #0DA4FF;
+        }
+         input[type="checkbox"]:checked + label:after {
+            left: calc(100% - 28px);
+        }
+        /*2*/
+         .row2 {
+            width: 60px;
+            height: 30px;
+            position: absolute;
+            right: 14px;
+            top: 10px;
+        }
+        /*button CSS end*/
+        /*btn sure*/
+        #btns{
+             width: 100%;
+             margin-top: 20px;
+        }
+        #btns .btn{
+             height: 50px;
+             margin: 0 20px;
+             text-align: center;
+             font-size: 18px;
+             border-radius: 4px;
+             background: #0DA4FF;
+             color: #fff;
+             line-height: 50px;
+        }
+        #btns .btn:active{
+        	background:#3fb7ff;
+        }
+        .yanse{
+        	background:#ccc;
+        }
+        .brown-bar{
+        	height:10px;
+        	width:100%;
+        	background:#efeff2;
+        }
+        .contain{
+        	background:#fff;
+        	height:126px;
+        	padding-top:10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="brown-bar"></div>
+    <div class="contain">
+        <div class="top1">
+            <input type="password" placeholder="输入6-20位旧密码" name="top1" maxlength='20' id="code1" />
+       		<div class="row">
+                    <input type="checkbox" name="fancy-checkbox" id="fancy-checkbox" tapmode=""/>
+                    <label for="fancy-checkbox"></label>
+            </div> 
+        </div>
+        <div class="top1" style="margin-bottom: 14px;margin-top:10px;">
+            <input type="password" placeholder="输入6-20位新密码" name="top1" maxlength='20' id="code2" />
+            <div class="row2">
+                        <input type="checkbox" name="fancy-checkbox2" id="fancy-checkbox2" tapmode=""/>
+                        <label for="fancy-checkbox2"></label>
+            </div>
+        </div>
+    </div>
+    <!-- btn -->
+    <div id="btns" tapmode="">
+      <div class="btn">确定</div>
+    </div>
+</body>
+<script type="text/javascript" src="../../script/api.js"></script>
+<script type="text/javascript">
+    $api.addEvt($api.byId('fancy-checkbox'),'click',function(){
+        if($api.byId('code1').type=='password'){
+            $api.attr($api.byId('code1'),'type','text');
+        }else if($api.byId('code1').type=='text'){
+            $api.attr($api.byId('code1'),'type','password');
+        }
+    });
+    $api.addEvt($api.byId('fancy-checkbox2'),'click',function(){
+        if($api.byId('code2').type=='password'){
+            $api.attr($api.byId('code2'),'type','text');
+        }else if($api.byId('code2').type=='text'){
+            $api.attr($api.byId('code2'),'type','password');
+        }
+    });
+    $api.addEvt($api.byId('btns'),'click',function(){
+        var code1=$api.val($api.byId('code1'));
+        var code2=$api.val($api.byId('code2'));
+        if($api.trimAll(code1)=='' || $api.trimAll(code1).length<6){
+            api.toast({
+                msg: '旧密码格式不对',
+                duration: 1000,
+                location: 'middle'
+            });
+        }else if($api.trimAll(code2)=='' || $api.trimAll(code2).length<6){
+            api.toast({
+                msg: '新密码必须为6-20位组合',
+                duration: 1000,
+                location: 'middle'
+            });
+        }else{
+            var request_url = $api.getStorage('request_url');
+            var baseinfo = $api.getStorage('baseinfo');
+            api.ajax({
+                url: request_url+'/vip/changepw',
+                method: 'post',
+                timeout: 30,
+                dataType: 'json',
+                returnAll:false,
+                data:{
+                    values: {
+                        vipid:baseinfo.vipid,
+                        old_pw:code1,
+                        new_pw:code2,
+                        system:api.systemType
+                    }
+                }
+            },function(ret,err){
+                if (ret) {
+                    if(ret.result==true){
+                        api.toast({
+                            msg: '密码已成功修改',
+                            duration: 1000,
+                            location: 'middle'
+                        });
+                        setTimeout(function(){
+                            api.closeToWin({
+                                name: 'root',
+                                animation: {
+                                    duration: 0
+                                }
+                            });
+                        },1000)
+                    }else{
+                        if(ret.code=='-200'){
+                            api.toast({
+                                msg: '旧密码不正确',
+                                duration: 1000,
+                                location: 'middle'
+                            });
+                            setTimeout(function(){
+                                api.openWin({
+                                    name: 'changeloginpw',
+                                    reload:true
+                                });
+                            },1000)
+                        }else{
+                            api.toast({
+                                msg: '更新失败，请重试',
+                                duration: 1000,
+                                location: 'middle'
+                            });
+                            setTimeout(function(){
+                                api.openWin({
+                                    name: 'changeloginpw',
+                                    reload:true
+                                });
+                            },1000)
+                        }
+                    }
+                }else {
+                    api.toast({
+	                    msg:'网络错误，请重试！',
+	                    location:'middle'
+                    });
+                };
+            });
+        }
+
+    });
+	var openWin=function($url){
+		api.openWin({
+	        name:$url,
+	        url: $url+'_header.html',
+	        bgcolor:"#ffffff",
+	        scrollToTop:true,
+	        animation:{
+	        	type:'movein',
+	        	subType:'from_right'
+	        }
+        });
+	}
+</script>
+</html>

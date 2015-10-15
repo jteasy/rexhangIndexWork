@@ -1,0 +1,280 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>个人资料</title>
+    <link rel="stylesheet" type="text/css" href="../../css/api.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/common.css" />
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            font-size: 12px;
+            font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+            position: absolute;
+            bottom: 0;
+        }
+        .container{
+            width: 100%;
+        }
+        .container .content{
+            margin: 14px 14px 0 14px;
+        }
+        .container .content .c_left{
+            float: left;
+            width: 125px;
+            height: 80px;
+            border: 1px solid #C9C9C9;
+            text-align: center;
+            background: #F2F2F2;
+            border-radius: 4px; 
+        }
+        .container .content .b_radius{
+            margin-top: 14px;
+            width: 50px;
+            height: 35px;
+            background: #E4E4E4;
+            border-radius: 50%;
+            margin-left: 37px;
+        }
+        .container .content .c_right{
+            background: #F2F2F2;
+            float: right;
+            width: 125px;
+            height: 80px;
+            border: 1px solid #C9C9C9;
+            text-align: center;
+        }
+        .shenhe{
+            margin-top: 5px;
+            color: #666;
+        }
+        .tex-info{
+            margin-top: 10px;
+            color: #666;
+            margin-bottom: 12px;
+        }
+        .container #btns{
+            margin-left: 12px;
+            margin-right: 12px;
+        }
+        .container .btn{
+            height: 50px;
+            background: #0DA4FF;
+            width: 100%;
+            display: block;
+            text-align: center;
+            line-height: 50px;
+            color: #fff;
+            font-size: 18px;
+            border-radius: 4px;
+        }
+        .insert_img{
+        	position:relative;
+        }
+        .insert_img .ok{
+        	background:url(../../image/ok.png) no-repeat;
+        	background-size: 16px;
+		    width: 16px;
+	 	    height: 16px;
+	  	    position: absolute;
+	  	    bottom: 2px;
+	  	    right: 2px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <!-- picShow start -->
+            <div class="c_left insert_img"  tapmode="" onclick="openCamera(this,'id_card')" id="id_card">
+               <img src="../../image/cha1.jpg" alt="cha1" width="" height="70" style="margin-top: 5px;" />
+                <p class="shenhe">本人审核照</p>
+            </div>
+
+            <!-- 清除浮动 -->
+            <div style="clear:both;"></div>
+            <!-- picShow end -->
+            <p class="tex-info">1.手持身份证半身照，拍照时拍出持证手臂，以证实是本人手持</p>
+            <!-- area2 -->
+            <!-- picShow start -->
+            <div class="c_left insert_img"  tapmode="" onclick="openCamera(this,'id_front')" id="id_front">
+                <img src="../../image/cha2.png" alt="cha2" width="" height="70" style="margin-top: 5px;" />
+                <p class="shenhe">本人审核照</p>
+            </div>
+            <div class="c_right insert_img"  tapmode="" onclick="openCamera(this,'id_back')" id="id_back">
+                <img src="../../image/cha3.png" alt="cha2" width="" height="70" style="margin-top: 5px;" />
+                <p class="shenhe">本人审核照2</p>
+            </div>
+            <!-- 清除浮动 -->
+            <div style="clear:both;"></div>
+            <!-- picShow end -->
+            <p class="tex-info">2.身份证照需拍摄两张，分别为正面和反面</p>
+            <!-- area3 -->
+            <!-- picShow start -->
+            <div class="c_left insert_img" tapmode="" onclick="openCamera(this,'stu_front')" id="stu_front">
+                <img src="../../image/cha4.png" alt="cha2" width="" height="70" style="margin-top: 5px;" />
+                <p class="shenhe">本人审核照</p>
+            </div>
+            <div class="c_right insert_img" tapmode="" onclick="openCamera(this,'stu_back')" id="stu_back">
+                <img src="../../image/cha5.png" alt="cha2" width="" height="70" style="margin-top: 5px;" />
+                <p class="shenhe">本人审核照2</p>
+            </div>
+            <!-- 清除浮动 -->
+            <div style="clear:both;"></div>
+            <!-- picShow end -->
+            <p class="tex-info">3.学生证照需拍摄两张，分别为封面和内页</p>
+        </div>
+        <div id="btns" tapmode="" onclick="submit()">
+            <a href="javascript:void(0);" class="btn">确定</a>
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="../../script/api.js"></script>
+<script type="text/javascript">
+	var submit=function(){
+        var baseinfo = $api.getStorage('baseinfo');
+        var vipaccount = $api.getStorage('vip_account');
+		var input_id_card=$api.val($api.byId("input_id_card"));
+		var input_id_front=$api.val($api.byId("input_id_front"));
+		var input_id_back=$api.val($api.byId("input_id_back"));
+		var input_stu_front=$api.val($api.byId("input_stu_front"));
+		var input_stu_back=$api.val($api.byId("input_stu_back"));
+		if (!input_id_card){
+			api.toast({msg:'手持身份证照片未拍!'});
+		}else if (!input_id_front) {
+			api.toast({msg:'身份证正面未上传！'});
+		}else if (!input_id_back) {
+			api.toast({msg:'身份证背面未上传！'});
+		}else if (!input_stu_front) {
+			api.toast({msg:'学生证正面未上传！'});
+		}else if (!input_stu_back) {
+			api.toast({msg:'学生证背面未上传！'});
+		}else{
+			if(api.connectionType=='none'){
+				api.toast({msg:'网络连接异常！'})
+			}else{
+                api.ajax({
+                    url: $api.getStorage('request_url')+'/upload/uploadSubmit',
+                    method: 'post',
+                    timeout: 30,
+                    dataType: 'json',
+                    returnAll:false,
+                    data:{
+                        values: {
+                            vipid: baseinfo.vipid,
+                            system:api.systemType,
+                            phone:vipaccount.data.mov
+                        }
+                    }
+                },function(ret,err){
+                    if (ret) {
+                        if(ret.result){
+                            $api.setStorage('card_status', 1);
+                            api.toast({msg:'上传成功！'});
+                            setTimeout(function(){
+                                api.execScript({
+                                    name:'root',
+                                    script:'getBaseInfo();'
+                                });
+                                api.execScript({
+                                    name:'information',
+                                    frameName:'information_body',
+                                    script: 'reload();'
+                                });
+                                api.closeWin({
+                                    name:'card',
+                                    animation:{
+                                        type:'none',   
+                                        duration:0  
+                                    }
+                                });
+                            },1000);
+                        }else{
+                            api.toast({
+                                msg: '上传失败，请重试',
+                                duration: 2000,
+                                location: 'middle'
+                            });
+                        }
+                    }else {
+                        api.toast({
+                            msg: '网络连接异常！',
+                            duration: 2000,
+                            location: 'middle'
+                        });
+                    };
+                });
+                
+			}
+		}
+	}
+	var openCamera=function(obj,obj_name){
+    			var baseinfo=$api.getStorage('baseinfo');
+                var vipid=baseinfo.vipid;
+		api.getPicture({
+	    sourceType: 'camera',
+	    encodingType: 'jpg',
+	    mediaValue: 'pic',
+	    destinationType: 'url',
+	    allowEdit: true,
+	    quality: 50,
+	    saveToPhotoAlbum: false
+		}, function(ret, err){ 
+		    if (ret) {
+		    	if(ret.data!=''){
+		    		var imgurl=ret.data;//图片地址
+		    		/*
+		    		 * 上传图片到服务器
+		    		 */
+		    		api.ajax({
+	                    url:$api.getStorage('request_url')+'/upload',
+	                    method:'post',
+	                    dataType:'json',
+	                    data:{files:{file:imgurl},
+	                    	  values:{vipid:vipid,
+	                    	  		  file_type:obj_name
+	                    	  }
+	                    }
+                    },function(ret,err){
+                    	if(ret.result==true){
+                            /*上传结束*/
+                            /*吧上传成功图片的地址放在手机本地存储上*/
+                            $api.setStorage(obj_name,imgurl);
+                            $api.html(obj,'<img src="'+imgurl+'" width="127" height="82" style="border:1px solid #0da4ff;border-radius:4px"><span class="ok"></span><input type="hidden" value="1" id="input_'+obj_name+'">');        
+                    	}else{
+                    		api.toast({
+	                            msg:'上传失败，请重试',
+	                            location:'middle'
+                            });
+                    	}
+                    });
+		    		
+			    }
+		    }
+		});
+	}
+	apiready=function(){
+		if($api.getStorage('id_card')!='' && $api.getStorage('id_card')!=null){
+	        $api.html($api.byId('id_card'),'<img src="'+$api.getStorage('id_card')+'" width="127" height="82" style="border:1px solid #0da4ff;border-radius:4px"><span class="ok"></span><input type="hidden" value="1" id="input_id_card" />');
+	    }
+	    if($api.getStorage('id_front')!='' && $api.getStorage('id_front')!=null){
+	        $api.html($api.byId('id_front'),'<img src="'+$api.getStorage('id_front')+'" width="127" height="82" style="border:1px solid #0da4ff;border-radius:4px"><span class="ok"></span><input type="hidden" value="1" id="input_id_front" />');
+	    }
+	    if($api.getStorage('id_back')!='' && $api.getStorage('id_back')!=null){
+	        $api.html($api.byId('id_back'),'<img src="'+$api.getStorage('id_back')+'" width="127" height="82" style="border:1px solid #0da4ff;border-radius:4px"><span class="ok"></span><input type="hidden" value="1" id="input_id_back" />');
+	    }
+	    if($api.getStorage('stu_front')!='' && $api.getStorage('stu_front')!=null){
+	        $api.html($api.byId('stu_front'),'<img src="'+$api.getStorage('stu_front')+'" width="127" height="82" style="border:1px solid #0da4ff;border-radius:4px"><span class="ok"></span><input type="hidden" value="1" id="input_stu_front" />');
+	    }
+	    if($api.getStorage('stu_back')!='' && $api.getStorage('stu_back')!=null){
+	        $api.html($api.byId('stu_back'),'<img src="'+$api.getStorage('stu_back')+'" width="127" height="82" style="border:1px solid #0da4ff;border-radius:4px"><span class="ok"></span><input type="hidden" value="1" id="input_stu_back" />');
+	    }
+	}  
+</script>
+</script>
+</html>

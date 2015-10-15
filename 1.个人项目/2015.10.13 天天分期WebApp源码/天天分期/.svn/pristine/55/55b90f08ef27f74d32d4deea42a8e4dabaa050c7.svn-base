@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <title>学校地址选择</title>
+    <link rel="stylesheet" type="text/css" href="../../css/api.css"/>
+    <link rel="stylesheet" type="text/css" href="../../css/common.css">
+    <style>
+    	html, body {
+            height: 100%;
+            width: 100%;
+            font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+            background:transparent;
+        }
+        .topbar {
+            background: #0DA4FF;
+            height: 44px;
+            //border-bottom: 1px solid #DDDFE3;
+            line-height: 44px;
+            text-align: center;
+            color: #ffffff;
+            font-size:16px;
+            font-weight:bold;
+            position:relative;
+        }
+        .back-arrow{
+        	height:100%;
+        	width:26px;
+        	background:url(../../image/back.png) no-repeat;
+        	background-size:50%;
+        	background-position: 50%;
+        	display:block;
+        	position:absolute;
+        	top:0;
+        	left:5px;
+        }
+        #content{
+        	height:37%;
+        	width:100%;
+        	background-color:#fff;
+        }
+        #top{
+        	//height:50%;
+        	width:100%;
+        }
+        .pull-left{
+        	float:left;
+        	margin-left:15px;
+        }
+        .pull-right{
+        	float:right;
+        	margin-right:15px;
+        }
+        
+    </style>
+</head>
+<body>
+	<div id="top" tapmode="" onclick="closeFrame()"></div>
+	 <header>
+        <div id="index" class="topbar">
+            <span class="pull-left" tapmode="" onclick="closeFrame()">取消</span>
+            <span class="pull-right" tapmode="" onclick="confirm()">完成</span>
+        </div>
+     </header>
+     <div id="content"></div>
+</body>
+<script type="text/javascript" src="../../script/api.js"></script>
+<script type="text/javascript">
+	//动态的改变top的高度，让下面的customselector适应content的全部填充
+	var content_h=document.getElementById("content").offsetHeight;
+	var body_h=document.body.offsetHeight;
+	var header_h=document.getElementById("index").offsetHeight;
+	document.getElementById("top").style.height = (body_h-header_h-content_h)+"px";
+	var top_h=document.getElementById("top").offsetHeight;
+	var school_address="";  
+	apiready=function(){
+		var obj = api.require('customSelector');
+			obj.open({
+				x:0,
+				y:top_h+header_h,
+				bg:"#ffffff",
+				h:'auto',
+				style:{
+					row:5,    	//row：7,         //数字类型，每列显示的行数，默认7，可为空
+				    text:{
+						size:18,//字体大小，数字类型，默认50，可为空
+						selectedColor:"#0da4ff",//选中色，字符串，支持rgb,rgba,#,默认#ffffff，可为空
+						color:"#999999"//常态文字颜色，字符串，支持rgb,rgba,#,默认#218868，可为空
+			        },
+				    bg:{
+					    color:"#ffffff",//常态背景色，字符串，支持rgb,rgba,#,默认#87ceeb,可为空
+					    selectedColor:"#ffffff",//选中后的背景色,字符串,支持rgb,rgba,#,默认,#218868可为空
+					    zoomIn:1.4,	//zoomIn：1.2//选中后放大倍数，数字类型，默认1.2，可为空	
+					    rect:{
+					    	w:15,
+					    	h:15
+					    }	         
+					},
+				},
+			    dataSource:'widget://res/city.json'
+			    },
+			    function(ret, err) {
+			       if(ret){
+			       	  school_address=ret.selects;
+			       }
+			    }
+			);
+	}
+		//关闭窗口
+	var closeFrame=function(){
+		var obj=api.require('customSelector');
+		obj.hide();//隐藏自定义选择框
+		api.closeFrame({
+	        name: api.frameName
+        });
+	}
+	//确认窗口
+	var confirm=function(){
+		var obj=api.require('customSelector');
+		obj.hide();//隐藏自定义选择框
+		api.execScript({
+			name:'school',
+			frameName:'school_body',
+	        script: 'getExeVal("school_address","'+school_address+'")'
+        });
+		api.closeFrame({
+	        name: api.frameName
+        });
+	}
+</script>
+</html>

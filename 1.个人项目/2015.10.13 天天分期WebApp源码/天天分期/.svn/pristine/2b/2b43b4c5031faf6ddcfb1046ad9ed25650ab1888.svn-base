@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>常见问题</title>
+    <link rel="stylesheet" type="text/css" href="../../css/api.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/common.css" />
+<style type="text/css" media="screen">
+	*{
+		margin:0;
+		padding:0;
+	}
+	html{
+		width:100%;
+		height:100%;
+		overflow-x: hidden;
+		-webkit-text-size-adjust:none;  
+	}
+	body{
+		width:100%;
+		height:100%;
+		background:#EFEFF2;
+		overflow-x: hidden;
+	}
+	body::-webkit-scrollbar{
+	    display: none;
+	}
+	body,button, input, select, textarea {
+	    font: 10px/1.5 Microsoft Yahei, Tahoma, Helvetica, Arial, "\5b8b\4f53", sans-serif;
+	}
+	img{
+	  border:0;
+	}
+	.top-divide{
+	  width:100%;
+	  text-align:center;
+	  color:#FFF;
+	  font-size:2rem;
+	  background: -webkit-linear-gradient(90deg,#0da4ff 30%,#01BDFF 100%);
+	}
+	.fq-logo{
+	  width:50%;
+	  padding-top: 30%;
+	
+	}
+	.iphone-p {
+	  padding: 4% 0 22% 0;
+	  font-size: 18px;
+	  margin-top: 14px;
+	}
+	.feedback{
+		width:100%;
+		height:4rem;
+		line-height:4rem;
+		margin:0 auto;
+		background:#FFF;
+		font-size:1.6rem;
+		border-radius:3px;
+	  border:1px solid #dfdfdf;
+	  margin-top: 1.6rem;
+	  padding-left: 2rem;
+	  color:#66669B;
+	}
+</style>
+   <body>
+      <div class="top-divide">
+        <img src="../../image/about_logo.png" class="fq-logo">
+        <p class="iphone-p"><font id="system"></font>  1.1</p>
+      </div>
+	    <div class="feedback" tapmode="" onclick="openWin('feedback')">意见反馈</div>
+   </body>
+<script type="text/javascript" src="../../script/api.js"></script>
+<script type="text/javascript">
+	apiready=function(){
+		if(api.systemType=='android'){
+			var system="android";
+		}else if(api.systemType=='android'){
+			var system="iphone";
+		}
+		$api.text($api.byId('system'),system);
+	}
+	/**
+	 *打开窗口 
+	 */
+	var openWin=function($url){
+		api.openWin({
+	        name:$url,
+	        url: $url+'_header.html',
+	        bgcolor:"#ffffff",
+	        scrollToTop:true,
+	        animation:{
+	        	type:'movein',
+	        	subType:'from_right'
+	        }
+        });
+	}
+</script>
+</html>

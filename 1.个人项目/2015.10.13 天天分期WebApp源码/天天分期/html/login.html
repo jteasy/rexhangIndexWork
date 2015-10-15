@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <title>登录</title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/common.css">
+    <style>
+    	html, body {
+            height: 100%;
+            width: 100%;
+            font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+            margin:0;
+            padding:0;
+            background: #EFEFF2;
+            font-size: 12px;
+        }
+        .topbar {
+            background: #0DA4FF;
+            height: 44px;
+            //border-bottom: 1px solid #DDDFE3;
+            line-height: 44px;
+            text-align: center;
+            color: #ffffff;
+            font-size:20px;
+            font-weight:bold;
+            position:relative;
+        }
+        .back-arrow{
+            height:100%;
+            width:30px;
+            background:url(../image/back.png) no-repeat;
+            background-size:40%;
+            background-position: 50%;
+            display:block;
+            position:absolute;
+            top:0;
+            left:0;
+        }
+        .login{
+        	margin:0;
+        	height:100%;
+        	position:absolute;
+        	top:0;
+        	font-weight:normal;
+        	font-size:16px;
+        	right:14px;	
+        }
+        #container{
+            width: 100%;
+            height: 100px;
+            margin-top: 24px;
+            border-top: 1px solid #E4D9D9;
+            border-bottom: 1px solid #E4D9D9;
+            background-color: #fff;
+        }
+        /*手机号码*/
+        #phoneMum{
+            height: 50px;
+            margin: 0 12px;
+            border-bottom: 1px solid #E4D9D9;
+                        position: relative;
+        }
+        /*密码*/
+        #passwords{
+            height: 50px;
+            margin: 0 12px;
+            position:relative;
+        }
+        #phoneMum .icons_top{
+            display: block;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            margin-top: 12px;
+            float: left;
+            background: url('../image/bigpic.png') no-repeat;
+            background-position: -47px -78px;
+            background-size: 729px;
+
+        }
+        #phoneMum > input{
+            height: 50px;
+            font-size: 14px;
+            float: left;
+            margin-left: 14px;
+            font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+            outline: none;
+            width: calc(100% - 26px);
+            position: absolute;
+        }
+        #passwords .icons_bottom{
+            display: block;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            margin-top: 12px;
+            float: left;
+            background: url('../image/bigpic.png') no-repeat;
+            background-position: -47px -113px;
+            background-size: 729px;
+        }
+        #passwords > input{
+            height: 50px;
+            font-size: 14px;
+            float: left;
+            margin-left: 14px;
+            font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+            outline: none;
+            width: calc(100% - 26px);
+            position: absolute;
+        }
+        /*忘记密码*/
+        #forgetPasword{
+            width: 100px;
+        }
+        #forgetPasword .pas{
+            height: 40px;
+            display: block;
+            margin-left: 12px;
+            margin-top: 12px;
+            font-size: 12px;
+            color: #0DA4FF;
+        }
+        /*btn*/
+        #btn{
+            width: 100%;
+            margin-top: 50px;
+        }
+        #btn .next{
+            height: 50px;
+            display: block;
+            margin-left: 12px;
+            margin-right: 12px;
+            background: #0DA4FF;
+            line-height: 50px;
+            text-align: center;
+            color: #fff;
+            font-size: 18px;
+            border-radius: 6px;
+        }
+        #btn .next:active{
+            background: red;
+        }
+        .eyes{
+        	 width: 25px;
+            height: 100%;
+            background: url('../image/eyes.png') no-repeat;
+            background-size:contain;
+            position: absolute;
+            top:0;
+            background-position-y:50%;
+            right: 23px;
+        }
+        .acs{
+            background-color: #1476B1;
+        }
+        .near{
+            width: 100%;
+        }
+        input{
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+	 <header>
+        <div id="index" class="topbar">
+            登陆
+            <i class="back-arrow" tapmode="acs" onclick="closeWin()"></i>
+            <dl class="login" tapmode="" onclick="register()">注册</dl>
+        </div>
+     </header>
+     <div id="container">
+        <div class="near">
+            <div id="phoneMum">
+                <i class="icons_top"></i>
+                <input type="tel" name="phone" id="phone" placeholder="手机号码" maxlength="11"/>
+            </div>
+        </div>
+        <div class="near2">
+            <div id="passwords">
+            <i class="icons_bottom"></i>
+            <input type="password" name="password" id="pw" placeholder="密码" />
+             <div class="eyes" tapmode="" onclick="toSee(true)"></div>
+        </div>
+        </div>
+    </div>
+    <!-- forgetPassword -->
+    <div id="forgetPasword">
+        <a href="javascript:void(0);" tapmode="" onclick="forgetPassword()" class="pas">忘记密码？</a>
+    </div>
+    <!-- btn -->
+    <div id="btn">
+        <a href="javascript:void(0);" class="next" tapmode="" onclick="login()">登陆</a>
+    </div>
+</body>
+<script type="text/javascript" src="../script/api.js"></script>
+<script type="text/javascript">
+	apiready = function(){
+		
+		api.setStatusBarStyle({
+        	style:'light'
+        });
+		var $header=$api.dom('header');
+		$api.fixStatusBar($header);
+		var header_h=$api.offset($header).h;
+		//获取变量
+		var to_url=api.pageParam.to_url;
+	};
+	var closeWin=function(){
+		api.closeWin({
+			name:'login',
+			animation:{
+				type:'movein',
+				subType:'from_right',
+				duration:0
+			}
+        });
+	}
+	var register=function(){
+		api.openWin({
+	        name: 'register',
+	            url: 'register.html',
+	            bgcolor:'#ffffff',
+	            scrollToTop:true,
+	            animation:{
+	            	type:'movein',
+	            	subType:'from_right',
+	            	duration:300
+	            }
+        });
+	}
+	/**
+	 *密码可见 
+	 */
+	function toSee($type){
+		var $pw=$api.byId('pw');
+			if($pw.type=='password'){
+				$pw.type='text';
+				$pw.focus();
+			}else{
+				$pw.type='password';
+				$pw.focus();
+			}
+	}
+	function forgetPassword(){
+		api.openWin({
+	        name: 'forget',
+	        url: 'forget.html',
+	        bgcolor:'#ffffff',
+	        scrollToTop:true,
+	        animation:{
+	            	type:'movein',
+	            	subType:'from_right',
+	            	duration:300
+	        }
+        });
+	}
+	/**
+	 *登录方法 
+	 */
+	var login=function(){
+		var phone=$api.val($api.byId('phone'));
+		var pw=$api.val($api.byId('pw'));
+		if($api.trimAll(phone)=='' || phone.length!=11 || isNaN(phone)){
+			api.toast({
+	            msg:'账号必须是完整的手机号码！',
+	            location:'middle'
+            });
+		}else{
+	        api.showProgress({
+	            style: 'default',
+	            animationType: 'fade',
+	            modal: false
+	        });
+			api.ajax({
+		        url:'http://api.fenqiday.com/login/index',
+		        method:'post',
+		        dataType:'json',
+		        data:{values:{phone:phone,pw:pw}}
+	        },function(ret,err){
+	        	if(ret){
+	        		if(ret.result){
+		                $api.setStorage('vipid', ret.userid);
+		        		api.setPrefs({
+			                key:'username',
+			                value:ret.username
+		                });
+		                api.setPrefs({
+			                key:'userid',
+			                value:ret.userid
+		                });
+		                
+		                //关闭窗口
+		                	api.execScript({		//重新加载账户余额
+								name:'root',
+								frameName:'account',
+						        script: 'reload();'
+					        });
+					        api.execScript({	//重新让首页获取基础信息
+			                   	name:'root',
+			                    script: 'getBaseInfo();'
+		                    });
+		                    if(api.pageParam.framename=='account'){
+				                api.execScript({	//让首页切换页面
+									name:'root',
+							        script: 'randomSwitchBtn(0,'+api.pageParam.framename+','+api.pageParam.nodes+');'
+						        });
+						    }
+			                api.closeWin({
+			                	name:'login'
+			                });
+			         }else{
+			         	api.toast({
+			                msg:'密码错误',
+			                location:'middle'
+		                });
+			         }
+	        	}else{
+
+	        		api.toast({
+		                msg:'网络超时，请重试',
+		                location:'middle'
+	                });
+	        	}
+	        	api.hideProgress();
+	        });
+	    }
+	}
+</script>
+<script type="text/javascript" src="../script/zepto.min.js"></script>
+<script type="text/javascript">
+    $(function(){
+        $("#phone").focus(function(){
+            $(".near").css("border-bottom","1px solid #B7ADAD");
+            $("#phoneMum").css("border-bottom","0");
+        });
+        $("#phone").blur(function(){
+            $(".near").css("border-bottom","0");
+            $("#phoneMum").css("border-bottom","1px solid #E4D9D9");
+        });
+
+        $("#pw").focus(function(){
+            $("#container").css("border-bottom","1px solid #B7ADAD");
+            
+        });
+
+        $("#pw").blur(function(){
+            $("#container").css("border-bottom","1px solid #E4D9D9");
+        });
+
+    });
+</script>
+</html>

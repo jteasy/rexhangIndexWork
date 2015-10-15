@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>提现</title>
+    <link rel="stylesheet" type="text/css" href="../../css/api.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/common.css" />
+  <style type="text/css">
+ 		*{
+    		margin: 0;
+    		padding: 0px;
+    	}
+    	body{
+    		font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+    		font-size: 12px;
+    		background: #EAEAEC;
+    	}
+    	.now{
+    		width: 100%;
+    		padding: 14px 0;
+    	}
+    	.paymoney{
+    		margin-left: 15px;
+    		height: 16px;
+    		line-height: 16px;
+    		font-size: 14px;
+    		color: #666;
+    	}
+    	.contents{
+    		width: 100%;
+    		background: #fff;
+    		padding-bottom: 14px;
+    		height: 84px;
+    	}
+    	.pleaseinput{
+    		font-size: 12px;
+    		color: #999;
+    		text-align: center;
+    		padding: 10px 0;
+    	}
+    	.pasput{
+    		margin: 0 15px;
+    		background: #F9F9F9;
+    		height: 50px;
+    		border: 1px solid #C9C9C9;
+    		border-radius: 4px;
+    		display: -webkit-box;
+    		-webkit-box-orient: horizontal;
+    		font-size: xx-large;
+    	}
+    	.pas1{
+    		-webkit-box-flex: 1;
+    		border: 0;
+    		border-right: 1px solid #C9C9C9;
+    		text-align: center;
+    		height: 50px;
+    		line-height: 50px;
+    	}
+    	#mark1{
+    		border-radius: 4px 0 0 4px;
+    	}
+    	#mark6{
+    		border-right: 0;
+    	}
+    	#btns{
+    	     width: 100%;
+    	     margin-top: 20px;
+    	}
+    	#btns .btn{
+    	     height: 50px;
+    	     margin: 0 14px;
+    	     text-align: center;
+    	     font-size: 18px;
+    	     border-radius: 4px;
+    	     background: #c9c9c9;
+    	     color: #fff;
+    	     line-height: 50px;
+    	}
+    	.pls1{
+    		opacity: 0;
+    	}
+    	input[name='hideput']{
+    		width: 1px;
+    		height: 1px;
+    		opacity: 0;
+    	}
+    	@-webkit-keyframes rexhang{
+    		
+    		50%{-webkit-transform: scale(0.9);}
+    	}
+    	.keyboard{
+    		width: 100%;
+    		position: absolute;
+    		bottom: 0;
+    		background: #fff;
+    		display: block;
+    		-webkit-animation:rexhang ease-in-out 0.3s;
+    	}
+    	.keyboard .butn:active{
+    		background: #DCD6D6;
+    	}
+    	.oneboard{
+    		display: -webkit-box;
+    		-webkit-box-orient: horizontal;
+    	}
+    	.line01{
+    		-webkit-box-flex: 1;
+    		border-right: 1px solid #CCC;
+    		border-bottom: 1px solid #CCC;
+    		border-top: 1px solid #CCC;
+    		height: 54px;
+    		text-align: center;
+    		line-height: 54px;
+    		font-size: large;
+    		font-weight: bold;
+    	}
+    	.twoboard{
+    		display: -webkit-box;
+    		-webkit-box-orient: horizontal;
+    	}
+    	.line02{
+    		-webkit-box-flex: 1;
+    		border-right: 1px solid #CCC;
+    		border-bottom: 1px solid #CCC;
+    		height: 54px;
+    		text-align: center;
+    		line-height: 54px;
+    		font-size: large;
+    		font-weight: bold;
+    	}
+    	.threeboard{
+    		display: -webkit-box;
+    		-webkit-box-orient: horizontal;
+    	}
+    	.line03{
+    		-webkit-box-flex: 1;
+    		border-right: 1px solid #CCC;
+    		border-bottom: 1px solid #CCC;
+    		height: 54px;
+    		text-align: center;
+    		line-height: 54px;
+    		font-size: large;
+    		font-weight: bold;
+    	}
+    	.fourboard{
+    		display: -webkit-box;
+    		-webkit-box-orient: horizontal;
+    	}
+    	.line04{
+    		-webkit-box-flex: 1;
+    		border-right: 1px solid #CCC;
+    		border-bottom: 1px solid #CCC;
+    		height: 54px;
+    		text-align: center;
+    		line-height: 54px;
+    		font-size: large;
+    		font-weight: bold;
+    	}
+    	.tapactive{
+    		  background:#c9c9c9;
+    	}
+    </style>
+</head>
+<body>
+	<div class="now">
+		<div class="paymoney">提现金额: <font id="withdrawamount"></font>元</div>
+	</div>
+
+	<div class="contents">
+		<p class="pleaseinput">请输入您的支付密码</p>
+		<div class="pasput" id="pasputdom">
+			<div class="pas1" id="mark1" ><span class="pls1 pin0">●</span></div>
+			<div class="pas1" id="mark2" ><span class="pls1 pin1">●</span></div>
+			<div class="pas1" id="mark3" ><span class="pls1 pin2">●</span></div>
+			<div class="pas1" id="mark4" ><span class="pls1 pin3">●</span></div>
+			<div class="pas1" id="mark5" ><span class="pls1 pin4">●</span></div>
+			<div class="pas1" id="mark6" ><span class="pls1 pin5">●</span></div>
+	</div>
+
+	<!-- btn -->
+	<div id="btns">
+	  <div class="btn">确定转出</div>
+	</div>
+	<!-- “ readonly ” 可以让input变为只读，这样就不会调起手机端的软键盘 -->
+	<!-- 为后台记录输入值 -->
+	<input name="hideput" value="0" class="otherput" id="put0" />
+	<!-- 定存变量 -->
+	<input type="hidden" id="position" value="0">
+	<!-- 虚拟键盘 -->
+	<div class="keyboard">
+		<div class="oneboard">
+			<div class="butn line01 yi" tapmode="tapactive">1</div>
+			<div class="butn line01 er" tapmode="tapactive">2</div>
+			<div class="butn line01 san" tapmode="tapactive" style="border-right:0;">3</div>
+		</div>
+		<div class="twoboard">
+			<div class="butn line02 si" tapmode="tapactive">4</div>
+			<div class="butn line02 wu" tapmode="tapactive">5</div>
+			<div class="butn line02 liu" tapmode="tapactive" style="border-right:0;">6</div>
+		</div>
+		<div class="threeboard">
+			<div class="butn line03 qi" tapmode="tapactive">7</div>
+			<div class="butn line03 ba" tapmode="tapactive">8</div>
+			<div class="butn line03 jiu" tapmode="tapactive" style="border-right:0;">9</div>
+		</div>
+		<div class="fourboard">
+			<div class="butn line04 kong" tapmode="tapactive" style="background:#D4D7E0;">&nbsp;&nbsp;</div>
+			<div class="butn line04 ling" tapmode="tapactive">0</div>
+			<div class="butn line04 tuige" tapmode="tapactive" style="border-right:0;background-color:#D4D7E0;position:relative;"><span style="background:url('../../image/delete-key.png') no-repeat center;width:16px;height:12px;display:block;position:absolute;left: 50%;top: 50%;margin-left: -8px;margin-top: -6px;"></span>&nbsp;&nbsp;</div>
+		</div>
+		
+	</div>
+		<script type="text/javascript" src="../../script/api.js"></script>
+		<script type="text/javascript">
+			/*
+			 * ready时，传送最新的金额到页面上
+			 */
+			apiready=function(){
+				$api.text($api.byId('withdrawamount'),api.pageParam.withdrawamount);
+			}
+			var submit=function(){
+				var vipinfo_base = $api.getStorage('vip_account');
+				var vipinfo = vipinfo_base.data;
+					if(vipinfo.pay_pw=='' || vipinfo.pay_pw==null){
+						api.alert({
+                        	msg:'您还没有设置支付密码，快去设置吧！',
+                        	buttons:['立即设置']
+                        },function(ret,err){
+                        	if(buttonIndex==1){
+                        		api.openWin({
+			                        name: 'changepaypw',
+			                        url: 'changepaypw_header.html',
+			                        pageParam:{
+			                        	fromWin:'withdraw'
+			                        },
+			                        animation:{
+			                        	type:'movein',
+			                        	subType:'from_right',
+			                        	duration:300
+			                        }
+		                        });
+                        	}
+                        });
+						
+					}else{
+						var pay_pw = vipinfo.pay_pw;
+					}
+				var withdrawpaycode=$api.val($api.byId('put0'));
+                		if(withdrawpaycode==pay_pw){
+                			 api.showProgress({
+							    style: 'default',
+							    animationType: 'fade',
+							    modal: true
+							});
+							api.getPrefs({
+	                            key:'userid'
+                            },function(ret,err){
+                            	if(ret && ret.value!=''){
+                            			api.ajax({
+				                             url:'http://192.168.0.188:8899/index.php/withdraw',
+				                             method:'post',
+				                             dataType:'json',
+				                             data:{values:{
+				                             	vipid:ret.value,
+				                             	withdraw_type:0,
+				                             	withdraw_amount:api.pageParam.withdrawamount,
+				                             	withdraw_bank:api.pageParam.withdrawbank
+				                             }}
+			                             },function(ret,err){
+			                             	if(ret){
+			                             		api.hideProgress();
+			                             		if(ret.result==true){
+				                             		api.alert({
+				                             			msg:'您的提现申请已成功提交！'
+	                                                 },function(ret,err){
+	                                                 	if(ret.buttonIndex==1){
+	                                                 		api.execScript({
+	                                                 			 name:'root',
+	                                                             frameName:'account',
+	                                                             script: 'reload();'
+                                                             });
+                                                             setTimeout(function(){
+		                                                 		api.closeToWin({
+		                                                 			name:'root',
+		                                                 			animation:{
+		                                                 				type:'none',
+		                                                 				duration:0 
+		                                                 			}
+		                                                 		});
+		                                                 	},300);
+	                                                 	}
+	                                                 });
+	                                             }else{
+	                                             	api.alert({
+	                                             		title:'提现失败',
+				                             			msg:'当前可提现金额不足！'
+	                                                 },function(ret,err){
+	                                                 	if(ret.buttonIndex==1){
+	                                                 		api.closeToWin({
+	                                                 			name:'withdraw',
+	                                                 			animation:{
+	                                                 				type:'none',
+	                                                 				duration:0 
+	                                                 			}
+	                                                 		});
+	                                                 	}
+	                                                 });
+	                                             }
+			                             		//alert(JSON.stringify(ret));
+			                             	}
+			                             });
+                            	}
+                            });
+                			 
+                		}else{
+                			//支付密码输入错误！
+                			api.toast({
+	                            msg:'支付密码错误',
+	                            location:'middle'
+                            });
+                            setTimeout(function(){
+	                			api.openWin({
+	                				name:'withdrawpay',
+	                				pageParam:{
+	                					withdraw_amount:api.pageParam.withdrawamount,
+		                             	withdraw_bank:api.pageParam.withdrawbank
+	                				},
+		                            reload:true
+	                            });
+	                        },1000);
+                		}
+			}
+			/*
+			 * 监听click动作，来判断提交按钮的颜色和方法
+			 */
+			$api.addEvt($api.dom('body'),'click',function(){
+				var temp_var=$api.val($api.byId('put0'));
+				if(temp_var.length==6){
+					$api.attr($api.dom('.btn'),'style','background:#0da4ff');
+					$api.attr($api.dom('.btn'),'onclick','submit()');
+				}else{
+					$api.attr($api.dom('.btn'),'style','background:#c9c9c9');
+					$api.attr($api.dom('.btn'),'onclick','');
+				}
+			});
+			/*点击输入框聚焦到场外输入框手机弹出数字键盘*/
+			// var hideputDom = document.getElementById("pasputdom");
+			// $api.addEvt(hideputDom, 'click', function(){
+			// 	var keyDom = $api.dom(".keyboard");
+			// 	$api.css(keyDom,"display:block;");
+			// });
+			/*全局定位position*/
+			/*获取外界设定val值*/
+			position = $api.val($api.byId("position"));
+			/*键盘事件*/
+			marks = null;
+			function allSet(){		
+				/*内部获取外界设定val值 此时和外界的val值相同*/
+				var positions = $api.val($api.byId("position"));
+				/*获取需要操作的对象*/
+				var mark1Dom = $api.domAll('#pasputdom .pls1');
+				/*执行需求的动作*/
+				$api.css(mark1Dom[positions],"opacity:1;");	
+				/*存储该虚拟按键值方便后台读取*/
+				var $temp_val=$api.val($api.byId('put0'));
+				if($temp_val==0 && $api.val($api.byId('position'))==0){$temp_val=''};
+				 $temp_val+=marks;
+				document.getElementById("put0").setAttribute("value",$temp_val);
+				/*position = position + 1*/
+				position++;
+				/*如果外界的position大于索引量那么就回调*/
+				if(position>6) position = 0;
+				/*对外界position的Val做出设置供存储读取*/
+				document.getElementById("position").setAttribute("value",position);
+				/*如果输入了第六位数字立马隐藏虚拟键盘*/
+				if(position==6){
+					var keyDom = $api.dom(".keyboard");
+					$api.css(keyDom,"display:none;");
+				}
+			}
+			var current_position=$api.val($api.byId("position"));
+			if(current_position<6){
+				/*1*/
+				var yiDom = $api.dom(".yi");
+				$api.addEvt(yiDom, 'click', function(){		
+						/*设定按键标记符*/
+						marks = 1;		
+						allSet();
+				});
+				/*2*/
+				var erDom = $api.dom(".er");
+				$api.addEvt(erDom, 'click', function(){
+					/*设定按键标记符*/
+					marks = 2;		
+					allSet();
+				});
+				/*3*/
+				var sanDom = $api.dom(".san");
+				$api.addEvt(sanDom, 'click', function(){
+					/*设定按键标记符*/
+					marks = 3;		
+					allSet();
+				});
+				/*4*/
+				var siDom = $api.dom(".si");
+				$api.addEvt(siDom, 'click', function(){
+					/*设定按键标记符*/
+					marks = 4;		
+					allSet();
+				});
+				/*5*/
+				var wuDom = $api.dom(".wu");
+				$api.addEvt(wuDom, 'click', function(){
+					/*设定按键标记符*/
+					marks = 5;		
+					allSet();
+				});
+				/*6*/
+				var liuDom = $api.dom(".liu");
+				$api.addEvt(liuDom, 'click', function(){
+					/*设定按键标记符*/
+					marks = 6;		
+					allSet();
+				});
+				/*7*/
+				var qiDom = $api.dom(".qi");
+				$api.addEvt(qiDom, 'click', function(){
+					/*设定按键标记符*/
+					marks = 7;		
+					allSet();
+				});
+				/*8*/
+				var baDom = $api.dom(".ba");
+				$api.addEvt(baDom, 'click', function(){
+					/*设定按键标记符*/
+					marks = 8;		
+					allSet();
+				});
+				/*9*/
+				var jiuDom = $api.dom(".jiu");
+				$api.addEvt(jiuDom, 'click', function(){
+					/*设定按键标记符*/
+					marks = 9;		
+					allSet();
+				});
+				/*0*/
+				var lingDom = $api.dom(".ling");
+				$api.addEvt(lingDom, 'click', function(){
+					/*设定按键标记符*/
+					marks = 0;		
+					allSet();
+				});
+			}
+			/*tuige*/
+			var tuigeDom = $api.dom(".tuige");
+			$api.addEvt(tuigeDom, 'click', function(){
+				var temp_code=$api.val($api.byId('put0'));
+				marks=temp_code.substr(0,temp_code.length-1);
+				/*内部获取外界设定val值 此时和外界的val值相同*/
+				var positions = $api.val($api.byId("position"));
+				/*获取需要操作的对象*/
+				var mark1Dom = $api.domAll('#pasputdom .pls1');
+				/*执行需求的动作*/
+				$api.css(mark1Dom[positions-1],"opacity:0;");	
+				/*存储该虚拟按键值方便后台读取*/
+				document.getElementById("put0").setAttribute("value",marks);
+				/*position = position - 1*/
+				position--;
+				/*如果小于最小索引量就归零*/
+				if(position<0) position = 0;
+				/*对外界position的Val做出设置供存储读取*/
+				document.getElementById("position").setAttribute("value",position);
+			});
+			/*CSS back:touch*/
+			$api.addEvt(tuigeDom, 'touchstart', function(){
+				$api.css(tuigeDom,"background:#777;");
+			});
+			var tuigeDom = $api.dom(".tuige");
+			$api.addEvt(tuigeDom, 'touchend', function(){
+				$api.css(tuigeDom,"background:#D4D7E0;");
+			});
+		</script>
+</body>
+</html>

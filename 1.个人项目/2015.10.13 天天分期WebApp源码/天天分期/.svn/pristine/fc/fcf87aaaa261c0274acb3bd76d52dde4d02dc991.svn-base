@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>信用+</title>
+    <link rel="stylesheet" type="text/css" href="../../css/api.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/common.css" />
+        <style type="text/css">
+        * {
+        margin: 0;
+        padding: 0;
+        }
+        body {
+        position: absolute;
+        bottom: 0;
+        font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+        }
+        .contents {
+        background: #fff;
+        width: 100%;
+        }
+        .fightall {
+        width: 282px;
+        height: 272px;
+        margin: 24px auto;
+        position: relative;
+        background: url('../../image/bigpic.png') no-repeat;
+        background-size: 1412px;
+        background-position: -742px 0;
+        }
+        .skew {
+        width: 200px;
+        height: 275px;
+        margin: 0 auto;
+        background: -webkit-linear-gradient(#9C89FD 0%, #75A6F8 30%, #19EBEA 90%, #82F9F2 100%);
+        background: linear-gradient(#9C89FD 0%, #75A6F8 30%, #19EBEA 90%, #82F9F2 100%);
+        border-radius: 50%;
+        opacity: 0.4;
+        filter: alpha(opacity=70);
+        position: absolute;
+        top: 0;
+        left: 37px;
+        }
+        .skew_2 {
+        transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+        }
+        .skew_3 {
+        transform: rotate(315deg);
+        -webkit-transform: rotate(315deg);
+        }
+        .skew_4 {
+        transform: rotate(270deg);
+        -webkit-transform: rotate(270deg);
+        background: -webkit-linear-gradient(90deg, #978CFD 0%, #75A6F8 30%, #46CCF0 90%);
+        background: linear-gradient(270deg, #978CFD 0%, #75A6F8 30%, #46CCF0 90%);
+        }
+        .f_nub {
+        font-size: 32px;
+        color: #fff;
+        text-align: center;
+        line-height: 32px;
+        position: absolute;
+        top: 110px;
+        left: 78px;
+        height: 32px;
+        }
+        .fightnub {
+        font-size: 14px;
+        color: #fff;
+        text-align: center;
+        line-height: 14px;
+        position: absolute;
+        top: 152px;
+        left: 78px;
+        height: 14px;
+        }
+        /*顶部完成*/
+        /*授权*/
+        .shouquan {
+        width: 100%;
+        height: 30px;
+        background: #F2F2F2;
+        line-height: 30px;
+        }
+        .shouquan .shouquan_fons {
+        font-size: 14px;
+        height: 14px;
+        color: #999;
+        display: inline-block;
+        line-height: 14px;
+        font-weight: bold;
+        margin-left: 20px;
+        }
+        /*icons*/
+        .icons_all {
+        width: 100%;
+        }
+        .icons_all .inicons {
+        margin: 30px 14px 0 14px;
+        height: 130px;
+        display: -webkit-box;
+        -webkit-box-orient: horizontal;
+        }
+        .icons_all .inicons .inss {
+        -webkit-box-flex: 1;
+        text-align: center;
+        height: 60px;
+        line-height: 60px;
+        position: relative;
+        }
+        .icons_all .inicons .inss .rounds1 {    
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background: url('../../image/bigpic3.png') no-repeat;
+        background-color-position: 0 0;
+        background-size: 268px;
+        position: absolute;
+        left: 50%;
+        }
+        .icons_all .inicons .inss .rounds2 {
+        background-position: -69px 0;
+        }
+        .icons_all .inicons .inss .rounds3 {
+        background-position: -138px 0;
+        }
+        .icons_all .inicons .inss .rounds4 {
+        background-position: -207px 0;
+        }
+        .icons_all .includ {
+        display: -webkit-box;
+        -webkit-box-orient: horizontal;
+        margin: -42px 14px 25px 14px;
+        }
+        .icons_all .includ .insws {
+        -webkit-box-flex: 1;
+        text-align: center;
+        height: 16px;
+        line-height: 16px;
+        width: 60px;
+        }
+        .fot {
+        width: 100%;
+        padding-bottom: 1px;
+        padding-top: 1px;
+        background: #F2F2F2;
+        }
+        .fot .btns {
+        margin: 14px 20px 0px 20px;
+        background: #0DA4FF;
+        font-size: 18px;
+        line-height: 50px;
+        height: 50px;
+        color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        }
+        </style>
+    </head>
+    <body>
+        <div class="contents">
+            <div class="fightall">
+                <span class="f_nub" id="credit_val">0.00</span>
+                <span class="fightnub">您的信用战斗力(元)</span>
+            </div>
+        </div>
+        <!-- 顶部完成 -->
+        <!-- 授权 -->
+        <div class="shouquan">
+            <span class="shouquan_fons">授权即可增信</span>
+        </div>
+        <!-- icons -->
+        <div class="icons_all">
+            <div class="inicons">
+                <div class="in-1 inss">
+                    <div class="rounds1 rounds0" tapmode="#" onclick="openWinaddbank_header();"></div>
+                </div>
+                <!--
+                <div class="in-2 inss">
+                    <div class="rounds1 rounds2" tapmode="#" onclick="openWinaddbank_header2();"></div>
+                </div>
+                <div class="in-3 inss">
+                    <div class="rounds1 rounds3" tapmode="" onclick="openWinaddbank_header3();"></div>
+                </div>
+                -->
+                <div class="in-4 inss">
+                    <div class="rounds1 rounds4" tapmode="" onclick="openAlert();"></div>
+                </div>
+            </div>
+            <div class="includ">
+                <div class="insws">通讯录</div>
+                <!--
+                <div class="insws">淘宝</div>
+                <div class="insws">京东</div>
+                -->
+                <div class="insws">芝麻信用</div>
+            </div>
+        </div>
+        <!-- icons end -->
+        <!-- footer -->
+        <div class="fot">
+            <div class="btns" tapmode="" onclick="reload()">刷新战斗力</div>
+            <div style="color:#0DA4FF;margin: 10px 20px 10px 20px;">
+                <label><input type="checkbox"name="surs"style="width:14px;height:14px;float:left;"><span style="font-size:14px;height:14px;line-height:14px;display:block;width:300px;overflow: hidden;">我同意《天天分期信用+授权协议》</span></label>
+            </div>
+        </div>
+    </body>
+    <script type="text/javascript"src="../../script/api.js"></script>
+    <script type="text/javascript">
+    apiready = function(){
+    	var vip_account = $api.getStorage('vip_account');
+            if(vip_account){
+                 $api.text($api.dom('#credit_val'),vip_account.data.credit_val);
+            }
+       	var f_nub_w = $api.offset($api.dom(".f_nub")).w;
+       		$api.attr($api.dom('.f_nub'),'style','left:'+(282-f_nub_w)/2+'px');
+    }
+    var openAlert = function(){
+        api.toast({
+            msg: '即将开通，尽请期待！',
+            duration: 2000,
+            location: 'middle'
+        });
+    }
+    function openWinaddbank_header(){
+    		api.getPrefs({
+	            key:'userid'
+            },function(ret,err){
+            	var v = ret.value;
+            	if(v===''){
+            		api.openWin({
+	                    name: 'login',
+	                    url: '../login.html'
+                    });
+            	}else{
+            		//添加联系人	
+            		var contact = api.require('contact');
+						contact.queryContact({
+						},function(ret,err) {
+						    if(ret.status) {
+						    	api.toast({
+			                        msg:'您已完成通讯录授权，我们将在两个工作内重新评估您的信用额度！'
+		                        });
+						        $api.setStorage('usercontact',ret.contacts);
+						        api.execScript({
+			                        name:'root',
+			                        script: 'postUserContact();'
+		                        });
+						    } else{
+						        api.openWin({
+			                        name: 'contacts',
+			                        url: 'contacts_header.html',
+			                        animation:{
+			                        	type:'movein',
+			                        	subType:'from_right',
+			                        	duration:300
+			                        }
+		                        });
+						    }
+						});
+            		
+            	}
+            });
+			
+    }
+    function openWinaddbank_header2(){
+               api.openWin({
+                name: 'taobao',
+                url: 'taobao_header.html'
+                });
+    }
+    function openWinaddbank_header3(){
+               api.openWin({
+                name: 'jd',
+                url: 'jd_header.html'
+                });
+    }
+    function openWinaddbank_header4(){
+               api.openWin({
+                name: 'zhima',
+                url: 'zhima_header.html'
+                });
+    }
+    var reload = function(){
+    	api.execScript({
+	        name:'root',
+	        frameName:'account',
+	        script: 'reload();'
+        });
+
+    	api.setFrameGroupIndex({
+	        name: 'group',
+	        index:2,
+	        reload:true
+        });
+    }
+    
+    var rodDom = $api.domAll(".rounds1");
+    for(var s = 0;
+    s < rodDom.length;
+    s++) {
+    $api.css(rodDom[s], 'margin-left: -30px');
+    }
+    </script>
+</html>

@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>借款确认</title>
+    <link rel="stylesheet" type="text/css" href="../../css/api.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/common.css" />
+    <style type="text/css">
+    <style type="text/css">
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    
+    body {
+        font-size: 12px;
+        color: #666;
+        font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+        background: #f2f2f2;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+    
+    img {
+        border: 0;
+    }
+    
+    .allhead {
+        background: #f2f2f2;
+    }
+    
+    .head {
+        margin: 10px 20px;
+        border-radius: 16px;
+        background: #0DA4FF;
+        color: #fff;
+        box-shadow: 0px 2px 6px 0px #D2D2D2;
+    }
+    
+    .loan {
+        padding: 10px 0 40px 20px;
+        font-size: 14px;
+    }
+    
+    .loantime {
+        float: right;
+        padding: 10px 26% 40px 0;
+        font-size: 14px;
+    }
+    
+    .num1250 {
+        padding: 0 0 40px 20px;
+        font-size: 30px;
+        font-family: arial;
+    }
+    
+    .month {
+        float: right;
+        padding: 10px 25% 0 0;
+        font-size: 14px;
+        margin-right: 4px;
+    }
+    
+    .allhead .pers_info_header {
+        margin: 10px 20px;
+        background: #0DA4FF;
+        color: #fff;
+        font-size: 14px;
+        border-radius: 16px 16px 0 0;
+    }
+    
+    .perinfo_fonts {
+        padding: 10px 20px;
+    }
+    
+    .change {
+        float: right;
+        padding: 10px 20px;
+    }
+    
+    .allhead .pers_info_body {
+        margin: -10px 20px;
+        background: #fff;
+        border-radius: 0 0 16px 16px;
+        box-shadow: 0px 2px 6px 0px #D2D2D2;
+    }
+    
+    .name {
+        width: 100%;
+        height: 62px;
+    }
+    
+    .icons_1 {
+        width: 40px;
+        height: 40px;
+        display: block;
+        border-radius: 50%;
+        /*background: #ccc;*/
+        background: url('../../image/bigpic.png') no-repeat;
+        background-position: -23px -67px;
+        background-size: 1110px;
+        float: left;
+        margin: 10px 20px;
+    }
+    /*rexhang add 2015.10.13 start*/
+    .xm {
+        width: calc(100% - 80px);
+        padding: 22px 0px;
+        border-bottom: 1px solid #e0e0e0;
+        float: left;
+        word-break: keep-all;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        position: relative;
+    }
+    /*rexhang add 2015.10.13 end*/
+    .xm_val {
+        padding-left: 100px;
+        display: inline-block;
+        width: 126px;
+        position: absolute;
+        word-break: keep-all;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    
+    #pic {
+        padding: 10px 10px;
+        display: -webkit-box;
+        -webkit-box-orient: horizontal;
+    }
+    
+    .pic_1 {
+        -webkit-box-flex: 1;
+        border: 1px solid dodgerblue;
+        margin-right: 10px;
+        height: 148px;
+    }
+    
+    .pic_1_1 {}
+    
+    #boxs {
+        display: -webkit-box;
+        -webkit-box-orient: horizontal;
+        padding: 10px 10px;
+    }
+    
+    .sl {
+        -webkit-box-flex: 1;
+        margin-right: 10px;
+    }
+    
+    #boxs2 {
+        display: -webkit-box;
+        -webkit-box-orient: horizontal;
+        padding: 10px 10px;
+    }
+    
+    .sl2 {
+        -webkit-box-flex: 1;
+        margin-right: 10px;
+    }
+    
+    #conta {
+        background: #fff;
+        margin: -10px 20px;
+        box-shadow: 0px 2px 6px 0px #D2D2D2;
+        border-radius: 0 0 16px 16px;
+    }
+    
+    #conta ul li {
+        list-style: none;
+        padding: 10px 20px;
+        border-bottom: 1px solid #ccc;
+    }
+    
+    #btns {
+        width: 100%;
+        height: 50px;
+        padding-bottom: 20px;
+    }
+    
+    .btn {
+        margin: 20px 20px;
+        height: 50px;
+        background: #0DA4FF;
+        color: #FFFFFF;
+        text-align: center;
+        line-height: 50px;
+        font-size: 16px;
+        border-radius: 4px;
+    }
+    
+    .btn .btnstyle {
+        background: #388CBE;
+    }
+    /*inputstyle*/
+    
+    input[name='test'] {
+        vertical-align: middle;
+    }
+    
+    input[name='test'] + label {
+        width: 14px;
+        height: 14px;
+        border-radius: 2px;
+        display: inline-block;
+        margin-top: 2px;
+        background-color: #0DA4FF;
+        text-align: center;
+        line-height: 18px;
+        color: #fff;
+        position: absolute;
+        left: 0;
+        top: -10px;
+    }
+    
+    input[name='test']:checked + label {}
+    
+    input[name='test']:checked + label:after {
+        content: "√";
+        font-size: 14px;
+        width: 14px;
+        height: 14px;
+        line-height: 14px;
+        display: inline-block;
+    }
+    
+    #zhezhao {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.2);
+    }
+    
+    .divpic {
+        width: 84%;
+        border-radius: 10px;
+        margin: 0 8%;
+        background: #fff;
+        position: fixed;
+        left: 0;
+        bottom: 20%;
+        z-index: 999;
+    }
+    
+    .fot {
+        width: 84%;
+        height: 50px;
+        border-top: 1px solid #D8D8D8;
+        position: fixed;
+        left: 0;
+        bottom: 20%;
+        margin: 0 8%;
+        text-align: center;
+        line-height: 50px;
+        font-size: 20px;
+        color: #23ACFF;
+    }
+    
+    .hed {
+        margin-left: 50%;
+        margin-top: 20px;
+    }
+    
+    .hed img {
+        border: 0;
+        margin-left: -25px;
+    }
+    
+    .ct_font {
+        font-size: 18px;
+        margin: 0 20px;
+        color: #666;
+        text-align: center;
+        position: fixed;
+        left: 0;
+        bottom: 30%;
+        width: 80%;
+        padding-bottom: 20px;
+        margin: 0 10%;
+    }
+    
+    .tapco {
+        background: #eee;
+        color: #333;
+        border-radius: 0 0 10px 10px;
+    }
+    .yuegong{
+        padding-right: 20px;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="allhead">
+        <div class="head">
+            <span class="loan">借款金额</span>
+            <span class="loantime yuegong">月供</span>
+            <span class="loantime">期数</span>
+            <p>
+                <span class="num1250" id="borrow-amount">0.00</span>
+                <span>元</span>
+                <span class="month yuegong"><font id="month-pay">222</font>元</span>
+                <span class="month"><font id="fqs">12</font>期</span>
+            </p>
+        </div>
+        <!--personal info-->
+        <div class="pers_info_header">
+            <span class="perinfo_fonts">个人信息</span>
+            <span class="change" tapmode="" onclick="openWin('card')">修改</span>
+        </div>
+        <div class="pers_info_body">
+            <div class="name">
+                <span class="icons_1" style="background-position: -159px -99px;"></span>
+                <span class="xm">姓名<span class="xm_val" style="padding-left: 46px;" id="person-name"></span></span>
+            </div>
+            <div class="name">
+                <span class="icons_1" style="background-position: -159px -159px;"></span>
+                <span class="xm">身份证号码<span class="xm_val" style="padding-left: 10px;" id="person-id-no"></span></span>
+            </div>
+            <div class="name">
+                <span class="icons_1" style="background-position: -159px -232px;"></span>
+                <span class="xm">家庭地址<span class="xm_val" style="padding-left: 22px;" id="person-address"></span></span>
+            </div>
+            <div class="name">
+                <span class="icons_1" style="background-position: -159px -289px;"></span>
+                <span class="xm" style="border-bottom: 0;">电子邮箱<span class="xm_val" style="padding-left: 22px;" id="person-mail"></span></span>
+            </div>
+        </div>
+        <!--school info-->
+        <div class="pers_info_header" style="margin-top: 20px;">
+            <span class="perinfo_fonts">学校信息</span>
+            <span class="change" tapmode="" onclick="openWin('school')">修改</span>
+        </div>
+        <div class="pers_info_body">
+            <div class="name">
+                <span class="icons_1" style="background-position: -205px -98px;"></span>
+                <span class="xm">学校名称<span class="xm_val" style="padding-left: 22px;" id="school-name"></span></span>
+            </div>
+            <div class="name">
+                <span class="icons_1" style="background-position: -205px -160px;"></span>
+                <span class="xm">入学时间<span class="xm_val" style="padding-left: 22px;" id="entrance-time"></span></span>
+            </div>
+            <div class="name">
+                <span class="icons_1" style="background-position: -205px -232px;"></span>
+                <span class="xm">学制<span class="xm_val" style="padding-left: 46px;" id="schooling"></span></span>
+            </div>
+            <div class="name">
+                <span class="icons_1" style="background-position: -205px -288px;"></span>
+                <span class="xm" style="border-bottom: 0;">学历<span class="xm_val" style="padding-left: 46px;" id="education"></span></span>
+            </div>
+            <div class="name">
+                <span class="icons_1" style="background-position: -256px -231px;"></span>
+                <span class="xm" style="border-bottom: 0;">学校地址<span class="xm_val" style="padding-left: 24px;" id="school-address"></span></span>
+            </div>
+            <div class="name">
+                <span class="icons_1" style="background-position: -205px -352px;"></span>
+                <span class="xm" style="border-bottom: 0;">详细地址<span class="xm_val" style="padding-left: 24px;" id="detail-address"></span></span>
+            </div>
+        </div>
+        <!--credentials info-->
+        <div class="pers_info_header" style="margin-top: 20px;">
+            <span class="perinfo_fonts">证件信息</span>
+            <span class="change" tapmode="" onclick="openWin('card')">修改</span>
+        </div>
+        <div class="pers_info_body">
+            <div id="pic">
+                <div class="pic_1 pic_1_1">
+                    <img src="image/1.png" alt="pic1" width="100%" height="100%" id="id-card" />
+                </div>
+                <div class="pic_1 pic_2">
+                    <img src="image/2.png" alt="pic1" width="100%" height="100%" id="id-front" />
+                </div>
+                <div class="pic_1 pic_3" style="margin-right: 0;">
+                    <img src="image/3.png" alt="pic1" width="100%" height="100%" id="id-back" />
+                </div>
+            </div>
+            <div id="boxs">
+                <div class="sl">手持身份证半身照</div>
+                <div class="sl">身份证正面</div>
+                <div class="sl" style="margin-right: 0;">身份证背面</div>
+            </div>
+            <div id="pic">
+                <div class="pic_1 pic_1_1">
+                    <img src="image/4.png" alt="pic1" width="100%" height="100%" id="stu-front" />
+                </div>
+                <div class="pic_1 pic_2">
+                    <img src="image/5.png" alt="pic1" width="100%" height="100%" id="stu-back" />
+                </div>
+                <div class="pic_1 pic_2" style="margin-right: 0;border: 1px solid #fff;opacity: 0">
+                     <img src="../../image/white.png" alt="pic1" width="100%" height="100%" id="add-photo" />
+                </div>
+            </div>
+            <div id="boxs2">
+                <div class="sl2">学生证正面</div>
+                <div class="sl2">学生证背面</div>
+                <div class="sl2" style="margin-right: 0;"></div>
+            </div>
+        </div>
+        <!--friends info-->
+        <div class="pers_info_header" style="margin-top: 20px;">
+            <span class="perinfo_fonts">我的伙伴</span>
+            <span class="change" tapmode="" onclick="openWin('friend')">修改</span>
+        </div>
+        <div id="conta">
+            <ul>
+                <li style="position: relative;">
+                    <p style="color:#666;font-size: 16px;padding-bottom: 4px;padding-right: 24px;">
+                        <span id="one-name"></span>
+                        <span style="position: absolute;left: 38%;" id="one-phone"></span>
+                    </p>
+                    <p>
+                        <span style="color: #999;" id="one-company"></span>
+                    </p>
+                    <p>
+                        <span style="color: #999;" id="one-address"></span>
+                    </p>
+                </li>
+                <li style="font-size: 16px;color:#666;position: relative;">
+                    <span id="two-name"></span>
+                    <span style="position: absolute;left: 38%;" id="two-phone"></span>
+                </li>
+                <li style="font-size: 16px;color:#666;position: relative;">
+                    <span id="three-name"></span>
+                    <span style="position: absolute;left: 38%;" id="three-phone"></span>
+                </li>
+                <li style="font-size: 16px;color:#666;border:0;position:relative;">
+                    <span id="four-name"></span>
+                    <span style="position:absolute;left:38%;" id="four-phone"></span>
+                </li>
+            </ul>
+        </div>
+        <label style="font-size: 12px;position: relative;margin: 26px 20px;margin-bottom: 0;">
+            <input type="checkbox" name="test" id="test" value="0" checked="checked" style="display: none;" />
+            <label for="test" style="margin-top: 11px;"></label><span class="agrees">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我同意
+                        <a href="javascript:void(0);" tapmode="" onclick="openWin('agreement')" style="font-size: 12px;color: #333;">《天天有钱借款协议》</a>
+                    </span>
+        </label>
+        <div id="btns">
+            <div class="btn" tapmode="btnstyle">确定</div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="../../script/api.js"></script>
+<script type="text/javascript" src="../../script/zepto.min.js"></script>
+<script type="text/javascript" src="../../script/animateWin.js"></script>
+<script>
+    var picDomWidth = $(".pic_1").width();
+    var picDomHeight = picDomWidth / 0.9;
+    $(".pic_1").height(picDomHeight);
+</script>
+<script type="text/javascript">
+$api.addEvt($api.byId('btns'), 'click', function() {
+    api.showProgress({
+        style: 'default',
+        animationType: 'fade',
+        modal: false
+    });
+
+    //提交信息到网站；
+    var request_url = $api.getStorage('request_url');
+    var vip_account = $api.getStorage('vip_account');
+    var vipid = vip_account.data.vipid;
+    api.ajax({
+        url: request_url + '/borrow/borrowapply',
+        method: 'post',
+        timeout: 30,
+        dataType: 'json',
+        returnAll: false,
+        data: {
+            values: {
+                vipid: vipid,
+                system: api.systemType,
+                amount: api.pageParam.amount,
+                fqs: api.pageParam.fqs
+            }
+        }
+    }, function(ret, err) {
+        api.hideProgress();
+        if (ret) {
+            if (ret.result == true) {
+                if (ret.code == '-100') {
+                    api.alert({
+                        title: '申请失败',
+                        msg: '您在一月内已申请过订单，请一月后再申请！'
+                    });
+                } else if (ret.code == '-300') {
+                    api.alert({
+                        title: '申请失败',
+                        msg: '您已有订单正在处理中，请注意查看！'
+                    })
+                } else {
+                    objOpenwin({
+                        detailfonts: "恭喜您成功提交借款申请，我们会在两个工作日内完成审核,请保持电话畅通哦~",
+                        surefonts: "确认"
+
+                    });
+                }
+            } else {
+                api.alert({
+                    msg: '网络状态错误，请稍候再试！',
+                    location: 'middle'
+                });
+            };
+        } else {
+            api.alert({
+                msg: '网络状态错误，请稍候再试！',
+                location: 'middle'
+            });
+        }
+    });
+
+});
+var openWin = function(winname) {
+    api.openWin({
+        name: winname,
+        url: winname + '_header.html',
+        bounces: false,
+        animation: {
+            type: 'movein',
+            subType: 'from_right',
+            duration: 300
+        }
+    });
+    setTimeout(function() {
+        api.closeWin({
+            name: 'apply',
+            animation: {
+                duration: 0
+            }
+        });
+    }, 1000)
+}
+apiready = function() {
+    var baseinfo = $api.getStorage('baseinfo');
+    $api.text($api.byId('borrow-amount'), api.pageParam.amount);
+    $api.text($api.byId('fqs'), api.pageParam.fqs + '个月');
+    $api.text($api.byId('person-name'), baseinfo.info.name);
+    $api.text($api.byId('person-id-no'), baseinfo.info.identify_no);
+    $api.text($api.byId('person-address'), baseinfo.info.home_address);
+    $api.text($api.byId('person-mail'), baseinfo.info.mail);
+    $api.text($api.byId('school-name'), baseinfo.school.school);
+    $api.text($api.byId('entrance-time'), baseinfo.school.entrance_time);
+    $api.text($api.byId('schooling'), baseinfo.school.schooling);
+    $api.text($api.byId('education'), baseinfo.school.education);
+    $api.text($api.byId('school-address'), baseinfo.school.school_address);
+    $api.text($api.byId('detail-address'), baseinfo.school.detail_address);
+    $api.attr($api.byId('id-card'), 'src', $api.getStorage('id_card'));
+    $api.attr($api.byId('id-front'), 'src', $api.getStorage('id_front'));
+    $api.attr($api.byId('id-back'), 'src', $api.getStorage('id_back'));
+    $api.attr($api.byId('stu-front'), 'src', $api.getStorage('stu_front'));
+    $api.attr($api.byId('stu-back'), 'src', $api.getStorage('stu_back'));
+    $api.attr($api.byId('add-photo'),'src', $api.getStorage('stu_back'));
+
+    $api.text($api.byId('one-phone'), baseinfo.contact.one_phone);
+    $api.text($api.byId('one-name'), baseinfo.contact.one_name);
+    $api.text($api.byId('one-company'), baseinfo.contact.one_company);
+    $api.text($api.byId('one-address'), baseinfo.contact.one_address);
+    $api.text($api.byId('two-phone'), baseinfo.contact.two_phone);
+    $api.text($api.byId('two-name'), baseinfo.contact.two_name);
+    $api.text($api.byId('three-phone'), baseinfo.contact.three_phone);
+    $api.text($api.byId('three-name'), baseinfo.contact.three_name);
+    $api.text($api.byId('four-phone'), baseinfo.contact.four_phone);
+    $api.text($api.byId('four-name'), baseinfo.contact.four_name);
+}
+</script>
+
+</html>

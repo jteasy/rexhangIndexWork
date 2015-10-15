@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <title>学制选择</title>
+    <link rel="stylesheet" type="text/css" href="../../css/api.css"/>
+    <link rel="stylesheet" type="text/css" href="../../css/common.css">
+    <style>
+    	html, body {
+            height: 100%;
+            width: 100%;
+            font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+            background:transparent;
+        }
+        .topbar {
+            background: #0DA4FF;
+            height: 44px;
+            //border-bottom: 1px solid #DDDFE3;
+            line-height: 44px;
+            text-align: center;
+            color: #ffffff;
+            font-size:16px;
+            font-weight:bold;
+            position:relative;
+        }
+        .back-arrow{
+        	height:100%;
+        	width:26px;
+        	background:url(../../image/back.png) no-repeat;
+        	background-size:50%;
+        	background-position: 50%;
+        	display:block;
+        	position:absolute;
+        	top:0;
+        	left:5px;
+        }
+        #content{
+        	height:37%;
+        	width:100%;
+        	background-color:#fff;
+        }
+        #top{
+        	width:100%;
+        }
+        .pull-left{
+        	float:left;
+        	margin-left:15px;
+        }
+        .pull-right{
+        	float:right;
+        	margin-right:15px;
+        }
+        
+    </style>
+</head>
+<body>
+	<div id="top" tapmode="" onclick="closeFrame()"></div>
+	 <header>
+        <div id="index" class="topbar">
+            <span class="pull-left" tapmode="" onclick="closeFrame()">取消</span>
+            <span class="pull-right" tapmode="" onclick="confirm()">确认</span>
+        </div>
+     </header>
+     <div id="content"></div>
+</body>
+<script type="text/javascript" src="../../script/api.js"></script>
+<script type="text/javascript">
+	//动态的改变top的高度，让下面的customselector适应content的全部填充
+	var content_h=document.getElementById("content").offsetHeight;
+	var body_h=document.body.offsetHeight;
+	var header_h=document.getElementById("index").offsetHeight;
+	document.getElementById("top").style.height = (body_h-header_h-content_h)+"px";
+	var top_h=document.getElementById("top").offsetHeight;
+	var entrance_time=""; 
+	apiready=function(){
+		var $header=$api.dom("header");
+		var rect_h=$api.offset($header).h;
+		var obj = api.require('UICustomPicker');
+		obj.open({
+		    rect: {
+		        x: 0,
+		        y: header_h+top_h,
+		        h: content_h
+		    },
+		    styles: {
+		        bg: '#fff',
+		        normalColor: '#959595',
+		        selectedColor: '#3685dd',
+		        selectedSize: 36,
+		        tagColor: '#3685dd',
+		        tagSize: 16
+		    },
+		    data: [{
+		        scope: ['三年','四年','五年']
+		    }],
+		    rows: 3,
+		    autoHide:false,
+		    fixedOn:api.frameName,
+		    fixed: true
+		}, function(ret, err){
+		    if(ret && ret.eventType=='selected'){
+		        entrance_time=ret.data[0];
+		    }else if(ret && ret.eventType=='show'){
+		    	entrance_time="四年";
+		    }
+		});
+	}
+		//关闭窗口
+	var closeFrame=function(){
+		var obj=api.require('UICustomPicker');
+		obj.hide({id:0});//隐藏自定义选择框
+		obj.close({id:0});//隐藏自定义选择框
+		api.closeFrame({
+	        name: api.frameName
+        });
+	}
+	//确认窗口
+	var confirm=function(){
+		var obj=api.require('UICustomPicker');
+		obj.hide({id:0});//隐藏自定义选择框
+		obj.close({id:0});//隐藏自定义选择框
+		api.execScript({
+			name:'school',
+			frameName:'school_body',
+	        script: 'getExeVal("schooling","'+entrance_time+'")'
+        });
+		api.closeFrame({
+	        name: api.frameName
+        });
+	}
+</script>
+</html>

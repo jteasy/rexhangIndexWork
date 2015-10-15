@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>资金记录</title>
+    <link rel="stylesheet" type="text/css" href="../../css/api.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/common.css" />
+<style type="text/css" media="screen">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            font-size: 12px;
+             font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+            background: #fff;
+        }
+        .container{
+            width: 100%;
+            background: #fff;
+            height: 53px;
+        }
+        .content{
+            width: 100%;
+            background: #fff;
+            margin-top: 14px;
+            height:auto;
+        }
+        .content-ul{
+        	height:auto;
+        	width:100%;
+        }
+        .content-ul li{
+        	height:60px;
+        	border-bottom:1px solid #d8d8d8;
+        	margin-left:15px;
+        	margin-right:15px;
+        }
+        .content-ul .detail{
+        	padding-top:10px;
+        	height:42px;
+        }
+        .content-ul .detail .detail-name{
+        	display:block;
+        	color:#333333;
+        	font-size:16px;
+        	line-height:23px;
+        }
+        .detail .detail-time{
+        	font-size:13px;
+        	color:#999999;
+        	line-height:20px;
+        }
+		.detail .detail-amount{
+			font-size:18px;
+			font-weight:bold;
+			color:#0da4ff;
+			float:right;
+		}
+    </style>
+</head>
+<body>
+    <!-- content area -->
+    <div class="content">
+        <ul class="content-ul">
+				<!--填写li-->
+        </ul>
+    </div>
+</body>
+<script type="text/javascript" src="../../script/api.js"></script>
+<script type="text/javascript">
+	apiready=function(){
+		getRecordList();
+		api.setRefreshHeaderInfo({
+		    visible: true,
+		    bgColor: '#efeff2',
+		    textColor: '#fff',
+		    showTime: true,
+		}, function(ret, err){
+			if(ret){
+			    var request_url = $api.getStorage('request_url');
+				var baseinfo = $api.getStorage('baseinfo');
+				api.ajax({
+				    url: request_url+'/vip/getrecordlist',
+				    method: 'post',
+				    timeout: 30,
+				    dataType: 'json',
+				    returnAll:false,
+				    data:{
+				        values: {
+				        	vipid:baseinfo.vipid,
+				        	system:api.systemType
+				        }
+				    }
+				},function(ret,err){
+				    if (ret) {
+				    	api.refreshHeaderLoadDone();
+				        if(ret.result==true){
+				        	if(ret.data!=''){	//如果记录集不是空，那么就执行
+				        		var data = ret.data;
+				        		$api.html($api.dom('.content-ul'),'');
+				        		 for (x in data){
+				        		 	if(data[x]['withdraw_type']==0){var type = '授信提现'}
+				        		 	else if(data[x]['withdraw_type']==1){var type = '余额提现'}
+				        		 	else if(data[x]['withdraw_type']==2){var type = '还款充值'};
+
+				        		 	if(data[x]['withdraw_status']==0){var status = '处理中'}
+				        		 	else if(data[x]['withdraw_status']==1){var status = '成功'}
+				        		 	else if(data[x]['withdraw_status']==2){var status = '失败'};
+				        		 	var temp_str = '';
+				        		 		temp_str+= '<li><div class="detail">';
+				        		 		temp_str+= '<span class="detail-name" id="record-type">'+type+'<span class="detail-amount" id="record-amount">'+data[x]['withdraw_amount']+'.00</span></span>';
+				        		 		temp_str+= '<span class="detail-time" id="status">'+status+'</span>';
+				        		 		temp_str+= '<span class="detail-time" id="record-time">'+data[x]['withdraw_time']+'</span></div></li>';
+				        		 		$api.prepend($api.dom('.content-ul'),temp_str);
+				        		 }
+				        	}
+				        }
+				    }else {
+				        api.toast({
+				            msg: '网络可能有问题哦，重试下吧',
+				            duration: 1000,
+				            location: 'middle'
+				        });
+				    };
+				});
+			}
+
+		});
+	}
+
+	var openWin=function($url){
+		api.openWin({
+	        name:$url,
+	        url: $url+'.html',
+	        bgcolor:"#ffffff",
+	        scrollToTop:true,
+	        animation:{
+	        	type:'movein',
+	        	subType:'from_right'
+	        }
+        });
+	}
+	//获取记录列表信息
+	var getRecordList = function() {
+		var request_url = $api.getStorage('request_url');
+		var baseinfo = $api.getStorage('baseinfo');
+		api.showProgress({
+		    style: 'default',
+		    animationType: 'fade',
+		    modal: false
+		});
+		
+		api.ajax({
+		    url: request_url+'/vip/getrecordlist',
+		    method: 'post',
+		    timeout: 30,
+		    dataType: 'json',
+		    returnAll:false,
+		    data:{
+		        values: {
+		        	vipid:baseinfo.vipid,
+		        	system:api.systemType
+		        }
+		    }
+		},function(ret,err){
+			api.hideProgress();
+		    if (ret) {
+		        if(ret.result==true){
+		        	if(ret.data!=''){	//如果记录集不是空，那么就执行
+		        		var data = ret.data;
+		        		 for (x in data){
+		        		 	if(data[x]['withdraw_type']==0){var type = '授信提现'}
+		        		 	else if(data[x]['withdraw_type']==1){var type = '余额提现'}
+		        		 	else if(data[x]['withdraw_type']==2){var type = '还款充值'};
+
+		        		 	if(data[x]['withdraw_status']==0){var status = '处理中'}
+		        		 	else if(data[x]['withdraw_status']==1){var status = '成功'}
+		        		 	else if(data[x]['withdraw_status']==2){var status = '失败'};
+		        		 	var temp_str = '';
+		        		 		temp_str+= '<li><div class="detail">';
+		        		 		temp_str+= '<span class="detail-name" id="record-type">'+type+'<span class="detail-amount" id="record-amount">'+data[x]['withdraw_amount']+'.00</span></span>';
+		        		 		temp_str+= '<span class="detail-time" id="status">'+status+'</span>';
+		        		 		temp_str+= '<span class="detail-time" id="record-time">'+data[x]['withdraw_time']+'</span></div></li>';
+		        		 		$api.prepend($api.dom('.content-ul'),temp_str);
+		        		 }
+		        	}
+		        }
+		    }else {
+		        api.toast({
+		            msg: '网络可能有问题哦，重试下吧',
+		            duration: 1000,
+		            location: 'middle'
+		        });
+		    };
+		});
+	}
+</script>
+</html>

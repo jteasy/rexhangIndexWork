@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>银行卡</title>
+    <link rel="stylesheet" type="text/css" href="../../css/api.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/common.css" />
+	 <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+            background:#efeff2;
+        }
+        .brown-bar{
+        	height: 10px;
+        	width: 100%;
+        	background: #efeff2;
+        }
+        .bonded-card{
+        	height:180px;
+        	width: 94%;
+        	border-radius: 10px;
+        	background: #fff;
+        	border:1px solid #D8D8D8;
+        	margin:0 auto;
+        }
+        .bonded-card .card-name{
+			margin-top:24px;
+			margin-left: 16px;
+			font-size: 20px;
+			color:#333333;
+        }
+        .bonded-card .card-delete{
+        	float:right;
+        	width: 23px;
+        	margin-right: 16px;
+        	margin-top:24px;
+        	font-size: 20px;
+        	color: #999999;
+        }
+        .bonded-card .card-type{
+        	clear: both;
+        	margin-top:30px;
+        	margin-left:16px;
+        	font-size:16px;
+        	color: #666666;
+        	display: block;
+        }
+        .bonded-card .card-no{
+        	margin-top:20px;
+        	margin-left: 16px;
+        	font-size: 28px;
+        	color: #333333;
+        }
+        .addbank{
+            width: 94%;
+            height: 120px;
+            border: 1px solid #D8D8D8;
+            background: #fff;
+            margin: 10px auto;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .addbank .icons{
+            font-size: 45px;
+            color: #ccc;
+            margin-top: 20px;
+        }
+        .addbank .addfonts{
+            font-size: 12px;
+            color: #999;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="addbank" tapmode="" onclick="openWin('addbank')">
+        <div class="icons">＋</div>
+        <p class="addfonts">添加银行卡</p>
+    </div>
+</body>
+<script type="text/javascript" src="../../script/api.js"></script>
+<script type="text/javascript">
+	var openWin=function($url){
+		api.openWin({
+	        name:$url,
+	        url: $url+'_header.html',
+	        bgcolor:"#ffffff",
+	        scrollToTop:true,
+	        animation:{
+	        	type:'movein',
+	        	subType:'from_right'
+	        }
+        });
+	}
+	/*
+	 * 供远程刷新本页面使用
+	 */
+	apiready=function(){
+	    getBank();
+		
+	}
+	var reload=function(){
+		getBank();
+	}
+	/*
+	 * 获取银行卡
+	 */
+	var getBank=function(){
+		api.showProgress({
+			style: 'default',
+			animationType: 'fade',
+			 modal: true
+		});
+		api.getPrefs({
+	        key:'userid'
+        },function(ret,err){
+        	if(ret && ret.value!=''){
+        		api.ajax({
+			        url:$api.getStorage('request_url')+'/vip/getbank',
+			        method:'post',
+			        dataType:'json',
+			        returnAll:true,
+			        data:{values:{
+			        	vipid:ret.value
+			        }}
+		        },function(ret,err){
+		        	if(ret.statusCode==200){
+		        		api.hideProgress();
+		        	}
+		        	if(ret){
+		        		if(ret.body.result==true){
+		 					var temp_str='';
+		 					for(x in ret.body.data){
+		 						var cardno=ret.body.data[x]['card_no'];
+		 						if(cardno.length%4==0){
+		 							var lastcardno=cardno.substring((cardno.length-4),cardno.length+1);
+		 						}else{
+		 							var lastcardno=cardno.substring((cardno.length-cardno.length%4),cardno.length+1);
+		 						}
+		 						if(parseInt(cardno.length/4)==4 && cardno.length%4==0){
+		 							var beforestr='**** **** **** ';
+		 						}else if(parseInt(cardno.length/4)==4 && cardno.length%4!=0){
+		 							var beforestr='**** **** **** **** ';
+		 						}
+		 						temp_str+='<div class="brown-bar" id="brown'+ret.body.data[x]['id']+'"></div>';
+		 						temp_str+='<div class="bonded-card" id="card'+ret.body.data[x]['id']+'">';
+		 						temp_str+='<div><span class="card-name">'+ret.body.data[x]['bank_name']+'</span><span class="card-delete" onclick="deleteBank('+ret.body.data[x]['id']+')">X</span></div>';
+		 						temp_str+='<span class="card-type">储蓄卡</span>';
+		 						temp_str+='<span class="card-no">'+beforestr+lastcardno+'</span></div>';
+		        			 }
+		        			 $api.prepend($api.dom('body'), temp_str);
+		        		}
+		        	}
+		        });
+        	}
+        });
+	}
+	/*
+	*删除用户绑定的银行卡
+	*/
+	var deleteBank=function(bankid){
+		api.confirm({
+        	msg:'确认解绑该银行卡？',
+        	buttons:['确认','取消']
+        },function(ret,err){
+        	if(ret.buttonIndex==1){
+        		api.ajax({
+					url:$api.getStorage('request_url')+'/vip/deletebank',
+					method:'post',
+					dataType:'json',
+					data:{values:{
+						id:bankid
+					}}
+				},function(ret,err){
+					if(ret){
+						if(ret.result==true){
+							api.toast({msg:'该银行卡已成功解绑'});
+							$api.attr($api.byId('brown'+bankid),'style','display:none');
+							$api.attr($api.byId('card'+bankid),'style','display:none');
+						}else{
+							api.toast({msg:'银行卡解绑失败'});
+						}
+					}
+				});	
+        	}
+        });
+	}
+</script>
+</html>

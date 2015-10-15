@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>账单详情</title>
+    <link rel="stylesheet" type="text/css" href="../../css/api.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/common.css" />
+<style type="text/css">
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	body{
+		font-size: 12px;
+		 font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+		background: #F2F2F2;
+	}
+	header{
+		text-align: center;
+		height: 60px;
+		line-height: 60px;
+		font-size: 18px;
+		font-weight: bold;
+		color: #fff;
+		background: #0DA4FF;
+	}
+	.conts{
+		height: 200px;
+		border-bottom: 1px solid #fff;
+		overflow: hidden;
+		position: relative;
+		background: #0DA4FF;
+	}
+	#all{
+		border: 0;
+		width: 100%;
+		height: 200px;
+		background: url('../../image/bill-line.png') repeat-x;
+		background-position: 0px 0;
+		position: absolute;
+		top: 10px;
+	}
+	#all2{
+		border: 0;
+		width: 100%;
+		height: 200px;
+		background: url('../../image/bill-line.png') repeat-x;
+		background-position: 100px 0;
+		position: absolute;
+		top: 16px;
+	}
+	#all3{
+		border: 0;
+		width: 100%;
+		height: 200px;
+		background: url('../../image/bill-line.png') repeat-x;
+		background-position: 300px 0;
+		position: absolute;
+		top: 22px;
+	}
+	.num76{
+		font-size: 40px;
+		color: #fff;
+		font-weight: bold;
+		float: left;
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		height: 40px;
+		margin-left: -30px;
+		line-height: 40px;
+		margin-top: -16px;
+	}
+	.num76:after{
+		content:"%";
+		width: 32px;
+		font-size: 16px;
+		color:#fff;
+	}
+	.percent{
+		font-size: 16px;
+		color: #fff;
+		font-weight: bold;
+		height: 16px;
+		line-height: 16px;
+		float: left;
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		width: 32px;
+		margin-top: 4px;
+	}
+	.how{
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		bottom: 50%;
+		font-size: 18px;
+		color: #fff;
+		margin-left: -82px;
+		margin-top: 30px;
+	}
+	.content{
+		width: 100%;
+		height: 100px;
+		background: #0DA4FF;
+	}
+	.con-1{
+		margin-left: 20px;
+		margin-right: 20px;
+		padding-top: 28px;
+	}
+	.con-1:after{
+		content:"";
+		clear: both;
+		display: block;
+	}
+	.con-fonts1{
+		height: 16px;
+		line-height: 16px;
+		display: block;
+		float: left;
+		color: #fff;
+		font-size: 14px;
+	}
+	.con-fonts2{
+		height: 16px;
+		line-height: 16px;
+		display: block;
+		font-size: 14px;
+		float: right;
+		color: #fff;
+	}
+	.con-fonts3{
+		height: 16px;
+		line-height: 16px;
+		display: block;
+		color: #fff;
+		padding-top: 8px;
+		font-size: 14px;
+		margin-left:0px;
+	}
+	.contents2{
+		width: 100%;
+		background: #fff;
+		margin-top: 16px;
+		position: relative;
+	}
+	.sels{
+		width: 12px;
+		height: 12px;
+		border-radius: 50%;
+		background: #7ADB91;
+		display: block;
+		position: absolute;
+		left: 13px;
+		top: 9px;
+	}
+
+	.heights1{
+		position: absolute;
+		left: 17px;
+		top: 20px;
+		width: 4px;
+		height: 520px;
+		background: #7ADB91;
+	}
+	.heights2{
+		position: absolute;
+		left: 17px;
+		top: 20px;
+		width: 4px;
+		height: 154px;
+		background: #ccc;
+		z-index: 999;
+	}
+	.p-fonts{
+		font-size: 16px;
+		height: 30px;
+		line-height: 30px;
+		margin-left: 38px;
+		color: #CCC;
+	}
+	.p-fonts2{
+		color: #51BCFF;
+		margin-top: 8px;
+	}
+	.p-fonts3{
+		color: #666;
+		margin-top: 8px;
+	}
+	.backday{
+		font-size: 12px;
+		height: 46px;
+		
+		line-height: 46px;
+		border: 1px solid #D8D8D8;
+		margin-left: 20px;
+		margin-right: 20px;
+		border-radius: 4px;
+		color: #ccc;
+		text-indent: 12px;
+		word-break: keep-all;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+	}
+	.backday2{
+		color: #666;
+	}
+	.backday3{
+		height: 70px;
+		color: #666;
+	}
+	.fons3{
+		margin-top: -20px;
+	}
+	#btns{
+	     width: 100%;
+	     margin-top: 10px;
+	     display:none;
+	}
+	#btns .btn{
+	     height: 50px;
+	     margin-left: 20px;
+	     margin-right: 20px;
+	     text-align: center;
+	     font-size: 18px;
+	     border-radius: 4px;
+	     background: #0DA4FF;
+	     color: #fff;
+	     line-height: 50px;
+	}
+</style>
+</head>
+<body>
+	<div class="conts">
+		<div id="all"></div>
+    <div id="all2"></div>
+    <div id="all3"></div>
+    <div class="num76" id="finish-percent">00</div>
+    <div class="how">借款BT-<font id="borrow-id"></font>完成度</div>	
+	</div>
+
+   <div class="content">
+   	<div class="con-1">
+   		<span class="con-fonts1">项目类型：天天有钱</span>
+   		<span class="con-fonts2" id="period-time">0-0</span>
+   		<br />
+   		<span class="con-fonts3">借款<font id="borrow-amount"></font>.00元，共<font id="fqs">0</font>期</span>
+   	</div>
+   </div>
+
+   <div class="contents2">
+   	<!-- navtag -->
+   	
+   	<div id="topay-circle">
+	<!--填充状态小圆点-->
+	</div>
+   	<!--
+   	<div class="heights1"></div>
+   	<div class="heights2"></div>
+   	-->
+   	<div id="topay">
+   	</div>
+   	<!-- btn -->
+   	<div id="btns" tapmode="" onclick="openWin('pay')">
+   	  <div class="btn">立即还款</div>
+   	</div>
+   		<!--已经还款的记录-->
+		<div id="payed">
+	
+		</div>
+
+   </div>
+   	<script type="text/javascript" src="../../script/api.js"></script>
+    <script type="text/javascript">
+    	//此部分是用来生成动态水波纹效果
+    	x = 0;
+			function init(){
+				var doms = document.getElementById("all");
+				var doms2 = document.getElementById("all2");
+				var doms3 = document.getElementById("all3");
+				x++;
+				if(x==200){
+					x = 1;
+					doms.style.transition = "linear all 1s";
+					doms2.style.transition = "linear all 1s";
+					doms3.style.transition = "linear all 1s";
+				} 
+				doms.style.backgroundPosition = (x * 2 + "px" + " " + "0px");
+				doms2.style.backgroundPosition = (x * 3 + "px" + " " + "0px");
+				doms3.style.backgroundPosition = (x * 5 + "px" + " " + "0px");
+			}
+			setInterval(init,100);
+			
+		var openWin=function(name){
+			/*如果打开窗口，要获取最近的当前还款 金额 */
+			api.getPrefs({
+	            key:'userid'
+            },function(ret,err){
+            	if(ret && ret.value!=''){
+            		api.showProgress({
+                    	style:'default',
+                    	animationType:'fade',
+                    	modal:'false'
+                    });
+            		api.ajax({
+			            url:$api.getStorage('request_url')+'/index.php/borrow/prepay?vipid='+ret.value+'&system='+api.systemType,
+			            method:'get',
+			            timeout:30,
+			            dataType:'json'
+		            },function(ret,err){
+		           	 api.hideProgress();
+		            	if(ret){
+							api.openWin({
+					            name: name,
+					            url: name+'_header.html',
+					            bgColor:'#333333',
+					            pageParam:{
+					            	hkid:ret.id,
+					            	vipid:ret.vipid,
+					            	hkqs:ret.hkqs,
+					            	prepay_amount:ret.prepay_amount
+					            }
+				            });
+		            	}
+		            });
+            	}
+            });
+		}
+		apiready=function(){
+			var screenwidth=api.screenWith;
+			if(screenwidth<380){
+				$api.attr($api.byId('bq-time'),'style','display:none;');
+			}
+			reload();	
+		}
+		/*
+			 * 获取当前分期与还款情况
+			 */
+		var reload=function(){
+				$api.html($api.byId('topay'),'');
+				$api.html($api.byId('payed'),'');
+				api.getPrefs({
+	                key:'userid'
+                },function(ret,err){
+                	if(ret && ret.value!=''){
+                		api.showProgress({
+		                	style:'default',
+		                	animationType:'fade',
+		                	modal:'false'
+		                });
+                		var $vipid=ret.value;
+                		var $system=api.systemType;
+                		api.ajax({
+	                        url:$api.getStorage('request_url')+'/index.php/borrow/getrepaymentplan?vipid='+$vipid+'&system='+$system,
+	                        method:'get',
+	                        dataType:'json'
+                        },function(ret,err){
+                        	api.hideProgress();
+                        	if(ret && ret.result==true){
+                        		var hkcontent=ret.data;
+                        		/*如果ret.all_flag为1,那么就隐藏还款按钮*/
+                        		if(ret.all_flag){
+                        			$api.attr($api.byId('btns'),'style','display:none');
+                        		}
+                        		/*all_flag结束*/
+                        		//alert(JSON.stringify(hkcontent));
+                        		var borrow_id=hkcontent[0].borrow_id;
+			        			 for(var i=borrow_id.length;i<3;i++){
+			        			 	borrow_id='0'+borrow_id;
+			        			 }
+			        			 borrow_id=new Date().getFullYear()+borrow_id;
+			        			 borrow_id=borrow_id.substr(2);
+			        			 $api.text($api.byId('borrow-id'),borrow_id);
+
+                        		var hkcount=0;//已还款统计
+                        		var temp_height=0;//每一个圆点css高度的初始化；
+                        		for(x in hkcontent){
+                        			if(hkcontent[x].pay_amount!='' && hkcontent[x].pay_amount!=null && hkcontent[x].repayment_status!=='待还款'){
+                        				hkcount+=1;
+                        				var temp_str='';
+                        				temp_str+='<p class="p-fonts p-fonts3">第'+hkcontent[x].hkqs+'期   还款'+hkcontent[x].pay_amount+'元</p>' ;
+                        				temp_str+='<div class="backday backday3">';
+                        				temp_str+='<P class="">'+hkcontent[x].repayment_status+'</P>';
+                        				temp_str+='<p class="fons3">实际还款日：'+hkcontent[x].repayment_time+'&nbsp;&nbsp;<font id="bq-time">本期还款日：<font class="hktime">'+hkcontent[x].repayment_time+'</font></font></p></p></div>';
+                        				$api.prepend($api.byId('payed'),temp_str);  //已还款
+                        			}else{
+                        				var temp_str='';
+                        				if(hkcontent[x].hkqs==(hkcount+1)){
+                        					$api.setStorage('recentpay',hkcontent[x]);
+	                        				temp_str+='<p class="p-fonts p-fonts2">第'+hkcontent[x].hkqs+'期   还款'+ret.prepay_amount+'元</p>';
+	   										temp_str+='<div class="backday backday2">本期还款日：'+hkcontent[x].repayment_time+'</div>';
+	   										$api.attr($api.byId('btns'),'style','display:block');
+	   									}else{
+	   										temp_str+='<p class="p-fonts">第'+hkcontent[x].hkqs+'期   还款'+hkcontent[x].repayment_amount+'元</p>';
+	   										temp_str+='<div class="backday">本期还款日：'+hkcontent[x].repayment_time+'</div>';
+	   									}
+   										$api.prepend($api.byId('topay'), temp_str);  //待还款
+                        			}
+                        			/*var cssval=parseInt(x)+1;
+                        			$api.prepend($api.byId('topay-circle'),'<span class="sels sels'+cssval+'" style="background:#ccc;"></span>');
+                        			$api.attr($api.dom('.sels'+cssval),'style','margin-top:'+temp_height+'px;');
+                        			if(hkcontent[x].hkqs==(hkcount+2)){
+                        				temp_height+=143;
+                        			}else{
+                        				temp_height+=83;
+                        			}*/
+                        		}
+                        		$api.text($api.byId('finish-percent'), parseInt(hkcount*100/ret.fqs));
+                        		$api.text($api.byId('period-time'), ret.start_time+'-'+ret.end_time);
+                        		$api.text($api.byId('borrow-amount'), ret.amount);
+                        		$api.text($api.byId('fqs'), ret.fqs);
+                        	}else{
+                        		api.toast({
+	                                msg:'您暂时没有账单！',
+	                                location:'middle'
+                                });
+                                setTimeout(function(){
+                                	api.closeWin({
+                                    	name:'mybill',
+                                    	animation:{
+                                    		duration:0
+                                    	}
+                                    });
+                                },1000);
+                        	}
+                        });
+                	}
+                });
+			}
+    </script>
+</body>
+</html>

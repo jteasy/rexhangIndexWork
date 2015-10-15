@@ -1,0 +1,223 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>资料填写</title>
+    <link rel="stylesheet" type="text/css" href="../../css/api.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/common.css" />
+    <style type="text/css">
+            *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            font-size: 12px;
+            font-family: "微软雅黑";
+            background: rgb(129,204,231);
+            height: 100%;
+            overflow: hidden;
+        }
+        .content{
+            -webkit-transition: all ease-in-out 0.3s;
+            width: 90%;
+            position: absolute;
+            top: 20px;
+            left: 5%;
+        }
+        .card2 , .card3 , .card4{
+            -webkit-transition: all ease-in-out 0.3s;
+        }
+        .cnts , .c_2 , .c_3 , .c_4{
+            -webkit-transition: all ease-in-out 0.3s;   
+        }
+        .cnts{
+            margin: 0 20px 0 20px;
+            background: #fff;
+            border-radius: 16px;
+            height: 300px;
+            //box-shadow: 1px 1px 8px 1px #666666;
+            border:1px solid #d8d8d8;
+            position: relative;
+        }
+        .content .friendsss{
+            position: absolute;
+            left: calc(50% - 75px);
+            top: 60px;
+        }
+        .flag{
+            margin: 10px 0 0 0;
+            width: 100px;
+            height: 35px;
+            float: left;
+        }
+        .friends{
+            float: left;
+            margin: 18px 0 0 0;
+            font-size: 16px;
+            color: #666;
+            padding-left: calc(50% - 32px - 100px);
+        }
+        .cosal{
+            height: 50px;
+            padding: 20px 10% 0 10%;
+            position: absolute; 
+            top: 320px;
+        }
+        .co_fonts{
+            display: block;
+            word-break: break-word;
+            text-indent: 40px;
+        }
+        .one{
+            -webkit-transition: all ease-in-out 0.3s;
+            width: 90%;
+            position: absolute;
+            top: 20px;
+            left: 5%;
+        }
+        .selectfalse{-moz-user-select: none; -o-user-select:none; -khtml-user-select:none;-webkit-user-select:none;-ms-user-select:none; user-select:none}
+    </style>
+</head>
+
+        <div class="info_5 info" tapmode="" onclick="openWin('apply_header')" style="display:none">提交申请</div>
+
+<body class="selectfalse">
+        <div class="content page1 one" tapmode="#" >
+            <div class="cnts">
+                <div class="flag">
+                    <img src="../../image/greens.png" alt="pink" width="100" height="35" />
+                </div>
+                <p class="friends">个人信息</p>
+                <div style="clear: both;"></div>
+                <img class="friendsss" src="../../image/personal.png" alt="personal" width="" height="50%"  tapmode="" onclick="openWin('personal_header')"/>  
+            </div>
+        </div>
+
+        <div class="content myself" tapmode="#" >
+            <div class="cnts">
+                <div class="flag">
+                    <img src="../../image/pinks.png" alt="pink" width="100" height="35" />
+                </div>
+                <p class="friends">我的伙伴</p>
+                <div style="clear: both;"></div>
+                <img class="friendsss" src="../../image/friends.png" alt="friends" width="" height="50%"  tapmode="" onclick="openWin('friend_header')"/>  
+            </div>
+        </div>
+
+        <div class="content school" tapmode="#" >
+            <div class="cnts">
+                <div class="flag">
+                    <img src="../../image/yellows.png" alt="pink" width="100" height="35" />
+                </div>
+                <p class="friends">学校信息</p>
+                <div style="clear: both;"></div>
+                <img class="friendsss" src="../../image/school.png" alt="friends" width="" height="50%"  tapmode="" onclick="openWin('school_header')"/>    
+            </div>
+        </div>
+
+        <div class="content card" tapmode="#" >
+            <div class="cnts">
+                <div class="flag">
+                    <img src="../../image/blues.png" alt="pink" width="100" height="35" />
+                </div>
+                <p class="friends">证件信息</p>
+                <div style="clear: both;"></div>
+                <img class="friendsss" src="../../image/zj_info.png" alt="friends" width="" height="50%" tapmode="" onclick="openWin('card_header')"/>   
+            </div>
+        </div>
+   <div class="cosal">
+    <span class="co_fonts"></span>
+   </div>
+</body>
+<script type="text/javascript" src="../../script/api.js"></script>
+<script type="text/javascript" src="../../script/zepto.min.js"></script>
+
+<script type="text/javascript">
+    //卡片切换
+    $(function(){
+    	  /*兼容性图片居中*/
+			
+                        var _width = $(".card").width() / 2;
+            				alert(_width);            
+                        friLeft = _width - 85.5;
+
+                        $(".friendsss ").css("left",friLeft + "px");
+                        
+        var h = document.documentElement.clientHeight,//浏览器可视高度
+            w = document.documentElement.clientWidth,//浏览器可视宽度
+            dir = 55 ,//定义每个卡包交替的差值
+            len = $(".content").length,//总共卡包的数量
+            scale = 0.9,//卡包比例
+            hw = $(".content").eq(0).width()*0.7,//初始化最底层的宽度
+            sw;//中间变量
+            $(window).resize(function(){
+
+            });
+            init ();
+        /*初始化卡包布局 */
+        function init () {
+            sw = hw
+            var i = 3;
+            $(".content").each(function(){
+                if($(this).hasClass('one')){
+                    $(this).attr("style","");
+                }else{
+                    sw = sw / scale;
+                    $(this).css({
+                        overflow:'hidden',
+                        height:55,
+                        top: h - dir*(i),
+                        zIndex: len-i,
+                        width:100-10*i+"%",
+                        left:5*i+"%"
+                    });
+                i--;
+                };
+            });
+        };
+        //点击触发切换
+        $(".content").on("click",function() {
+            $(this).addClass('one').siblings().removeClass('one');
+            init();
+        });
+    });
+
+
+	var openWin=function($url){
+		var $name=$url.split('_');
+		api.openWin({
+	        name: $name[0],
+	        url: $url+'.html',
+	        pageParam:{amount:api.pageParam.amount,fqs:api.pageParam.fqs},
+	        animation:{
+	        	type:'movein',
+	        	subType:'from_right'
+	        },
+	        scrollToTop:true,
+	        reload:true
+        });
+	}
+	//供远程执行刷新当前页面
+	var reload=function(){
+		//location.reload;
+        var personal_status = $api.getStorage('personal_status');
+        var school_status = $api.getStorage('school_status');
+        var card_status = $api.getStorage('card_status');
+        var contact_status = $api.getStorage('contact_status');
+		var baseinfo=$api.getStorage('baseinfo');
+				if(baseinfo!='' && baseinfo!=null && baseinfo.all_status==true){
+        			$api.attr($api.dom('.info_5'),'style','display:block');
+        		}if(personal_status && school_status && card_status && contact_status){
+                    $api.attr($api.dom('.info_5'),'style','display:block');
+                }else{
+                    $api.attr($api.dom('.info_5'),'style','display:none');
+                }
+
+	}
+	apiready=function(){
+		reload();
+	}
+</script>
+</html>

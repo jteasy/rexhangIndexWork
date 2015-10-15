@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<security>
+  <item name="wxPay_appId" value="wx65f25ae82838699b"/>
+  <item name="wxPay_mchId" value="10020675"/>
+  <item name="wxPay_partnerKey" value="yefeikaitucf15929153300000000000"/>
+  <item name="wxPay_notifyUrl" value="http://api.fenqiday.com/index.php/wxpay/notifyurl"/>
+</security>

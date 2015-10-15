@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>我的账户</title>
+    <link rel="stylesheet" type="text/css" href="../../css/api.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/common.css" />
+ <style type="text/css">
+    	*{
+    		margin: 0;
+    		padding: 0;
+    	}
+    	body{
+    		font-size: 12px;
+    		 font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+    		background-color: #EAEAEC;
+    	}
+    	 .topbar {
+            background: #0DA4FF;
+            height: 44px;
+            //border-bottom: 1px solid #DDDFE3;
+            line-height: 44px;
+            text-align: center;
+            color: #ffffff;
+            font-size:20px;
+            font-weight:bold;
+            position:relative;
+        }
+        .back-arrow{
+        	height:100%;
+        	width:26px;
+        	background:url(../../image/back.png) no-repeat;
+        	background-size:50%;
+        	background-position: 50%;
+        	display:block;
+        	position:absolute;
+        	top:0;
+        	left:5px;
+        }
+    	.heads{
+    		width: 100%;
+    		background: linear-gradient(#0da4ff 50%,#01BDFF 100%);
+    		background: -webket-linear-gradient(#0da4ff 50%,#01BDFF 100%);
+    		/*IE低版本兼容渐变背景*/
+    		filter: progid:DXImageTransform.Microsoft.gradient(startcolorstr=#0da4ff,endcolorstr=#01BDFF,gradientType=1);
+    		/*非IE版本并且低内核处理办法*/
+    		*background: #0da4ff;
+    		_background: #0da4ff;
+    		background:#0da4ff;
+    	}
+    	.nubfons{
+    		width: 100%;
+    		height: 36px;
+    		font-size: 36px;
+    		color: #fff;
+    		text-align: center;
+    		line-height: 36px;
+    		padding-top: 80px;
+    	}
+    	.yue{
+    		width: 100%;
+    		height: 14px;
+    		font-size: 14px;
+    		color: #fff;
+    		text-align: center;
+    		line-height: 14px;
+    		padding-top: 10px;
+    	}
+    	.btns{
+    		height: 80px;
+    		width: 100%;
+    		margin-top: 70px;
+    		border-top: 1px solid #fff;
+    	}
+    	.btns .huankuan{
+    		height: 40px;
+    		line-height: 40px;
+    		width: 100px;
+    		border-radius: 20px;
+    		border: 1px solid #fff;
+    		text-align: center;
+    		color: #fff;
+    		float: left;
+    		margin-top: 20px;
+    		margin-left: 36px;
+    	}
+    	.btns .tixian{
+    		height: 40px;
+    		line-height: 40px;
+    		width: 100px;
+    		border-radius: 20px;
+    		border: 1px solid #fff;
+    		text-align: center;
+    		color: #fff;
+    		margin-top: 20px;
+    		float: right;
+    		margin-right: 36px;
+    	}
+    	.lie{
+    		width: 100%;
+    		height: 364px;
+    		background: #fff;
+    		margin-top: 10px;
+    		border-top: 1px solid #D8D8D8;
+    		border-bottom: 1px solid #D8D8D8;
+    	}
+    	.lie .lie_1{
+    		height: 52px;
+    		margin-left: 14px;
+    	}
+    	.lie .lie_1 .icons1{
+    		width: 36px;
+    		height: 36px;
+    		display: block;
+    		border-radius: 50%;
+    		background: #F2F2F2;
+    		float: left;
+    		margin-top: 7px;
+            background: url('../../image/bigpic.png');
+    	}
+    	.lie .lie_1 .wdjk{
+    		height: 50px;
+    		border-bottom: 1px solid #D8D8D8;
+    		float: left;
+    		line-height: 50px;
+    		font-size: 14px;
+    		margin-left: 20px;
+    		color: #666;
+    	}
+    	.brown-space{
+    		height:10px;
+    		background:#c5c5c5;
+    	}
+    	.exit{
+    		height:50px;
+    		width:100%;
+    		background:#fff;
+    		font-size:14px;
+    		line-height:50px;
+    		color:#666;
+    		text-align:center;
+                        border-top: 1px solid #D8D8D8;
+    	}
+            .tpmod{
+                background: #ECEBEB;
+            }
+            .lie  .tapcss{
+/*                color: #109EFF;*/
+                background: #ECEBEB;
+                border-bottom: 0;
+                
+            }
+            .lie .lie_1 .taps{
+                border-bottom: 0;   
+            }
+            .btns .tapsradius{
+                background-color: #109EFF;
+                border: 0;
+                border: 1px solid #109EFF;
+            }
+    </style>
+</head>
+<body onresize="changes();">
+
+	<div class="heads">
+		<div class="nubfons" id="account-amount"></div>
+		<div class="yue">可提现额（元）</div>
+		<div class="btns">
+			<div class="huankuan" tapmode="tapsradius" onclick="openWin('mybill')">还款</div>
+			<div class="tixian" tapmode="tapsradius" onclick="openWin('withdraw')">提现</div>
+		</div>
+	</div>
+	<!-- 列 -->
+	<div class="lie">
+		<div class="lie_1" tapmode="tapcss" onclick="openWin('myborrow')">
+			<span class="icons1" style="background-position: 524px -17px;
+    background-size: 900px;"></span>
+			<div class="wdjk" tapmode="taps">我的借款</div>
+		</div>
+		<!-- 2 -->
+		<div class="lie_1" tapmode="tapcss" onclick="openWin('mybill')">
+			<span class="icons1" style="background-position: 524px -71px;
+    background-size: 900px;"></span>
+			<div class="wdjk wdjk2" tapmode="taps">账单详情</div>
+		</div>
+		<!-- 3 -->
+		<div class="lie_1" tapmode="tapcss" onclick="openWin('mybank')">
+			<span class="icons1" style="background-position: 524px -125px;
+    background-size: 900px;"></span>
+			<div class="wdjk wdjk3" tapmode="taps">银行卡</div>
+		</div>
+		<!-- 4 -->
+		<div class="lie_1" tapmode="tapcss" onclick="openWin('mysafe')">
+			<span class="icons1" style="background-position: 524px -182px;
+    background-size: 900px;"></span>
+			<div class="wdjk wdjk4" tapmode="taps">安全设置</div>
+		</div>
+		<!--5-->
+		<div class="lie_1" tapmode="tapcss" onclick="openWin('question')">
+			<span class="icons1" style="background-position: 489px -17px;
+    background-size: 900px;"></span>
+			<div class="wdjk wdjk5" tapmode="taps">常见问题</div>
+		</div>
+		<!--6-->
+		<div class="lie_1" tapmode="tapcss" onclick="openWin('aboutus')">
+			<span class="icons1" style="background-position: 489px -72px;
+    background-size: 900px;"></span>
+			<div class="wdjk wdjk6" tapmode="taps">关于我们</div>
+		</div>
+		<!--7-->
+		<div class="lie_1" tapmode="tapcss" onclick="call()">
+			<span class="icons1" style="background-position: 489px -126px;
+    background-size: 900px;"></span>
+			<div class="wdjk wdjk7" style="border:none;" tapmode="taps">客服电话：400-029-3995</div>
+		</div>
+		<!--8-->
+		<span class="brown-space"></span>
+		<div class="exit"  tapmode="tpmod" onclick="exit()">
+			<div class="" style="border:none;" tapmode="">退出登录</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="../../script/api.js"></script>
+	<script type="text/javascript">
+		
+	function changes(){
+		var wdjkDom = $api.dom('.wdjk');
+		var wdjkDomall = $api.domAll('.wdjk');
+		// clientWidth-获取浏览器宽度
+		var _width = document.body.clientWidth - 36 -20 -14;
+		wdjkDom.style.width = _width + "px";
+		var wdjkDom2 = $api.dom('.wdjk2');
+		var _width = document.body.clientWidth - 36 -20 -14;
+		wdjkDom2.style.width = _width + "px";
+		var wdjkDom3 = $api.dom('.wdjk3');
+		var _width = document.body.clientWidth - 36 -20 -14;
+		wdjkDom3.style.width = _width + "px";	
+		var wdjkDom4 = $api.dom('.wdjk4');
+		var _width = document.body.clientWidth - 36 -20 -14;
+		wdjkDom4.style.width = _width + "px";
+		var wdjkDom5 = $api.dom('.wdjk5');
+		var _width = document.body.clientWidth - 36 -20 -14;
+		wdjkDom5.style.width = _width + "px";
+		var wdjkDom6 = $api.dom('.wdjk6');
+		var _width = document.body.clientWidth - 36 -20 -14;
+		wdjkDom6.style.width = _width + "px";
+		var wdjkDom7 = $api.dom('.wdjk7');
+		var _width = document.body.clientWidth - 36 -20 -14;
+		wdjkDom7.style.width = _width + "px";
+	}
+	// 防止刷新无效
+	changes();
+	/*
+	 * call  拨打电话
+	 */
+	var call=function(){
+		api.call({
+	        number:'4000293995'
+        });
+	}
+	/**
+	 *打开窗口 
+	 */
+	var openWin=function($url){
+		api.openWin({
+	        name:$url,
+	        url: $url+'_header.html',
+	        bgcolor:"#ffffff",
+	        scrollToTop:true,
+	        animation:{
+	        	type:'movein',
+	        	subType:'from_right'
+	        }
+        });
+	}
+	apiready=function(){
+		reload();	//默认打开刷新
+		//下拉刷新
+		api.setRefreshHeaderInfo({
+			visible:true,
+			loadingImg:'widget://image/loadingImg.gif',
+			bgColor:'#ffffff',
+			textColor:'#ccc',
+			
+        },function(ret,err){
+        	if(ret){
+	        	if(api.connectionType=='none'){
+	        		api.toast({msg:'网络连接失败，请稍候重试'});
+	        		setTimeout(function(){api.refreshHeaderLoadDone();},1000);
+	        	}else{
+		        		api.getPrefs({
+					        key:'userid'
+				        },function(ret,err){
+				        	
+				        	if(ret && ret.value!=''){
+				        		
+				        		api.ajax({
+							        url:$api.getStorage('request_url')+'/vip/getvip',
+							        method:'post',
+							        dataType:'json',
+							        data:{values:{
+							        	vipid:ret.value,
+							        	system:api.systemType
+							        }}
+						        },function(ret,err){
+						        	api.refreshHeaderLoadDone();
+						        	if(ret){
+						        		$api.setStorage('vip_account',ret);
+						        		$api.text($api.byId('account-amount'),ret['data']['account_money']);
+						        	}
+						        });
+				        	}
+				        });
+				       //刷新加载完成
+	        	}
+	       	}//确认下拉
+        });    
+	}
+	/**
+	 *刷新页面 
+	 */
+	var reload=function(){
+		api.getPrefs({
+	        key:'userid'
+        },function(ret,err){
+        	if(ret && ret.value!=''){
+        		api.showProgress({
+        		    style: 'default',
+        		    animationType: 'fade',
+        		    modal: false
+        		});
+        		
+        		api.ajax({
+			        url:$api.getStorage('request_url')+'/vip/getvip',
+			        method:'post',
+			        dataType:'json',
+			        data:{values:{
+			        	vipid:ret.value,
+			        	system:api.systemType
+			        }}
+		        },function(ret,err){
+		        	api.hideProgress();
+		        	if(ret){
+		        		$api.setStorage('vip_account',ret);
+		        		$api.text($api.byId('account-amount'),ret['data']['account_money']);
+		        	}
+		        });
+        	}
+        });
+	}
+	/**
+	 *退出登录 
+	 */
+	var exit=function(){
+		api.confirm({
+			title:'退出确认',
+			msg:'确认退出天天分期？',
+			buttons:['取消','确认']
+        },function(ret,err){
+        	if(ret.buttonIndex==2){
+        			$api.clearStorage();
+        			api.removePrefs({
+        			    key: 'school_name'
+        			});
+        			api.removePrefs({
+        			    key: 'entrance_time'
+        			});
+        			api.removePrefs({
+        			    key: 'schooling'
+        			});
+        			api.removePrefs({
+        			    key: 'education'
+        			});
+        			api.removePrefs({
+        			    key: 'school_address'
+        			});
+        			api.removePrefs({
+        			    key: 'detail_address'
+        			});
+        			api.removePrefs({
+				        key:'username'
+			        });
+			        api.removePrefs({
+				        key:'userid'
+			        });
+			        api.toast({
+			        	msg:'成功退出！',
+			        	location:'middle'
+			        });
+			        setTimeout(function(){
+				        api.execScript({
+									name:'root',
+							        script: 'randomSwitchBtn(0,'+'index'+','+0+');'
+					    });
+					   	},1000);
+        	}
+        });
+		
+	}
+</script>
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>修改手势密码</title>
+    <link rel="stylesheet" type="text/css" href="../../css/api.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/common.css" />
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background: -webkit-linear-gradient(#109EFF 0%,#33FFFF 75%);
+            background: linear-gradient(#109EFF 0%,#33FFFF 75%,);
+            font-size: 12px;
+            font-family: '微软雅黑',arial;
+        }
+        .header-top{
+            width: 100%;
+            height: 36px;
+        }
+        .mima_all{
+            width: 100%;
+            height: 46px;
+            line-height: 46px;
+            position: relative;
+        }
+        .mima_c{
+            position: absolute;
+            width: 46px;
+            height: 46px;
+            left: 50%;
+            margin-left: -23px;
+        }
+        #rex{
+            
+            display: inline-block;
+            width: 46px;
+            height: 46px;
+            margin: 3px 3px;
+        }
+        #rex li{
+            list-style: none;
+            width: 8px;
+            height: 8px;
+            border: 1px solid #fff;
+            border-radius: 50%;
+            float: left;
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+        .sel1{
+
+        }
+        .wlnaq{
+            text-align: center;
+            color: #fff;
+            margin-top: 20px;
+        }
+        #content{
+            width: 300px;
+            margin-bottom: 20px;
+            height: 300px;
+            margin: 0 auto;
+        }
+        #canvas{
+    		width:309px;
+    		height:309px;
+    		margin:34px auto;
+    		background-color:transparent;
+    	}
+    	#rex .active{
+    		background:#ffffff;
+    	}
+    </style>
+</head>
+<body>
+    <div class="header-top">
+    </div>
+    <div class="mima_all">
+        <div class="mima_c">
+            <ul id="rex">
+                <li class="sel1" id="little_circle"></li>
+                <li id="little_circle"></li>
+                <li id="little_circle"></li>
+                <li id="little_circle"></li>
+                <li id="little_circle"></li>
+                <li id="little_circle"></li>
+                <li id="little_circle"></li>
+                <li id="little_circle"></li>
+                <li id="little_circle"></li>
+            </ul>
+        </div>
+        <a href="javascript:void(0);" style="color:#fff;text-indent:45px;height:46px;display:inline-block;position:absolute;left:50%;padding-left:20px;">跳过→</a>
+    </div>
+    <p class="wlnaq" id="title">为了您的账户安全，请设置手势密码</p>
+
+    <div id="content">
+    		<canvas id="canvas"></canvas>
+    </div>
+</body>
+<script type="text/javascript" src="../../script/api.js"></script>
+<script type="text/javascript" src="../../script/H5lock.js"></script>
+<script type="text/javascript" src="../../script/md5.js"></script>
+<script type="text/javascript">
+	apiready = function(){
+		api.prompt({
+			msg:'请输入登录密码',
+			buttons:['确定','取消'],
+			text:'',
+			type:'password'
+        },function(ret,err){
+        	if(ret.buttonIndex==1){
+        		alert(MD5(ret.text).substr(8,16));
+        	}
+        });
+		var $systemType=api.systemType;
+		var h5lock=new H5lock({
+    			chooseType: 3
+		});
+		h5lock.init();
+		h5lock.updatePassword();
+				/*var screenLock = api.require('screenLock');
+				screenLock.set({
+				   color : '#3b9bff'
+				},
+				    function(ret,err){
+				        api.alert({msg:''+ret.status});
+				    }
+				);*/
+	
+	};
+</script>
+</html>

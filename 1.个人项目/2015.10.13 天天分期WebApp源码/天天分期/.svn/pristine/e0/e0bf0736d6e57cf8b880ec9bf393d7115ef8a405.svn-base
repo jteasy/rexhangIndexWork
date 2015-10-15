@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>提现</title>
+    <link rel="stylesheet" type="text/css" href="../../css/api.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/common.css" />
+  <style type="text/css">
+ 		* {
+			margin: 0;
+			padding: 0;
+		}
+		body {
+			font-size: 12px;
+			font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+			background: #EAEAEC;
+		}
+		.huankuan {
+			width: 100%;
+			height: 50px;
+			line-height: 50px;
+			background: #fff;
+			margin-top: 10px;
+			text-indent: 20px;
+			font-size: 14px;
+		}
+		.h_1 {
+			font-size: 14px;
+			color: #666;
+			height: 14px;
+			display: block;
+			float: left;
+			line-height: 14px;
+			text-align: center;
+			margin-top: 18px;
+		}
+		input[name="maxmoney"] {
+			font-size: 14px;
+			outline: 0;
+			border: 0;
+		}
+		.num1 {
+			font-size: 16px;
+			color: #000;
+			height: 16px;
+			display: block;
+			float: left;
+			line-height: 16px;
+			margin-top: 17px;
+			text-align: center;
+		}
+		.zhifulist {
+			width: 100%;
+			background-color: #fff;
+			margin-top: 10px;
+		}
+		.container {
+			margin-left: 20px;
+			margin-right: 20px;
+			border: 1px solid red;
+		}
+		/*list01*/
+		.z_1 {
+			border-bottom: 1px solid #D8D8D8;
+			height: 50px;
+			position: relative;
+		}
+		.z_1 .c_1 {
+			margin-left: 20px;
+			margin-right: 20px;
+			height: 50px;
+		}
+		.weichaticon {
+			width: 32px;
+			height: 32px;
+			display: block;
+			background: url('../../image/bankpay.png') no-repeat;
+			margin-top: 9px;
+			background-size: 90%;
+			background-position: 50% 50%;
+			float: left;
+		}
+		.jianshe {
+			width: 32px;
+			height: 32px;
+			display: block;
+			background: url('../../image/bankpay.png') no-repeat;
+			margin-top: 9px;
+			background-size: 90%;
+			background-position: 50% 50%;
+			float: left;
+		}
+		.yinhangka {
+			width: 32px;
+			height: 32px;
+			display: block;
+			background: url('../../image/bankpay.png') no-repeat;
+			margin-top: 9px;
+			background-size: 90%;
+			background-position: 50% 50%;
+			float: left;
+		}
+		.wei_zhifu {
+			height: 16px;
+			font-size: 16px;
+			margin-left: 48px;
+			line-height: 14px;
+			margin-top: 8px;
+			display: block;
+			padding-top: 10px;
+		}
+		.wei_info {
+			font-size: 12px;
+			color: #999;
+			height: 12px;
+			display: inline-block;
+			line-height: 12px;
+			margin-left: 14px;
+			margin-top: 4px;
+		}
+		.check {
+			width: 18px;
+			height: 18px;
+			background: #0DA4FF;
+			border-radius: 50%;
+			line-height: 18px;
+			text-align: center;
+			color: #fff;
+			position: absolute;
+			right: 20px;
+			top: 16px;
+		}
+		.check2,
+		.check3 {
+			background: #fff;
+			border: 1px solid #999;
+			width: 17px;
+			height: 17px;
+			top: 14px;
+		}
+		/*list01 end*/
+		/*btns*/
+		#btns {
+			width: 100%;
+			height: 50px;
+		}
+		#btns .btn {
+			height: 50px;
+			margin: 20px 20px 0 20px;
+			background: #C9C9C9;
+			color: #fff;
+			font-size: 18px;
+			line-height: 50px;
+			text-align: center;
+			border-radius: 6px;
+		}
+    </style>
+</head>
+<body>
+		<div class="huankuan">
+			<span class="h_1">金额(元)</span>
+			<input type="tel" placeholder="本次最多转出0.00元"name="maxmoney" id="withdrawamount"/>
+		</div>
+		<!-- zhifu组件 -->
+		<div class="zhifulist">
+			
+		</div>
+		<!-- btn组件 -->
+		<div id="btns">
+			<div class="btn">下一步</div>
+		</div>
+		<input type="hidden" id="withdrawbank"/>
+</body>
+<script type="text/javascript" src="../../script/api.js"></script>
+<script type="text/javascript">
+	apiready = function(){
+		//baseinfo的银行列表：
+		var baseinfo = $api.getStorage('baseinfo');
+		var vip_bank = baseinfo.vip_bank;
+		if(baseinfo.vip_bank!='' || baseinfo.vip_bank!=null){
+			for(x in vip_bank){
+				var temp_str = '';
+					temp_str+= '<div class="z_1" id="pay'+vip_bank[x].id+'"  tapmode="" onclick="choosePay('+"'"+vip_bank[x].id+"','pay"+vip_bank[x].id+"'"+')">';
+					temp_str+= '<div class="c_1"><span class="weichaticon"></span>';
+					temp_str+= '<span class="wei_zhifu">'+vip_bank[x].bank_name+'尾号'+(vip_bank[x].card_no).substr(-4)+'</span><span class="wei_info">已绑定银行卡，直接提现</span><div class="check ';
+					if(x!=0){
+						temp_str+= 'check2';
+					}else{
+						$api.val($api.byId('withdrawbank'), vip_bank[x].id);
+					}
+					temp_str+= '">√</div>';
+					$api.append($api.dom('.zhifulist'),temp_str);
+			}
+		}else{
+			api.alert({
+			    msg: '您还未绑定银行卡，请绑定后再提现！'
+			}，function(ret,err){
+				if(ret.buttonIndex==1){
+					api.openWin({
+					    name: 'mybank',
+					    url: 'mybank.html',
+					    bounces: false,
+					    animation:{
+					    	type:'movein',
+					    	subType:'from_right',
+					    	duration:200
+					    }
+					});
+				}
+			});
+		}
+	    //加载localstorage的vip_account信息，如账户余额；
+	    var vip_account=$api.getStorage('vip_account');
+	    $api.byId('withdrawamount').placeholder='本次最多转出'+vip_account['data']['account_money']+'元';
+	}
+	    
+		var choosePay=function(bankid,obj){
+			$domall=$api.domAll('.z_1 .check');
+			for(var i=0;i<$domall.length;i++){
+				if($api.hasCls($domall[i],'check2')){	
+				}else{
+					$api.addCls($domall[i],'check2');
+				}
+			}
+			$api.removeCls($api.dom('#'+obj+' .check'),'check2');
+			$api.val($api.byId('withdrawbank'), bankid);
+		}
+
+		$api.addEvt($api.dom('body'),'input',function(){
+			if($api.trimAll($api.val($api.byId('withdrawamount')))!='' && !isNaN($api.trimAll($api.val($api.byId('withdrawamount'))))){
+				$api.attr($api.dom('.btn'),'style','background:#0da4ff');
+				$api.attr($api.dom('.btn'),'onclick','submit()');
+			}else{
+				$api.attr($api.dom('.btn'),'style','background:#c9c9c9');
+				$api.attr($api.dom('.btn'),'onclick','');
+			}
+		});
+		/*
+		 * 控制提交按钮
+		 */
+		var submit=function(){
+			//加载localstorage的vip_account信息，如账户余额；
+	  		var vip_account=$api.getStorage('vip_account');
+			var withdrawbank=$api.val($api.byId('withdrawbank'));
+			var withdrawamount=$api.val($api.byId('withdrawamount'));
+			if(parseInt(withdrawamount)==0){
+				api.toast({
+				    msg: '提现金额不能为0',
+				    duration: 2000,
+				    location: 'middle'
+				});
+			}
+			if(isNaN(withdrawamount) || withdrawamount>parseInt(vip_account['data']['account_money'])){
+				api.toast({
+				    msg: '提现金额不能大于账户余额',
+				    duration: 1500,
+				    location: 'middle'
+				});
+				return false;
+			}
+			api.openWin({
+	            name: 'withdrawpay',
+	            url: 'withdrawpay_header.html',
+	            scrollToTop:true,
+	            pageParam:{
+	            	withdrawbank:withdrawbank,
+	            	withdrawamount:withdrawamount
+	            },
+	            animation:{
+	            	type:'movein',
+	            	subType:'from_right',
+	            	duration:300
+	            }
+            });
+		}
+</script>
+</html>

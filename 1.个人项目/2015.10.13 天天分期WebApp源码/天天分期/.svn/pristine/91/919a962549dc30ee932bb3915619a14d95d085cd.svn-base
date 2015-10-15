@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<security>
+  <item name="wxPay_appId" value="wx39d18f3a48cae7a5"/>
+  <item name="wxPay_mchId" value="10020675"/>
+  <item name="wxPay_partnerKey" value="yefeikaitucf15929153300000000000"/>
+  <item name="wxPay_notifyUrl" value="http://api.fenqiday.com/index.php/wxpay/notifyurl"/>
+  <item name="aliPay_partner" value="2088711133804888"/>
+  <item name="aliPay_seller" value="wangxiaodong@kaitucf.com"/>
+  <item name="aliPay_rsaPriKey" value="MIICdgIBADANBgkqhkiG9w0BAQEFAASCAmAwggJcAgEAAoGBANYfcuBiCBtHi5Lvj0eA3UyF3VTTEsqIfYztKU4ejMUHrXfGExeEYmikWUr6h/83eXpRxJUHTvr/hDwnKLehCzHxhqo52MxI4G/u0Cix+nYrdIDfZH4sc6su3s1GBcmcoc+45L648c87RXB/yonAROYweFfsNQizBDVjrsk1E+w1AgMBAAECgYBCGHcXeGtUMGOPOc+anNay9md59aXJSxSmWdb0PE3rzBDp9gSSr9TIxGKj2G3+hBtFfNQXxKfGpvUktFnHRTj04uXkq3igxLLcfyYR4hF75mpfK0r9H3433N1fD38JGiEGz80obh6ZB07Z1e7vqDp1poqmIj1i94ODroqChyOCgQJBAPnfJsP5Upql6qs9Timo1auNEY4b4yBUj4lUmB+dJ7eg1qLPSMXwY7XAlT+p6xtquN9Sn98ZlaCwJmV9J1By1QUCQQDbX9gTiAEq+yg6Z5Zso41q/tNXvEMkrfW4WqcuYTwP2agC3+3sPCxAGRoOsHSkRMejZcrroSqtNoiAIKlwiWFxAkA9/Ym9huZibZU5pHz2wuc3p0jaq7p+c9wkYvNWrIOFAAcf3zMbwFbMaZndcIdehuyUowf8rnk7o1fzR8hwIf0NAkA8F2T49KhdPa8nUHjECYkTZfo+bjN2OLC2bx6cdcYeEWEUaIKj01fLtxSMMYnB9ZU6DQgow10NVYLOliPTz84BAkEAvJdI5ZPt+jN6A5M/m0WSZ3gL79o3qJccGQxbrfvkp0l+93Ihw7aTeNi2/b1vdeuquyEYs4vmESPobqB5n7Y9SA=="/>
+  <item name="aliPay_rsaPubKey" value="MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCnxj/9qwVfgoUh/y2W89L6BkRAFljhNhgPdyPuBV64bfQNN1PjbCzkIM6qRdKBoLPXmKKMiFYnkd6rAoprih3/PrQEB/VsW8OoM8fxn67UDYuyBTqA23MML9q1+ilIZwBC2AQ2UBVOrFXfFl75p6/B5KsiNG9zpgmLCUYuLkxpLQIDAQAB"/>
+  <item name="aliPay_notifyURL" value="http://api.fenqiday.com/alipay/notify_url"/>
+</security>
