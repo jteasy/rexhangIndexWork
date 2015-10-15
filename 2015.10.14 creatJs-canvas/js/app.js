@@ -17,8 +17,8 @@ window.onload = function (){
 	stage.addEventListener("stagemousemove",moveCanvas);
 	
 	var data ={
-		images:["img/3.png"],
-		frames:{width:50,height:50,regX:10,regY:10}
+		images:["img/1.png"],
+		frames:{width:187,height:50,regX:10,regY:10}
 	}
 	
 	sprite = new createjs.Sprite(new createjs.SpriteSheet(data));

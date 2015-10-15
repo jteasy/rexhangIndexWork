@@ -1,15 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>2015.10.13 移动端页面开发资源总结</name>
+	<name>2015.10.13 querySelector</name>
 	<comment>Create By HBuilder</comment>
 	<projects>
 	</projects>
 	<buildSpec>
-		<buildCommand>
-			<name>com.pandora.projects.ui.MKeyBuilder</name>
-			<arguments>
-			</arguments>
-		</buildCommand>
 		<buildCommand>
 			<name>com.aptana.ide.core.unifiedBuilder</name>
 			<arguments>
@@ -17,7 +12,6 @@
 		</buildCommand>
 	</buildSpec>
 	<natures>
-		<nature>com.pandora.projects.ui.MKeyNature</nature>
 		<nature>com.aptana.projects.webnature</nature>
 	</natures>
 	<filteredResources>
