@@ -1,0 +1,179 @@
+@charset "UTF-8";
+
+/**
+ * 
+ * @authors rexhang (rexhang@outlook.com)
+ */
+
+body {
+    background-color: #FFE6A2;
+}
+
+.containers {
+    width: 640px;
+    height: 3191px;
+    margin: 0 auto;
+    background: url(../img/bg.png) no-repeat;
+    position: relative;
+}
+
+.btns-bg {
+    width: 220px;
+    height: 50px;
+    background-color: #FFD7D7;
+    position: absolute;
+    left: 200px;
+    top: 888px;
+    border-radius: 4px;
+}
+
+.btns-bg2 {
+    top: 1420px;
+}
+
+.btns-bg3 {
+    top: 1886px;
+}
+
+.btns {
+    width: 200px;
+    height: 50px;
+    background-color: #FF7A7A;
+    box-shadow: 0 6px 2px #F03D39;
+    position: absolute;
+    left: 210px;
+    top: 876px;
+    border-radius: 4px;
+    text-align: center;
+    line-height: 50px;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.btns2 {
+    top: 1408px;
+}
+
+.btns3 {
+    top: 1874px;
+}
+
+.btnsa:active {
+    box-shadow: 0 0px 0px #F03D39;
+    top: 888px;
+}
+
+.btnsb:active {
+    box-shadow: 0 0px 0px #F03D39;
+    top: 1420px;
+}
+
+.btnsc:active {
+    box-shadow: 0 0px 0px #F03D39;
+    top: 1886px;
+}
+
+.go {
+    width: 110px;
+    height: 113px;
+    position: absolute;
+    background: url(../img/go_bg.png) no-repeat;
+    top: 2243px;
+    left: 253px;
+}
+
+.go_bg {
+    width: 108px;
+    height: 108px;
+    background: url(../img/go.png) no-repeat;
+    margin-top: -4px;
+    cursor: pointer;
+}
+
+.go_bg:active {
+    margin-top: 0;
+}
+
+.num {
+    display: block;
+    width: 45px;
+    height: 45px;
+    font-size: 45px;
+    color: #FFF;
+    position: absolute;
+    top: 2595px;
+    left: 221px;
+    text-align: center;
+    line-height: 45px;
+}
+
+.num2 {
+    left: 296px;
+}
+
+.num3 {
+    left: 370px;
+}
+
+.redbag {
+    width: 640px;
+    height: 742px;
+    background: url(../img/redbag.png) no-repeat;
+    background-size: 548px;
+    background-position: 46px 0;
+    position: fixed;
+    z-index: 9;
+    left: calc(50% - 320px);
+    top: calc(50% - 371px);
+    transition: all 0.4s ease-in-out;
+    transform: rotate(0deg) scale(.3);
+    -webkit-transform: rotate(0deg) scale(.3);
+    display: none;
+}
+
+.redbag-btn {
+    width: 194px;
+    height: 50px;
+    background: url(../img/hbbtn.png) no-repeat;
+    position: fixed;
+    z-index: 99;
+    left: calc(50% - 97px);
+    top: calc(60%);
+    transition: all 0.4s ease-in-out;
+    transform: rotate(0deg) scale(.3);
+    -webkit-transform: rotate(0deg) scale(.3);
+    background-size: contain;
+    display: none;
+}
+
+.gohave {
+    width: 154px;
+    height: 50px;
+    margin-left: 10px;
+    margin-top: -10px;
+    border-radius: 25px;
+    background-color: #F41D41;
+    box-shadow: 0 6px 2px #E0002E;
+    font-size: 20px;
+    text-align: center;
+    line-height: 50px;
+    color: #fff;
+    cursor: pointer;
+    transition: all 1s linear;
+}
+
+.gohave:active {
+    margin-top: 0;
+    box-shadow: 0 0px 2px #E0002E;
+}
+
+.plus {
+    width: 100%;
+    background: rgba(0,0,0,0.5);
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: none;
+    transition: all 1s linear;
+}
