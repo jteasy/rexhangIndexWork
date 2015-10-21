@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>ajax json</title>
+</head>
+
+<body>
+    <input type="submit" value="请求数据" name="post" onclick="init();" />
+    <script type="text/javascript" src="http://www.rexhang.com/js/jquery-1.11.1.min.js"></script>
+    <script>
+    function init() {
+        $.ajax({
+            type: "post",
+            url: "json.json",
+            dataType:"json",
+            success: function(dataContent) {
+                alert("冒号后面的是请求的内容：" + "姓名：" + dataContent[0].name + " | 年龄：" + dataContent[0].age);
+            },
+            error: function() {
+                alert("mistake");
+            }
+
+        });
+    };
+    </script>
+</body>
+
+</html>
