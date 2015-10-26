@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<script src="js/mui.min.js"></script>
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<script type="text/javascript" charset="utf-8">
+			mui.init({
+				// 一进入list页面 预加载一下即将会进入的 3g 腾讯网页面
+				preloadPages: [{
+					url: 'xingfu_3g.html',
+					id: '3g'
+				}]
+			});
+		</script>
+		<style type="text/css">
+			img {
+				border-radius: 50%;
+			}
+		</style>
+	</head>
+
+	<body>
+		<!--UI-图文本列表-->
+		<ul class="mui-table-view">
+			<li class="mui-table-view-cell mui-media" id="sel-1">
+				<a href="javascript:;">
+					<img class="mui-media-object mui-pull-left" src="images/little.png">
+					<div class="mui-media-body">
+						自由自在
+						<p class='mui-ellipsis'>能和心爱的人一起睡觉，是件幸福的事情；可是，打呼噜怎么办？</p>
+					</div>
+				</a>
+			</li>
+			<li class="mui-table-view-cell mui-media" id="sel-2">
+				<a href="javascript:;">
+					<img class="mui-media-object mui-pull-left" src="images/little2.png">
+					<div class="mui-media-body">
+						超强的功能
+						<p class='mui-ellipsis'>想要这样一间小木屋，夏天挫冰吃瓜，冬天围炉取暖.</p>
+					</div>
+				</a>
+			</li>
+			<li class="mui-table-view-cell mui-media" id="sel-3">
+				<a href="javascript:;">
+					<img class="mui-media-object mui-pull-left" src="images/little3.png">
+					<div class="mui-media-body">
+						我是什么
+						<p class='mui-ellipsis'>烤炉模式的城，到黄昏，如同打翻的调色盘一般.</p>
+					</div>
+				</a>
+			</li>
+			<li class="mui-table-view-cell mui-media" id="sel-4">
+				<a href="javascript:;">
+					<img class="mui-media-object mui-pull-left" src="images/little5.png">
+					<div class="mui-media-body">
+						精彩的图片
+						<p class='mui-ellipsis'>很多图片..</p>
+					</div>
+				</a>
+			</li>
+			<li class="mui-table-view-cell mui-media" id="sel-5">
+				<a href="javascript:;">
+					<img class="mui-media-object mui-pull-left" src="images/little4.png">
+					<div class="mui-media-body">
+						二维码扫描
+						<p class='mui-ellipsis'>幸福是一个谜，你让一千个人来回答，就会有一千种答案.</p>
+					</div>
+				</a>
+			</li>
+			<li class="mui-table-view-cell mui-media" id="sel-6">
+				<a href="javascript:;">
+					<img class="mui-media-object mui-pull-left" src="images/little6.png">
+					<div class="mui-media-body">
+						获取你的联系人信息
+						<p class='mui-ellipsis'>寂寞的人总是会用心的记住他生命中出现过的每一个人，于是我总是意犹未尽地想起你在每个星光陨落的晚上一遍一遍数我的寂寞.</p>
+					</div>
+				</a>
+			</li>
+		</ul>
+		<!--UI-图文本列表-->
+
+		<script type="text/javascript">
+			document.getElementById("sel-1").addEventListener("tap", function() {
+				mui.openWindow({
+					url: 'xingfu_3g.html',
+					id: 'xingfu_3g.html',
+					styles: {
+						top: '0px', //新页面顶部位置
+						bottom: '50px' //新页面底部位置
+					},
+					extras: {},
+					createNew: false, //是否重复创建同样id的webview，默认为false:不重复创建，直接显示
+					show: {
+						autoShow: true,
+						aniShow: 'slide-in-left',
+						duration: 400 //页面动画持续时间，Android平台默认100毫秒，iOS平台默认200毫秒；
+					},
+					waiting: {
+						autoShow: true, //自动显示等待框，默认为true
+						title: '内容正在加载,请稍等...', //等待对话框上显示的提示内容
+						options: {
+							//							width: waiting - dialog - widht, //等待框背景区域宽度，默认根据内容自动计算合适宽度
+							//							height: waiting - dialog - height, //等待框背景区域高度，默认根据内容自动计算合适高度
+						}
+					}
+				});
+			});
+			document.getElementById("sel-2").addEventListener("tap", function() {
+				mui.openWindow({
+					url: 'music.html',
+					id: 'music.html',
+					styles: {
+						top: '0px', //新页面顶部位置
+						bottom: '50px' //新页面底部位置
+					},
+					extras: {},
+					createNew: false, //是否重复创建同样id的webview，默认为false:不重复创建，直接显示
+					show: {
+						autoShow: true,
+						aniShow: 'zoom-fade-out',
+						duration: 400 //页面动画持续时间，Android平台默认100毫秒，iOS平台默认200毫秒；
+					},
+					waiting: {
+						autoShow: true, //自动显示等待框，默认为true
+						title: '内容正在加载,请稍等...', //等待对话框上显示的提示内容
+						options: {
+							//							width: waiting - dialog - widht, //等待框背景区域宽度，默认根据内容自动计算合适宽度
+							//							height: waiting - dialog - height, //等待框背景区域高度，默认根据内容自动计算合适高度
+						}
+					}
+				});
+			});
+			document.getElementById("sel-3").addEventListener("tap", function() {
+				mui.openWindow({
+					url: 'cdb_info.html',
+					id: 'cdb_info.html',
+					styles: {
+						top: '0px', //新页面顶部位置
+						bottom: '50px' //新页面底部位置
+					},
+					extras: {},
+					createNew: false, //是否重复创建同样id的webview，默认为false:不重复创建，直接显示
+					show: {
+						autoShow: true,
+						aniShow: 'slide-in-right',
+						duration: 400 //页面动画持续时间，Android平台默认100毫秒，iOS平台默认200毫秒；
+					},
+					waiting: {
+						autoShow: true, //自动显示等待框，默认为true
+						title: '内容正在加载,请稍等...', //等待对话框上显示的提示内容
+						options: {
+							//							width: waiting - dialog - widht, //等待框背景区域宽度，默认根据内容自动计算合适宽度
+							//							height: waiting - dialog - height, //等待框背景区域高度，默认根据内容自动计算合适高度
+						}
+					}
+				});
+			});
+			
+			document.getElementById("sel-4").addEventListener("tap", function() {
+				mui.openWindow({
+					url: 'pic.html',
+					id: 'pic.html',
+					styles: {
+						top: '0px', //新页面顶部位置
+						bottom: '50px' //新页面底部位置
+					},
+					extras: {},
+					createNew: false, //是否重复创建同样id的webview，默认为false:不重复创建，直接显示
+					show: {
+						autoShow: true,
+						aniShow: 'slide-in-top',
+						duration: 400 //页面动画持续时间，Android平台默认100毫秒，iOS平台默认200毫秒；
+					},
+					waiting: {
+						autoShow: true, //自动显示等待框，默认为true
+						title: '图片正在加载,请稍等...', //等待对话框上显示的提示内容
+						options: {
+							//							width: waiting - dialog - widht, //等待框背景区域宽度，默认根据内容自动计算合适宽度
+							//							height: waiting - dialog - height, //等待框背景区域高度，默认根据内容自动计算合适高度
+						}
+					}
+				});
+			});
+			
+			document.getElementById("sel-5").addEventListener("tap", function() {
+				mui.openWindow({
+					url: 'erweima.html',
+					id: 'erweima.html',
+					styles: {
+						top: '0px', //新页面顶部位置
+						bottom: '50px' //新页面底部位置
+					},
+					extras: {},
+					createNew: false, //是否重复创建同样id的webview，默认为false:不重复创建，直接显示
+					show: {
+						autoShow: true,
+						aniShow: 'slide-in-bottom',
+						duration: 400 //页面动画持续时间，Android平台默认100毫秒，iOS平台默认200毫秒；
+					},
+					waiting: {
+						autoShow: true, //自动显示等待框，默认为true
+						title: '内容正在加载,请稍等...', //等待对话框上显示的提示内容
+						options: {
+							//							width: waiting - dialog - widht, //等待框背景区域宽度，默认根据内容自动计算合适宽度
+							//							height: waiting - dialog - height, //等待框背景区域高度，默认根据内容自动计算合适高度
+						}
+					}
+				});
+			});
+			
+			document.getElementById("sel-6").addEventListener("tap", function() {
+				mui.openWindow({
+					url: 'contack_s.html',
+					id: 'contack_s.html',
+					styles: {
+						top: '0px', //新页面顶部位置
+						bottom: '50px' //新页面底部位置
+					},
+					extras: {},
+					createNew: false, //是否重复创建同样id的webview，默认为false:不重复创建，直接显示
+					show: {
+						autoShow: true,
+						aniShow: 'slide-in-top',
+						duration: 400 //页面动画持续时间，Android平台默认100毫秒，iOS平台默认200毫秒；
+					},
+					waiting: {
+						autoShow: true, //自动显示等待框，默认为true
+						title: '内容正在加载,请稍等...', //等待对话框上显示的提示内容
+						options: {
+							//							width: waiting - dialog - widht, //等待框背景区域宽度，默认根据内容自动计算合适宽度
+							//							height: waiting - dialog - height, //等待框背景区域高度，默认根据内容自动计算合适高度
+						}
+					}
+				});
+			});
+		</script>
+	</body>
+
+</html>

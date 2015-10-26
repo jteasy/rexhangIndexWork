@@ -1,0 +1,14 @@
+.box{
+	width: 160px;
+	height: 44px;
+	background-color: #f70;
+	margin: 50px auto;
+	border-radius: 4px;
+	text-align: center;
+	line-height: 44px;
+	box-shadow: 0 4px 3px #333 ;
+}
+.box:active{
+	box-shadow: 0 0px 3px #333 ;
+	margin: 54px auto;
+}

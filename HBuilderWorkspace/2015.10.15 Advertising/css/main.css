@@ -1,0 +1,190 @@
+@charset "UTF-8";
+
+/**
+ * 
+ * @authors rexhang (rexhang@outlook.com)
+ */
+
+body {
+    background-color: #FFE6A2;
+    min-width: 1200px;
+}
+
+.containers {
+    width: 1532px;
+    height: 2600px;
+    background: url(../img/bg.png) no-repeat;
+    background-size: contain;
+    position: relative;
+    left: calc(50% - 766px);
+    top: 0;
+}
+
+.phonebtn {
+    width: 121px;
+    height: 42px;
+    background-color: #FF7A7A;
+    border-radius: 4px;
+    color: #fff;
+    text-align: center;
+    line-height: 42px;
+    font-size: 18px;
+    position: absolute;
+    left: 389px;
+    top: 1288px;
+    background-size: 80%;
+    box-shadow: 0 4px 2px #F03D39;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.phonebg {
+    width: 176px;
+    height: 53px;
+    background: url(../img/phonebg.png) no-repeat;
+    position: absolute;
+    left: 380px;
+    top: 1296px;
+    background-size: 80%;
+}
+
+.phonebtn2 {
+    position: absolute;
+    left: 670px;
+}
+
+.phonebg2 {
+    left: 660px;
+}
+
+.phonebtn3 {
+    left: 996px;
+}
+
+.phonebg3 {
+    left: 986px;
+}
+
+.phonebtn:active {
+    top: 1296px;
+    box-shadow: 0 0px 2px #F03D39;
+}
+
+.q {
+    width: 110px;
+    height: 113px;
+    background: url(../img/q.png) no-repeat;
+    position: absolute;
+    top: 1682px;
+    left: 463px;
+}
+
+.q1 {
+    width: 110px;
+    height: 113px;
+    background: url(../img/q1.png) no-repeat;
+    position: absolute;
+    top: 1676px;
+    left: 463px;
+    cursor: pointer;
+}
+
+.q1:active {
+    top: 1681px;
+}
+
+.yiq {
+    position: absolute;
+    top: 2013px;
+    left: 387px;
+    font-size: 18px;
+    color: #333;
+    margin-top: 34px;
+    display: block;
+}
+
+.numb1 {
+    position: absolute;
+    top: 2026px;
+    left: 444px;
+    display: block;
+    width: 32px;
+    height: 44px;
+    background: #E7344A;
+    font-size: 24px;
+    color: #fff;
+    text-align: center;
+    line-height: 44px;
+    border-radius: 4px;
+}
+
+.numb2 {
+    left: 500px;
+}
+
+.numb3 {
+    left: 558px;
+}
+
+.yiq2 {
+    left: 614px;
+}
+
+
+/*阴影层 开始*/
+
+.ck {
+    display: none;
+    width: 1200px;
+    height: 1113px;
+    background: url(../img/ckhb.png) no-repeat;
+    background-size: cover;
+    position: fixed;
+    left: calc(50% - 600px);
+    top: calc(50% - 556px);
+    z-index: 2;
+    background-position: -28px 0;
+    transform: scale(0.3) rotate(0deg);
+    transition: all .4s ease-in-out;
+}
+
+.hbbtn {
+    display: none;
+    width: 264px;
+    height: 76px;
+    background: url(../img/hbbtn.png);
+    position: fixed;
+    left: calc(50% - 132px);
+    top: 80%;
+    z-index: 3;
+    transform: scale(0.3) rotate(0deg);
+    transition: all .4s ease-in-out;
+}
+
+.ylq {
+    display: none;
+    width: 240px;
+    height: 76px;
+    background-color: #F41F42;
+    border-radius: 38px;
+    text-align: center;
+    line-height: 76px;
+    color: #FBB024;
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 13px;
+    box-shadow: 0 6px 2px #E0002E;
+    margin-top: -14px;
+    cursor: pointer;
+    transform: scale(0.3) rotate(0deg);
+    transition: all .4s ease-in-out;
+}
+
+.ylq:active {
+    transition: all 0s linear;
+    margin-top: 0;
+    box-shadow: 0 0px 2px #E0002E;
+}
+
+
+/*阴影层 结束*/

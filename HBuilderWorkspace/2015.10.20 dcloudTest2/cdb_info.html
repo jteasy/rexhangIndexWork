@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>Hello MUI</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="css/mui.min.css">
+		<!--App自定义的css-->
+		<!--<link rel="stylesheet" type="text/css" href="../css/app.css"/>-->
+		<style>
+			p {
+				text-indent: 22px;
+				padding: 5px 8px;
+			}
+			html,
+			body,
+			.mui-content {
+				background-color: #fff;
+			}
+			h4 {
+				margin-left: 5px;
+			}
+			button {
+				width: 100%;
+				height: 50px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"><span style="font-size: 18px;">返回</span></a>
+			<h1 class="mui-title">CBD - 详情</h1>
+		</header>
+		<div class="mui-content">
+			<div class="mui-content-padded">
+				<h4 style="margin-top:10px;">时间</h4>
+				<p>
+					时间没有等我，是你忘了带我走 ，我左手过目不忘的的萤火，右手里是十年一个漫长的打坐。
+				</p>
+				<p>
+					每个人都是一个国王,在自己的世界里纵横跋扈,你不要听我的,但你也不要让我听你的。
+				</p>
+				<h4>一个人</h4>
+				<p>
+					一个人总要走陌生的路，看陌生的风景，听陌生的歌，然后在某个不经意的瞬间，你会发现，原本费尽心机想要忘记的事情真的就这么忘记了。
+				</p>
+				<p>
+					这个城市没有草长莺飞的传说,它永远活在现实里面,快速的鼓点,匆忙的身影,麻木的眼神,虚假的笑容,而我正在被同化
+				</p>
+				<p>更多详细介绍，请到<a href="https://www.baidu.com">官网</a>查看；</p>
+				<h4>版本介绍</h4>
+				<p>当前版本为1.1.0，可到<a href="https://github.com/rexhang/rexhangIndexWork">Github</a>上获取最新版本。</p>
+				<h4>致敬</h4>
+				<p>
+					谢谢！~
+				</p>
+			</div>
+		</div>
+		<button class="mui-btn mui-btn-danger mui-action-back">关闭</button>
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init({
+				swipeBack: true //启用右滑关闭功能
+			});
+		
+		</script>
+
+	</body>
+
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<script src="js/mui.min.js"></script>
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<script type="text/javascript" charset="utf-8">
+			mui.init();
+		</script>
+		<style type="text/css">
+		</style>
+	</head>
+
+	<body>
+
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"><span style="font-size: 18px;">返回</span></a>
+			<h1 class="mui-title">H5+功能</h1>
+		</header>
+		<div class="mui-content">
+			<button type="button" class="mui-btn mui-btn-royal tels" style="width: 100%;height: 50px;">点击给我打电话</button>
+			<button type="button" class="mui-btn mui-btn-green clo_app" style="width: 100%;height: 50px;">点击退出应用程序</button>
+			<button type="button" class="mui-btn mui-btn-blue res_app" style="width: 100%;height: 50px;">点击重启应用程序</button>
+			<button type="button" class="mui-btn mui-btn-danger qrcode_app" style="width: 100%;height: 50px;">点击打开照相机</button>
+			<button type="button" class="mui-btn mui-btn-warning loadurls" style="width: 100%;height: 50px;">预加载外链网站</button>
+
+		</div>
+
+		<script type="text/javascript">
+			mui.plusReady(function() {
+				
+				
+				//alert('1'+plus.webview.getWebviewById('3g.qq.com'));
+				
+				// 预加载页面事件
+				function loadurls(){
+					 //list点击item后的事件
+				    var nwaiting = plus.nativeUI.showWaiting();//显示原生等待框
+				    webviewShow = plus.webview.create("show.html");//后台创建webview并打开show.html
+				    webviewShow.addEventListener("loaded", function() { //注册新webview的载入完成事件
+				        nwaiting.close(); //新webview的载入完毕后关闭等待框
+				        webviewShow.show("slide-in-top",600); //把新webview窗体显示出来，显示动画效果为速度150毫秒的右侧移入动画
+				    }, false);
+				
+				};
+				document.querySelector(".loadurls").addEventListener('tap', function() {
+					loadurls();
+				});
+				
+				
+				
+				// 点你按钮拨打电话
+				function telphone() {
+					void plus.device.dial('18966562548', false);
+				};
+				document.querySelector(".tels").addEventListener('tap', function() {
+					telphone();
+				});
+				//
+				
+				//点击退出应用程序
+				function close_app() {
+					void plus.runtime.quit();
+				};
+				document.querySelector(".clo_app").addEventListener('tap', function() {
+					if(confirm("确定退出吗")){
+						close_app();
+					};
+					
+				});
+				//
+				//点击重启应用程序
+				function res_app() {
+					void plus.runtime.restart();
+				};
+				document.querySelector(".res_app").addEventListener('tap', function() {
+					if(confirm("确定重启吗")){
+						res_app();
+					};
+					
+				});
+				
+				//点击打开摄像头
+				function qrcode_app() {
+					mui.openWindow({
+						url:"qrcode.html",
+						id:"qrcode.html",
+						styles:{
+							top:"0px",
+							bottom:"50px"
+						}
+					});
+				};
+				document.querySelector(".qrcode_app").addEventListener('tap', function() {
+					if(confirm("确定打开摄像头吗")){
+						qrcode_app();
+					};
+					
+				});
+				
+				
+			});
+		</script>
+	</body>
+
+</html>

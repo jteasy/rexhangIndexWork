@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title></title>
+    <script src="js/mui.min.js"></script>
+    <link href="css/mui.min.css" rel="stylesheet"/>
+    <script type="text/javascript" charset="utf-8">
+      	mui.init();
+    </script>
+</head>
+<body>
+	<header class="mui-bar mui-bar-nav">
+		<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		<h1 class="mui-title">拍照</h1>
+	</header>
+	
+	
+	<script type="text/javascript">
+	
+// 扩展API加载完毕后调用onPlusReady回调函数 
+document.addEventListener( "plusready", onPlusReady, false );
+var r = null; 
+// 扩展API加载完毕，现在可以正常调用扩展API 
+function onPlusReady() {
+	
+	// 获取摄像头管理对象
+	var cmr = plus.camera.getCamera();
+	
+	// 摄像头支持的拍照分辨率大小
+	var res = cmr.supportedImageResolutions[0];
+	
+	// 摄像头支持的拍照文件格式
+	var fmt = cmr.supportedImageFormats[0];
+	
+	// 开始拍照
+	cmr.captureImage( function( path ){
+			alert( "拍照成功存储在你的: " + path );  
+		},
+		function( error ) {
+			alert( "拍照失败: " + error.message );
+		},
+		{resolution:res,
+			format:fmt,
+			filename:'_doc/camera/rexhang.jpg',
+			index:'1'// 设置主 辅摄像头 安卓暂不支持
+		}
+	);
+
+}
+	</script>
+</body>
+</html>
