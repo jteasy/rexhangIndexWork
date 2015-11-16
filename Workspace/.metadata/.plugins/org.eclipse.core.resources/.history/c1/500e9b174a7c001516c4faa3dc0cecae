@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+		<title>title</title>
+		<link rel="stylesheet" type="text/css" href="../css/aui.css" />
+		<style>
+			body {
+			}
+		</style>
+	</head>
+	<body>
+		<div class="aui-content aui-card" style="margin:20px;">
+			<button class="aui-btn aui-btn-success" onclick="openTime();" style="width:100%;height:45px;">
+				点击打开时间选择器
+			</button>
+			<button class="aui-btn aui-btn-primary" onclick="openTimeOver();" style="width:100%;height:45px;margin-top:50%;">
+				选择完成
+			</button>
+			<button class="aui-btn aui-btn-danger tit" onclick="openTimeOver();" style="width:100%;height:45px;margin-top:70%;">
+				
+			</button>
+		</div>
+	</body>
+	<script type="text/javascript" src="../script/api.js"></script>
+	<script type="text/javascript">
+		apiready = function() {
+		};
+		function openTime() {
+			var obj = api.require('timeSelector');
+			obj.open({
+				x : 0,
+				y : 100,
+				h : 80,
+				width : 'auto',
+				height : 250
+			}, function(ret, err) {
+				var hour = ret.hour;
+				var minit = ret.minit;
+				var $tit = $api.dom('.tit');
+				
+				$api.text($tit,hour+'时'+minit+'分');
+			});
+		};
+		function openTimeOver() {
+			var obj = api.require('timeSelector');
+			obj.close();
+		}
+	</script>
+</html>

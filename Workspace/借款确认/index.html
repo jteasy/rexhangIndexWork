@@ -1,0 +1,342 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>借款确认</title>
+    <link rel="stylesheet" type="text/css" href="./css/api.css" />
+    <link rel="stylesheet" type="text/css" href="./css/common.css" />
+    <style type="text/css">
+    	*{
+    		margin: 0;
+    		padding: 0;
+    	}
+    	body{
+    		font-size: 12px;
+    		color: #666;
+    		font-family: "微软雅黑";
+    		background: #f2f2f2;
+    		height: 100%;
+    		width: 100%;
+    		position: absolute;
+    		top: 0;
+    		left: 0;
+    		right: 0;
+    		bottom: 0;
+    	}
+    	img{
+    		border: 0;
+    	}
+    	.allhead{
+    		background:#f2f2f2;
+    	}
+    	.head{
+    		margin: 10px 20px;
+    		border-radius: 16px;
+    		background: #0DA4FF;
+    		color: #fff;
+    		box-shadow: 0px 2px 6px 0px #D2D2D2;
+    	}
+    	.loan{
+    		padding: 10px 0 40px 20px;
+    		font-size: 14px;
+    	}
+    	.loantime{
+    		float: right;
+    		padding: 10px 92px 40px 0;
+    		font-size: 14px;
+    		
+    	}
+    	.num1250{
+    		padding: 0 0 40px 20px;
+    		font-size: 30px;
+    		font-family: arial;
+    	}
+    	.month{
+    		float: right;
+    		padding: 10px 80px 0 0;
+    		font-size: 14px;
+    	}
+    	.allhead .pers_info_header{
+    		margin: 10px 20px;
+    		background: #0DA4FF;
+    		color: #fff;
+    		font-size: 14px;
+    		border-radius: 16px 16px 0 0;
+    	}
+    	.perinfo_fonts{
+    		padding: 10px 20px;
+    	}
+    	.change{
+    		float: right;
+    		padding: 10px 20px;
+    	}
+    	.allhead .pers_info_body{
+    		margin: -10px 20px;
+    		background: #fff;
+    		border-radius: 0 0 16px 16px;
+    		box-shadow: 0px 2px 6px 0px #D2D2D2;
+    	}
+    	.name{
+    		width: 100%;
+    		height: 62px;
+    	}
+    	.icons_1{
+    		width: 40px;
+    		height: 40px;
+    		display: block;
+    		border-radius: 50%;
+    		background: #ccc;
+    		float: left;
+    		margin: 10px 20px;
+    	}
+		.xm{
+
+			width: calc(100% - 80px);
+			padding: 22px 0px;
+			border-bottom: 1px solid #e0e0e0;
+			float: left;
+		}
+		.xm_val{
+			padding-left: 100px;
+		}
+		#pic{
+			padding: 10px 10px;
+			display: -webkit-box;
+			-webkit-box-orient: horizontal;
+		}
+		.pic_1{
+			-webkit-box-flex: 1;
+			border: 1px solid dodgerblue;
+			margin-right: 10px;
+		}
+		.pic_1_1{
+		
+		}
+		#boxs{
+			display: -webkit-box;
+			-webkit-box-orient: horizontal;
+			padding: 10px 10px;
+		}
+		.sl{
+			-webkit-box-flex: 1;
+			margin-right: 10px;
+		}
+		#boxs2{
+			display: -webkit-box;
+			-webkit-box-orient: horizontal;
+			padding: 10px 10px;
+		}
+		.sl2{
+			-webkit-box-flex: 1;
+			margin-right: 10px;
+		}
+		#conta{
+			background: #fff;
+			margin: -10px 20px;
+			box-shadow: 0px 2px 6px 0px #D2D2D2;
+			border-radius: 0 0 16px 16px;
+		}
+		#conta ul li{
+			list-style: none;
+			padding: 10px 20px;
+			border-bottom: 1px solid #ccc;
+		}
+		#btns{
+			width: 100%;
+			height: 50px;
+			padding-bottom: 20px;
+		}
+		.btn{
+			margin: 20px 20px;
+			height: 50px;
+			background: #0DA4FF;
+			color: #FFFFFF;
+			text-align: center;
+			line-height: 50px;
+			font-size: 16px;
+			border-radius: 4px;
+		}
+            .lengths{
+                width: 130px;
+                display: inline-block;
+                word-break: keep-all;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                position: absolute;
+                left: 74px;
+                top: 22px;
+            }
+            
+    </style>
+</head>
+<body>
+	<div class="allhead">
+		<div class="head">
+	    	<span class="loan">借款金额</span>
+	    	<span class="loantime">借款期限</span>
+	    	<p>
+	    		<span class="num1250">1250.00</span>
+	    		<span>元</span>
+	    		<span class="month">6个月(6期)</span>
+	    	</p>
+    	</div>
+    	<!--personal info-->
+    	<div class="pers_info_header">
+    		<span class="perinfo_fonts">个人信息</span>
+    		<span class="change">修改</span>
+    	</div>
+    	<div class="pers_info_body">
+    		<div class="name">
+    			<span class="icons_1"></span>
+				<span class="xm">姓名<span class="xm_val" style="padding-left: 70px;">杜拉拉</span></span>
+    		</div>
+    		
+    		<div class="name">
+    			<span class="icons_1"></span>
+				<span class="xm">身份证号码<span class="xm_val" style="padding-left: 34px;">612728199210130243</span></span>
+    		</div>
+    		
+    		<div class="name" style="position:relative;">
+    			<span class="icons_1"></span>
+				<span class="xm">家庭地址</span><span class="xm_val lengths" title="西安市雁塔区文艺路156号">西安市雁塔区文艺路156号</span>
+    		</div>
+    		
+    		<div class="name">
+    			<span class="icons_1"></span>
+				<span class="xm" style="border-bottom: 0;">电子邮箱<span class="xm_val" style="padding-left: 46px;">1154879225@qq.com</span></span>
+    		</div>
+    	</div>
+	
+		
+		<!--school info-->
+    	<div class="pers_info_header" style="margin-top: 20px;">
+    		<span class="perinfo_fonts">学校信息</span>
+    		<span class="change">修改</span>
+    	</div>
+    	<div class="pers_info_body">
+    		<div class="name">
+    			<span class="icons_1"></span>
+				<span class="xm">学校名称<span class="xm_val" style="padding-left: 48px;">西安美术学院</span></span>
+    		</div>
+    		
+    		<div class="name">
+    			<span class="icons_1"></span>
+				<span class="xm">入学时间<span class="xm_val" style="padding-left: 48px;">2012-09</span></span>
+    		</div>
+    		
+    		<div class="name">
+    			<span class="icons_1"></span>
+				<span class="xm">学制<span class="xm_val" style="padding-left: 74px;">4年</span></span>
+    		</div>
+    		
+    		<div class="name">
+    			<span class="icons_1"></span>
+				<span class="xm" style="border-bottom: 0;">学历<span class="xm_val" style="padding-left: 74px;">本科</span></span>
+    		</div>
+    		
+    		<div class="name" style="position:relative;">
+                <span class="icons_1"></span>
+                <span class="xm">学校地址</span><span class="xm_val lengths" title="西安市雁塔区">西安市雁塔区</span>
+            </div>
+    		
+    		<div class="name" style="position:relative;">
+                <span class="icons_1"></span>
+                <span class="xm">详细地址</span><span class="xm_val lengths" title="含光南路100号">含光南路100号</span>
+            </div>
+    	</div>
+    	
+    	<!--credentials info-->
+    	<div class="pers_info_header" style="margin-top: 20px;">
+    		<span class="perinfo_fonts">证件信息</span>
+    		<span class="change">修改</span>
+    	</div>
+    	<div class="pers_info_body">
+    		<div id="pic">
+    			<div class="pic_1 pic_1_1">
+    				<img src="image/1.png" alt="pic1" width="100" height="130" style="margin-left: calc(50% - 50px);" />
+    			</div>
+    			<div class="pic_1 pic_2">
+    				<img src="image/2.png" alt="pic1" width="100" height="62" style="margin-left: calc(50% - 50px);margin-top: 31px;"  />
+    			</div>
+    			<div class="pic_1 pic_3" style="margin-right: 0;">
+    				<img src="image/3.png" alt="pic1" width="100" height="62" style="margin-left: calc(50% - 50px);margin-top: 31px;" />
+    			</div>
+    		</div>
+    		<div id="boxs">
+    			<div class="sl">1.手持身份证半身照</div>
+    			<div class="sl">2.1身份证正面</div>
+    			<div class="sl" style="margin-right: 0;">2.2身份证背面</div>
+    		</div>
+    		<div id="pic">
+    			<div class="pic_1 pic_1_1">
+    				<img src="image/4.png" alt="pic1" width="100" height="130" style="margin-left: calc(50% - 50px);" />
+    			</div>
+    			<div class="pic_1 pic_2">
+    				<img src="image/5.png" alt="pic1" width="100" height="62" style="margin-left: calc(50% - 50px);margin-top: 31px;"  />
+    			</div>
+    			<div class="pic_1 pic_2" style="margin-right: 0;border: 1px solid #fff;">
+    				<div style="width: 100px;height: 60px;"></div>
+    			</div>
+    		</div>
+    		<div id="boxs2">
+    			<div class="sl2">3.1学生证正面</div>
+    			<div class="sl2">3.2学生证背面</div>
+    			<div class="sl2" style="margin-right: 0;"></div>
+    		</div>
+    	</div>
+    	
+    	<!--friends info-->
+    	<div class="pers_info_header" style="margin-top: 20px;">
+    		<span class="perinfo_fonts">我的伙伴</span>
+    		<span class="change">修改</span>
+    	</div>
+    	<div id="conta">
+    		<ul>
+    			<li style="">
+    				<p style="color:#666;font-size: 16px;padding-bottom: 4px;padding-right: 24px;">
+    					<span>杜笙</span>
+    					<span style="padding-left: 54px;">15229287978</span>
+    				</p>
+    				<p>
+    					<span style="color: #999;">西安市地质金属研究所</span>
+    				</p>
+    				<p>
+    					<span style="color: #999;">西安市未央区凤城一路锦园君逸6号楼1805</span>
+    				</p>
+    				
+    			</li>
+    			<li style="font-size: 16px;color:#666;">
+    				<span>艾月</span>
+    				<span style="padding-left: 54px;">15247864674</span>
+    			</li>
+    			<li style="font-size: 16px;color:#666;">
+    				<span>张玉洁</span>
+    				<span style="padding-left: 38px;">15247843567</span>
+    			</li>
+    			<li style="font-size: 16px;color:#666;border:0;">
+    				<span>高璐</span>
+    				<span style="padding-left: 54px;">15234673487</span>
+    			</li>
+    		</ul>
+    	</div>
+    	<div id="btns">
+	<div class="btn">确定</div>
+</div>
+</div>
+
+
+    
+    
+    
+    
+    
+    
+    
+</body>
+<script type="text/javascript" src="./script/api.js"></script>
+<script type="text/javascript">
+</script>
+</html>

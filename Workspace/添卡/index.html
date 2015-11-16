@@ -1,0 +1,122 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>Hello APP</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            font-family: '微软雅黑';
+            background: #fff;
+            overflow-x: hidden;
+        }
+        .addbank{
+            width: 100%;
+            height: 50px;
+            border: 1px solid #D8D8D8;
+        }
+        .addbank .numcard{
+            height: 50px;
+            font-size: 14px;
+            line-height: 50px;
+            display: block;
+            float: left;
+            margin-left: 14px;
+        }
+        input[type="text"]{
+            height: 30px;
+            margin-top: 10px;
+            width: 100%;
+            text-indent: 2px;
+            outline: 0;
+            border: none;
+            font-family: '微软雅黑';
+        }
+        .olds{
+            height: 50px;
+            margin-left: 60px;
+            margin-right: 14px;
+            position: relative;
+        }
+        .icons{
+            width: 16px;
+            height: 16px;
+            background: blue;
+            border-radius: 50%;
+            position: absolute;
+            right: 0;
+            top: 17px;
+            font-size: 14px;
+            color: #fff;
+            text-align: center;
+            line-height: 16px;
+            display: block;
+        }
+        #icons2{
+            width: 12px;
+            height: 12px;
+            display: block;
+            background: gray;
+            border-radius: 50%;
+            position: absolute;
+            right: 20px;
+            top: 19px;
+            font-size: 12px;
+            color: #fff;
+            text-align: center;
+            line-height: 9px;
+            cursor: pointer;
+            opacity: 0;
+        }
+        #btns{
+             width: 100%;
+             margin-top: 20px;
+        }
+        #btns .btn{
+             height: 50px;
+             margin: 0 20px;
+             text-align: center;
+             font-size: 18px;
+             border-radius: 4px;
+             background: #C9C9C9;
+             color: #fff;
+             line-height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="addbank">
+        <span class="numcard">卡号</span>
+        <div class="olds">
+            <input id="ips" type="text" placeholder="银行卡号" onfocus="initDom();" onblur="initDomblur();" />
+            <div class="icons">？</div>
+            <div id="icons2" onclick="initClick();">x</div>
+        </div>
+
+    </div>
+    <!-- btn -->
+    <div id="btns">
+      <div class="btn">下一步</div>
+    </div>
+</body>
+<script type="text/javascript" src="./script/api.js"></script>
+<script type="text/javascript">
+    function initDom(){
+        var iconsDom = document.getElementById("icons2");
+        iconsDom.style.opacity = "1";
+    }
+    function initDomblur(){
+        var iconsDom = document.getElementById("icons2");
+        iconsDom.style.opacity = "0";
+    }
+    function initClick(){
+    	var inpDom = document.getElementById("ips");
+    	inpDom.value = "";
+    }
+</script>
+</html>

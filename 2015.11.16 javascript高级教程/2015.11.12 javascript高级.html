@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>javascript</title>
+</head>
+<body>
+	<script>
+	var a = 0.1;
+	var b = 0.2;
+	var c = a+b;
+	var d = '010';
+	var e = '32'
+	// console.info(typeof (parseInt(e)));
+
+	// console.info(typeof (eval(e)));
+
+	// console.info(typeof (e * 1));
+
+	// console.info(typeof (+e));
+
+	/*第七种数据类型*/
+	/*var objThings = Symbol("foo");
+	console.info(typeof objThings);*/
+	
+/*	var name = "kittens";
+	if (name == "puppies") {
+	  name += "!";
+	} else if (name == "kittens") {
+	  name += "!!";
+	} else {
+	  name = "!" + name;
+	}
+	var fun1 = name == "kittens!!";
+	console.info(fun1);*/
+
+	/*console.log(typeof (a[90]));*/
+
+	/*function avg() {
+	    var sum = 0;
+	    for (var i = 0, j = arguments.length; i < j; i++) {
+	        sum += arguments[i];
+	    }
+	    return sum / arguments.length;
+	}
+	console.log(avg(2, 3, 4, 5));*/
+
+	/*function makePerson(first, last) {
+	    return {
+	        first: first,
+	        last: last
+	    }
+	}
+	function personFullName(person) {
+	    return person.first + ' ' + person.last;
+	}
+	function personFullNameReversed(person) {
+	    return person.last + ', ' + person.first
+	}
+	names = makePerson("arry", "keke");
+	console.warn(personFullName(names));
+	console.warn(personFullNameReversed(names));*/
+
+	/*闭包*/
+	/*function makeAdder(a) {
+		fun1 = function(b){
+			return a * b;
+		}    
+		return fun1;
+	}
+	x = makeAdder(5);
+	y = makeAdder(8);
+	console.info("%c"+x(6),"font-size:50px;color:red");
+	console.info("%c"+y(5),"font-size:50px;color:red");*/
+
+
+	/*function leakMemory() {
+	    var el = document.getElementById('el');
+	    var o = { 'el': el };
+	    el.o = o;
+	}*/
+	/*这段代码的循环引用会导致内存泄露：IE 不会释放被 el 和 o 使用的内存，直到浏览器被彻底关闭并重启后。*/
+
+	function addHandler() {
+	    var el = document.getElementById('el');
+	    el.onclick = function() {
+	        el.style.backgroundColor = 'red';
+	    }
+	}
+	addHandler();
+	/*这段代码创建了一个元素，当它被点击的时候变红，但同时它也会发生内存泄露。为什么？因为对 el 的引用不小心被放在一个匿名内部函数中。这就在 JavaScript 对象（这个内部函数）和本地对象之间（el）创建了一个循环引用。*/
+
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,226 @@
+.alert li input[type="text"], .bottom li input[type="text"] { border: #666666 1px solid; outline: none }
+
+.alert li input[type="text"]:hover, .bottom li input[type="text"]:hover, .alert li input[type="text"]:focus, .bottom li input[type="text"]:focus { border-color: #f87f46 }
+
+html { font-family: "微软雅黑", "宋体", Helvetica, Arial, sans-serif; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: none; word-wrap: break-word }
+
+article, aside, details, figcacption, figure, footer, header, hgroup, main, nav, section, summary { display: block }
+
+audio, canvas, progress, video { display: inline-block; vertical-align: baseline }
+
+audio:not([controls]) { display: none; height: 0 }
+
+[hidden], template { display: none }
+
+a { background: transparent; text-decoration: none; color: #666666 }
+
+a:active, a:hover, a:focus { outline: 0; text-decoration: none; color: #f87f46 }
+
+abbr[title] { border-bottom: 1px dotted }
+
+b, strong { font-weight: bold }
+
+dfn { font-style: italic }
+
+mark { background: #ffff00; color: #000000 }
+
+sub, sup { font-size: 0.75em; line-height: 0; position: relative; vertical-align: baseline }
+
+sup { top: -0.5em }
+
+sub { bottom: -0.25em }
+
+img { border: 0; width: auto; max-width: 100%; width: 100%; -ms-interpolation-mode: bicubic }
+
+svg:not(:root) { overflow: hidden }
+
+hr { box-sizing: content-box; height: 0 }
+
+pre { overflow: auto }
+
+code, kbd, pre, samp { font-family: monospace, monospace; font-size: 1em }
+
+button, input, optgroup, select, textarea { color: inherit; font: inherit }
+
+ton { overflow: visible }
+
+button, select { text-transform: none }
+
+button, html input[type="button"], input[type="reset"], input[type="submit"] { -webkit-appearance: button; cursor: pointer }
+
+button[disabled], html input[disabled] { cursor: default }
+
+button::-moz-focus-inner, input::-moz-focus-inner { border: 0; padding: 0 }
+
+input { line-height: normal }
+
+input[type="checkbox"], input[type="radio"] { box-sizing: border-box }
+
+input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button { height: auto }
+
+input[type="search"] { -webkit-appearance: textfield }
+
+input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration { -webkit-appearance: none }
+
+fieldset { border: 1px solid #c0c0c0 }
+
+textarea { overflow: auto }
+
+optgroup { font-weight: bold }
+
+table { border-collapse: collapse; border-spacing: 0; empty-cells: show; font-size: inherit }
+
+body, div, address, blockquote, iframe, ul, ol, dl, dt, dd, li, dl, h1, h2, h3, h4, h5, h6, p, a, pre, table, caption, th, td, form, legend, fieldset, input, button, select, textarea { margin: 0; padding: 0; font-weight: normal; font-style: normal; font-size: 100%; font-family: inherit; box-sizing: border-box }
+
+body { color: #666666; background: #ffffff; font: 13.33333px; overflow: hidden }
+
+ul, li, ol { list-style: none; line-height: normal }
+
+h1 { font-size: 1.5em }
+
+h3 { font-size: 1em }
+
+small { font-size: 0.875em }
+
+.clearfix { clear: both; width: 100%; height: 1px; margin-top: -1px; display: block; visibility: hidden; overflow: hidden }
+
+.content { width: 90%; margin-left: auto; margin-right: auto }
+
+.bg00 { width: 100%; height: 100%; overflow: hidden }
+
+.bg00 img { width: 100%; height: 100%; position: absolute; top: 0; left: 0 }
+
+.alert { width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.6); position: absolute; top: 0; left: 0 }
+
+.alert .arrow-d { width: 14%; position: absolute; left: 43%; top: 1% }
+
+.alert .defen { position: absolute; width: 90%; left: 5%; top: 5%; background: url("../images/ffbg.png") center center no-repeat; background-size: 100% 100%; box-sizing: border-box; padding: 36px 13px 21px 10px }
+
+.alert .face { position: absolute; width: 18%; right: 6%; top: -1% }
+
+.alert ul { width: 94%; height: 80%; background-color: #f87f46; margin-left: 3%; margin-top: 4%; padding: 10px; border-radius: 8px }
+
+.alert li { width: 100%; height: 30px; background-color: #ffffff; border-radius: 8px; line-height: 30px; margin-bottom: 6px; position: relative; box-shadow: 1px 1px 3px 0px #666666 }
+
+.alert li img { height: 26px; width: auto; position: absolute; left: 20px; top: 2px }
+
+.alert li .guan1, .alert li .guan2, .alert li .guan3 { left: -15px; top: -15px }
+
+.alert li span {   /* iPhone 4s */
+    margin-left: 50px;
+    /*margin-right: 50px;*/
+    font-weight: bold; color: #904ac4; max-width: 40%; overflow: hidden; display: inline-block }
+
+.alert li input[type="text"] { position: absolute; width: 60px; height: 26px; right: 20px; top: 2px; border-radius: 5px; background-color: #f87f46; border: none; line-height: 26px; font-weight: bold; color: #ffffff; box-shadow: 0 3px 3px 0px #d34c21 inset; padding-left: 10px }
+
+.alert .li11 { margin-bottom: 0 }
+
+.alert .p { background-color: transparent; height: 20px; padding-left: 0; box-shadow: none }
+
+.alert .p img { width: 70%; height: auto; left: 0 }
+
+.bottom { width: 100%; height: 60px; position: absolute; bottom: 8px; left: 0 }
+
+.bottom .defen { position: absolute; width: 100%; left: 0%; top: 0%; background: url("../images/bottom.png") center bottom no-repeat; background-size: 100% 100%; box-sizing: border-box; padding: 36px 13px 21px 10px }
+
+.bottom ul { width: 94%; margin-left: 3%; border-radius: 8px; margin-top: 0px }
+
+.bottom li { width: 100%; height: 30px; border-radius: 8px; line-height: 30px; position: relative }
+
+.bottom li img { height: 26px; width: auto; position: absolute; left: 50px; top: 2px }
+
+.bottom li .guan1 { left: 10px; top: -10px; width: 32px; height: 32px }
+
+.bottom li span {
+    margin-left: 45%;
+    font-weight: bold; color: #904ac4; max-width: 40%; overflow: hidden; display: inline-block; text-align: center }
+
+.bottom li input[type="text"] { position: absolute; width: 60px; height: 26px; right: 20px; top: 2px; border-radius: 5px; background-color: #f87f46; border: none; line-height: 26px; font-weight: bold; color: #ffffff; box-shadow: 0 3px 3px 0px #d34c21 inset; padding-left: 10px }
+
+@media screen and (min-width: 375px) {
+    .alert { width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.7); position: absolute; top: 0; left: 0 }
+
+    .alert .arrow-d { width: 14%; position: absolute; left: 43%; top: 2% }
+
+    .alert .defen { position: absolute; width: 90%; left: 5%; top: 5%; background: url("../images/ffbg.png") center center no-repeat; background-size: 100% 100%; box-sizing: border-box; padding: 38px 15px 23px 12px }
+
+    .alert .face { position: absolute; width: 17%; right: 6%; top: -1% }
+
+    .alert ul { width: 94%; height: 80%; background-color: #f87f46; margin-left: 3%; margin-top: 4%; padding: 10px; border-radius: 8px }
+
+    .alert li { width: 100%; height: 36px; background-color: #ffffff; border-radius: 8px; line-height: 36px; margin-bottom: 6px; position: relative; box-shadow: 1px 1px 3px 0px #666666 }
+
+    .alert li img { height: 26px; width: auto; position: absolute; left: 20px; top: 5px }
+
+    .alert li .guan1, .alert li .guan2, .alert li .guan3 { left: -15px; top: -15px }
+
+    .alert li span { margin-left: 65px; font-weight: bold; color: #904ac4; max-width: 40%; overflow: hidden; display: inline-block; font-size: 1.125em }
+
+    .alert li input[type="text"] { position: absolute; width: 80px; height: 30px; right: 20px; top: 3px; border-radius: 5px; background-color: #f87f46; border: none; line-height: 30px; font-weight: bold; color: #ffffff; box-shadow: 0 3px 3px 0px #d34c21 inset; padding-left: 10px }
+
+    .alert .li11 { margin-bottom: 0 }
+
+    .alert .p { background-color: transparent; height: 20px; padding-left: 0; box-shadow: none }
+
+    .alert .p img { width: 55%; height: auto; left: 0 }
+
+    .bottom { width: 100%; height: 60px; position: absolute; bottom: 8px; left: 0 }
+
+    .bottom .defen { position: absolute; width: 100%; left: 0%; top: 0%; background: url("../images/bottom.png") center bottom no-repeat; background-size: 100% 100%; box-sizing: border-box }
+
+    .bottom ul { width: 94%; margin-left: 3%; border-radius: 8px; margin-top: 0px }
+
+    .bottom li { width: 100%; height: 30px; border-radius: 8px; line-height: 30px; position: relative }
+
+    .bottom li img { height: 26px; width: auto; position: absolute; left: 50px; top: 2px }
+
+    .bottom li .guan1 { left: 10px; top: -10px; width: 36px; height: 36px }
+
+    .bottom li span { margin-left: 45%; font-weight: bold; color: #904ac4; max-width: 40%; overflow: hidden; display: inline-block; text-align: center }
+
+    .bottom li input[type="text"] { position: absolute; width: 60px; height: 26px; right: 20px; top: 2px; border-radius: 5px; background-color: #f87f46; border: none; line-height: 26px; font-weight: bold; color: #ffffff; box-shadow: 0 3px 3px 0px #d34c21 inset; padding-left: 10px }
+}
+
+@media screen and (min-width: 414px) {
+    .alert { width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.6); position: absolute; top: 0; left: 0 }
+
+    .alert .arrow-d { width: 14%; position: absolute; left: 43%; top: 2% }
+
+    .alert .defen { position: absolute; width: 90%; left: 5%; top: 5%; background: url("../images/ffbg.png") center center no-repeat; background-size: 100% 100%; box-sizing: border-box; padding: 45px 18px 26px 16px }
+
+    .alert .face { position: absolute; width: 18%; right: 6%; top: -1% }
+
+    .alert ul { width: 94%; height: 80%; background-color: #f87f46; margin-left: 3%; margin-top: 4%; padding: 10px; border-radius: 8px }
+
+    .alert li { width: 100%; height: 36px; background-color: #ffffff; border-radius: 8px; line-height: 36px; margin-bottom: 10px; position: relative; box-shadow: 1px 1px 3px 0px #666666 }
+
+    .alert li img { height: 26px; width: auto; position: absolute; left: 20px; top: 5px }
+
+    .alert li .guan1, .alert li .guan2, .alert li .guan3 { left: -15px; top: -15px }
+
+    .alert li span { margin-left: 50px; font-weight: bold; color: #904ac4; max-width: 40%; overflow: hidden; display: inline-block; font-size: 1.25em }
+
+    .alert li input[type="text"] { position: absolute; width: 90px; height: 30px; right: 20px; top: 3px; border-radius: 5px; background-color: #f87f46; border: none; line-height: 30px; font-weight: bold; color: #ffffff; box-shadow: 0 3px 3px 0px #d34c21 inset; padding-left: 10px }
+
+    .alert .li11 { margin-bottom: 0 }
+
+    .alert .p { background-color: transparent; height: 20px; padding-left: 0; box-shadow: none }
+
+    .alert .p img { width: 55%; height: auto; left: 0 }
+
+    .bottom { width: 100%; height: 60px; position: absolute; bottom: 18px; left: 0 }
+
+    .bottom .defen { position: absolute; width: 100%; left: 0%; top: 0%; background: url("../images/bottom.png") center bottom no-repeat; background-size: 100% 100%; box-sizing: border-box; padding: 36px 13px 21px 10px }
+
+    .bottom ul { width: 94%; margin-left: 3%; border-radius: 8px; margin-top: 8px }
+
+    .bottom li { width: 100%; height: 30px; border-radius: 8px; line-height: 30px; position: relative }
+
+    .bottom li img { height: 26px; width: auto; position: absolute; left: 60px; top: 2px }
+
+    .bottom li .guan1 { left: 10px; top: -10px; width: 40px; height: 40px }
+
+    .bottom li span { margin-left: 45%; font-weight: bold; color: #904ac4; max-width: 40%; overflow: hidden; display: inline-block; text-align: center }
+
+    .bottom li input[type="text"] { position: absolute; width: 100px; height: 26px; right: 30px; top: 2px; border-radius: 5px; background-color: #f87f46; border: none; line-height: 26px; font-weight: bold; color: #ffffff; box-shadow: 0 3px 3px 0px #d34c21 inset; padding-left: 10px }
+}

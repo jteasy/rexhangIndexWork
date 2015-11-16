@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>test</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<style type="text/css">
+	.one{
+		width: 300px;
+		height: 60px;
+		background: #f00;
+		//animation: ease-in-out 1s;
+		
+	}
+	/*@keyframes rexhang_animation{
+		50%{transform: scale(0.8)};
+	}
+	@-webkit-keyframes rexhang_animation{
+		50%{transform: scale(0.8)};
+	}
+	@-moz-keyframes rexhang_animation{
+		50%{transform: scale(0.8)};
+	}
+	@-o-keyframes rexhang_animation{
+		50%{transform: scale(0.8)};
+	}
+	@-ms-keyframes rexhang_animation{
+		50%{transform: scale(0.8)};
+	}*/
+
+</style>
+</head>
+<body>
+    <div class="one" onclick="show()"></div>
+</body>
+<script type="text/javascript" src="script/api.js"></script>
+<script type="text/javascript">
+	api.animation ({
+		    name: 'page1',
+		    delay: 1000,
+		    duration: 3000,
+		    curve: 'ease_in',
+		    repeatCount: 2,
+		    autoreverse: true,
+		    alpha: 0.6,
+		    translation:{
+		        x: 0,
+		        y: 100,
+		        z: 0
+		    }, 
+		    scale:{
+		        x: 1.2,
+		        y: 1,
+		        z: 1
+		    },
+		    rotation:{
+		        degree:45,
+		        x: 0,
+		        y: 0,
+		        z: 1
+		    }
+		}, function() {
+		    api.alert({msg: '动画结束'});
+		});api.animation ({
+		    name: 'page1',
+		    delay: 1000,
+		    duration: 3000,
+		    curve: 'ease_in',
+		    repeatCount: 2,
+		    autoreverse: true,
+		    alpha: 0.6,
+		    translation:{
+		        x: 0,
+		        y: 100,
+		        z: 0
+		    }, 
+		    scale:{
+		        x: 1.2,
+		        y: 1,
+		        z: 1
+		    },
+		    rotation:{
+		        degree:45,
+		        x: 0,
+		        y: 0,
+		        z: 1
+		    }
+		}, function() {
+		    api.alert({msg: '动画结束'});
+		});
+	var show=function(){
+		$api.attr($api.dom('.one'),'style','transform: scale(0.8);transition: 1s;');
+	}
+</script>
+</html>

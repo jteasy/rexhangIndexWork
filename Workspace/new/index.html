@@ -1,0 +1,313 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <title>天天分期</title>
+    <link rel="stylesheet" type="text/css" href="css/api.css"/>
+
+    <style>
+        html, body {
+            height: 100%;
+            width: 100%;
+            font-family:arial;
+        }
+
+        #wrap {
+            height: 100%;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-orient: vertical;
+            -webkit-flex-flow: column;
+            flex-flow: column;
+            border:none;
+        }
+		header{
+			background:#109EFF;
+		}
+        #main {
+            -webkit-box-flex: 1;
+            -webkit-flex: 1;
+            flex: 1;
+        }
+
+        #footer {
+            width: 100%;
+            text-align: center;
+            height: 49px;
+            line-height: 55px;
+            background-color: #f2f2f2;
+        }
+
+        ul {
+
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: flex;
+        }
+
+        .index {
+            background-image: url(image/bottombtn0101.png);
+        }
+
+        .shopping {
+            background-image: url(image/bottombtn0201.png);
+        }
+
+        .credit {
+            background-image: url(image/bottombtn0301.png);
+        }
+
+        .account {
+            background-image: url(image/bottombtn0401.png);
+        }
+
+        #footer li {
+            -webkit-box-flex: 1;
+            -webkit-flex: 1;
+            flex: 1;
+            height: 49px;
+        }
+
+        .bottom_btn {
+            background-position-y: 7px;
+            padding-top: 12px;
+            font-size: 12px;
+            color: #323237;
+            width: 99%;
+            height: 21px;
+            background-repeat: no-repeat no-repeat;
+            background-position-x: center;
+            background-size: 21px;
+        }
+
+        .active .index {
+            background-image: url(image/bottombtn0102.png);
+        }
+
+        .active .shopping {
+            background-image: url(image/bottombtn0202.png);
+        }
+
+        .active .credit {
+            background-image: url(image/bottombtn0302.png);
+        }
+
+        .active .account {
+            background-image: url(image/bottombtn0402.png);
+        }
+
+        .active .bottom_btn {
+            color: #6ab494;
+            background-size: 21px;
+        }
+
+        .topbar {
+            background: #0DA4FF;
+            height: 44px;
+            //border-bottom: 1px solid #DDDFE3;
+            line-height: 44px;
+            text-align: center;
+            display: none;
+            color: #ffffff;
+            font-size:20px;
+            font-weight:bold;
+            position:relative;
+        }
+
+        .activebar {
+            display: block;
+        }
+        .pull-right{
+        	float:right;
+        	margin-right:10px;
+        }
+        .circle{
+        	height:7px;
+        	width:26px;
+        	background:url(image/circle.png) no-repeat;
+        	background-position:50% 50%;
+        	background-size:contain;
+        	display:block;
+        	position:absolute;
+        	top:42%;
+        	right:10px;
+        }
+    </style>
+</head>
+<body>
+<div id="wrap">
+    <header>
+        <div id="index" class="topbar  activebar">
+            天天分期
+          	<i class="circle"></i>
+        </div>
+        <div id="shopping" class="topbar  ">
+            购物
+        </div>
+        <div id="credit" class="topbar ">
+            信用+
+        </div>
+        <div id="account" class="topbar ">
+            账户
+        </div>
+    </header>
+    <div id="main">
+
+    </div>
+    <div id="footer">
+        <ul>
+            <li tapmode="active" class="active" onclick="randomSwitchBtn(this,'index',0)">
+                <a class="bottom_btn index">首页</a>
+            </li>
+
+            <li tapmode="active" onclick="randomSwitchBtn(this,'shopping',1)">
+                <a class="bottom_btn shopping ">购物</a>
+            </li>
+
+            <li tapmode="active" onclick="randomSwitchBtn(this,'credit',2)">
+                <a class="bottom_btn credit ">信用+</a>
+            </li>
+
+            <li tapmode="active" onclick="randomSwitchBtn(this,'account',3)">
+                <a class="bottom_btn account ">账户</a>
+            </li>
+        </ul>
+    </div>
+</div>
+</body>
+<script type="text/javascript" src="script/api.js"></script>
+<script type="text/javascript">
+    apiready = function () {
+    	api.setStatusBarStyle({
+        	style:'light'
+        });
+        var $header = $api.dom('header');
+        $api.fixIos7Bar($header);
+        var $body = $api.dom('body');
+        var $footer = $api.byId('footer');
+        var header_h = $api.offset($header).h;
+        var body_h = $api.offset($body).h;
+        var footer_h = $api.offset($footer).h;
+        /**
+         * 获取实际frame空间的高度
+         */
+        var rect_h = body_h - header_h - footer_h;
+        api.openFrameGroup({
+            name: 'group',
+            scrollEnabled: true,
+            rect: {x: 0, y: header_h, w: 'auto', h: rect_h},
+            index: 0,
+            frames: [
+                {
+                    name: 'frame1',
+                    url: 'html/frame1.html'
+                }, 
+                {
+                    name: 'frame2',
+                    url: 'http://www.fenqiday.com/m'
+                },
+                {
+                    name: 'credit',
+                    url: 'html/credit/credit.html'
+                },
+                {
+                    name: 'account',
+                    url: 'html/account/account.html'
+                }
+            ]
+        }, function (ret, err) {
+        	swapFrame(ret.index);
+        });
+
+    }
+    /**
+     * 滑动切换效果
+     */
+    function swapFrame(index){
+    	var $header=$api.dom('header');
+    	var $titleBar=$api.domAll($header,'.topbar');
+    	for(var i=0;i<$titleBar.length;i++){
+    		$api.removeCls($titleBar[i],'activebar');
+    	}
+    		$api.addCls($titleBar[index],'activebar');
+    	var $footer = $api.byId('footer');
+        var $footerBar = $api.domAll($footer, 'li');
+        for (var j = 0; j < $footerBar.length; j++) {
+            $api.removeCls($footerBar[j], 'active');
+        }
+        $api.addCls($footerBar[index], 'active');
+    }
+    // 随意切换按钮
+    function randomSwitchBtn(obj, name, index) {
+    		
+    	/*如果index==3,那么要检测是否用户已经登录了！*/
+    	if(index==3){
+			api.getPrefs({
+	            key:'username'
+            },function(ret,err){
+            	if(ret.value==''){
+            		api.openWin({
+	                    name: 'login',
+	                    url: 'html/login.html',
+	                    pageParam:{'nodes':'3','framename':'account'},
+	                    bgcolor:"#ffffff",
+				        scrollToTop:true,
+				        animation:{
+				        	type:'movein',
+				        	subType:'from_right'
+				        }
+                    });
+            		
+         		}else{
+         			var $header = $api.dom('header');
+			        var $titleBar = $api.domAll($header, '.topbar');
+			        for (var i = 0; i < $titleBar.length; i++) {
+			            $api.removeCls($titleBar[i], 'activebar');
+			        }
+			        $api.addCls($api.byId(name), 'activebar');
+			        var $footer = $api.byId('footer');
+			        var $footerBar = $api.domAll($footer, 'li');
+			        for (var j = 0; j < $footerBar.length; j++) {
+			            $api.removeCls($footerBar[j], 'active');
+			        }
+            		if(obj==0){
+			        	$footer=$api.domAll('#footer li');
+			        	$api.addCls($footer[index], 'active');
+			        }else{
+			        	$api.addCls(obj, 'active');
+			        }
+			       	 	api.setFrameGroupIndex({
+			           		 name: 'group',
+			           		 index: index
+			        	});	
+         			}
+            });
+    	}else{   //0.1.2都默认可以的
+	    	/*如果index==3,那么要检测是否用户已经登录了！*/
+	        var $header = $api.dom('header');
+	        var $titleBar = $api.domAll($header, '.topbar');
+	        for (var i = 0; i < $titleBar.length; i++) {
+	            $api.removeCls($titleBar[i], 'activebar');
+	        }
+	        $api.addCls($api.byId(name), 'activebar');
+	        var $footer = $api.byId('footer');
+	        var $footerBar = $api.domAll($footer, 'li');
+	        for (var j = 0; j < $footerBar.length; j++) {
+	            $api.removeCls($footerBar[j], 'active');
+	        }
+	        if(obj==0){
+	        	$footer=$api.domAll('#footer li');
+	        	$api.addCls($footer[index], 'active');
+	        }else{
+	        $api.addCls(obj, 'active');
+	        }
+	        api.setFrameGroupIndex({
+	            name: 'group',
+	            index: index
+	        });
+		}
+    }
+</script>
+</html>

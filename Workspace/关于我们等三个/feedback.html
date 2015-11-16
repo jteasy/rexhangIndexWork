@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>p6</title>
+	<meta name="Keywords" content="关键词1,关键词2">
+    <meta name="description" content="网页的描述内容">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link href="css/p7.css" rel="stylesheet" />
+   <body>
+   <div class="suggestion">
+	    <textarea rows="6" cols="20" tapmode="#" onfocus="fcus(this);" onblur="blurs(this);">您遇到的问题与意见我们会及时改进</textarea>
+	</div>
+	    <div class="submit" style="background:#C9C9C9;">提交</div>
+   </body>
+<script>
+  (function (doc, win) {
+          var docEl = doc.documentElement,
+            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+            recalc = function () {
+              var clientWidth = docEl.clientWidth;
+              if (!clientWidth) return;
+              docEl.style.fontSize = 20 * (clientWidth / 640) + 'px';
+            };
+
+          if (!doc.addEventListener) return;
+          win.addEventListener(resizeEvt, recalc, false);
+          doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+</script>
+<script type="text/javascript">
+    function fcus(obj){
+      obj.value = "";
+      obj.style.color = "#333";
+    };
+    function blurs(obj){
+      if(obj.value == ""){
+        obj.value = "您遇到的问题与意见我们会及时改进";
+      };
+    }
+</script>
+</html>

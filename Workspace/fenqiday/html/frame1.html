@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <title>frame1</title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css" />
+    <link rel="stylesheet" type="text/css" href="../css/common.css" />
+    <link rel="stylesheet" type="text/css" href="../css/base.css" />
+<style>
+        body{
+            font-family: '微软雅黑',arial;
+            width:100%;
+            height:100%;
+            margin:0;
+            padding:0;
+        }
+        .anima{
+            animation:rexhang 1s ease-in-out;
+            -webkit-animation:rexhang 1s ease-in-out;
+        }
+         @keyframes rexhang
+        {
+        0% {transform:scale(0.9);}
+        50% {transform:scale(1);}
+        100% {transform:scale(1);}
+        }
+        @-webkit-keyframes rexhang
+        {
+        0% {-webkit-transform:scale(0.9);}
+        50% {-webkit-transform:scale(1);}
+        }
+        .header{
+            width: 100%;
+            height: 210px;
+            background: #23D9C4;
+            margin: 0 auto;
+            position: relative;
+        }
+        .header .top-char{
+            height: 90px;
+            padding-top:20px;
+            
+        }
+        .header .top-char i{
+        	display:block;
+        	height:90px;
+        	 background:url('../image/char01.png') no-repeat;
+            background-position:50% 60%;
+            background-size:contain;
+        }
+        .header .tex{
+            color: #fff;
+            font-size: 30px;
+	text-align:center;
+	margin-top:20px;
+        }
+        .header .tex-2{
+            color: #fff;
+            font-size: 13px;
+            text-align:center;
+            margin-top:10px;
+        }
+        /*2*/
+        .header_2{
+            width: 100%;
+            height: 225px;
+            background: #85AFFF;
+            margin: 0 auto;
+            position: relative;
+        }
+        .header_2 .top-char_2{
+            height: 90px;
+			padding-top:35px;
+        }
+        .header_2 .top-char_2  .rexhang_2{
+            
+            display:block;
+            height:90px;
+             background:url('../image/char02.png') no-repeat;
+            background-position:50% 60%;
+            background-size:contain;
+        }
+        .header_2 .top-char_2  .rexhang_3{
+        	
+        	display:block;
+        	height:90px;
+        	 background:url('../image/char03.png') no-repeat;
+            background-position:50% 60%;
+            background-size:contain;
+        }
+        .header_2 .top-char_2  .rexhang_4{
+            
+            display:block;
+            height:90px;
+             background:url('../image/char04.png') no-repeat;
+            background-position:50% 60%;
+            background-size:contain;
+        }
+        .header_2 .tex_2{
+            color: #fff;
+            font-size: 30px;
+			text-align:center;
+			margin-top:21px;
+        }
+        .header_2 .tex-2_2{
+            color: #fff;
+            font-size: 13px;
+            text-align:center;
+            margin-top:11px;
+
+        }
+        /*3*/
+        .rea{
+            width: 100%;
+            height: 197px;
+            background: #FF7A73;
+            margin: 0 auto;
+        }
+        /*koam*/
+        .koam{
+            width: 100%;
+            height: 10px;
+        }
+
+   </style>
+</head>
+
+<body>
+ <div class="header one">
+    <div class="top-char"><i></i></div>
+        <p class="tex">信用额度(元)：1250.00</p>
+        <p class="tex-2">资 料 更 完 整，信 用 额 度 更 加 高！行 动 起 来</p>
+    </div>
+    <div class="header_2" onclick="openHaveMoney()">
+        <div class="top-char_2"><i class="rexhang_2"></i></div>
+        <p class="tex_2">天天有钱</p>
+        <p class="tex-2_2">天 天 分 期 让 您 轻 松 有 钱 花</p>
+    </div>
+    <div class="header_2" style="background:#ff7a73;">
+        <div class="top-char_2"><i class="rexhang_3"></i></div>
+        <p class="tex_2">天天有钱</p>
+        <p class="tex-2_2">天 天 分 期 让 您 轻 松 有 钱 花</p>
+    </div>
+    <div class="header_2 animations"  style="background:#cb98ff;">
+        <div class="top-char_2"><i class="rexhang_4"></i></div>
+        <p class="tex_2">天天有钱</p>
+        <p class="tex-2_2">天 天 分 期 让 您 轻 松 有 钱 花</p>
+    </div>
+    <script type="text/javascript" src="../script/api.js"></script>
+	<script type="text/javascript">
+	
+	/**
+	 * 点击打开天天有钱页面
+	 */
+	var openHaveMoney=function(){
+		api.openWin({
+	        name: 'index_havemoney_header',
+	        url: 'index/havemoney_header.html',
+	        bgcolor:'#ffffff',
+	        scrollToTop:true,
+	        animation:{
+	        	type:"movein",                //动画类型（详见动画类型常量）
+			    subType:"from_right",       //动画子类型（详见动画子类型常量）
+			    duration:300
+	        }
+        });
+	}
+</script>
+<script type="text/javascript" src="../script/zepto.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		 window.onscroll = function(){
+		 	/*http://www.stepday.com/topic/?253*/
+		 	/*获取scrollBottom*/
+		 	scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+		 	var dh = document.body.scrollHeight;
+		 	var dh2 = document.body.clientHeight
+		 	var scrollBottom = dh - dh2 - scrollTop;
+		 	if(scrollBottom <= 160){
+
+		 		// var animations = $api.dom(".animations");
+		 		// $api.addCls(animations,'anima');
+		 		$(".animations").addClass("anima");
+                                                $(".animations").css("transform",'scale(1)').css("-webkit-transform",'scale(1)');
+		 	}else{
+		 		// $api.removeCls(animations,'anima');
+		 		$(".animations").removeClass("anima");
+                                                $(".animations").css("transform",'scale(0.9)').css("-webkit-transform",'scale(0.9)');
+		 	}
+		 }
+	})
+</script>
+</body>
+</html>

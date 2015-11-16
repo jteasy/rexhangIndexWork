@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>Hello APP</title>
+    <link rel="stylesheet" type="text/css" href="./css/api.css" />
+    <link rel="stylesheet" type="text/css" href="./css/common.css" />
+</head>
+<body>
+
+</body>
+<script type="text/javascript" src="./script/api.js"></script>
+<script type="text/javascript">
+
+    apiready = function(){
+
+		var obj = api.require('aliPay');
+var subject = '订单名';
+var body = '订单描述';
+var amount = '10.99';
+var tradeNO = '467467655635';
+var notifyURL = 'http://www.apicloud.com';
+obj.config({
+  partner:'12345678901234',
+  seller:'123456789024354',
+  rsaPriKey:'testKEY',
+  rsaPubKey:'testKEY',
+  notifyURL:notifyURL
+},function(ret,err) {
+  api.alert({
+      title: '支付结果',
+      msg: ret.msg,
+      buttons: ['确定']
+  });
+});
+    };
+    
+</script>
+</html>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item value="true" key="wrap"/>
+		<item value="false" key="isRegEx"/>
+		<item value="false" key="casesensitive"/>
+		<item value="false" key="wholeword"/>
+		<item value="showPassword" key="selection"/>
+		<list key="findhistory">
+			<item value="showPassword"/>
+			<item value="push"/>
+			<item value="index"/>
+			<item value="path"/>
+			<item value="价值"/>
+			<item value=".cnts"/>
+			<item value="alert"/>
+			<item value=".comein"/>
+		</list>
+	</section>
+	<section name="org.eclipse.ui.texteditor.GotoLineAction$GotoLineDialog_dialogBounds">
+		<item value="133" key="DIALOG_Y_ORIGIN"/>
+		<item value="238" key="DIALOG_X_ORIGIN"/>
+	</section>
+</section>

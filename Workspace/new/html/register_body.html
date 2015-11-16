@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <title>注册</title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/common.css" />
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            font-family: arial,"微软雅黑";
+            background: #EFEFF2;
+        }
+        .container{
+            width: 100%;
+            height: 150px;
+            margin-top: 24px;
+            background: #fff;
+        }
+        .container input{
+        	height:100%;
+        	width:70%;
+        }
+        .container .top_1{
+            
+          	height:50px;
+          	position: relative;
+        }
+        .container .top_1 .icons_1{
+            width: 24px;
+            height: 24px;
+            display: block;
+            border: 1px solid #C0AEAE;
+            border-radius: 50%;
+            position: absolute;
+            top:13px;
+            left:25px;
+        }
+
+        .container .top_1 .icons_2{
+            color: #999;
+            font-size: 16px;
+            height: 100%;
+            display: block;
+            outline: none;
+            width: 100%;
+            text-indent: 58px;
+            background: #ffffff;
+        }
+        .container .top_1 .hqyzm{
+            background: #0DA4FF;
+            width: 105px;
+            height: 40px;
+            color: #fff;
+            font-family: '微软雅黑';
+            outline: none;
+            text-align: center;
+            line-height: 40px;
+            border-radius: 6px;
+            position: absolute;
+            top:5px;
+            right: 13px;
+            text-indent: 0;
+            border:none;
+        }
+        .container .top_1 .eyes{
+            width: 25px;
+            height: 14px;
+            background: url('../image/eyes.png') no-repeat;
+            background-size:cover;
+            position: absolute;
+            top:18px;
+            right: 23px; 
+        }
+        .container .top_1 .hqyzm:active{
+            background: red;
+        }
+        .container .top_1 .icons_2:focus{
+            color: #0F0E0E;
+        }
+        .liner{
+            border-top:1px solid #dad7d7;
+            margin-left: 17px;
+            margin-right: 17px;
+        }
+        #bbtn{
+            width: 100%;
+            height: 50px;
+            margin-top: 74px;
+        }
+        #btns{
+            background: #0DA4FF;
+            color: #fff;
+            border-radius: 6px;
+            font-size: 18px;
+            line-height: 50px;
+            text-align: center;
+            margin-left: 12px;
+            margin-right: 12px;
+        }
+        #btns:active{
+            background: red;
+        }
+        #btns:vi{
+            background: red;
+        }
+    </style>
+</head>
+<body>
+	<p style="height:30px;width:100%;"></p>
+    <div class="container">
+       <div class="top_1">
+            <span class="icons_1"></span>
+            <input type="tel" class="icons_2" placeholder="手机号码" id="phone" maxlength="11" onclick="toastInfo(this)"/> 
+       </div> 
+       <div class="liner"></div> 
+       <!-- 2 -->
+       <div class="top_1">
+            <span class="icons_1"></span>
+            <input type="tel" class="icons_2" placeholder="验证码" id="verifycode" onclick="toastInfo(this)"/>
+            <div class="icons_2 hqyzm" onclick="getMessage()">获取验证码</div>
+       </div>
+       <div class="liner"></div> 
+       <!-- 3 -->
+       <div class="top_1">
+            <span class="icons_1"></span>
+            <input type="password" class="icons_2" placeholder="设置6-20位登录密码" id="password" onclick="toastInfo(this)"/>
+            <div class="eyes" onclick="toSee(true)"></div> 
+       </div>
+    </div>
+    <div id="bbtn" style="background:#EFEFF2;">
+        <div id="btns" onclick="nextRegister()">立即体验</div>            
+    </div>
+</body>
+<script type="text/javascript" src="../script/api.js"></script>
+<script type="text/javascript">
+	apiready = function(){
+		
+	};
+	/**
+	 *弹出信息 
+	 */
+	function toastInfo(obj){
+		var $value=$api.attr(obj,'placeholder');
+	}
+	/**
+	 *密码可见 
+	 */
+	function toSee($type){
+		var $pw=$api.byId('password');
+		if($type==true){
+			$api.attr($pw,'type','text');
+			$api.attr($pw,'onclick','toSee(false)');
+		}else{
+			$api.attr($pw,'type','password');
+			$api.attr($pw,'onclick','toSee(true)');
+		}
+	}
+	/**
+	 *提交到下一步 
+	 */
+	function nextRegister(){
+		var phone=$api.val($api.byId('phone'));
+		var verify=$api.val($api.byId('verifycode'));
+		var pw=$api.val($api.byId('password'));
+		api.ajax({
+	        url:'http://192.168.0.188:8899/index.php/register',
+	        method:'post',
+	        dataType:'json',
+	        data:{values:{phone:phone,pw:pw}}
+        },function(ret,err){
+        	if(ret.registed==true){
+        		api.toast({
+	                msg:'本号码已经注册！',
+	                location:'middle'
+                });
+               setTimeout(function(){
+	               api.openWin({
+				        name:'login',
+				        url: 'login.html',
+				        bgcolor:"#ffffff",
+				        scrollToTop:true,
+				        animation:{
+				        	type:'movein',
+				        	subType:'from_right'
+				        }
+			        });
+			        api.closeWin({
+               			name:'register'
+               		});
+               },1000);
+		       
+            }
+            if(ret.registed==false){
+            	api.toast({
+	                msg:'您已成功注册！',
+                	location:'middle'
+                });
+                api.setPrefs({
+	                key:'username',
+	                value:phone
+                });
+               //注册完了加载首页切换到登录页面 
+               setTimeout(function(){
+	               api.execScript({
+						name:'root',
+				        script: 'randomSwitchBtn(0,'+'account'+','+3+');'
+		    		});
+	               api.closeToWin({
+		               name: 'root'
+	               });
+	               },1000);
+        	}else if(!ret){
+        		 api.alert({
+           			 msg:('错误码：'+err.code+'；错误信息：'+err.msg+'网络状态码：'+err.statusCode)
+       			 });
+        	}
+        });
+		//alert(phone);
+	}
+	/**
+	 *获取验证码
+	 * 下面5个是全局变量； 
+	 */
+	var interValObj;   //变量timer
+	var count=45;//间隔时间60秒
+	var curCount;//剩余秒数
+	var $hqyzm=$api.dom('.hqyzm');
+	function getMessage(){
+		var phone=$api.val($api.byId('phone'));
+		if(isNaN(phone) || $api.trimAll(phone).length!=11){
+			$api.byId('phone').focus();
+			$api.toast('','手机号码不正确');	
+		}else{
+			//获取验证码
+			//同时发送数据到服务器，来获取已经发送的短信次数和第一次发送的时间，来进行处理，防止用户多次恶意点击
+			var $hqyzm=$api.dom('.hqyzm');
+			$api.attr($hqyzm,'disabled','disabled');
+			$api.attr($hqyzm,'onclick','javascript:void(0)');
+			$api.css($hqyzm,'background:#657b83');
+			
+			curCount=count;
+		    $api.text($hqyzm, curCount+'秒后再获取');
+		    interValObj=window.setInterval(timeCount,1000);
+		}
+	}
+	//倒计时
+	function timeCount(){
+		if (curCount == 0) {                
+                window.clearInterval(interValObj);//停止计时器
+                $api.removeAttr($hqyzm,'disabled');
+                $api.attr($hqyzm,'onclick','getMessage()');
+                $api.text($hqyzm, '获取验证码');
+                $api.css($hqyzm,'background:#0da4ff');
+            }
+            else {
+                curCount--;
+                $api.attr($hqyzm,'disabled','disabled');
+                $api.attr($hqyzm,'onclick','javascript:void(0)');
+                $api.text($hqyzm, curCount+'秒后再获取');
+        }
+	}
+</script>
+</html>

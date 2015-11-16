@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>还款</title>
+    <link rel="stylesheet" type="text/css" href="../../css/api.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/common.css" />
+<style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+    	body{
+    		font-size: 12px;
+            font-family: '微软雅黑';
+            background: #EAEAEC;
+    	}
+        .huankuan{
+            width: 100%;
+            height: 50px;
+            line-height: 50px;
+            background: #fff;
+            margin-top: 10px;
+            text-indent: 20px;
+            font-size: 14px;
+        }
+        .h_1{
+            font-size: 14px;
+            color: #666;
+            height: 14px;
+            display: block;
+            float: left;
+            line-height: 14px;
+            text-align: center;
+            margin-top: 18px;
+        }
+        .num1{
+            font-size: 16px;
+            color: #000;
+            height: 16px;
+            display: block;
+            float: left;
+            line-height: 16px;
+            margin-top: 17px;
+            font-weight:bold;
+            color:#fd0000;
+            text-align: center;
+        }
+        .zhifulist{
+            width: 100%;
+            background-color: #fff;
+            margin-top: 10px;
+        }
+        .container{
+            margin-left: 20px;
+            margin-right: 20px;
+            border: 1px solid red;
+        }
+        /*list01*/
+        .z_1{
+            border-bottom: 1px solid #D8D8D8;
+            height: 50px;
+            position: relative;
+        }
+        .z_1 .c_1{
+            margin-left: 20px;
+            margin-right: 20px;
+            height: 50px;
+        }
+        .weichaticon{
+            width: 32px;
+            height: 32px;
+            display: block;
+            background: url('../../image/wechat.png') no-repeat;
+            margin-top: 9px;
+            background-size: 90%;
+            background-position: 50% 50%;
+            float: left;
+        }
+        .jianshe{
+            width: 32px;
+            height: 32px;
+            display: block;
+            background: url('../../image/ccb.png') no-repeat;
+            margin-top: 9px;
+            background-size: 90%;
+            background-position: 50% 50%;
+            float: left;
+        }
+        .yinhangka{
+            width: 32px;
+            height: 32px;
+            display: block;
+            background: url('../../image/bankpay.png') no-repeat;
+            margin-top: 9px;
+            background-size: 90%;
+            background-position: 50% 50%;
+            float: left;
+        }
+        .wei_zhifu{
+            height: 16px;
+            font-size: 16px;
+            margin-left: 48px;
+            line-height: 14px;
+            margin-top: 8px;
+            display: block;
+            padding-top: 10px;
+        }
+        .wei_info{
+            font-size: 12px;
+            color: #999;
+            height: 12px;
+            display: inline-block;
+            line-height: 12px;
+            margin-left: 14px;
+            margin-top: 4px;
+        }
+        .check{
+            width: 18px;
+            height: 18px;
+            background: #0DA4FF;
+            border-radius: 50%;
+            line-height: 18px;
+            text-align: center;
+            color: #fff;
+            position: absolute;
+            right: 20px;
+            top: 16px;
+        }
+        .check2 , .check3{
+            background: #fff;
+            border: 1px solid #999;
+            width: 17px;
+            height: 17px;
+            top: 14px;
+        }
+        /*list01 end*/
+        /*btns*/
+        #btns{
+            width: 100%;
+            height: 50px;
+        }
+        #btns #btn{
+            height: 50px;
+            margin: 20px 20px 0 20px;
+            background: #0DA4FF;
+            color: #fff;
+            font-size: 18px;
+            line-height: 50px;
+            text-align: center;
+            border-radius: 6px;
+        }
+        .aaa{color:#ff6600;}
+    </style>
+</head>
+<body>
+	<div class="huankuan">
+        <span class="h_1">还款(元)</span>
+        <span class="num1" id="pay_amount">0.00</span>
+    </div>
+    <!-- zhifu组件 -->
+    <div class="zhifulist">
+    
+    		<div class="z_1" tapmode="" onclick="choosePay('alipay')">
+                <div class="c_1" id="alipay">
+                    <span class="jianshe"></span>
+                    <span class="wei_zhifu">支付宝支付</span>
+                    <span class="wei_info">更方便的支付方式</span>
+                    <div class="check">√</div>
+                </div>
+            </div>
+    
+            <div class="z_1" tapmode="" onclick="choosePay('wxpay')">
+                <div class="c_1" id="wxpay">
+                    <span class="weichaticon"></span>
+                    <span class="wei_zhifu">微信支付</span>
+                    <span class="wei_info">推荐安装微信5.0及以上版本的使用</span>
+                    <div class="check check2">√</div>
+                </div>
+            </div>
+
+            <div class="z_1" id="bankpay" style="border:0;height:51px;" tapmode="" onclick="choosePay('bankpay')">
+                <div class="c_1" style="height:51px;">
+                    <span class="yinhangka"></span>
+                    <span class="wei_zhifu">银行卡支付</span>
+                    <span class="wei_info">支持储蓄卡快捷支付</span>
+                    <div class="check check2">√</div>
+                </div>
+            </div>
+            <input type="hidden" value="alipay" id="paytype"/>
+    </div>
+    <!-- btn组件 -->
+    <div id="btns" tapmode="" onclick="submit()">
+        <div id="btn">确定还款</div>
+    </div>
+</body>
+<script type="text/javascript" src="../../script/api.js"></script>
+<script type="text/javascript">
+	var submit=function(){
+		var paytype=$api.val($api.byId('paytype'));
+		if(paytype=='bankpay'){
+			
+		}
+	}
+	var choosePay=function(paytype){
+		if($api.hasCls($api.dom('#alipay .check'),'check2')){	
+		}else{
+			$api.addCls($api.dom('#alipay .check'),'check2');
+		}
+		if($api.hasCls($api.dom('#wxpay .check'),'check2')){	
+		}else{
+			$api.addCls($api.dom('#wxpay .check'),'check2');
+		}
+		if($api.hasCls($api.dom('#bankpay .check'),'check2')){	
+		}else{
+			$api.addCls($api.dom('#bankpay .check'),'check2');
+		}
+		$api.removeCls($api.dom('#'+paytype+' .check'),'check2');
+		$api.val($api.byId('paytype'), paytype);
+	}
+	apiready=function(){
+		$api.text($api.byId('pay_amount'),api.pageParam.prepay_amount+'.00');
+		setTimeout(function(){
+			api.closeWin({
+            	name:'pay'
+            });
+		},1000*60*10)
+	}
+</script>
+</html>

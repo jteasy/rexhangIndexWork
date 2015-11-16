@@ -1,0 +1,199 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>Hello APP</title>
+    <link rel="stylesheet" type="text/css" href="./css/api.css" />
+    <link rel="stylesheet" type="text/css" href="./css/common.css" />
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            font-family: arial,"微软雅黑";
+            background: #EFEFF2;
+        }
+        .container{
+            width: 100%;
+            height: 150px;
+            margin-top: 24px;
+            background: #fff;
+        }
+        .container .top_1{
+            position: relative;
+            padding: 10px 14px;
+        }
+        .container .top_1 .icons_1{
+            width: 24px;
+            height: 24px;
+            display: block;
+            border: 1px solid #C0AEAE;
+            border-radius: 50%;
+            float: left;
+        }
+        .container .top_1 .icons_2{
+            color: #999;
+            font-size: 12px;
+            height: 24px;
+            line-height: 24px;
+            display: block;
+            float: left;
+            margin-left: 14px;
+            outline: none;
+        }
+        .container .top_1 .hqyzm{
+            float: right;
+            background: #0DA4FF;
+            width: 75px;
+            height: 30px;
+            margin-top: -3px;
+            color: #fff;
+            font-family: '微软雅黑';
+            outline: none;
+            text-align: center;
+            line-height: 30px;
+            border-radius: 6px;
+        }
+        .container .top_1 .hqyzmm{
+            margin-right: 0;
+            width: 75px;
+            height: 30px;
+            margin-top: -3px;
+            color: #0DA4FF;
+            font-family: '微软雅黑';
+            text-align: center;
+            line-height: 30px;
+            position: absolute;
+            right: 80px;
+        }
+        .eyes{
+            width: 50px;
+            height: 28px;
+            float: right;
+            background: url('image/eyes.png') no-repeat;
+        }
+        .container .top_1 .hqyzm:active{
+            background: red;
+        }
+        .container .top_1 .icons_2:focus{
+            background: #E8E3E3;
+            color: #0F0E0E;
+        }
+        .liner{
+            border-top:1px solid #F2EFEF;
+            border-right:0px;
+            border-bottom:0px;
+            border-left:0px;
+            margin-top: 22px;
+            margin-left: 14px;
+            margin-right: 14px;
+        }
+        #bbtn{
+            width: 100%;
+            height: 50px;
+            margin-top: 74px;
+        }
+        #btns{
+            background: #0DA4FF;
+            color: #fff;
+            border-radius: 6px;
+            font-size: 18px;
+            line-height: 50px;
+            text-align: center;
+            margin-left: 12px;
+            margin-right: 12px;
+        }
+        #btns:active{
+            background: red;
+        }
+        #btns:vi{
+            background: red;
+        }
+        #opa{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            opacity: 0.4;
+            filter: alpha(opacity=40);
+            background: #000;
+        }
+        #success{
+            width: 70%;
+            height: 75px;
+            background: #fff;
+            text-align: center;
+            line-height: 75px;
+            font-size: 18px;
+            border-radius: 6px;
+            margin-left: 15%;
+            position: absolute;
+            top: 36%;
+            z-index: 999;
+        }
+    </style>
+</head>
+<body>
+
+        <div id="header">
+            <h1 style="background:#1A8cff">注册</h1>
+        </div>
+
+    <div class="container">
+       <div class="top_1">
+            <span class="icons_1"></span>
+            <input type="text" class="icons_2" value="15229279778" /> 
+       </div>
+        <p class="liner"></p>    
+       <!-- 2 -->
+       <div class="top_1">
+            <span class="icons_1"></span>
+            <input type="text" class="icons_2" value="3853" />
+            <div class="icons_2 hqyzmm">没收到？</div>
+            <div class="icons_2 hqyzm">获取验证码</div>
+       </div>
+        <p class="liner"></p>
+       <!-- 3 -->
+       <div class="top_1">
+            <span class="icons_1"></span>
+            <input type="password" class="icons_2" value="+8618966562548" />
+            <div class="eyes"></div> 
+       </div>
+        <p class="liner"></p>
+    </div>
+    <div id="bbtn" style="background:#EFEFF2;">
+        <div id="btns">下一步</div>            
+    </div>
+    <div id="opa"></div>
+    <div id="success">恭喜您注册成功</div>
+</body>
+<script type="text/javascript" src="./script/api.js"></script>
+<script type="text/javascript">
+
+    apiready = function(){
+		console.log("Hello APICloud");
+
+        var header = $api.byId('header');
+        $api.fixStatusBar(header); 
+        var headerPos = $api.offset(header);
+        var main = $api.byId('main');
+        var mainPos = $api.offset(main);
+
+        api.openFrame({
+            name: 'main',
+            url: 'html/main.html',
+            bounces: true,
+            rect: {
+                x: 0,
+                y: headerPos.h,
+                w: headerPos.w,
+                h: mainPos.h
+            }
+        });
+    };
+</script>
+</html>

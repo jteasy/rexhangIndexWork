@@ -1,0 +1,10 @@
+#preview{ float:none; margin:10px auto; text-align:center; width:280px;}
+.jqzoom{ width:280px; height:290px; position:relative;}
+.list-h li{ float:left;}
+#spec-n5{width:280px; height:56px; padding-top:6px; overflow:hidden;}
+#spec-left{ background:url(images/left.gif) no-repeat; width:10px; height:45px; float:left; cursor:pointer; margin-top:5px;}
+#spec-right{background:url(images/right.gif) no-repeat; width:10px; height:45px; float:left;cursor:pointer; margin-top:5px;}
+#spec-list{ width:257px; float:left; overflow:hidden; margin-left:2px; display:inline;}
+#spec-list ul li{ float:left; margin-right:0px; display:inline; width:62px;}
+#spec-list ul li img{ padding:2px ; border:1px solid #ccc; width:50px; height:50px;}
+#spec-list div{ margin-top:0;margin-left:-37px; *margin-left:0;}

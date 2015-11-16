@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>添加银行卡</title>
+    <link rel="stylesheet" type="text/css" href="../../css/api.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/common.css" />
+  <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            font-family: '微软雅黑';
+        }
+        .addbankform{
+            width: 100%;
+            height: 46px;
+            border-top: 1px solid #D8D8D8;
+            border-bottom: 1px solid #D8D8D8;
+            margin-top: 10px;
+        }
+        .addbankform .kalis{
+            height: 46px;
+            line-height: 46px;
+            margin-left: 12px;
+            margin-right: 12px;
+        }
+        .addbankform .kalis .kahao{
+            font-size: 14px;
+            height: 14px;
+            display: block;
+            float: left;
+            margin-top: 0px;
+        }
+        .addbankform .kalis > input{
+            font-size: 14px;
+            font-family: '微软雅黑';
+            margin-left: 12px;
+            outline: none;
+            margin-top: 3px;
+        }
+        .icons1{
+            background: url('../../image/icons1.png') no-repeat;
+            width: 16px;
+            height: 16px;
+            background-position: 50% 40%;
+            border-radius: 50%;
+            float: right;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="addbankform">
+        <div class="kalis">
+            <span class="kahao">卡号</span>
+            <input type="text" placeholder="银行卡号" />
+            <div class="icons1"></div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="../../script/api.js"></script>
+<script type="text/javascript">
+	var openWin=function($url){
+		api.openWin({
+	        name:$url,
+	        url: $url+'_header.html',
+	        bgcolor:"#ffffff",
+	        scrollToTop:true,
+	        animation:{
+	        	type:'movein',
+	        	subType:'from_right'
+	        }
+        });
+	}
+</script>
+</html>

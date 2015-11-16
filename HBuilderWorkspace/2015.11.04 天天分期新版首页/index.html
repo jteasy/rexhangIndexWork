@@ -1,0 +1,1264 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>2015.11.04 天天分期新版首页</title>
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+	      	<script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	      	<script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+	    	<![endif]-->
+		<link rel="stylesheet" href="css/css_reset.css" />
+		<link rel="stylesheet" href="css/web_top.css" />
+		<link rel="stylesheet" type="text/css" href="css/web_search.css" />
+		<link rel="stylesheet" type="text/css" href="css/web_top_nav.css"/>
+		<link rel="stylesheet" type="text/css" href="css/web_top_list.css"/>
+		<link rel="stylesheet" href="css/banner.css" />
+		<link rel="stylesheet" type="text/css" href="css/banner_action.css"/>
+		<link rel="stylesheet" type="text/css" href="css/web_module_1.css"/>
+		<link rel="stylesheet" type="text/css" href="css/web_module_2.css"/>
+		<link rel="stylesheet" type="text/css" href="css/web_module_3.css"/>
+		<link rel="stylesheet" type="text/css" href="css/web_module_4.css"/>
+		<link rel="stylesheet" type="text/css" href="css/animate.min.css"/>
+		<link rel="stylesheet" type="text/css" href="css/web_module_5.css"/>
+		<link rel="stylesheet" type="text/css" href="css/footer.css"/>
+		<link rel="stylesheet" type="text/css" href="css/put_on_record.css"/>
+		<link rel="stylesheet" type="text/css" href="css/fixed.css"/>
+		<link rel="stylesheet" href="css/protip.min.css" />
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+		<script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+		<script type="text/javascript" src="js/jquery.lazyload.js"></script>
+	    <script>
+		    $().ready(function() {
+		    	/*为全局加入延时加载*/
+		        $("body img").lazyload({
+		            effect: "fadeIn",
+		            failurelimit: 8,
+		            placeholder : "img/lazyLoad.gif" 
+		        });
+		        /*为全局加入延时加载*/
+		    });
+	    </script>
+	</head>
+
+	<body>
+		<!--顶部广告-->
+		<div id="header-top">
+			<img src="img/top-adv.png" alt="顶部广告" width="1200" height="80" />
+		</div>
+		<!--顶部广告-->
+		<!--顶部欢迎信息以及登录注册……-->
+		<div class="top-tip">
+			<div class="font-roup">
+				<div class="font-left">
+					<span>Hi，欢迎来到天天分期，大学生的分期购物商城！</span>
+				</div>
+				<div class="font-right">
+					<a href="javascript:void(0);">登录&nbsp;&nbsp;</a> |&nbsp;&nbsp;
+					<a href="javascript:void(0);">注册&nbsp;&nbsp;</a> |&nbsp;&nbsp;
+					<a href="javascript:void(0);">客服电话：<span class="kefu-phone">400-029-3995</span></a>
+				</div>
+			</div>
+		</div>
+		<!--顶部欢迎信息以及登录注册……-->
+		<!--搜索条行-->
+		<div class="web-search">
+			<div class="search-content">
+				<img src="img/website_logo.png" width="219" height="54" alt="网站logo" title="网站logo" class="web-logo" />
+				<input type="text" name="search-yellow" value='' placeholder="iphone6s" />
+				<div class="search-button">
+					<img src="img/search_icon.png" width="25" height="25" alt="搜索" title="搜索" />
+				</div>
+				<div class="myorder">
+					<span class="myorder-fonts">我的订单</span>
+					<span class="glyphicon glyphicon-menu-right" aria-hidden="true" style="color: #999;margin-left: 12px;"></span>
+					<span class="badge-yellow">9</span>
+				</div>
+				<ul class="hot-keywords">
+					<li>热搜：</li>
+					<li>iphone6</li>
+					<li>ipad</li>
+					<li>三星</li>
+					<li> 联想g50-70</li>
+					<li>99元硬盘</li>
+					<li>佳能D700</li>
+					<li>尼康（Nikon）</li>
+					<li>Alien</li>
+				</ul>
+			</div>
+		</div>
+		<!--搜索条行-->
+		<!--顶部导航栏-->
+		<div class="web-nav">
+			<div class="nav-content">
+				<ul class="nav-lists">
+					<li><a href="javascript:void(0);">全部商品分类</a></li>
+					<li><a href="javascript:void(0);">天天有钱</a></li>
+					<li><a href="javascript:void(0);">天天特卖</a></li>
+					<li><a href="javascript:void(0);">APP下载</a></li>
+					<li><a href="javascript:void(0);">未来CEO</a></li>
+				</ul>
+			</div>
+		</div>
+		<!--顶部导航栏-->
+		<!--顶部列表及轮展图（banner）-->
+		<div class="web-lists">
+			<div class="web-lists-banner">
+				<div class="left-lists">
+					<ul class="goods-list" id="goods-list-id">
+						<li>
+							<span class="goods-icons gicons-1"></span>
+							<span class="goods-name">手机</span>
+						</li>
+						<li>
+							<span class="goods-icons gicons-2"></span>
+							<span class="goods-name">电脑 平板</span>
+						</li>
+						<li>
+							<span class="goods-icons gicons-3"></span>
+							<span class="goods-name">天天旅行</span>
+						</li>
+						<li>
+							<span class="goods-icons gicons-4"></span>
+							<span class="goods-name">相机</span>
+						</li>
+						<li>
+							<span class="goods-icons gicons-5"></span>
+							<span class="goods-name">智能配件</span>
+						</li>
+						<li>
+							<span class="goods-icons gicons-6"></span>
+							<span class="goods-name">驾校 培训</span>
+						</li>
+						<li>
+							<span class="goods-icons gicons-7"></span>
+							<span class="goods-name">奢侈品</span>
+						</li>
+						<li>
+							<span class="goods-icons gicons-8"></span>
+							<span class="goods-name">名品腕表</span>
+						</li>
+						<li>
+							<span class="goods-icons gicons-9"></span>
+							<span class="goods-name">洗护美妆</span>
+						</li>
+					</ul>
+					<!--列表悬停展示页-->
+					<div class="show-lists-box show-lists-box-1">
+						<img src="img/little-triangle.png" width="8" height="15" alt="小三角" class="tng-1" />
+						<!--品牌开始-->
+						<h5>品牌</h5>
+						<ul>
+							<li>苹果</li>
+							<li>|</li>
+							<li>小米</li>
+							<li>|</li>
+							<li>HTC</li>
+							<li>|</li>
+							<li>华为</li>
+							<li>|</li>
+							<li>诺基亚</li>
+							<li>三星</li>
+							<li>|</li>
+							<li>魅族</li>
+							<li>|</li>
+							<li>联想</li>
+							<li>|</li>
+							<li>其他</li>
+						</ul>
+						<!--品牌结束-->
+						<!--品牌开始-->
+						<h5>系统</h5>
+						<ul>
+							<li>Android</li>
+							<li>|</li>
+							<li>IOS</li>
+							<li>|</li>
+							<li>WindowsPhone</li>
+						</ul>
+						<!--品牌结束-->
+						<!--品牌开始-->
+						<h5>售价</h5>
+						<ul>
+							<li>2000元以下</li>
+							<li>|</li>
+							<li>2000-3500元</li>
+							<li>3500-5000元</li>
+							<li>|</li>
+							<li>5000-8000元</li>
+							<li>8000元以上</li>
+						</ul>
+						<!--品牌结束-->
+					</div>
+					<div class="show-lists-box show-lists-box-2">
+						<img src="img/little-triangle.png" width="8" height="15" alt="小三角" class="tng-2" />
+						<!--品牌开始-->
+						<h5>类型</h5>
+						<ul>
+							<li>平板电脑</li>
+							<li>|</li>
+							<li>笔记本电脑</li>
+							<li>|</li>
+							<li>台式机&nbsp;</li>
+							<li>一体机</li>
+							<li>|</li>
+							<li>超极本 </li>
+						</ul>
+						<!--品牌结束-->
+						<!--品牌开始-->
+						<h5>尺寸</h5>
+						<ul>
+							<li>8.9-12英寸</li>
+							<li>|</li>
+							<li>13-15英寸</li>
+							<li>|</li>
+							<li>16-17英寸</li>
+							<li>18-20英寸</li>
+							<li>|</li>
+							<li>21.5-24英寸</li>
+							<li>|</li>
+							<li>24英寸以上</li>
+						</ul>
+						<!--品牌结束-->
+						<!--品牌开始-->
+						<h5>售价</h5>
+						<ul>
+							<li>2000元以下</li>
+							<li>|</li>
+							<li>2000-3500元</li>
+							<li>3500-5000元</li>
+							<li>|</li>
+							<li>5000-8000元</li>
+							<li>8000元以上</li>
+						</ul>
+						<!--品牌结束-->
+					</div>
+					<div class="show-lists-box show-lists-box-3">
+						<img src="img/little-triangle.png" width="8" height="15" alt="小三角" class="tng-3" />
+						<!--品牌开始-->
+						<h5>地域</h5>
+						<ul>
+							<li>国内长途</li>
+							<li>|</li>
+							<li>国内短途</li>
+							<li>|</li>
+							<li>国外短途</li>
+							<li>国外长途 </li>
+						</ul>
+						<!--品牌结束-->
+						<!--品牌开始-->
+						<h5>尺寸</h5>
+						<ul>
+							<li>2天</li>
+							<li>|</li>
+							<li>2-7天</li>
+							<li>|</li>
+							<li>7-30天</li>
+							<li>|</li>
+							<li>30天以上</li>
+						</ul>
+						<!--品牌结束-->
+						<!--品牌开始-->
+						<h5>售价</h5>
+						<ul>
+							<li>1000元以下</li>
+							<li>|</li>
+							<li>1000-3000元</li>
+							<li>3000-10000元</li>
+							<li>|</li>
+							<li>10000元以上</li>
+						</ul>
+						<!--品牌结束-->
+					</div>
+					<div class="show-lists-box show-lists-box-4">
+						<img src="img/little-triangle.png" width="8" height="15" alt="小三角" class="tng-4" />
+						<!--品牌开始-->
+						<h5>类型</h5>
+						<ul>
+							<li>数码相机</li>
+							<li>|</li>
+							<li>单反相机</li>
+							<li>|</li>
+							<li>摄像机&nbsp;</li>
+							<li>微单相机</li>
+							<li>|</li>
+							<li> 镜头</li>
+						</ul>
+						<!--品牌结束-->
+						<!--品牌开始-->
+						<h5>品牌</h5>
+						<ul>
+							<li>佳能</li>
+							<li>|</li>
+							<li>三星</li>
+							<li>|</li>
+							<li>尼康</li>
+							<li>|</li>
+							<li>索尼</li>
+							<li>|</li>
+							<li>卡西欧</li>
+							<li>宾得</li>
+							<li>|</li>
+							<li>富士</li>
+							<li>|</li>
+							<li>适马</li>
+							<li>|</li>
+							<li>腾龙</li>
+							<li>|</li>
+							<li>和冠</li>
+							<li>奥林巴斯</li>
+							<li>|</li>
+							<li>莱卡</li>
+						</ul>
+						<!--品牌结束-->
+						<!--品牌开始-->
+						<h5>售价</h5>
+						<ul>
+							<li>2000元以下</li>
+							<li>|</li>
+							<li>2000-3500元</li>
+							<li>3500-5000元</li>
+							<li>|</li>
+							<li>5000-8000元</li>
+							<li>8000元以上</li>
+						</ul>
+						<!--品牌结束-->
+					</div>
+					<div class="show-lists-box show-lists-box-5">
+						<img src="img/little-triangle.png" width="8" height="15" alt="小三角" class="tng-5" />
+						<!--品牌开始-->
+						<h5>类型</h5>
+						<ul>
+							<li>智能手环/手表</li>
+							<li>|</li>
+							<li>智能设备</li>
+							<li>|</li>
+							<li>耳机</li>
+							<li>高端外设</li>
+							<li>|</li>
+							<li>音响</li>
+						</ul>
+						<!--品牌结束-->
+						<!--品牌开始-->
+						<h5>品牌</h5>
+						<ul>
+							<li>佳能</li>
+							<li>|</li>
+							<li>三星</li>
+							<li>|</li>
+							<li>尼康</li>
+							<li>|</li>
+							<li>索尼</li>
+							<li>|</li>
+							<li>卡西欧</li>
+							<li>宾得</li>
+							<li>|</li>
+							<li>富士</li>
+							<li>|</li>
+							<li>适马</li>
+							<li>|</li>
+							<li>腾龙</li>
+							<li>|</li>
+							<li>和冠</li>
+							<li>奥林巴斯</li>
+							<li>|</li>
+							<li>莱卡</li>
+						</ul>
+						<!--品牌结束-->
+						<!--品牌开始-->
+						<h5>售价</h5>
+						<ul>
+							<li>800元以下</li>
+							<li>|</li>
+							<li>800-2000元&nbsp;&nbsp;</li>
+							<li>2000-5000元</li>
+							<li>|</li>
+							<li>5000-8000元</li>
+							<li>8000元以上</li>
+						</ul>
+						<!--品牌结束-->
+					</div>
+					<div class="show-lists-box show-lists-box-6">
+						<img src="img/little-triangle.png" width="8" height="15" alt="小三角" class="tng-6" />
+						<!--品牌开始-->
+						<h5>开通区域</h5>
+						<ul>
+							<li>西安</li>
+							<li>|</li>
+							<li>兰州</li>
+						</ul>
+						<!--品牌结束-->
+					</div>
+					<div class="show-lists-box show-lists-box-7">
+						<img src="img/little-triangle.png" width="8" height="15" alt="小三角" class="tng-7" />
+						<!--品牌开始-->
+						<h5>类型</h5>
+						<ul>
+							<li>皮箱 钱包</li>
+							<li>|</li>
+							<li>太阳镜</li>
+							<li>|</li>
+							<li>饰品</li>
+							<li>|</li>
+							<li>男士用品</li>
+						</ul>
+						<!--品牌结束-->
+						<!--品牌开始-->
+						<h5>售价</h5>
+						<ul>
+							<li>1000元以下</li>
+							<li>|</li>
+							<li>1000-2000元</li>
+							<li>2000-3500元</li>
+							<li>|</li>
+							<li>3500-5000元</li>
+							<li>5000元以上</li>
+						</ul>
+						<!--品牌结束-->
+					</div>
+					<div class="show-lists-box show-lists-box-8">
+						<img src="img/little-triangle.png" width="8" height="15" alt="小三角" class="tng-8" />
+						<!--品牌开始-->
+						<h5>品牌</h5>
+						<ul>
+							<li>COGITO</li>
+							<li>|</li>
+							<li>SONY索尼</li>
+							<li>|</li>
+							<li>Swatch斯沃琪</li>
+							<li>CASIO卡西欧</li>
+							<li>|</li>
+							<li>MIDO美度</li>
+							<li>|</li>
+							<li>TISSOT</li>
+							<li>天梭</li>
+							<li>|</li>
+							<li>FIYTA飞亚达</li>
+							<li>|</li>
+							<li>CK卡文克莱</li>
+						</ul>
+						<!--品牌结束-->
+						<!--品牌开始-->
+						<h5>售价</h5>
+						<ul>
+							<li>2000元以下</li>
+							<li>|</li>
+							<li>2000-3500元</li>
+							<li>3500-5000元</li>
+							<li>|</li>
+							<li>5000-8000元</li>
+							<li>8000元以上</li>
+						</ul>
+						<!--品牌结束-->
+						<!--品牌开始-->
+						<h5>类型</h5>
+						<ul>
+							<li>石英</li>
+							<li>|</li>
+							<li>机械</li>
+							<li>|</li>
+							<li>电子</li>
+						</ul>
+						<!--品牌结束-->
+					</div>
+					<div class="show-lists-box show-lists-box-9">
+						<img src="img/little-triangle.png" width="8" height="15" alt="小三角" class="tng-9" />
+						<!--品牌开始-->
+						<h5>品牌</h5>
+						<ul>
+							<li>香奈儿</li>
+							<li>|</li>
+							<li>兰芝</li>
+							<li>|</li>
+							<li>丝塔芙</li>
+							<li>|</li>
+							<li>兰蔻&nbsp;</li>
+							<li>植村秀</li>
+							<li>|</li>
+							<li>爱马仕</li>
+							<li>|</li>
+							<li>倩碧</li>
+							<li>|</li>
+							<li>科颜氏</li>
+							<li>佰草集</li>
+							<li>|</li>
+							<li>迪奥</li>
+							<li>|</li>
+							<li>雅漾</li>
+							<li>|</li>
+							<li>资生堂&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+							<li>雅顿</li>
+							<li>|</li>
+							<li>兰芝SK-II</li>
+							<li>|</li>
+							<li>DHC</li>
+							<li>|</li>
+							<li>雅诗兰黛</li>
+							<li>贝玲妃</li>
+							<li>|</li>
+							<li>魅可</li>
+							<li>|</li>
+							<li>梦妆</li>
+							<li>|</li>
+							<li>纪梵希&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+							<li>CK</li>
+							<li>|</li>
+							<li>苏菲娜</li>
+							<li>|</li>
+							<li>森田药妆</li>
+							<li>|</li>
+							<li>妮维雅</li>
+						</ul>
+						<!--品牌结束-->
+						<!--品牌开始-->
+						<h5>售价</h5>
+						<ul>
+							<li>500元以下</li>
+							<li>|</li>
+							<li>500-1000元&nbsp;&nbsp;</li>
+							<li>1000-2000元</li>
+							<li>|</li>
+							<li>2000-3500元</li>
+							<li>3500-5000元</li>
+							<li>|</li>
+							<li>5000元以上</li>
+						</ul>
+						<!--品牌结束-->
+					</div>
+					<!--列表悬停展示页-->
+				</div>
+				<!--轮展图（banner）区域-->
+				<div class="right-banner">
+					<ul class="rslides" id="right-banner-ul">
+						<li><a href="#" target="_blank"><img src="img/1.jpg" alt="1" width="968" height="450"></a></li>
+						<li><a href="#" target="_blank"><img src="img/2.jpg" alt="2" width="968" height="450"></a></li>
+						<li><a href="#" target="_blank"><img src="img/3.jpg" alt="3" width="968" height="450"></a></li>
+						<li><a href="#" target="_blank"><img src="img/4.jpg" alt="4" width="968" height="450"></a></li>
+						<li><a href="#" target="_blank"><img src="img/5.jpg" alt="5" width="968" height="450"></a></li>
+					</ul>
+				</div>
+				<!--轮展图（banner）区域-->
+			</div>
+		</div>
+		<!--顶部列表及轮展图（banner）-->
+		<!--模块一-->
+		<div class="web-module-1">
+			<div class="web-module-1-box">
+				<div class="web-module-1-adv1">
+					<img src="img/web-module-1-pic1.png" alt="web-module-1-pic1" width="232" height="170"  />
+				</div>
+				<div class="web-module-1-adv2">
+					<img src="img/web-module-1-pic3-1.jpg" alt="web-module-1-pic2" width="310" height="170"  />
+				</div>
+				<div class="web-module-1-adv2">
+					<img src="img/web-module-1-pic3.jpg" alt="web-module-1-pic2" width="310" height="170"  />
+				</div>
+				<div class="web-module-1-adv2">
+					<img src="img/web-module-1-pic3-2.jpg" alt="web-module-1-pic2" width="310" height="170"  />
+				</div>
+			</div>
+		</div>
+		<!--模块一-->
+		<!--模块二-->
+		<div class="web-module-2">
+			<div class="web-module-2-box">
+				<div class="web-module-2-adv1">
+					<img src="img/web-module-2-pic2.png" alt="web-module-2-pic2" width="116" height="113" />
+					<p class="p-tit1">天天有钱</p>
+					<p class="p-tit2">无抵押学生贷款</p>
+				</div>
+				<div class="web-module-2-adv2">
+					<p class="p-tit3">借款优势</p>
+					<hr />
+					<div class="web-module-2-adv3">
+						<div class="adv3-pic">
+							<img src="img/web-module-2-pic3.png" alt="web-module-2-pic3" width="64" height="70" />
+							<p class="p-tit4">吃喝玩乐</p>
+							<p class="p-tit5">钱不够？天天给你凑</p>
+						</div>
+						<div class="adv3-pic">
+							<img src="img/web-module-2-pic4.png" alt="web-module-2-pic3" width="64" height="70" />
+							<p class="p-tit4">零门槛零首付</p>
+							<p class="p-tit5">无抵押无担保，零门槛零首付</p>
+						</div>
+						<div class="adv3-pic">
+							<img src="img/web-module-2-pic5.png" alt="web-module-2-pic3" width="64" height="70" />
+							<p class="p-tit4">灵活分期办理快</p>
+							<p class="p-tit5">还款期限自主选择，当天成功办理</p>
+						</div>
+					</div>
+				</div>
+				<div class="web-module-2-adv4">
+					<img src="img/web-module-2-pic6.png" alt="web-module-2-pic6" width="218" height="59" />
+					<div class="borrow-btn">去借点儿钱~</div>
+				</div>
+			</div>
+		</div>
+		<!--模块二-->
+		<!--模块三-->
+		<div class="web-module-3">
+			<div class="web-module-3-box">
+				<!--头部文字说明-->
+				<p class="p-tit6">精选特卖</p>
+				<!--头部文字说明-->
+				<!--包住左右内容的大盒子-->
+				<div class="web-module-3-adv">
+					<!--左侧banner-->
+					<div class="web-module-3-adv-left">
+						<div class="web-module-3-adv-pic1">
+							<img src="img/web-module-2-pic7.png" alt="web-module-2-pic7" width="232" height="536" />
+						</div>
+						<div class="web-module-3-adv-pic1">
+							<img src="img/web-module-2-pic8.jpg" alt="web-module-2-pic8" width="232" height="536" />
+						</div>
+						<div class="web-module-3-adv-pic1">
+							<img src="img/web-module-2-pic9.png" alt="web-module-2-pic9" width="232" height="536" />
+						</div>
+						<ul id="little-navs-yellow">
+							<li></li>
+							<li class="rehang"></li>
+							<li class="sel"></li>
+						</ul>
+					</div>
+					<!--左侧banner-->
+					<!--右侧图文列表内容盒子-->
+					<div class="web-module-3-adv-right">
+						<div class="web-module-3-pic1">
+							<img src="img/web-module-2-pic10.png" alt="web-module-2-pic10" width="106" height="154" class="web-module-2-pic10" />
+							<p class="p-tit7">苹果 Apple 6s</p>
+							<p class="p-tit8">月供：<span style="color: #FFAD29;">¥</span> <span style="color: #FFAD29;font-size: 18px;font-weight: bold;">998</span> ｘ 99</p>
+							<p class="p-tit9">售价: <span style="color: #FFAD29;">￥998.99</span>   原价: <del>￥999</del></p>
+						</div>
+						<div class="web-module-3-pic2">
+							<img src="img/web-module-2-pic11.png" width="141" height="141" alt="web-module-2-pic11"  class="web-module-2-pic11" />
+							<p class="p-tit10">Apple Watch</p>
+							<p class="p-tit11">月供：<span style="color: #FFAD29;">¥</span> <span style="color: #FFAD29;font-size: 18px;font-weight: bold;">998</span> ｘ 99</p>
+							<p class="p-tit12">售价: <span style="color: #FFAD29;">￥998.99</span>   原价: <del>￥999</del></p>
+						</div>
+						<div class="web-module-3-pic3">
+							<img src="img/web-module-2-pic12.png" alt="web-module-2-pic12" width="76" height="188" class="web-module-2-pic12" />
+							<p class="p-tit13">梦妆花怡舒柔隔离霜</p>
+							<p class="p-tit8" style="margin-top: 10px;">月供：<span style="color: #FFAD29;">¥</span> <span style="color: #FFAD29;font-size: 18px;font-weight: bold;">998</span> ｘ 99</p>
+							<p class="p-tit9" style="margin-top: 10px;">售价: <span style="color: #FFAD29;">￥998.99</span>   原价: <del>￥999</del></p>
+						</div>
+						<div class="web-module-3-pic4">
+							<img src="img/web-module-2-pic13.png" width="94" height="94" alt="web-module-2-pic13" class="web-module-2-pic13" />
+							<p class="p-tit9 p-tit9-pic4" style="margin-top: 10px;">售价: <span style="color: #FFAD29;">￥998.99</span>   原价: <del>￥999</del></p>
+							<p class="p-tit13 p-tit13-pic4">佳能 EOS 700D</p>
+							<p class="p-tit8 p-tit8-pic4" style="margin-top: 10px;">月供：<span style="color: #FFAD29;">¥</span> <span style="color: #FFAD29;font-size: 18px;font-weight: bold;">998</span> ｘ 99</p>
+						</div>
+						<div class="web-module-3-pic5">
+							<img src="img/web-module-2-pic14.png" alt="web-module-2-pic14" width="126" height="151" class="web-module-2-pic14" />
+							<p class="p-tit13 p-tit13-kxo">卡西欧EX-TR550</p>
+							<p class="p-tit8" style="margin-top: 10px;">月供：<span style="color: #FFAD29;">¥</span> <span style="color: #FFAD29;font-size: 18px;font-weight: bold;">998</span> ｘ 99</p>
+							<p class="p-tit9" style="margin-top: 10px;">售价: <span style="color: #FFAD29;">￥998.99</span>   原价: <del>￥999</del></p>
+						</div>
+						<div class="web-module-3-pic6">
+							<img src="img/web-module-2-pic15.png" width="90" height="106" alt="web-module-2-pic15" class="web-module-2-pic15" />
+							<p class="p-tit13 p-tit13-mac">MAC魅可绒光丰盈唇膏</p>
+							<p class="p-tit8 p-tit8-tit2" style="margin-top: 10px;">月供：<span style="color: #FFAD29;">¥</span> <span style="color: #FFAD29;font-size: 18px;font-weight: bold;">6</span> ｘ 99</p>
+							<p class="p-tit9 p-tit9-tit3" style="margin-top: 10px;">售价: <span style="color: #FFAD29;">￥998.99</span>   原价: <del>￥999</del></p>
+						</div>
+						<div class="web-module-3-pic7">
+							<img src="img/web-module-2-pic16.png" alt="web-module-2-pic16" width="151" height="121" class="web-module-2-pic16" />
+							<p class="p-tit10 p-tit10-tit1">佳能 EOS 900D</p>
+							<p class="p-tit11 p-tit11-tit2">月供：<span style="color: #FFAD29;">¥</span> <span style="color: #FFAD29;font-size: 18px;font-weight: bold;">998</span> ｘ 99</p>
+							<p class="p-tit12 p-tit12-tit3">售价: <span style="color: #FFAD29;">￥998.99</span>   原价: <del>￥999</del></p>
+						</div>
+					</div>
+					<!--右侧图文列表内容盒子-->
+				</div>
+				<!--包住左右内容的大盒子-->
+			</div>
+		</div>
+		<!--模块三-->
+		<!--模块四-->
+		<div class="web-module-4">
+			<div class="web-module-4-box">
+				<!--①顶部导航-->
+				<!--②头部文字说明-->
+				<p class="p-tit-new">最新上架</p>
+				<!--③品类列表-->
+				<ul id="web-module-4-list">	
+					<li class="sel-web-module-4-list">手机</li>
+					<li>电脑</li>
+					<li>平板</li>
+					<li>相机</li>
+					<li>奢侈品</li>
+					<li>户外</li>
+					<li>洗护美妆</li>
+				</ul>
+				<!--④解决边界列表效果的bug-->
+				<p class="clear-linebug"></p>
+				<!--④解决边界列表效果的bug-->
+				<!--** 清除浮动 **-->
+				<div style="clear: both;"></div>
+				<!--** 清除浮动 **-->
+				<!--③品类列表-->
+				<!--②头部文字说明-->
+				<!--①顶部导航-->
+				<!-- (＝^ω^＝)能装下内容的大盒子 (＝^ω^＝)-->
+				<div class="web-module-4-contents">
+					<!--左侧区域-->
+					<div class="web-module-4-contents-left">
+						<img src="img/web-module-2-pic17.png" width="232" height="330" alt="web-module-2-pic17" />
+						<img src="img/web-module-2-pic17.png" width="232" height="330" alt="web-module-2-pic17" style="margin-top: 14px;" />
+					</div>
+					<!--左侧区域-->
+					<!--右侧区域-->
+					<div class="web-module-4-contents-right">
+						<!--商品列表 * 7-->
+						<!--1-->
+						<ul class="web-module-4-contents-right-lists">
+							<li class="nth-first4 nth-marginleft-null sels1">
+								<img src="http://www.rexhang.com/images/web-module-2-pic18.png" width="99" height="170" alt="web-module-2-pic18" />
+								<p class="web-module-4-contents-right-tit1">苹果 Apple Watch 38毫米</p>
+								<p class="web-module-4-contents-right-tit2">售价：<span style="color: #FFAD29;">￥9991</span> 原价：<span><del>￥9999</del></span></p>
+								<p class="dividing-line"></p>
+								<p class="monthly">月供：<span style="color: #FFAD29;font-size: 14px;">￥<span style="font-size: 18px;">128</span> ｘ 36期</span></p>
+							</li>
+							<li class="nth-first4 sels1">
+								<img src="img/web-module-2-pic18.png" width="99" height="170" alt="web-module-2-pic18" />
+								<p class="web-module-4-contents-right-tit1">苹果 Apple Watch 38毫米</p>
+								<p class="web-module-4-contents-right-tit2">售价：<span style="color: #FFAD29;">￥9998</span> 原价：<span><del>￥9999</del></span></p>
+								<p class="dividing-line"></p>
+								<p class="monthly">月供：<span style="color: #FFAD29;font-size: 14px;">￥<span style="font-size: 18px;">128</span> ｘ 36期</span></p>
+							</li>
+							<li class="nth-first4 sels1">
+								<img src="img/web-module-2-pic18.png" width="99" height="170" alt="web-module-2-pic18" />
+								<p class="web-module-4-contents-right-tit1">苹果 Apple Watch 38毫米</p>
+								<p class="web-module-4-contents-right-tit2">售价：<span style="color: #FFAD29;">￥9998</span> 原价：<span><del>￥9999</del></span></p>
+								<p class="dividing-line"></p>
+								<p class="monthly">月供：<span style="color: #FFAD29;font-size: 14px;">￥<span style="font-size: 18px;">128</span> ｘ 36期</span></p>
+							</li>
+							<li class="nth-first4 sels1">
+								<img src="img/web-module-2-pic18.png" width="99" height="170" alt="web-module-2-pic18" />
+								<p class="web-module-4-contents-right-tit1">苹果 Apple Watch 38毫米</p>
+								<p class="web-module-4-contents-right-tit2">售价：<span style="color: #FFAD29;">￥9998</span> 原价：<span><del>￥9999</del></span></p>
+								<p class="dividing-line"></p>
+								<p class="monthly">月供：<span style="color: #FFAD29;font-size: 14px;">￥<span style="font-size: 18px;">128</span> ｘ 36期</span></p>
+							</li>
+							<li class="nth-marginleft-null sels1">
+								<img src="img/web-module-2-pic18.png" width="99" height="170" alt="web-module-2-pic18" />
+								<p class="web-module-4-contents-right-tit1">苹果 Apple Watch 38毫米</p>
+								<p class="web-module-4-contents-right-tit2">售价：<span style="color: #FFAD29;">￥9998</span> 原价：<span><del>￥9999</del></span></p>
+								<p class="dividing-line"></p>
+								<p class="monthly">月供：<span style="color: #FFAD29;font-size: 14px;">￥<span style="font-size: 18px;">128</span> ｘ 36期</span></p>
+							</li>
+							<li class="sels1">
+								<img src="img/web-module-2-pic18.png" width="99" height="170" alt="web-module-2-pic18" />
+								<p class="web-module-4-contents-right-tit1">苹果 Apple Watch 38毫米</p>
+								<p class="web-module-4-contents-right-tit2">售价：<span style="color: #FFAD29;">￥9998</span> 原价：<span><del>￥9999</del></span></p>
+								<p class="dividing-line"></p>
+								<p class="monthly">月供：<span style="color: #FFAD29;font-size: 14px;">￥<span style="font-size: 18px;">128</span> ｘ 36期</span></p>
+							</li>
+							<li class="sels1">
+								<img src="img/web-module-2-pic18.png" width="99" height="170" alt="web-module-2-pic18" />
+								<p class="web-module-4-contents-right-tit1">苹果 Apple Watch 38毫米</p>
+								<p class="web-module-4-contents-right-tit2">售价：<span style="color: #FFAD29;">￥9998</span> 原价：<span><del>￥9999</del></span></p>
+								<p class="dividing-line"></p>
+								<p class="monthly">月供：<span style="color: #FFAD29;font-size: 14px;">￥<span style="font-size: 18px;">128</span> ｘ 36期</span></p>
+							</li>
+							<li class="sels1">
+								<img src="img/web-module-2-pic18.png" width="99" height="170" alt="web-module-2-pic18" />
+								<p class="web-module-4-contents-right-tit1">苹果 Apple Watch 38毫米</p>
+								<p class="web-module-4-contents-right-tit2">售价：<span style="color: #FFAD29;">￥9998</span> 原价：<span><del>￥9999</del></span></p>
+								<p class="dividing-line"></p>
+								<p class="monthly">月供：<span style="color: #FFAD29;font-size: 14px;">￥<span style="font-size: 18px;">128</span> ｘ 36期</span></p>
+							</li>
+						</ul>
+						<!--1-->
+						<!--2-->
+						<ul class="web-module-4-contents-right-lists">
+							<li class="nth-first4 nth-marginleft-null sels1">
+								<img src="img/web-module-2-pic18.png" width="99" height="170" alt="web-module-2-pic18" />
+								<p class="web-module-4-contents-right-tit1">苹果 Apple Watch 38毫米</p>
+								<p class="web-module-4-contents-right-tit2">售价：<span style="color: #FFAD29;">￥9992</span> 原价：<span><del>￥9999</del></span></p>
+								<p class="dividing-line"></p>
+								<p class="monthly">月供：<span style="color: #FFAD29;font-size: 14px;">￥<span style="font-size: 18px;">128</span> ｘ 36期</span></p>
+							</li>
+							<li class="nth-first4 sels1">
+								<img src="img/web-module-2-pic18.png" width="99" height="170" alt="web-module-2-pic18" />
+								<p class="web-module-4-contents-right-tit1">苹果 Apple Watch 38毫米</p>
+								<p class="web-module-4-contents-right-tit2">售价：<span style="color: #FFAD29;">￥9998</span> 原价：<span><del>￥9999</del></span></p>
+								<p class="dividing-line"></p>
+								<p class="monthly">月供：<span style="color: #FFAD29;font-size: 14px;">￥<span style="font-size: 18px;">128</span> ｘ 36期</span></p>
+							</li>
+							<li class="nth-first4 sels1">
+								<img src="img/web-module-2-pic18.png" width="99" height="170" alt="web-module-2-pic18" />
+								<p class="web-module-4-contents-right-tit1">苹果 Apple Watch 38毫米</p>
+								<p class="web-module-4-contents-right-tit2">售价：<span style="color: #FFAD29;">￥9998</span> 原价：<span><del>￥9999</del></span></p>
+								<p class="dividing-line"></p>
+								<p class="monthly">月供：<span style="color: #FFAD29;font-size: 14px;">￥<span style="font-size: 18px;">128</span> ｘ 36期</span></p>
+							</li>
+							<li class="nth-first4 sels1">
+								<img src="img/web-module-2-pic18.png" width="99" height="170" alt="web-module-2-pic18" />
+								<p class="web-module-4-contents-right-tit1">苹果 Apple Watch 38毫米</p>
+								<p class="web-module-4-contents-right-tit2">售价：<span style="color: #FFAD29;">￥9998</span> 原价：<span><del>￥9999</del></span></p>
+								<p class="dividing-line"></p>
+								<p class="monthly">月供：<span style="color: #FFAD29;font-size: 14px;">￥<span style="font-size: 18px;">128</span> ｘ 36期</span></p>
+							</li>
+							<li class="nth-marginleft-null sels1">
+								<img src="img/web-module-2-pic18.png" width="99" height="170" alt="web-module-2-pic18" />
+								<p class="web-module-4-contents-right-tit1">苹果 Apple Watch 38毫米</p>
+								<p class="web-module-4-contents-right-tit2">售价：<span style="color: #FFAD29;">￥9998</span> 原价：<span><del>￥9999</del></span></p>
+								<p class="dividing-line"></p>
+								<p class="monthly">月供：<span style="color: #FFAD29;font-size: 14px;">￥<span style="font-size: 18px;">128</span> ｘ 36期</span></p>
+							</li>
+							<li class="sels1">
+								<img src="img/web-module-2-pic18.png" width="99" height="170" alt="web-module-2-pic18" />
+								<p class="web-module-4-contents-right-tit1">苹果 Apple Watch 38毫米</p>
+								<p class="web-module-4-contents-right-tit2">售价：<span style="color: #FFAD29;">￥9998</span> 原价：<span><del>￥9999</del></span></p>
+								<p class="dividing-line"></p>
+								<p class="monthly">月供：<span style="color: #FFAD29;font-size: 14px;">￥<span style="font-size: 18px;">128</span> ｘ 36期</span></p>
+							</li>
+							<li class="sels1">
+								<img src="img/web-module-2-pic18.png" width="99" height="170" alt="web-module-2-pic18" />
+								<p class="web-module-4-contents-right-tit1">苹果 Apple Watch 38毫米</p>
+								<p class="web-module-4-contents-right-tit2">售价：<span style="color: #FFAD29;">￥9998</span> 原价：<span><del>￥9999</del></span></p>
+								<p class="dividing-line"></p>
+								<p class="monthly">月供：<span style="color: #FFAD29;font-size: 14px;">￥<span style="font-size: 18px;">128</span> ｘ 36期</span></p>
+							</li>
+							<li class="sels1">
+								<img src="img/web-module-2-pic18.png" width="99" height="170" alt="web-module-2-pic18" />
+								<p class="web-module-4-contents-right-tit1">苹果 Apple Watch 38毫米</p>
+								<p class="web-module-4-contents-right-tit2">售价：<span style="color: #FFAD29;">￥9998</span> 原价：<span><del>￥9999</del></span></p>
+								<p class="dividing-line"></p>
+								<p class="monthly">月供：<span style="color: #FFAD29;font-size: 14px;">￥<span style="font-size: 18px;">128</span> ｘ 36期</span></p>
+							</li>
+						</ul>
+						<!--2-->
+						<!--3-->
+						<ul class="web-module-4-contents-right-lists">
+							<li class="nth-first4 nth-marginleft-null sels1">
+								<img src="img/web-module-2-pic18.png" width="99" height="170" alt="web-module-2-pic18" />
+								<p class="web-module-4-contents-right-tit1">苹果 Apple Watch 38毫米</p>
+								<p class="web-module-4-contents-right-tit2">售价：<span style="color: #FFAD29;">￥9993</span> 原价：<span><del>￥9999</del></span></p>
+								<p class="dividing-line"></p>
+								<p class="monthly">月供：<span style="color: #FFAD29;font-size: 14px;">￥<span style="font-size: 18px;">128</span> ｘ 36期</span></p>
+							</li>
+							<li class="nth-first4 sels1">
+								<img src="img/web-module-2-pic18.png" width="99" height="170" alt="web-module-2-pic18" />
+								<p class="web-module-4-contents-right-tit1">苹果 Apple Watch 38毫米</p>
+								<p class="web-module-4-contents-right-tit2">售价：<span style="color: #FFAD29;">￥9998</span> 原价：<span><del>￥9999</del></span></p>
+								<p class="dividing-line"></p>
+								<p class="monthly">月供：<span style="color: #FFAD29;font-size: 14px;">￥<span style="font-size: 18px;">128</span> ｘ 36期</span></p>
+							</li>
+							<li class="nth-first4 sels1">
+								<img src="img/web-module-2-pic18.png" width="99" height="170" alt="web-module-2-pic18" />
+								<p class="web-module-4-contents-right-tit1">苹果 Apple Watch 38毫米</p>
+								<p class="web-module-4-contents-right-tit2">售价：<span style="color: #FFAD29;">￥9998</span> 原价：<span><del>￥9999</del></span></p>
+								<p class="dividing-line"></p>
+								<p class="monthly">月供：<span style="color: #FFAD29;font-size: 14px;">￥<span style="font-size: 18px;">128</span> ｘ 36期</span></p>
+							</li>
+							<li class="nth-first4 sels1">
+								<img src="img/web-module-2-pic18.png" width="99" height="170" alt="web-module-2-pic18" />
+								<p class="web-module-4-contents-right-tit1">苹果 Apple Watch 38毫米</p>
+								<p class="web-module-4-contents-right-tit2">售价：<span style="color: #FFAD29;">￥9998</span> 原价：<span><del>￥9999</del></span></p>
+								<p class="dividing-line"></p>
+								<p class="monthly">月供：<span style="color: #FFAD29;font-size: 14px;">￥<span style="font-size: 18px;">128</span> ｘ 36期</span></p>
+							</li>
+							<li class="nth-marginleft-null sels1">
+								<img src="img/web-module-2-pic18.png" width="99" height="170" alt="web-module-2-pic18" />
+								<p class="web-module-4-contents-right-tit1">苹果 Apple Watch 38毫米</p>
+								<p class="web-module-4-contents-right-tit2">售价：<span style="color: #FFAD29;">￥9998</span> 原价：<span><del>￥9999</del></span></p>
+								<p class="dividing-line"></p>
+								<p class="monthly">月供：<span style="color: #FFAD29;font-size: 14px;">￥<span style="font-size: 18px;">128</span> ｘ 36期</span></p>
+							</li>
+							<li class="sels1">
+								<img src="img/web-module-2-pic18.png" width="99" height="170" alt="web-module-2-pic18" />
+								<p class="web-module-4-contents-right-tit1">苹果 Apple Watch 38毫米</p>
+								<p class="web-module-4-contents-right-tit2">售价：<span style="color: #FFAD29;">￥9998</span> 原价：<span><del>￥9999</del></span></p>
+								<p class="dividing-line"></p>
+								<p class="monthly">月供：<span style="color: #FFAD29;font-size: 14px;">￥<span style="font-size: 18px;">128</span> ｘ 36期</span></p>
+							</li>
+							<li class="sels1">
+								<img src="img/web-module-2-pic18.png" width="99" height="170" alt="web-module-2-pic18" />
+								<p class="web-module-4-contents-right-tit1">苹果 Apple Watch 38毫米</p>
+								<p class="web-module-4-contents-right-tit2">售价：<span style="color: #FFAD29;">￥9998</span> 原价：<span><del>￥9999</del></span></p>
+								<p class="dividing-line"></p>
+								<p class="monthly">月供：<span style="color: #FFAD29;font-size: 14px;">￥<span style="font-size: 18px;">128</span> ｘ 36期</span></p>
+							</li>
+							<li class="sels1">
+								<img src="img/web-module-2-pic18.png" width="99" height="170" alt="web-module-2-pic18" />
+								<p class="web-module-4-contents-right-tit1">苹果 Apple Watch 38毫米</p>
+								<p class="web-module-4-contents-right-tit2">售价：<span style="color: #FFAD29;">￥9998</span> 原价：<span><del>￥9999</del></span></p>
+								<p class="dividing-line"></p>
+								<p class="monthly">月供：<span style="color: #FFAD29;font-size: 14px;">￥<span style="font-size: 18px;">128</span> ｘ 36期</span></p>
+							</li>
+						</ul>
+						<!--3-->
+						<!--4-->
+						<ul class="web-module-4-contents-right-lists">
+							<li class="nth-first4 nth-marginleft-null sels1">
+								<img src="img/web-module-2-pic18.png" width="99" height="170" alt="web-module-2-pic18" />
+								<p class="web-module-4-contents-right-tit1">苹果 Apple Watch 38毫米</p>
+								<p class="web-module-4-contents-right-tit2">售价：<span style="color: #FFAD29;">￥9994</span> 原价：<span><del>￥9999</del></span></p>
+								<p class="dividing-line"></p>
+								<p class="monthly">月供：<span style="color: #FFAD29;font-size: 14px;">￥<span style="font-size: 18px;">128</span> ｘ 36期</span></p>
+							</li>
+							<li class="nth-first4 sels1">
+								<img src="img/web-module-2-pic18.png" width="99" height="170" alt="web-module-2-pic18" />
+								<p class="web-module-4-contents-right-tit1">苹果 Apple Watch 38毫米</p>
+								<p class="web-module-4-contents-right-tit2">售价：<span style="color: #FFAD29;">￥9998</span> 原价：<span><del>￥9999</del></span></p>
+								<p class="dividing-line"></p>
+								<p class="monthly">月供：<span style="color: #FFAD29;font-size: 14px;">￥<span style="font-size: 18px;">128</span> ｘ 36期</span></p>
+							</li>
+							<li class="nth-first4 sels1">
+								<img src="img/web-module-2-pic18.png" width="99" height="170" alt="web-module-2-pic18" />
+								<p class="web-module-4-contents-right-tit1">苹果 Apple Watch 38毫米</p>
+								<p class="web-module-4-contents-right-tit2">售价：<span style="color: #FFAD29;">￥9998</span> 原价：<span><del>￥9999</del></span></p>
+								<p class="dividing-line"></p>
+								<p class="monthly">月供：<span style="color: #FFAD29;font-size: 14px;">￥<span style="font-size: 18px;">128</span> ｘ 36期</span></p>
+							</li>
+							<li class="nth-first4 sels1">
+								<img src="img/web-module-2-pic18.png" width="99" height="170" alt="web-module-2-pic18" />
+								<p class="web-module-4-contents-right-tit1">苹果 Apple Watch 38毫米</p>
+								<p class="web-module-4-contents-right-tit2">售价：<span style="color: #FFAD29;">￥9998</span> 原价：<span><del>￥9999</del></span></p>
+								<p class="dividing-line"></p>
+								<p class="monthly">月供：<span style="color: #FFAD29;font-size: 14px;">￥<span style="font-size: 18px;">128</span> ｘ 36期</span></p>
+							</li>
+							<li class="nth-marginleft-null sels1">
+								<img src="img/web-module-2-pic18.png" width="99" height="170" alt="web-module-2-pic18" />
+								<p class="web-module-4-contents-right-tit1">苹果 Apple Watch 38毫米</p>
+								<p class="web-module-4-contents-right-tit2">售价：<span style="color: #FFAD29;">￥9998</span> 原价：<span><del>￥9999</del></span></p>
+								<p class="dividing-line"></p>
+								<p class="monthly">月供：<span style="color: #FFAD29;font-size: 14px;">￥<span style="font-size: 18px;">128</span> ｘ 36期</span></p>
+							</li>
+							<li class="sels1">
+								<img src="img/web-module-2-pic18.png" width="99" height="170" alt="web-module-2-pic18" />
+								<p class="web-module-4-contents-right-tit1">苹果 Apple Watch 38毫米</p>
+								<p class="web-module-4-contents-right-tit2">售价：<span style="color: #FFAD29;">￥9998</span> 原价：<span><del>￥9999</del></span></p>
+								<p class="dividing-line"></p>
+								<p class="monthly">月供：<span style="color: #FFAD29;font-size: 14px;">￥<span style="font-size: 18px;">128</span> ｘ 36期</span></p>
+							</li>
+							<li class="sels1">
+								<img src="img/web-module-2-pic18.png" width="99" height="170" alt="web-module-2-pic18" />
+								<p class="web-module-4-contents-right-tit1">苹果 Apple Watch 38毫米</p>
+								<p class="web-module-4-contents-right-tit2">售价：<span style="color: #FFAD29;">￥9998</span> 原价：<span><del>￥9999</del></span></p>
+								<p class="dividing-line"></p>
+								<p class="monthly">月供：<span style="color: #FFAD29;font-size: 14px;">￥<span style="font-size: 18px;">128</span> ｘ 36期</span></p>
+							</li>
+							<li class="sels1">
+								<img src="img/web-module-2-pic18.png" width="99" height="170" alt="web-module-2-pic18" />
+								<p class="web-module-4-contents-right-tit1">苹果 Apple Watch 38毫米</p>
+								<p class="web-module-4-contents-right-tit2">售价：<span style="color: #FFAD29;">￥9998</span> 原价：<span><del>￥9999</del></span></p>
+								<p class="dividing-line"></p>
+								<p class="monthly">月供：<span style="color: #FFAD29;font-size: 14px;">￥<span style="font-size: 18px;">128</span> ｘ 36期</span></p>
+							</li>
+						</ul>
+						<!--4-->
+						<!--5-->
+						<ul class="web-module-4-contents-right-lists">
+							<li class="nth-first4 nth-marginleft-null sels1">
+								<img src="img/web-module-2-pic18.png" width="99" height="170" alt="web-module-2-pic18" />
+								<p class="web-module-4-contents-right-tit1">苹果 Apple Watch 38毫米</p>
+								<p class="web-module-4-contents-right-tit2">售价：<span style="color: #FFAD29;">￥9995</span> 原价：<span><del>￥9999</del></span></p>
+								<p class="dividing-line"></p>
+								<p class="monthly">月供：<span style="color: #FFAD29;font-size: 14px;">￥<span style="font-size: 18px;">128</span> ｘ 36期</span></p>
+							</li>
+							<li class="nth-first4 sels1">
+								<img src="img/web-module-2-pic18.png" width="99" height="170" alt="web-module-2-pic18" />
+								<p class="web-module-4-contents-right-tit1">苹果 Apple Watch 38毫米</p>
+								<p class="web-module-4-contents-right-tit2">售价：<span style="color: #FFAD29;">￥9998</span> 原价：<span><del>￥9999</del></span></p>
+								<p class="dividing-line"></p>
+								<p class="monthly">月供：<span style="color: #FFAD29;font-size: 14px;">￥<span style="font-size: 18px;">128</span> ｘ 36期</span></p>
+							</li>
+							<li class="nth-first4 sels1">
+								<img src="img/web-module-2-pic18.png" width="99" height="170" alt="web-module-2-pic18" />
+								<p class="web-module-4-contents-right-tit1">苹果 Apple Watch 38毫米</p>
+								<p class="web-module-4-contents-right-tit2">售价：<span style="color: #FFAD29;">￥9998</span> 原价：<span><del>￥9999</del></span></p>
+								<p class="dividing-line"></p>
+								<p class="monthly">月供：<span style="color: #FFAD29;font-size: 14px;">￥<span style="font-size: 18px;">128</span> ｘ 36期</span></p>
+							</li>
+							<li class="nth-first4 sels1">
+								<img src="img/web-module-2-pic18.png" width="99" height="170" alt="web-module-2-pic18" />
+								<p class="web-module-4-contents-right-tit1">苹果 Apple Watch 38毫米</p>
+								<p class="web-module-4-contents-right-tit2">售价：<span style="color: #FFAD29;">￥9998</span> 原价：<span><del>￥9999</del></span></p>
+								<p class="dividing-line"></p>
+								<p class="monthly">月供：<span style="color: #FFAD29;font-size: 14px;">￥<span style="font-size: 18px;">128</span> ｘ 36期</span></p>
+							</li>
+							<li class="nth-marginleft-null sels1">
+								<img src="img/web-module-2-pic18.png" width="99" height="170" alt="web-module-2-pic18" />
+								<p class="web-module-4-contents-right-tit1">苹果 Apple Watch 38毫米</p>
+								<p class="web-module-4-contents-right-tit2">售价：<span style="color: #FFAD29;">￥9998</span> 原价：<span><del>￥9999</del></span></p>
+								<p class="dividing-line"></p>
+								<p class="monthly">月供：<span style="color: #FFAD29;font-size: 14px;">￥<span style="font-size: 18px;">128</span> ｘ 36期</span></p>
+							</li>
+							<li class="sels1">
+								<img src="img/web-module-2-pic18.png" width="99" height="170" alt="web-module-2-pic18" />
+								<p class="web-module-4-contents-right-tit1">苹果 Apple Watch 38毫米</p>
+								<p class="web-module-4-contents-right-tit2">售价：<span style="color: #FFAD29;">￥9998</span> 原价：<span><del>￥9999</del></span></p>
+								<p class="dividing-line"></p>
+								<p class="monthly">月供：<span style="color: #FFAD29;font-size: 14px;">￥<span style="font-size: 18px;">128</span> ｘ 36期</span></p>
+							</li>
+							<li class="sels1">
+								<img src="img/web-module-2-pic18.png" width="99" height="170" alt="web-module-2-pic18" />
+								<p class="web-module-4-contents-right-tit1">苹果 Apple Watch 38毫米</p>
+								<p class="web-module-4-contents-right-tit2">售价：<span style="color: #FFAD29;">￥9998</span> 原价：<span><del>￥9999</del></span></p>
+								<p class="dividing-line"></p>
+								<p class="monthly">月供：<span style="color: #FFAD29;font-size: 14px;">￥<span style="font-size: 18px;">128</span> ｘ 36期</span></p>
+							</li>
+							<li class="sels1">
+								<img src="img/web-module-2-pic18.png" width="99" height="170" alt="web-module-2-pic18" />
+								<p class="web-module-4-contents-right-tit1">苹果 Apple Watch 38毫米</p>
+								<p class="web-module-4-contents-right-tit2">售价：<span style="color: #FFAD29;">￥9998</span> 原价：<span><del>￥9999</del></span></p>
+								<p class="dividing-line"></p>
+								<p class="monthly">月供：<span style="color: #FFAD29;font-size: 14px;">￥<span style="font-size: 18px;">128</span> ｘ 36期</span></p>
+							</li>
+						</ul>
+						<!--5-->
+						<!--6-->
+						<ul class="web-module-4-contents-right-lists">
+							<li class="nth-first4 nth-marginleft-null sels1">
+								<img src="img/web-module-2-pic18.png" width="99" height="170" alt="web-module-2-pic18" />
+								<p class="web-module-4-contents-right-tit1">苹果 Apple Watch 38毫米</p>
+								<p class="web-module-4-contents-right-tit2">售价：<span style="color: #FFAD29;">￥9996</span> 原价：<span><del>￥9999</del></span></p>
+								<p class="dividing-line"></p>
+								<p class="monthly">月供：<span style="color: #FFAD29;font-size: 14px;">￥<span style="font-size: 18px;">128</span> ｘ 36期</span></p>
+							</li>
+							<li class="nth-first4 sels1">
+								<img src="img/web-module-2-pic18.png" width="99" height="170" alt="web-module-2-pic18" />
+								<p class="web-module-4-contents-right-tit1">苹果 Apple Watch 38毫米</p>
+								<p class="web-module-4-contents-right-tit2">售价：<span style="color: #FFAD29;">￥9998</span> 原价：<span><del>￥9999</del></span></p>
+								<p class="dividing-line"></p>
+								<p class="monthly">月供：<span style="color: #FFAD29;font-size: 14px;">￥<span style="font-size: 18px;">128</span> ｘ 36期</span></p>
+							</li>
+							<li class="nth-first4 sels1">
+								<img src="img/web-module-2-pic18.png" width="99" height="170" alt="web-module-2-pic18" />
+								<p class="web-module-4-contents-right-tit1">苹果 Apple Watch 38毫米</p>
+								<p class="web-module-4-contents-right-tit2">售价：<span style="color: #FFAD29;">￥9998</span> 原价：<span><del>￥9999</del></span></p>
+								<p class="dividing-line"></p>
+								<p class="monthly">月供：<span style="color: #FFAD29;font-size: 14px;">￥<span style="font-size: 18px;">128</span> ｘ 36期</span></p>
+							</li>
+							<li class="nth-first4 sels1">
+								<img src="img/web-module-2-pic18.png" width="99" height="170" alt="web-module-2-pic18" />
+								<p class="web-module-4-contents-right-tit1">苹果 Apple Watch 38毫米</p>
+								<p class="web-module-4-contents-right-tit2">售价：<span style="color: #FFAD29;">￥9998</span> 原价：<span><del>￥9999</del></span></p>
+								<p class="dividing-line"></p>
+								<p class="monthly">月供：<span style="color: #FFAD29;font-size: 14px;">￥<span style="font-size: 18px;">128</span> ｘ 36期</span></p>
+							</li>
+							<li class="nth-marginleft-null sels1">
+								<img src="img/web-module-2-pic18.png" width="99" height="170" alt="web-module-2-pic18" />
+								<p class="web-module-4-contents-right-tit1">苹果 Apple Watch 38毫米</p>
+								<p class="web-module-4-contents-right-tit2">售价：<span style="color: #FFAD29;">￥9998</span> 原价：<span><del>￥9999</del></span></p>
+								<p class="dividing-line"></p>
+								<p class="monthly">月供：<span style="color: #FFAD29;font-size: 14px;">￥<span style="font-size: 18px;">128</span> ｘ 36期</span></p>
+							</li>
+							<li class="sels1">
+								<img src="img/web-module-2-pic18.png" width="99" height="170" alt="web-module-2-pic18" />
+								<p class="web-module-4-contents-right-tit1">苹果 Apple Watch 38毫米</p>
+								<p class="web-module-4-contents-right-tit2">售价：<span style="color: #FFAD29;">￥9998</span> 原价：<span><del>￥9999</del></span></p>
+								<p class="dividing-line"></p>
+								<p class="monthly">月供：<span style="color: #FFAD29;font-size: 14px;">￥<span style="font-size: 18px;">128</span> ｘ 36期</span></p>
+							</li>
+							<li class="sels1">
+								<img src="img/web-module-2-pic18.png" width="99" height="170" alt="web-module-2-pic18" />
+								<p class="web-module-4-contents-right-tit1">苹果 Apple Watch 38毫米</p>
+								<p class="web-module-4-contents-right-tit2">售价：<span style="color: #FFAD29;">￥9998</span> 原价：<span><del>￥9999</del></span></p>
+								<p class="dividing-line"></p>
+								<p class="monthly">月供：<span style="color: #FFAD29;font-size: 14px;">￥<span style="font-size: 18px;">128</span> ｘ 36期</span></p>
+							</li>
+							<li class="sels1">
+								<img src="img/web-module-2-pic18.png" width="99" height="170" alt="web-module-2-pic18" />
+								<p class="web-module-4-contents-right-tit1">苹果 Apple Watch 38毫米</p>
+								<p class="web-module-4-contents-right-tit2">售价：<span style="color: #FFAD29;">￥9998</span> 原价：<span><del>￥9999</del></span></p>
+								<p class="dividing-line"></p>
+								<p class="monthly">月供：<span style="color: #FFAD29;font-size: 14px;">￥<span style="font-size: 18px;">128</span> ｘ 36期</span></p>
+							</li>
+						</ul>
+						<!--6-->
+						<!--7-->
+						<ul class="web-module-4-contents-right-lists">
+							<li class="nth-first4 nth-marginleft-null sels1">
+								<img src="img/web-module-2-pic18.png" width="99" height="170" alt="web-module-2-pic18" />
+								<p class="web-module-4-contents-right-tit1">苹果 Apple Watch 38毫米</p>
+								<p class="web-module-4-contents-right-tit2">售价：<span style="color: #FFAD29;">￥9997</span> 原价：<span><del>￥9999</del></span></p>
+								<p class="dividing-line"></p>
+								<p class="monthly">月供：<span style="color: #FFAD29;font-size: 14px;">￥<span style="font-size: 18px;">128</span> ｘ 36期</span></p>
+							</li>
+							<li class="nth-first4 sels1">
+								<img src="img/web-module-2-pic18.png" width="99" height="170" alt="web-module-2-pic18" />
+								<p class="web-module-4-contents-right-tit1">苹果 Apple Watch 38毫米</p>
+								<p class="web-module-4-contents-right-tit2">售价：<span style="color: #FFAD29;">￥9998</span> 原价：<span><del>￥9999</del></span></p>
+								<p class="dividing-line"></p>
+								<p class="monthly">月供：<span style="color: #FFAD29;font-size: 14px;">￥<span style="font-size: 18px;">128</span> ｘ 36期</span></p>
+							</li>
+							<li class="nth-first4 sels1">
+								<img src="img/web-module-2-pic18.png" width="99" height="170" alt="web-module-2-pic18" />
+								<p class="web-module-4-contents-right-tit1">苹果 Apple Watch 38毫米</p>
+								<p class="web-module-4-contents-right-tit2">售价：<span style="color: #FFAD29;">￥9998</span> 原价：<span><del>￥9999</del></span></p>
+								<p class="dividing-line"></p>
+								<p class="monthly">月供：<span style="color: #FFAD29;font-size: 14px;">￥<span style="font-size: 18px;">128</span> ｘ 36期</span></p>
+							</li>
+							<li class="nth-first4 sels1">
+								<img src="img/web-module-2-pic18.png" width="99" height="170" alt="web-module-2-pic18" />
+								<p class="web-module-4-contents-right-tit1">苹果 Apple Watch 38毫米</p>
+								<p class="web-module-4-contents-right-tit2">售价：<span style="color: #FFAD29;">￥9998</span> 原价：<span><del>￥9999</del></span></p>
+								<p class="dividing-line"></p>
+								<p class="monthly">月供：<span style="color: #FFAD29;font-size: 14px;">￥<span style="font-size: 18px;">128</span> ｘ 36期</span></p>
+							</li>
+							<li class="nth-marginleft-null sels1">
+								<img src="img/web-module-2-pic18.png" width="99" height="170" alt="web-module-2-pic18" />
+								<p class="web-module-4-contents-right-tit1">苹果 Apple Watch 38毫米</p>
+								<p class="web-module-4-contents-right-tit2">售价：<span style="color: #FFAD29;">￥9998</span> 原价：<span><del>￥9999</del></span></p>
+								<p class="dividing-line"></p>
+								<p class="monthly">月供：<span style="color: #FFAD29;font-size: 14px;">￥<span style="font-size: 18px;">128</span> ｘ 36期</span></p>
+							</li>
+							<li class="sels1">
+								<img src="img/web-module-2-pic18.png" width="99" height="170" alt="web-module-2-pic18" />
+								<p class="web-module-4-contents-right-tit1">苹果 Apple Watch 38毫米</p>
+								<p class="web-module-4-contents-right-tit2">售价：<span style="color: #FFAD29;">￥9998</span> 原价：<span><del>￥9999</del></span></p>
+								<p class="dividing-line"></p>
+								<p class="monthly">月供：<span style="color: #FFAD29;font-size: 14px;">￥<span style="font-size: 18px;">128</span> ｘ 36期</span></p>
+							</li>
+							<li class="sels1">
+								<img src="img/web-module-2-pic18.png" width="99" height="170" alt="web-module-2-pic18" />
+								<p class="web-module-4-contents-right-tit1">苹果 Apple Watch 38毫米</p>
+								<p class="web-module-4-contents-right-tit2">售价：<span style="color: #FFAD29;">￥9998</span> 原价：<span><del>￥9999</del></span></p>
+								<p class="dividing-line"></p>
+								<p class="monthly">月供：<span style="color: #FFAD29;font-size: 14px;">￥<span style="font-size: 18px;">128</span> ｘ 36期</span></p>
+							</li>
+							<li class="sels1">
+								<img src="img/web-module-2-pic18.png" width="99" height="170" alt="web-module-2-pic18" />
+								<p class="web-module-4-contents-right-tit1">苹果 Apple Watch 38毫米</p>
+								<p class="web-module-4-contents-right-tit2">售价：<span style="color: #FFAD29;">￥9998</span> 原价：<span><del>￥9999</del></span></p>
+								<p class="dividing-line"></p>
+								<p class="monthly">月供：<span style="color: #FFAD29;font-size: 14px;">￥<span style="font-size: 18px;">128</span> ｘ 36期</span></p>
+							</li>
+						</ul>
+						<!--7-->
+						<!--商品列表 * 7-->
+					</div>
+					<!--右侧区域-->
+				<!--** 清除浮动 **-->
+				<div style="clear: both;"></div>
+				<!--** 清除浮动 **-->
+				</div>
+				<!-- (＝^ω^＝)能装下内容的大盒子 (＝^ω^＝)-->
+			</div>
+		</div>
+		<!--模块四-->
+		<!--模块五-->
+		<div class="web-module-5">
+			<div class="web-module-5-box">
+				<div class="web-module-5-adv1">
+					<img src="img/web-module-2-pic19.png" alt="web-module-2-pic2" width="116" height="113">
+					<p class="p-tit1-copy">电商分期</p>
+					<p class="p-tit2-copy">只需商品链接即可分期</p>
+				</div>
+				<div class="web-module-5-adv2">
+					<!--步骤-->
+					<p class="web-module-5-step-by-step">
+						<img src="img/icon-num-1.png" width="24" height="24" alt="icon-num-1" />
+						<span>去各商城挑选商品！</span>
+						<img src="img/icon-num-2.png" width="24" height="24" alt="icon-num-2" />
+						<span>复制商品链接并粘贴到下面输入框！</span>
+						<img src="img/icon-num-3.png" width="24" height="24" alt="icon-num-3" />
+						<span>点击分期购买按钮并填写提交！</span>
+					</p>
+					<!--步骤-->
+					<!--商品链接-->
+					<p class="goods-url">
+						商品链接：<input type="text" name="goods_url" placeholder="在商城中选好商品，粘贴链接，如：http://www.rexhang.com/" />
+					</p>
+					<!--商品链接-->
+					<!--商品价格-->
+					<p class="goods-value">
+						商品价格：<input type="text" name="goods_value" placeholder="输入价格" /> 元 首付比例：<select>
+							<option value="">-- 请选择 --</option>
+							<option value="0">0首付</option>
+							<option value="1">首付999</option>
+							<option value="2">首付9999</option>
+						</select> 分期月数：<select>
+							<option value="">-- 请选择 --</option>
+							<option value="0">6个月</option>
+							<option value="1">12个月</option>
+							<option value="2">24个月</option>
+							<option value="3">36个月</option>
+						</select>
+					</p>
+					<!--商品价格-->
+					<!--订单备注-->
+					<p class="remarks">
+						订单备注：<input type="text" name="remarks" />
+					</p>
+					<!--订单备注-->
+					<!--电商平台-->
+					<p class="electronic-business-platform">电商平台：<img src="img/web-module-2-pic20.png" alt="web-module-2-pic20" width="604" height="38" />
+						
+					</p>
+					<!--电商平台-->
+				</div>
+				<div class="web-module-5-adv3">
+					<img src="img/web-module-2-pic6.png" alt="web-module-2-pic6" width="218" height="59">
+					<div class="borrow-btn">立即分期</div>
+				</div>
+			</div>
+		</div>
+		<!--模块五-->
+		<!--footer-->
+		<div class="footer">
+			<div class="footer-box">
+				<div class="foot_box1">
+					<p class="font-large">联系我们</p>
+					<p class="company-info">地址:  西安市高新区锦业路绿地蓝海大厦305室</p>
+					<p class="company-info">客服:  400-029-3995 | 029-68215451</p>
+					<p class="company-info">邮箱:  hr@fenqiday.com</p>
+				</div>
+				<div class="foot_box2">
+					<p class="font-large">帮助中心</p>
+					<p class="company-info">配送方式（配送范围）</p>
+					<p class="company-info">支付方式（购买流程）</p>
+					<p class="company-info">售后服务（意见投诉、常见问题、市场合作）</p>
+				</div>
+				<div class="foot_box3">
+					<p class="font-large">关于我们</p>
+					<p class="company-info">新浪微博</p>
+					<p class="company-info official-weixin">官方微信</p>
+					<div class="footer-border-line"></div>
+					<img src="img/qrcode-gongzhong.png" alt="qrcode-gongzhong" width="137" height="157" />
+				</div>
+				<div class="foot_box4">
+					<p class="font-num">400-029-3995</p>
+					<p class="company-info">在线时间  9:00 - 18:00</p>
+					<a href="#客服" class="server-win">在线客服</a>
+				</div>
+			</div>
+		</div>
+		<!--footer-->
+		<!--网站的备案信息-->
+		<div class="put-on-record">
+			<div class="put-on-record-box">Copyright (C)2002 - 2015 All rights reserved&nbsp;&nbsp;&nbsp;&nbsp;西安开图电子商务有限公司 版权所有&nbsp;&nbsp;&nbsp;&nbsp;陕ICP备13009196号-2
+			</div>
+		<!--网站的备案信息-->
+		<!--通栏固定定位-->
+		<div class="fix">
+			<img onmouseover="alert('IE版本 <= 8中IMG在最上层，需要单独设置');" src="img/fixed-pic.png" alt="fixed-pic" width="37" height="181" />
+			<a href="#APP二维码以及订阅公众号二维码" class="app-qrcode">
+			</a>
+			<a href="#在线客服" class="online-server protip" data-pt-title="在线客服" data-pt-trigger="hover" data-pt-delay-in=100 data-pt-delay-out=100 data-pt-gravity=true data-pt-scheme="black" data-pt-size='small' data-pt-position="left" data-pt-animate='flipInY'></a>
+			<a href="#反馈意见" class="feedback protip"data-pt-title="反馈意见" data-pt-trigger="hover" data-pt-delay-in=100 data-pt-delay-out=100 data-pt-gravity=true data-pt-scheme="black" data-pt-size='small' data-pt-position="left" data-pt-animate='flipInY'></a>
+			<a href="#回到顶部" class="back-top protip" data-pt-title="回到顶部" data-pt-trigger="hover" data-pt-delay-in=100 data-pt-delay-out=100 data-pt-gravity=true data-pt-scheme="black" data-pt-size='small' data-pt-position="left" data-pt-animate='flipInY'></a>
+			<img src="img/qrcode-app.png" alt="qrcode-app" width="282" height="172" class="qrcode-app-pic" />
+		</div>
+		<!--通栏固定定位-->
+		</div>
+		<!-- Include all compiled plugins (below), or include individual files as needed -->
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/web_top_list.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/banner.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/banner_action.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/web_module_3.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/web_module_4.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/footer.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/fixed.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/protip.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/protip_action.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/bg_auto.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+</html>

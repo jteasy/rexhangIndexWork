@@ -1,0 +1,125 @@
+/*
+ 	=== info ===	 
+ 	* Filename: web_module_2.css
+ 	* Decscription: web_module_2
+ 	* Version: 1.0.0(2015.11.04)
+ 	* Website: http://www.fenqiday.com
+ 	* Author: Rexhang (rexhang@outlook.com)
+ */
+.web-module-2{
+	width: 100%;
+	height: 318px;
+	margin-top: 30px;
+}
+.web-module-2-box{
+	width: 1200px;
+	height: 318px;
+	margin: 0 auto;
+}
+.web-module-2-adv1{
+	float: left;
+	width: 242px;
+	height: 318px;
+	background: url(../img/web-module-2-pic1.png) no-repeat;
+	text-align: center;
+}
+.web-module-2-adv1 img{
+	margin-top: 62px;
+}
+.web-module-2-adv1 .p-tit1{
+	font-size: 16px;
+	font-weight: bold;
+	color: #fff;
+	margin-top: 32px;
+}
+.web-module-2-adv1 .p-tit2{
+	font-size: 14px;
+	color: #fff;
+	margin-top: 16px;
+}
+.web-module-2-adv2{
+	float: left;
+	width: 712px;
+	height: 310px;
+	background-color: #fff;
+	margin: 8px 0 0 -10px;
+	overflow: hidden;
+}
+.web-module-2-adv2 .p-tit3{
+	height: 70px;
+	width: 712px;
+	line-height: 70px;
+	color: #666;
+	font-size: 16px;
+	padding-left: 26px;
+}
+hr{
+	width: 686px;
+	height: 0;
+	margin: 0;
+	padding: 0;
+	border: none;
+	border-bottom: 1px solid #E4E4E4;
+	margin-left: 26px;
+}
+.web-module-2-adv3{
+	width: 712px;
+	height: 240px;
+}
+.adv3-pic{
+	width: 237px;
+	height: 240px;
+	float: left;
+	text-align: center;
+	overflow: hidden;
+}
+.adv3-pic img{
+	margin-top: 50px;
+}
+.adv3-pic .p-tit4{
+	font-size: 16px;
+	color: #666;
+	margin-top: 20px;
+}
+.adv3-pic .p-tit5{
+	font-size: 14px;
+	color: #999CA5;
+	margin-top: 16px;
+}
+.web-module-2-adv4{
+	float: left;
+	width: 256px;
+	height: 310px;
+	margin-top: 8px;
+	text-align: center;
+	background-color: #fff;
+	position: relative;
+}
+.web-module-2-adv4 img{
+	margin-top: 126px;
+}
+.borrow-btn{
+	width: 200px;
+	height: 56px;
+	text-align: center;
+	line-height: 56px;
+	font-size: 18px;
+	color: #fff;
+	background-color: #FFAD29;
+	border-radius: 8px;
+	box-shadow: 0px 8px 0 0 #E38A04;
+	position: absolute;
+	left: 28px;
+	top: 112px;
+	cursor: pointer;
+	/*去除选中高亮*/
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    border: 0;
+    /*去除选中高亮*/
+}
+.borrow-btn:active{
+	box-shadow: 0px 0px 0 0 #E38A04;
+	top: 128px;
+}

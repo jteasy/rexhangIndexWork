@@ -1,0 +1,188 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+		<title>APP</title>
+		<link rel="stylesheet" type="text/css" href="../css/aui.css" />
+		<style type="text/css">
+			body {
+				background: #fff;
+			}
+			.ctn-color {
+				background: -webkit-linear-gradient(90deg,#289882 0%,#1AB798 50%,#22C7A7 100%);
+				width: 100%;
+				height: 50%;
+				text-align: center;
+			}
+			@-webkit-keyframes rexhang{
+			0%{transform:rotate(0deg);-webkit-transform:rotate(0deg);}
+			100%{transform:rotate(360deg);-webkit-transform:rotate(360deg);}
+			}
+			@keyframes rexhang{
+			0%{transform:rotate(0deg);-webkit-transform:rotate(0deg);}
+			100%{transform:rotate(360deg);-webkit-transform:rotate(360deg);}
+			}
+			.ctn-color img {
+				border-radius:50%;
+				margin-top:calc(30% - 45px);
+				-webkit-animation: rexhang infinite linear 5s;
+				animation: rexhang infinite linear 5s;
+			}
+			.peo p{
+				color: #eee;
+			}
+			.ctn-btm {
+				width: 90%;
+				margin: 0 auto;
+			}
+			.cen1 {
+				width: 100%;
+				display: -webkit-box;
+				-webkit-box-orient: horizontal;
+			}
+			.items {
+				-webkit-box-flex: 1;
+				margin: 10px 0;
+				border: 1px solid #fff;
+				text-align: center;
+				color: #333;
+				line-height: 18px;
+			}
+			.tits {
+				font-size: 14px;
+			}
+			.tits_2 {
+				font-size: 10px;
+				color: #8E8D8D;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="ctn-color">
+			<img src="../image/rexhang_new.png" width="20%" height="auto" alt="mylogo" />
+			<div class="peo">
+				<p>致敬下列工作人员的辛勤努力</p>
+				<p>开发者 --- 顾航</p>
+				<p>美术设计 --- 顾航</p>
+				<p>App设计 --- 顾航</p>
+				<p>UI设计 --- 顾航</p>
+				<p>.......</p>
+				
+			</div>
+			
+		</div>
+		<div class="ctn-btm">
+			<div class="cen1">
+				<div class="items">
+					<img src="../appicons/1.png" alt="1" width="50%" height="50%" />
+					<br>
+					<font class="tits">手机信息</font>
+					<div class="tits_2">
+						1秒变神机
+					</div>
+				</div>
+				<div class="items">
+					<img src="../appicons/2.png" alt="1" width="50%" height="50%" />
+					<br>
+					<font class="tits">装机必备</font>
+					<div class="tits_2">
+						没装这些还能叫手机？
+					</div>
+				</div>
+				<div class="items">
+					<img src="../appicons/3.png" alt="1" width="50%" height="50%" />
+					<br>
+					<font class="tits">免费wifi</font>
+					<div class="tits_2">
+						免费wifi，相连就连
+					</div>
+				</div>
+			</div>
+			<div class="cen1">
+				<div class="items">
+					<img src="../appicons/4.png" alt="1" width="50%" height="50%" />
+					<br>
+					<font class="tits">个性桌面</font>
+					<div class="tits_2">
+						炫酷桌面，变换任性
+					</div>
+				</div>
+				<div class="items">
+					<img src="../appicons/5.png" alt="1" width="50%" height="50%" />
+					<br>
+					<font class="tits">更换主题</font>
+					<div class="tits_2">
+						让手机华丽变身
+					</div>
+				</div>
+				<div class="items">
+					<img src="../appicons/6.png" alt="1" width="50%" height="50%" />
+					<br>
+					<font class="tits">游戏辅助</font>
+					<div class="tits_2">
+						从此高人一等
+					</div>
+				</div>
+			</div>
+			<div class="cen1">
+				<div class="items">
+					<img src="../appicons/7.png" alt="1" width="50%" height="50%" />
+					<br>
+					<font class="tits">截屏工具</font>
+					<div class="tits_2">
+						手机截屏随心所欲
+					</div>
+				</div>
+				<div class="items">
+					<img src="../appicons/8.png" alt="1" width="50%" height="50%" />
+					<br>
+					<font class="tits">手机省电</font>
+					<div class="tits_2">
+						让你不在孤独
+					</div>
+				</div>
+				<div class="items">
+					<img src="../appicons/9.png" alt="1" width="50%" height="50%" />
+					<br>
+					<font class="tits">字体替换</font>
+					<div class="tits_2">
+						最新炫酷字体
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="../script/api.js" ></script>
+	<script type="text/javascript"></script>
+	<script>
+		var itmDom_wid = $api.dom(".items");
+		var _width = $api.css(itmDom_wid, 'width');
+		var cenDom_wid = $api.dom(".cen1");
+		cenDom_wid.style.height = _width;
+	</script>
+	<script>
+		apiready = function() {
+			api.setRefreshHeaderInfo({
+				visible : true,
+				loadingImg : 'widget://image/rexhang_new.png',
+				bgColor : '#333',
+				textColor : '#fff',
+				textDown : '下拉刷新...',
+				textUp : '松开开始刷新...',
+				showTime : true
+			}, function(ret, err) {
+				//从服务器加载数据，完成后调用api.refreshHeaderLoadDone()方法恢复组件到默认状态
+				function ss() {
+					api.refreshHeaderLoadDone();
+					api.toast({
+						msg : '刷新成功',
+						duration : 1000,
+						location : 'bottom'
+					});
+				};
+				setTimeout(ss, 500);
+			});
+		};
+	</script>
+</html>

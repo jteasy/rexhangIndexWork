@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>我的伙伴</title>
+    <link rel="stylesheet" type="text/css" href="../../css/api.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/common.css" />
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            font-size: 12px;
+            font-family: '微软雅黑';
+        }
+        .titles{
+            width: 100%;
+            color: #999;
+            background: #D8D8D8;
+            height: 24px;
+            line-height: 24px;
+            text-align: center;
+        }
+        .container{
+            width: 100%;
+        }
+        .container .content{
+            margin: 10px 16px 0 16px;
+        }
+        .container .content .btn1{
+            height: 45px;
+            background: #0DA4FF;
+            font-size: 16px;
+            text-align: center;
+            line-height: 45px;
+            color: #fff;
+            border-radius: 4px; 
+        }
+        .mag{
+            margin-top: 14px;
+        }
+        #btns{
+            margin: 10px 16px 0 16px;
+        }
+        #btns .btn_sure{
+            height: 50px;
+            background: #C9C9C9;
+            font-size: 18px;
+            text-align: center;
+            line-height: 50px;
+            color: #fff;
+            border-radius: 4px;
+            margin-top: 54px;
+        }
+        #btns .btn_bg{
+            background: #0DA4FF;
+        }
+                .detail_infos{
+            width: 100%;
+            height: 80px;
+            background: #fff;
+            padding-top: 8px;
+        }
+        .bacs{
+            background: #000;
+            color: #fff;
+        }
+        .detail_infos .conts{
+            margin: 5px 12px 0 12px;
+            height: 72px;
+            position: relative;
+        }
+        .detail_infos .conts .user_logo{
+            height: 36px;
+            width: 36px;
+            border-radius: 4px;
+            background: #F2F2F2;
+            display: block;
+            float: left;
+            color: #999;
+            text-align: center;
+            line-height: 36px;
+        }
+        .name{
+            width: 60px;
+            height: 36px;
+            display: block;
+            float: left;
+            font-size: 14px;
+            margin-left: 12px;
+            color: #333;
+        }
+        .phone{
+            height: 36px;
+            display: block;
+            float: left;
+            font-size: 14px;
+            margin-left: 20px;
+            color: #333;
+            width: 50%;
+        }
+        .fonts1{
+            width: 50%;
+            height: 12px;
+            float: left;
+            line-height: 12px;
+            margin-left: 48px;
+            margin-top: -8px;
+            font-size: 12px;
+            color: #999;
+        }
+        .fonts2{
+            width: 80%;
+            font-size: 12px;
+            height: 12px;
+            float: left;
+            line-height: 12px;
+            margin-left: 48px;
+            margin-top: 8px;
+            color: #999;
+        }
+        .icons{
+            width: 12px;
+            height: 20px;
+            float: right;
+            margin-top: -16px;
+            text-align: center;
+            line-height: 21px;
+            background: url('../../image/icons_right.png') no-repeat;
+        }
+        /*name*/
+        .nameall{
+            width: 100%;
+            background: #fff;
+        }
+        .nameall .list{
+            margin: 12px 12px 12px 12px;
+        }
+        .nameall .list .bgcol{
+            background: #000;
+            color: #fff;
+        }
+        .aiyue{
+            height: 50px;
+        }
+        .friend_logo{
+            height: 36px;
+            width: 36px;
+            border-radius: 4px;
+            background: #F2F2F2;
+            display: block;
+            float: left;
+            color: #999;
+            text-align: center;
+            line-height: 36px;
+            margin-top: 7px;
+        }
+        .name_aiyue{
+            width: 36px;
+            height: 36px;
+            display: block;
+            float: left;
+            font-size: 14px;
+            margin-left: 12px;
+            color: #333;
+            line-height: 36px;
+            margin-top: 7px;
+        }
+        .phone_2{
+            height: 36px;
+            display: block;
+            float: left;
+            font-size: 14px;
+            margin-left: 20px;
+            color: #333;
+            width: 50%;
+            margin-top: 7px;
+            line-height: 36px;
+        }
+        .icons2{
+            width: 12px;
+            height: 20px;
+            float: right;
+            text-align: center;
+            line-height: 21px;
+            background: url('../../image/icons_right.png') no-repeat;
+            margin-top: 16px;
+        }
+        .brown-light{
+        	height:10px;
+        	background:rgb(239,239,242);
+        }
+    </style>
+</head>
+<body>
+    <div class="titles">需要您添加四位联系人，且其中第一位为直系亲属</div>
+    <div class="container">
+	   	<!--在此处添加用户提交后的信息-->
+
+	    <!--添加用户提交后的信息结束-->
+	     
+		
+        <div class="content">
+            <div class="btn1" id="contact_one" tapmode="" onclick="openWin('contact1')">添加联系人 1</div>         
+            <div class="btn1 mag" id="contact_two" tapmode="" onclick="openWin('contact2')">添加联系人 2</div>
+            <div class="btn1 mag" id="contact_three" tapmode="" onclick="openWin('contact3')">添加联系人 3</div>
+            <div class="btn1 mag" id="contact_four" tapmode="" onclick="openWin('contact4')">添加联系人 4</div>
+        </div>
+        <input type="hidden" id="btn-flag" value="0"/>
+        <div id="btns">
+            <div class="btn_sure" tapmode="btn_bg" onclick="submit()">确认</div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="../../script/api.js"></script>
+<script type="text/javascript">
+	//提交表单
+	var submit=function(){
+		var flag=$api.val($api.byId("btn-flag"));
+		if (flag==0){
+			return false;
+		}else{
+			api.execScript({
+	            name:'information',
+	            frameName:'information_body',
+	            script: 'reload();'
+            });
+			api.closeWin({
+				name:'friend'
+            });
+		}
+	}
+	var openWin=function($url){
+		api.openWin({
+	        name:$url,
+	        url: $url+'_header.html',
+	        bgcolor:"#ffffff",
+	        scrollToTop:true,
+	        animation:{
+	        	type:'movein',
+	        	subType:'from_right'
+	        }
+        });
+	}
+	//被远程执行，重新刷新当前页面的方法：
+	var reload=function(){
+		getFriendInfo();
+	}
+	apiready=function(){
+		getFriendInfo();
+	}
+	//获取用户已填写的信息：
+	var getFriendInfo=function(){
+		//优先获取本地存储的数据，如果本地存储的数据不存在，那么再去获取网络数据
+		
+		//获取结束
+		api.getPrefs({
+		        key:'userid'
+	        },function(ret,err){
+	        	if(ret){
+	        		if(api.connectionType=='none'){
+	        			api.toast({
+	                        msg:'无网络连接'
+                        });
+                        return false;
+	        		}
+	        		var vipid=ret.value;
+	        		api.ajax({
+	                    url:'http://192.168.0.188:8899/index.php/borrow/getcontact',
+	                    method:'post',
+	                    dataType:'json',
+	                    returnAll:true,
+	                    data:{values:{
+	                    	vipid:vipid	      
+	                    }}
+                    },function(ret,err){
+                    	if(ret.statusCode!=200){
+                    		api.showProgress({
+                    			animationType:'fade',
+                    			title:'加载中···',
+                    			text:'静等片刻···',
+                    			modal:false
+                            });
+                    	}else{
+                    		api.hideProgress();
+                    	}
+                    	if(ret.body.result==true){
+                    		//获取all_status
+                    		if(ret.body.data[0].info==1 && ret.body.data[0].school==1 && ret.body.data[0].photo==1 && ret.body.data[0].one_status==1 && ret.body.data[0].two_status==1 && ret.body.data[0].three_status==1 && ret.body.data[0].four_status==1){
+			                        	api.setPrefs({
+				                            key:'all_information_status',
+				                            value:'1'
+			                            });
+							}
+                    		//控制按钮颜色
+                    		if(ret.body.four_status==true && ret.body.three_status==true && ret.body.two_status==true && ret.body.one_status==true){
+                    			$api.attr($api.dom('.btn_sure'),'style','background:#0da4ff');
+                    			$api.val($api.byId('btn-flag'),1);
+                    		}else{
+                    			$api.attr($api.dom('.btn_sure'),'style','background:#c9c9c9');
+                    			$api.val($api.byId('btn-flag'),0);
+                    		}
+                    		//提交成功的信息
+                    		if(ret.body.four_status==true){
+								var appendstr="";
+		                    		    appendstr+='<div class="nameall" tapmode="bacs" onclick="openWin('+"'contact4'"+')">';
+		                    			appendstr+='<div class="list">';
+		                    			appendstr+=' <div class="aiyue">';
+		                    			appendstr+=' <span class="friend_logo">'+ret.body.four_relation+'</span>';
+		                    			appendstr+=' <span class="name_aiyue">'+ret.body.four_name+'</span>';
+		                    			appendstr+=' <span class="phone_2">'+ret.body.four_phone+'</span>';
+		                    			appendstr+=' <div class="icons2"></div>';
+		                    			appendstr+=' </div><p style="height:10px;background:rgb(239,239,242);margin-left:-12px;margin-right:-12px;"></p></div></div>';
+		                    			$api.attr($api.byId('contact_four'),'style','display:none');
+		                    			$api.prepend($api.dom('.container'),appendstr);
+							 }
+							if(ret.body.three_status==true){
+								var appendstr="";
+		                    		    appendstr+='<div class="nameall" tapmode="bacs" onclick="openWin('+"'contact3'"+')">';
+		                    			appendstr+='<div class="list">';
+		                    			appendstr+=' <div class="aiyue">';
+		                    			appendstr+=' <span class="friend_logo">'+ret.body.three_relation+'</span>';
+		                    			appendstr+=' <span class="name_aiyue">'+ret.body.three_name+'</span>';
+		                    			appendstr+=' <span class="phone_2">'+ret.body.three_phone+'</span>';
+		                    			appendstr+=' <div class="icons2"></div>';
+		                    			appendstr+=' </div><p style="height:10px;background:rgb(239,239,242);margin-left:-12px;margin-right:-12px;"></p></div></div>';
+		                    			$api.attr($api.byId('contact_three'),'style','display:none');
+		                    			$api.prepend($api.dom('.container'),appendstr);
+							}
+							if(ret.body.two_status==true){
+									var appendstr="";
+		                    		    appendstr+='<div class="nameall" tapmode="bacs" onclick="openWin('+"'contact2'"+')">';
+		                    			appendstr+='<div class="list">';
+		                    			appendstr+=' <div class="aiyue">';
+		                    			appendstr+=' <span class="friend_logo">'+ret.body.two_relation+'</span>';
+		                    			appendstr+=' <span class="name_aiyue">'+ret.body.two_name+'</span>';
+		                    			appendstr+=' <span class="phone_2">'+ret.body.two_phone+'</span>';
+		                    			appendstr+=' <div class="icons2"></div>';
+		                    			appendstr+=' </div><p style="height:10px;background:rgb(239,239,242);margin-left:-12px;margin-right:-12px;"></p></div></div>';
+		                    			$api.attr($api.byId('contact_two'),'style','display:none');
+		                    			$api.prepend($api.dom('.container'),appendstr);
+							}
+                    		if(ret.body.one_status==true){
+		                    		var appendstr="";
+		                    		    appendstr+='<div class="detail_infos" tapmode="bacs" tapmode="" onclick="openWin('+"'contact1'"+')">';
+		                    			appendstr+='<div class="conts">';
+		                    			appendstr+=' <span class="user_logo">'+ret.body.one_relation+'</span>';
+		                    			appendstr+=' <span class="name">'+ret.body.one_name+'</span>';
+		                    			appendstr+=' <span class="phone">'+ret.body.one_phone+'</span>';
+		                    			appendstr+=' <p class="fonts1">'+ret.body.one_company+'</p>';
+		                    			appendstr+=' <p class="fonts2">'+ret.body.one_address+'</p>';
+		                    			appendstr+=' <div class="icons"></div></div>';
+		                    			appendstr+=' <div class="brown-light"></div></div>';
+		                    			$api.attr($api.byId('contact_one'),'style','display:none');
+		                    			$api.prepend($api.dom('.container'),appendstr);
+		                    }
+					
+                    	}else{
+                    		api.toast({
+	                            msg:'页面刷新失败~'
+                            });
+                    	}
+                    });
+	        	}else{
+	        		api.toast({
+		                msg:'数据异常，再刷新一下吧！'
+	                });
+	        	}
+	        });
+	}
+</script>
+</html>

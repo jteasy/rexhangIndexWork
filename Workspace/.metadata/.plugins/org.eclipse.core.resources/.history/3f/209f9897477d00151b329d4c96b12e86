@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+		<title>title</title>
+		<link rel="stylesheet" type="text/css" href="../css/aui.css" />
+		<style>
+			body {
+			}
+		</style>
+	</head>
+	<body>
+		<div class="aui-content aui-content-padded" id="message-content">
+			<p class="aui-text-center history-date"  id="objs">
+				7-16 20:00
+			</p>
+			<div class="aui-chat-sender">
+				<div class="aui-chat-sender-avatar"><img src="../image/rexhang_new.png">
+				</div>
+				<div class="aui-chat-sender-cont">
+					<div class="aui-chat-right-triangle"></div>
+					<span>Hello!!</span>
+				</div>
+			</div>
+			<div class="aui-chat-receiver">
+				<div class="aui-chat-receiver-avatar"><img src="../image/tzxy.png">
+				</div>
+				<div class="aui-chat-receiver-cont">
+					<div class="aui-chat-left-triangle"></div>
+					<span>你好！</span>
+				</div>
+			</div>
+			<div class="aui-chat-sender">
+				<div class="aui-chat-sender-avatar"><img src="../image/rexhang_new.png">
+				</div>
+				<div class="aui-chat-sender-cont">
+					<div class="aui-chat-right-triangle"></div>
+					<span>在干嘛呢？</span>
+				</div>
+			</div>
+			<div class="aui-chat-receiver">
+				<div class="aui-chat-receiver-avatar"><img src="../image/tzxy.png">
+				</div>
+				<div class="aui-chat-receiver-cont">
+					<div class="aui-chat-left-triangle"></div>
+					<span>在coding呢，你呢？</span>
+				</div>
+			</div>
+			<div class="aui-chat-sender">
+				<div class="aui-chat-sender-avatar"><img src="../image/rexhang_new.png">
+				</div>
+				<div class="aui-chat-sender-cont">
+					<div class="aui-chat-right-triangle"></div>
+					<span id="chat_3">我才刚起床</span>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script>
+		var myDate = new Date();
+		var mytime = myDate.toLocaleTimeString();
+		document.getElementById("objs").innerText = mytime;
+	</script>
+	<script type="text/javascript" src="../script/api.js"></script>
+	<script>
+		apiready = function() {
+			// 打开表情输入框
+			openChat();
+			api.setRefreshHeaderInfo({
+				visible : true,
+				loadingImg : 'widget://image/rexhang_new.png',
+				bgColor : '#333',
+				textColor : '#fff',
+				textDown : '下拉刷新...',
+				textUp : '松开1s刷新...',
+				showTime : true
+			}, function(ret, err) {
+				//从服务器加载数据，完成后调用api.refreshHeaderLoadDone()方法恢复组件到默认状态
+				function loading_time() {
+					window.location.href = window.location.href;
+					api.refreshHeaderLoadDone();
+					api.toast({
+						msg : '刷新成功',
+						duration : 1000,
+						location : 'bottom'
+					});
+				};
+				setTimeout(loading_time, 666);
+			});
+		};
+
+		function openChat() {
+		var obj = api.require('UIChatBox');
+		obj.open({
+		placeholder : '',
+		maxRows : 4,
+		emotionPath : 'widget://image/emotion',
+		texts : {
+		recordBtn : {
+		normalTitle : '按住 说话',
+		activeTitle : '松开 结束'
+		}
+		},
+		styles : {
+		inputBar : {
+		borderColor : '#d9d9d9',
+		bgColor : '#f2f2f2'
+		},
+		inputBox : {
+		borderColor : '#B3B3B3',
+		bgColor : '#FFFFFF'
+		},
+		emotionBtn : {
+		normalImg : 'widget://image/icon-emoji.png'
+		},
+		extrasBtn : {
+		normalImg : 'widget://image/icon-menu.png'
+		},
+		keyboardBtn : {
+		normalImg : 'widget://image/icon-board.png'
+		},
+		speechBtn : {
+		normalImg : 'widget://image/icon-mic.png'
+		},
+		recordBtn : {
+		normalBg : '#c4c4c4',
+		activeBg : '#999999',
+		color : '#000',
+		size : 14
+		},
+		indicator : {
+		target : 'both',
+		color : '#c4c4c4',
+		activeColor : '#9e9e9e'
+		}
+		},
+		extras : {
+		titleSize : 10,
+		titleColor : '#a3a3a3',
+		btns : [{
+		title : '图片',
+		normalImg : 'widget://image/icon-pic.png',
+		activeImg : 'widget://image/icon-pic.png'
+		}, {
+		title : '拍照',
+		normalImg : 'widget://image/icon-video.png',
+		activeImg : 'widget://image/icon-video.png'
+		}]
+		}
+		}, function(ret) {
+		//点击附加功能面板
+		if (ret.eventType == 'clickExtras') {
+		alert("用户点击了第" + ret.index + "个按钮");
+		}
+		//点击发送按钮
+		if (ret.eventType == 'send') {
+		//					alert('输入的内容是：' + ret.msg);
+		// 找到发送者对象字符串
+		var senderDom =  "<div class='aui-chat-sender'><div class='aui-chat-sender-avatar'><img src='../image/rexhang_new.png'>"+
+		"</div><div class='aui-chat-sender-cont'><div class='aui-chat-right-triangle'></div>"+
+		"<span>"+ret.msg+"</span>"+
+		"</div>"+ 
+		"</div>";
+		var a_1 = document.createElement("div");
+		a_1.setAttribute("class",'aui-chat-sender a1');
+		var a_2 = document.createElement("div");
+		a_2.setAttribute("class",'aui-chat-sender-avatar a2');
+		var a_3 = document.createElement("div");
+		a_3.setAttribute("class",'aui-chat-sender-cont');
+		document.querySelector(".a1").appendChild(a_2);
+		document.querySelector(".a1").appendChild(a_3);
+		var img1 = document.createElement("img");
+		img1.src = "../image/rexhang_new.png";
+		document.querySelector(".a2").appendChild(img1);
+		var xa_1 = document.createElement("div");
+		xa_1.setAttribute("class",'aui-chat-right-triangle');
+		var xspan = document.createElement("span");
+		xspan.setAttribute("id",'chat_3');
+		xspan.innerText = ret.msg;
+		document.querySelector(".a3").appendChild(xa_1);
+		document.querySelector(".a3").appendChild(xspan);
+		// 找到父级元素
+		document.getElementById("message-content").appendChild(a_1);
+		}
+		});
+		}
+	</script>
+</html>

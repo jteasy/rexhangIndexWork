@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>Hello APP</title>
+    <link rel="stylesheet" type="text/css" href="./css/api.css" />
+    <link rel="stylesheet" type="text/css" href="./css/common.css" />
+</head>
+<body>
+
+</body>
+<script type="text/javascript" src="./script/api.js"></script>
+<script type="text/javascript">
+
+    apiready = function(){
+
+	var obj = api.require('arcMenu');
+obj.open({
+    type:1,
+    mainMenu:{
+        x:140,
+        y:360,
+        w:50,
+        h:30,
+        img: 'widget://res/arcMenue_centerImg.png',
+        imgLight: 'widget://res/arcMenue_centerImgLight.png'
+    },
+    items:[{ w:40,h:40,img:'widget://res/item1.png',imgLight:'widget://res/item1Light.png'},
+        {w:40,h:40,img:'widget://res/item2.png',imgLight:'widget://res/item2Light.png'},
+        {w:40,h:40,img:'widget://res/item3.png',imgLight:'widget://res/item3Light.png'},
+        {w:40,h:40,img:'widget://res/item4.png',imgLight:'widget://res/item4Light.png'},
+        {w:40,h:40,img:'widget://res/item5.png',imgLight:'widget://res/item5Light.png'},
+        {w:40,h:40,img:'widget://res/item6.png',imgLight:'widget://res/item6Light.png'}],
+    startAngle:0,
+    wholeAngle:180,
+    radius:100
+},function(ret,err){
+    api.alert({msg:ret.id+'*'+ret.index});
+});
+    };
+    
+</script>
+</html>

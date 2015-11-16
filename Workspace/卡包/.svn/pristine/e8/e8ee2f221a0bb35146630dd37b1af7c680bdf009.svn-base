@@ -1,0 +1,232 @@
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>Hello APP</title>
+    <style type="text/css">
+    	*{
+    		margin: 0;
+    		padding: 0;
+    	}
+    	body{
+    		font-size: 12px;
+    		font-family: "微软雅黑";
+    		background: rgb(129,204,231);
+    		height: 100%;
+    		overflow: hidden;
+    	}
+    	.content{
+    		-webkit-transition: all ease-in-out 0.3s;
+    		width: 90%;
+    		position: absolute;
+    		top: 20px;
+    		left: 5%;
+    	}
+    	.card2 , .card3 , .card4{
+    		-webkit-transition: all ease-in-out 0.3s;
+    	}
+    	.cnts , .c_2 , .c_3 , .c_4{
+    		-webkit-transition: all ease-in-out 0.3s;	
+    	}
+    	.cnts{
+    		margin: 0 20px 0 20px;
+    		background: #fff;
+    		border-radius: 10px;
+    		/*height: 300px;*/
+    		border: 1px solid #D8D8D8;
+    		position: relative;
+    	}
+    	.content .friendsss{
+    		position: absolute;
+    		/*left: calc(50% - 75px);*/
+    		/*top: 60px;*/
+    	}
+    	.flag{
+    		margin: 10px 0 0 0;
+    		width: 100px;
+    		height: 35px;
+    		float: left;
+    		position: relative;
+    	}
+    	.friends{
+    		float: left;
+    		margin: 18px 0 0 0;
+    		font-size: 16px;
+    		color: #666;
+    		/*padding-left: calc(50% - 100px);*/
+    	}
+    	.cosal{
+    		height: 50px;
+    		padding: 20px 10% 0 10%;
+    		position: absolute;	
+    		top: 320px;
+    	}
+    	.co_fonts{
+    		display: block;
+    		word-break: break-word;
+    		text-indent: 40px;
+    	}
+    	.one{
+    		-webkit-transition: all ease-in-out 0.3s;
+    		width: 94%;
+    		position: absolute;
+    		top: 24%;
+    		left: 3%;
+    	}
+    	.selectfalse{-moz-user-select: none; -o-user-select:none; -khtml-user-select:none;-webkit-user-select:none;-ms-user-select:none; user-select:none}
+    </style>
+</head>
+<body class="selectfalse">
+		<div class="content page1 one" tapmode="#" style="position:relative;">
+	   		<div class="cnts">
+	   			<div class="flag" style="width: 70px;">
+	   				<img src="image/pinks.png" alt="pink" width="70" height="35" />
+	   				<p style="position:absolute;top:9px;left:10px;color:#fff;">已填写</p>
+	   			</div>
+	   			<p class="friends">我的伙伴</p>
+	   			<div style="clear: both;"></div>
+	   			<img id="hb" class="friendsss" src="image/friends.png" alt="friends" width="75" height="75" />	
+				<p style="position:absolute;left:10%;bottom:12%;overflow:hidden;width:80%;max-height:66px;text-indent:20px;">我的小伙伴们都惊呆了</p>
+	   		</div>
+
+   		</div>
+
+		<div class="content myself" tapmode="#">
+	   		<div class="cnts">
+	   			<div class="flag" style="width: 70px;">
+	   				<img src="image/greens.png" alt="pink" width="70" height="35" />
+	   				<p style="position:absolute;top:9px;left:10px;color:#fff;">已填写</p>
+	   			</div>
+	   			<p class="friends personalinfo">个人信息</p>
+	   			<div style="clear: both;"></div>
+	   			<img class="friendsss" id="xx" src="image/personal.png" alt="friends" width="75" height="75" />	
+	   			<p style="position:absolute;left:10%;bottom:12%;overflow:hidden;width:80%;max-height:66px;text-indent:20px;">保密</p>
+	   		</div>
+   		</div>
+
+		<div class="content school" tapmode="#">
+	   		<div class="cnts">
+	   			<div class="flag" style="width: 70px;">
+	   				<img src="image/yellows.png" alt="pink" width="70" height="35" />
+	   				<p style="position:absolute;top:9px;left:10px;color:#fff;">已填写</p>
+	   			</div>
+	   			<p class="friends">学校信息</p>
+	   			<div style="clear: both;"></div>
+	   			<img class="friendsss" id="xxxx" src="image/school.png" alt="friends" width="75" height="75" />	
+	   			<p style="position:absolute;left:10%;bottom:12%;overflow:hidden;width:80%;max-height:66px;text-indent:20px;">对不起你的权限不足</p>
+	   		</div>
+   		</div>
+
+		<div class="content card" tapmode="#">
+	   		<div class="cnts">
+	   			<div class="flag" style="width: 70px;">
+	   				<img src="image/blues.png" alt="pink" width="70" height="35" />
+	   				<p style="position:absolute;top:9px;left:10px;color:#fff;">已填写</p>
+	   			</div>
+	   			<p class="friends zjxx">证件信息</p>
+	   			<div style="clear: both;"></div>
+	   			<img class="friendsss" id="bm" src="image/zj_info.png" alt="friends" width="75" height="75" />	
+	   			<p style="position:absolute;left:10%;bottom:12%;overflow:hidden;width:80%;max-height:66px;text-indent:20px;">保密</p>
+	   		</div>
+   		</div>
+   <div class="cosal">
+   	<span class="co_fonts"></span>
+   </div>
+
+   <div class="btn" style="margin:0;width:100%;height:50px;text-align:center;position:absolute;bottom:0;z-index:9999;font-size:16px;color:#fff;">
+   	<div class="btns" style="height:50px;line-height:50px;border-radius:6px;background:#0DA4FF;">确定</div>
+   </div>
+</body>
+<script type="text/javascript" src="./script/zepto.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+                        /*兼容性图片居中*/
+                        // margin 20+20
+                        var _width = ($(".card").width() - 42) / 2;
+                        var _width2 = ($(".cnts").width() - 42) / 2;
+
+                        var friLeft = _width  - 75;
+                        var friLeft2 = _width2  - 35;
+                        var dpi = screen.height;
+                        domH = dpi / 3;
+                     alert("dpi="+dpi);
+                        	// if(dpi <= 480){
+                        	// 	$(".cnts").height(domH / 2);
+                        	// } else{
+                        	// 	$(".cnts").height(domH);
+                        	// }
+                        	
+                        	if(dpi <= 480){
+                        		$(".cnts").height(domH / 1.5 + 28);
+                        		document.getElementById("hb").style.width = "40px";
+                        		document.getElementById("hb").style.height = "40px";
+                        		document.getElementById("xx").style.width = "40px";
+                        		document.getElementById("xx").style.height = "40px";
+                        		document.getElementById("xxxx").style.width = "40px";
+                        		document.getElementById("xxxx").style.height = "40px";
+                        		document.getElementById("bm").style.width = "40px";
+                        		document.getElementById("bm").style.height = "40px";
+                        		$(".friendsss ").css("margin-left","-20px");
+                        	} else{
+                        		$(".cnts").height(domH);
+                        		$(".friendsss ").css("margin-left","-37.5px");
+                        	}
+                        	
+                     	
+                     	// alert(domH);
+						
+//                         $(".friendsss ").css("left",friLeft + "px").css("top","60px");
+                           $(".friendsss ").css("left","50%").css("top","60px");
+                           
+
+//                         $(".friendsss ").css("margin-left","-37.5px");
+
+                        //文字兼容
+                        $(".cnts").css("position","relative")
+                       $(".friends").css("position","absolute").css("left","50%").css("margin-left","-35px");
+                        /*兼容性图片居中*/
+		var h = document.documentElement.clientHeight,//浏览器可视高度
+			w = document.documentElement.clientWidth,//浏览器可视宽度
+			dir = 55 ,//定义每个卡包交替的差值
+			len = $(".content").length,//总共卡包的数量
+			scale = 0.9,//卡包比例
+			hw = $(".content").eq(0).width()*0.7,//初始化最底层的宽度
+			sw;//中间变量
+			$(window).resize(function(){
+                h = document.documentElement.clientHeight;//浏览器可视高度
+                w = document.documentElement.clientWidth;//浏览器可视宽度
+                init ();
+            });
+            init ();
+		/*初始化卡包布局 */
+		function init () {
+			sw = hw
+			var i = 3;
+			$(".content").each(function(){
+				if($(this).hasClass('one')){
+					$(this).attr("style","");
+				}else{
+					sw = sw / scale;
+					$(this).css({
+						overflow:'hidden',
+						height:55,
+						top: h - dir*(i)-50,
+						zIndex: len-i,
+						width:100-6*i+"%",
+                        left:3*i+"%"
+					});
+				i--;
+				};
+			});
+		};
+		//点击触发切换
+		$(".content").on("click",function() {
+			$(this).addClass('one').siblings().removeClass('one');
+			init();
+		});
+	});
+</script>
+</html>

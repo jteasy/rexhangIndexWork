@@ -1,0 +1,225 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>Hello APP</title>
+    <style type="text/css">
+    	*{
+    		margin: 0;
+    		padding: 0;
+    	}
+    	body{
+    		font-size: 12px;
+    		font-family: "微软雅黑";
+    		background: rgb(129,204,231);
+    		height: 100%;
+    		overflow: hidden;
+    	}
+    	.content{
+    		-webkit-transition: all ease-in-out 0.3s;
+    		width: 90%;
+    		
+    		position: absolute;
+    		top: 20px;
+    		left: 5%;
+    	}
+    	.card2 , .card3 , .card4{
+    		-webkit-transition: all ease-in-out 0.3s;
+    	}
+    	.cnts , .c_2 , .c_3 , .c_4{
+    		-webkit-transition: all ease-in-out 0.3s;	
+    	}
+    	.cnts{
+    		margin: 0 20px 0 20px;
+    		background: #fff;
+    		border-radius: 16px;
+    		height: 300px;
+    		box-shadow: 1px 1px 8px 1px #666666;
+    	}
+    	.flag{
+    		margin: 10px 0 0 0;
+    		width: 100px;
+    		height: 35px;
+    		float: left;
+    	}
+    	.friends{
+    		float: left;
+    		margin: 18px 0 0 0;
+    		font-size: 16px;
+    		color: #666;
+    		padding-left: calc(50% - 32px - 100px);
+    	}
+    	.cosal{
+    		height: 50px;
+    		padding: 20px 10% 0 10%;
+    	}
+    	.co_fonts{
+    		display: block;
+    		word-break: break-word;
+    		text-indent: 40px;
+    	}
+    	/*==*/
+    	.card2{
+    		width: 90%;
+    		margin: 0 auto;
+    		position: absolute;
+    		bottom: 0;
+    		left: 5%;
+    		z-index: 999;
+    	}
+    	.c_2{
+    		margin: 0 20px 0 20px;
+    		height: 60px;
+    		border-radius:  16px 16px 0 0;
+    		box-shadow: 1px 1px 8px 1px #666666;
+    		background: #fff;
+    	}
+    	.flag2{
+    		margin-top: 10px;
+    		width: 100px;
+    		height: 35px;
+    		float: left;
+    	}
+    	.zj_info{
+    		margin: 18px 0 0 0;
+    		font-size: 16px;
+    		color: #666;
+    		float: left;
+    		padding-left: calc(50% - 32px - 100px);
+    	}
+    	/*==*/
+    	.card3{
+    		width: 80%;
+    		margin: 0 auto;
+    		position: absolute;
+    		bottom: 60px;
+    		left: 10%;
+    		z-index: 998;
+    	}
+    	.c_3{
+    		margin: 0 20px 0 20px;
+    		height: 60px;
+    		border-radius:  16px 16px 0 0;
+    		box-shadow: 1px 1px 8px 1px #666666;
+    		background: #fff;
+    	}
+    	.flag3{
+    		margin-top: 10px;
+    		width: 100px;
+    		height: 35px;
+    		float: left;
+    	}
+    	.zj_info2{
+    		margin: 18px 0 0 0;
+    		font-size: 16px;
+    		color: #666;
+    		float: left;
+    		padding-left: calc(50% - 32px - 100px);
+    	}
+    	/*==*/
+    	.card4{
+    		width: 70%;
+    		margin: 0 auto;
+    		position: absolute;
+    		bottom: 120px;
+    		left: 15%;
+    		z-index: 997;
+    	}
+    	.c_4{
+    		margin: 0 20px 0 20px;
+    		height: 60px;
+    		border-radius:  16px 16px 0 0;
+    		box-shadow: 1px 1px 8px 1px #666666;
+    		background: #fff;
+    	}
+    	.flag4{
+    		margin-top: 10px;
+    		width: 100px;
+    		height: 35px;
+    		float: left;
+    	}
+    	.zj_info3{
+    		margin: 18px 0 0 0;
+    		font-size: 16px;
+    		color: #666;
+    		float: left;
+    		padding-left: calc(50% - 32px - 100px);
+    	}
+    </style>
+</head>
+<body>
+
+		<div class="content">
+	   		<div class="cnts">
+	   			<div class="flag">
+	   				<img src="image/pinks.png" alt="pink" width="100" height="35" />
+	   			</div>
+	   			<p class="friends">我的伙伴</p>
+	   			<div style="clear: both;"></div>
+	   		</div>
+   		</div>
+
+   <div class="cosal">
+   	<span class="co_fonts">textindent40pxXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</span>
+   </div>
+
+   	<div class="card2" onclick="card2();">
+   		<div class="c_2">
+	   			<div class="flag2">
+	   				<img src="image/blues.png" alt="blue" width="100" height="35" />
+	   			</div>
+	   			<p class="zj_info">证件信息</p>
+	   			<div style="clear: both;"></div>
+	   	</div>
+   	</div>
+   
+   	<div class="card3">
+   		<div class="c_3">
+	   			<div class="flag3">
+	   				<img src="image/yellows.png" alt="yellow" width="100" height="35" />
+	   			</div>
+	   			<p class="zj_info2">学校信息</p>
+	   			<div style="clear: both;"></div>
+	   	</div>
+   	</div>
+
+   	<div class="card4">
+   		<div class="c_4">
+	   			<div class="flag4">
+	   				<img src="image/greens.png" alt="green" width="100" height="35" />
+	   			</div>
+	   			<p class="zj_info3">学校信息</p>
+	   			<div style="clear: both;"></div>
+	   	</div>
+   	</div>
+   
+   
+   
+   
+   
+   
+</body>
+<script type="text/javascript" src="./script/api.js"></script>
+<script type="text/javascript">
+	// 获取可视区域高度
+	var dss = document.documentElement.clientHeight;
+	var btmH = dss - 20 - 300;
+	function card2(){
+		var content2Dom = $api.dom(".card2");
+		var c_2Dom = $api.dom(".c_2");
+		content2Dom.style.bottom = btmH+"px";
+		c_2Dom.style.height = "300px";
+		c_2Dom.style.borderRadius = "16px";
+		
+		// 我的伙伴
+		var contentDom = $api.dom(".content");
+		var cnts = $api.dom(".cnts");
+		contentDom.style.zIndex = "1000";
+		cnts.style.borderRadius = "16px 16px 0 0";
+		contentDom.style.top = btmH + 300 - 20 - 20 +"px";
+		cnts.style.height = "60px";
+	}
+</script>
+</html>

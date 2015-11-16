@@ -1,0 +1,394 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>Hello APP</title>
+    <link rel="stylesheet" type="text/css" href="./css/api.css" />
+    <link rel="stylesheet" type="text/css" href="./css/common.css" />
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            font-family: Arial,"微软雅黑";
+            background-color: #EFEFF2;
+        }
+        .topbar {
+            background: #0DA4FF;
+            height: 44px;
+            border-bottom: 1px solid #DDDFE3;
+            line-height: 44px;
+            text-align: center;
+            display: none;
+            color: #ffffff;
+            font-size:20px;
+            font-weight:bold;
+            position:relative;
+        }
+        .activebar {
+            display: block;
+        }
+        .circle{
+            height:7px;
+            width:26px;
+            background:url(image/circle.png) no-repeat;
+            background-position:50% 50%;
+            background-size:contain;
+            display:block;
+            position:absolute;
+            top:42%;
+            right:10px;
+        }
+        #content{
+            width: 100%;
+            height: 150px;
+            background: #fff;
+        }
+        #content .fonts_info{
+            width: 100%;
+            height: 70px;
+            line-height: 70px;
+            
+        }
+        #content .fonts_info .plan1{
+            font-size: 16px;
+            display: block;
+            color: #666;
+            float: left;
+            padding-left: 12px;
+        }
+        #content .fonts_info .plan2{
+            font-size: 14px;
+            display: block;
+            color: #999;
+            float: right;
+            padding-right: 12px;
+        }
+        #content .howMoney{
+            height: 16px;
+        }
+        #content .howMoney .mubs{
+            display: block;
+            height: 16px;
+            line-height: 16px;
+            font-size: 16px;
+            color: #666;
+            float: left;
+            text-indent: 50%;
+        }
+        #content .howMoney .yuan{
+            display: block;
+            height: 16px;
+            line-height: 16px;
+            font-size: 14px;
+            color: #999;
+            float: left;
+            padding-left: 8px;
+        }
+        #content .huakuai{
+            width: 100%;
+            height: 30px;
+            line-height: 25px;
+            text-align: center;
+        }
+        #content .huakuai .icons{
+            width: 30px;
+            height: 30px;
+            display: block;
+            border-radius: 50%;
+            border: 1px solid #333;
+            float: left;
+            margin-left: 12px;
+        }
+        #content .huakuai .icons2{
+            width: 30px;
+            height: 30px;
+            display: block;
+            border-radius: 50%;
+            border: 1px solid #333;
+            float: right;
+            margin-right: 12px;
+        }
+        input[type="range"] {
+                        background-color: #0DA4FF;
+                        width: 50%;
+                        -webkit-appearance: none;
+                        height:4px;
+                    }
+                    input[type="range"]::-webkit-slider-thumb {
+                        -webkit-appearance: none;
+                        cursor: pointer;
+                        height: 14px;
+                        width: 14px;
+
+                        transform: translateY(-4px);
+                        background: none repeat scroll 0 0 #0DA4FF;
+                        border-radius: 50%;
+                    }
+        #rangs{
+            position: relative;
+        }
+        #content_2{
+            width: 100%;
+            height: 150px;
+            background: #fff;
+            margin-top: 10px;
+        }
+        #content_2 .fonts_info_2{
+            width: 100%;
+            height: 70px;
+            line-height: 70px;
+            
+        }
+        #content_2 .fonts_info_2 .plan1_2{
+            font-size: 16px;
+            display: block;
+            color: #666;
+            float: left;
+            padding-left: 12px;
+        }
+        #content_2 .fonts_info_2 .plan2_2{
+            font-size: 14px;
+            display: block;
+            color: #999;
+            float: right;
+            padding-right: 12px;
+        }
+        #content_2 .howMoney_2{
+            height: 16px;
+        }
+        #content_2 .howMoney_2 .mubs_2{
+            display: block;
+            height: 16px;
+            line-height: 16px;
+            font-size: 16px;
+            color: #666;
+            float: left;
+            text-indent: 50%;
+        }
+        #content_2 .howMoney_2 .yuan_2{
+            display: block;
+            height: 16px;
+            line-height: 16px;
+            font-size: 14px;
+            color: #999;
+            float: left;
+            padding-left: 8px;
+        }
+        #content_2 .huakuai_2{
+            width: 100%;
+            height: 30px;
+            line-height: 25px;
+            text-align: center;
+        }
+        #content_2 .huakuai_2 .icons_2{
+            width: 30px;
+            height: 30px;
+            display: block;
+            border-radius: 50%;
+            border: 1px solid #333;
+            float: left;
+            margin-left: 12px;
+        }
+        #content_2 .huakuai_2 .icons2_2{
+            width: 30px;
+            height: 30px;
+            display: block;
+            border-radius: 50%;
+            border: 1px solid #333;
+            float: right;
+            margin-right: 12px;
+        }
+        input[type="range"] {
+            background-color: #0DA4FF;
+            width: 50%;
+            border: 0;
+            -webkit-appearance: none;
+            height:4px;
+        }
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            cursor: pointer;
+            height: 20px;
+            width: 20px;
+            border: 0;
+            transform: translateY(-4px);
+            background: none repeat scroll 0 0 #0DA4FF;
+            border-radius: 50%;
+        }
+        #rangs_2{
+            position: relative;
+        }
+        .list-all{
+            width: 100%;
+            height: 44px;
+            background: #fff;
+            text-indent: 12px;
+        }
+        .list-all .list_01{
+            line-height: 37px;
+            width: 100%;
+            height: 38px;
+            padding-top: 5px;
+        }
+        .list-all .list_01 .icons_3{
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: block;
+            float: left;
+            margin-left: 12px;
+            background: #999;
+        }
+        .list-all_2{
+            width: 100%;
+            height: 44px;
+            background: #fff;
+            text-indent: 12px;
+        }
+        .list-all_2 .list_01_2{
+            line-height: 37px;
+            width: 100%;
+            height: 38px;
+            padding-top: 5px;
+        }
+        .list-all_2 .list_01_2 .icons_3_2{
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: block;
+            float: left;
+            margin-left: 12px;
+            background: #999;
+        }
+        #bbtn{
+            width: 100%;
+            height: 50px;
+            margin-top: 20px;
+        }
+        #btns{
+            background: #0DA4FF;
+            color: #fff;
+            border-radius: 6px;
+            font-size: 18px;
+            line-height: 50px;
+            text-align: center;
+            margin-left: 12px;
+            margin-right: 12px;
+        }
+        #tex-1{
+            font-size: 14px;
+            color: #666;
+            padding: 10px 0 0 12px;
+        }
+        #tex-2{
+            font-size: 12px;
+            color: #999;
+            padding: 10px 0 10px 12px;
+        }
+    </style>
+</head>
+<body>
+    <div id="index" class="topbar  activebar">
+        天天分期
+        <i class="circle"></i>
+    </div>
+
+        <div id="content">
+            <p class="fonts_info">
+                <span class="plan1">您计划借多少钱</span>
+                <span class="plan2">最高可借8000元</span>
+            </p>
+            <p class="howMoney">
+                <span class="mubs">6000</span>
+                <span class="yuan">元</span>
+            </p>
+            <p class="huakuai">
+                <span class="icons"></span>
+                <input id="rangs" type="range" />
+                <span class="icons2"></span>
+            </p>
+            <span class="num_300" style="font-size:12px;color:#999;position:absolute;left:25%;">300</span>
+            <span class="num_8000" style="font-size:12px;color:#999;position:absolute;right:25%;">8000</span>
+        </div>
+        <!-- 2 -->
+        <div id="content_2">
+            <p class="fonts_info_2">
+                <span class="plan1_2">您计划分期多久</span>
+                <span class="plan2_2">最多可分12期</span>
+            </p>
+            <p class="howMoney_2">
+                <span class="mubs_2">6</span>
+                <span class="yuan_2">期</span>
+            </p>
+            <p class="huakuai_2">
+                <span class="icons_2"></span>
+                <input id="rangs_2" type="range" />
+                <span class="icons2_2"></span>
+            </p>
+            <span class="num_300_2" style="font-size:12px;color:#999;position:absolute;left:25%;">1</span>
+            <span class="num_8000_2" style="font-size:12px;color:#999;position:absolute;right:25%;">12</span>
+        </div>
+        <!-- 3 -->
+        <p class="moyinfo" style="height:22px;line-height:22px;">
+            <span style="font-size:12px;color:#999;text-indent:12px;">还款详情</span>
+        </p>
+        <div class="list-all">
+            <p class="list_01">
+                <span class="icons_3"></span>
+                <span class="kuanall" style="font-size:12px;color:#666;line-height:20px;">到期应还总金额</span>
+                <span class="ey" style="font-size:12px;float:right;margin-right:12px;text-indent:4px;color:#999;">元</span>
+                <span class="wjine" style="font-size:14px;color:#666;float:right;">6410.80</span>
+            </p>
+        </div>
+        <div class="list-all_2">
+            <p class="list_01_2">
+                <span class="icons_3_2"></span>
+                <span class="kuanall_2" style="font-size:12px;color:#666;line-height:20px;">您应该在该日期前还款</span>
+                <span class="ey_2" style="font-size:12px;float:right;margin-right:12px;text-indent:4px;color:#999;"></span>
+                <span class="wjine_2" style="font-size:14px;color:#666;float:right;">2016/02/15&nbsp;&nbsp;&nbsp;</span>
+            </p>
+        </div>
+        <!-- button -->
+        <div id="bbtn" style="background:#EFEFF2;">
+            <div id="btns">提交申请</div>            
+        </div>
+        <!-- read -->
+        <div style="width:100%;background:#EFEFF2;">
+            <p id="tex-1">分期费率说明</p>
+            <p id="tex-2">天天分期对每笔成功的借款收取0.2元/天/100元的平台服务费（含居间服务费和代收利息），其中居间服务费因手机验证、身份验证、银行卡……</p>
+        </div>
+</body>
+<script type="text/javascript" src="./script/api.js"></script>
+<script type="text/javascript">
+
+    apiready = function(){
+		console.log("Hello APICloud");
+
+        var header = $api.byId('header');
+        $api.fixStatusBar(header); 
+        var headerPos = $api.offset(header);
+        var main = $api.byId('main');
+        var mainPos = $api.offset(main);
+
+        api.openFrame({
+            name: 'main',
+            url: 'html/main.html',
+            bounces: true,
+            rect: {
+                x: 0,
+                y: headerPos.h,
+                w: headerPos.w,
+                h: mainPos.h
+            }
+        });
+    };
+</script>
+<script type="text/javascript">
+    var rangsDom = document.getElementById("rangs");
+    rangsDom.value = 60;
+</script>
+</html>

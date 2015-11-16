@@ -1,0 +1,92 @@
+/*
+ 	=== info ===	 
+ 	* Filename: animate-rotate.css
+ 	* Decscription: animate-rotate
+ 	* Version: 1.0.0(2015.11.10)
+ 	* Website: http://www.fenqiday.com
+ 	* Author: Rexhang (rexhang@outlook.com)
+ */
+
+@-webkit-keyframes rexhang-rotate {
+    0% {
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+     	-webkit-transform: rotate(360deg);
+     	-moz-transform: rotate(360deg);
+     	-ms-transform: rotate(360deg);
+     	-o-transform: rotate(360deg);
+     	transform: rotate(360deg);
+    }
+}
+@-moz-keyframes rexhang-rotate {
+    0% {
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+     	-webkit-transform: rotate(360deg);
+     	-moz-transform: rotate(360deg);
+     	-ms-transform: rotate(360deg);
+     	-o-transform: rotate(360deg);
+     	transform: rotate(360deg);
+    }
+}
+@-ms-keyframes rexhang-rotate {
+    0% {
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+     	-webkit-transform: rotate(360deg);
+     	-moz-transform: rotate(360deg);
+     	-ms-transform: rotate(360deg);
+     	-o-transform: rotate(360deg);
+     	transform: rotate(360deg);
+    }
+}
+@-o-keyframes rexhang-rotate {
+    0% {
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+     	-webkit-transform: rotate(360deg);
+     	-moz-transform: rotate(360deg);
+     	-ms-transform: rotate(360deg);
+     	-o-transform: rotate(360deg);
+     	transform: rotate(360deg);
+    }
+}
+keyframes rexhang-rotate {
+    0% {
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+     	-webkit-transform: rotate(360deg);
+     	-moz-transform: rotate(360deg);
+     	-ms-transform: rotate(360deg);
+     	-o-transform: rotate(360deg);
+     	transform: rotate(360deg);
+    }
+}
+.light-pic {
+    -webkit-animation: rexhang-rotate 6s linear 0s infinite;
+}

@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="将资源“账户/html/银行及金额.html”重命名为“bank.html”" description="重命名资源“银行及金额.html”" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="html/银行及金额.html" name="bank.html" stamp="1440406733610" updateReferences="true"/>&#x0A;<refactoring comment="将资源“账户/html/已绑定卡.html”重命名为“bindCard.html”" description="重命名资源“已绑定卡.html”" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="html/已绑定卡.html" name="bindCard.html" stamp="1440466992972" updateReferences="true"/>
+</session>

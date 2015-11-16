@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <title>学校地址选择</title>
+    <link rel="stylesheet" type="text/css" href="../../css/api.css"/>
+    <link rel="stylesheet" type="text/css" href="../../css/common.css">
+    <style>
+    	html, body {
+            height: 100%;
+            width: 100%;
+            font-family:arial;
+            background:transparent;
+        }
+        .topbar {
+            background: #0DA4FF;
+            height: 44px;
+            //border-bottom: 1px solid #DDDFE3;
+            line-height: 44px;
+            text-align: center;
+            color: #ffffff;
+            font-size:16px;
+            font-weight:bold;
+            position:relative;
+        }
+        .back-arrow{
+        	height:100%;
+        	width:26px;
+        	background:url(../../image/back.png) no-repeat;
+        	background-size:50%;
+        	background-position: 50%;
+        	display:block;
+        	position:absolute;
+        	top:0;
+        	left:5px;
+        }
+        #content{
+        	height:246px;
+        	width:100%;
+        	background-color:#fff;
+        }
+        #top{
+        	height:50%;
+        	width:100%;
+        }
+        .pull-left{
+        	float:left;
+        	margin-left:15px;
+        }
+        .pull-right{
+        	float:right;
+        	margin-right:15px;
+        }
+        
+    </style>
+</head>
+<body>
+	<div id="top" tapmode="" onclick="closeFrame()"></div>
+	 <header>
+        <div id="index" class="topbar">
+            <span class="pull-left" tapmode="" onclick="closeFrame()">取消</span>
+            <span class="pull-right" tapmode="" onclick="confirm()">确认</span>
+        </div>
+     </header>
+     <div id="content"></div>
+</body>
+<script type="text/javascript" src="../../script/api.js"></script>
+<script type="text/javascript">
+	var entrance_time="";  
+	apiready=function(){
+		var $header=$api.dom("header");
+		var rect_h=$api.offset($header).h;
+		var obj = api.require('customSelector');
+			obj.open({
+			        dataSource: [{
+			            title: "A",
+			            contents: [{
+			                title: "a",
+			                contents: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
+			            }]
+			        }, {
+			            title: "B",
+			            contents: ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j"]
+			        }, {
+			            title: "C",
+			            contents: ["1a", "2b", "3c", "4d", "5e", "6f", "7g", "8h", "9i", "10j"]
+			        }, {
+			            title: "D",
+			            contents: ["1t", "2t", "3t", "4t", "5t", "6t", "7t", "8t", "9t", "10t"]
+			        }, {
+			            title: "E",
+			            contents: ["1a", "2a", "3a", "4a", "5a", "6a", "7a", "8a", "9a", "10a"]
+			        }, {
+			            title: "F",
+			            contents: ["1f", "2f", "3f", "4f", "5f", "6f", "7f", "8f", "9f", "10f"]
+			        }, {
+			            title: "G",
+			            contents: ["1!", "2!", "3!", "4!", "5!", "6!", "7!", "8!", "9!", "10!"]
+			        }, {
+			            title: "H",
+			            contents: ["1th", "2th", "3th", "4th", "5th", "6th", "7th", "8th", "9th", "10th"]
+			        }, {
+			            title: "I",
+			            contents: ["one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten"]
+			        }, {
+			            title: "J",
+			            contents: ["壹", "貮", "叁", "肆", "伍", "陆", "柒", "捌", "玖", "拾"]
+			        }, {
+			            title: "K",
+			            contents: ["一", "二", "三", "四", "五", "六", "七", "八", "九", "十"]
+			        }]
+			    },
+			    function(ret, err) {
+			        var hour = ret.selects;
+			    }
+			);
+	}
+		//关闭窗口
+	var closeFrame=function(){
+		var obj=api.require('UICustomPicker');
+		obj.hide({id:0});//隐藏自定义选择框
+		api.closeFrame({
+	        name: api.frameName
+        });
+	}
+	//确认窗口
+	var confirm=function(){
+		var obj=api.require('UICustomPicker');
+		obj.hide({id:0});//隐藏自定义选择框
+		api.execScript({
+			name:'school',
+			frameName:'school_body',
+	        script: 'getExeVal("education","'+entrance_time+'")'
+        });
+		api.closeFrame({
+	        name: api.frameName
+        });
+	}
+</script>
+</html>

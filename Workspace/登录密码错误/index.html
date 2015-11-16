@@ -1,0 +1,146 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>Hello APP</title>
+    <link rel="stylesheet" type="text/css" href="./css/api.css" />
+    <link rel="stylesheet" type="text/css" href="./css/common.css" />
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background: -webkit-linear-gradient(#109EFF 0%,#33FFFF 75%);
+            background: linear-gradient(#109EFF 0%,#33FFFF 75%,);
+            font-size: 12px;
+            font-family: '微软雅黑',arial;
+        }
+        .shadow{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            right: 0;
+            background: #000;
+            /*透明*/
+            opacity: 0.5;
+            filter:alpha(opacity=50);
+        }
+        #loginWin{
+            width: 90%;
+            background: #fff;
+            position: absolute;
+            z-index: 1993;
+            border-radius: 6px;
+            left: 5%;
+            top: 45px;
+        }
+        .user_tt{
+            text-align: center;
+            height: 44px;
+            line-height: 44px;
+            border-radius: 6px 6px 0 0;
+            border-bottom: 1px solid #D8D8D8;
+            color: #333;
+            font-size: 14px;
+        }
+        .pas_tt{
+            height: 22px;
+            line-height: 22px;
+            border-radius: 6px;
+            color: #999;
+            font-size: 12px;
+            text-indent: 12px;
+            margin: 5px 5px;
+        }
+        #passs{
+            border: 1px solid #D8D8D8;
+            border-radius: 4px;
+            margin-left: 3%;
+            height: 44px;
+            width: 94%;
+            line-height: 44px;
+            font-size: 20px;
+            text-indent: 12px;
+            outline: none;
+        }
+        .no-sure{
+            margin-left: 3%;
+            height: 20px;
+            width: 94%;
+            line-height: 20px;
+            font-size: 12px;
+            color: #FF3300;
+            text-indent: 12px;
+        }
+        .sures{
+            width: 100%;
+            height: 44px;
+            margin-top: 10px;
+            border-top: 1px solid #D8D8D8;
+        }
+        .sures .isyes{
+            width: 49%;
+            height: 44px;
+            display: block;
+            text-align: center;
+            float: left;
+            line-height: 44px;
+            font-size: 14px;
+            color: #0DA4FF;
+            border-right: 1px solid #D8D8D8;
+        }
+        .sures .isno{
+            width: 49%;
+            line-height: 44px;
+            height: 44px;
+            text-align: center;
+            display: block;
+            float: right;
+            font-size: 14px;
+            color: #0DA4FF;
+        }
+    </style>
+</head>
+<body>
+    <div class="shadow"></div>
+    <div id="loginWin">
+        <p class="user_tt">天天分期账户：15229279778</p>
+        <p class="pas_tt">输入天天分期登录密码</p>
+        <input type="password" id="passs" value="天天分期账户：15229279778" />
+        <p class="no-sure">账户名和密码不匹配</p>
+        <div class="sures">
+            <a href="javascript:void(0);" class="isyes">确定</a>
+            <a href="javascript:void(0);" class="isno">取消</a>
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="./script/api.js"></script>
+<script type="text/javascript">
+
+    apiready = function(){
+		console.log("Hello APICloud");
+
+        var header = $api.byId('header');
+        $api.fixStatusBar(header); 
+        var headerPos = $api.offset(header);
+        var main = $api.byId('main');
+        var mainPos = $api.offset(main);
+
+        api.openFrame({
+            name: 'main',
+            url: 'html/main.html',
+            bounces: true,
+            rect: {
+                x: 0,
+                y: headerPos.h,
+                w: headerPos.w,
+                h: mainPos.h
+            }
+        });
+    };
+</script>
+</html>

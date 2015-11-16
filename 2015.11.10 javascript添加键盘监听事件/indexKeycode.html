@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="text" value="null" />
+	<script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+	<script>
+		$("input").keydown(function(e){
+		   if(e.keyCode == 83 && e.shiftKey && e.ctrlKey){
+		       alert('ctrl+shift+s---另存为');
+		   } else if(e.keyCode == 83 && e.ctrlKey){
+		   	alert('ctrl+s---保存');
+		   }
+		});
+	</script>
+</body>
+</html>

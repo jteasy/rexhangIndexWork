@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>pic</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<style type="text/css">
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	body{
+		font-size: 12px;
+		font-family: '微软雅黑';
+		background: #F2F2F2;
+	}
+	header{
+		text-align: center;
+		height: 60px;
+		line-height: 60px;
+		font-size: 18px;
+		font-weight: bold;
+		color: #fff;
+		background: #1890FF;
+	}
+	.conts{
+		height: 200px;
+		border-bottom: 1px solid #fff;
+		overflow: hidden;
+		position: relative;
+		background: #1890FF;
+	}
+	#all{
+		border: 0;
+		width: 100%;
+		height: 200px;
+		background: url('pic2.png') repeat-x;
+		background-position: 0px 0;
+		position: absolute;
+		top: 10px;
+	}
+	#all2{
+		border: 0;
+		width: 100%;
+		height: 200px;
+		background: url('pic2.png') repeat-x;
+		background-position: 100px 0;
+		position: absolute;
+		top: 16px;
+	}
+	#all3{
+		border: 0;
+		width: 100%;
+		height: 200px;
+		background: url('pic2.png') repeat-x;
+		background-position: 300px 0;
+		position: absolute;
+		top: 22px;
+	}
+	.num76{
+		font-size: 40px;
+		color: #fff;
+		font-weight: bold;
+		float: left;
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		height: 40px;
+		margin-left: -30px;
+		line-height: 40px;
+		margin-top: -16px;
+	}
+	.percent{
+		font-size: 16px;
+		color: #fff;
+		font-weight: bold;
+		height: 16px;
+		line-height: 16px;
+		float: left;
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		width: 32px;
+		margin-left: 22px;
+		margin-top: 4px;
+	}
+	.how{
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		bottom: 50%;
+		font-size: 18px;
+		color: #fff;
+		margin-left: -82px;
+		margin-top: 30px;
+	}
+	.content{
+		width: 100%;
+		height: 100px;
+		background: #88C5FF;
+	}
+	.con-1{
+		margin-left: 20px;
+		margin-right: 20px;
+		padding-top: 28px;
+	}
+	.con-1:after{
+		content:"";
+		clear: both;
+		display: block;
+	}
+	.con-fonts1{
+		height: 16px;
+		line-height: 16px;
+		display: block;
+		float: left;
+		color: #fff;
+		font-size: 14px;
+	}
+	.con-fonts2{
+		height: 16px;
+		line-height: 16px;
+		display: block;
+		font-size: 14px;
+		float: right;
+		color: #fff;
+	}
+	.con-fonts3{
+		height: 16px;
+		line-height: 16px;
+		display: block;
+		float: left;
+		color: #fff;
+		padding-top: 8px;
+		font-size: 14px;
+	}
+	.contents2{
+		width: 100%;
+		background: #fff;
+		margin-top: 16px;
+		position: relative;
+	}
+	.sels{
+		width: 12px;
+		height: 12px;
+		border-radius: 50%;
+		background: #7ADB91;
+		display: block;
+		position: absolute;
+		left: 13px;
+		top: 9px;
+	}
+	.sels2{
+		top: 87px;
+	}
+	.sels3{
+		top: 173px;
+	}
+	.sels4{
+		top: 319px;
+	}
+	.sels5{
+		top: 429px;
+	}
+	.sels6{
+		top: 539px;
+	}
+	.heights1{
+		position: absolute;
+		left: 17px;
+		top: 20px;
+		width: 4px;
+		height: 520px;
+		background: #7ADB91;
+	}
+	.heights2{
+		position: absolute;
+		left: 17px;
+		top: 20px;
+		width: 4px;
+		height: 154px;
+		background: #ccc;
+		z-index: 999;
+	}
+	.p-fonts{
+		font-size: 16px;
+		height: 30px;
+		line-height: 30px;
+		margin-left: 38px;
+		color: #CCC;
+	}
+	.p-fonts2{
+		color: #51BCFF;
+		margin-top: 8px;
+	}
+	.p-fonts3{
+		color: #666;
+		margin-top: 8px;
+	}
+	.backday{
+		font-size: 12px;
+		height: 46px;
+		line-height: 46px;
+		border: 1px solid #D8D8D8;
+		margin-left: 38px;
+		margin-right: 20px;
+		border-radius: 4px;
+		color: #ccc;
+		text-indent: 12px;
+	}
+	.backday2{
+		color: #666;
+	}
+	.backday3{
+		height: 70px;
+		color: #666;
+	}
+	.fons3{
+		margin-top: -20px;
+	}
+	#btns{
+	     width: 100%;
+	     margin-top: 10px;
+	}
+	#btns .btn{
+	     height: 50px;
+	     margin-left: 38px;
+	     margin-right: 20px;
+	     text-align: center;
+	     font-size: 18px;
+	     border-radius: 4px;
+	     background: #0DA4FF;
+	     color: #fff;
+	     line-height: 50px;
+	}
+</style>
+</head>
+<body>
+	<header>账单详情</header>
+	<div class="conts">
+		<div id="all"></div>
+    <div id="all2"></div>
+    <div id="all3"></div>
+    <div class="num76">76</div>
+    <span class="percent">%</span>
+    <div class="how">借款BT-1256完成度</div>	
+	</div>
+
+   <div class="content">
+   	<div class="con-1">
+   		<span class="con-fonts1">项目类型：天天有钱</span>
+   		<span class="con-fonts2">2015/02/14 — 2015/08/14</span>
+   		<br />
+   		<span class="con-fonts3">借款3000.00元，本息还款3588.00元，共6期</span>
+   	</div>
+   </div>
+
+   <div class="contents2">
+   	<!-- navtag -->
+   	<span class="sels" style="background:#ccc;"></span>
+   	<span class="sels sels2" style="background:#ccc;"></span>
+   	<span class="sels sels3"></span>
+   	<span class="sels sels4"></span>
+   	<span class="sels sels5"></span>
+   	<span class="sels sels6"></span>
+   	<div class="heights1"></div>
+   	<div class="heights2"></div>
+   	<!-- Period 5 -->
+   	<p class="p-fonts">第6期   还款356元</p>
+   	<div class="backday">本期还款日：2015/05/14</div>
+   	<!-- Period 5 -->
+   	<p class="p-fonts">第5期   还款356元</p>
+   	<div class="backday">本期还款日：2015/05/14</div>
+   	<!-- Period 4 -->
+   	<p class="p-fonts p-fonts2">第4期   还款356元</p>
+   	<div class="backday backday2">本期还款日：2015/05/14</div>
+
+   	<!-- btn -->
+   	<div id="btns">
+   	  <div class="btn">立即还款</div>
+   	</div>
+
+   	<!-- Period 3 -->
+   	<p class="p-fonts p-fonts3">第3期   还款356元</p>
+   	<div class="backday backday3">
+   		<P class="">正常还款</P>
+   		<p class="fons3">实际还款日：2015/05/14     &nbsp;&nbsp;本期还款日：2015/05/14</p>
+   	</div>
+
+
+
+   	<!-- Period 2 -->
+   	<p class="p-fonts p-fonts3">第2期   还款356元</p>
+   	<div class="backday backday3">
+   		<P class="" style="color:#FFAD29;">逾期 3 天          逾期罚金 8.544 元</P>
+   		<p class="fons3">实际还款日：2015/05/14     &nbsp;&nbsp;本期还款日：2015/05/14</p></p>
+   	</div>
+   	<!-- Period 1 -->
+   	<p class="p-fonts p-fonts3">第1期   还款356元</p>
+   	<div class="backday backday3">
+   		<P class="">正常还款</P>
+   		<p class="fons3">实际还款日：2015/05/14     &nbsp;&nbsp;本期还款日：2015/05/14</p></p>
+   	</div>
+
+
+   </div>
+    <script type="text/javascript">
+    	x = 0;
+			function init(){
+				var doms = document.getElementById("all");
+				var doms2 = document.getElementById("all2");
+				var doms3 = document.getElementById("all3");
+				x++;
+				if(x==200){
+					x = 1;
+					doms.style.transition = "linear all 1s";
+					doms2.style.transition = "linear all 1s";
+					doms3.style.transition = "linear all 1s";
+				}
+				doms.style.backgroundPosition = (x * 2 + "px" + " " + "0px");
+				doms2.style.backgroundPosition = (x * 3 + "px" + " " + "0px");
+				doms3.style.backgroundPosition = (x * 5 + "px" + " " + "0px");
+			}
+			setInterval(init,100);
+    </script>
+</body>
+</html>

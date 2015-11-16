@@ -1,0 +1,518 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>Hello APP</title>
+    <style type="text/css">
+    	*{
+    		margin: 0;
+    		padding: 0px;
+    	}
+    	body{
+    		font-family: '微软雅黑';
+    		font-size: 12px;
+    		background: #EAEAEC;
+    	}
+    	.now{
+    		width: 100%;
+    		padding: 14px 0;
+    		margin-top: 30px;
+    	}
+    	.paymoney{
+    		margin-left: 15px;
+    		height: 16px;
+    		line-height: 16px;
+    		font-size: 14px;
+    		color: #666;
+    	}
+    	.contents{
+    		width: 100%;
+    		background: #fff;
+    		padding-bottom: 14px;
+    		height: 84px;
+    	}
+    	.pleaseinput{
+    		font-size: 12px;
+    		color: #999;
+    		text-align: center;
+    		padding: 10px 0;
+    	}
+    	.pasput{
+    		margin: 0 15px;
+    		background: #F9F9F9;
+    		height: 50px;
+    		border: 1px solid #C9C9C9;
+    		border-radius: 4px;
+    		display: -webkit-box;
+    		-webkit-box-orient: horizontal;
+    	}
+    	.pas1{
+    		-webkit-box-flex: 1;
+    		border: 0;
+    		border-right: 1px solid #C9C9C9;
+    		text-align: center;
+    		height: 50px;
+    		line-height: 50px;
+    	}
+    	#mark1{
+    		border-radius: 4px 0 0 4px;
+    	}
+    	#mark6{
+    		border-right: 0;
+    	}
+    	#btns{
+    	     width: 100%;
+    	     margin-top: 20px;
+    	}
+    	#btns .btn{
+    	     height: 50px;
+    	     margin: 0 14px;
+    	     text-align: center;
+    	     font-size: 18px;
+    	     border-radius: 4px;
+    	     background: #0DA4FF;
+    	     color: #fff;
+    	     line-height: 50px;
+    	}
+    	.pls1{
+    		opacity: 0;
+    	}
+    	input[name='hideput']{
+    		width: 1px;
+    		height: 1px;
+    		opacity: 0;
+    	}
+    	.keyboard{
+    		width: 100%;
+    		position: absolute;
+    		bottom: 0;
+    		background: #fff;
+    		opacity: 0;
+    		transition: all linear 1s;
+    		transform: translate(Z);
+    	}
+    	.oneboard{
+    		display: -webkit-box;
+    		-webkit-box-orient: horizontal;
+    	}
+    	.line01{
+    		-webkit-box-flex: 1;
+    		border-right: 1px solid #CCC;
+    		border-bottom: 1px solid #CCC;
+    		border-top: 1px solid #CCC;
+    		height: 54px;
+    		text-align: center;
+    		line-height: 54px;
+    		font-size: large;
+    		font-weight: bold;
+    	}
+
+    	.twoboard{
+    		display: -webkit-box;
+    		-webkit-box-orient: horizontal;
+    	}
+    	.line02{
+    		-webkit-box-flex: 1;
+    		border-right: 1px solid #CCC;
+    		border-bottom: 1px solid #CCC;
+    		height: 54px;
+    		text-align: center;
+    		line-height: 54px;
+    		font-size: large;
+    		font-weight: bold;
+    	}
+
+    	.threeboard{
+    		display: -webkit-box;
+    		-webkit-box-orient: horizontal;
+    	}
+    	.line03{
+    		-webkit-box-flex: 1;
+    		border-right: 1px solid #CCC;
+    		border-bottom: 1px solid #CCC;
+    		height: 54px;
+    		text-align: center;
+    		line-height: 54px;
+    		font-size: large;
+    		font-weight: bold;
+    	}
+
+    	.fourboard{
+    		display: -webkit-box;
+    		-webkit-box-orient: horizontal;
+    	}
+    	.line04{
+    		-webkit-box-flex: 1;
+    		border-right: 1px solid #CCC;
+    		border-bottom: 1px solid #CCC;
+    		height: 54px;
+    		text-align: center;
+    		line-height: 54px;
+    		font-size: large;
+    		font-weight: bold;
+    	}
+    	.active{
+    		background: #777;
+    	}
+    </style>
+</head>
+<body>
+	<div class="now">
+		<div class="paymoney">支付金额: 356.00元</div>
+	</div>
+
+	<div class="contents">
+		<p class="pleaseinput">请输入您的支付密码</p>
+		<div class="pasput" id="pasputdom">
+			<div class="pas1" id="mark1" /><span class="pls1 zlse">●</span></div>
+			<div class="pas1" id="mark2" /><span class="pls1 zlse">●</span></div>
+			<div class="pas1" id="mark3" /><span class="pls1 zlse">●</span></div>
+			<div class="pas1" id="mark4" /><span class="pls1 zlse">●</span></div>
+			<div class="pas1" id="mark5" /><span class="pls1 zlse">●</span></div>
+			<div class="pas1" id="mark6" /><span class="pls1 zlse">●</span></div>
+	</div>
+
+	<!-- btn -->
+	<div id="btns">
+	  <div class="btn">确定还款</div>
+	</div>
+
+	<!-- “ readonly ” 让input变为只读，这样就不会调起手机端的软键盘 -->
+	<input name="hideput" value="" type="number" class="otherput" id="hideput" readonly />
+	<input name="hideput" value="" type="number" class="otherput" id="hideput2" readonly />
+	<input name="hideput" value="" type="number" class="otherput" id="hideput3" readonly />
+	<input name="hideput" value="" type="number" class="otherput" id="hideput4" readonly />
+	<input name="hideput" value="" type="number" class="otherput" id="hideput5" readonly />
+	<input name="hideput" value="" type="number" class="otherput" id="hideput6" readonly />
+	<input name="hideput" value="" type="number" class="otherput" id="hideput7" readonly />
+
+	<!-- 键盘 -->
+
+	<div class="keyboard">
+		<div class="oneboard">
+			<div class="line01 yi" tapmode="active">1</div>
+			<div class="line01 er" tapmode="active">2</div>
+			<div class="line01 san" tapmode="active" style="border-right:0;">3</div>
+		</div>
+
+		<div class="twoboard">
+			<div class="line02 si" tapmode="active">4</div>
+			<div class="line02 wu" tapmode="active">5</div>
+			<div class="line02 liu" style="border-right:0;" tapmode="active">6</div>
+		</div>
+
+		<div class="threeboard">
+			<div class="line03 qi" tapmode="active">7</div>
+			<div class="line03 ba" tapmode="active">8</div>
+			<div class="line03 jiu" style="border-right:0;" tapmode="active">9</div>
+		</div>
+
+		<div class="fourboard">
+			<div class="line04 kong" style="background:#D4D7E0;">&nbsp;&nbsp;</div>
+			<div class="line04 ling" tapmode="active">0</div>
+			<div class="line04 tuige" style="border-right:0;background-color:#D4D7E0;position:relative;"><span style="background:url('image/back.png') no-repeat center;width:16px;height:12px;display:block;position:absolute;left: 50%;top: 50%;margin-left: -8px;margin-top: -6px;"></span>&nbsp;&nbsp;</div>
+		</div>
+	</div>
+		<script type="text/javascript" src="script/api.js"></script>
+		<script type="text/javascript">
+			/*点击输入框聚焦到场外输入框手机弹出数字键盘*/
+			var hideputDom = document.getElementById("pasputdom");
+			$api.addEvt(hideputDom, 'click', function(){
+				document.getElementById("hideput").focus();
+				var keyDom = $api.dom(".keyboard");
+				$api.css(keyDom,"opacity:1;");
+			});
+			/*键盘事件*/
+			marks = null;
+			/*1*/
+			var yiDom = $api.dom(".yi");
+			$api.addEvt(yiDom, 'click', function(){
+				marks = 1;
+
+				var keynum1 = marks;/*记录值*/	
+				if(keynum1 == 46){
+					var mark1Dom = $api.domAll('.pls1');
+					$api.css(mark1Dom[0],"opacity:0;");
+					var doms2 = this;	
+					$api.prev(doms2).focus();
+				}else{	
+					var mark1Dom = $api.domAll('.pls1');	
+					$api.css(mark1Dom[0],"opacity:1;");
+					var doms = $api.domAll(".otherput");	
+					doms[1].focus();
+
+				}
+
+
+			});
+			/*2*/
+			var erDom = $api.dom(".er");
+			$api.addEvt(erDom, 'click', function(){
+				marks = 2;
+
+				var keynum1 = marks;/*记录值*/	
+				if(keynum1 == 46){
+					var mark1Dom = $api.domAll('.pls1');
+					$api.css(mark1Dom[0],"opacity:0;");
+					var doms2 = this;	
+					$api.prev(doms2).focus();
+				}else{	
+					var mark1Dom = $api.domAll('.pls1');	
+					$api.css(mark1Dom[1],"opacity:1;");
+					var doms = $api.domAll(".otherput");	
+					doms[2].focus();
+				}
+
+			});
+			/*3*/
+			var sanDom = $api.dom(".san");
+			$api.addEvt(sanDom, 'click', function(){
+				marks = 3;
+
+				var keynum1 = marks;/*记录值*/	
+				if(keynum1 == 46){
+					var mark1Dom = $api.domAll('.pls1');
+					$api.css(mark1Dom[0],"opacity:0;");
+					var doms2 = this;	
+					$api.prev(doms2).focus();
+				}else{	
+					var mark1Dom = $api.domAll('.pls1');	
+					$api.css(mark1Dom[2],"opacity:1;");
+					var doms = $api.domAll(".otherput");	
+					doms[3].focus();
+				}
+
+			});
+			/*4*/
+			var siDom = $api.dom(".si");
+			$api.addEvt(siDom, 'click', function(){
+				marks = 4;
+
+				var keynum1 = marks;/*记录值*/	
+				if(keynum1 == 46){
+					var mark1Dom = $api.domAll('.pls1');
+					$api.css(mark1Dom[0],"opacity:0;");
+					var doms2 = this;	
+					$api.prev(doms2).focus();
+				}else{	
+					var mark1Dom = $api.domAll('.pls1');	
+					$api.css(mark1Dom[3],"opacity:1;");
+					var doms = $api.domAll(".otherput");	
+					doms[4].focus();
+				}
+
+			});
+			/*5*/
+			var wuDom = $api.dom(".wu");
+			$api.addEvt(wuDom, 'click', function(){
+				marks = 5;
+
+				var keynum1 = marks;/*记录值*/	
+				if(keynum1 == 46){
+					var mark1Dom = $api.domAll('.pls1');
+					$api.css(mark1Dom[0],"opacity:0;");
+					var doms2 = this;	
+					$api.prev(doms2).focus();
+				}else{	
+					var mark1Dom = $api.domAll('.pls1');	
+					$api.css(mark1Dom[4],"opacity:1;");
+					var doms = $api.domAll(".otherput");	
+					doms[5].focus();
+				}
+
+			});
+			/*6*/
+			var liuDom = $api.dom(".liu");
+			$api.addEvt(liuDom, 'click', function(){
+				marks = 6;
+
+				var keynum1 = marks;/*记录值*/	
+				if(keynum1 == 46){
+					var mark1Dom = $api.domAll('.pls1');
+					$api.css(mark1Dom[0],"opacity:0;");
+					var doms2 = this;	
+					$api.prev(doms2).focus();
+				}else{	
+					var mark1Dom = $api.domAll('.pls1');	
+					$api.css(mark1Dom[5],"opacity:1;");
+					var doms = $api.domAll(".otherput");	
+					doms[6].focus();
+				}
+
+			});
+			/*7*/
+			var qiDom = $api.dom(".qi");
+			$api.addEvt(qiDom, 'click', function(){
+				marks = 7;
+			});
+			/*8*/
+			var baDom = $api.dom(".ba");
+			$api.addEvt(baDom, 'click', function(){
+				marks = 8;
+			});
+			/*9*/
+			var jiuDom = $api.dom(".jiu");
+			$api.addEvt(jiuDom, 'click', function(){
+				marks = 9;
+			});
+			/*0*/
+			var lingDom = $api.dom(".ling");
+			$api.addEvt(lingDom, 'click', function(){
+				marks = 0;
+			});
+			/*tuige*/
+			var tuigeDom = $api.dom(".tuige");
+			$api.addEvt(tuigeDom, 'click', function(){
+				marks = -1;
+				
+			
+					
+					
+					for(var km = 5;km >= 0;km--){
+						var zsaa = $api.domAll(".zlse");
+						
+						$api.css(zsaa[km],"opacity:0;");
+					}
+
+				
+			});
+
+
+			/*CSS:active*/
+			var tuigeDom = $api.dom(".tuige");
+			$api.addEvt(tuigeDom, 'touchend', function(){
+				$api.css(tuigeDom,"background:#D4D7E0;");
+			});
+			$api.addEvt(tuigeDom, 'touchstart', function(){
+				$api.css(tuigeDom,"background:#777;");
+			});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+			// function showkey(){
+			// 	key = event.keyCode;
+			// 	var keynum1 = key;/*记录值*/	
+			// 	if(keynum1 == 46){
+			// 		var mark1Dom = $api.domAll('.pls1');
+			// 		$api.css(mark1Dom[0],"opacity:0;");
+			// 		var doms2 = this;	
+			// 		$api.prev(doms2).focus();
+			// 	}else{	
+			// 		var mark1Dom = $api.domAll('.pls1');	
+			// 		$api.css(mark1Dom[0],"opacity:1;");
+			// 		var doms = this;	
+			// 		$api.next(doms).focus();
+			// 	}
+			// }
+			// function showkey2(){
+			// 	key = event.keyCode;
+			// 	var keynum1 = key;/*记录值*/	
+			// 	if(keynum1 == 46){
+			// 		var mark1Dom = $api.domAll('.pls1');
+			// 		$api.css(mark1Dom[0],"opacity:0;");
+			// 		var doms2 = this;	
+			// 		$api.prev(doms2).focus();
+			// 	}else{	
+			// 		var mark1Dom = $api.domAll('.pls1');	
+			// 		$api.css(mark1Dom[1],"opacity:1;");
+			// 		var doms = this;	
+			// 		$api.next(doms).focus();
+			// 	}
+			// }
+			// function showkey3(){
+			// 	key = event.keyCode;
+			// 	var keynum1 = key;/*记录值*/	
+			// 	if(keynum1 == 46){
+			// 		var mark1Dom = $api.domAll('.pls1');
+			// 		$api.css(mark1Dom[1],"opacity:0;");
+			// 		var doms2 = this;	
+			// 		$api.prev(doms2).focus();
+			// 	}else{	
+			// 		var mark1Dom = $api.domAll('.pls1');	
+			// 		$api.css(mark1Dom[2],"opacity:1;");
+			// 		var doms = this;	
+			// 		$api.next(doms).focus();
+			// 	}
+			// }
+			// function showkey4(){
+			// 	key = event.keyCode;
+			// 	var keynum1 = key;/*记录值*/	
+			// 	if(keynum1 == 46){
+			// 		var mark1Dom = $api.domAll('.pls1');
+			// 		$api.css(mark1Dom[2],"opacity:0;");
+			// 		var doms2 = this;	
+			// 		$api.prev(doms2).focus();
+			// 	}else{	
+			// 		var mark1Dom = $api.domAll('.pls1');	
+			// 		$api.css(mark1Dom[3],"opacity:1;");
+			// 		var doms = this;	
+			// 		$api.next(doms).focus();
+			// 	}
+			// }
+			// function showkey5(){
+			// 	key = event.keyCode;
+			// 	var keynum1 = key;/*记录值*/	
+			// 	if(keynum1 == 46){
+			// 		var mark1Dom = $api.domAll('.pls1');
+			// 		$api.css(mark1Dom[3],"opacity:0;");
+			// 		var doms2 = this;	
+			// 		$api.prev(doms2).focus();
+			// 	}else{	
+			// 		var mark1Dom = $api.domAll('.pls1');	
+			// 		$api.css(mark1Dom[4],"opacity:1;");
+			// 		var doms = this;	
+			// 		$api.next(doms).focus();
+			// 	}
+			// }
+			// function showkey6(){
+			// 	key = event.keyCode;
+			// 	var keynum1 = key;/*记录值*/	
+			// 	if(keynum1 == 46){
+			// 		var mark1Dom = $api.domAll('.pls1');
+			// 		$api.css(mark1Dom[4],"opacity:0;");
+			// 		var doms2 = this;	
+			// 		$api.prev(doms2).focus();
+			// 	}else{	
+			// 		var mark1Dom = $api.domAll('.pls1');	
+			// 		$api.css(mark1Dom[5],"opacity:1;");
+			// 		var doms = this;	
+			// 		$api.next(doms).focus();
+			// 	}
+			// }
+			// function showkey7(){
+			// 	key = event.keyCode;
+			// 	var keynum1 = key;/*记录值*/
+			// 	if(keynum1 == 46){
+			// 		var mark1Dom = $api.domAll('.pls1');
+			// 		$api.css(mark1Dom[5],"opacity:0;");
+			// 		var doms2 = this;	
+			// 		$api.prev(doms2).focus();
+			// 	}
+			// }
+			// /*加值方法*/
+			// document.getElementById("hideput").onkeyup=showkey;
+			// document.getElementById("hideput2").onkeyup=showkey2;
+			// document.getElementById("hideput3").onkeyup=showkey3;
+			// document.getElementById("hideput4").onkeyup=showkey4;
+			// document.getElementById("hideput5").onkeyup=showkey5;
+			// document.getElementById("hideput6").onkeyup=showkey6;
+			// document.getElementById("hideput7").onkeyup=showkey7;
+		</script>
+</body>
+</html> 

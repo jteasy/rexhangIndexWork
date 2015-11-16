@@ -1,0 +1,153 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>Hello APP</title>
+    <link rel="stylesheet" type="text/css" href="./css/api.css" />
+    <link rel="stylesheet" type="text/css" href="./css/common.css" />
+    <style type="text/css" media="screen">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            font-size: 12px;
+            font-family: '微软雅黑';
+            background: #D8D8D8;
+        }
+        .container{
+            width: 100%;
+            background: #fff;
+            height: 53px;
+        }
+        .jiekuanDiv{
+            width: 50%;
+            height: 50px;
+            float: left;
+            color: #0DA4FF;
+        }
+        .jiekuanDiv2{
+            width: 50%;
+            height: 50px;
+            float: left;
+            color: #0DA4FF;
+            border-bottom: 3px solid #0DA4FF;
+        }
+        .dqjk{
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            border-right: 1px solid #D8D8D8;
+            margin-top: 10px;
+            font-size: 18px;
+        }
+        .lsjk{
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            border-left: 1px solid #D8D8D8;
+            margin-top: 10px;
+            font-size: 18px;
+            color: #666;
+        }
+        .contents{
+            width: 100%;
+            background: #fff;
+            margin-top: 14px;
+            padding-bottom: 50px;/*markbottom*/
+            position: relative;
+        }
+        .jiekuanbt{
+            margin-left: 38px;
+            font-size: 16px;
+            height: 16px;
+            line-height: 16px;
+            padding: 20px 0 6px 0;
+        }
+        /*mark mark mark*/
+        .c_conts{
+            font-size: 12px;
+            color: #666;
+            margin-left: 38px;
+            margin-right: 20px;
+            background: #F2F2F2;
+            border-radius: 6px;
+            padding: 10px 0 10px 10px;
+
+        }
+        .contents .round1{
+            width: 12px;
+            height: 12px;
+            display: block;
+            background: #7ADB91;
+            border-radius: 50%;
+            position: absolute;
+        }
+        .contents .round1{
+            left: 13px;
+            top: 24px;
+        }
+        .contents .round2{
+            left: 13px;
+            top: 133px;
+        }
+        .contents .round3{
+            left: 13px;
+            top: 243px;
+        }
+        .zgray{
+            position: absolute;
+            top: 24px;
+            left: 17px;
+            width: 4px;
+            height: 220px;
+            background: #7ADB91;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="jiekuanDiv">
+            <div class="dqjk">当前借款</div>
+        </div>
+        <div class="jiekuanDiv2">
+            <div class="lsjk">历史借款</div>
+        </div>
+    </div>
+    <!-- content area -->
+    <div class="contents">
+        <p class="jiekuanbt">借款BT-1256</p>
+        <div class="c_conts">
+           天天有钱<br />
+           2015/02/14 — 2015/08/14<br />
+           借款3000.00元，本息还款3588.00元 
+        </div>
+
+        <p class="jiekuanbt">借款BT-1256</p>
+        <div class="c_conts">
+           天天有钱<br />
+           2015/02/14 — 2015/08/14<br />
+           借款3000.00元，本息还款3588.00元 
+        </div>
+
+        <p class="jiekuanbt">借款BT-1256</p>
+        <div class="c_conts">
+           天天有钱<br />
+           2015/02/14 — 2015/08/14<br />
+           借款失败   审核未通过 
+        </div>
+        <!-- progress -->
+        <span class="round1"></span>
+        <span class="round1 round2"></span>
+        <span class="round1 round3"></span>
+        <div class="zgray"></div>
+        <div class="zgreen"></div>
+    </div>
+</body>
+<script type="text/javascript" src="./script/api.js"></script>
+<script type="text/javascript">
+    
+</script>
+</html>

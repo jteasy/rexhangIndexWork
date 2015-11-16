@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+		<title>TITLE</title>
+		<link rel="stylesheet" href="css/css_reset.css" />
+		<link rel="stylesheet" href="css/main.css" />
+	</head>
+
+	<body>
+		<button>11111</button>
+		<p>2</p>
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+		<script type="text/javascript">
+			$(function(){
+					$("button").click(function(){
+						
+						var vals = $("p").html();
+						$("p").html(vals + "1111");
+					});
+					init();
+					function init(){
+						var $fun1 = function(){
+							$("button").trigger("click");	
+						};
+						setInterval($fun1,500)
+					}
+			});
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>申请成功</title>
+    <link rel="stylesheet" type="text/css" href="./css/api.css" />
+    <link rel="stylesheet" type="text/css" href="./css/common.css" />
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            font-size: 12px;
+            font-family: '微软雅黑';
+            position: absolute;
+            bottom: 0;
+        }
+        .pics{
+            width: 100%;
+        }
+        .pics .bgs{
+            margin: 20px 20px 0 20px;
+            background: url('image/iconss.png') no-repeat;
+            height: 290px;
+            background-size: contain;
+            background-position: 50%;
+        }
+        .tijiao{
+            margin-left: 12px;
+            margin-right: 12px;
+            margin: 38px 12px 0 12px;
+            font-size: 16px;
+            color: #666; 
+        }
+        .btns{
+            width: 100%;
+        }
+        .btns .btn{
+            width: 100px;
+            height: 40px;
+            background: #0DA4FF;
+            color: #fff;
+            line-height: 40px;
+            font-size: 16px;
+            text-align: center;
+            border-radius: 20px;
+            margin: 38px auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="pics">
+        <div class="bgs"></div>
+        <p class="tijiao">您已成功提交借款申请，我们会在两个工作日内完成审核请保持电话畅通哦~</p>
+    </div>
+    <div class="btns">
+        <div class="btn">关闭</div>
+    </div>
+</body>
+<script type="text/javascript" src="./script/api.js"></script>
+<script type="text/javascript">
+
+    apiready = function(){
+		console.log("Hello APICloud");
+        var header = $api.byId('header');
+        $api.fixStatusBar(header); 
+        var headerPos = $api.offset(header);
+        var main = $api.byId('main');
+        var mainPos = $api.offset(main);
+    };
+</script>
+</html>

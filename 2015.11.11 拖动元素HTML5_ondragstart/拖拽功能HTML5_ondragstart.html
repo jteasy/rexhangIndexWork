@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>ondragstart</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.dragbox{
+			width: 600px;
+			height: 350px;
+			border: 1px solid #333;
+			text-align: center;
+			line-height: 350px;
+			cursor: move;
+		}
+	</style>
+</head>
+<body>
+	<div class="dragbox" draggable="true">
+		<p class="show">null</p>
+	</div>
+	<script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+	<script>
+		$(function(){
+			// 定义拖动的差值
+			offX = null;
+			offY = null;
+			/*第一个动作- 拖动开始 -*/
+			$(".dragbox").bind("dragstart",function(){
+				var $startOffset = $(".dragbox").offset();
+				var startLeft = $startOffset.left;
+				var startTop = $startOffset.top;
+				var x = event.clientX;
+				var y = event.clientY;
+				offX = x - startLeft;
+				offY = y - startTop;
+			});
+			/*第二个动作- 拖动中 -*/
+			$(".dragbox").bind("drag",function(){
+				var x = event.clientX;
+				var y = event.clientY;
+				$(".show").html("横向:"+x+"纵向:"+y);
+			}); 
+			/*第三个动作- 拖动结束 -*/
+			$(".dragbox").bind("dragend",function(x,y){
+				var x = event.clientX;
+				var y = event.clientY;
+				$(".show").html("横向:"+x+"纵向:"+y);
+				$(".dragbox").offset({
+					left:x - offX,
+					top:y - offY
+				});
+			});
+		});
+	</script>
+</body>
+</html>

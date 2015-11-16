@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="将资源“关于我们等三个/关于我们.html”重命名为“about.html”" description="重命名资源“关于我们.html”" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="关于我们.html" name="about.html" stamp="1442283003375" updateReferences="true"/>&#x0A;<refactoring comment="将资源“关于我们等三个/意见反馈.html”重命名为“feedback.html”" description="重命名资源“意见反馈.html”" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="意见反馈.html" name="feedback.html" stamp="1442283619906" updateReferences="true"/>
+</session>

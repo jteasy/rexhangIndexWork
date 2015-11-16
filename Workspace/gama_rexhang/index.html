@@ -1,0 +1,1035 @@
+﻿<!DOCTYPE html>
+<html >
+
+<head >
+<meta http-equiv = "Content-Type" content = "text/html; charset=UTF-8" >
+
+<meta name = "viewport" content = "width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" >
+<meta name = "apple-mobile-web-app-capable" content = "yes" >
+<meta name = "apple-mobile-web-app-status-bar-style" content = "black" >
+<meta name = "oupengmobile" content = "fullscreen,portrait,game" >
+<!--   <link rel="apple-touch-icon-precomposed" href="http://yzcs/ninjarunicon.png">-->
+<!--       <link rel="apple-touch-startup-image" href="http://yzcs/startup.png">-->
+
+<script language = "javascript" type = "text/javascript" src = "jsgamemin.js" ></script >
+<script language = "javascript" type = "text/javascript" src = "touchmin.js" ></script >
+<script language = "javascript" type = "text/javascript" src = "renzhe.min.js" ></script >
+
+<title >旺仔冲冲冲 - 旺旺小游戏</title >
+<meta name = "apple-mobile-web-app-capable" content = "yes" >
+<meta name = "apple-mobile-web-app-status-bar-style" content = "black" >
+
+<!--
+     <style type="text/css">
+         body {
+             margin: 0;
+             background-color: #434243;
+             color: #6A6A6A;
+         }
+         .bandiv {
+             float: left;
+             width: 100%;
+             background-color: #DBD1BB;
+         }
+         .bandiv div {
+             padding: 10px;
+             text-align: left;
+         }
+     </style>
+-->
+<style >
+/*
+            游戏结束画面
+        */
+
+* {
+    border: none;
+}
+
+#gameoverpad {
+    z-index: 99;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    color: #ffd700;
+    font-size: 1em;
+    background: rgba(0, 0, 0, 1);
+    display: none;
+    overflow: hidden;
+}
+
+#score_end tr {
+    width: 100%;
+}
+
+#score_end td {
+    /* width:100%; */
+}
+
+#score_end tr td > * {
+    text-align: center;
+}
+
+#input_score_bg {
+    /* background:url(./score/end/score_bg.png) no-repeat; */
+    /* background-size:auto 100%; */
+    height: 100%;
+    width: 100%;
+    text-align: center;
+}
+
+#btn_happy {
+    background: url(./score/end/btn_happy.png) no-repeat;
+    background-size: auto 100%;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+}
+
+#btn_baoshi {
+    background: url(./score/end/btn_baoshi.png) no-repeat;
+    background-size: auto 100%;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+}
+
+#btn_again {
+    background: url(./score/end/btn_again.png) no-repeat;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+}
+
+#btn_duihuan {
+    background: url(./score/end/btn_duihuan.png) no-repeat;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+}
+
+#btn_share { }
+
+#row0 {
+    height: 0%;
+    text-align: center;
+}
+
+#row1 {
+    height: 35%;
+    text-align: center;
+}
+
+#row2 {
+    height: 10%;
+    text-align: center;
+    padding-top: 6%;
+    padding-bottom: 4%;
+}
+
+#row3 {
+    height: 12%;
+    text-align: center;
+}
+
+#row4 {
+    height: 12%;
+    text-align: center;
+}
+
+#row5 {
+    height: 10%;
+    text-align: center;
+    padding: 5%;
+}
+
+#row6 {
+    height: 10%;
+    text-align: center;
+}
+
+#row7 {
+    height: 10%;
+    text-align: right;
+}
+
+/* *
+        * 排行榜按钮 */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a,
+img {
+    border: 0;
+}
+
+#menu {
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    z-index: 999;
+    /* background:url(ranklist/images/menubg.png) repeat-x; */
+}
+
+#menu ul {
+    margin: 0 auto;
+    list-style-type: none;
+    width: 90%;
+    max-width: 500px;
+    height: 100%;
+}
+
+#menu ul li {
+    float: left;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    position: relative;
+    font-size: 14px;
+}
+
+#menu ul li .line {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    z-index: 30;
+}
+
+#menu ul li .menu_li {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 20;
+    width: 100%;
+    height: 50px;
+    color: #454545;
+    /* background:url(ranklist/images/menubg.png) repeat-x; */
+    background: url(score/ranklist/scorepad_arraw_up.png) no-repeat;
+    background-size: 100% auto;
+    padding-left: 3%;
+    padding-right: 3%;
+}
+
+#menu ul li .img_front {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 30;
+    width: 100%;
+    height: 100%;
+}
+
+#menu ul li .img_front img {
+    width: 100%;
+    height: 100%;
+}
+
+#menu ul li span div {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+#menu ul li span a {
+    float: left;
+    width: 100%;
+    height: 43px;
+    line-height: 43px;
+    color: #454545;
+    text-decoration: none;
+}
+
+.footer_front {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    z-index: 888;
+    display: none;
+}
+
+#ranklist {
+    /* display:none; */
+}
+
+#ranklistpad {
+    z-index: 999;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 99%;
+    color: #ffd700;
+    background: transparent;
+    display: none;
+}
+
+.zhezhao {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 990;
+}
+
+.bg00 {
+    width: 100%;
+    height: 100%;
+}
+
+.logo00 {
+    width: 70%;
+    position: absolute;
+    left: 15%;
+    top: 10%;
+}
+
+.btn00-start,
+.btn00-more {
+    position: absolute;
+}
+
+.btn00-start {
+    width: 50%;
+    top: 48%;
+    left: 25%;
+}
+
+.btn00-more {
+    width: 40%;
+    top: 65%;
+    left: 30%;
+}
+
+.left00,
+.right00 {
+    position: absolute;
+    height: 100%;
+    width: auto;
+    top: 0;
+}
+
+.right00 {
+    right: 0;
+}
+
+.left00 {
+    left: 0;
+}
+
+.loading {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 990;
+}
+
+.loading_bg {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    /* 防止底部有白边 */
+}
+
+.loading_bg img {
+    width: 100% ! important;
+    height: 100% ! important;
+    overflow: hidden;
+}
+
+.loading_png {
+    width: 40%;
+    position: absolute;
+    left: 30%;
+    bottom: 200px;
+}
+</style >
+
+<style >
+    .menu {
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.6);
+        position: absolute;
+        top: 0;
+        left: 0;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        z-index: 20;
+        width: 100%;
+        color: #454545;
+        background: transparent ! important;
+        background-size: 100% auto;
+        padding-left: 3%;
+        padding-right: 3%;
+    }
+
+    .menu ul {
+        margin: 0 auto;
+        list-style-type: none;
+        width: 90%;
+        max-width: 500px;
+        height: 100%;
+        border-radius: 8px;
+    }
+
+    .menu li {
+        width: 100%;
+        height: 36px;
+        background-color: #fff;
+        border-radius: 8px;
+        line-height: 36px;
+        margin-bottom: 10px;
+        position: relative;
+        box-shadow: 1px 1px 3px 0px #666;
+    }
+
+    .menu li img {
+        height: 26px;
+        width: auto;
+        position: absolute;
+        left: 20px;
+        top: 2px
+    }
+
+    .menu li .guan1,
+    .menu li .guan2,
+    .menu li .guan3 {
+        left: -15px;
+        top: -15px
+    }
+
+    .menu li span {
+        margin-left: -30% ! important;
+        /*margin-left: 50px;*/
+        /*margin-left: 30%;*/
+        text-align: left;
+        font-weight: bold;
+        color: #904ac4;
+        max-width: 40%;
+        overflow: hidden;
+        display: inline-block
+    }
+</style >
+
+<link rel = "stylesheet" href = "ranklist/css/main.css" >
+
+<script src = "ranklist/js/jquery.min.js" ></script >
+<script src = "ranklist/js/QueryString.js" ></script >
+<script src = "ranklist/js/main.js" ></script >
+
+</head >
+
+<body onLoad = "main()" >
+
+<div class = "loading" >
+    <div class = "loading_bg" >
+        <img src = "ranklist/loading_bg.jpg" alt = "" >
+    </div >
+    <div class = "loading_png" >
+        <img src = "ranklist/loading.png" alt = "" >
+    </div >
+
+</div >
+
+<div style = "text-align:center;" >
+    <canvas id = "jsGameScreen" width = "652" height = "979" style = "width: 652px; height: 979px;" >
+        <div class = "bandiv" style = "font-size:0px; height:2px; margin:2px 0px 2px 0px;" ></div >
+        <div class = "bandiv" >
+            <div style = "text-align:center;" >
+                游戏规则
+            </div >
+        </div >
+        <div class = "bandiv" style = "font-size:0px; height:2px; margin:2px 0px 5px 0px;" ></div >
+        <div class = "bandiv" >
+            <div >
+                ******
+            </div >
+        </div >
+    </canvas >
+</div >
+
+<script language = "javascript" >
+    var userscore = 0;
+    var isEnd = false;
+    var mebtnopenurl = 'http://www.wcyx.cn/';
+    window.shareData = {
+        "imgUrl"      : "",
+        "timeLineLink": "",
+        "tTitle"      : "旺仔冲冲冲",
+        "tContent"    : "飞檐走壁动作游戏《旺仔冲冲冲》让你挑战反应能力极限！"
+    };
+
+    function goHome() {
+        window.location = mebtnopenurl;
+    }
+
+    function dp_submitScore(t) {
+        /*
+         if(t>500){
+         alert("不错哦！得了"+t+"分！");
+
+         }
+         */
+        userscore = t;
+        dp_share(t)
+    }
+
+    function showshare() {
+        document.getElementById("share").style.display = "";
+        //        $("#share").show();
+    }
+
+    function dp_share(t) {
+        document.title = window.shareData.tContent = descContent = "我在「旺仔俱乐部」旺仔冲冲冲中获得了" + t + "分，赶快加入旺仔俱乐部来挑战哦!";
+        //        document.getElementById("share").style.display="";
+        //        window.shareData.tTitle = document.title;
+        //TODO wkl 游戏结束画面
+        if (!isEnd) {
+            var rank = parseInt(t / 1000 * 100);
+            $("#rank").empty().html(rank);
+            $("#gameScore").empty().html(t);
+
+            setTimeout(
+                    function () {
+                        $("#gameoverpad").show();
+                    }
+                    ,
+                    700
+            );
+
+//            $("#gameoverpad").delay(5000).show();
+            sumitGameScore(t);
+            getMyRank(t);
+            isEnd = true;
+        }
+    }
+
+    function dp_Ranking() {
+        //alert("到更多");
+        window.location = mebtnopenurl;
+    }
+
+    function showAd() {
+    }
+
+    function hideAd() {
+    }
+    document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+        WeixinJSBridge.on('menu:share:appmessage', function (argv) {
+            WeixinJSBridge.invoke('sendAppMessage', {
+                "img_url": window.shareData.imgUrl,
+                "link"   : window.shareData.timeLineLink,
+                "desc"   : window.shareData.tContent,
+                "title"  : window.shareData.tTitle
+            }, function (res) {
+                document.location.href = mebtnopenurl;
+            })
+        });
+        WeixinJSBridge.on('menu:share:timeline', function (argv) {
+            WeixinJSBridge.invoke('shareTimeline', {
+                "img_url"   : window.shareData.imgUrl,
+                "img_width" : "640",
+                "img_height": "640",
+                "link"      : window.shareData.timeLineLink,
+                "desc"      : window.shareData.tContent,
+                "title"     : window.shareData.tTitle
+            }, function (res) {
+                document.location.href = mebtnopenurl;
+            });
+        });
+    }, false);
+</script >
+
+<div id = "scorepad" class = "bottom" style = "z-index: 9998; display: none;" >
+    <div class = "defen" >
+        <ul id = "top1score" >
+            <li class = "li1" >
+                <img src = "ranklist/images/1.png" alt = "" >
+                <span >&nbsp;</span >
+                <input type = "text" value = "100" >
+            </li >
+        </ul >
+    </div >
+</div >
+
+<div id = "ranklistpad" >
+    <div id = "listpad" class = "alert" >
+        <div class = "arrow-d" >
+            <img src = "ranklist/images/arrow-d.png" alt = "" >
+        </div >
+        <div class = "defen" >
+            <div class = "face" >
+                <img src = "ranklist/images/face.png" alt = "" >
+            </div >
+            <ul id = "rankdetail" >
+                <li class = "li1" >
+                    <img src = "ranklist/images/1.png" alt = "" >
+                    <span >xxx</span >
+
+
+                    <input type = "text" value = "100" >
+
+
+                    <img src = "ranklist/images/guan1.png" alt = "" class = "guan1" >
+
+
+                </li >
+
+
+                <li class = "li2" >
+                    <img src = "ranklist/images/2.png" alt = "" >
+                    <span >xxx</span >
+                   <input type = "text" >
+                    <img src = "ranklist/images/guan2.png" alt = "" class = "guan2" >
+                </li >
+                <li class = "li3" >
+                    <img src = "ranklist/images/3.png" alt = "" >
+                    <span >xxx</span >
+                    <input type = "text" >
+                    <img src = "ranklist/images/guan3.png" alt = "" class = "guan3" >
+                </li >
+                <li class = "li4" >
+                    <img src = "ranklist/images/4.png" alt = "" >
+                    <span >xxx</span >
+                    <input type = "text" >
+                </li >
+                <li class = "li5" >
+                    <img src = "ranklist/images/5.png" alt = "" >
+                    <span >xxx</span >
+                    <input type = "text" >
+                </li >
+                <li class = "li6" >
+                    <img src = "ranklist/images/6.png" alt = "" >
+                    <span >xxx</span >
+                    <input type = "text" >
+                </li >
+                <li class = "li7" >
+                    <img src = "ranklist/images/7.png" alt = "" >
+                    <span >xxx</span >
+                    <input type = "text" >
+                </li >
+                <li class = "li8" >
+                    <img src = "ranklist/images/8.png" alt = "" >
+                    <span >xxx</span >
+                    <input type = "text" >
+                </li >
+                <li class = "li9" >
+                    <img src = "ranklist/images/9.png" alt = "" >
+                    <span >xxx</span >
+                    <input type = "text" >
+                </li >
+                <li class = "li10" >
+                    <img src = "ranklist/images/10.png" alt = "" >
+                    <span >xxx</span >
+                   <input type = "text" >
+                </li >
+                <li class = "p" >
+                    <img src = "ranklist/images/defen.png" alt = "" >
+                </li >
+                <li class = "li11" >
+                    <img src = "ranklist/images/50.png" alt = "" >
+                    <span >xxx</span >
+                    <input type = "text" >
+                </li >
+            </ul >
+        </div >
+    </div >
+</div >
+
+
+<div id = "gameoverpad" style = "" >
+    <div id = "row0" style = "position: relative;" >
+    </div >
+    <div id = "row1" style = "position: relative;" >
+        <img id = "input_score_bg" src = "./score/end/score_bg.png"
+            style = "width: auto;
+             height: 100%;
+             z-index: 10;" >
+        <div id = "game_score"
+             style = "z-index: 11;
+             position: absolute;
+             top: 45%;
+             width: 100%;
+             left: 0;
+             color: #ffd700;
+            font-size: 3em;
+            font-weight: bolder;
+             " >
+            <span id = "gameScore" >100</span >分
+        </div >
+        <div class = "ttt1" style = "z-index: 11;
+             position: absolute;
+             top: 78%;
+             left: 0;
+             width: 100%;
+             font-size: 1.25em;" >
+            你已经击败了<span id = "rank" >90</span >%的人
+        </div >
+    </div >
+    <div id = "row2" style = "position: relative;" >
+        <div style = "display: block;  width: 100%; font-size: 1em; margin-top: -5px; font-weight: bold;" >恭喜你刚刚获得了：
+        </div >
+    </div >
+    <div id = "row3" >
+        <img id = "btn_happy" src = "./score/end/btn_happy.png"
+             style = "width: auto; height: 100%;" >
+    </div >
+    <div id = "row4" >
+        <img id = "btn_baoshi" src = "./score/end/btn_baoshi.png"
+             style = "width: auto; height: 100%;" >
+    </div >
+    <div id = "row5" style = "font-size: 1.25em;font-weight: bold;margin-top: -10px;margin-bottom: 40px;" >
+        太棒了！ <br >赶快去福利社看看！ <br >有奖品快去兑换！<br >
+    </div >
+    <div id = "row6" style = "width: 100%" >
+        <div id = "headerLeft" style = "float: left; text-align: center;width: 50%;" >
+            <img id = "btn_again" src = "./score/end/btn_again.png"
+                 style = "height: auto; width: 100%;" >
+        </div >
+        <div id = "headerRight" style = "float: right; text-align: center;width: 50%;" >
+            <img id = "btn_duihuan" src = "./score/end/btn_duihuan.png"
+                 style = "height: auto; width: 100%;" >
+        </div >
+    </div >
+    <div id = "row7" style = "width: 100%; position: absolute;
+    top:0;" >
+        <div style = "float: left; text-align: center;width: 50%;" >
+            &nbsp;
+        </div >
+        <div style = "float: right; text-align: center;width: 35%;
+        padding-right: 5%;" >
+            <img id = "btn_share" src = "./score/end/btn_share.png"
+                 style = "height: auto; width: 100%;padding-top: 5%; " >
+        </div >
+    </div >
+</div >
+
+<div id = share style = "display: none" >
+    <img width = 100% src = "./score/share.png" style = "position: fixed; z-index: 9999; top: 0; left: 0; display: "
+         ontouchstart = "document.getElementById('share').style.display='none';"
+         onclick = "document.getElementById('share').style.display='none';" />
+</div >
+
+<div style = "display: none;" >
+    <input id = "gameid" value = "2" type = "hidden" ><!-- 游戏ID -->
+    <input id = "playerid" value = "1" type = "hidden" ><!-- 玩家ID -->
+    <input id = "playername" value = "" type = "hidden" ><!-- 用户名 -->
+</div >
+<script type = "text/javascript" >
+    /**
+     * 排行榜界面
+     */
+
+    $(document).ready(function () {
+        $("#ranklist").show();
+    });
+
+
+    $('.bottom').click(function () {
+        $(".bottom").hide();
+        $("#ranklistpad").show();
+    });
+
+
+    $('#ranklistpad').click(function () {
+        $(".bottom").show();
+        $("#ranklistpad").hide();
+    });
+
+</script >
+
+
+<script >
+    /**
+     * 游戏结束画面
+     */
+
+    $(document).ready(function () {
+
+        // 再试一次
+        $("#btn_again").click(function () {
+            // TODO : 暂时用刷新代替重玩
+            console.log("再试一次");
+            window.location.href = window.location.href;
+            return false;
+        });
+
+        // 炫耀一下
+        $("#btn_share").click(function () {
+            showshare();
+            console.log("炫耀一下");
+            return false;
+        });
+
+        // 兑换红利
+        $("#btn_duihuan").click(function () {
+            console.log("兑换红利");
+            alert("前往兑换红利");
+            window.location = "http://www.baidu.com";
+            return false;
+        });
+    });
+</script >
+
+
+<script type = "text/javascript" >
+
+    // 数据保存接口
+    var ServerDomain = "http://wanyouxibu.com/g/wangzai";
+
+    /* 玩家ID */
+
+    var playerid = getQueryStringByName("id");
+
+    if (playerid != "") {
+        playerid = decodeURI(playerid);
+        $("#playerid").val(playerid);
+    } else {
+        $("#playerid").val("");
+    }
+
+
+    /* 用户名 */
+    var playername = getQueryStringByName("name");
+   if (playername != "") {
+       playername = decodeURI(playername);
+        $("#playername").val(playername);
+    } else {
+        $("#playername").val("");
+    }
+
+
+    //TODO 检查数据库是否存在次用户
+    // 如果不存在此用户，就登记
+
+    if (playerid != "" && playername != "") {
+
+        $.post(ServerDomain + "/wangdata.php",
+                {
+                    do        : "regPlayer",
+                    playername: decodeURI(playername),
+                    playerid  : decodeURI(playerid)
+                },
+                function (data) {
+
+                    if (data == "success")
+                        console.log("注册用户成功");
+                    else
+                        console.log("注册失败");
+
+                    console.log(data);
+                }
+        );
+
+
+        $("#playerid").val(playerid);
+        $("#playername").val(playername);
+    }
+
+
+</script >
+
+
+<script >
+    /**
+     * 获取排行榜数据
+     */
+
+    function getRanklistData() {
+        var h = 480;
+        var a = 480, b = 480, c = 480;
+        if (document.body.availHeight != null && document.body.availHeight != "undefined" && document.body.availHeight != "NaN" && document.body.availHeight > 0) {
+            a = document.body.availHeight;
+            console.log("\n availHeight : " + a);
+        }
+        if (document.body.clientHeight != null && document.body.clientHeight != "undefined" && document.body.availHeight != "NaN"  && document.body.clientHeight > 0) {
+            b= document.body.clientHeight;
+            console.log("\n clientHeight : " + b);
+        }
+        if (document.body.scrollHeight != null && document.body.scrollHeight != "undefined" && document.body.availHeight != "NaN"  && document.body.scrollHeight > 0) {
+            c = document.body.scrollHeight;
+            console.log("\n scrollHeight : " + c);
+        }
+
+        h = Math.min(a,b,c);
+        console.log("\n 最小高度 : " + h);
+
+        var listCount = 10;
+
+        // 判断屏幕高度
+        if (h < 400) {
+            listCount = 6;
+        } else if (h >= 400 && h < 480) {
+            listCount = 7;
+        } else if (h >= 480 && h < 500) {
+            listCount = 8;
+        } else if (h >= 500 && h < 560) {
+            listCount = 9;
+        } else if (h >= 560 && h < 660) {
+            listCount = 9;
+        } else if (h >= 670 && h < 730) {
+            listCount = 10;
+        } else if (h >= 730) {
+            listCount = 10;
+        }
+
+        console.log("\n listCount : " + listCount);
+
+        console.log("\n  h : " + h);
+
+        if ($("#playerid").val() != "") {
+            // 未登录后不显示当前排名
+
+            $.post(ServerDomain + "/wangdata.php",
+                    {
+                        do      : "top10",
+                        gameid  : $("#gameid").val(),
+                        playerid: $("#playerid").val(),
+                        count   : listCount
+                    },
+
+                    function (data) {
+                        var obj = eval(data);
+                        for (var i = 0; i < obj.length; i++) {
+                            $("#rankdetail").empty().append(obj[0].top10);
+                            $("#top1score").empty().append(obj[0].top1);
+                        }
+                        console.log("获取排行榜成功  无当前排名");
+                    }
+            );
+
+            $("#nomenber").hide();
+
+            $("#ismenber").show();
+        } else {
+            // 登录后显示当前排名
+            $.post(ServerDomain + "/wangdata.php",
+                    {
+                        do      : "top10norank",
+                        gameid  : $("#gameid").val(),
+                        playerid: $("#playerid").val(),
+                        count   : listCount
+                    },
+
+                    function (data, status) {
+                        var obj = eval(data);
+                        for (var i = 0; i < obj.length; i++) {
+                            $("#rankdetail").empty().append(obj[0].top10);
+                            $("#top1score").empty().append(obj[0].top1);
+                        }
+                        console.log("获取排行榜成功  无当前排名");
+                    }
+            );
+
+            $("#nomenber").show();
+            $("#ismenber").hide();
+        }
+    }
+
+
+    getRanklistData();
+
+    /**
+     * 保存游戏分数
+     */
+
+    function sumitGameScore(score) {
+
+        var happyV = parseInt(score / 10); // 开心值
+        var baoshiV = parseInt(score / 5); // 旺宝石
+
+        $.post(ServerDomain + "/wangdata.php",
+                {
+                    do        : "saveScore",
+                    gameid    : $("#gameid").val(),
+                    playerid  : $("#playerid").val(),
+                    score     : score,
+                    happyvalue: happyV,
+                    baoshi    : baoshiV
+                },
+
+                function (data, status) {
+                    console.log(data);
+                    if (data == "success") {
+                        console.log("save success !");
+                    } else {
+                        console.log("save fail !");
+                    }
+                }
+        );
+    }
+
+
+    /**
+     * 获取当前排名百分比
+     */
+
+    function getMyRank(score) {
+        if (parseInt(score) > 0) {
+            $.post(ServerDomain + "/wangdata.php",
+                    {
+                        do      : "getMyRank",
+                        gameid  : $("#gameid").val(),
+                        playerid: $("#playerid").val(),
+                        score   : score
+                    },
+                    function (data, status) {
+                        console.log("rank:" + data);
+                        $("#rank").empty().html(parseInt(data));
+                    }
+            );
+        } else {
+            $("#rank").empty().html(0);
+        }
+    }
+</script >
+
+<script >
+    /**
+     * 遮罩层事件
+     */
+
+    $(".zhezhao").hide();
+    $("#scorepad").hide();
+    $("#ranklistpad").hide();
+    $("#gameoverpad").hide();
+    setTimeout(
+            function () {
+                $(".loading").hide();
+                $(".zhezhao").show();
+                $("#scorepad").show();
+            }
+            , 3000
+    );
+
+    $("#btn_start").click(function () {
+        $(".zhezhao").hide();
+        $(".loading").hide();
+        $("#scorepad").hide();
+        $("#ranklistpad").hide();
+        $("#gameoverpad").hide();
+        return false;
+    });
+
+    $("#btn_more").click(function () {
+        window.location.href = "http://wanyouxibu.com";
+    });
+</script >
+
+</body >
+</html >

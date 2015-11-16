@@ -1,0 +1,121 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+		<meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+		<title>APP</title>
+		<link rel="stylesheet" type="text/css" href="../css/aui.css" />
+	</head>
+	<style type="text/css">
+		.active {
+			background-color: #f4f4f4;
+		}
+	</style>
+	<body>
+		<div class="aui-content">
+			<ul class="aui-list-view">
+				<li class="aui-list-view-cell" tapmode="active" onclick="openWin('demo_form')">
+					<a class="aui-arrow-right">用户登录</a>
+				</li>
+				<li class="aui-list-view-cell" tapmode="active" onclick="openWin('emoji_form')">
+					<a class="aui-arrow-right"><span class="aui-badge aui-badge-danger">您有新的消息</span>爱软聊</a>
+				</li>
+				<li class="aui-list-view-cell" tapmode="active" onclick="openWin('slt_form')">
+					<a class="aui-arrow-right">新闻信息</a>
+				</li>
+				<li class="aui-list-view-cell" tapmode="active" onclick="openWin('sel_form')">
+					<a class="aui-arrow-right">选择您的出行时间</a>
+				</li>
+				<li class="aui-list-view-cell" tapmode="active" onclick="alertCustom();">
+					<a class="aui-arrow-right">来自开发者的礼物</a>
+				</li>
+				<li class="aui-list-view-cell" tapmode="active" onclick="openWin('about_me')">
+					<a class="aui-arrow-right"><span class="aui-badge aui-badge-danger">new</span>开发人员信息</a>
+				</li>
+				<li class="aui-list-view-cell" tapmode="active" onclick="openWin('my_form')">
+					<a class="aui-arrow-right">我的设置</a>
+				</li>
+			</ul>
+		</div>
+	</body>
+	<script type="text/javascript" src="../script/api.js" ></script>
+	<script type="text/javascript" src="../script/aui-alert.js" ></script>
+	<script>
+	
+					/*给另外页面方法*/
+				var jsfun = 'funcGoto()';
+				api.execScript({
+					name : 'demo_form',
+					script : jsfun
+				});
+				/*给另外页面方法*/
+	</script>
+	<script type="text/javascript">
+		apiready = function() {
+			api.parseTapmode();
+			api.setRefreshHeaderInfo({
+				visible : true,
+				loadingImg : 'widget://image/rexhang_new.png',
+				bgColor : '#000',
+				textColor : '#fff',
+				textDown : '下拉刷新...',
+				textUp : '松开开始刷新...',
+				showTime : true
+			}, function(ret, err) {
+				//从服务器加载数据，完成后调用api.refreshHeaderLoadDone()方法恢复组件到默认状态
+				function ss() {
+					api.refreshHeaderLoadDone();
+					api.toast({
+						msg : '恭喜你！刷新成功了噢！',
+						duration : 1000,
+						location : 'bottom'
+					});
+				};
+				setTimeout(ss, 600);
+			});
+		}
+		function openWin(name) {
+			api.openWin({
+				name : '' + name + '',
+				url : '' + name + '_win.html',
+				bounces : false,
+				delay : 300,
+				animation : {
+					type : "movein", //动画类型（详见动画类型常量）
+					subType : "from_right",
+					duration : 300
+				}
+			});
+		};
+		function alertCustom() {
+			var html = '';
+			html += '<div style="width:60px; height:60px;float:left; padding-right:15px;"><img src="../image/rexhang_new.png" style="width:100%;border-radius:6px;" /></div>';
+			html += '<div><p>下拉页面可以刷新当前页面噢！</p><p>赶快试试看吧！</p></div>';
+			$aui.alert({
+				title : '收到来自开发者的消息',
+				content : html,
+				buttons : ['确认', '关闭'],
+				radius : 10,
+				titleColor : '#333',
+				contColor : '#333',
+				btnColor : '#5B1DEC'
+			}, function(ret) {
+				//处理回调函数
+				if (ret) {
+					if (ret == 0) {
+						api.alert({
+							title : '您的点击事件',
+							msg : '您点击了确认'
+						});
+					} else {
+						api.alert({
+							title : '您的点击事件',
+							msg : '您点击了取消'
+						});
+					}
+				}
+			})
+		}
+	</script>
+</html>

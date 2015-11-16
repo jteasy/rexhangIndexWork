@@ -1,0 +1,118 @@
+/*
+ 	=== info ===	 
+ 	* Filename: web_content_all.css
+ 	* Decscription: web_content_all
+ 	* Version: 1.0.0(2015.11.12)
+ 	* Website: http://www.fenqiday.com
+ 	* Author: Rexhang (rexhang@outlook.com)
+ */
+.content-all{
+	width: 100%;
+	height: 2000px;
+	margin-top: 14px;
+}
+.content-all-box{
+	width: 1200px;
+	height: 2000px;
+	margin: 0 auto;
+	border: 3px solid forestgreen;
+}
+.content-all-lef{
+	float: left;
+	width: 232px;
+	height: 2000px;
+	border: 2px solid royalblue;
+	box-sizing: border-box;
+}
+.content-all-right{
+	float: right;
+	width: 954px;
+	height: 2000px;
+	
+	border: 2px solid darkblue;
+	box-sizing: border-box;
+}
+.breadcrumbs{
+	width: 232px;
+	height: 44px;
+	text-align: left;
+	line-height: 44px;
+	background-color: #fff;
+	color: #999;
+	font-size: 14px;
+	text-indent: 14px;
+}
+.recommended{
+	width: 232px;
+	height: 44px;
+	text-align: left;
+	line-height: 44px;
+	background-color: #fff;
+	color: #999;
+	font-size: 14px;
+	font-weight: bold;
+	text-indent: 14px;
+	margin-top: 14px;
+	border-bottom: 1px solid #ccc;
+}
+.recommended-list{
+	width: 232px;
+	height: 286px;
+	float: left;
+	background-color: #fff;
+	text-align: center;
+	border-bottom: 1px dashed #ccc;
+}
+.recommended-list img{
+	margin-top: 28px;
+}
+.record{
+	width: 232px;
+	height: 44px;
+	float: left;
+	background-color: #fff;
+	margin-top: 28px;
+	line-height: 44px;
+}
+.browse{
+	float: left;
+	color: #999;
+	font-weight: bold;
+	font-size: 14px;
+	padding-left: 14px;
+}
+.clear-record{
+	float: right;
+	color: #0DA4FF;
+	font-size: 14px;
+	padding-right: 14px;
+}
+.record-list{
+	float: left;
+	width: 232px;
+	height: 96px;
+	background-color: #fff;
+	border-top: 1px solid #ccc;
+	border-bottom: 1px dashed #ccc;
+	text-align: left;
+}
+.record-list img{
+	margin: 12px 0 0 20px;
+	float: left;
+}
+.record-list p{
+	float: right;
+	width: 138px;
+	margin: 30px 20px 0 0;
+}
+
+
+
+
+
+
+
+
+
+
+

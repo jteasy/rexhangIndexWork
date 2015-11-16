@@ -1,0 +1,143 @@
+/*
+ 	=== info ===	 
+ 	* Filename: web_top_list.css
+ 	* Decscription: web_top_list
+ 	* Version: 1.0.0(2015.11.04)
+ 	* Website: http://www.fenqiday.com
+ 	* Author: Rexhang (rexhang@outlook.com)
+ */
+.web-lists {
+	width: 100%;
+	height: 450px;
+	overflow: hidden;
+	transition: all 1s linear;
+	-webkit-transition: all 1s linear;
+	-moz-transition: all 1s linear;
+	-ms-transition: all 1s linear;
+	-o-transition: all 1s linear;
+}
+.web-lists-banner {
+	width: 1200px;
+	height: 450px;
+	margin: 0 auto;
+}
+.left-lists {
+	float: left;
+	width: 232px;
+	height: 450px;
+	background-color: #808080;
+	position: relative;
+}
+.goods-list li {
+	height: 50px;
+	line-height: 50px;
+	width: 232px;
+	cursor: pointer;
+}
+.goods-list li:hover {
+	background-color: #FFAD29;
+}
+/*列表处理一项*/
+
+.goods-list li .goods-icons {
+	width: 19px;
+	height: 24px;
+	display: block;
+	background: url(../img/icon-list-mobile.png) no-repeat;
+	margin-top: 15px;
+	margin-left: 30px;
+	float: left;
+}
+.goods-list li .goods-name {
+	color: #fff;
+	font-size: 14px;
+	margin-left: 20px;
+}
+.goods-list li:hover .gicons-1 {
+	background: url(../img/icon-list-mobile-white.png) no-repeat;
+}
+.goods-list li:hover .gicons-2 {
+	background: url(../img/icon-list-mobile-white.png) no-repeat;
+}
+.goods-list li:hover .gicons-3 {
+	background: url(../img/icon-list-mobile-white.png) no-repeat;
+}
+.goods-list li:hover .gicons-4 {
+	background: url(../img/icon-list-mobile-white.png) no-repeat;
+}
+.goods-list li:hover .gicons-5 {
+	background: url(../img/icon-list-mobile-white.png) no-repeat;
+}
+.goods-list li:hover .gicons-6 {
+	background: url(../img/icon-list-mobile-white.png) no-repeat;
+}
+.goods-list li:hover .gicons-7 {
+	background: url(../img/icon-list-mobile-white.png) no-repeat;
+}
+.goods-list li:hover .gicons-8 {
+	background: url(../img/icon-list-mobile-white.png) no-repeat;
+}
+.goods-list li:hover .gicons-9 {
+	background: url(../img/icon-list-mobile-white.png) no-repeat;
+}
+.show-lists-box {
+	position: absolute;
+	width: 300px;
+	height: 450px;
+	left: 232px;
+	top: 0;
+	display: none;
+	border: 1px solid #999;
+	border-left: 0;
+	background-color: #fff;
+	z-index: 199;
+	opacity: 0.8;
+	filter: alpha(opacity=80);
+}
+.show-lists-box img {
+	float: left;
+	position: absolute;
+}
+.show-lists-box h5 {
+	font-weight: bold;
+	margin: 28px 0 0 20px;
+}
+.show-lists-box ul {
+	display: inline-block;
+	margin-left: 15px;
+}
+.show-lists-box ul li {
+	float: left;
+	font-size: 14px;
+	color: #999;
+	padding: 14px 5px 0 6px;
+	color: #666;
+	cursor: pointer;
+}
+.show-lists-box .tng-1 {
+	top: 17px;
+}
+.show-lists-box .tng-2 {
+	top: 67px;
+}
+.show-lists-box .tng-3 {
+	top: 117px;
+}
+.show-lists-box .tng-4 {
+	top: 167px;
+}
+.show-lists-box .tng-5 {
+	top: 217px;
+}
+.show-lists-box .tng-6 {
+	top: 267px;
+}
+.show-lists-box .tng-7 {
+	top: 317px;
+}
+.show-lists-box .tng-8 {
+	top: 367px;
+}
+.show-lists-box .tng-9 {
+	top: 417px;
+}

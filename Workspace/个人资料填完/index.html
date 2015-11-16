@@ -1,0 +1,131 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>Hello APP</title>
+    <link rel="stylesheet" type="text/css" href="./css/api.css" />
+    <link rel="stylesheet" type="text/css" href="./css/common.css" />
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            font-family: "微软雅黑",arial;
+            font-size: 12px;
+            position: absolute;
+            bottom: 0;
+        }
+        /*header*/
+        #headers{
+            width: 100%;
+            margin-top: 24px;
+        }
+        #headers .info_list{
+            margin-left: 12px;
+            margin-right: 12px;
+        }
+        #headers .info_list .list_1{
+            height: 54px;
+            border-bottom: 1px solid #D7D7D7;
+        }
+        #headers .info_list .list_1 .icon_1{
+            width: 30px;
+            height: 30px;
+            border: 1px solid #D7D7D7;
+            border-radius: 50%;
+            margin-top: 12px;
+            display: block;
+            float: left;
+        }
+        .names{
+            height: 54px;
+            outline: none;
+            float: left;
+            font-size: 14px;
+            text-indent: 14px;
+            width: 80%;
+            color: #333;
+            font-family: '微软雅黑';
+        }
+        #btns{
+            height: 50px;
+            background: #c9c9c9;
+            margin-left: 12px;
+            margin-right: 12px;
+            display: block;
+            color: #fff;
+            font-size: 16px;
+            text-align: center;
+            line-height: 50px;
+            margin-top: 54px;
+            border-radius: 6px;
+        }
+        .list_1 .tmt{
+            position: absolute;
+            left: 58px;
+            color: #999;
+        }
+    </style>
+</head>
+<body>
+    <div id="headers">
+        <div class="info_list">
+            <div class="list_1">
+                <span class="icon_1"></span>
+                <input type="text" value="杜拉拉" class="names" />
+                <span class="tmt">姓名</span>
+            </div>
+            <!-- list2 -->
+            <div class="list_1">
+                <span class="icon_1"></span>
+                <input type="text" value="612728199210130243" class="names" />
+                <span class="tmt">身份证号码</span>
+            </div>
+            <!-- list3 -->
+            <div class="list_1">
+                <span class="icon_1"></span>
+                <input type="text" value="西安市雁塔区文艺路156号" class="names" />
+                <span class="tmt">家庭地址</span>
+            </div>
+            <!-- list4 -->
+            <div class="list_1">
+                <span class="icon_1"></span>
+                <input type="text" value="1154879225@qq.com" class="names" />
+                <span class="tmt">电子邮箱</span>
+            </div>
+        </div>
+        <a href="javascript:void(0);" id="btns">确定</a>
+    </div>
+</body>
+<script type="text/javascript" src="./script/api.js"></script>
+<script type="text/javascript" src="script/jquery1.11.1.js"></script>
+<script type="text/javascript">
+
+    apiready = function(){
+		console.log("Hello APICloud");
+
+        var header = $api.byId('header');
+        $api.fixStatusBar(header); 
+        var headerPos = $api.offset(header);
+        var main = $api.byId('main');
+        var mainPos = $api.offset(main);
+
+        api.openFrame({
+            name: 'main',
+            url: 'html/main.html',
+            bounces: true,
+            rect: {
+                x: 0,
+                y: headerPos.h,
+                w: headerPos.w,
+                h: mainPos.h
+            }
+        });
+    };
+</script>
+<script type="text/javascript" src="script/ac.js">   
+</script>
+</html>

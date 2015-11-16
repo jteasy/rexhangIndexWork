@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <title>借款确认</title>
+    <link rel="stylesheet" type="text/css" href="../../css/api.css"/>
+    <link rel="stylesheet" type="text/css" href="../../css/common.css">
+    <style>
+    	html, body {
+            height: 100%;
+            width: 100%;
+            font-family:arial;
+        }
+        .topbar {
+            background: #0DA4FF;
+            height: 44px;
+            //border-bottom: 1px solid #DDDFE3;
+            line-height: 44px;
+            text-align: center;
+            color: #ffffff;
+            font-size:20px;
+            font-weight:bold;
+            position:relative;
+        }
+        .back-arrow{
+        	height:100%;
+        	width:30px;
+        	background:url(../../image/back.png) no-repeat;
+        	background-size:40%;
+        	background-position: 50%;
+        	display:block;
+        	position:absolute;
+        	top:0;
+        	left:0;
+        }
+        .back-arrows{
+            width: 30px;
+            left:30px;
+            background:url(../../image/close_x.png) no-repeat;
+            background-size: 48%;
+            background-position: 50%;
+        }
+        .acs{
+            background-color: #1476B1;
+        }
+    </style>
+</head>
+<body>
+	 <header>
+        <div id="index" class="topbar">
+            借款确认
+            <i class="back-arrow" tapmode="acs" onclick="closeWin()"></i>
+            <i class="back-arrow back-arrows" tapmode="acs" onclick=""></i>
+        </div>
+     </header>
+</body>
+<script type="text/javascript" src="../../script/api.js"></script>
+<script type="text/javascript">
+	apiready = function(){
+		var $header=$api.dom('header');
+		$api.fixIos7Bar($header);
+		var header_h=$api.offset($header).h;
+		api.setStatusBarStyle({
+        	style:'light'
+        });
+		api.openFrame({
+	        name: 'apply_body',
+	        url: 'apply_body.html',
+	        rect: {
+		        x:0,
+		        y:header_h,
+		        w:'auto',
+		        h:'auto'
+	        },
+        });
+		
+	};
+	var closeWin=function(){
+		api.closeWin({
+			name:api.winName
+        });
+	}
+</script>
+</html>

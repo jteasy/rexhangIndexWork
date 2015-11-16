@@ -1,0 +1,184 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>个人资料</title>
+    <link rel="stylesheet" type="text/css" href="../../css/api.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/common.css" />
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            font-family: "微软雅黑",arial;
+            font-size: 12px;
+            position: absolute;
+            bottom: 0;
+        }
+        /*header*/
+        #headers{
+            width: 100%;
+            margin-top: 24px;
+        }
+        #headers .info_list{
+            margin-left: 12px;
+            margin-right: 12px;
+        }
+        #headers .info_list .list_1{
+            height: 54px;
+            border-bottom: 1px solid #D7D7D7;
+        }
+        #headers .info_list .list_1 .icon_1{
+            width: 30px;
+            height: 30px;
+            /*border: 1px solid #D7D7D7;*/
+            border-radius: 50%;
+            margin-top: 12px;
+            display: block;
+            float: left;
+            background: url('../../image/bigpic.png') no-repeat;
+            background-position: 0 0;
+            background-size: 900px;
+        }
+        .names{
+            height: 54px;
+            outline: none;
+            float: left;
+            font-size: 14px;
+            text-indent: 14px;
+            width: 84%;
+        }
+        #btns{
+            height: 50px;
+            background: #0DA4FF;
+            margin-left: 12px;
+            margin-right: 12px;
+            display: block;
+            color: #fff;
+            font-size: 16px;
+            text-align: center;
+            line-height: 50px;
+            margin-top: 54px;
+            border-radius: 6px;
+        }
+    </style>
+</head>
+<body>
+    <div id="headers">
+        <div class="info_list">
+            <div class="list_1">
+                <span class="icon_1" style="background-position: -130px -81px;"></span>
+                <input type="text" placeholder="姓名" class="names" id="name"/>
+            </div>
+            <!-- list2 -->
+            <div class="list_1">
+                <span class="icon_1" style="background-position: -130px -131px;"></span>
+                <input type="text" placeholder="身份证号码" class="names" id="identify_no"/>
+            </div>
+            <!-- list3 -->
+            <div class="list_1">
+                <span class="icon_1" style="background-position: -130px -189px;"></span>
+                <input type="text" placeholder="家庭地址" class="names" id="home_address"/>
+            </div>
+            <!-- list4 -->
+            <div class="list_1">
+                <span class="icon_1" style="background-position: -130px -235px;"></span>
+                <input type="text" placeholder="电子邮箱" class="names" id="mail"/>
+            </div>
+        </div>
+        <a href="javascript:void(0);" id="btns">确定</a>
+        <input type="hidden" id="userid">
+    </div>
+</body>
+<script type="text/javascript" src="../../script/api.js"></script>
+<script type="text/javascript">
+	apiready=function(){
+		api.getPrefs({
+		         key:'userid'
+	        },function(ret,err){
+	             var userid=ret.value;
+	             $api.val($api.byId('userid'),userid);
+	             //首先加载获取用户的已经填写的信息，如果没有获取到，那么就不作处理
+				    api.ajax({
+				        url:'http://192.168.0.188:8899/index.php/borrow/getinfo',
+				        method:'post',
+				        dataType:'json',
+				        data:{values:{vipid:userid}}
+			        },function(ret,err){
+			        	if(ret.result==true){
+			        		$api.val($api.byId('name'),ret.name);
+			        		$api.val($api.byId('identify_no'),ret.identify_no);
+			        		$api.val($api.byId('home_address'),ret.home_address);
+			        		$api.val($api.byId('mail'),ret.mail);
+			        	}else if(!ret){
+			        		api.toast({
+	                            msg:err.msg
+                            });
+			        	}
+			        });
+	    });
+	    
+		//事件绑定
+		$api.addEvt($api.byId("btns"),"click",function(){
+			var name=$api.val($api.byId("name"));
+			var	identify_no=$api.val($api.byId("identify_no"));
+			var	home_address=$api.val($api.byId("home_address"));
+			var mail=$api.val($api.byId("mail"));
+			
+	        var userid=$api.val($api.byId("userid"));
+			if(name==''){api.toast({msg:'姓名不能为空！'})}
+			else if(identify_no==''){api.toast({msg:'身份证不能为空！'})}
+			else if(home_address==''){api.toast({msg:'家庭地址不能为空！'})}
+			else if(mail==''){api.toast({msg:'邮箱不能为空！'})}
+			else{
+				api.ajax({
+	                url:'http://192.168.0.188:8899/index.php/borrow/borrowadd',
+	                method:'post',
+	                dataType:'json',
+	                data:{values:{vipid:userid,
+	                			  amount:api.pageParam.amount,
+	                			  fqs:api.pageParam.fqs,
+	                			  name:name,
+	                			  identify_no:identify_no,
+	                			  home_address:home_address,
+	                			  mail:mail
+	                			  }
+	                	 }
+	                
+                },function(ret,err){
+                	if(ret.result==true || ret.result=='-400'){
+                		api.toast({
+	                        msg:'个人信息添加成功！',
+	                        location:'middle'
+                        });
+                        if(ret.data[0].info==1 && ret.data[0].school==1 && ret.data[0].photo==1 && ret.data[0].one_status==1 && ret.data[0].two_status==1 && ret.data[0].three_status==1 && ret.data[0].four_status==1){
+                        	api.setPrefs({
+	                            key:'all_information_status',
+	                            value:'1'
+                            });
+						}
+                        setTimeout(function(){
+                        	api.execScript({
+                        		name:'information',
+                        		frameName:'information_body',
+	                            script: 'reload();'
+                            });
+                        	api.closeToWin({
+	                            name: 'information'
+                            });
+                        },1000);
+                	}
+                	else if(!ret){
+		        		 api.alert({
+		           			 msg:('错误码：'+err.code+'；错误信息：'+err.msg+'网络状态码：'+err.statusCode)
+		       			 });
+		        	}
+                });
+			}
+		});
+	}  
+</script>
+</html>

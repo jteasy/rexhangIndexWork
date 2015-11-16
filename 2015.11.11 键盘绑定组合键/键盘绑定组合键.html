@@ -1,0 +1,26 @@
+
+<!-- 当你按下一个键时（还没松开），就会触发keydown事件；当你松开后，又触发了keypress事件。
+即是说keydown只要按下一个键就会触发，而keypress要按下并松开后才会触发 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>keyBind</title>
+</head>
+<body>
+	<p>你可以按下'f5' , 'ctrl+f5' , 'ctrl+shift+f5'</p>
+	<!-- 引入jQuery -->
+	<script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+	<!-- 引入键盘插件 -->
+	<script src="jquery.hotkeys.js"></script>
+	<script>
+		/*使用方法*/
+		jQuery(document).bind('keydown.f5', function (evt){alert('您按了f5'); return false; });
+
+		jQuery(document).bind('keydown.Ctrl_f5', function (evt){alert('您按了Ctrl + f5'); return false; });
+
+		jQuery(document).bind('keydown.Ctrl_Shift_f5', function (evt){alert('您按了Ctrl + Shift + f5'); return false; });
+
+	</script>
+</body>
+</html>

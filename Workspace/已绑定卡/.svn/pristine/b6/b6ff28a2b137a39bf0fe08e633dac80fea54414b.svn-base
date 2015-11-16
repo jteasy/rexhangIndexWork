@@ -1,0 +1,172 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>Hello APP</title>
+    <style type="text/css">
+    	*{
+    		margin: 0;
+    		padding: 0;
+    	}
+    	body{
+    		font-family: '微软雅黑';
+    		font-size: 12px;
+    		background: #EAEAEC;
+    	}
+    	.now{
+    		width: 100%;
+    		padding: 14px 0;
+    	}
+    	.paymoney{
+    		margin-left: 15px;
+    		height: 16px;
+    		line-height: 16px;
+    		font-size: 14px;
+    		color: #666;
+    	}
+    	.contents{
+    		width: 100%;
+    		background: #fff;
+    		padding-bottom: 14px;
+    	}
+    	.pleaseinput{
+    		font-size: 12px;
+    		color: #999;
+    		text-align: center;
+    		padding: 10px 0;
+    	}
+    	.pasput{
+    		margin: 0 15px;
+    		background: #F9F9F9;
+    		height: 50px;
+    		border: 1px solid #C9C9C9;
+    		border-radius: 4px;
+    	}
+    	.pas1{
+
+    		border: 0;
+    		border-right: 1px solid #C9C9C9;
+    		text-align: center;
+    		height: 50px;
+    		outline: none;
+    		float: left;
+
+    	}
+    	#mark1{
+    		border-radius: 4px 0 0 4px;
+    	}
+    	#mark6{
+    		border-right: 0;
+    	}
+    	#btns{
+    	     width: 100%;
+    	     margin-top: 20px;
+    	}
+    	#btns .btn{
+    	     height: 50px;
+    	     margin: 0 14px;
+    	     text-align: center;
+    	     font-size: 18px;
+    	     border-radius: 4px;
+    	     background: #0DA4FF;
+    	     color: #fff;
+    	     line-height: 50px;
+    	}
+    </style>
+</head>
+<body>
+	<div class="now">
+		<div class="paymoney">支付金额: 356.00元</div>
+	</div>
+
+	<div class="contents">
+		<p class="pleaseinput">请输入您的支付密码</p>
+		<div class="pasput" id="pasputdom">
+			<input class="pas1" id="mark1" name="psw" type="number" />
+			<input class="pas1" id="mark2" name="psw" type="number" />
+			<input class="pas1" id="mark3" name="psw" type="number" />
+			<input class="pas1" id="mark4" name="psw" type="number" />
+			<input class="pas1" id="mark5" name="psw" type="number" />
+			<input class="pas1" id="mark6" name="psw" type="number" />
+			<!-- <div class="pas1" id="mark1" ></div>
+			<div class="pas1" id="mark2" ></div>
+			<div class="pas1" id="mark3" ></div>
+			<div class="pas1" id="mark4" ></div>
+			<div class="pas1" id="mark5" ></div>
+			<div class="pas1" id="mark6" style="border-right: 0;" /></div> -->
+	</div>
+
+	<!-- btn -->
+	<div id="btns">
+	  <div class="btn">确定还款</div>
+	</div>
+		<script type="text/javascript" src="script/api.js"></script>
+		<script type="text/javascript">
+
+			window.onresize = putsize;
+			putsize();
+			function putsize(){
+				var pasputdom = document.getElementById("pasputdom");
+				var pasputdom_width = pasputdom.offsetWidth;
+				console.log(pasputdom_width);
+				var inputsel_width = pasputdom_width / 6;
+				console.log(inputsel_width);
+				var inputselDom = $api.domAll(".pas1");
+				for(var i = 0;i<inputselDom.length;i++){
+					inputselDom[i].style.width = inputsel_width - 2 + "px";
+				}
+			}
+			
+
+			function showkey(){
+			key = event.keyCode;
+			var keynum1 = key;/*记录值*/
+			var mark1Dom = document.getElementById("mark1");
+			document.getElementById('mark2').focus();	
+			}
+			document.getElementById("mark1").onkeyup=showkey;
+
+			function showkey2(){
+			key = event.keyCode;
+			var keynum1 = key;/*记录值*/
+			var mark1Dom = document.getElementById("mark2");
+			document.getElementById('mark3').focus();	
+			}
+			document.getElementById("mark2").onkeyup=showkey2;
+
+			function showkey3(){
+			key = event.keyCode;
+			var keynum1 = key;/*记录值*/
+			var mark1Dom = document.getElementById("mark3");
+			document.getElementById('mark4').focus();	
+			}
+			document.getElementById("mark3").onkeyup=showkey3;
+
+			function showkey4(){
+			key = event.keyCode;
+			var keynum1 = key;/*记录值*/
+			var mark1Dom = document.getElementById("mark4");
+			document.getElementById('mark5').focus();	
+			}
+			document.getElementById("mark4").onkeyup=showkey4;
+
+			function showkey5(){
+			key = event.keyCode;
+			var keynum1 = key;/*记录值*/
+			var mark1Dom = document.getElementById("mark5");
+			document.getElementById('mark6').focus();	
+			}
+			document.getElementById("mark5").onkeyup=showkey5;
+
+			function showkey6(){
+			key = event.keyCode;
+			var keynum1 = key;/*记录值*/
+			var mark1Dom = document.getElementById("mark4");
+			document.getElementById('mark6').blur();
+			}
+			document.getElementById("mark6").onkeyup=showkey6;
+		</script>
+</body>
+</html>

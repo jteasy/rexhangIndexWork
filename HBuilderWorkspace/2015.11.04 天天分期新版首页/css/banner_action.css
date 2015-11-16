@@ -1,0 +1,77 @@
+/*
+ 	=== info ===	 
+ 	* Filename: banner_action.css
+ 	* Decscription: banner_action
+ 	* Version: 1.0.0(2015.11.04)
+ 	* Website: http://www.fenqiday.com
+ 	* Author: Rexhang (rexhang@outlook.com)
+ */
+.right-banner {
+	width: 968px;
+	height: 450px;
+	float: right;
+	position: relative;
+	overflow: hidden;
+	z-index: 0;
+}
+/*列表圆点按钮样式*/
+.centered-btns_nav {
+	position: absolute;
+	top: 50%;
+	z-index: 2;
+	width: 38px;
+	height: 61px;
+	margin-top: -40px;
+	line-height: 200px;
+	background-image: url(../img/arrow.gif);
+	overflow: hidden;
+	opacity: 0.5;
+	filter:alpha(opacity=50);
+	display: none;
+}
+.centered-btns_nav:hover{
+	opacity: 0.7;
+	filter:alpha(opacity=70);
+}
+.next {
+	right: 0;
+	background-position: right 0;
+}
+.centered-btns_nav:active {
+	opacity: 1;
+}
+.centered-btns_tabs {
+	margin-top: 15px;
+	text-align: center;
+	font-size: 0;
+	list-style-type: none;
+	position: absolute;
+	right: 60px;
+	bottom: 20px;
+	z-index: 200;
+}
+.centered-btns_tabs li {
+	display: inline-block;
+	margin: 0 3px;
+	*display: inline;
+	*zoom: 1;
+}
+.centered-btns_tabs a {
+	display: inline-block;
+	width: 14px;
+	height: 14px;
+	border-radius: 50%;
+	line-height: 20px;
+	background-color:#000;
+	opacity: 0.5;
+	filter:alpha(opacity=50);
+	overflow: hidden;
+	*display: inline;
+	*zoom: 1;
+}
+.centered-btns_tabs .centered-btns_here a {
+	background-color: #FFAD29;
+	opacity: 1;
+	filter:alpha(opacity=100);
+}
+/*列表圆点按钮样式*/

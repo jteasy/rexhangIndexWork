@@ -1,0 +1,50 @@
+/*
+ 	=== info ===	 
+ 	* Filename: fixed.css
+ 	* Decscription: fixed
+ 	* Version: 1.0.0(2015.11.10)
+ 	* Website: http://www.fenqiday.com
+ 	* Author: Rexhang (rexhang@outlook.com)
+ */
+.fix img{
+	position: fixed;
+	top: 50%;
+	margin-left: 3px;
+}
+.fix a{
+	width: 44px;
+	height: 40px;
+	display: block;
+	position: fixed;
+	top: 50%;
+	margin-top: -20px;
+	/*opacity: 0;
+	filter: alpha(opacity=0);*/
+}
+.fix a span{
+	width: 44px;
+	height: 40px;
+	display: block;
+	border: 1px solid red;
+}
+.app-qrcode{
+	margin-top: -77px !important;
+}
+.app-qrcode img{
+	margin-left: -284px;
+}
+.online-server{
+	margin-top: -36px !important;
+}
+.feedback{
+	margin-top: 5px !important;
+}
+.back-top{
+	margin-top: 46px !important;
+}
+.qrcode-app-pic{
+	position: fixed;
+	top: 50%;
+	right: 50px;
+	display: none;
+}

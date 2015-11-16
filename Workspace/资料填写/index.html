@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>Hello APP</title>
+    <link rel="stylesheet" type="text/css" href="./css/api.css" />
+    <link rel="stylesheet" type="text/css" href="./css/common.css" />
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            font-family: '微软雅黑';
+        }
+        .content{
+            height: 80%;
+            width: 90%;
+            background: url('image/bgpic.jpg') no-repeat;
+            background-size: contain;
+            margin-left: 5%;
+            margin-top: 10%;
+            margin-bottom: 10%;
+            background-position: 50% 0;
+            position: relative;
+        }
+        .content .info{
+            width: 100px;
+            height: 60px;
+            background: #0DA4FF;
+            text-align: center;
+            position: absolute;
+            left: 50%;
+            margin-left: -50px;
+            line-height: 60px;
+            color: #fff;
+        }
+        .content .info_1{
+            top: 50px;
+        }
+        .content .info_2{
+            top: 150px;
+        }
+        .content .info_3{
+            top: 250px;
+        }
+        .content .info_4{
+            top: 350px;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <div class="info_1 info">个人资料</div>
+        <div class="info_2 info">学校信息</div>
+        <div class="info_3 info">证件信息</div>
+        <div class="info_4 info">我的伙伴</div>
+    </div>
+</body>
+<script type="text/javascript" src="./script/api.js"></script>
+<script type="text/javascript">
+
+    apiready = function(){
+		console.log("Hello APICloud");
+
+        var header = $api.byId('header');
+        $api.fixStatusBar(header); 
+        var headerPos = $api.offset(header);
+        var main = $api.byId('main');
+        var mainPos = $api.offset(main);
+
+        api.openFrame({
+            name: 'main',
+            url: 'html/main.html',
+            bounces: true,
+            rect: {
+                x: 0,
+                y: headerPos.h,
+                w: headerPos.w,
+                h: mainPos.h
+            }
+        });
+    };
+</script>
+</html>

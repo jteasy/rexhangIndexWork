@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="将资源“test999999999/test88888888.html”重命名为“index.html”" description="重命名资源“test88888888.html”" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="test88888888.html" name="index.html" stamp="1442634422546" updateReferences="true"/>
+</session>

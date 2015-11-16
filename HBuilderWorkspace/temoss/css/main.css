@@ -1,0 +1,38 @@
+@charset "UTF-8";
+/**
+ * 
+ * @authors rexhang (rexhang@outlook.com)
+ */
+#wrap{
+	width: 100%;
+	height: 45px;
+	background-color: #3264E6;
+}
+header{
+	width: 98%;
+	height: 45px;
+	margin: 0 auto;
+	display: -webkit-box;
+	-webkit-box-orient: horizontal;
+}
+.items{
+	-webkit-box-flex: 3;
+	height: 45px;
+	text-align: center;
+	line-height: 45px;
+	font-size: 16px;
+	color: #fff;
+}
+.items:first-child{
+	-webkit-box-flex: 1;
+	background: url(../img/left.png) no-repeat;
+	height: 45px;
+	background-position-x: left;
+}
+.items:last-child{
+	-webkit-box-flex: 1;
+	background: url(../img/right.png) no-repeat;
+	height: 30px;
+	background-position-x: right;
+	margin-top: calc((45px - 30px) / 2);
+}

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>fullPage</title>
+    <link rel="stylesheet" href="css/jquery.fullPage.css">
+    <script src="js/jquery-1.8.3.min.js"></script>
+    <script src="js/jquery.fullPage.min.js"></script>
+    <style>
+    #menu {
+        margin: 0;
+        padding: 0;
+        position: fixed;
+        left: 10px;
+        top: 10px;
+        list-style-type: none;
+        z-index: 70;
+        margin-left: calc(50% - 235px);
+    }
+    
+    #menu li {
+        float: left;
+        margin: 0 10px 0 0;
+        font-size: 14px;
+        opacity: 0.6;
+    }
+    
+    #menu li:last-child {
+        margin-right: 0;
+    }
+    
+    #menu a {
+        border-radius: 6px;
+        float: left;
+        padding: 10px 20px;
+        background-color: #ccc;
+        color: #333;
+        text-decoration: none;
+        opacity: 0.6;
+    }
+    
+    #menu .active a {
+        color: #fff;
+        background-color: #F56410;
+        opacity: 1;
+    }
+    
+    #menu li.active {
+        opacity: 1;
+    }
+    
+    .section {
+        text-align: center;
+        font: 50px "Microsoft Yahei";
+        color: #D04F4F;
+    }
+    /*
+	author css
+    */
+    
+    .section:nth-child(1) {
+        background: url(images/5.jpg) 50%;
+    }
+    
+    .section:nth-child(3) {
+        background: url(images/8.jpg) 50%;
+    }
+    
+    .section:nth-child(4) {
+        background: url(images/4.jpg) 50%;
+    }
+    
+    .section .slide:nth-child(1) {
+        background: url(images/2.jpg) 50%;
+    }
+    
+    .section .slide:nth-child(2) {
+        background: url(images/6.jpg) 50%;
+    }
+    
+    .section .slide:nth-child(3) {
+        background: url(images/7.jpg) 50%;
+    }
+    
+    .section .num_3 {
+        margin-left: -200%;
+        opacity: 0;
+        transition: all 1.3s ease-in-out;
+    }
+    
+    .section.active .num_3 {
+        margin-left: 0%;
+        opacity: 1;
+    }
+    
+    .section .rexhang_new {
+        margin-bottom: -200%;
+        opacity: 0;
+        transition: all 1.9s ease-in-out;
+        border-radius: 50%;
+    }
+    
+    @keyframes rotates {
+        0% {
+            transform: rotate(0deg);
+            -webkit-transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+            -webkit-transform: rotate(360deg);
+        }
+    }
+    
+    @-webkit-keyframes rotates {
+        0% {
+            transform: rotate(0deg);
+            -webkit-transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+            -webkit-transform: rotate(360deg);
+        }
+    }
+    
+    .section.active .rexhang_new {
+        margin-bottom: 0%;
+        opacity: 1;
+        animation: rotates 1.5s linear 1.9s infinite;
+    }
+    /**/
+    
+    .section .num_4 {
+        transform: scale(1);
+
+        transition: all 1.3s ease-in-out;
+    }
+    
+    .section.active .num_4 {
+        animation: rotates2 2s linear;
+        animation-fill-mode:forwards;
+        transform: scale(0.1);
+        -webkit-transform: scale(0.1);
+    }
+    @-webkit-keyframes rotates2 {
+        0% {
+            transform: scale(1);
+            -webkit-transform: scale(1);
+        }
+        50% {
+            transform: scale(2);
+            -webkit-transform: scale(2);
+        }
+        100% {
+            transform: scale(3);
+            -webkit-transform: scale(3);
+        }
+    }
+    @keyframes rotates2 {
+        0% {
+            transform: scale(1);
+            -webkit-transform: scale(1);
+        }
+        50% {
+            transform: scale(2);
+            -webkit-transform: scale(2);
+        }
+        100% {
+            transform: scale(3);
+            -webkit-transform: scale(3);
+        }
+    }
+    @keyframes anima_icon{
+    	0%{
+    		bottom:24px;
+    	}
+    	50%{
+    		bottom:32px;
+    	}
+    	100%{
+    		bottom:24px;
+    	}
+    }
+    @-webkit-keyframes anima_icon{
+    	0%{
+    		bottom:24px;
+    	}
+    	50%{
+    		bottom:32px;
+    	}
+    	100%{
+    		bottom:24px;
+    	}
+    }
+    .iconfont-14{
+	width:32px;
+	height:32px;
+	display:block;
+	background: url(images/iconfont-iconfont14.png) no-repeat;
+	position:fixed;
+	z-index:101;
+	bottom:24px;
+	left:calc(50% - 16px);
+	animation: anima_icon 3s linear 0.1s infinite;
+	cursor:pointer;
+    }
+    </style>
+</head>
+
+<body>
+    <ul id="menu">
+        <li data-menuanchor="rexhang_page1" class="active"><a href="#rexhang_page1">导航菜单一</a></li>
+        <li data-menuanchor="rexhang_page2"><a href="#rexhang_page2">导航菜单二</a></li>
+        <li data-menuanchor="rexhang_page3"><a href="#rexhang_page3">导航菜单三</a></li>
+        <li data-menuanchor="rexhang_page4"><a href="#rexhang_page4">导航菜单四</a></li>
+    </ul>
+    <div id="wrap">
+        <div class="section">
+            <h3>萌妹子在召唤</h3>
+            <p>下滑鼠标滚轮或者按键盘可以继续</p>
+        </div>
+        <div class="section">
+            <div class="slide">
+            </div>
+            <div class="slide">
+            </div>
+            <div class="slide">
+            </div>
+        </div>
+        <div class="section">
+            <h3 class="num_3">我要来啦！！！</h3>
+            <img src="images/rexhang_new.png" alt="rexhang_new" class="rexhang_new" />
+        </div>
+        <div class="section">
+            <h3 class="num_4">Zzzzzzzz^.-.^</h3>
+        </div>
+        <span class="iconfont-14" onclick="window.location.href='http://www.rexhang.com/fullpage/#rexhang_page2'"></span>
+    </div>
+    <script>
+    document.onload = $(function() {
+        $('#wrap').fullpage({
+            sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', '#f90'],
+            anchors: ['rexhang_page1', 'rexhang_page2', 'rexhang_page3', 'rexhang_page4'],
+            menu: '#menu',
+            navigation: true,
+            resize: true,
+            navigationTooltips: ['第一页的萌妹子', '第二页的萌妹子', '第三页的萌妹子', '第四页的萌妹子'],
+            scrollingSpeed: 600,
+            css3: true
+        });
+    });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,230 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>忘记密码body</title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css" />
+    <link rel="stylesheet" type="text/css" href="../css/common.css" />
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            font-family: arial,"微软雅黑";
+            background: #EFEFF2;
+        }
+        .container{
+            width: 100%;
+            height: 150px;
+            margin-top: 24px;
+            background: #fff;
+        }
+        .container .top_1{
+            
+            padding: 10px 14px;
+            position:relative;
+        }
+        .container .top_1 .icons_1{
+            width: 24px;
+            height: 24px;
+            display: block;
+            /*border: 1px solid #C0AEAE;*/
+            border-radius: 50%;
+            float: left;
+            background: url('../image/bigpic.png') no-repeat;
+            background-position: 0 0;
+            background-size: 900px;
+        }
+        .container .top_1 .icons_2{
+            color: #999;
+            font-size: 12px;
+            height: 24px;
+            line-height: 24px;
+            display: block;
+            float: left;
+            margin-left: 14px;
+            outline: none;
+        }
+        .container .top_1 .hqyzm{
+            float: right;
+            background: #0DA4FF;
+            width: 75px;
+            height: 30px;
+            margin-top: -3px;
+            color: #fff;
+            font-family: '微软雅黑';
+            outline: none;
+            text-align: center;
+            line-height: 30px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+        .eyes{
+        	 width: 25px;
+            height: 100%;
+            background: url('../image/eyes.png') no-repeat;
+            background-size:contain;
+            position: absolute;
+            margin-top:0;
+            background-position-y:50%;
+            right: 23px;
+        }
+        .container .top_1 .hqyzm:active{
+            background: red;
+        }
+
+        .liner{
+            border-top:1px solid #F2EFEF;
+            border-right:0px;
+            border-bottom:0px;
+            border-left:0px;
+            margin-top: 22px;
+            margin-left: 14px;
+            margin-right: 14px;
+        }
+        #bbtn{
+            width: 100%;
+            height: 50px;
+            margin-top: 74px;
+        }
+        #btns{
+            background: #0DA4FF;
+            color: #fff;
+            border-radius: 6px;
+            font-size: 18px;
+            line-height: 50px;
+            text-align: center;
+            margin-left: 12px;
+            margin-right: 12px;
+        }
+        #btns:active{
+            background: red;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+       <div class="top_1">
+            <span class="icons_1" style="background-position:-214px -134px;"></span>
+            <input type="tel" class="icons_2 put1" id="phone" placeholder="手机号码" /> 
+       </div>
+        <p class="liner lin1"></p>    
+       <!-- 2 -->
+       <div class="top_1">
+            <span class="icons_1" style="background-position:-61px -141px;"></span>
+            <input type="tel" class="icons_2 put2" id="verifycode" placeholder="验证码" />
+            <div class="icons_2 hqyzm" onclick="getMessage()">获取验证码</div>
+       </div>
+        <p class="liner lin2"></p>
+       <!-- 3 -->
+       <div class="top_1">
+            <span class="icons_1" style="background-position:-61px -186px;"></span>
+            <input type="password" class="icons_2 put3" id="pw" placeholder="重新设置6-20位登录密码" />
+            <div class="eyes" onclick="toSee(true)"></div> 
+       </div>
+        <p class="liner lin3"></p>
+    </div>
+    <div id="bbtn" style="background:#EFEFF2;">
+        <div id="btns" onclick="confirm()">改好了</div>            
+    </div>
+</body>
+<script type="text/javascript" src="../script/api.js"></script>
+<script type="text/javascript" src="../script/jquery1.11.1.js"></script>
+<script type="text/javascript">
+	/**
+	 *密码可见 
+	 */
+	function toSee($type){
+		var $pw=$api.byId('pw');
+		var $value=$api.val($pw);
+		if($type==true){
+			$api.attr($pw,'type','text');
+			$api.attr($pw,'onclick','toSee(false)');
+		}else if($type==false){
+			$api.attr($pw,'type','password');
+			$api.val($pw,$value);
+			$api.attr($pw,'onclick','toSee(true)');
+		}
+	}
+	/**
+	 *提交 
+	 */
+	function confirm(){
+		api.alert({
+			msg:'恭喜您新密码已设置！'
+        },function(ret,err){
+        	//coding...
+        });
+	}
+	/**
+	 *获取验证码
+	 * 下面5个是全局变量； 
+	 */
+	var interValObj;   //变量timer
+	var count=45;//间隔时间60秒
+	var curCount;//剩余秒数
+	var $hqyzm=$api.dom('.hqyzm');
+	function getMessage(){
+		var phone=$api.val($api.byId('phone'));
+		if(isNaN(phone) || $api.trimAll(phone).length!=11){
+			$api.byId('phone').focus();
+			$api.toast('','手机号码不正确');	
+		}else{
+			//获取验证码
+			//同时发送数据到服务器，来获取已经发送的短信次数和第一次发送的时间，来进行处理，防止用户多次恶意点击
+			var $hqyzm=$api.dom('.hqyzm');
+			$api.attr($hqyzm,'disabled','disabled');
+			$api.attr($hqyzm,'onclick','javascript:void(0)');
+			$api.css($hqyzm,'background:#657b83');
+			
+			curCount=count;
+		    $api.text($hqyzm, curCount+'秒后再获取');
+		    interValObj=window.setInterval(timeCount,1000);
+		}
+	}
+	//倒计时
+	function timeCount(){
+		if (curCount == 0) {                
+                window.clearInterval(interValObj);//停止计时器
+                $api.removeAttr($hqyzm,'disabled');
+                $api.attr($hqyzm,'onclick','getMessage()');
+                $api.text($hqyzm, '获取验证码');
+                $api.css($hqyzm,'background:#0da4ff');
+            }
+            else {
+                curCount--;
+                $api.attr($hqyzm,'disabled','disabled');
+                $api.attr($hqyzm,'onclick','javascript:void(0)');
+                $api.text($hqyzm, curCount+'秒后再获取');
+        }
+	}
+</script>
+<script type="text/javascript">   
+    $(".put1").focus(function(){       
+        $(".lin1").css("borderTop","1px solid #151515");      
+    });
+    $(".put2").focus(function(){
+        $(".lin2").css("borderTop","1px solid #151515");
+        
+    });
+    $(".put3").focus(function(){
+        $(".lin3").css("borderTop","1px solid #151515");
+        
+    });
+    $(".put1").blur(function(){       
+        $(".lin1").css("borderTop","1px solid #F2EFEF");      
+    });
+    $(".put2").blur(function(){
+        $(".lin2").css("borderTop","1px solid #F2EFEF");
+        
+    });
+    $(".put3").blur(function(){
+        $(".lin3").css("borderTop","1px solid #F2EFEF");
+        
+    });
+</script>
+</html>

@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>Contact</title>
+    <style>
+    	input[name='clickme']{
+    		width:30%;
+    		height:50px;
+    		border: 2px solid #333;
+    	}
+    </style>
+</head>
+<body>
+    <input type="button" value="click me" name="clickme" onclick="contacts();" />
+</body>
+<script type="text/javascript" src="./script/api.js"></script>
+<script>
+	apiready = function(){
+		
+	};
+	/*打开联系人界面*/
+	function contacts(){
+			var contact = api.require('contact');
+			contact.openContact(function(ret,err) {
+			    if(ret.status) {
+			        var array = ret.phones;
+			        var firstnum = array[0];
+			        var secondnum = array[1];
+			        var thirdnum = array[2];
+			        alert(JSON.stringify(array));
+			    } else{
+			        api.alert({msg:'用户取消'});
+			    }
+			});	       
+		};
+		
+</script>
+</html>

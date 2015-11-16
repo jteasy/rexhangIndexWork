@@ -1,0 +1,177 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>确认后</title>
+    <link rel="stylesheet" type="text/css" href="./css/api.css" />
+    <link rel="stylesheet" type="text/css" href="./css/common.css" />
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            font-size: 12px;
+            font-family: '微软雅黑';
+        }
+        .titles{
+            width: 100%;
+            color: #999;
+            background: #D8D8D8;
+            height: 24px;
+            line-height: 24px;
+            text-align: center;
+        }
+        .container{
+            width: 100%;
+            margin-top: 14px;
+        }
+        .container .content{
+            margin: 0 16px 0 16px;
+        }
+        .container .content .btn1{
+            height: 45px;
+            background: #0DA4FF;
+            font-size: 16px;
+            text-align: center;
+            line-height: 45px;
+            color: #fff;
+            border-radius: 4px; 
+        }
+        .mag{
+            margin-top: 14px;
+        }
+        #btns{
+            margin: 0 16px 0 16px;
+        }
+        #btns .btn_sure{
+            height: 50px;
+            background: #C9C9C9;
+            font-size: 18px;
+            text-align: center;
+            line-height: 50px;
+            color: #fff;
+            border-radius: 4px;
+            margin-top: 46px;
+        }
+        #btns .btn_bg{
+            background: #0DA4FF;
+        }
+        .detail_infos{
+            width: 100%;
+            height: 88px;
+
+        }
+        .line{
+            height: 14px;
+            background: #D8D8D8;
+        }
+        .detail_infos .conts{
+            margin: 8px 12px 0 12px;
+            height: 72px;
+            position: relative;
+        }
+        .detail_infos .conts .user_logo{
+            height: 36px;
+            width: 36px;
+            border-radius: 4px;
+            background: #F2F2F2;
+            display: block;
+            float: left;
+        }
+        .name{
+            width: 36px;
+            height: 36px;
+            display: block;
+            float: left;
+            font-size: 14px;
+            margin-left: 12px;
+            margin-top: 6px;
+            color: #333;
+        }
+        .phone{
+            height: 36px;
+            margin-top: 6px;
+            display: block;
+            float: left;
+            font-size: 14px;
+            margin-left: 20px;
+            color: #333;
+            width: 50%;
+        }
+        .fonts1{
+            width: 50%;
+            height: 12px;
+            float: left;
+            line-height: 12px;
+            margin-left: 48px;
+            margin-top: -8px;
+            font-size: 12px;
+            color: #999;
+        }
+        .fonts2{
+            width: 70%;
+            font-size: 12px;
+            height: 12px;
+            float: left;
+            line-height: 12px;
+            margin-left: 48px;
+            margin-top: 14px;
+            color: #999;
+            word-spacing: 30px;
+
+        }
+        .icons{
+            width: 12px;
+            height: 20px;
+            float: right;
+            margin-top: -16px;
+            text-align: center;
+            line-height: 21px;
+            background: url('image/icons1.png') no-repeat;
+        }
+    </style>
+</head>
+<body>
+    <div class="titles">需要您添加四位联系人，且其中第一位为直系亲属</div>
+    <div class="detail_infos">
+        <div class="conts">
+            <!-- 头像 -->
+            <span class="user_logo"></span>
+            <!-- 姓名 -->
+            <span class="name">杜笙</span>
+            <!-- 电话 -->
+            <span class="phone">15229287978</span>
+            <!-- fonts -->
+            <p class="fonts1">西安市地质金属研究所</p>
+            <p class="fonts2">西安市未央区凤城一路锦园君逸6号楼1805</p>
+            <div class="icons"></div>
+        </div>
+    </div>
+    <p class="line"></p>
+    <div class="container">
+        <div class="content">
+            <div class="btn1">添加联系人 1</div>
+            <div class="btn1 mag">添加联系人 2</div>
+            <div class="btn1 mag">添加联系人 3</div>
+            <div class="btn1 mag">添加联系人 4</div>
+        </div>
+        <div id="btns">
+            <div class="btn_sure" tapmode="btn_bg">确认</div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="./script/api.js"></script>
+<script type="text/javascript">
+
+    apiready = function(){
+        var header = $api.byId('header');
+        $api.fixStatusBar(header); 
+        var headerPos = $api.offset(header);
+        var main = $api.byId('main');
+        var mainPos = $api.offset(main);
+    };
+</script>
+</html>

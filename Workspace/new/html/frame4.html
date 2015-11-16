@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <title>frame4</title>
+    <style>
+    	 #bbtn{
+            width: 100%;
+            height: 50px;
+            margin-top: 74px;
+        }
+        #btns{
+            background: #0DA4FF;
+            color: #fff;
+            border-radius: 6px;
+            font-size: 18px;
+            line-height: 50px;
+            text-align: center;
+            margin-left: 12px;
+            margin-right: 12px;
+        }
+        #btns:active{
+            background: red;
+        }
+        #btns:vi{
+            background: red;
+        }
+    </style>
+</head>
+<body>
+	<div id="bbtn" style="background:#EFEFF2;" onclick="openRegister()">
+        <div id="btns">注册</div>            
+    </div>
+    <div id="bbtn" style="background:#EFEFF2;" onclick="login()">
+        <div id="btns">登录</div>            
+    </div>
+    <div id="bbtn" style="background:#EFEFF2;" onclick="exit()">
+        <div id="btns">退出</div>   
+    </div>
+    <div id="bbtn" style="background:#EFEFF2;" onclick="screenLock()">
+        <div id="btns">锁屏</div>   
+    </div>
+    <div id="bbtn" style="background:#EFEFF2;" onclick="cityList()">
+        <div id="btns">城市列表</div>   
+    </div>
+    <script type="text/javascript" src="../script/api.js"></script>
+    <script>
+    	function openRegister(){
+    		api.getPrefs({
+	            key:'user'
+            },function(ret,err){
+            	var user=ret.value;
+            	if(user==''|| user==' '){
+            		api.openWin({
+			            name: 'register',
+			            url: 'register.html',
+			            bgcolor:'#ffffff',
+			        	scrollToTop:true,
+			        	animation:{
+			        		type:"movein",                //动画类型（详见动画类型常量）
+					    	subType:"from_right",       //动画子类型（详见动画子类型常量）
+					    	duration:300 
+			        	},
+			        	delay:500	
+	            	});
+            	}
+            });
+	    		
+    	}
+    	function login(){
+    		api.openWin({
+	            name: 'login',
+	            url: 'login.html',
+	            bgcolor:'#ffffff',
+	            scrollToTop:true,
+	            animation:{
+	            	type:'movein',
+	            	subType:'from_right'
+	            }
+            });
+    	}
+    	function exit(){
+    		api.confirm({
+    			title:'退出确认',
+    			msg:'确定要退出吗？',
+    			buttons:['确认','取消']
+            },function(ret,err){
+            	if(ret.buttonIndex==1){
+            		api.setPrefs({
+	                    key:'user',
+	                    value:' '
+                    });
+                    api.toast({
+	                    msg:'成功退出!'
+                    });
+            	}
+            });
+    	}
+    	function screenLock(){
+    		api.openWin({
+	            name: 'screenLock',
+	            url: 'screenlock.html',
+	            slidBackEnabled:false
+            });
+    	}
+		function cityList(){
+			var obj = api.require('UICityList');
+			obj.open({
+			    rect: {
+			        x: 0,
+			        y: 0,
+			        w: 320,
+			        h: 480
+			    },
+			    resource: 'widget://res/UICityList.json',
+			    styles: {
+			        searchBar: {
+			            bgColor: '#696969',
+			            cancelColor: '#E3E3E3'
+			        },
+			        location: {
+			            color: '#696969',
+			            size: 12
+			        },
+			        sectionTitle: {
+			            bgColor: '#eee', 
+			            color: '#000',
+			            size: 12
+			        },
+			        item: {
+			            bgColor: '#fff',
+			            activeBgColor: '#696969',
+			            color: '#000',
+			            size: 14,
+			            height: 40
+			        },
+			        indicator: {
+			            bgColor: '#fff',
+			            color: '#696969'
+			        }
+			    },
+			    currentCity: '北京',
+			    locationWay: 'GPS',
+			    hotTitle: '热门城市',
+			    placeholder: '输入城市名或首字母查询'
+			}, function(ret, err) {
+			    if(ret.eventType == 'selected'){
+			        alert(JSON.stringify(ret.cityInfo));
+			    }
+			});
+		}
+    </script>
+</body>
+</html>

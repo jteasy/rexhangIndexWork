@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>test</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<style type="text/css">
+	.one{
+		width: 300px;
+		height: 60px;
+		background: #f00;
+		-webkit-animation:rexhang_animation ease-in-out 1s;
+		-moz-animation:rexhang_animation ease-in-out 1s;
+		-o-animation:rexhang_animation ease-in-out 1s;
+		-ms-animation:rexhang_animation ease-in-out 1s;
+		animation:rexhang_animation ease-in-out 1s;
+	}
+	@keyframes rexhang_animation{
+		50%{transform: scale(0.8)};
+	}
+	@-webkit-keyframes rexhang_animation{
+		50%{transform: scale(0.8)};
+	}
+	@-moz-keyframes rexhang_animation{
+		50%{transform: scale(0.8)};
+	}
+	@-o-keyframes rexhang_animation{
+		50%{transform: scale(0.8)};
+	}
+	@-ms-keyframes rexhang_animation{
+		50%{transform: scale(0.8)};
+	}
+
+</style>
+</head>
+<body>
+    <div class="one"></div>
+</body>
+<script type="text/javascript" src="script/api.js"></script>
+<script type="text/javascript">
+	apiready=function(){
+		$api.attr($api.dom('.one'),'animation','rexhang_animation ease-in-out 1s');
+	}
+</script>
+</html>

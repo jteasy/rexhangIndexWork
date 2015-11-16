@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <title>关于我们</title>
+    <link rel="stylesheet" type="text/css" href="../../css/api.css"/>
+    <link rel="stylesheet" type="text/css" href="../../css/common.css">
+    <style>
+    	html, body {
+            height: 100%;
+            width: 100%;
+            font-family:arial;
+        }
+         #wrap {
+            height: 100%;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-orient: vertical;
+            -webkit-flex-flow: column;
+            flex-flow: column;
+            border:none;
+        }
+        #main {
+            -webkit-box-flex: 1;
+            -webkit-flex: 1;
+            flex: 1;
+        }
+         #footer {
+            width: 100%;
+            text-align: center;
+            height: 49px;
+            line-height: 55px;
+            background-color: #f2f2f2;
+        }
+
+        ul {
+
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: flex;
+        }
+
+        .index {
+            background-image: url(../../image/bottombtn0101.png);
+        }
+
+        .shopping {
+            background-image: url(../../image/bottombtn0201.png);
+        }
+
+        .credit {
+            background-image: url(../../image/bottombtn0301.png);
+        }
+
+        .account {
+            background-image: url(../../image/bottombtn0401.png);
+        }
+
+        #footer li {
+            -webkit-box-flex: 1;
+            -webkit-flex: 1;
+            flex: 1;
+            height: 49px;
+        }
+
+        .bottom_btn {
+            background-position-y: 7px;
+            padding-top: 12px;
+            font-size: 12px;
+            color: #323237;
+            width: 99%;
+            height: 21px;
+            background-repeat: no-repeat no-repeat;
+            background-position-x: center;
+            background-size: 21px;
+        }
+
+        .active .index {
+            background-image: url(../../image/bottombtn0102.png);
+        }
+
+        .active .shopping {
+            background-image: url(../../image/bottombtn0202.png);
+        }
+
+        .active .credit {
+            background-image: url(../../image/bottombtn0302.png);
+        }
+
+        .active .account {
+            background-image: url(../../image/bottombtn0402.png);
+        }
+
+        .active .bottom_btn {
+            color: #6ab494;
+            background-size: 21px;
+        }
+
+        .topbar {
+            background: #0DA4FF;
+            height: 44px;
+            //border-bottom: 1px solid #DDDFE3;
+            line-height: 44px;
+            text-align: center;
+            color: #ffffff;
+            font-size:20px;
+            font-weight:bold;
+            position:relative;
+        }
+        .back-arrow{
+        	height:100%;
+        	width:26px;
+        	background:url(../../image/back.png) no-repeat;
+        	background-size:50%;
+        	background-position: 50%;
+        	display:block;
+        	position:absolute;
+        	top:0;
+        	left:5px;
+        }
+        
+    </style>
+</head>
+<body>
+  <div id="wrap">
+	 <header>
+        <div id="index" class="topbar">
+            关于我们
+            <i class="back-arrow" tapmode="" onclick="closeWin()"></i>
+        </div>
+     </header>
+     <div id="main"></div>
+     <div id="footer">
+        <ul>
+            <li tapmode="active"  onclick="execute(0,'index')">
+                <a class="bottom_btn index">首页</a>
+            </li>
+
+            <li tapmode="active"  onclick="execute(1,'shopping')">
+                <a class="bottom_btn shopping ">购物</a>
+            </li>
+
+            <li tapmode="active"  onclick="execute(2,'credit')">
+                <a class="bottom_btn credit ">信用+</a>
+            </li>
+
+            <li tapmode="active" class="active"  onclick="closeToWin()">
+                <a class="bottom_btn account ">账户</a>
+            </li>
+        </ul>
+    </div>
+  </div>
+</body>
+<script type="text/javascript" src="../../script/api.js"></script>
+<script type="text/javascript">
+	apiready = function(){
+		var $header=$api.dom('header');
+		$api.fixIos7Bar($header);
+		var header_h=$api.offset($header).h;
+		var $footer=$api.byId('footer');
+		var footer_h=$api.offset($footer).h;
+		var $body=$api.dom('body');
+		var body_h=$api.offset($body).h;
+		api.setStatusBarStyle({
+        	style:'light'
+        });
+        var rect_h=body_h-header_h-footer_h;
+		api.openFrame({
+	        name: 'aboutus_body',
+	        url: 'aboutus_body.html',
+	        pageParam:{
+	        	card_name:api.pageParam.card_name,
+	        	card_bank:api.pageParam.card_bank,
+	        	card_no:api.pageParam.card_no
+	        },
+	        rect: {
+		        x:0,
+		        y:header_h,
+		        w:'auto',
+		        h:rect_h
+	        },
+        });
+		
+	};
+	var closeWin=function(){
+		api.closeWin({
+			name:'aboutus'
+        });
+	}
+	/**
+	 *关闭窗口到根目录 
+	 */
+	var closeToWin=function(){
+		api.closeToWin({
+	        name: 'root'
+        });
+	}
+	/**
+	 *远程执行 首页切换功能
+	 */
+	var execute=function(nodes,frameName){
+		api.execScript({
+			name:'root',
+	        script: 'randomSwitchBtn(0,'+frameName+','+nodes+');'
+        });
+        api.closeToWin({
+        	name:'root',
+        	duration:0
+        });
+	}
+</script>
+</html>

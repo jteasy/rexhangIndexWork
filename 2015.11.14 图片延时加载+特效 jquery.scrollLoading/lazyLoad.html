@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>lazyLoad</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link href="" rel="stylesheet">
+    <link rel="stylesheet" href="css/rexhangCss.css">
+    <script type="text/javascript" src="js/jquery-1.4.min.js"></script>
+    <!-- 图片延迟加载 -->
+    <script type="text/javascript" src="js/jquery.lazyload.js"></script>
+    <script>
+    $().ready(function() {
+        $("#tujie img").lazyload({
+            /*参数详见根目录TXT文档*/
+            threshold: 100,
+            effect: "fadeIn",
+            failurelimit: 8,
+            placeholder : "images/lazyLoad.gif" 
+        });
+    });
+    </script>
+</head>
+
+<body>
+    <div id="tujie">
+        <img class="cover" src="images/lazyLoad1.jpg" width="400" height="710" alt="pic" />
+        <img class="cover" src="images/lazyLoad2.jpg" width="400" height="710" alt="pic" />
+        <img class="cover" src="images/lazyLoad3.jpg" width="400" height="710" alt="pic" />
+        <img class="cover" src="images/lazyLoad4.jpg" width="400" height="710" alt="pic" />
+        <img class="cover" src="images/lazyLoad5.jpg" width="400" height="710" alt="pic" />
+        <img class="cover" src="images/lazyLoad6.jpg" width="400" height="710" alt="pic" />
+        <img class="cover" src="images/lazyLoad7.jpg" width="400" height="710" alt="pic" />
+        <img class="cover" src="images/lazyLoad8.jpg" width="400" height="710" alt="pic" />
+		
+		<img class="cover" src="images/lazyLoad1.jpg" width="400" height="710" alt="pic" />
+        <img class="cover" src="images/lazyLoad2.jpg" width="400" height="710" alt="pic" />
+        <img class="cover" src="images/lazyLoad3.jpg" width="400" height="710" alt="pic" />
+        <img class="cover" src="images/lazyLoad4.jpg" width="400" height="710" alt="pic" />
+        <img class="cover" src="images/lazyLoad5.jpg" width="400" height="710" alt="pic" />
+        <img class="cover" src="images/lazyLoad6.jpg" width="400" height="710" alt="pic" />
+        <img class="cover" src="images/lazyLoad7.jpg" width="400" height="710" alt="pic" />
+        <img class="cover" src="images/lazyLoad8.jpg" width="400" height="710" alt="pic" />
+		
+		<img class="cover" src="images/lazyLoad1.jpg" width="400" height="710" alt="pic" />
+        <img class="cover" src="images/lazyLoad2.jpg" width="400" height="710" alt="pic" />
+        <img class="cover" src="images/lazyLoad3.jpg" width="400" height="710" alt="pic" />
+        <img class="cover" src="images/lazyLoad4.jpg" width="400" height="710" alt="pic" />
+        <img class="cover" src="images/lazyLoad5.jpg" width="400" height="710" alt="pic" />
+        <img class="cover" src="images/lazyLoad6.jpg" width="400" height="710" alt="pic" />
+        <img class="cover" src="images/lazyLoad7.jpg" width="400" height="710" alt="pic" />
+        <img class="cover" src="images/lazyLoad8.jpg" width="400" height="710" alt="pic" />
+			<br>
+		<img class="cover" src="images/lazyLoad9.jpg" />
+        <img class="cover" src="images/lazyLoad9.jpg" />
+        <img class="cover" src="images/lazyLoad9.jpg" />
+        <img class="cover" src="images/lazyLoad9.jpg" />
+        <img class="cover" src="images/lazyLoad9.jpg" />
+        <img class="cover" src="images/lazyLoad9.jpg" />
+        <img class="cover" src="images/lazyLoad9.jpg" />
+        <img class="cover" src="images/lazyLoad9.jpg" />
+        <img class="cover" src="images/lazyLoad9.jpg" />
+        <img class="cover" src="images/lazyLoad9.jpg" />        
+		<img class="cover" src="images/lazyLoad9.jpg" />        
+		
+		
+    </div>
+</body>
+
+</html>

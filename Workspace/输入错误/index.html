@@ -1,0 +1,117 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>Hello APP</title>
+    <link rel="stylesheet" type="text/css" href="./css/api.css" />
+    <link rel="stylesheet" type="text/css" href="./css/common.css" />
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background: -webkit-linear-gradient(#109EFF 0%,#33FFFF 75%);
+            background: linear-gradient(#109EFF 0%,#33FFFF 75%,);
+            font-size: 12px;
+            font-family: '微软雅黑',arial;
+        }
+        .header-top{
+            width: 100%;
+            height: 36px;
+        }
+        .userarea{
+            width: 100%;
+            height: 14px;
+            line-height: 14px;
+            text-align: center;
+            color: #fff;
+            font-size: 14px;
+        }
+        .drawarea{
+            width: 90%;
+            height: 310px;
+            border: 1px solid red;
+            margin: 60px auto;
+            margin-bottom: 0;
+        }
+        /*errror*/
+        #error{
+            width: 90%;
+            margin: 20px auto;
+            height: 16px;
+        }
+        #error .mistake{
+            text-align: center;
+            height: 14px;
+            line-height: 14px;
+            color: #FF6666;
+            font-size: 14px;
+        }
+        /*errror end*/
+        /*fgtpas otherlog*/
+        #bottomarea{
+            width: 90%;
+            margin: 36px auto;
+            height: 14px;
+        }
+        #bottomarea .fgtpas{
+            float: left;
+            margin-left: 12px;
+            height: 14px;
+            line-height: 14px;
+            color: #0099FF;
+        }
+        #bottomarea .otherlog{
+            float: right;
+            height: 14px;
+            margin-right: 12px;
+            line-height: 14px;
+            color: #0099FF;
+        }
+        /*fgtpas otherlog end*/
+    </style>
+</head>
+<body>
+    <div class="header-top">
+    </div>
+    <p class="userarea">1154879265</p>
+    <div class="drawarea"></div>
+    <!-- error -->
+    <div id="error">
+        <p class="mistake">密码输入错误，您还可以输入4次</p>
+    </div>
+    <!-- fgtpas otherlog -->
+    <div id="bottomarea">
+        <p class="fgtpas">忘记手势密码</p>
+        <p class="otherlog">用其他账户登录</p>
+    </div>
+</body>
+<script type="text/javascript" src="./script/api.js"></script>
+<script type="text/javascript">
+
+    apiready = function(){
+		console.log("Hello APICloud");
+
+        var header = $api.byId('header');
+        $api.fixStatusBar(header); 
+        var headerPos = $api.offset(header);
+        var main = $api.byId('main');
+        var mainPos = $api.offset(main);
+
+        api.openFrame({
+            name: 'main',
+            url: 'html/main.html',
+            bounces: true,
+            rect: {
+                x: 0,
+                y: headerPos.h,
+                w: headerPos.w,
+                h: mainPos.h
+            }
+        });
+    };
+</script>
+</html>

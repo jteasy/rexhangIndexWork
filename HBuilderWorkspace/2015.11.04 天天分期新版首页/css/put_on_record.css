@@ -1,0 +1,21 @@
+/*
+ 	=== info ===	 
+ 	* Filename: put_on_record.css
+ 	* Decscription: put_on_record
+ 	* Version: 1.0.0(2015.11.09)
+ 	* Website: http://www.fenqiday.com
+ 	* Author: Rexhang (rexhang@outlook.com)
+ */
+.put-on-record{
+	width: 100%;
+	height: 40px;
+	background-color: #D7D7D7;
+}
+.put-on-record-box{
+	width: 1200px;
+	height: 40px;
+	margin: 0 auto;
+	text-align: center;
+	line-height: 40px;
+	color: #666;
+}

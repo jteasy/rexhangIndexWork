@@ -1,0 +1,135 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>Hello APP</title>
+    <link rel="stylesheet" type="text/css" href="./css/api.css" />
+    <link rel="stylesheet" type="text/css" href="./css/common.css" />
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            font-family: '微软雅黑';
+            position: absolute;
+            bottom: 0;
+        }
+        .container{
+            width: 100%;
+        }
+        .container .divs{
+            margin-top: 90px; 
+            height: 157px;
+            margin-left: 24px;
+            margin-right: 24px;
+        }
+        .container .divs .allkind{
+            border-radius: 50%;
+        }
+        .container .divs .students{
+            height: 157px;
+            width: 80px;
+            background: #F2F2F2;
+            float: left;
+        }
+        .container .divs .job{
+            height: 157px;
+            width: 80px;
+            background: #F2F2F2;
+            float: right;
+        }
+        .container .divs .students .icons1{
+            background: url('image/students.png') no-repeat;
+            width: 80px;
+            display: block;
+            height: 157px;
+            background-size: contain;
+            background-position: 50% 50%;
+        }
+        .container .divs .job .icons2{
+            background: url('image/job.png') no-repeat;
+            width: 80px;
+            display: block;
+            height: 157px;
+            background-size: contain;
+            background-position: 50% 50%;
+        }
+        #btngrounp{
+            margin-left: 24px;
+            margin: 30px 24px 0 24px;
+            height: 40px;
+            line-height: 40px;
+        }
+        #btngrounp .imstu{
+            height: 40px;
+            display: block;
+            float: left;
+            padding: 0 14px 0 14px;
+            background: #AEAEAE;
+            color: #fff;
+            border-radius: 20px;
+            outline: none;
+            line-height: 40px;
+            font-family: '微软雅黑';
+        }
+        #btngrounp .imjob{
+            height: 40px;
+            display: block;
+            float: right;
+            padding: 0 14px 0 14px;
+            background: #AEAEAE;
+            color: #fff;
+            border-radius: 20px;
+            outline: none;
+            line-height: 40px;
+            font-family: '微软雅黑';
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="divs">
+            <div class="students allkind">
+                <span class="icons1"></span>
+            </div>
+            <div class="job allkind">
+                <span class="icons2"></span>
+            </div>            
+        </div>
+        <div id="btngrounp">
+            <button class="imstu">我是学生</button>
+            <button class="imjob">我在上班</button>
+         </div>
+    </div>
+</body>
+<script type="text/javascript" src="./script/api.js"></script>
+<script type="text/javascript">
+
+    apiready = function(){
+
+    };
+    var ks = $api.dom(".imjob");
+    var icons1 = $api.dom(".icons1");
+    var icons2 = $api.dom(".icons2");
+    $api.addEvt(ks,"focus",function(){
+    	ks.style.background = "#0DA4FF";
+        // icons2.style.background = "url('image/students.png') no-repeat";
+    });
+    $api.addEvt(ks,"blur",function(){
+        ks.style.background = "#AEAEAE";
+        // icons2.style.background = "url('image/job.png') no-repeat";
+    });
+    var ksj = $api.dom(".imstu");
+    $api.addEvt(ksj,"focus",function(){
+        ksj.style.background = "#0DA4FF";
+        // icons1.style.background = "url('image/students.png') no-repeat";
+    });
+    $api.addEvt(ksj,"blur",function(){
+        ksj.style.background = "#AEAEAE";
+        // icons1.style.background = "url('image/job.png') no-repeat";
+    });
+</script>
+</html>

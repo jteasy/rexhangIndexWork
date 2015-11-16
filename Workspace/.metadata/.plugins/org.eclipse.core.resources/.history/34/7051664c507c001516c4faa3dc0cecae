@@ -1,0 +1,99 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+		<meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+		<title>APP</title>
+		<link rel="stylesheet" type="text/css" href="../css/aui.css" />
+	</head>
+	<style type="text/css">
+		.active {
+			background-color: #f4f4f4;
+		}
+	</style>
+	<body>
+		<div class="aui-content">
+			<ul class="aui-list-view">
+				<li class="aui-list-view-cell" tapmode="active" onclick="openWin('demo_form')">
+					<a class="aui-arrow-right">登录<span class="aui-badge aui-badge-info">99</span></a>
+				</li>
+				<li class="aui-list-view-cell" tapmode="active" onclick="openWin('slt_form')">
+					<a class="aui-arrow-right">列表<span class="aui-badge aui-badge-warning">99</span></a>
+				</li>
+				<li class="aui-list-view-cell" tapmode="active" onclick="openWin('sel_form')">
+					<a class="aui-arrow-right">选择器<span class="aui-badge aui-badge-primary">99</span></a>
+				</li>
+				<li class="aui-list-view-cell" tapmode="active" onclick="openWin('my_form')">
+					<a class="aui-arrow-right">设置<span class="aui-badge aui-badge-danger">99</span></a>
+				</li>
+				<li class="aui-list-view-cell" tapmode="active" onclick="alertCustom();">
+					<a class="aui-arrow-right">下拉页面可以刷新噢！<span class="aui-badge aui-badge-info">★</span></a>
+				</li>
+			</ul>
+		</div>
+	</body>
+	<script type="text/javascript" src="../script/api.js" ></script>
+	<script type="text/javascript">
+		apiready = function() {
+			api.parseTapmode();
+			api.setRefreshHeaderInfo({
+				visible : true,
+				loadingImg : 'widget://image/rexhang_new.png',
+				bgColor : '#ccc',
+				textColor : '#fff',
+				textDown : '下拉刷新...',
+				textUp : '松开开始刷新...',
+				showTime : true
+			}, function(ret, err) {
+				//从服务器加载数据，完成后调用api.refreshHeaderLoadDone()方法恢复组件到默认状态
+				function ss() {
+					api.refreshHeaderLoadDone();
+					api.toast({
+						msg : '恭喜你！刷新成功了噢！',
+						duration : 1000,
+						location : 'bottom'
+					});
+				};
+				setTimeout(ss, 600);
+			});		
+		}
+		function openWin(name) {
+			api.openWin({
+				name : ''+ name +'',
+				url : '' + name + '_win.html',
+				bounces : false,
+				delay : 300,
+				animation : {
+					type : "movein", //动画类型（详见动画类型常量）
+					subType : "from_right",
+					duration : 300
+				}
+			});
+		};
+		function alertCustom () {
+        var html = '';
+            html += '<div style="width:60px; height:60px;float:left; padding-right:15px;"><img src="../image/rexhang_new.png" style="width:100%;border-radius:6px;" /></div>';
+            html += '<div><p>你认为AUI是一个好框架吗?</p><p>AUI是专门为APICloud用户打造的一款前端UI框架</p></div>';
+        $aui.alert({
+            title:'自定义消息内容',
+            content:html,
+            buttons:['确定','关闭'],
+            radius:1,
+            titleColor:'#333',
+            contColor:'#333',
+            btnColor:''
+        },function(ret){
+            //处理回调函数
+            if(ret){
+               if(ret==0){
+                    alert("AUI没有得到你的认可我们会继续努力")
+                }else{
+                    alert("感谢你对AUI的支持")
+                }
+            }
+        })
+    };
+
+	</script>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>setTimeOnload</title>
+</head>
+<body>
+	<p>默认会1秒后跳转链接，点击按钮阻止跳转</p>
+	<button class="stopUrl">阻止跳转</button>
+	<script>
+	/*初始化*/
+	init();
+	/*打包函数*/
+	function init(){
+		function openUrl(){
+			window.open('http://www.rexhang.com','_blank');
+		}
+		/*一秒后跳转url*/
+		var funTime = setTimeout(openUrl,1000)
+		/*设置阻止函数*/
+		function funStopUrl(){
+			clearTimeout(funTime);
+		}
+		/*点击按钮执行函数*/
+		document.getElementsByClassName('stopUrl')[0].onclick = funStopUrl;
+	}
+	</script>
+</body>
+</html>

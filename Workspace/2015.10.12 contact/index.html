@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>Contact</title>
+    <style>
+    input[name='contactsInput'] {
+        width: 50%;
+        height: 50px;
+        border: 2px solid #333;
+        position: fixed;
+        top: 100px;
+        left: 25%;
+        font-family: 'microsoft YaHei';
+    }
+    </style>
+</head>
+
+<body>
+    <input type="button" value="点击获取您的全部联系人信息！" name="contactsInput" id="clickInput" onclick="contacts(); " />
+</body>
+<script type="text/javascript " src="./script/api.js "></script>
+<script>
+function contacts(){
+	var pageIndex = 0, //分页索引 
+	    pages; //总页数
+	var contacts = api.require('contacts');
+	contacts.queryByPage({
+	    pageIndex: pageIndex
+	}, function(ret) {
+	    if (ret.status) {
+	        alert(JSON.stringify(ret.contacts));
+	        pages = ret.pages;
+	    }
+	});
+
+	api.addEventListener({
+	    name: 'scrolltobottom'
+	}, function(ret, err) {
+	    ++pageIndex;
+	    if (pageIndex >= pages - 1) {
+	        return;
+	    }
+	    contacts.queryByPage({
+	        pageIndex: pageIndex
+	    }, function(ret) {
+	        if (ret.status) {
+	            alert(JSON.stringify(ret.contacts));
+	        }
+	    });
+	});
+}
+</script>
+
+</html>

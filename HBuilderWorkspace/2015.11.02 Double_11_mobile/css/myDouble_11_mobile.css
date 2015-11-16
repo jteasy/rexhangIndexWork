@@ -1,0 +1,205 @@
+/*
+ 	=== info ===	 
+ 	* Filename: web_top.css 
+ 	* Decscription: web_top
+ 	* Version: 1.0.0(2015.11.03)
+ 	* Website: http://www.fenqiday.com
+ 	* Author: Rexhang (rexhang@outlook.com)
+ */
+body{
+	font-family: Arial, Helvetica, sans-serif;
+}
+.wrap{
+	width: 100%;
+	background-color: #7949EE;
+}
+.hvalue{
+	height: 80px;
+	line-height: 80px;
+	font-size: 28px;
+}
+header{
+	width: 640px;
+	height: 240px;
+	margin: 0 auto;
+}
+.act-1{
+	width: 640px;
+	height: 697px;
+	margin: 0 auto;
+	position: relative;
+}
+.font{
+	position: absolute;
+	word-spacing: 29px;
+}
+.font_1{
+	left: 68px;
+	bottom: 30px;
+}
+.font_2{
+	left: 268px;
+	bottom: 30px;
+}
+.font_3{
+	left: 470px;
+	bottom: 30px;
+}
+.font span{
+	font-size: 24px;
+	color: #FA1857;
+}
+.btn-a{
+	width: 192px;
+	height: 58px;
+	display: block;
+	border: 1px solid red;
+	position: absolute;
+}
+.btn-a-1{
+	left: 25px;
+	bottom: 98px;
+}
+.btn-a-2{
+	left: 224px;
+	bottom: 98px;
+}
+.btn-a-3{
+	left: 422px;
+	bottom: 98px;
+}
+.act-2{
+	width: 640px;
+	height: 2340px;
+	margin: 0 auto;
+	position: relative;
+}
+.act-2-btn{
+	width: 150px;
+    height: 32px;
+    background-color: #FF7A7A;
+    border-radius: 4px;
+    color: #fff;
+    text-align: center;
+    line-height: 32px;
+    font-size: 16px;
+    box-shadow: 0 2px 2px #F03D39;
+    position: absolute;
+}
+.act-2-btn:nth-child(1){
+	left: 47px;
+	bottom: 62px;
+}
+.act-2-btn:nth-child(2){
+	left: 246px;
+	bottom: 62px;
+}
+.act-2-btn:nth-child(3){
+	left: 444px;
+	bottom: 62px;
+}
+.act-2-btn:nth-child(4){
+	left: 47px;
+	bottom: 350px;
+}
+.act-2-btn:nth-child(5){
+	left: 246px;
+	bottom: 350px;
+}
+.act-2-btn:nth-child(6){
+	left: 444px;
+	bottom: 350px;
+}
+.act-2-btn:nth-child(7){
+	left: 47px;
+	bottom: 732px;
+}
+.act-2-btn:nth-child(8){
+	left: 246px;
+	bottom: 732px;
+}
+.act-2-btn:nth-child(9){
+	left: 444px;
+	bottom: 732px;
+}
+.act-2-btn:nth-child(10){
+	left: 444px;
+	bottom: 1020px;
+}
+.act-2-btn:nth-child(11){
+	left: 245px;
+	bottom: 1020px;
+}
+.act-2-btn:nth-child(12){
+	left: 47px;
+	bottom: 1020px;
+}
+.act-2-btn:nth-child(13){
+	left: 444px;
+	bottom: 1402px;
+}
+.act-2-btn:nth-child(14){
+	left: 245px;
+	bottom: 1402px;
+}
+.act-2-btn:nth-child(15){
+	left: 47px;
+	bottom: 1402px;
+}
+.act-2-btn:nth-child(16){
+	left: 444px;
+	top: 618px;
+}
+.act-2-btn:nth-child(17){
+	left: 245px;
+	top: 618px;
+}
+.act-2-btn:nth-child(18){
+	left: 47px;
+	top: 618px;
+}
+.act-3{
+	width: 640px;
+	height: 663px;
+	margin: 0 auto;
+	position: relative;
+}
+.act-2-btn2{
+	width: 150px;
+    height: 32px;
+    background-color: #FF7A7A;
+    border-radius: 4px;
+    color: #fff;
+    text-align: center;
+    line-height: 32px;
+    font-size: 16px;
+    box-shadow: 0 2px 2px #F03D39;
+    position: absolute;
+}
+.ab1{
+	left: 47px;
+	bottom: 94px;
+}
+.ab2{
+	left: 245px;
+	bottom: 94px;
+}
+.ab3{
+	left: 444px;
+	bottom: 94px;
+}
+.fix{
+	width: 128px;
+	height: 128px;
+	line-height: 64px;
+	text-align: center;
+	background-color: rgba(0,0,0,0.4);
+	border-radius: 6px;
+	position: fixed;
+	top: 70%;
+	right: 14px;
+	display: none;
+}
+.fix img{
+	margin-top: 48px;
+}

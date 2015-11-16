@@ -1,0 +1,477 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>Hello APP</title>
+    <style type="text/css">
+    	*{
+    		margin: 0;
+    		padding: 0;
+    	}
+    	body{
+    		font-size: 12px;
+    		font-family: "微软雅黑";
+    		background: rgb(129,204,231);
+    		height: 100%;
+    		overflow: hidden;
+    	}
+    	.content{
+    		-webkit-transition: all ease-in-out 0.3s;
+    		width: 90%;
+    		position: absolute;
+    		top: 20px;
+    		left: 5%;
+    	}
+    	.card2 , .card3 , .card4{
+    		-webkit-transition: all ease-in-out 0.3s;
+    	}
+    	.cnts , .c_2 , .c_3 , .c_4{
+    		-webkit-transition: all ease-in-out 0.3s;	
+    	}
+    	.cnts{
+    		margin: 0 20px 0 20px;
+    		background: #fff;
+    		border-radius: 16px;
+    		height: 300px;
+    		box-shadow: 1px 1px 8px 1px #666666;
+    		position: relative;
+    	}
+    	.content .friendsss{
+    		position: absolute;
+    		left: calc(50% - 75px);
+    		top: 60px;
+    	}
+    	.flag{
+    		margin: 10px 0 0 0;
+    		width: 100px;
+    		height: 35px;
+    		float: left;
+    	}
+    	.friends{
+    		float: left;
+    		margin: 18px 0 0 0;
+    		font-size: 16px;
+    		color: #666;
+    		padding-left: calc(50% - 32px - 100px);
+    	}
+    	.cosal{
+    		height: 50px;
+    		padding: 20px 10% 0 10%;
+    		position: absolute;	
+    		top: 320px;
+    	}
+    	.co_fonts{
+    		display: block;
+    		word-break: break-word;
+    		text-indent: 40px;
+    	}
+    	/*==*/
+    	.card2{
+    		width: 90%;
+    		margin: 0 auto;
+    		position: absolute;
+    		bottom: 0;
+    		left: 5%;
+    		z-index: 999;
+    	}
+    	.c_2{
+    		margin: 0 20px 0 20px;
+    		height: 60px;
+    		border-radius:  16px 16px 0 0;
+    		box-shadow: 1px 1px 8px 1px #666666;
+    		background: #fff;
+    		position: relative;
+    	}
+    	.flag2{
+    		margin-top: 10px;
+    		width: 100px;
+    		height: 35px;
+    		float: left;
+    	}
+    	.c_2 .zj{
+    		position: absolute;
+    		left: calc(50% - 75px);
+    		top: 60px;
+    	}
+    	.zj_info{
+    		margin: 18px 0 0 0;
+    		font-size: 16px;
+    		color: #666;
+    		float: left;
+    		padding-left: calc(50% - 32px - 100px);
+    	}
+    	/*==*/
+    	.card3{
+    		width: 80%;
+    		margin: 0 auto;
+    		position: absolute;
+    		bottom: 60px;
+    		left: 10%;
+    		z-index: 998;
+    	}
+    	.c_3{
+    		margin: 0 20px 0 20px;
+    		height: 60px;
+    		border-radius:  16px 16px 0 0;
+    		box-shadow: 1px 1px 8px 1px #666666;
+    		background: #fff;
+    		position: relative;
+    	}
+    	.flag3{
+    		margin-top: 10px;
+    		width: 100px;
+    		height: 35px;
+    		float: left;
+    	}
+    	.c_3 .school{
+    		position: absolute;
+    		left: calc(50% - 75px);
+    		top: 60px;
+    		display: none;
+    	}
+    	.zj_info2{
+    		margin: 18px 0 0 0;
+    		font-size: 16px;
+    		color: #666;
+    		float: left;
+    		padding-left: calc(50% - 32px - 100px);
+    	}
+    	/*==*/
+    	.card4{
+    		width: 70%;
+    		margin: 0 auto;
+    		position: absolute;
+    		bottom: 120px;
+    		left: 15%;
+    		z-index: 997;
+    	}
+    	.c_4{
+    		margin: 0 20px 0 20px;
+    		height: 60px;
+    		border-radius:  16px 16px 0 0;
+    		box-shadow: 1px 1px 8px 1px #666666;
+    		background: #fff;
+    		position: relative;
+    	}
+    	.flag4{
+    		margin-top: 10px;
+    		width: 100px;
+    		height: 35px;
+    		float: left;
+    	}
+    	 .c_4 .personal{
+    		position: absolute;
+    		left: calc(50% - 75px);
+    		top: 60px;
+    		display:none;
+    	}
+    	.zj_info3{
+    		margin: 18px 0 0 0;
+    		font-size: 16px;
+    		color: #666;
+    		float: left;
+    		padding-left: calc(50% - 32px - 100px);
+    	}
+    </style>
+</head>
+<body>
+
+		<div class="content" tapmode="#" onclick="card1();">
+	   		<div class="cnts">
+	   			<div class="flag">
+	   				<img src="image/pinks.png" alt="pink" width="100" height="35" />
+	   			</div>
+	   			<p class="friends">我的伙伴</p>
+	   			<div style="clear: both;"></div>
+	   			<img class="friendsss" src="image/friends.png" alt="friends" width="" height="50%" />	
+	   		</div>
+	   		
+   		</div>
+
+   <div class="cosal">
+   	<span class="co_fonts">textindent40pxXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</span>
+   </div>
+
+   	<div class="card2" tapmode="#" onclick="card2();">
+   		<div class="c_2">
+	   			<div class="flag2">
+	   				<img src="image/blues.png" alt="blue" width="100" height="35" />
+	   			</div>
+	   			<p class="zj_info">证件信息</p>
+	   			<div style="clear: both;"></div>
+	   			<img class="zj" src="image/zj_info.png" alt="zj_info" width="" height="50%" />
+	   	</div>
+   	</div>
+   
+   	<div class="card3" tapmode="#" onclick="card3();">
+   		<div class="c_3">
+	   			<div class="flag3">
+	   				<img src="image/yellows.png" alt="yellow" width="100" height="35" />
+	   			</div>
+	   			<p class="zj_info2">学校信息</p>
+	   			<div style="clear: both;"></div>
+	   			<img class="school" src="image/school.png" alt="school" width="" height="50%" />
+	   	</div>
+   	</div>
+
+   	<div class="card4" tapmode="#" onclick="card4();">
+   		<div class="c_4">
+	   			<div class="flag4">
+	   				<img src="image/greens.png" alt="green" width="100" height="35" />
+	   			</div>
+	   			<p class="zj_info3">个人信息</p>
+	   			<div style="clear: both;"></div>
+	   			<img class="personal" src="image/personal.png" alt="personal" width="" height="50%" />
+	   	</div>
+   	</div>
+   
+   <input type="text" name="txts" id="txts" value="0" style="display:;" />
+   <input type="text" name="txts2" id="txts2" value="0" style="display:;" />
+   <input type="text" name="txts3" id="txts3" value="0" style="display:;" />
+   <input type="text" name="txts4" id="txts4" value="0" style="display:;" />
+   
+   
+   
+   
+</body>
+<script type="text/javascript" src="./script/api.js"></script>
+<script type="text/javascript" src="./script/zepto.min.js"></script>
+<script type="text/javascript">
+	
+	pisitions2 = $("#txts2").val();
+	var dss = document.documentElement.clientHeight;
+	var btmH = dss - 20 - 300;
+	function card1(){
+                        var pisitions3 = $("#txts3").val();
+                        if(pisitions3 == 33){
+                            $(".content").animate({
+                                    top:20 + "px",
+                                    width:"90%",
+                                    left:"5%"
+                                },300,'ease-in-out');
+                            $(".cnts").animate({
+                                height:300 + "px",
+                                borderRadius:"16px"
+                            },300,'ease-in-out');
+                            $(".card3").animate({
+                                bottom:60   + "px",
+                                width:"80%",
+                                left:"10%"
+                            },300,'ease-in-out');
+                            $(".c_3").animate({
+                                height:60 + "px",
+                                borderRadius:"16px",
+                                zIndex:997
+                            },300,'ease-in-out');
+
+                        }
+
+                        $(".content").animate({
+                                    top:20 + "px",
+                                    width:"90%",
+                                    left:"5%"
+                                },300,'ease-in-out');
+                            $(".cnts").animate({
+                                height:300 + "px",
+                                borderRadius:"16px"
+                            },300,'ease-in-out');
+		pisitions1 = $("#txts").val();
+		var pisitions2 = $("#txts2").val(0);
+		if(pisitions1 == 1){
+			$(".card2").animate({
+				bottom:0 +"px",
+				zIndex:"1000"
+			},300,'ease-in-out');
+			$(".c_2").animate({
+				height:60 +"px",
+				borderRadius:"16px 16px 0 0"
+			},300,'ease-in-out');
+		} 
+		if(pisitions1 == 2){
+			$(".school").css('display','block');
+			$(".card3").animate({
+				bottom:60 +"px",
+				zIndex:"998",
+				width:"80%",
+				left:"10%"
+			},300,'ease-in-out');
+			$(".c_3").animate({
+				height:60 +"px",
+				borderRadius:"16px 16px 0 0"
+			},300,'ease-in-out');
+		} 
+		if(pisitions1 == 3){
+			$(".personal").css('display','none');
+			$(".card4").animate({
+				bottom:120 +"px",
+				zIndex:"997",
+				width:"70%",
+				left:"15%"
+			},300,'ease-in-out');
+			$(".c_4").animate({
+				height:60 +"px",
+				borderRadius:"16px 16px 0 0"
+			},300,'ease-in-out');
+		} 
+	}
+	function card2(){
+		var pisitions2 = $("#txts2").val();
+		if(pisitions2 == 44){
+				
+		}else{
+		$(".card2").animate({
+			bottom:btmH  + "px"
+		},300,'ease-in-out');
+		$(".c_2").animate({
+			height:300 + "px",
+			borderRadius:"16px"
+		},300,'ease-in-out');
+		var pisitions = $("#txts").val(1);
+		var pisitions2 = $("#txts2").val(22);
+		$(".content").animate({
+			top:btmH + 300 - 20 - 20 +"px",
+			zIndex:"1000"
+		},300,'ease-in-out');
+		$(".cnts").animate({
+			height:60 +"px",
+			borderRadius:"16px 16px 0 0"
+		},300,'ease-in-out');
+		var pisitions2 = $("#txts2").val(44);
+		}
+	}
+	function card3(){
+                                var pisitions1 = $("#txts1").val();
+                                var pisitions2 = $("#txts2").val();
+                               var pisitions3 = $("#txts3").val();
+                               var pisitions4 = $("#txts4").val();
+                if(pisitions1==2){
+                    alert("到了啊");
+                }
+		var pisitions2 = $("#txts2").val();
+		if(pisitions2 == 44){
+			
+                                            $(".card3").animate({
+                                            bottom:btmH  + "px",
+                                            width:"90%",
+                                            left:"5%"
+                                        },300,'ease-in-out');
+
+                                    $(".c_3").animate({
+                                        height:300 + "px",
+                                        borderRadius:"16px",            
+                                    },300,'ease-in-out');	
+
+                                    $(".card4").animate({
+                                        bottom:60   + "px",
+                                        width:"80%",
+                                        left:"10%"
+                                    },300,'ease-in-out');
+                                    $(".c_4").animate({
+                                        height:60 + "px",
+                                        borderRadius:"16px"
+                                    },300,'ease-in-out');
+
+		} else{	
+			$(".school").css('display','block');
+			$(".card3").animate({
+			bottom:btmH  + "px",
+			width:"90%",
+			left:"5%"
+		},300,'ease-in-out');
+		$(".c_3").animate({
+			height:300 + "px",
+			borderRadius:"16px",			
+		},300,'ease-in-out');
+		var pisitions = $("#txts").val(2);
+		$(".content").animate({
+			top:btmH + 300 - 20 - 20 - 60 +"px",
+			width:"80%",
+			left:"10%",
+			zIndex:998
+		},300,'ease-in-out');
+		$(".cnts").animate({
+			height:60 +"px",
+			borderRadius:"16px 16px 0 0"
+		},300,'ease-in-out');
+		pisitions1 = $("#txts").val();
+		}
+	var pisitions2 = $("#txts2").val(44);
+            var pisitions3 = $("#txts3").val(33);
+	}
+	function card4(){
+                               var pisitions1 = $("#txts1").val();
+                                var pisitions2 = $("#txts2").val();
+                               var pisitions3 = $("#txts3").val();
+                               var pisitions4 = $("#txts4").val();
+                        if(pisitions1==2 && pisitions2==44 && pisitions3==33 && pisitions3==0){
+                            alert("到了");
+                            $(".card3").animate({
+                                top:120 +"px",
+                                zIndex:"1000"
+                             },300,'ease-in-out');
+                             $(".c_3").animate({
+                                height:60 +"px",
+                                borderRadius:"16px 16px 0 0"
+                             },300,'ease-in-out');
+
+                             $(".content").animate({
+                                top:120 +"px",
+                                zIndex:"1000"
+                             },300,'ease-in-out');
+                             $(".cnts").animate({
+                                height:60 +"px",
+                                borderRadius:"16px 16px 0 0"
+                             },300,'ease-in-out');
+                        }
+
+		if(pisitions2 == 44){
+                            $(".card4").animate({
+                                bottom:btmH   + "px",
+                                width:"90%",
+                                left:"5%"
+                            },300,'ease-in-out');
+                            $(".c_4").animate({
+                                height:300 + "px",
+                                borderRadius:"16px"
+                            },300,'ease-in-out');
+
+                            $(".card3").animate({
+                                bottom:60   + "px",
+                                width:"80%",
+                                left:"10%"
+                            },300,'ease-in-out');
+                            $(".c_3").animate({
+                                height:60 + "px",
+                                borderRadius:"16px"
+                            },300,'ease-in-out');
+                            
+
+		} else{
+		  $(".personal").css('display','block');
+		$(".card4").animate({
+			bottom:btmH   + "px",
+			width:"90%",
+			left:"5%"
+		},300,'ease-in-out');
+		var pisitions = $("#txts").val(3);
+		$(".c_4").animate({
+			height:300 + "px",
+			borderRadius:"16px"
+		},300,'ease-in-out');
+		var pisitions2 = $("#txts2").val(44);
+		$(".content").animate({
+			top:btmH + 300 - 20 - 20 - 60 - 60 +"px",
+			width:"70%",
+			left:"15%",
+			zIndex:997
+		},300,'ease-in-out');
+		$(".cnts").animate({
+			height:60 +"px",
+			borderRadius:"16px 16px 0 0"
+		},300,'ease-in-out');
+		}
+	}
+</script>
+</html>

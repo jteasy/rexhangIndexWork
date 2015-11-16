@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="将资源“AUI_test/image/小图(头像)new.png”重命名为“rexhang_new.png”" description="重命名资源“小图(头像)new.png”" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="image/小图(头像)new.png" name="rexhang_new.png" stamp="1445840619801" updateReferences="true"/>
+</session>

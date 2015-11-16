@@ -1,0 +1,143 @@
+/*
+ 	=== info ===	 
+ 	* Filename: web_module_5.css
+ 	* Decscription: web_module_5
+ 	* Version: 1.0.0(2015.11.09)
+ 	* Website: http://www.fenqiday.com
+ 	* Author: Rexhang (rexhang@outlook.com)
+ */
+.web-module-5{
+	width: 100%;
+	height: 320px;
+	margin-top: 34px;
+}
+.web-module-5-box{
+	width: 1200px;
+	height: 320px;
+	margin: 0 auto;
+}
+.web-module-5-adv1{
+	float: left;
+    width: 242px;
+    height: 320px;
+    background: url(../img/web-module-2-pic1.png) no-repeat;
+    text-align: center;
+}
+.web-module-5-adv1 img{
+    margin-top: 62px;
+}
+.p-tit1-copy{
+	font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    margin-top: 32px;
+}
+.p-tit2-copy{
+	font-size: 14px;
+    color: #fff;
+    margin-top: 16px;
+}
+.web-module-5-adv2{
+	float: left;
+    width: 712px;
+    height: 310px;
+    background-color: #fff;
+    margin: 8px 0 0 -10px;
+    overflow: hidden;
+}
+.web-module-5-adv3{
+	float: left;
+    width: 254px;
+    height: 310px;
+    margin-top: 8px;
+    text-align: center;
+    background-color: #fff;
+    position: relative;
+}
+.web-module-5-adv3 img{
+	margin-top: 126px;
+}
+.web-module-5-step-by-step{
+	font-size: 14px;
+	color: #999;
+	margin: 18px 0 0 34px;
+}
+.goods-url{
+	color: #666;
+	font-size: 14px;
+	margin: 26px 0 0 34px;
+}
+input[name='goods_url']{
+	width: 604px;
+	height: 38px;
+	line-height: 38px;
+	border: 1px solid #ccc;
+	text-indent: 14px;
+	font-size: 14px;
+}
+.goods-value{
+	color: #666;
+	font-size: 14px;
+	margin: 26px 0 0 34px;
+}
+input[name='goods_value']{
+	width: 154px;
+	height: 38px;
+	line-height: 38px;
+	border: 1px solid #ccc;
+	text-indent: 14px;
+	font-size: 14px;
+}
+/*select 样式*/
+select{
+	font-size: 14px;
+	width: 142px;
+	height: 38px;
+	line-height: 38px;
+	padding：8px  0;
+  /*Chrome和Firefox里面的边框是不一样的，所以复写了一下*/
+  border: solid 1px #ccc;
+  /*很关键：将默认的select选择框样式清除*/
+  appearance:none;
+  -moz-appearance:none;
+  -webkit-appearance:none;
+  /*在选择框的最右侧中间显示小箭头图片*/
+  background: url("../img/pencil.png") no-repeat scroll right center transparent;
+  background-position-x: 116px;
+  /*为下拉小箭头留出一点位置，避免被文字覆盖*/
+  padding-right: 32px;
+}
+/*清除ie的默认选择框样式清除，隐藏下拉箭头*/
+select::-ms-expand { display: none; }
+/*select 样式*/
+.remarks{
+    color: #666;
+    font-size: 14px;
+    margin: 26px 0 0 34px;
+}
+input[name='remarks']{
+	width: 604px;
+	height: 38px;
+	line-height: 38px;
+	border: 1px solid #ccc;
+	text-indent: 14px;
+	font-size: 14px;
+}
+.electronic-business-platform{
+	color: #666;
+	font-size: 14px;
+	margin: 26px 0 0 34px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

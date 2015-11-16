@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>Hello APP</title>
+    <link rel="stylesheet" type="text/css" href="./css/api.css" />
+    <link rel="stylesheet" type="text/css" href="./css/common.css" />
+</head>
+<body>
+
+</body>
+<script type="text/javascript" src="./script/api.js"></script>
+<script type="text/javascript">
+
+    apiready = function(){
+
+		var obj = api.require('coverFlow');
+obj.open({
+    x:0,
+    y:64,
+    w:320,
+    h:300,
+    bgColor:'#ADD8E6',
+    paths:['widget://res/a1.png','widget://res/a2.png','widget://res/a3.png',
+        'widget://res/a4.png','widget://res/a5.png','widget://res/a6.png',
+        'widget://res/a7.png','widget://res/a8.png','widget://res/a9.png',
+        'widget://res/a10.png']
+},function(ret,err) {
+    var index = ret.index;
+});
+    };
+    
+</script>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>闭包 原型链</title>
+</head>
+<body>
+	<input type="button" value="click me" onclick="test(test2);" />
+	<script>
+		function test(fn){
+			if(fn){
+				return fn();
+			};
+		};
+		function test2(){
+			alert('闭包调用');
+		}
+		/*原型链*/
+		function init(count1,count2){
+			this.count1 = count1;
+			this.count2 = count2;
+		}
+		init.prototype = {
+			funAdd : function(count1,count2){
+				return count1 + count2
+			},
+			funMtp : function(count1,count2){
+				return count1 * count2
+			}
+		}
+		var params = new init();
+		var a = params.funAdd(3,5);
+		var b = params.funMtp(3,5);
+		console.info(a - b);
+	</script>
+</body>
+</html>

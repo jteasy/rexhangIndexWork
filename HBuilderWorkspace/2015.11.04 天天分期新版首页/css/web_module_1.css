@@ -1,0 +1,29 @@
+/*
+ 	=== info ===	 
+ 	* Filename: web_module_1.css
+ 	* Decscription: web_module_1
+ 	* Version: 1.0.0(2015.11.04)
+ 	* Website: http://www.fenqiday.com
+ 	* Author: Rexhang (rexhang@outlook.com)
+ */
+.web-module-1{
+	width: 100%;
+	height: 170px;
+	margin-top: 18px;
+}
+.web-module-1-box{
+	width: 1200px;
+	height: 170px;
+	margin: 0 auto;
+}
+.web-module-1-adv1{
+	width: 232px;
+	height: 170px;
+	float: left;
+}
+.web-module-1-adv2{
+	float: left;
+	width: 307px;
+	height: 170px;
+	margin-left: 15px;
+}

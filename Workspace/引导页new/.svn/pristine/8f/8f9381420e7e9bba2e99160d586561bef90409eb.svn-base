@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>Hello APP</title>
+    <link rel="stylesheet" type="text/css" href="./css/api.css" />
+    <link rel="stylesheet" type="text/css" href="./css/common.css" />
+</head>
+<body>
+    
+</body>
+<script type="text/javascript" src="./script/api.js"></script>
+<script type="text/javascript">
+
+    apiready = function(){
+		api.openFrameGroup ({
+		    name: 'group1',
+		    background:'#fff',
+		    scrollEnabled:true,
+		    rect:{x:0, y:0, w:'auto', h:'auto'},
+		    index:0,
+		    frames:
+		    [{
+		        name: 'frame1', 
+		        url: 'html/guide1.html'
+		    },{
+		        name: 'frame2', 
+		        url: 'html/guide2.html'
+		    },{
+		        name: 'frame3', 
+		        url: 'html/guide3.html'
+		    }]
+		}, function(ret, err){
+		    var name = ret.name;
+		    var index = ret.index;
+		});
+    };
+</script>
+</html>

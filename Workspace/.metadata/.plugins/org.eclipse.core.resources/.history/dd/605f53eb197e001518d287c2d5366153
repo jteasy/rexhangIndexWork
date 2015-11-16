@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>豆趣一刻</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="user-scalable=no, initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">     
+	<link rel="apple-touch-startup-image" href="./library/iphonestartup.png">
+	<link rel="stylesheet" type="text/css" href="./Danger Ranger_files/desktop.css">
+	<link rel="apple-touch-icon" href="./library/appleicon.png">
+    <link rel="stylesheet" type="text/css" href="./common/common.css">
+	<!--<link href='http://fonts.googleapis.com/css?family=Bowlby+One+SC&v2' rel='stylesheet' type='text/css'>	
+	<link href='http://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>	-->
+	<!--[if IE]>
+	<link rel="stylesheet" type="text/css" href="explorer.css" media="all" />
+	<![endif]-->
+
+    <script type="text/javascript" src="./common/zepto.min.js"></script>
+    <script type="text/javascript" src="./common/common.js"></script>
+	<script type="text/javascript" async="" src="./Danger Ranger_files/ga.js"></script><script type="application/x-javascript" src="./Danger Ranger_files/aselect.js"></script>
+	<script type="application/x-javascript" src="./Danger Ranger_files/library.js"></script>
+	<script type="application/x-javascript" src="./Danger Ranger_files/textdata.js"></script>
+	<script type="application/x-javascript" src="./Danger Ranger_files/classlib.js"></script>
+	<script type="application/x-javascript" src="./Danger Ranger_files/resources.js"></script>
+	<script type="application/x-javascript" src="./Danger Ranger_files/data.js"></script>
+	<script type="application/x-javascript" src="./Danger Ranger_files/leveldata.js"></script>
+    <script type="text/javascript" src="./Danger Ranger_files/createjs-2013.12.12.min.js"></script>
+    <script type="text/javascript" src="./Danger Ranger_files/createjs_game.js"></script>
+	<script type="application/x-javascript" src="./Danger Ranger_files/game.js"></script>
+    <script type="application/x-javascript" src="./Danger Ranger_files/hkapi.js"></script>
+    <script type="application/x-javascript" src="./Danger Ranger_files/hkgame.js"></script>
+</head>
+<body onkeydown="scanInput(event);" onkeyup="stopMove(event);">
+<div class="loading-bg"></div>
+<div>
+<canvas id="stage" class="canvas">
+
+</canvas>
+<script>
+    $(function(){
+        commonApp.init();
+    });
+</script>
+<div id="banad" style="display: block; "></div>
+<div id="console" style="display: none; text-align: left; "></div>
+<!-- 游戏欢迎页开始 -->
+<div class="gamestart" id="j_game_start">
+    <div class="extra">
+      <div class="btn-gm" >
+        <a id="j_start"href="javascript:;"></a>
+      </div>
+      <div class="btn-gm">
+        <a href="../../index.html"></a>
+      </div>
+    </div>
+</div>
+<!-- 游戏欢迎页结束 -->
+<!-- 游戏排行开始 -->
+    <div class="rank" id="j_rank">
+        <div class="rank-extra rank-header">
+            <div class="arrow"></div>
+            <ul class="list-rank j_firstRank">
+                <li>
+                    <div class="serial">1</div>
+                    <div class="user-name">xxxxx</div>
+                    <div class="score">98</div>
+                </li>
+            </ul>
+        </div>
+        <div class="rank-extra">
+            <div class="rank-top">
+                <div class="rank-t clearfix">
+                    <div>用户名</div>
+                    <div>得分</div>
+                </div>
+                <div class="arrow"></div>
+                <div class="logo"></div>
+            </div>
+            <div class="rank-main">
+                <ul class="list-rank j_listRank">
+                    <li>
+                        <div class="serial">1</div>
+                        <div class="user-name">xxxxx</div>
+                        <div class="score">98</div>
+                    </li>
+                    <li>
+                        <div class="serial">2</div>
+                        <div class="user-name">xxxxx</div>
+                        <div class="score">95</div>
+                    </li>
+                    <li>
+                        <div class="serial">3</div>
+                        <div class="user-name">xxxxx</div>
+                        <div class="score">90</div>
+                    </li>
+                    <li>
+                        <div class="serial">4</div>
+                        <div class="user-name">xxxxx</div>
+                        <div class="score">85</div>
+                    </li>
+                    <li>
+                        <div class="serial">5</div>
+                        <div class="user-name">xxxxx</div>
+                        <div class="score">83</div>
+                    </li>
+                    <li>
+                        <div class="serial">6</div>
+                        <div class="user-name">xxxxx</div>
+                        <div class="score">80</div>
+                    </li>
+                    <li>
+                        <div class="serial">7</div>
+                        <div class="user-name">xxxxx</div>
+                        <div class="score">76</div>
+                    </li>
+                    <li>
+                        <div class="serial">8</div>
+                        <div class="user-name">xxxxx</div>
+                        <div class="score">75</div>
+                    </li>
+                    <li>
+                        <div class="serial">9</div>
+                        <div class="user-name">xxxxx</div>
+                        <div class="score">70</div>
+                    </li>
+                    <li>
+                        <div class="serial">10</div>
+                        <div class="user-name">xxxxx</div>
+                        <div class="score">67</div>
+                    </li>
+                </ul>
+                <p class="our-score-t">您当前游戏得分：</p>
+                <ul class="list-rank our-score j_myRank">
+                    <li>
+                        <div class="serial">80</div>
+                        <div class="user-name">xxxxx</div>
+                        <div class="score">45</div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+<!-- 游戏排行结束 -->
+<!-- 游戏结果开始 -->
+<div class="gameend" id="j_game_end">
+    <div class="share_box">
+        <div class="end_logo"></div>
+        <span class="bun_share" id="j_share"></span>
+    </div>
+    <div class="end_box">
+        <h3><span id="dc-lastscore">0</span>分</h3>
+    </div>
+    <div class="end_jg">
+        <p>恭喜你刚刚获得了：</p>
+        <span class="kxz">000</span>
+        <span class="wbs">000</span>
+    </div>
+    <div class="end_fot">
+        <p>太棒了！</p>
+        <p>赶快去福利社看看！</p>
+        <p>有奖品快去兑换！</p>
+        <a href="javascript:;" class="but_reg" id="j_again"></a> <a href="#" class="but_dh"></a>
+    </div>
+</div>
+<div class="share-game" id="dc-share"></div>
+<!-- 游戏结果结束 -->
+  <!-- 游戏结束背景图 -->
+  <div class="game-end-bg"></div>
+  <img class="loading-bg-test" src="common/images/loading_bg_test.jpg" alt="bg" style="display:none;">
+  <script>
+    $(document).ready(function(){
+      var timer = setInterval(function(){
+        if($('.loading-bg-test').width){
+          setTimeout(function(){
+            $('.loading-bg').hide();
+          
+          }, 2000);
+          clearInterval(timer);
+        }
+      }, 100);
+    });
+  </script>
+</body>
+</html>

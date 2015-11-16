@@ -1,0 +1,63 @@
+@charset "UTF-8";
+
+/**
+ * 
+ * @authors rexhang
+ * @date    2015-10-27 11:25:47
+ * @version v1.0
+ */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 50%;
+    margin-left: 25%;
+    position: relative;
+}
+
+.sel {
+    position: absolute;
+}
+
+.container ul {
+    position: absolute;
+    bottom: 12px;
+    width: 78px;
+    left: calc(50% - 39px);
+    z-index: 999;
+}
+
+.container ul li {
+    list-style: none;
+    float: left;
+    width: 14px;
+    height: 14px;
+    border-radius: 14px;
+    border: 1px solid #f00;
+    padding: 0 5px;
+}
+.sel-color{
+    background: #f00;
+}
+.hide {
+    display: none;
+}
+
+.active {
+    display: block;
+    animation:active_animate 0.5s linear;
+}
+@keyframes active_animate{
+    0%{
+        transform:scale(0);
+    }
+    50%{
+        transform:scale(0.5);
+    }
+    100%{
+        transform:scale(1);
+    }
+}
